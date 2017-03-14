@@ -1,9 +1,9 @@
 --- 
 layout: HubPage
- hide_bc: true
-  title: Microsoft HealthVault | Microsoft Docs 
-  description: Learn how to build connected healthcare apps leveraging HealthVault. 
-  ---
+hide_bc: true
+title: Microsoft HealthVault | Microsoft Docs 
+description: Learn how to build connected healthcare apps leveraging HealthVault. 
+---
 
 <div id="main" class="v2">
     [!include[
