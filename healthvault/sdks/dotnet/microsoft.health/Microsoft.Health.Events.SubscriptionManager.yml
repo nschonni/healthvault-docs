@@ -1,0 +1,820 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.Events.SubscriptionManager
+  commentId: T:Microsoft.Health.Events.SubscriptionManager
+  id: SubscriptionManager
+  parent: Microsoft.Health.Events
+  children:
+  - Microsoft.Health.Events.SubscriptionManager.#ctor(Microsoft.Health.ApplicationConnection)
+  - Microsoft.Health.Events.SubscriptionManager.ApplicationConnection
+  - Microsoft.Health.Events.SubscriptionManager.GetSubscriptions
+  - Microsoft.Health.Events.SubscriptionManager.Subscribe(Microsoft.Health.Events.Subscription)
+  - Microsoft.Health.Events.SubscriptionManager.Unsubscribe(Microsoft.Health.Events.Subscription)
+  - Microsoft.Health.Events.SubscriptionManager.Unsubscribe(System.Guid)
+  - Microsoft.Health.Events.SubscriptionManager.UpdateSubscription(Microsoft.Health.Events.Subscription)
+  langs:
+  - csharp
+  - vb
+  name: SubscriptionManager
+  nameWithType: SubscriptionManager
+  fullName: Microsoft.Health.Events.SubscriptionManager
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health/Eventing/SubscriptionManager.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: SubscriptionManager
+    path: Eventing/SubscriptionManager.cs
+    startLine: 33
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Events
+  summary: "\nThe SubscriptionManager class is used to manage an application's eventing subscriptions.\n"
+  remarks: "\nA subscription allows an application to receive a notification when a specific event happens \non the HealthVault platform. For example, an application may wish to be notified when any BloodGlucose\nitems are added to the records it is authorized to see. \n\nSubscriptions are described by the <xref href=\"Microsoft.Health.Events.Subscription\" data-throw-if-not-resolved=\"false\"></xref> class and classes that are derived from it. \n\nThe Subscription class itself contains the <xref href=\"Microsoft.Health.Events.CommonSubscriptionData\" data-throw-if-not-resolved=\"false\"></xref> class, storing\nthe notification channel (which defines how the information\nis communicated to the application) and a unique id for the subscription.\n\nThe derived class denotes the type of event that the subscription describes (for example, the\n<xref href=\"Microsoft.Health.Events.HealthRecordItemChangedSubscription\" data-throw-if-not-resolved=\"false\"></xref> class subscribes to item changes in a record) and any specific\ninformation that is required for the subscription.\n"
+  example: []
+  syntax:
+    content: public class SubscriptionManager
+    content.vb: Public Class SubscriptionManager
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.Events.SubscriptionManager.#ctor(Microsoft.Health.ApplicationConnection)
+  commentId: M:Microsoft.Health.Events.SubscriptionManager.#ctor(Microsoft.Health.ApplicationConnection)
+  id: '#ctor(Microsoft.Health.ApplicationConnection)'
+  parent: Microsoft.Health.Events.SubscriptionManager
+  langs:
+  - csharp
+  - vb
+  name: SubscriptionManager(ApplicationConnection)
+  nameWithType: SubscriptionManager.SubscriptionManager(ApplicationConnection)
+  fullName: Microsoft.Health.Events.SubscriptionManager.SubscriptionManager(Microsoft.Health.ApplicationConnection)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/Eventing/SubscriptionManager.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: Eventing/SubscriptionManager.cs
+    startLine: 39
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Events
+  summary: "\nCreate an instance of the SubscriptionManager class based a connection.\n"
+  example: []
+  syntax:
+    content: public SubscriptionManager(ApplicationConnection connection)
+    content.vb: Public Sub New(connection As ApplicationConnection)
+    parameters:
+    - id: connection
+      type: Microsoft.Health.ApplicationConnection
+      description: The application connection.
+  overload: Microsoft.Health.Events.SubscriptionManager.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Events.SubscriptionManager.Subscribe(Microsoft.Health.Events.Subscription)
+  commentId: M:Microsoft.Health.Events.SubscriptionManager.Subscribe(Microsoft.Health.Events.Subscription)
+  id: Subscribe(Microsoft.Health.Events.Subscription)
+  parent: Microsoft.Health.Events.SubscriptionManager
+  langs:
+  - csharp
+  - vb
+  name: Subscribe(Subscription)
+  nameWithType: SubscriptionManager.Subscribe(Subscription)
+  fullName: Microsoft.Health.Events.SubscriptionManager.Subscribe(Microsoft.Health.Events.Subscription)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/Eventing/SubscriptionManager.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Subscribe
+    path: Eventing/SubscriptionManager.cs
+    startLine: 80
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Events
+  summary: "\nRegister a subscription with the HealthVault platform.\n"
+  remarks: "\nAfter the subscription is registered the <xref href=\"Microsoft.Health.Events.CommonSubscriptionData.Id\" data-throw-if-not-resolved=\"false\"></xref>\nproperty will be set to the unique identifier of the subscription.\nApplications may want to save this identifier to modify the subscription later. \n"
+  example: []
+  syntax:
+    content: public void Subscribe(Subscription subscription)
+    content.vb: Public Sub Subscribe(subscription As Subscription)
+    parameters:
+    - id: subscription
+      type: Microsoft.Health.Events.Subscription
+      description: The subscription to register.
+  overload: Microsoft.Health.Events.SubscriptionManager.Subscribe*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">subscription</span> parameter is <strong>null</strong>.\n"
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: "\nThe <xref href=\"Microsoft.Health.Events.CommonSubscriptionData.Id\" data-throw-if-not-resolved=\"false\"></xref> property is not <strong>null</strong>.\n"
+  - type: Microsoft.Health.HealthServiceException
+    commentId: T:Microsoft.Health.HealthServiceException
+    description: "\nThe HealthVault service returned an error.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Events.SubscriptionManager.Unsubscribe(Microsoft.Health.Events.Subscription)
+  commentId: M:Microsoft.Health.Events.SubscriptionManager.Unsubscribe(Microsoft.Health.Events.Subscription)
+  id: Unsubscribe(Microsoft.Health.Events.Subscription)
+  parent: Microsoft.Health.Events.SubscriptionManager
+  langs:
+  - csharp
+  - vb
+  name: Unsubscribe(Subscription)
+  nameWithType: SubscriptionManager.Unsubscribe(Subscription)
+  fullName: Microsoft.Health.Events.SubscriptionManager.Unsubscribe(Microsoft.Health.Events.Subscription)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/Eventing/SubscriptionManager.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Unsubscribe
+    path: Eventing/SubscriptionManager.cs
+    startLine: 130
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Events
+  summary: "\nUnregister the subscription from the HealthVault platform.\n"
+  example: []
+  syntax:
+    content: public void Unsubscribe(Subscription subscription)
+    content.vb: Public Sub Unsubscribe(subscription As Subscription)
+    parameters:
+    - id: subscription
+      type: Microsoft.Health.Events.Subscription
+      description: The subscription to unsubscribe.
+  overload: Microsoft.Health.Events.SubscriptionManager.Unsubscribe*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">subscription</span> parameter is <strong>null</strong>.\n"
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: "\nThe <xref href=\"Microsoft.Health.Events.CommonSubscriptionData.Id\" data-throw-if-not-resolved=\"false\"></xref> property is <strong>null</strong>.\n"
+  - type: Microsoft.Health.HealthServiceException
+    commentId: T:Microsoft.Health.HealthServiceException
+    description: "\nThe HealthVault service returned an error.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Events.SubscriptionManager.Unsubscribe(System.Guid)
+  commentId: M:Microsoft.Health.Events.SubscriptionManager.Unsubscribe(System.Guid)
+  id: Unsubscribe(System.Guid)
+  parent: Microsoft.Health.Events.SubscriptionManager
+  langs:
+  - csharp
+  - vb
+  name: Unsubscribe(Guid)
+  nameWithType: SubscriptionManager.Unsubscribe(Guid)
+  fullName: Microsoft.Health.Events.SubscriptionManager.Unsubscribe(System.Guid)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/Eventing/SubscriptionManager.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Unsubscribe
+    path: Eventing/SubscriptionManager.cs
+    startLine: 147
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Events
+  summary: "\nUnregister a subscription from the HealthVault platform.\n"
+  example: []
+  syntax:
+    content: public void Unsubscribe(Guid subscriptionId)
+    content.vb: Public Sub Unsubscribe(subscriptionId As Guid)
+    parameters:
+    - id: subscriptionId
+      type: System.Guid
+      description: The unique id of the subscription.
+  overload: Microsoft.Health.Events.SubscriptionManager.Unsubscribe*
+  exceptions:
+  - type: Microsoft.Health.HealthServiceException
+    commentId: T:Microsoft.Health.HealthServiceException
+    description: "\nThe HealthVault service returned an error.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Events.SubscriptionManager.UpdateSubscription(Microsoft.Health.Events.Subscription)
+  commentId: M:Microsoft.Health.Events.SubscriptionManager.UpdateSubscription(Microsoft.Health.Events.Subscription)
+  id: UpdateSubscription(Microsoft.Health.Events.Subscription)
+  parent: Microsoft.Health.Events.SubscriptionManager
+  langs:
+  - csharp
+  - vb
+  name: UpdateSubscription(Subscription)
+  nameWithType: SubscriptionManager.UpdateSubscription(Subscription)
+  fullName: Microsoft.Health.Events.SubscriptionManager.UpdateSubscription(Microsoft.Health.Events.Subscription)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/Eventing/SubscriptionManager.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: UpdateSubscription
+    path: Eventing/SubscriptionManager.cs
+    startLine: 179
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Events
+  summary: "\nUpdate an existing subscription.\n"
+  example: []
+  syntax:
+    content: public void UpdateSubscription(Subscription subscription)
+    content.vb: Public Sub UpdateSubscription(subscription As Subscription)
+    parameters:
+    - id: subscription
+      type: Microsoft.Health.Events.Subscription
+      description: The subscription
+  overload: Microsoft.Health.Events.SubscriptionManager.UpdateSubscription*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">subscription</span> parameter is <strong>null</strong>.\n"
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: "\nThe <xref href=\"Microsoft.Health.Events.CommonSubscriptionData.Id\" data-throw-if-not-resolved=\"false\"></xref> property is <strong>null</strong>.\n"
+  - type: Microsoft.Health.HealthServiceException
+    commentId: T:Microsoft.Health.HealthServiceException
+    description: "\nThe HealthVault service returned an error.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Events.SubscriptionManager.GetSubscriptions
+  commentId: M:Microsoft.Health.Events.SubscriptionManager.GetSubscriptions
+  id: GetSubscriptions
+  parent: Microsoft.Health.Events.SubscriptionManager
+  langs:
+  - csharp
+  - vb
+  name: GetSubscriptions()
+  nameWithType: SubscriptionManager.GetSubscriptions()
+  fullName: Microsoft.Health.Events.SubscriptionManager.GetSubscriptions()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/Eventing/SubscriptionManager.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetSubscriptions
+    path: Eventing/SubscriptionManager.cs
+    startLine: 209
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Events
+  summary: "\nRetrieve a list of all the subscriptions for this application.\n"
+  example: []
+  syntax:
+    content: public IList<Subscription> GetSubscriptions()
+    content.vb: Public Function GetSubscriptions As IList(Of Subscription)
+    return:
+      type: System.Collections.Generic.IList{Microsoft.Health.Events.Subscription}
+      description: A list of subscriptions.
+  overload: Microsoft.Health.Events.SubscriptionManager.GetSubscriptions*
+  exceptions:
+  - type: Microsoft.Health.HealthServiceException
+    commentId: T:Microsoft.Health.HealthServiceException
+    description: "\nThe HealthVault service returned an error.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Events.SubscriptionManager.ApplicationConnection
+  commentId: P:Microsoft.Health.Events.SubscriptionManager.ApplicationConnection
+  id: ApplicationConnection
+  parent: Microsoft.Health.Events.SubscriptionManager
+  langs:
+  - csharp
+  - vb
+  name: ApplicationConnection
+  nameWithType: SubscriptionManager.ApplicationConnection
+  fullName: Microsoft.Health.Events.SubscriptionManager.ApplicationConnection
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/Eventing/SubscriptionManager.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ApplicationConnection
+    path: Eventing/SubscriptionManager.cs
+    startLine: 235
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Events
+  summary: "\nThe connection of the application. \n"
+  example: []
+  syntax:
+    content: public ApplicationConnection ApplicationConnection { get; set; }
+    content.vb: Public Property ApplicationConnection As ApplicationConnection
+    parameters: []
+    return:
+      type: Microsoft.Health.ApplicationConnection
+  overload: Microsoft.Health.Events.SubscriptionManager.ApplicationConnection*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Microsoft.Health.Events.Subscription
+  commentId: T:Microsoft.Health.Events.Subscription
+  parent: Microsoft.Health.Events
+  isExternal: false
+  name: Subscription
+  nameWithType: Subscription
+  fullName: Microsoft.Health.Events.Subscription
+- uid: Microsoft.Health.Events.CommonSubscriptionData
+  commentId: T:Microsoft.Health.Events.CommonSubscriptionData
+  parent: Microsoft.Health.Events
+  isExternal: false
+  name: CommonSubscriptionData
+  nameWithType: CommonSubscriptionData
+  fullName: Microsoft.Health.Events.CommonSubscriptionData
+- uid: Microsoft.Health.Events.HealthRecordItemChangedSubscription
+  commentId: T:Microsoft.Health.Events.HealthRecordItemChangedSubscription
+  isExternal: false
+  name: HealthRecordItemChangedSubscription
+  nameWithType: HealthRecordItemChangedSubscription
+  fullName: Microsoft.Health.Events.HealthRecordItemChangedSubscription
+- uid: Microsoft.Health.Events
+  commentId: N:Microsoft.Health.Events
+  isExternal: false
+  name: Microsoft.Health.Events
+  nameWithType: Microsoft.Health.Events
+  fullName: Microsoft.Health.Events
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.Events.SubscriptionManager.#ctor*
+  commentId: Overload:Microsoft.Health.Events.SubscriptionManager.#ctor
+  isExternal: false
+  name: SubscriptionManager
+  nameWithType: SubscriptionManager.SubscriptionManager
+  fullName: Microsoft.Health.Events.SubscriptionManager.SubscriptionManager
+- uid: Microsoft.Health.ApplicationConnection
+  commentId: T:Microsoft.Health.ApplicationConnection
+  parent: Microsoft.Health
+  isExternal: false
+  name: ApplicationConnection
+  nameWithType: ApplicationConnection
+  fullName: Microsoft.Health.ApplicationConnection
+- uid: Microsoft.Health
+  commentId: N:Microsoft.Health
+  isExternal: false
+  name: Microsoft.Health
+  nameWithType: Microsoft.Health
+  fullName: Microsoft.Health
+- uid: Microsoft.Health.Events.CommonSubscriptionData.Id
+  commentId: P:Microsoft.Health.Events.CommonSubscriptionData.Id
+- uid: Microsoft.Health.Events.SubscriptionManager.Subscribe*
+  commentId: Overload:Microsoft.Health.Events.SubscriptionManager.Subscribe
+  isExternal: false
+  name: Subscribe
+  nameWithType: SubscriptionManager.Subscribe
+  fullName: Microsoft.Health.Events.SubscriptionManager.Subscribe
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+- uid: Microsoft.Health.HealthServiceException
+  commentId: T:Microsoft.Health.HealthServiceException
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthServiceException
+  nameWithType: HealthServiceException
+  fullName: Microsoft.Health.HealthServiceException
+- uid: Microsoft.Health.Events.SubscriptionManager.Unsubscribe*
+  commentId: Overload:Microsoft.Health.Events.SubscriptionManager.Unsubscribe
+  isExternal: false
+  name: Unsubscribe
+  nameWithType: SubscriptionManager.Unsubscribe
+  fullName: Microsoft.Health.Events.SubscriptionManager.Unsubscribe
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: Microsoft.Health.Events.SubscriptionManager.UpdateSubscription*
+  commentId: Overload:Microsoft.Health.Events.SubscriptionManager.UpdateSubscription
+  isExternal: false
+  name: UpdateSubscription
+  nameWithType: SubscriptionManager.UpdateSubscription
+  fullName: Microsoft.Health.Events.SubscriptionManager.UpdateSubscription
+- uid: Microsoft.Health.Events.SubscriptionManager.GetSubscriptions*
+  commentId: Overload:Microsoft.Health.Events.SubscriptionManager.GetSubscriptions
+  isExternal: false
+  name: GetSubscriptions
+  nameWithType: SubscriptionManager.GetSubscriptions
+  fullName: Microsoft.Health.Events.SubscriptionManager.GetSubscriptions
+- uid: System.Collections.Generic.IList{Microsoft.Health.Events.Subscription}
+  commentId: T:System.Collections.Generic.IList{Microsoft.Health.Events.Subscription}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<Subscription>
+  nameWithType: IList<Subscription>
+  fullName: System.Collections.Generic.IList<Microsoft.Health.Events.Subscription>
+  nameWithType.vb: IList(Of Subscription)
+  fullName.vb: System.Collections.Generic.IList(Of Microsoft.Health.Events.Subscription)
+  name.vb: IList(Of Subscription)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.Events.Subscription
+    name: Subscription
+    nameWithType: Subscription
+    fullName: Microsoft.Health.Events.Subscription
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.Events.Subscription
+    name: Subscription
+    nameWithType: Subscription
+    fullName: Microsoft.Health.Events.Subscription
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Microsoft.Health.Events.SubscriptionManager.ApplicationConnection*
+  commentId: Overload:Microsoft.Health.Events.SubscriptionManager.ApplicationConnection
+  isExternal: false
+  name: ApplicationConnection
+  nameWithType: SubscriptionManager.ApplicationConnection
+  fullName: Microsoft.Health.Events.SubscriptionManager.ApplicationConnection

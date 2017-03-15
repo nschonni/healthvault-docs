@@ -1,0 +1,1132 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.ItemTypes.Service
+  commentId: T:Microsoft.Health.ItemTypes.Service
+  id: Service
+  parent: Microsoft.Health.ItemTypes
+  children:
+  - Microsoft.Health.ItemTypes.Service.#ctor
+  - Microsoft.Health.ItemTypes.Service.#ctor(Microsoft.Health.ItemTypes.CodableValue,Microsoft.Health.ItemTypes.DurationValue,Microsoft.Health.ItemTypes.ClaimAmounts)
+  - Microsoft.Health.ItemTypes.Service.BillingCode
+  - Microsoft.Health.ItemTypes.Service.ClaimAmounts
+  - Microsoft.Health.ItemTypes.Service.Diagnosis
+  - Microsoft.Health.ItemTypes.Service.Notes
+  - Microsoft.Health.ItemTypes.Service.ParseXml(System.Xml.XPath.XPathNavigator)
+  - Microsoft.Health.ItemTypes.Service.ServiceDates
+  - Microsoft.Health.ItemTypes.Service.ServiceType
+  - Microsoft.Health.ItemTypes.Service.ToString
+  - Microsoft.Health.ItemTypes.Service.WriteXml(System.String,System.Xml.XmlWriter)
+  langs:
+  - csharp
+  - vb
+  name: Service
+  nameWithType: Service
+  fullName: Microsoft.Health.ItemTypes.Service
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Service.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Service
+    path: Service.cs
+    startLine: 19
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nInformation about a specific service provided on an explanation of benefits.\n"
+  example: []
+  syntax:
+    content: 'public class Service : HealthRecordItemData'
+    content.vb: >-
+      Public Class Service
+          Inherits HealthRecordItemData
+  inheritance:
+  - System.Object
+  - Microsoft.Health.ItemTypes.HealthRecordItemData
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.ItemTypes.Service.#ctor
+  commentId: M:Microsoft.Health.ItemTypes.Service.#ctor
+  id: '#ctor'
+  parent: Microsoft.Health.ItemTypes.Service
+  langs:
+  - csharp
+  - vb
+  name: Service()
+  nameWithType: Service.Service()
+  fullName: Microsoft.Health.ItemTypes.Service.Service()
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Service.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: Service.cs
+    startLine: 31
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.ItemTypes.Service\" data-throw-if-not-resolved=\"false\"></xref> class with default values.\n"
+  remarks: "\nThis item is not added to the health record until the\n<xref href=\"Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)\" data-throw-if-not-resolved=\"false\"></xref> method\nis called\n"
+  example: []
+  syntax:
+    content: public Service()
+    content.vb: Public Sub New
+  overload: Microsoft.Health.ItemTypes.Service.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.Service.#ctor(Microsoft.Health.ItemTypes.CodableValue,Microsoft.Health.ItemTypes.DurationValue,Microsoft.Health.ItemTypes.ClaimAmounts)
+  commentId: M:Microsoft.Health.ItemTypes.Service.#ctor(Microsoft.Health.ItemTypes.CodableValue,Microsoft.Health.ItemTypes.DurationValue,Microsoft.Health.ItemTypes.ClaimAmounts)
+  id: '#ctor(Microsoft.Health.ItemTypes.CodableValue,Microsoft.Health.ItemTypes.DurationValue,Microsoft.Health.ItemTypes.ClaimAmounts)'
+  parent: Microsoft.Health.ItemTypes.Service
+  langs:
+  - csharp
+  - vb
+  name: Service(CodableValue, DurationValue, ClaimAmounts)
+  nameWithType: Service.Service(CodableValue, DurationValue, ClaimAmounts)
+  fullName: Microsoft.Health.ItemTypes.Service.Service(Microsoft.Health.ItemTypes.CodableValue, Microsoft.Health.ItemTypes.DurationValue, Microsoft.Health.ItemTypes.ClaimAmounts)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Service.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: Service.cs
+    startLine: 60
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.ItemTypes.Service\" data-throw-if-not-resolved=\"false\"></xref> class specifying mandatory values.\n"
+  remarks: "\nThis item is not added to the health record until the\n<xref href=\"Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)\" data-throw-if-not-resolved=\"false\"></xref> method\nis called.\n"
+  example: []
+  syntax:
+    content: public Service(CodableValue serviceType, DurationValue serviceDates, ClaimAmounts claimAmounts)
+    content.vb: Public Sub New(serviceType As CodableValue, serviceDates As DurationValue, claimAmounts As ClaimAmounts)
+    parameters:
+    - id: serviceType
+      type: Microsoft.Health.ItemTypes.CodableValue
+      description: "\nThe type of the service.\n"
+    - id: serviceDates
+      type: Microsoft.Health.ItemTypes.DurationValue
+      description: "\nThe dates for this service.\n"
+    - id: claimAmounts
+      type: Microsoft.Health.ItemTypes.ClaimAmounts
+      description: "\nThe financial information for this service.\n"
+  overload: Microsoft.Health.ItemTypes.Service.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nIf <span class=\"paramref\">serviceType</span> is <strong> null </strong>.\nIf <span class=\"paramref\">serviceDates</span> is <strong> null </strong>.\nIf <span class=\"paramref\">claimAmounts</span> is <strong> null </strong>.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.Service.ParseXml(System.Xml.XPath.XPathNavigator)
+  commentId: M:Microsoft.Health.ItemTypes.Service.ParseXml(System.Xml.XPath.XPathNavigator)
+  id: ParseXml(System.Xml.XPath.XPathNavigator)
+  parent: Microsoft.Health.ItemTypes.Service
+  langs:
+  - csharp
+  - vb
+  name: ParseXml(XPathNavigator)
+  nameWithType: Service.ParseXml(XPathNavigator)
+  fullName: Microsoft.Health.ItemTypes.Service.ParseXml(System.Xml.XPath.XPathNavigator)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Service.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ParseXml
+    path: Service.cs
+    startLine: 82
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nPopulates this <xref href=\"Microsoft.Health.ItemTypes.Service\" data-throw-if-not-resolved=\"false\"></xref> instance from the data in the specified XML.\n"
+  example: []
+  syntax:
+    content: public override void ParseXml(XPathNavigator navigator)
+    content.vb: Public Overrides Sub ParseXml(navigator As XPathNavigator)
+    parameters:
+    - id: navigator
+      type: System.Xml.XPath.XPathNavigator
+      description: "\nThe XML to get the Service data from.\n"
+  overridden: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  overload: Microsoft.Health.ItemTypes.Service.ParseXml*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nIf <span class=\"paramref\">navigator</span> parameter is <strong>null</strong>.\n"
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Microsoft.Health.ItemTypes.Service.WriteXml(System.String,System.Xml.XmlWriter)
+  commentId: M:Microsoft.Health.ItemTypes.Service.WriteXml(System.String,System.Xml.XmlWriter)
+  id: WriteXml(System.String,System.Xml.XmlWriter)
+  parent: Microsoft.Health.ItemTypes.Service
+  langs:
+  - csharp
+  - vb
+  name: WriteXml(String, XmlWriter)
+  nameWithType: Service.WriteXml(String, XmlWriter)
+  fullName: Microsoft.Health.ItemTypes.Service.WriteXml(System.String, System.Xml.XmlWriter)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Service.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: WriteXml
+    path: Service.cs
+    startLine: 130
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nWrites the XML representation of the Service into\nthe specified XML writer.\n"
+  example: []
+  syntax:
+    content: public override void WriteXml(string nodeName, XmlWriter writer)
+    content.vb: Public Overrides Sub WriteXml(nodeName As String, writer As XmlWriter)
+    parameters:
+    - id: nodeName
+      type: System.String
+      description: "\nThe name of the outer node for the Service.\n"
+    - id: writer
+      type: System.Xml.XmlWriter
+      description: "\nThe XML writer into which the Service should be\nwritten.\n"
+  overridden: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+  overload: Microsoft.Health.ItemTypes.Service.WriteXml*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">nodeName</span> parameter is <strong>null</strong> or empty.\n"
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nIf <span class=\"paramref\">writer</span> parameter is <strong>null</strong>.\n"
+  - type: Microsoft.Health.HealthRecordItemSerializationException
+    commentId: T:Microsoft.Health.HealthRecordItemSerializationException
+    description: "\nIf <xref href=\"Microsoft.Health.ItemTypes.Service.ServiceType\" data-throw-if-not-resolved=\"false\"></xref> is <strong>null</strong>.\nIf <xref href=\"Microsoft.Health.ItemTypes.Service.ServiceDates\" data-throw-if-not-resolved=\"false\"></xref> is <strong>null</strong>.\nIf <xref href=\"Microsoft.Health.ItemTypes.Service.ClaimAmounts\" data-throw-if-not-resolved=\"false\"></xref> is <strong>null</strong>.\n"
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Microsoft.Health.ItemTypes.Service.ServiceType
+  commentId: P:Microsoft.Health.ItemTypes.Service.ServiceType
+  id: ServiceType
+  parent: Microsoft.Health.ItemTypes.Service
+  langs:
+  - csharp
+  - vb
+  name: ServiceType
+  nameWithType: Service.ServiceType
+  fullName: Microsoft.Health.ItemTypes.Service.ServiceType
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Service.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ServiceType
+    path: Service.cs
+    startLine: 164
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the type of the service.\n"
+  example: []
+  syntax:
+    content: public CodableValue ServiceType { get; set; }
+    content.vb: Public Property ServiceType As CodableValue
+    parameters: []
+    return:
+      type: Microsoft.Health.ItemTypes.CodableValue
+  overload: Microsoft.Health.ItemTypes.Service.ServiceType*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">value</span> parameter is <strong> null </strong>.\n"
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.Service.Diagnosis
+  commentId: P:Microsoft.Health.ItemTypes.Service.Diagnosis
+  id: Diagnosis
+  parent: Microsoft.Health.ItemTypes.Service
+  langs:
+  - csharp
+  - vb
+  name: Diagnosis
+  nameWithType: Service.Diagnosis
+  fullName: Microsoft.Health.ItemTypes.Service.Diagnosis
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Service.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Diagnosis
+    path: Service.cs
+    startLine: 185
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the diagnosis.\n"
+  remarks: "\nIf there is no information about the diagnosis the value should be set to <strong>null</strong>.\n"
+  example: []
+  syntax:
+    content: public CodableValue Diagnosis { get; set; }
+    content.vb: Public Property Diagnosis As CodableValue
+    parameters: []
+    return:
+      type: Microsoft.Health.ItemTypes.CodableValue
+  overload: Microsoft.Health.ItemTypes.Service.Diagnosis*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.Service.BillingCode
+  commentId: P:Microsoft.Health.ItemTypes.Service.BillingCode
+  id: BillingCode
+  parent: Microsoft.Health.ItemTypes.Service
+  langs:
+  - csharp
+  - vb
+  name: BillingCode
+  nameWithType: Service.BillingCode
+  fullName: Microsoft.Health.ItemTypes.Service.BillingCode
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Service.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: BillingCode
+    path: Service.cs
+    startLine: 202
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the billing code.\n"
+  remarks: "\nIf there is no information about the billing code the value should be set to <strong>null</strong>.\n"
+  example: []
+  syntax:
+    content: public CodableValue BillingCode { get; set; }
+    content.vb: Public Property BillingCode As CodableValue
+    parameters: []
+    return:
+      type: Microsoft.Health.ItemTypes.CodableValue
+  overload: Microsoft.Health.ItemTypes.Service.BillingCode*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.Service.ServiceDates
+  commentId: P:Microsoft.Health.ItemTypes.Service.ServiceDates
+  id: ServiceDates
+  parent: Microsoft.Health.ItemTypes.Service
+  langs:
+  - csharp
+  - vb
+  name: ServiceDates
+  nameWithType: Service.ServiceDates
+  fullName: Microsoft.Health.ItemTypes.Service.ServiceDates
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Service.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ServiceDates
+    path: Service.cs
+    startLine: 219
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the dates for this service.\n"
+  example: []
+  syntax:
+    content: public DurationValue ServiceDates { get; set; }
+    content.vb: Public Property ServiceDates As DurationValue
+    parameters: []
+    return:
+      type: Microsoft.Health.ItemTypes.DurationValue
+  overload: Microsoft.Health.ItemTypes.Service.ServiceDates*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">value</span> parameter is <strong>null</strong>.\n"
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.Service.ClaimAmounts
+  commentId: P:Microsoft.Health.ItemTypes.Service.ClaimAmounts
+  id: ClaimAmounts
+  parent: Microsoft.Health.ItemTypes.Service
+  langs:
+  - csharp
+  - vb
+  name: ClaimAmounts
+  nameWithType: Service.ClaimAmounts
+  fullName: Microsoft.Health.ItemTypes.Service.ClaimAmounts
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Service.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ClaimAmounts
+    path: Service.cs
+    startLine: 239
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the financial information for this service.\n"
+  example: []
+  syntax:
+    content: public ClaimAmounts ClaimAmounts { get; set; }
+    content.vb: Public Property ClaimAmounts As ClaimAmounts
+    parameters: []
+    return:
+      type: Microsoft.Health.ItemTypes.ClaimAmounts
+  overload: Microsoft.Health.ItemTypes.Service.ClaimAmounts*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">value</span> parameter is <strong>null</strong>.\n"
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.Service.Notes
+  commentId: P:Microsoft.Health.ItemTypes.Service.Notes
+  id: Notes
+  parent: Microsoft.Health.ItemTypes.Service
+  langs:
+  - csharp
+  - vb
+  name: Notes
+  nameWithType: Service.Notes
+  fullName: Microsoft.Health.ItemTypes.Service.Notes
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Service.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Notes
+    path: Service.cs
+    startLine: 259
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets a collection of additional information about this service.\n"
+  remarks: "\nIf there is no information about the notes the collection should be empty.\n"
+  example: []
+  syntax:
+    content: public Collection<string> Notes { get; }
+    content.vb: Public ReadOnly Property Notes As Collection(Of String)
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{System.String}
+  overload: Microsoft.Health.ItemTypes.Service.Notes*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ItemTypes.Service.ToString
+  commentId: M:Microsoft.Health.ItemTypes.Service.ToString
+  id: ToString
+  parent: Microsoft.Health.ItemTypes.Service
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Service.ToString()
+  fullName: Microsoft.Health.ItemTypes.Service.ToString()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Service.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ToString
+    path: Service.cs
+    startLine: 274
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets a string representation of the Service.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    content.vb: Public Overrides Function ToString As String
+    return:
+      type: System.String
+      description: "\nA string representation of the Service.\n"
+  overridden: System.Object.ToString
+  overload: Microsoft.Health.ItemTypes.Service.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: Microsoft.Health.ItemTypes
+  commentId: N:Microsoft.Health.ItemTypes
+  isExternal: false
+  name: Microsoft.Health.ItemTypes
+  nameWithType: Microsoft.Health.ItemTypes
+  fullName: Microsoft.Health.ItemTypes
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Microsoft.Health.ItemTypes.HealthRecordItemData
+  commentId: T:Microsoft.Health.ItemTypes.HealthRecordItemData
+  parent: Microsoft.Health.ItemTypes
+  isExternal: false
+  name: HealthRecordItemData
+  nameWithType: HealthRecordItemData
+  fullName: Microsoft.Health.ItemTypes.HealthRecordItemData
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.ItemTypes.Service
+  commentId: T:Microsoft.Health.ItemTypes.Service
+  isExternal: false
+  name: Service
+  nameWithType: Service
+  fullName: Microsoft.Health.ItemTypes.Service
+- uid: Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)
+  commentId: M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)
+- uid: Microsoft.Health.ItemTypes.Service.#ctor*
+  commentId: Overload:Microsoft.Health.ItemTypes.Service.#ctor
+  isExternal: false
+  name: Service
+  nameWithType: Service.Service
+  fullName: Microsoft.Health.ItemTypes.Service.Service
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+- uid: Microsoft.Health.ItemTypes.CodableValue
+  commentId: T:Microsoft.Health.ItemTypes.CodableValue
+  parent: Microsoft.Health.ItemTypes
+  isExternal: false
+  name: CodableValue
+  nameWithType: CodableValue
+  fullName: Microsoft.Health.ItemTypes.CodableValue
+- uid: Microsoft.Health.ItemTypes.DurationValue
+  commentId: T:Microsoft.Health.ItemTypes.DurationValue
+  parent: Microsoft.Health.ItemTypes
+  isExternal: false
+  name: DurationValue
+  nameWithType: DurationValue
+  fullName: Microsoft.Health.ItemTypes.DurationValue
+- uid: Microsoft.Health.ItemTypes.ClaimAmounts
+  commentId: T:Microsoft.Health.ItemTypes.ClaimAmounts
+  parent: Microsoft.Health.ItemTypes
+  isExternal: false
+  name: ClaimAmounts
+  nameWithType: ClaimAmounts
+  fullName: Microsoft.Health.ItemTypes.ClaimAmounts
+- uid: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  commentId: M:Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  parent: Microsoft.Health.ItemTypes.HealthRecordItemData
+  isExternal: true
+  name: ParseXml(XPathNavigator)
+  nameWithType: HealthRecordItemData.ParseXml(XPathNavigator)
+  fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  spec.csharp:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+    name: ParseXml
+    nameWithType: HealthRecordItemData.ParseXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XPath.XPathNavigator
+    name: XPathNavigator
+    nameWithType: XPathNavigator
+    fullName: System.Xml.XPath.XPathNavigator
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+    name: ParseXml
+    nameWithType: HealthRecordItemData.ParseXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XPath.XPathNavigator
+    name: XPathNavigator
+    nameWithType: XPathNavigator
+    fullName: System.Xml.XPath.XPathNavigator
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.Service.ParseXml*
+  commentId: Overload:Microsoft.Health.ItemTypes.Service.ParseXml
+  isExternal: false
+  name: ParseXml
+  nameWithType: Service.ParseXml
+  fullName: Microsoft.Health.ItemTypes.Service.ParseXml
+- uid: System.Xml.XPath.XPathNavigator
+  commentId: T:System.Xml.XPath.XPathNavigator
+  parent: System.Xml.XPath
+  isExternal: true
+  name: XPathNavigator
+  nameWithType: XPathNavigator
+  fullName: System.Xml.XPath.XPathNavigator
+- uid: System.Xml.XPath
+  commentId: N:System.Xml.XPath
+  isExternal: false
+  name: System.Xml.XPath
+  nameWithType: System.Xml.XPath
+  fullName: System.Xml.XPath
+- uid: Microsoft.Health.ItemTypes.Service.ServiceType
+  commentId: P:Microsoft.Health.ItemTypes.Service.ServiceType
+- uid: Microsoft.Health.ItemTypes.Service.ServiceDates
+  commentId: P:Microsoft.Health.ItemTypes.Service.ServiceDates
+- uid: Microsoft.Health.ItemTypes.Service.ClaimAmounts
+  commentId: P:Microsoft.Health.ItemTypes.Service.ClaimAmounts
+- uid: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+  commentId: M:Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+  parent: Microsoft.Health.ItemTypes.HealthRecordItemData
+  isExternal: true
+  name: WriteXml(String, XmlWriter)
+  nameWithType: HealthRecordItemData.WriteXml(String, XmlWriter)
+  fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String, System.Xml.XmlWriter)
+  spec.csharp:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+    name: WriteXml
+    nameWithType: HealthRecordItemData.WriteXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+    name: WriteXml
+    nameWithType: HealthRecordItemData.WriteXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.Service.WriteXml*
+  commentId: Overload:Microsoft.Health.ItemTypes.Service.WriteXml
+  isExternal: false
+  name: WriteXml
+  nameWithType: Service.WriteXml
+  fullName: Microsoft.Health.ItemTypes.Service.WriteXml
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: Microsoft.Health.HealthRecordItemSerializationException
+  commentId: T:Microsoft.Health.HealthRecordItemSerializationException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Xml.XmlWriter
+  commentId: T:System.Xml.XmlWriter
+  parent: System.Xml
+  isExternal: true
+  name: XmlWriter
+  nameWithType: XmlWriter
+  fullName: System.Xml.XmlWriter
+- uid: System.Xml
+  commentId: N:System.Xml
+  isExternal: false
+  name: System.Xml
+  nameWithType: System.Xml
+  fullName: System.Xml
+- uid: Microsoft.Health.ItemTypes.Service.ServiceType*
+  commentId: Overload:Microsoft.Health.ItemTypes.Service.ServiceType
+  isExternal: false
+  name: ServiceType
+  nameWithType: Service.ServiceType
+  fullName: Microsoft.Health.ItemTypes.Service.ServiceType
+- uid: Microsoft.Health.ItemTypes.Service.Diagnosis*
+  commentId: Overload:Microsoft.Health.ItemTypes.Service.Diagnosis
+  isExternal: false
+  name: Diagnosis
+  nameWithType: Service.Diagnosis
+  fullName: Microsoft.Health.ItemTypes.Service.Diagnosis
+- uid: Microsoft.Health.ItemTypes.Service.BillingCode*
+  commentId: Overload:Microsoft.Health.ItemTypes.Service.BillingCode
+  isExternal: false
+  name: BillingCode
+  nameWithType: Service.BillingCode
+  fullName: Microsoft.Health.ItemTypes.Service.BillingCode
+- uid: Microsoft.Health.ItemTypes.Service.ServiceDates*
+  commentId: Overload:Microsoft.Health.ItemTypes.Service.ServiceDates
+  isExternal: false
+  name: ServiceDates
+  nameWithType: Service.ServiceDates
+  fullName: Microsoft.Health.ItemTypes.Service.ServiceDates
+- uid: Microsoft.Health.ItemTypes.Service.ClaimAmounts*
+  commentId: Overload:Microsoft.Health.ItemTypes.Service.ClaimAmounts
+  isExternal: false
+  name: ClaimAmounts
+  nameWithType: Service.ClaimAmounts
+  fullName: Microsoft.Health.ItemTypes.Service.ClaimAmounts
+- uid: Microsoft.Health.ItemTypes.Service.Notes*
+  commentId: Overload:Microsoft.Health.ItemTypes.Service.Notes
+  isExternal: false
+  name: Notes
+  nameWithType: Service.Notes
+  fullName: Microsoft.Health.ItemTypes.Service.Notes
+- uid: System.Collections.ObjectModel.Collection{System.String}
+  commentId: T:System.Collections.ObjectModel.Collection{System.String}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<String>
+  nameWithType: Collection<String>
+  fullName: System.Collections.ObjectModel.Collection<System.String>
+  nameWithType.vb: Collection(Of String)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.String)
+  name.vb: Collection(Of String)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1
+  commentId: T:System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<T>
+  nameWithType: Collection<T>
+  fullName: System.Collections.ObjectModel.Collection<T>
+  nameWithType.vb: Collection(Of T)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T)
+  name.vb: Collection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: false
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.Service.ToString*
+  commentId: Overload:Microsoft.Health.ItemTypes.Service.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: Service.ToString
+  fullName: Microsoft.Health.ItemTypes.Service.ToString

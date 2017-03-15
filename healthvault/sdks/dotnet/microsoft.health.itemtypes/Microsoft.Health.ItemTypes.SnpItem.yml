@@ -1,0 +1,767 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.ItemTypes.SnpItem
+  commentId: T:Microsoft.Health.ItemTypes.SnpItem
+  id: SnpItem
+  parent: Microsoft.Health.ItemTypes
+  children:
+  - Microsoft.Health.ItemTypes.SnpItem.#ctor
+  - Microsoft.Health.ItemTypes.SnpItem.#ctor(System.String,System.String,System.String,System.String,System.Int32,System.Int32)
+  - Microsoft.Health.ItemTypes.SnpItem.AssayId
+  - Microsoft.Health.ItemTypes.SnpItem.EndPosition
+  - Microsoft.Health.ItemTypes.SnpItem.ReferenceSnpId
+  - Microsoft.Health.ItemTypes.SnpItem.Result
+  - Microsoft.Health.ItemTypes.SnpItem.StartPosition
+  - Microsoft.Health.ItemTypes.SnpItem.StrandOrientation
+  - Microsoft.Health.ItemTypes.SnpItem.ToString
+  langs:
+  - csharp
+  - vb
+  name: SnpItem
+  nameWithType: SnpItem
+  fullName: Microsoft.Health.ItemTypes.SnpItem
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/SnpItem.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: SnpItem
+    path: SnpItem.cs
+    startLine: 31
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nA SNP test result item.\n"
+  remarks: "\nWithin the comma-separated data, each SNP is encoded as follows:\n\n[refSNP id],[strand orientation],[result],[assay id],[start position],[end position]\n\nWhere:\nrefSNP id: Reference SNP identifier from NCBI dbSNP database.\nstrand orientation: \"+\" encodes top, \"-\" encodes bottom.\nresult: the result of the test.\nassay id: Platform dependent probe set id.\nstart position: Start position on the chromosome.\nend position: End position on the chromosome.\n\nExample: rs1891906,-,GT, SNP_C-315533, 940106, 940107\n"
+  example: []
+  syntax:
+    content: public class SnpItem
+    content.vb: Public Class SnpItem
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.ItemTypes.SnpItem.#ctor
+  commentId: M:Microsoft.Health.ItemTypes.SnpItem.#ctor
+  id: '#ctor'
+  parent: Microsoft.Health.ItemTypes.SnpItem
+  langs:
+  - csharp
+  - vb
+  name: SnpItem()
+  nameWithType: SnpItem.SnpItem()
+  fullName: Microsoft.Health.ItemTypes.SnpItem.SnpItem()
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/SnpItem.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: SnpItem.cs
+    startLine: 38
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nCreates an instance of the <xref href=\"Microsoft.Health.ItemTypes.SnpItem\" data-throw-if-not-resolved=\"false\"></xref> type with default values. \n"
+  example: []
+  syntax:
+    content: public SnpItem()
+    content.vb: Public Sub New
+  overload: Microsoft.Health.ItemTypes.SnpItem.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.SnpItem.#ctor(System.String,System.String,System.String,System.String,System.Int32,System.Int32)
+  commentId: M:Microsoft.Health.ItemTypes.SnpItem.#ctor(System.String,System.String,System.String,System.String,System.Int32,System.Int32)
+  id: '#ctor(System.String,System.String,System.String,System.String,System.Int32,System.Int32)'
+  parent: Microsoft.Health.ItemTypes.SnpItem
+  langs:
+  - csharp
+  - vb
+  name: SnpItem(String, String, String, String, Int32, Int32)
+  nameWithType: SnpItem.SnpItem(String, String, String, String, Int32, Int32)
+  fullName: Microsoft.Health.ItemTypes.SnpItem.SnpItem(System.String, System.String, System.String, System.String, System.Int32, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/SnpItem.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: SnpItem.cs
+    startLine: 53
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nCreates an instance of the <xref href=\"Microsoft.Health.ItemTypes.SnpItem\" data-throw-if-not-resolved=\"false\"></xref> type with the specified values.\n"
+  example: []
+  syntax:
+    content: public SnpItem(string referenceSnpId, string strandOrientation, string result, string assayId, int startPosition, int endPosition)
+    content.vb: Public Sub New(referenceSnpId As String, strandOrientation As String, result As String, assayId As String, startPosition As Integer, endPosition As Integer)
+    parameters:
+    - id: referenceSnpId
+      type: System.String
+      description: Reference SNP Id (rs).
+    - id: strandOrientation
+      type: System.String
+      description: 'The orientation of the strand. '
+    - id: result
+      type: System.String
+      description: 'The result of the SNP test. '
+    - id: assayId
+      type: System.String
+      description: 'The platform dependent probe set id. '
+    - id: startPosition
+      type: System.Int32
+      description: 'The start position on the chromosome. '
+    - id: endPosition
+      type: System.Int32
+      description: 'The end position on the chromosome. '
+  overload: Microsoft.Health.ItemTypes.SnpItem.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.SnpItem.ReferenceSnpId
+  commentId: P:Microsoft.Health.ItemTypes.SnpItem.ReferenceSnpId
+  id: ReferenceSnpId
+  parent: Microsoft.Health.ItemTypes.SnpItem
+  langs:
+  - csharp
+  - vb
+  name: ReferenceSnpId
+  nameWithType: SnpItem.ReferenceSnpId
+  fullName: Microsoft.Health.ItemTypes.SnpItem.ReferenceSnpId
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/SnpItem.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ReferenceSnpId
+    path: SnpItem.cs
+    startLine: 77
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the Reference SNP ID of the result. \n"
+  remarks: "\nFor example, rs132342. \n"
+  example: []
+  syntax:
+    content: public string ReferenceSnpId { get; set; }
+    content.vb: Public Property ReferenceSnpId As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.ItemTypes.SnpItem.ReferenceSnpId*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.SnpItem.StrandOrientation
+  commentId: P:Microsoft.Health.ItemTypes.SnpItem.StrandOrientation
+  id: StrandOrientation
+  parent: Microsoft.Health.ItemTypes.SnpItem
+  langs:
+  - csharp
+  - vb
+  name: StrandOrientation
+  nameWithType: SnpItem.StrandOrientation
+  fullName: Microsoft.Health.ItemTypes.SnpItem.StrandOrientation
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/SnpItem.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: StrandOrientation
+    path: SnpItem.cs
+    startLine: 93
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the orientation of the strand.  \n"
+  remarks: "\nThe value can be either + or -.\n"
+  example: []
+  syntax:
+    content: public string StrandOrientation { get; set; }
+    content.vb: Public Property StrandOrientation As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.ItemTypes.SnpItem.StrandOrientation*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.SnpItem.Result
+  commentId: P:Microsoft.Health.ItemTypes.SnpItem.Result
+  id: Result
+  parent: Microsoft.Health.ItemTypes.SnpItem
+  langs:
+  - csharp
+  - vb
+  name: Result
+  nameWithType: SnpItem.Result
+  fullName: Microsoft.Health.ItemTypes.SnpItem.Result
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/SnpItem.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Result
+    path: SnpItem.cs
+    startLine: 110
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the result of the SNP test.  \n"
+  remarks: "\nFor example, AA, AT. Each letter correspond to one copy of \nthe specified SNP is the customer's genome, since each of us has two \ncopies of each gene under normal circumstance.  \n"
+  example: []
+  syntax:
+    content: public string Result { get; set; }
+    content.vb: Public Property Result As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.ItemTypes.SnpItem.Result*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.SnpItem.AssayId
+  commentId: P:Microsoft.Health.ItemTypes.SnpItem.AssayId
+  id: AssayId
+  parent: Microsoft.Health.ItemTypes.SnpItem
+  langs:
+  - csharp
+  - vb
+  name: AssayId
+  nameWithType: SnpItem.AssayId
+  fullName: Microsoft.Health.ItemTypes.SnpItem.AssayId
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/SnpItem.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: AssayId
+    path: SnpItem.cs
+    startLine: 121
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the assay ID.  \n"
+  example: []
+  syntax:
+    content: public string AssayId { get; set; }
+    content.vb: Public Property AssayId As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.ItemTypes.SnpItem.AssayId*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.SnpItem.StartPosition
+  commentId: P:Microsoft.Health.ItemTypes.SnpItem.StartPosition
+  id: StartPosition
+  parent: Microsoft.Health.ItemTypes.SnpItem
+  langs:
+  - csharp
+  - vb
+  name: StartPosition
+  nameWithType: SnpItem.StartPosition
+  fullName: Microsoft.Health.ItemTypes.SnpItem.StartPosition
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/SnpItem.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: StartPosition
+    path: SnpItem.cs
+    startLine: 132
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the start position.  \n"
+  example: []
+  syntax:
+    content: public int StartPosition { get; set; }
+    content.vb: Public Property StartPosition As Integer
+    parameters: []
+    return:
+      type: System.Int32
+  overload: Microsoft.Health.ItemTypes.SnpItem.StartPosition*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.SnpItem.EndPosition
+  commentId: P:Microsoft.Health.ItemTypes.SnpItem.EndPosition
+  id: EndPosition
+  parent: Microsoft.Health.ItemTypes.SnpItem
+  langs:
+  - csharp
+  - vb
+  name: EndPosition
+  nameWithType: SnpItem.EndPosition
+  fullName: Microsoft.Health.ItemTypes.SnpItem.EndPosition
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/SnpItem.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: EndPosition
+    path: SnpItem.cs
+    startLine: 143
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the end Position.  \n"
+  example: []
+  syntax:
+    content: public int EndPosition { get; set; }
+    content.vb: Public Property EndPosition As Integer
+    parameters: []
+    return:
+      type: System.Int32
+  overload: Microsoft.Health.ItemTypes.SnpItem.EndPosition*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.SnpItem.ToString
+  commentId: M:Microsoft.Health.ItemTypes.SnpItem.ToString
+  id: ToString
+  parent: Microsoft.Health.ItemTypes.SnpItem
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: SnpItem.ToString()
+  fullName: Microsoft.Health.ItemTypes.SnpItem.ToString()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/SnpItem.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ToString
+    path: SnpItem.cs
+    startLine: 154
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets a string representation of the snp result item. \n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    content.vb: Public Overrides Function ToString As String
+    return:
+      type: System.String
+  overridden: System.Object.ToString
+  overload: Microsoft.Health.ItemTypes.SnpItem.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: Microsoft.Health.ItemTypes
+  commentId: N:Microsoft.Health.ItemTypes
+  isExternal: false
+  name: Microsoft.Health.ItemTypes
+  nameWithType: Microsoft.Health.ItemTypes
+  fullName: Microsoft.Health.ItemTypes
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.ItemTypes.SnpItem
+  commentId: T:Microsoft.Health.ItemTypes.SnpItem
+  isExternal: false
+  name: SnpItem
+  nameWithType: SnpItem
+  fullName: Microsoft.Health.ItemTypes.SnpItem
+- uid: Microsoft.Health.ItemTypes.SnpItem.#ctor*
+  commentId: Overload:Microsoft.Health.ItemTypes.SnpItem.#ctor
+  isExternal: false
+  name: SnpItem
+  nameWithType: SnpItem.SnpItem
+  fullName: Microsoft.Health.ItemTypes.SnpItem.SnpItem
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Microsoft.Health.ItemTypes.SnpItem.ReferenceSnpId*
+  commentId: Overload:Microsoft.Health.ItemTypes.SnpItem.ReferenceSnpId
+  isExternal: false
+  name: ReferenceSnpId
+  nameWithType: SnpItem.ReferenceSnpId
+  fullName: Microsoft.Health.ItemTypes.SnpItem.ReferenceSnpId
+- uid: Microsoft.Health.ItemTypes.SnpItem.StrandOrientation*
+  commentId: Overload:Microsoft.Health.ItemTypes.SnpItem.StrandOrientation
+  isExternal: false
+  name: StrandOrientation
+  nameWithType: SnpItem.StrandOrientation
+  fullName: Microsoft.Health.ItemTypes.SnpItem.StrandOrientation
+- uid: Microsoft.Health.ItemTypes.SnpItem.Result*
+  commentId: Overload:Microsoft.Health.ItemTypes.SnpItem.Result
+  isExternal: false
+  name: Result
+  nameWithType: SnpItem.Result
+  fullName: Microsoft.Health.ItemTypes.SnpItem.Result
+- uid: Microsoft.Health.ItemTypes.SnpItem.AssayId*
+  commentId: Overload:Microsoft.Health.ItemTypes.SnpItem.AssayId
+  isExternal: false
+  name: AssayId
+  nameWithType: SnpItem.AssayId
+  fullName: Microsoft.Health.ItemTypes.SnpItem.AssayId
+- uid: Microsoft.Health.ItemTypes.SnpItem.StartPosition*
+  commentId: Overload:Microsoft.Health.ItemTypes.SnpItem.StartPosition
+  isExternal: false
+  name: StartPosition
+  nameWithType: SnpItem.StartPosition
+  fullName: Microsoft.Health.ItemTypes.SnpItem.StartPosition
+- uid: Microsoft.Health.ItemTypes.SnpItem.EndPosition*
+  commentId: Overload:Microsoft.Health.ItemTypes.SnpItem.EndPosition
+  isExternal: false
+  name: EndPosition
+  nameWithType: SnpItem.EndPosition
+  fullName: Microsoft.Health.ItemTypes.SnpItem.EndPosition
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.SnpItem.ToString*
+  commentId: Overload:Microsoft.Health.ItemTypes.SnpItem.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: SnpItem.ToString
+  fullName: Microsoft.Health.ItemTypes.SnpItem.ToString

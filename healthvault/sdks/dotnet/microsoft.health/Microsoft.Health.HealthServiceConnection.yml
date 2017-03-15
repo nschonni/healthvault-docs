@@ -1,0 +1,1348 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.HealthServiceConnection
+  commentId: T:Microsoft.Health.HealthServiceConnection
+  id: HealthServiceConnection
+  parent: Microsoft.Health
+  children:
+  - Microsoft.Health.HealthServiceConnection.ApplicationId
+  - Microsoft.Health.HealthServiceConnection.AuthenticationToken
+  - Microsoft.Health.HealthServiceConnection.CancelAllRequests
+  - Microsoft.Health.HealthServiceConnection.CreateRequest(System.String,System.Int32)
+  - Microsoft.Health.HealthServiceConnection.Credential
+  - Microsoft.Health.HealthServiceConnection.Culture
+  - Microsoft.Health.HealthServiceConnection.GetServiceDefinition
+  - Microsoft.Health.HealthServiceConnection.GetServiceDefinition(Microsoft.Health.ServiceInfoSections)
+  - Microsoft.Health.HealthServiceConnection.GetServiceDefinition(Microsoft.Health.ServiceInfoSections,System.DateTime)
+  - Microsoft.Health.HealthServiceConnection.GetServiceDefinition(System.DateTime)
+  - Microsoft.Health.HealthServiceConnection.RequestCompressionMethod
+  - Microsoft.Health.HealthServiceConnection.RequestTimeoutSeconds
+  - Microsoft.Health.HealthServiceConnection.RequestTimeToLive
+  - Microsoft.Health.HealthServiceConnection.RequestUrl
+  - Microsoft.Health.HealthServiceConnection.ResponseCompressionMethods
+  - Microsoft.Health.HealthServiceConnection.ServiceInstance
+  - Microsoft.Health.HealthServiceConnection.WebProxy
+  langs:
+  - csharp
+  - vb
+  name: HealthServiceConnection
+  nameWithType: HealthServiceConnection
+  fullName: Microsoft.Health.HealthServiceConnection
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: HealthServiceConnection
+    path: HealthServiceConnection.cs
+    startLine: 34
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nSimplifies access to the HealthVault service. This class is \nabstract.\n"
+  remarks: "\nA connection must be made to the HealthVault service to access the\nweb methods that the service exposes. The class does not maintain\nan open connection to the service. It uses XML over HTTP to \nmake requests and receive responses from the service. The connection\njust maintains the data necessary to make the request.\n<br /><br />\nYou cannot directly instantiate this abstract class. Instead, instantiate \nan instance of <xref href=\"Microsoft.Health.ApplicationConnection\" data-throw-if-not-resolved=\"false\"></xref> or \n<xref href=\"Microsoft.Health.AuthenticatedConnection\" data-throw-if-not-resolved=\"false\"></xref> to communicate with the Microsoft \nHealthVault service. \n"
+  example: []
+  syntax:
+    content: public abstract class HealthServiceConnection
+    content.vb: Public MustInherit Class HealthServiceConnection
+  seealso:
+  - linkId: Microsoft.Health.AuthenticatedConnection
+    commentId: T:Microsoft.Health.AuthenticatedConnection
+  - linkId: Microsoft.Health.ApplicationConnection
+    commentId: T:Microsoft.Health.ApplicationConnection
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - Microsoft.Health.AnonymousConnection
+  - Microsoft.Health.ApplicationConnection
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: Microsoft.Health.HealthServiceConnection.CreateRequest(System.String,System.Int32)
+  commentId: M:Microsoft.Health.HealthServiceConnection.CreateRequest(System.String,System.Int32)
+  id: CreateRequest(System.String,System.Int32)
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: CreateRequest(String, Int32)
+  nameWithType: HealthServiceConnection.CreateRequest(String, Int32)
+  fullName: Microsoft.Health.HealthServiceConnection.CreateRequest(System.String, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CreateRequest
+    path: HealthServiceConnection.cs
+    startLine: 209
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nProvides a wrapper around the XML request for the web service.\n"
+  remarks: "\nThis method skips the object model provided by the other\nmethods of this class and acts as a simple wrapper around the XML \nrequest for the web service. The caller must provide the parameters \nin the correct format for the called method and in order to parse \nthe response data.\n"
+  example: []
+  syntax:
+    content: public virtual HealthServiceRequest CreateRequest(string methodName, int methodVersion)
+    content.vb: Public Overridable Function CreateRequest(methodName As String, methodVersion As Integer) As HealthServiceRequest
+    parameters:
+    - id: methodName
+      type: System.String
+      description: "\nThe name of the method of the web-service to call.\n"
+    - id: methodVersion
+      type: System.Int32
+      description: "\nThe version of the method to call.\n"
+    return:
+      type: Microsoft.Health.HealthServiceRequest
+      description: "\nA <xref href=\"Microsoft.Health.HealthServiceRequest\" data-throw-if-not-resolved=\"false\"></xref> that acts as a\nwrapper to XML request for the HealthVault web-service.\n"
+  overload: Microsoft.Health.HealthServiceConnection.CreateRequest*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nThe <span class=\"paramref\">methodName</span> parameter is <strong>null</strong> or empty.\n"
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Microsoft.Health.HealthServiceConnection.CancelAllRequests
+  commentId: P:Microsoft.Health.HealthServiceConnection.CancelAllRequests
+  id: CancelAllRequests
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: CancelAllRequests
+  nameWithType: HealthServiceConnection.CancelAllRequests
+  fullName: Microsoft.Health.HealthServiceConnection.CancelAllRequests
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CancelAllRequests
+    path: HealthServiceConnection.cs
+    startLine: 229
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nCancels any pending request to HealthVault that was initiated with this connection \ninstance and prevents any new requests from being made.\n"
+  remarks: "\nSetting this property to true will cancel any requests that was started using this \nconnection and will prevent new requests from being made.\nIt is up to the caller to start the request on another thread. Cancelling will cause\na HealthServiceRequestCancelledException to be thrown on the thread the request was\nexecuted on.\n<br /><br />\nIf you want to start reusing the connection set the property to false.\n"
+  example: []
+  syntax:
+    content: public bool CancelAllRequests { get; set; }
+    content.vb: Public Property CancelAllRequests As Boolean
+    parameters: []
+    return:
+      type: System.Boolean
+  overload: Microsoft.Health.HealthServiceConnection.CancelAllRequests*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthServiceConnection.GetServiceDefinition
+  commentId: M:Microsoft.Health.HealthServiceConnection.GetServiceDefinition
+  id: GetServiceDefinition
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: GetServiceDefinition()
+  nameWithType: HealthServiceConnection.GetServiceDefinition()
+  fullName: Microsoft.Health.HealthServiceConnection.GetServiceDefinition()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetServiceDefinition
+    path: HealthServiceConnection.cs
+    startLine: 290
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets information about the HealthVault service.\n"
+  remarks: "\nGets the latest information about the HealthVault service. This \nincludes:<br />\n- The version of the service.<br />\n- The SDK assembly URLs.<br />\n- The SDK assembly versions.<br />\n- The SDK documentation URL.<br />\n- The URL to the HealthVault Shell.<br />\n- The schema definition for the HealthVault method's request and \nresponse.<br />\n- The common schema definitions for types that the HealthVault methods\nuse.<br />\n- Information about all available HealthVault instances.<br />\n"
+  example: []
+  syntax:
+    content: public ServiceInfo GetServiceDefinition()
+    content.vb: Public Function GetServiceDefinition As ServiceInfo
+    return:
+      type: Microsoft.Health.ServiceInfo
+      description: "\nA <xref href=\"Microsoft.Health.ServiceInfo\" data-throw-if-not-resolved=\"false\"></xref> instance that contains the service version, SDK\nassemblies versions and URLs, method information, and so on.\n"
+  overload: Microsoft.Health.HealthServiceConnection.GetServiceDefinition*
+  exceptions:
+  - type: Microsoft.Health.HealthServiceException
+    commentId: T:Microsoft.Health.HealthServiceException
+    description: "\nThe HealthVault service returned an error.\n"
+  - type: System.UriFormatException
+    commentId: T:System.UriFormatException
+    description: "\nOne or more URL strings returned by HealthVault is invalid.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthServiceConnection.GetServiceDefinition(System.DateTime)
+  commentId: M:Microsoft.Health.HealthServiceConnection.GetServiceDefinition(System.DateTime)
+  id: GetServiceDefinition(System.DateTime)
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: GetServiceDefinition(DateTime)
+  nameWithType: HealthServiceConnection.GetServiceDefinition(DateTime)
+  fullName: Microsoft.Health.HealthServiceConnection.GetServiceDefinition(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetServiceDefinition
+    path: HealthServiceConnection.cs
+    startLine: 336
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets information about the HealthVault service only if it has been updated since\nthe specified update time.\n"
+  remarks: "\nGets the latest information about the HealthVault service, if there were updates\nsince the specified <span class=\"paramref\">lastUpdatedTime</span>.  If there were no updates\nthe method returns <strong>null</strong>.\nThis includes:<br />\n- The version of the service.<br />\n- The SDK assembly URLs.<br />\n- The SDK assembly versions.<br />\n- The SDK documentation URL.<br />\n- The URL to the HealthVault Shell.<br />\n- The schema definition for the HealthVault method's request and \nresponse.<br />\n- The common schema definitions for types that the HealthVault methods\nuse.<br />\n- Information about all available HealthVault instances.<br />\n"
+  example: []
+  syntax:
+    content: public ServiceInfo GetServiceDefinition(DateTime lastUpdatedTime)
+    content.vb: Public Function GetServiceDefinition(lastUpdatedTime As Date) As ServiceInfo
+    parameters:
+    - id: lastUpdatedTime
+      type: System.DateTime
+      description: "\nThe time of the last update to an existing cached copy of <xref href=\"Microsoft.Health.ServiceInfo\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+    return:
+      type: Microsoft.Health.ServiceInfo
+      description: "\nIf there were updates to the service information since the specified <span class=\"paramref\">lastUpdatedTime</span>,\na <xref href=\"Microsoft.Health.ServiceInfo\" data-throw-if-not-resolved=\"false\"></xref> instance that contains the service version, SDK\nassemblies versions and URLs, method information, and so on.  Otherwise, if there were no updates,\nreturns <strong>null</strong>.\n"
+  overload: Microsoft.Health.HealthServiceConnection.GetServiceDefinition*
+  exceptions:
+  - type: Microsoft.Health.HealthServiceException
+    commentId: T:Microsoft.Health.HealthServiceException
+    description: "\nThe HealthVault service returned an error.\n"
+  - type: System.UriFormatException
+    commentId: T:System.UriFormatException
+    description: "\nOne or more URL strings returned by HealthVault is invalid.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthServiceConnection.GetServiceDefinition(Microsoft.Health.ServiceInfoSections)
+  commentId: M:Microsoft.Health.HealthServiceConnection.GetServiceDefinition(Microsoft.Health.ServiceInfoSections)
+  id: GetServiceDefinition(Microsoft.Health.ServiceInfoSections)
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: GetServiceDefinition(ServiceInfoSections)
+  nameWithType: HealthServiceConnection.GetServiceDefinition(ServiceInfoSections)
+  fullName: Microsoft.Health.HealthServiceConnection.GetServiceDefinition(Microsoft.Health.ServiceInfoSections)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetServiceDefinition
+    path: HealthServiceConnection.cs
+    startLine: 383
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets information about the HealthVault service corresponding to the specified\ncategories.\n"
+  remarks: "\nGets the latest information about the HealthVault service. Depending on the specified\n<span class=\"paramref\">responseSections</span>, this will include some or all of:<br />\n- The version of the service.<br />\n- The SDK assembly URLs.<br />\n- The SDK assembly versions.<br />\n- The SDK documentation URL.<br />\n- The URL to the HealthVault Shell.<br />\n- The schema definition for the HealthVault method's request and \n  response.<br />\n- The common schema definitions for types that the HealthVault methods\n  use.<br />\n- Information about all available HealthVault instances.<br />\n\nRetrieving only the sections you need will give a faster response time than\ndownloading the full response.\n"
+  example: []
+  syntax:
+    content: public ServiceInfo GetServiceDefinition(ServiceInfoSections responseSections)
+    content.vb: Public Function GetServiceDefinition(responseSections As ServiceInfoSections) As ServiceInfo
+    parameters:
+    - id: responseSections
+      type: Microsoft.Health.ServiceInfoSections
+      description: "\nThe categories of information to be populated in the <xref href=\"Microsoft.Health.ServiceInfo\" data-throw-if-not-resolved=\"false\"></xref>\ninstance, represented as the result of XOR'ing the desired categories.\n"
+    return:
+      type: Microsoft.Health.ServiceInfo
+      description: "\nA <xref href=\"Microsoft.Health.ServiceInfo\" data-throw-if-not-resolved=\"false\"></xref> instance that contains some or all of the service version,\nSDK assemblies versions and URLs, method information, and so on, depending on which\ninformation categories were specified.\n"
+  overload: Microsoft.Health.HealthServiceConnection.GetServiceDefinition*
+  exceptions:
+  - type: Microsoft.Health.HealthServiceException
+    commentId: T:Microsoft.Health.HealthServiceException
+    description: "\nThe HealthVault service returned an error.\n"
+  - type: System.UriFormatException
+    commentId: T:System.UriFormatException
+    description: "\nOne or more URL strings returned by HealthVault is invalid.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthServiceConnection.GetServiceDefinition(Microsoft.Health.ServiceInfoSections,System.DateTime)
+  commentId: M:Microsoft.Health.HealthServiceConnection.GetServiceDefinition(Microsoft.Health.ServiceInfoSections,System.DateTime)
+  id: GetServiceDefinition(Microsoft.Health.ServiceInfoSections,System.DateTime)
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: GetServiceDefinition(ServiceInfoSections, DateTime)
+  nameWithType: HealthServiceConnection.GetServiceDefinition(ServiceInfoSections, DateTime)
+  fullName: Microsoft.Health.HealthServiceConnection.GetServiceDefinition(Microsoft.Health.ServiceInfoSections, System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetServiceDefinition
+    path: HealthServiceConnection.cs
+    startLine: 440
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets information about the HealthVault service corresponding to the specified\ncategories if the requested information has been updated since the specified\nupdate time.\n"
+  remarks: "\nGets the latest information about the HealthVault service, if there were updates\nsince the specified <span class=\"paramref\">lastUpdatedTime</span>.  If there were no updates\nthe method returns <strong>null</strong>.\nDepending on the specified\n<span class=\"paramref\">responseSections</span>, this will include some or all of:<br />\n- The version of the service.<br />\n- The SDK assembly URLs.<br />\n- The SDK assembly versions.<br />\n- The SDK documentation URL.<br />\n- The URL to the HealthVault Shell.<br />\n- The schema definition for the HealthVault method's request and \n  response.<br />\n- The common schema definitions for types that the HealthVault methods\n  use.<br />\n- Information about all available HealthVault instances.<br />\n\nRetrieving only the sections you need will give a faster response time than\ndownloading the full response.\n"
+  example: []
+  syntax:
+    content: public ServiceInfo GetServiceDefinition(ServiceInfoSections responseSections, DateTime lastUpdatedTime)
+    content.vb: Public Function GetServiceDefinition(responseSections As ServiceInfoSections, lastUpdatedTime As Date) As ServiceInfo
+    parameters:
+    - id: responseSections
+      type: Microsoft.Health.ServiceInfoSections
+      description: "\nThe categories of information to be populated in the <xref href=\"Microsoft.Health.ServiceInfo\" data-throw-if-not-resolved=\"false\"></xref>\ninstance, represented as the result of XOR'ing the desired categories.\n"
+    - id: lastUpdatedTime
+      type: System.DateTime
+      description: "\nThe time of the last update to an existing cached copy of <xref href=\"Microsoft.Health.ServiceInfo\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+    return:
+      type: Microsoft.Health.ServiceInfo
+      description: "\nIf there were updates to the service information since the specified <span class=\"paramref\">lastUpdatedTime</span>,\na <xref href=\"Microsoft.Health.ServiceInfo\" data-throw-if-not-resolved=\"false\"></xref> instance that contains some or all of the service version,\nSDK  assemblies versions and URLs, method information, and so on, depending on which\ninformation categories were specified.  Otherwise, if there were no updates, returns\n<strong>null</strong>.\n"
+  overload: Microsoft.Health.HealthServiceConnection.GetServiceDefinition*
+  exceptions:
+  - type: Microsoft.Health.HealthServiceException
+    commentId: T:Microsoft.Health.HealthServiceException
+    description: "\nThe HealthVault service returned an error.\n"
+  - type: System.UriFormatException
+    commentId: T:System.UriFormatException
+    description: "\nOne or more URL strings returned by HealthVault is invalid.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthServiceConnection.WebProxy
+  commentId: P:Microsoft.Health.HealthServiceConnection.WebProxy
+  id: WebProxy
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: WebProxy
+  nameWithType: HealthServiceConnection.WebProxy
+  fullName: Microsoft.Health.HealthServiceConnection.WebProxy
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: WebProxy
+    path: HealthServiceConnection.cs
+    startLine: 493
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the proxy to use with this instance of\n<xref href=\"Microsoft.Health.HealthServiceConnection\" data-throw-if-not-resolved=\"false\"></xref>. \n"
+  remarks: "\nThe default setting is to use <xref href=\"System.Net.WebRequest.DefaultWebProxy\" data-throw-if-not-resolved=\"false\"></xref>.\nTo disable proxy usage, set this property to <strong>null</strong>.\n"
+  example: []
+  syntax:
+    content: public IWebProxy WebProxy { get; set; }
+    content.vb: Public Property WebProxy As IWebProxy
+    parameters: []
+    return:
+      type: System.Net.IWebProxy
+      description: "\nAn instance of <xref href=\"System.Net.IWebProxy\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  overload: Microsoft.Health.HealthServiceConnection.WebProxy*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthServiceConnection.ApplicationId
+  commentId: P:Microsoft.Health.HealthServiceConnection.ApplicationId
+  id: ApplicationId
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: ApplicationId
+  nameWithType: HealthServiceConnection.ApplicationId
+  fullName: Microsoft.Health.HealthServiceConnection.ApplicationId
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ApplicationId
+    path: HealthServiceConnection.cs
+    startLine: 510
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the calling application's ID.\n"
+  example: []
+  syntax:
+    content: public Guid ApplicationId { get; }
+    content.vb: Public ReadOnly Property ApplicationId As Guid
+    parameters: []
+    return:
+      type: System.Guid
+  overload: Microsoft.Health.HealthServiceConnection.ApplicationId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.HealthServiceConnection.RequestUrl
+  commentId: P:Microsoft.Health.HealthServiceConnection.RequestUrl
+  id: RequestUrl
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: RequestUrl
+  nameWithType: HealthServiceConnection.RequestUrl
+  fullName: Microsoft.Health.HealthServiceConnection.RequestUrl
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: RequestUrl
+    path: HealthServiceConnection.cs
+    startLine: 528
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the HealthVault web-service URL.\n"
+  example: []
+  syntax:
+    content: public Uri RequestUrl { get; }
+    content.vb: Public ReadOnly Property RequestUrl As Uri
+    parameters: []
+    return:
+      type: System.Uri
+      description: "\nAn instance of Uri representing the HealthVault web-service URL.\n"
+  overload: Microsoft.Health.HealthServiceConnection.RequestUrl*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.HealthServiceConnection.ServiceInstance
+  commentId: P:Microsoft.Health.HealthServiceConnection.ServiceInstance
+  id: ServiceInstance
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: ServiceInstance
+  nameWithType: HealthServiceConnection.ServiceInstance
+  fullName: Microsoft.Health.HealthServiceConnection.ServiceInstance
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ServiceInstance
+    path: HealthServiceConnection.cs
+    startLine: 544
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the HealthVault web-service instance associated with this connection.\n"
+  example: []
+  syntax:
+    content: public HealthServiceInstance ServiceInstance { get; }
+    content.vb: Public ReadOnly Property ServiceInstance As HealthServiceInstance
+    parameters: []
+    return:
+      type: Microsoft.Health.HealthServiceInstance
+  overload: Microsoft.Health.HealthServiceConnection.ServiceInstance*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.HealthServiceConnection.RequestTimeoutSeconds
+  commentId: P:Microsoft.Health.HealthServiceConnection.RequestTimeoutSeconds
+  id: RequestTimeoutSeconds
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: RequestTimeoutSeconds
+  nameWithType: HealthServiceConnection.RequestTimeoutSeconds
+  fullName: Microsoft.Health.HealthServiceConnection.RequestTimeoutSeconds
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: RequestTimeoutSeconds
+    path: HealthServiceConnection.cs
+    startLine: 573
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the request timeout in seconds.\n"
+  example: []
+  syntax:
+    content: public int RequestTimeoutSeconds { get; set; }
+    content.vb: Public Property RequestTimeoutSeconds As Integer
+    parameters: []
+    return:
+      type: System.Int32
+  overload: Microsoft.Health.HealthServiceConnection.RequestTimeoutSeconds*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthServiceConnection.RequestTimeToLive
+  commentId: P:Microsoft.Health.HealthServiceConnection.RequestTimeToLive
+  id: RequestTimeToLive
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: RequestTimeToLive
+  nameWithType: HealthServiceConnection.RequestTimeToLive
+  fullName: Microsoft.Health.HealthServiceConnection.RequestTimeToLive
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: RequestTimeToLive
+    path: HealthServiceConnection.cs
+    startLine: 591
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the request time-to-live in seconds.\n"
+  example: []
+  syntax:
+    content: public int RequestTimeToLive { get; set; }
+    content.vb: Public Property RequestTimeToLive As Integer
+    parameters: []
+    return:
+      type: System.Int32
+  overload: Microsoft.Health.HealthServiceConnection.RequestTimeToLive*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthServiceConnection.Culture
+  commentId: P:Microsoft.Health.HealthServiceConnection.Culture
+  id: Culture
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: Culture
+  nameWithType: HealthServiceConnection.Culture
+  fullName: Microsoft.Health.HealthServiceConnection.Culture
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Culture
+    path: HealthServiceConnection.cs
+    startLine: 623
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the language to be sent to the server when making\nrequests.\n"
+  example: []
+  syntax:
+    content: public CultureInfo Culture { get; set; }
+    content.vb: Public Property Culture As CultureInfo
+    parameters: []
+    return:
+      type: System.Globalization.CultureInfo
+      description: "\nA CultureInfo representing the language.\n"
+  overload: Microsoft.Health.HealthServiceConnection.Culture*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthServiceConnection.RequestCompressionMethod
+  commentId: P:Microsoft.Health.HealthServiceConnection.RequestCompressionMethod
+  id: RequestCompressionMethod
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: RequestCompressionMethod
+  nameWithType: HealthServiceConnection.RequestCompressionMethod
+  fullName: Microsoft.Health.HealthServiceConnection.RequestCompressionMethod
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: RequestCompressionMethod
+    path: HealthServiceConnection.cs
+    startLine: 644
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the request compression method for this connection.\n"
+  example: []
+  syntax:
+    content: public string RequestCompressionMethod { get; set; }
+    content.vb: Public Property RequestCompressionMethod As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nA string representing the request compression method.\n"
+  overload: Microsoft.Health.HealthServiceConnection.RequestCompressionMethod*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthServiceConnection.ResponseCompressionMethods
+  commentId: P:Microsoft.Health.HealthServiceConnection.ResponseCompressionMethods
+  id: ResponseCompressionMethods
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: ResponseCompressionMethods
+  nameWithType: HealthServiceConnection.ResponseCompressionMethods
+  fullName: Microsoft.Health.HealthServiceConnection.ResponseCompressionMethods
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ResponseCompressionMethods
+    path: HealthServiceConnection.cs
+    startLine: 682
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the comma-separated response compression methods.\n"
+  example: []
+  syntax:
+    content: public string ResponseCompressionMethods { get; set; }
+    content.vb: Public Property ResponseCompressionMethods As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nA string representing the response compression methods.\n"
+  overload: Microsoft.Health.HealthServiceConnection.ResponseCompressionMethods*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthServiceConnection.AuthenticationToken
+  commentId: P:Microsoft.Health.HealthServiceConnection.AuthenticationToken
+  id: AuthenticationToken
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: AuthenticationToken
+  nameWithType: HealthServiceConnection.AuthenticationToken
+  fullName: Microsoft.Health.HealthServiceConnection.AuthenticationToken
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: AuthenticationToken
+    path: HealthServiceConnection.cs
+    startLine: 764
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the authorization token to be used in all requests for this user.\n"
+  remarks: "\nThe authorization token can be retrieved using the \n<xref href=\"Microsoft.Health.Authentication.Credential.CreateAuthenticatedSessionToken(Microsoft.Health.HealthServiceConnection%2cSystem.Guid)\" data-throw-if-not-resolved=\"false\"></xref> web method from \nHealthVault or by calling the HealthVault Shell authentication web page.\n<br /><br />\n"
+  example: []
+  syntax:
+    content: public string AuthenticationToken { get; }
+    content.vb: Public ReadOnly Property AuthenticationToken As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nA base64 encoded string that represents the person ID, application \nID, expiration, and group membership of the person and application \nrequesting access to HealthVault.\n"
+  overload: Microsoft.Health.HealthServiceConnection.AuthenticationToken*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.HealthServiceConnection.Credential
+  commentId: P:Microsoft.Health.HealthServiceConnection.Credential
+  id: Credential
+  parent: Microsoft.Health.HealthServiceConnection
+  langs:
+  - csharp
+  - vb
+  name: Credential
+  nameWithType: HealthServiceConnection.Credential
+  fullName: Microsoft.Health.HealthServiceConnection.Credential
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthServiceConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Credential
+    path: HealthServiceConnection.cs
+    startLine: 793
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the application credential that is used to access \nHealthVault.\n"
+  example: []
+  syntax:
+    content: public Credential Credential { get; set; }
+    content.vb: Public Property Credential As Credential
+    parameters: []
+    return:
+      type: Microsoft.Health.Authentication.Credential
+  overload: Microsoft.Health.HealthServiceConnection.Credential*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">value</span> parameter is <strong>null</strong>.\n"
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Microsoft.Health.ApplicationConnection
+  commentId: T:Microsoft.Health.ApplicationConnection
+  parent: Microsoft.Health
+  isExternal: false
+  name: ApplicationConnection
+  nameWithType: ApplicationConnection
+  fullName: Microsoft.Health.ApplicationConnection
+- uid: Microsoft.Health.AuthenticatedConnection
+  commentId: T:Microsoft.Health.AuthenticatedConnection
+  parent: Microsoft.Health
+  isExternal: false
+  name: AuthenticatedConnection
+  nameWithType: AuthenticatedConnection
+  fullName: Microsoft.Health.AuthenticatedConnection
+- uid: Microsoft.Health
+  commentId: N:Microsoft.Health
+  isExternal: false
+  name: Microsoft.Health
+  nameWithType: Microsoft.Health
+  fullName: Microsoft.Health
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.HealthServiceRequest
+  commentId: T:Microsoft.Health.HealthServiceRequest
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthServiceRequest
+  nameWithType: HealthServiceRequest
+  fullName: Microsoft.Health.HealthServiceRequest
+- uid: Microsoft.Health.HealthServiceConnection.CreateRequest*
+  commentId: Overload:Microsoft.Health.HealthServiceConnection.CreateRequest
+  isExternal: false
+  name: CreateRequest
+  nameWithType: HealthServiceConnection.CreateRequest
+  fullName: Microsoft.Health.HealthServiceConnection.CreateRequest
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Microsoft.Health.HealthServiceConnection.CancelAllRequests*
+  commentId: Overload:Microsoft.Health.HealthServiceConnection.CancelAllRequests
+  isExternal: false
+  name: CancelAllRequests
+  nameWithType: HealthServiceConnection.CancelAllRequests
+  fullName: Microsoft.Health.HealthServiceConnection.CancelAllRequests
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Microsoft.Health.ServiceInfo
+  commentId: T:Microsoft.Health.ServiceInfo
+  parent: Microsoft.Health
+  isExternal: false
+  name: ServiceInfo
+  nameWithType: ServiceInfo
+  fullName: Microsoft.Health.ServiceInfo
+- uid: Microsoft.Health.HealthServiceConnection.GetServiceDefinition*
+  commentId: Overload:Microsoft.Health.HealthServiceConnection.GetServiceDefinition
+  isExternal: false
+  name: GetServiceDefinition
+  nameWithType: HealthServiceConnection.GetServiceDefinition
+  fullName: Microsoft.Health.HealthServiceConnection.GetServiceDefinition
+- uid: Microsoft.Health.HealthServiceException
+  commentId: T:Microsoft.Health.HealthServiceException
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthServiceException
+  nameWithType: HealthServiceException
+  fullName: Microsoft.Health.HealthServiceException
+- uid: System.UriFormatException
+  commentId: T:System.UriFormatException
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: Microsoft.Health.ServiceInfoSections
+  commentId: T:Microsoft.Health.ServiceInfoSections
+  parent: Microsoft.Health
+  isExternal: false
+  name: ServiceInfoSections
+  nameWithType: ServiceInfoSections
+  fullName: Microsoft.Health.ServiceInfoSections
+- uid: Microsoft.Health.HealthServiceConnection
+  commentId: T:Microsoft.Health.HealthServiceConnection
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthServiceConnection
+  nameWithType: HealthServiceConnection
+  fullName: Microsoft.Health.HealthServiceConnection
+- uid: System.Net.WebRequest.DefaultWebProxy
+  commentId: P:System.Net.WebRequest.DefaultWebProxy
+- uid: System.Net.IWebProxy
+  commentId: T:System.Net.IWebProxy
+  parent: System.Net
+  isExternal: true
+  name: IWebProxy
+  nameWithType: IWebProxy
+  fullName: System.Net.IWebProxy
+- uid: Microsoft.Health.HealthServiceConnection.WebProxy*
+  commentId: Overload:Microsoft.Health.HealthServiceConnection.WebProxy
+  isExternal: false
+  name: WebProxy
+  nameWithType: HealthServiceConnection.WebProxy
+  fullName: Microsoft.Health.HealthServiceConnection.WebProxy
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: false
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
+- uid: Microsoft.Health.HealthServiceConnection.ApplicationId*
+  commentId: Overload:Microsoft.Health.HealthServiceConnection.ApplicationId
+  isExternal: false
+  name: ApplicationId
+  nameWithType: HealthServiceConnection.ApplicationId
+  fullName: Microsoft.Health.HealthServiceConnection.ApplicationId
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: Microsoft.Health.HealthServiceConnection.RequestUrl*
+  commentId: Overload:Microsoft.Health.HealthServiceConnection.RequestUrl
+  isExternal: false
+  name: RequestUrl
+  nameWithType: HealthServiceConnection.RequestUrl
+  fullName: Microsoft.Health.HealthServiceConnection.RequestUrl
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: Microsoft.Health.HealthServiceConnection.ServiceInstance*
+  commentId: Overload:Microsoft.Health.HealthServiceConnection.ServiceInstance
+  isExternal: false
+  name: ServiceInstance
+  nameWithType: HealthServiceConnection.ServiceInstance
+  fullName: Microsoft.Health.HealthServiceConnection.ServiceInstance
+- uid: Microsoft.Health.HealthServiceInstance
+  commentId: T:Microsoft.Health.HealthServiceInstance
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthServiceInstance
+  nameWithType: HealthServiceInstance
+  fullName: Microsoft.Health.HealthServiceInstance
+- uid: Microsoft.Health.HealthServiceConnection.RequestTimeoutSeconds*
+  commentId: Overload:Microsoft.Health.HealthServiceConnection.RequestTimeoutSeconds
+  isExternal: false
+  name: RequestTimeoutSeconds
+  nameWithType: HealthServiceConnection.RequestTimeoutSeconds
+  fullName: Microsoft.Health.HealthServiceConnection.RequestTimeoutSeconds
+- uid: Microsoft.Health.HealthServiceConnection.RequestTimeToLive*
+  commentId: Overload:Microsoft.Health.HealthServiceConnection.RequestTimeToLive
+  isExternal: false
+  name: RequestTimeToLive
+  nameWithType: HealthServiceConnection.RequestTimeToLive
+  fullName: Microsoft.Health.HealthServiceConnection.RequestTimeToLive
+- uid: Microsoft.Health.HealthServiceConnection.Culture*
+  commentId: Overload:Microsoft.Health.HealthServiceConnection.Culture
+  isExternal: false
+  name: Culture
+  nameWithType: HealthServiceConnection.Culture
+  fullName: Microsoft.Health.HealthServiceConnection.Culture
+- uid: System.Globalization.CultureInfo
+  commentId: T:System.Globalization.CultureInfo
+  parent: System.Globalization
+  isExternal: true
+  name: CultureInfo
+  nameWithType: CultureInfo
+  fullName: System.Globalization.CultureInfo
+- uid: System.Globalization
+  commentId: N:System.Globalization
+  isExternal: false
+  name: System.Globalization
+  nameWithType: System.Globalization
+  fullName: System.Globalization
+- uid: Microsoft.Health.HealthServiceConnection.RequestCompressionMethod*
+  commentId: Overload:Microsoft.Health.HealthServiceConnection.RequestCompressionMethod
+  isExternal: false
+  name: RequestCompressionMethod
+  nameWithType: HealthServiceConnection.RequestCompressionMethod
+  fullName: Microsoft.Health.HealthServiceConnection.RequestCompressionMethod
+- uid: Microsoft.Health.HealthServiceConnection.ResponseCompressionMethods*
+  commentId: Overload:Microsoft.Health.HealthServiceConnection.ResponseCompressionMethods
+  isExternal: false
+  name: ResponseCompressionMethods
+  nameWithType: HealthServiceConnection.ResponseCompressionMethods
+  fullName: Microsoft.Health.HealthServiceConnection.ResponseCompressionMethods
+- uid: Microsoft.Health.Authentication.Credential.CreateAuthenticatedSessionToken(Microsoft.Health.HealthServiceConnection,System.Guid)
+  commentId: M:Microsoft.Health.Authentication.Credential.CreateAuthenticatedSessionToken(Microsoft.Health.HealthServiceConnection,System.Guid)
+  parent: Microsoft.Health.Authentication.Credential
+  isExternal: true
+  name: CreateAuthenticatedSessionToken(HealthServiceConnection, Guid)
+  nameWithType: Credential.CreateAuthenticatedSessionToken(HealthServiceConnection, Guid)
+  fullName: Microsoft.Health.Authentication.Credential.CreateAuthenticatedSessionToken(Microsoft.Health.HealthServiceConnection, System.Guid)
+  spec.csharp:
+  - uid: Microsoft.Health.Authentication.Credential.CreateAuthenticatedSessionToken(Microsoft.Health.HealthServiceConnection,System.Guid)
+    name: CreateAuthenticatedSessionToken
+    nameWithType: Credential.CreateAuthenticatedSessionToken
+    fullName: Microsoft.Health.Authentication.Credential.CreateAuthenticatedSessionToken
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.HealthServiceConnection
+    name: HealthServiceConnection
+    nameWithType: HealthServiceConnection
+    fullName: Microsoft.Health.HealthServiceConnection
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: System.Guid
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Authentication.Credential.CreateAuthenticatedSessionToken(Microsoft.Health.HealthServiceConnection,System.Guid)
+    name: CreateAuthenticatedSessionToken
+    nameWithType: Credential.CreateAuthenticatedSessionToken
+    fullName: Microsoft.Health.Authentication.Credential.CreateAuthenticatedSessionToken
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.HealthServiceConnection
+    name: HealthServiceConnection
+    nameWithType: HealthServiceConnection
+    fullName: Microsoft.Health.HealthServiceConnection
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: System.Guid
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.HealthServiceConnection.AuthenticationToken*
+  commentId: Overload:Microsoft.Health.HealthServiceConnection.AuthenticationToken
+  isExternal: false
+  name: AuthenticationToken
+  nameWithType: HealthServiceConnection.AuthenticationToken
+  fullName: Microsoft.Health.HealthServiceConnection.AuthenticationToken
+- uid: Microsoft.Health.Authentication.Credential
+  commentId: T:Microsoft.Health.Authentication.Credential
+  parent: Microsoft.Health.Authentication
+  isExternal: false
+  name: Credential
+  nameWithType: Credential
+  fullName: Microsoft.Health.Authentication.Credential
+- uid: Microsoft.Health.Authentication
+  commentId: N:Microsoft.Health.Authentication
+  isExternal: false
+  name: Microsoft.Health.Authentication
+  nameWithType: Microsoft.Health.Authentication
+  fullName: Microsoft.Health.Authentication
+- uid: Microsoft.Health.HealthServiceConnection.Credential*
+  commentId: Overload:Microsoft.Health.HealthServiceConnection.Credential
+  isExternal: false
+  name: Credential
+  nameWithType: HealthServiceConnection.Credential
+  fullName: Microsoft.Health.HealthServiceConnection.Credential
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException

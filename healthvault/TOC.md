@@ -104,8 +104,14 @@
 
 # SDKs
 ## .NET
-### [HealthVault .NET SDK reference](healthvault-.net-sdk-reference.md)
-### [.NET SDK version](.net-sdk-version.md)
+### [Microsoft.Health Namespace](sdks/dotnet/microsoft.health/toc.yml)
+[Microsoft.Health.Directory Namespace](sdks/dotnet/microsoft.health.directory/toc.yml)
+[Microsoft.Health.ItemTypes Namespace](sdks/dotnet/microsoft.health.itemtypes/toc.yml)
+[Microsoft.Health.ItemTypes.Old Namespace](sdks/dotnet/microsoft.health.itemtypes.old/toc.yml)
+[Microsoft.Health.Utility Namespace](sdks/dotnet/microsoft.health.utility/toc.yml)
+[Microsoft.Health.Web Namespace](sdks/dotnet/microsoft.health.web/toc.yml)
+[Microsoft.Health.Web.Mvc](sdks/dotnet/microsoft.health.web.mvc/toc.yml)
+### 
 ## iOS
 
 ## Java

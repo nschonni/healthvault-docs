@@ -1,0 +1,650 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.LinearItemTypePropertyConversion
+  commentId: T:Microsoft.Health.LinearItemTypePropertyConversion
+  id: LinearItemTypePropertyConversion
+  parent: Microsoft.Health
+  children:
+  - Microsoft.Health.LinearItemTypePropertyConversion.#ctor(System.Double,System.Double)
+  - Microsoft.Health.LinearItemTypePropertyConversion.Convert(System.Double)
+  - Microsoft.Health.LinearItemTypePropertyConversion.CreateFromXml(System.Xml.XPath.XPathNavigator)
+  - Microsoft.Health.LinearItemTypePropertyConversion.Multiplier
+  - Microsoft.Health.LinearItemTypePropertyConversion.Offset
+  langs:
+  - csharp
+  - vb
+  name: LinearItemTypePropertyConversion
+  nameWithType: LinearItemTypePropertyConversion
+  fullName: Microsoft.Health.LinearItemTypePropertyConversion
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health/LinearItemTypePropertyConversion.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: LinearItemTypePropertyConversion
+    path: LinearItemTypePropertyConversion.cs
+    startLine: 15
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nA linear conversion of the form x' = mx + b.\n"
+  example: []
+  syntax:
+    content: 'public class LinearItemTypePropertyConversion : IItemTypePropertyConversion'
+    content.vb: >-
+      Public Class LinearItemTypePropertyConversion
+          Implements IItemTypePropertyConversion
+  inheritance:
+  - System.Object
+  implements:
+  - Microsoft.Health.IItemTypePropertyConversion
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.LinearItemTypePropertyConversion.#ctor(System.Double,System.Double)
+  commentId: M:Microsoft.Health.LinearItemTypePropertyConversion.#ctor(System.Double,System.Double)
+  id: '#ctor(System.Double,System.Double)'
+  parent: Microsoft.Health.LinearItemTypePropertyConversion
+  langs:
+  - csharp
+  - vb
+  name: LinearItemTypePropertyConversion(Double, Double)
+  nameWithType: LinearItemTypePropertyConversion.LinearItemTypePropertyConversion(Double, Double)
+  fullName: Microsoft.Health.LinearItemTypePropertyConversion.LinearItemTypePropertyConversion(System.Double, System.Double)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/LinearItemTypePropertyConversion.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: LinearItemTypePropertyConversion.cs
+    startLine: 28
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.LinearItemTypePropertyConversion\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public LinearItemTypePropertyConversion(double multiplier, double offset)
+    content.vb: Public Sub New(multiplier As Double, offset As Double)
+    parameters:
+    - id: multiplier
+      type: System.Double
+      description: "\nThe multiplier to use in the linear conversion.\n"
+    - id: offset
+      type: System.Double
+      description: "\nThe offset to use in the linear conversion.\n"
+  overload: Microsoft.Health.LinearItemTypePropertyConversion.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.LinearItemTypePropertyConversion.Multiplier
+  commentId: P:Microsoft.Health.LinearItemTypePropertyConversion.Multiplier
+  id: Multiplier
+  parent: Microsoft.Health.LinearItemTypePropertyConversion
+  langs:
+  - csharp
+  - vb
+  name: Multiplier
+  nameWithType: LinearItemTypePropertyConversion.Multiplier
+  fullName: Microsoft.Health.LinearItemTypePropertyConversion.Multiplier
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/LinearItemTypePropertyConversion.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Multiplier
+    path: LinearItemTypePropertyConversion.cs
+    startLine: 38
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nThe value by which to multiply the original value;\nthe 'm' in the equation x' = mx + b.\n"
+  example: []
+  syntax:
+    content: public double Multiplier { get; }
+    content.vb: Public ReadOnly Property Multiplier As Double
+    parameters: []
+    return:
+      type: System.Double
+  overload: Microsoft.Health.LinearItemTypePropertyConversion.Multiplier*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.LinearItemTypePropertyConversion.Offset
+  commentId: P:Microsoft.Health.LinearItemTypePropertyConversion.Offset
+  id: Offset
+  parent: Microsoft.Health.LinearItemTypePropertyConversion
+  langs:
+  - csharp
+  - vb
+  name: Offset
+  nameWithType: LinearItemTypePropertyConversion.Offset
+  fullName: Microsoft.Health.LinearItemTypePropertyConversion.Offset
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/LinearItemTypePropertyConversion.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Offset
+    path: LinearItemTypePropertyConversion.cs
+    startLine: 44
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nThe offset to add in the linear conversion;\nthe 'b' in the equation x' = mx + b.\n"
+  example: []
+  syntax:
+    content: public double Offset { get; }
+    content.vb: Public ReadOnly Property Offset As Double
+    parameters: []
+    return:
+      type: System.Double
+  overload: Microsoft.Health.LinearItemTypePropertyConversion.Offset*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.LinearItemTypePropertyConversion.Convert(System.Double)
+  commentId: M:Microsoft.Health.LinearItemTypePropertyConversion.Convert(System.Double)
+  id: Convert(System.Double)
+  parent: Microsoft.Health.LinearItemTypePropertyConversion
+  langs:
+  - csharp
+  - vb
+  name: Convert(Double)
+  nameWithType: LinearItemTypePropertyConversion.Convert(Double)
+  fullName: Microsoft.Health.LinearItemTypePropertyConversion.Convert(System.Double)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/LinearItemTypePropertyConversion.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Convert
+    path: LinearItemTypePropertyConversion.cs
+    startLine: 58
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nPerforms a linear conversion of the form\nreturnValue = Multiplier * value + offset.\n"
+  example: []
+  syntax:
+    content: public double Convert(double value)
+    content.vb: Public Function Convert(value As Double) As Double
+    parameters:
+    - id: value
+      type: System.Double
+      description: "\nThe value to be converted.\n"
+    return:
+      type: System.Double
+      description: "\nThe result of the linear conversion.\n"
+  overload: Microsoft.Health.LinearItemTypePropertyConversion.Convert*
+  implements:
+  - Microsoft.Health.IItemTypePropertyConversion.Convert(System.Double)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.LinearItemTypePropertyConversion.CreateFromXml(System.Xml.XPath.XPathNavigator)
+  commentId: M:Microsoft.Health.LinearItemTypePropertyConversion.CreateFromXml(System.Xml.XPath.XPathNavigator)
+  id: CreateFromXml(System.Xml.XPath.XPathNavigator)
+  parent: Microsoft.Health.LinearItemTypePropertyConversion
+  langs:
+  - csharp
+  - vb
+  name: CreateFromXml(XPathNavigator)
+  nameWithType: LinearItemTypePropertyConversion.CreateFromXml(XPathNavigator)
+  fullName: Microsoft.Health.LinearItemTypePropertyConversion.CreateFromXml(System.Xml.XPath.XPathNavigator)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/LinearItemTypePropertyConversion.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CreateFromXml
+    path: LinearItemTypePropertyConversion.cs
+    startLine: 67
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nThis method converts the Conversion xml to the\n<xref href=\"Microsoft.Health.LinearItemTypePropertyConversion\" data-throw-if-not-resolved=\"false\"></xref> object.\n"
+  example: []
+  syntax:
+    content: public static LinearItemTypePropertyConversion CreateFromXml(XPathNavigator linearConversionNav)
+    content.vb: Public Shared Function CreateFromXml(linearConversionNav As XPathNavigator) As LinearItemTypePropertyConversion
+    parameters:
+    - id: linearConversionNav
+      type: System.Xml.XPath.XPathNavigator
+    return:
+      type: Microsoft.Health.LinearItemTypePropertyConversion
+  overload: Microsoft.Health.LinearItemTypePropertyConversion.CreateFromXml*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: Microsoft.Health
+  commentId: N:Microsoft.Health
+  isExternal: false
+  name: Microsoft.Health
+  nameWithType: Microsoft.Health
+  fullName: Microsoft.Health
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Microsoft.Health.IItemTypePropertyConversion
+  commentId: T:Microsoft.Health.IItemTypePropertyConversion
+  parent: Microsoft.Health
+  isExternal: false
+  name: IItemTypePropertyConversion
+  nameWithType: IItemTypePropertyConversion
+  fullName: Microsoft.Health.IItemTypePropertyConversion
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.LinearItemTypePropertyConversion
+  commentId: T:Microsoft.Health.LinearItemTypePropertyConversion
+  parent: Microsoft.Health
+  isExternal: false
+  name: LinearItemTypePropertyConversion
+  nameWithType: LinearItemTypePropertyConversion
+  fullName: Microsoft.Health.LinearItemTypePropertyConversion
+- uid: Microsoft.Health.LinearItemTypePropertyConversion.#ctor*
+  commentId: Overload:Microsoft.Health.LinearItemTypePropertyConversion.#ctor
+  isExternal: false
+  name: LinearItemTypePropertyConversion
+  nameWithType: LinearItemTypePropertyConversion.LinearItemTypePropertyConversion
+  fullName: Microsoft.Health.LinearItemTypePropertyConversion.LinearItemTypePropertyConversion
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: Microsoft.Health.LinearItemTypePropertyConversion.Multiplier*
+  commentId: Overload:Microsoft.Health.LinearItemTypePropertyConversion.Multiplier
+  isExternal: false
+  name: Multiplier
+  nameWithType: LinearItemTypePropertyConversion.Multiplier
+  fullName: Microsoft.Health.LinearItemTypePropertyConversion.Multiplier
+- uid: Microsoft.Health.LinearItemTypePropertyConversion.Offset*
+  commentId: Overload:Microsoft.Health.LinearItemTypePropertyConversion.Offset
+  isExternal: false
+  name: Offset
+  nameWithType: LinearItemTypePropertyConversion.Offset
+  fullName: Microsoft.Health.LinearItemTypePropertyConversion.Offset
+- uid: Microsoft.Health.LinearItemTypePropertyConversion.Convert*
+  commentId: Overload:Microsoft.Health.LinearItemTypePropertyConversion.Convert
+  isExternal: false
+  name: Convert
+  nameWithType: LinearItemTypePropertyConversion.Convert
+  fullName: Microsoft.Health.LinearItemTypePropertyConversion.Convert
+- uid: Microsoft.Health.IItemTypePropertyConversion.Convert(System.Double)
+  commentId: M:Microsoft.Health.IItemTypePropertyConversion.Convert(System.Double)
+  parent: Microsoft.Health.IItemTypePropertyConversion
+  isExternal: true
+  name: Convert(Double)
+  nameWithType: IItemTypePropertyConversion.Convert(Double)
+  fullName: Microsoft.Health.IItemTypePropertyConversion.Convert(System.Double)
+  spec.csharp:
+  - uid: Microsoft.Health.IItemTypePropertyConversion.Convert(System.Double)
+    name: Convert
+    nameWithType: IItemTypePropertyConversion.Convert
+    fullName: Microsoft.Health.IItemTypePropertyConversion.Convert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.IItemTypePropertyConversion.Convert(System.Double)
+    name: Convert
+    nameWithType: IItemTypePropertyConversion.Convert
+    fullName: Microsoft.Health.IItemTypePropertyConversion.Convert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.LinearItemTypePropertyConversion.CreateFromXml*
+  commentId: Overload:Microsoft.Health.LinearItemTypePropertyConversion.CreateFromXml
+  isExternal: false
+  name: CreateFromXml
+  nameWithType: LinearItemTypePropertyConversion.CreateFromXml
+  fullName: Microsoft.Health.LinearItemTypePropertyConversion.CreateFromXml
+- uid: System.Xml.XPath.XPathNavigator
+  commentId: T:System.Xml.XPath.XPathNavigator
+  parent: System.Xml.XPath
+  isExternal: true
+  name: XPathNavigator
+  nameWithType: XPathNavigator
+  fullName: System.Xml.XPath.XPathNavigator
+- uid: System.Xml.XPath
+  commentId: N:System.Xml.XPath
+  isExternal: false
+  name: System.Xml.XPath
+  nameWithType: System.Xml.XPath
+  fullName: System.Xml.XPath

@@ -1,0 +1,1025 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.VocabularyAuthorization
+  commentId: T:Microsoft.Health.VocabularyAuthorization
+  id: VocabularyAuthorization
+  parent: Microsoft.Health
+  children:
+  - Microsoft.Health.VocabularyAuthorization.#ctor(System.String)
+  - Microsoft.Health.VocabularyAuthorization.#ctor(System.String,System.String)
+  - Microsoft.Health.VocabularyAuthorization.Equals(Microsoft.Health.VocabularyAuthorization)
+  - Microsoft.Health.VocabularyAuthorization.Equals(System.Object)
+  - Microsoft.Health.VocabularyAuthorization.GetHashCode
+  - Microsoft.Health.VocabularyAuthorization.ParseXml(System.Xml.XPath.XPathNavigator)
+  - Microsoft.Health.VocabularyAuthorization.ToString
+  - Microsoft.Health.VocabularyAuthorization.VocabularyFamily
+  - Microsoft.Health.VocabularyAuthorization.VocabularyName
+  - Microsoft.Health.VocabularyAuthorization.WriteXml(System.Xml.XmlWriter)
+  langs:
+  - csharp
+  - vb
+  name: VocabularyAuthorization
+  nameWithType: VocabularyAuthorization
+  fullName: Microsoft.Health.VocabularyAuthorization
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyAuthorization.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: VocabularyAuthorization
+    path: VocabularyAuthorization.cs
+    startLine: 18
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nThis class defines an authorization to use a single <xref href=\"Microsoft.Health.Vocabulary\" data-throw-if-not-resolved=\"false\"></xref> or a family of \nVocabularies in HealthVault.\n"
+  example: []
+  syntax:
+    content: 'public class VocabularyAuthorization : IEquatable<VocabularyAuthorization>'
+    content.vb: >-
+      Public Class VocabularyAuthorization
+          Implements IEquatable(Of VocabularyAuthorization)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{Microsoft.Health.VocabularyAuthorization}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.VocabularyAuthorization.#ctor(System.String)
+  commentId: M:Microsoft.Health.VocabularyAuthorization.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: Microsoft.Health.VocabularyAuthorization
+  langs:
+  - csharp
+  - vb
+  name: VocabularyAuthorization(String)
+  nameWithType: VocabularyAuthorization.VocabularyAuthorization(String)
+  fullName: Microsoft.Health.VocabularyAuthorization.VocabularyAuthorization(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyAuthorization.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: VocabularyAuthorization.cs
+    startLine: 33
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.VocabularyAuthorization\" data-throw-if-not-resolved=\"false\"></xref> class\nwith permissions to access the specified vocabulary.\n"
+  example: []
+  syntax:
+    content: public VocabularyAuthorization(string vocabularyFamily)
+    content.vb: Public Sub New(vocabularyFamily As String)
+    parameters:
+    - id: vocabularyFamily
+      type: System.String
+      description: "\nThe family of HealthVault Vocabularies.\n"
+  overload: Microsoft.Health.VocabularyAuthorization.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nThe <span class=\"paramref\">vocabularyFamily</span> parameter is <strong>null</strong> or <xref href=\"System.String.Empty\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.VocabularyAuthorization.#ctor(System.String,System.String)
+  commentId: M:Microsoft.Health.VocabularyAuthorization.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: Microsoft.Health.VocabularyAuthorization
+  langs:
+  - csharp
+  - vb
+  name: VocabularyAuthorization(String, String)
+  nameWithType: VocabularyAuthorization.VocabularyAuthorization(String, String)
+  fullName: Microsoft.Health.VocabularyAuthorization.VocabularyAuthorization(System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyAuthorization.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: VocabularyAuthorization.cs
+    startLine: 58
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.VocabularyAuthorization\" data-throw-if-not-resolved=\"false\"></xref> class\nwith permissions to access the specified vocabulary or family of vocabularies.\n"
+  example: []
+  syntax:
+    content: public VocabularyAuthorization(string vocabularyFamily, string vocabularyName)
+    content.vb: Public Sub New(vocabularyFamily As String, vocabularyName As String)
+    parameters:
+    - id: vocabularyFamily
+      type: System.String
+      description: "\nThe family of HealthVault vocabularies.\n"
+    - id: vocabularyName
+      type: System.String
+      description: "\nThe name of the HealthVault <xref href=\"Microsoft.Health.Vocabulary\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  overload: Microsoft.Health.VocabularyAuthorization.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf the <span class=\"paramref\">vocabularyFamily</span> parameter is <strong>null</strong> or <xref href=\"System.String.Empty\" data-throw-if-not-resolved=\"false\"></xref>\n--OR--\nif the <span class=\"paramref\">vocabularyName</span> parameter is <strong>null</strong> or <xref href=\"System.String.Empty\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.VocabularyAuthorization.VocabularyFamily
+  commentId: P:Microsoft.Health.VocabularyAuthorization.VocabularyFamily
+  id: VocabularyFamily
+  parent: Microsoft.Health.VocabularyAuthorization
+  langs:
+  - csharp
+  - vb
+  name: VocabularyFamily
+  nameWithType: VocabularyAuthorization.VocabularyFamily
+  fullName: Microsoft.Health.VocabularyAuthorization.VocabularyFamily
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyAuthorization.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: VocabularyFamily
+    path: VocabularyAuthorization.cs
+    startLine: 70
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the family of the HealthVault <xref href=\"Microsoft.Health.Vocabulary\" data-throw-if-not-resolved=\"false\"></xref> being represented.\n"
+  example: []
+  syntax:
+    content: public string VocabularyFamily { get; }
+    content.vb: Public ReadOnly Property VocabularyFamily As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.VocabularyAuthorization.VocabularyFamily*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.VocabularyAuthorization.VocabularyName
+  commentId: P:Microsoft.Health.VocabularyAuthorization.VocabularyName
+  id: VocabularyName
+  parent: Microsoft.Health.VocabularyAuthorization
+  langs:
+  - csharp
+  - vb
+  name: VocabularyName
+  nameWithType: VocabularyAuthorization.VocabularyName
+  fullName: Microsoft.Health.VocabularyAuthorization.VocabularyName
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyAuthorization.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: VocabularyName
+    path: VocabularyAuthorization.cs
+    startLine: 83
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the name of the HealthVault <xref href=\"Microsoft.Health.Vocabulary\" data-throw-if-not-resolved=\"false\"></xref> being represented.\n"
+  remarks: "\nThe absence of a name, i.e. the name set to null, indicates that the Authorization \ncovers all the vocabularies in the HealthVault vocabulary family.\n"
+  example: []
+  syntax:
+    content: public string VocabularyName { get; }
+    content.vb: Public ReadOnly Property VocabularyName As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.VocabularyAuthorization.VocabularyName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.VocabularyAuthorization.ToString
+  commentId: M:Microsoft.Health.VocabularyAuthorization.ToString
+  id: ToString
+  parent: Microsoft.Health.VocabularyAuthorization
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: VocabularyAuthorization.ToString()
+  fullName: Microsoft.Health.VocabularyAuthorization.ToString()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyAuthorization.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ToString
+    path: VocabularyAuthorization.cs
+    startLine: 97
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the string representation of the <xref href=\"Microsoft.Health.VocabularyAuthorization\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    content.vb: Public Overrides Function ToString As String
+    return:
+      type: System.String
+      description: "\nThe string representation of the <xref href=\"Microsoft.Health.VocabularyAuthorization\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  overridden: System.Object.ToString
+  overload: Microsoft.Health.VocabularyAuthorization.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Microsoft.Health.VocabularyAuthorization.WriteXml(System.Xml.XmlWriter)
+  commentId: M:Microsoft.Health.VocabularyAuthorization.WriteXml(System.Xml.XmlWriter)
+  id: WriteXml(System.Xml.XmlWriter)
+  parent: Microsoft.Health.VocabularyAuthorization
+  langs:
+  - csharp
+  - vb
+  name: WriteXml(XmlWriter)
+  nameWithType: VocabularyAuthorization.WriteXml(XmlWriter)
+  fullName: Microsoft.Health.VocabularyAuthorization.WriteXml(System.Xml.XmlWriter)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyAuthorization.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: WriteXml
+    path: VocabularyAuthorization.cs
+    startLine: 121
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nWrites the vocabulary authorization to the specified XmlWriter.\n"
+  example: []
+  syntax:
+    content: public void WriteXml(XmlWriter writer)
+    content.vb: Public Sub WriteXml(writer As XmlWriter)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+      description: "\nThe XmlWriter to write the vocabulary authorization to.\n"
+  overload: Microsoft.Health.VocabularyAuthorization.WriteXml*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nIf <span class=\"paramref\">writer</span> is <strong>null</strong>.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.VocabularyAuthorization.ParseXml(System.Xml.XPath.XPathNavigator)
+  commentId: M:Microsoft.Health.VocabularyAuthorization.ParseXml(System.Xml.XPath.XPathNavigator)
+  id: ParseXml(System.Xml.XPath.XPathNavigator)
+  parent: Microsoft.Health.VocabularyAuthorization
+  langs:
+  - csharp
+  - vb
+  name: ParseXml(XPathNavigator)
+  nameWithType: VocabularyAuthorization.ParseXml(XPathNavigator)
+  fullName: Microsoft.Health.VocabularyAuthorization.ParseXml(System.Xml.XPath.XPathNavigator)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyAuthorization.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ParseXml
+    path: VocabularyAuthorization.cs
+    startLine: 144
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nParses the xml serialized form of the vocabulary authorization, to create a \n<xref href=\"Microsoft.Health.VocabularyAuthorization\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static VocabularyAuthorization ParseXml(XPathNavigator vocabularyAuthorizationXml)
+    content.vb: Public Shared Function ParseXml(vocabularyAuthorizationXml As XPathNavigator) As VocabularyAuthorization
+    parameters:
+    - id: vocabularyAuthorizationXml
+      type: System.Xml.XPath.XPathNavigator
+      description: "\nThe xml representation of the VocabularyAuthorization.\n"
+    return:
+      type: Microsoft.Health.VocabularyAuthorization
+      description: "\nA VocabularyAuthorization.\n"
+  overload: Microsoft.Health.VocabularyAuthorization.ParseXml*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.VocabularyAuthorization.Equals(Microsoft.Health.VocabularyAuthorization)
+  commentId: M:Microsoft.Health.VocabularyAuthorization.Equals(Microsoft.Health.VocabularyAuthorization)
+  id: Equals(Microsoft.Health.VocabularyAuthorization)
+  parent: Microsoft.Health.VocabularyAuthorization
+  langs:
+  - csharp
+  - vb
+  name: Equals(VocabularyAuthorization)
+  nameWithType: VocabularyAuthorization.Equals(VocabularyAuthorization)
+  fullName: Microsoft.Health.VocabularyAuthorization.Equals(Microsoft.Health.VocabularyAuthorization)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyAuthorization.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Equals
+    path: VocabularyAuthorization.cs
+    startLine: 191
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nDetermines whether this instance and another specified VocabularyAuthorization object\nhave the same value and it is case insensitive.\n"
+  example: []
+  syntax:
+    content: public bool Equals(VocabularyAuthorization other)
+    content.vb: Public Function Equals(other As VocabularyAuthorization) As Boolean
+    parameters:
+    - id: other
+      type: Microsoft.Health.VocabularyAuthorization
+      description: "\nAn instance of VocabularyAuthorization.\n"
+    return:
+      type: System.Boolean
+  overload: Microsoft.Health.VocabularyAuthorization.Equals*
+  implements:
+  - System.IEquatable{Microsoft.Health.VocabularyAuthorization}.Equals(Microsoft.Health.VocabularyAuthorization)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.VocabularyAuthorization.Equals(System.Object)
+  commentId: M:Microsoft.Health.VocabularyAuthorization.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: Microsoft.Health.VocabularyAuthorization
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: VocabularyAuthorization.Equals(Object)
+  fullName: Microsoft.Health.VocabularyAuthorization.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyAuthorization.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Equals
+    path: VocabularyAuthorization.cs
+    startLine: 213
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nDetermines whether this instance and a specified object, which must also be a \nVocabularyAuthorization object, has the same value and is case insensitive \n(Overrides Object.Equals(Object).\n"
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: Microsoft.Health.VocabularyAuthorization.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Microsoft.Health.VocabularyAuthorization.GetHashCode
+  commentId: M:Microsoft.Health.VocabularyAuthorization.GetHashCode
+  id: GetHashCode
+  parent: Microsoft.Health.VocabularyAuthorization
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: VocabularyAuthorization.GetHashCode()
+  fullName: Microsoft.Health.VocabularyAuthorization.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyAuthorization.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetHashCode
+    path: VocabularyAuthorization.cs
+    startLine: 223
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nreturns the hashcode for the VocabularyAuthorization object.\n"
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    content.vb: Public Overrides Function GetHashCode As Integer
+    return:
+      type: System.Int32
+  overridden: System.Object.GetHashCode
+  overload: Microsoft.Health.VocabularyAuthorization.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: Microsoft.Health.Vocabulary
+  commentId: T:Microsoft.Health.Vocabulary
+  parent: Microsoft.Health
+  isExternal: false
+  name: Vocabulary
+  nameWithType: Vocabulary
+  fullName: Microsoft.Health.Vocabulary
+- uid: Microsoft.Health
+  commentId: N:Microsoft.Health
+  isExternal: false
+  name: Microsoft.Health
+  nameWithType: Microsoft.Health
+  fullName: Microsoft.Health
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IEquatable{Microsoft.Health.VocabularyAuthorization}
+  commentId: T:System.IEquatable{Microsoft.Health.VocabularyAuthorization}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<VocabularyAuthorization>
+  nameWithType: IEquatable<VocabularyAuthorization>
+  fullName: System.IEquatable<Microsoft.Health.VocabularyAuthorization>
+  nameWithType.vb: IEquatable(Of VocabularyAuthorization)
+  fullName.vb: System.IEquatable(Of Microsoft.Health.VocabularyAuthorization)
+  name.vb: IEquatable(Of VocabularyAuthorization)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.VocabularyAuthorization
+    name: VocabularyAuthorization
+    nameWithType: VocabularyAuthorization
+    fullName: Microsoft.Health.VocabularyAuthorization
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.VocabularyAuthorization
+    name: VocabularyAuthorization
+    nameWithType: VocabularyAuthorization
+    fullName: Microsoft.Health.VocabularyAuthorization
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.VocabularyAuthorization
+  commentId: T:Microsoft.Health.VocabularyAuthorization
+  parent: Microsoft.Health
+  isExternal: false
+  name: VocabularyAuthorization
+  nameWithType: VocabularyAuthorization
+  fullName: Microsoft.Health.VocabularyAuthorization
+- uid: System.String.Empty
+  commentId: F:System.String.Empty
+- uid: Microsoft.Health.VocabularyAuthorization.#ctor*
+  commentId: Overload:Microsoft.Health.VocabularyAuthorization.#ctor
+  isExternal: false
+  name: VocabularyAuthorization
+  nameWithType: VocabularyAuthorization.VocabularyAuthorization
+  fullName: Microsoft.Health.VocabularyAuthorization.VocabularyAuthorization
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Microsoft.Health.VocabularyAuthorization.VocabularyFamily*
+  commentId: Overload:Microsoft.Health.VocabularyAuthorization.VocabularyFamily
+  isExternal: false
+  name: VocabularyFamily
+  nameWithType: VocabularyAuthorization.VocabularyFamily
+  fullName: Microsoft.Health.VocabularyAuthorization.VocabularyFamily
+- uid: Microsoft.Health.VocabularyAuthorization.VocabularyName*
+  commentId: Overload:Microsoft.Health.VocabularyAuthorization.VocabularyName
+  isExternal: false
+  name: VocabularyName
+  nameWithType: VocabularyAuthorization.VocabularyName
+  fullName: Microsoft.Health.VocabularyAuthorization.VocabularyName
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.VocabularyAuthorization.ToString*
+  commentId: Overload:Microsoft.Health.VocabularyAuthorization.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: VocabularyAuthorization.ToString
+  fullName: Microsoft.Health.VocabularyAuthorization.ToString
+- uid: Microsoft.Health.VocabularyAuthorization.WriteXml*
+  commentId: Overload:Microsoft.Health.VocabularyAuthorization.WriteXml
+  isExternal: false
+  name: WriteXml
+  nameWithType: VocabularyAuthorization.WriteXml
+  fullName: Microsoft.Health.VocabularyAuthorization.WriteXml
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+- uid: System.Xml.XmlWriter
+  commentId: T:System.Xml.XmlWriter
+  parent: System.Xml
+  isExternal: true
+  name: XmlWriter
+  nameWithType: XmlWriter
+  fullName: System.Xml.XmlWriter
+- uid: System.Xml
+  commentId: N:System.Xml
+  isExternal: false
+  name: System.Xml
+  nameWithType: System.Xml
+  fullName: System.Xml
+- uid: Microsoft.Health.VocabularyAuthorization.ParseXml*
+  commentId: Overload:Microsoft.Health.VocabularyAuthorization.ParseXml
+  isExternal: false
+  name: ParseXml
+  nameWithType: VocabularyAuthorization.ParseXml
+  fullName: Microsoft.Health.VocabularyAuthorization.ParseXml
+- uid: System.Xml.XPath.XPathNavigator
+  commentId: T:System.Xml.XPath.XPathNavigator
+  parent: System.Xml.XPath
+  isExternal: true
+  name: XPathNavigator
+  nameWithType: XPathNavigator
+  fullName: System.Xml.XPath.XPathNavigator
+- uid: System.Xml.XPath
+  commentId: N:System.Xml.XPath
+  isExternal: false
+  name: System.Xml.XPath
+  nameWithType: System.Xml.XPath
+  fullName: System.Xml.XPath
+- uid: Microsoft.Health.VocabularyAuthorization.Equals*
+  commentId: Overload:Microsoft.Health.VocabularyAuthorization.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: VocabularyAuthorization.Equals
+  fullName: Microsoft.Health.VocabularyAuthorization.Equals
+- uid: System.IEquatable{Microsoft.Health.VocabularyAuthorization}.Equals(Microsoft.Health.VocabularyAuthorization)
+  commentId: M:System.IEquatable{Microsoft.Health.VocabularyAuthorization}.Equals(Microsoft.Health.VocabularyAuthorization)
+  parent: System.IEquatable{Microsoft.Health.VocabularyAuthorization}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(VocabularyAuthorization)
+  nameWithType: IEquatable<VocabularyAuthorization>.Equals(VocabularyAuthorization)
+  fullName: System.IEquatable<Microsoft.Health.VocabularyAuthorization>.Equals(Microsoft.Health.VocabularyAuthorization)
+  nameWithType.vb: IEquatable(Of VocabularyAuthorization).Equals(VocabularyAuthorization)
+  fullName.vb: System.IEquatable(Of Microsoft.Health.VocabularyAuthorization).Equals(Microsoft.Health.VocabularyAuthorization)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<VocabularyAuthorization>.Equals
+    fullName: System.IEquatable<Microsoft.Health.VocabularyAuthorization>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.VocabularyAuthorization
+    name: VocabularyAuthorization
+    nameWithType: VocabularyAuthorization
+    fullName: Microsoft.Health.VocabularyAuthorization
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of VocabularyAuthorization).Equals
+    fullName: System.IEquatable(Of Microsoft.Health.VocabularyAuthorization).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.VocabularyAuthorization
+    name: VocabularyAuthorization
+    nameWithType: VocabularyAuthorization
+    fullName: Microsoft.Health.VocabularyAuthorization
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.VocabularyAuthorization.GetHashCode*
+  commentId: Overload:Microsoft.Health.VocabularyAuthorization.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: VocabularyAuthorization.GetHashCode
+  fullName: Microsoft.Health.VocabularyAuthorization.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

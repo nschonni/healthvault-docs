@@ -1,0 +1,1713 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation
+  commentId: T:Microsoft.Health.Utility.Diagnostics.Instrumentation
+  id: Instrumentation
+  parent: Microsoft.Health.Utility.Diagnostics
+  children:
+  - Microsoft.Health.Utility.Diagnostics.Instrumentation.#ctor(Microsoft.Health.Utility.Diagnostics.IMetricLog)
+  - Microsoft.Health.Utility.Diagnostics.Instrumentation.#ctor(Microsoft.Health.Utility.Diagnostics.IMetricLog,System.Guid)
+  - Microsoft.Health.Utility.Diagnostics.Instrumentation.CorrelationId
+  - Microsoft.Health.Utility.Diagnostics.Instrumentation.CreateCorrelatedMetricsInstance(System.Int16)
+  - Microsoft.Health.Utility.Diagnostics.Instrumentation.LogMetric(System.String,System.Int64)
+  - Microsoft.Health.Utility.Diagnostics.Instrumentation.LogMetric(System.String,System.String,System.Int64)
+  - Microsoft.Health.Utility.Diagnostics.Instrumentation.NewInstance
+  - Microsoft.Health.Utility.Diagnostics.Instrumentation.RequestId
+  - Microsoft.Health.Utility.Diagnostics.Instrumentation.StartTimedMetric(System.String)
+  - Microsoft.Health.Utility.Diagnostics.Instrumentation.StartTimedMetric(System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: Instrumentation
+  nameWithType: Instrumentation
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Telemetry/Instrumentation.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Instrumentation
+    path: Diagnostics/Telemetry/Instrumentation.cs
+    startLine: 18
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nThis class is responsible for logging feature usage tracking information.\nBy default, the requestid context is empty.\nThis class need to be derived in each component to set the request id.\n\nCreate one object of derived type per each request id, if the context information is required.\n"
+  example: []
+  syntax:
+    content: 'public class Instrumentation : IInstrumentation'
+    content.vb: >-
+      Public Class Instrumentation
+          Implements IInstrumentation
+  inheritance:
+  - System.Object
+  implements:
+  - Microsoft.Health.Utility.Diagnostics.IInstrumentation
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - Microsoft.Health.Utility.Diagnostics.Instrumentation.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  - System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.#ctor(Microsoft.Health.Utility.Diagnostics.IMetricLog)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.Instrumentation.#ctor(Microsoft.Health.Utility.Diagnostics.IMetricLog)
+  id: '#ctor(Microsoft.Health.Utility.Diagnostics.IMetricLog)'
+  parent: Microsoft.Health.Utility.Diagnostics.Instrumentation
+  langs:
+  - csharp
+  - vb
+  name: Instrumentation(IMetricLog)
+  nameWithType: Instrumentation.Instrumentation(IMetricLog)
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.Instrumentation(Microsoft.Health.Utility.Diagnostics.IMetricLog)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Telemetry/Instrumentation.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: Diagnostics/Telemetry/Instrumentation.cs
+    startLine: 24
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  syntax:
+    content: public Instrumentation(IMetricLog metricLog)
+    content.vb: Public Sub New(metricLog As IMetricLog)
+    parameters:
+    - id: metricLog
+      type: Microsoft.Health.Utility.Diagnostics.IMetricLog
+  overload: Microsoft.Health.Utility.Diagnostics.Instrumentation.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.#ctor(Microsoft.Health.Utility.Diagnostics.IMetricLog,System.Guid)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.Instrumentation.#ctor(Microsoft.Health.Utility.Diagnostics.IMetricLog,System.Guid)
+  id: '#ctor(Microsoft.Health.Utility.Diagnostics.IMetricLog,System.Guid)'
+  parent: Microsoft.Health.Utility.Diagnostics.Instrumentation
+  langs:
+  - csharp
+  - vb
+  name: Instrumentation(IMetricLog, Guid)
+  nameWithType: Instrumentation.Instrumentation(IMetricLog, Guid)
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.Instrumentation(Microsoft.Health.Utility.Diagnostics.IMetricLog, System.Guid)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Telemetry/Instrumentation.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: Diagnostics/Telemetry/Instrumentation.cs
+    startLine: 29
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  syntax:
+    content: public Instrumentation(IMetricLog metricLog, Guid requestId)
+    content.vb: Public Sub New(metricLog As IMetricLog, requestId As Guid)
+    parameters:
+    - id: metricLog
+      type: Microsoft.Health.Utility.Diagnostics.IMetricLog
+    - id: requestId
+      type: System.Guid
+  overload: Microsoft.Health.Utility.Diagnostics.Instrumentation.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.RequestId
+  commentId: P:Microsoft.Health.Utility.Diagnostics.Instrumentation.RequestId
+  id: RequestId
+  parent: Microsoft.Health.Utility.Diagnostics.Instrumentation
+  langs:
+  - csharp
+  - vb
+  name: RequestId
+  nameWithType: Instrumentation.RequestId
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.RequestId
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Telemetry/Instrumentation.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: RequestId
+    path: Diagnostics/Telemetry/Instrumentation.cs
+    startLine: 40
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  syntax:
+    content: public Guid RequestId { get; }
+    content.vb: Public ReadOnly Property RequestId As Guid
+    parameters: []
+    return:
+      type: System.Guid
+  overload: Microsoft.Health.Utility.Diagnostics.Instrumentation.RequestId*
+  implements:
+  - Microsoft.Health.Utility.Diagnostics.IInstrumentation.RequestId
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.CorrelationId
+  commentId: P:Microsoft.Health.Utility.Diagnostics.Instrumentation.CorrelationId
+  id: CorrelationId
+  parent: Microsoft.Health.Utility.Diagnostics.Instrumentation
+  langs:
+  - csharp
+  - vb
+  name: CorrelationId
+  nameWithType: Instrumentation.CorrelationId
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.CorrelationId
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Telemetry/Instrumentation.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CorrelationId
+    path: Diagnostics/Telemetry/Instrumentation.cs
+    startLine: 45
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  syntax:
+    content: public short ? CorrelationId { get; }
+    content.vb: Public ReadOnly Property CorrelationId As Short?
+    parameters: []
+    return:
+      type: System.Nullable{System.Int16}
+  overload: Microsoft.Health.Utility.Diagnostics.Instrumentation.CorrelationId*
+  implements:
+  - Microsoft.Health.Utility.Diagnostics.IInstrumentation.CorrelationId
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.LogMetric(System.String,System.Int64)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.Instrumentation.LogMetric(System.String,System.Int64)
+  id: LogMetric(System.String,System.Int64)
+  parent: Microsoft.Health.Utility.Diagnostics.Instrumentation
+  langs:
+  - csharp
+  - vb
+  name: LogMetric(String, Int64)
+  nameWithType: Instrumentation.LogMetric(String, Int64)
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.LogMetric(System.String, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Telemetry/Instrumentation.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: LogMetric
+    path: Diagnostics/Telemetry/Instrumentation.cs
+    startLine: 53
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  syntax:
+    content: public void LogMetric(string feature, long value)
+    content.vb: Public Sub LogMetric(feature As String, value As Long)
+    parameters:
+    - id: feature
+      type: System.String
+    - id: value
+      type: System.Int64
+  overload: Microsoft.Health.Utility.Diagnostics.Instrumentation.LogMetric*
+  implements:
+  - Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric(System.String,System.Int64)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.LogMetric(System.String,System.String,System.Int64)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.Instrumentation.LogMetric(System.String,System.String,System.Int64)
+  id: LogMetric(System.String,System.String,System.Int64)
+  parent: Microsoft.Health.Utility.Diagnostics.Instrumentation
+  langs:
+  - csharp
+  - vb
+  name: LogMetric(String, String, Int64)
+  nameWithType: Instrumentation.LogMetric(String, String, Int64)
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.LogMetric(System.String, System.String, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Telemetry/Instrumentation.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: LogMetric
+    path: Diagnostics/Telemetry/Instrumentation.cs
+    startLine: 58
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  syntax:
+    content: public virtual void LogMetric(string feature, string statName, long value)
+    content.vb: Public Overridable Sub LogMetric(feature As String, statName As String, value As Long)
+    parameters:
+    - id: feature
+      type: System.String
+    - id: statName
+      type: System.String
+    - id: value
+      type: System.Int64
+  overload: Microsoft.Health.Utility.Diagnostics.Instrumentation.LogMetric*
+  implements:
+  - Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric(System.String,System.String,System.Int64)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.StartTimedMetric(System.String)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.Instrumentation.StartTimedMetric(System.String)
+  id: StartTimedMetric(System.String)
+  parent: Microsoft.Health.Utility.Diagnostics.Instrumentation
+  langs:
+  - csharp
+  - vb
+  name: StartTimedMetric(String)
+  nameWithType: Instrumentation.StartTimedMetric(String)
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.StartTimedMetric(System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Telemetry/Instrumentation.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: StartTimedMetric
+    path: Diagnostics/Telemetry/Instrumentation.cs
+    startLine: 68
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  syntax:
+    content: public TimedMetric StartTimedMetric(string feature)
+    content.vb: Public Function StartTimedMetric(feature As String) As TimedMetric
+    parameters:
+    - id: feature
+      type: System.String
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.TimedMetric
+  overload: Microsoft.Health.Utility.Diagnostics.Instrumentation.StartTimedMetric*
+  implements:
+  - Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric(System.String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.StartTimedMetric(System.String,System.String)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.Instrumentation.StartTimedMetric(System.String,System.String)
+  id: StartTimedMetric(System.String,System.String)
+  parent: Microsoft.Health.Utility.Diagnostics.Instrumentation
+  langs:
+  - csharp
+  - vb
+  name: StartTimedMetric(String, String)
+  nameWithType: Instrumentation.StartTimedMetric(String, String)
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.StartTimedMetric(System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Telemetry/Instrumentation.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: StartTimedMetric
+    path: Diagnostics/Telemetry/Instrumentation.cs
+    startLine: 73
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  syntax:
+    content: public TimedMetric StartTimedMetric(string feature, string statName)
+    content.vb: Public Function StartTimedMetric(feature As String, statName As String) As TimedMetric
+    parameters:
+    - id: feature
+      type: System.String
+    - id: statName
+      type: System.String
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.TimedMetric
+  overload: Microsoft.Health.Utility.Diagnostics.Instrumentation.StartTimedMetric*
+  implements:
+  - Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric(System.String,System.String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.CreateCorrelatedMetricsInstance(System.Int16)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.Instrumentation.CreateCorrelatedMetricsInstance(System.Int16)
+  id: CreateCorrelatedMetricsInstance(System.Int16)
+  parent: Microsoft.Health.Utility.Diagnostics.Instrumentation
+  langs:
+  - csharp
+  - vb
+  name: CreateCorrelatedMetricsInstance(Int16)
+  nameWithType: Instrumentation.CreateCorrelatedMetricsInstance(Int16)
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.CreateCorrelatedMetricsInstance(System.Int16)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Telemetry/Instrumentation.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CreateCorrelatedMetricsInstance
+    path: Diagnostics/Telemetry/Instrumentation.cs
+    startLine: 86
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nUse the instance returned by this method to correlate multiple log entries.\n"
+  example: []
+  syntax:
+    content: public IInstrumentation CreateCorrelatedMetricsInstance(short correlationId)
+    content.vb: Public Function CreateCorrelatedMetricsInstance(correlationId As Short) As IInstrumentation
+    parameters:
+    - id: correlationId
+      type: System.Int16
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.IInstrumentation
+  overload: Microsoft.Health.Utility.Diagnostics.Instrumentation.CreateCorrelatedMetricsInstance*
+  implements:
+  - Microsoft.Health.Utility.Diagnostics.IInstrumentation.CreateCorrelatedMetricsInstance(System.Int16)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.NewInstance
+  commentId: M:Microsoft.Health.Utility.Diagnostics.Instrumentation.NewInstance
+  id: NewInstance
+  parent: Microsoft.Health.Utility.Diagnostics.Instrumentation
+  langs:
+  - csharp
+  - vb
+  name: NewInstance()
+  nameWithType: Instrumentation.NewInstance()
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.NewInstance()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Telemetry/Instrumentation.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: NewInstance
+    path: Diagnostics/Telemetry/Instrumentation.cs
+    startLine: 99
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nNew instance will be used for correlated metrics.\nIf using this functionality, you have to derive from Instrumentation.\n"
+  example: []
+  syntax:
+    content: protected virtual Instrumentation NewInstance()
+    content.vb: Protected Overridable Function NewInstance As Instrumentation
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.Instrumentation
+  overload: Microsoft.Health.Utility.Diagnostics.Instrumentation.NewInstance*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+references:
+- uid: Microsoft.Health.Utility.Diagnostics
+  commentId: N:Microsoft.Health.Utility.Diagnostics
+  isExternal: false
+  name: Microsoft.Health.Utility.Diagnostics
+  nameWithType: Microsoft.Health.Utility.Diagnostics
+  fullName: Microsoft.Health.Utility.Diagnostics
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation
+  commentId: T:Microsoft.Health.Utility.Diagnostics.IInstrumentation
+  parent: Microsoft.Health.Utility.Diagnostics
+  isExternal: false
+  name: IInstrumentation
+  nameWithType: IInstrumentation
+  fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  name: SetProperty(String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object())
+  name.vb: SetProperty(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  name: InvokeMethod(String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object())
+  name.vb: InvokeMethod(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  parent: Microsoft.Health.Utility.InvariantString
+  definition: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  name: ToStringInvariant()
+  nameWithType: InvariantString.ToStringInvariant()
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  parent: Microsoft.Health.Utility.TypeHelper
+  definition: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  name: ValueOrDbNull<Instrumentation>()
+  nameWithType: TypeHelper.ValueOrDbNull<Instrumentation>()
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.Utility.Diagnostics.Instrumentation>()
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of Instrumentation)()
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.Utility.Diagnostics.Instrumentation)()
+  name.vb: ValueOrDbNull(Of Instrumentation)()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull<Instrumentation>
+    nameWithType: TypeHelper.ValueOrDbNull<Instrumentation>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.Utility.Diagnostics.Instrumentation>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull(Of Instrumentation)
+    nameWithType: TypeHelper.ValueOrDbNull(Of Instrumentation)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.Utility.Diagnostics.Instrumentation)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  parent: Microsoft.Health.Utility.WCXmlHelper
+  definition: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  name: ToXml()
+  nameWithType: WCXmlHelper.ToXml()
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: SetProperty(Object, String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object())
+  name.vb: SetProperty(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions
+  commentId: T:Microsoft.Health.Utility.IDispatchExtensions
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: IDispatchExtensions
+  nameWithType: IDispatchExtensions
+  fullName: Microsoft.Health.Utility.IDispatchExtensions
+- uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: InvokeMethod(Object, String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object())
+  name.vb: InvokeMethod(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  isExternal: true
+  name: ToStringInvariant(Object)
+  nameWithType: InvariantString.ToStringInvariant(Object)
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString
+  commentId: T:Microsoft.Health.Utility.InvariantString
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: InvariantString
+  nameWithType: InvariantString
+  fullName: Microsoft.Health.Utility.InvariantString
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  isExternal: false
+  name: ValueOrDbNull<T>(T)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(T)
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(T)
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(T)
+  name.vb: ValueOrDbNull(Of T)(T)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull<T>
+    nameWithType: TypeHelper.ValueOrDbNull<T>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull(Of T)
+    nameWithType: TypeHelper.ValueOrDbNull(Of T)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+- uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  isExternal: true
+  name: ToXml(Object)
+  nameWithType: WCXmlHelper.ToXml(Object)
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.WCXmlHelper
+  commentId: T:Microsoft.Health.Utility.WCXmlHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: WCXmlHelper
+  nameWithType: WCXmlHelper
+  fullName: Microsoft.Health.Utility.WCXmlHelper
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.#ctor*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.Instrumentation.#ctor
+  isExternal: false
+  name: Instrumentation
+  nameWithType: Instrumentation.Instrumentation
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.Instrumentation
+- uid: Microsoft.Health.Utility.Diagnostics.IMetricLog
+  commentId: T:Microsoft.Health.Utility.Diagnostics.IMetricLog
+  parent: Microsoft.Health.Utility.Diagnostics
+  isExternal: false
+  name: IMetricLog
+  nameWithType: IMetricLog
+  fullName: Microsoft.Health.Utility.Diagnostics.IMetricLog
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.RequestId*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.Instrumentation.RequestId
+  isExternal: false
+  name: RequestId
+  nameWithType: Instrumentation.RequestId
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.RequestId
+- uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.RequestId
+  commentId: P:Microsoft.Health.Utility.Diagnostics.IInstrumentation.RequestId
+  parent: Microsoft.Health.Utility.Diagnostics.IInstrumentation
+  isExternal: false
+  name: RequestId
+  nameWithType: IInstrumentation.RequestId
+  fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.RequestId
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.CorrelationId*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.Instrumentation.CorrelationId
+  isExternal: false
+  name: CorrelationId
+  nameWithType: Instrumentation.CorrelationId
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.CorrelationId
+- uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.CorrelationId
+  commentId: P:Microsoft.Health.Utility.Diagnostics.IInstrumentation.CorrelationId
+  parent: Microsoft.Health.Utility.Diagnostics.IInstrumentation
+  isExternal: false
+  name: CorrelationId
+  nameWithType: IInstrumentation.CorrelationId
+  fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.CorrelationId
+- uid: System.Nullable{System.Int16}
+  commentId: T:System.Nullable{System.Int16}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Int16>
+  nameWithType: Nullable<Int16>
+  fullName: System.Nullable<System.Int16>
+  nameWithType.vb: Nullable(Of Int16)
+  fullName.vb: System.Nullable(Of System.Int16)
+  name.vb: Nullable(Of Int16)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int16
+    name: Int16
+    nameWithType: Int16
+    fullName: System.Int16
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int16
+    name: Int16
+    nameWithType: Int16
+    fullName: System.Int16
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.LogMetric*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.Instrumentation.LogMetric
+  isExternal: false
+  name: LogMetric
+  nameWithType: Instrumentation.LogMetric
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.LogMetric
+- uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric(System.String,System.Int64)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric(System.String,System.Int64)
+  parent: Microsoft.Health.Utility.Diagnostics.IInstrumentation
+  isExternal: true
+  name: LogMetric(String, Int64)
+  nameWithType: IInstrumentation.LogMetric(String, Int64)
+  fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric(System.String, System.Int64)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric(System.String,System.Int64)
+    name: LogMetric
+    nameWithType: IInstrumentation.LogMetric
+    fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric(System.String,System.Int64)
+    name: LogMetric
+    nameWithType: IInstrumentation.LogMetric
+    fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric(System.String,System.String,System.Int64)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric(System.String,System.String,System.Int64)
+  parent: Microsoft.Health.Utility.Diagnostics.IInstrumentation
+  isExternal: true
+  name: LogMetric(String, String, Int64)
+  nameWithType: IInstrumentation.LogMetric(String, String, Int64)
+  fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric(System.String, System.String, System.Int64)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric(System.String,System.String,System.Int64)
+    name: LogMetric
+    nameWithType: IInstrumentation.LogMetric
+    fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric(System.String,System.String,System.Int64)
+    name: LogMetric
+    nameWithType: IInstrumentation.LogMetric
+    fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.LogMetric
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.StartTimedMetric*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.Instrumentation.StartTimedMetric
+  isExternal: false
+  name: StartTimedMetric
+  nameWithType: Instrumentation.StartTimedMetric
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.StartTimedMetric
+- uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric(System.String)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric(System.String)
+  parent: Microsoft.Health.Utility.Diagnostics.IInstrumentation
+  isExternal: true
+  name: StartTimedMetric(String)
+  nameWithType: IInstrumentation.StartTimedMetric(String)
+  fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric(System.String)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric(System.String)
+    name: StartTimedMetric
+    nameWithType: IInstrumentation.StartTimedMetric
+    fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric(System.String)
+    name: StartTimedMetric
+    nameWithType: IInstrumentation.StartTimedMetric
+    fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.Diagnostics.TimedMetric
+  commentId: T:Microsoft.Health.Utility.Diagnostics.TimedMetric
+  parent: Microsoft.Health.Utility.Diagnostics
+  isExternal: false
+  name: TimedMetric
+  nameWithType: TimedMetric
+  fullName: Microsoft.Health.Utility.Diagnostics.TimedMetric
+- uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric(System.String,System.String)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric(System.String,System.String)
+  parent: Microsoft.Health.Utility.Diagnostics.IInstrumentation
+  isExternal: true
+  name: StartTimedMetric(String, String)
+  nameWithType: IInstrumentation.StartTimedMetric(String, String)
+  fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric(System.String, System.String)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric(System.String,System.String)
+    name: StartTimedMetric
+    nameWithType: IInstrumentation.StartTimedMetric
+    fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric(System.String,System.String)
+    name: StartTimedMetric
+    nameWithType: IInstrumentation.StartTimedMetric
+    fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.StartTimedMetric
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.CreateCorrelatedMetricsInstance*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.Instrumentation.CreateCorrelatedMetricsInstance
+  isExternal: false
+  name: CreateCorrelatedMetricsInstance
+  nameWithType: Instrumentation.CreateCorrelatedMetricsInstance
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.CreateCorrelatedMetricsInstance
+- uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.CreateCorrelatedMetricsInstance(System.Int16)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.IInstrumentation.CreateCorrelatedMetricsInstance(System.Int16)
+  parent: Microsoft.Health.Utility.Diagnostics.IInstrumentation
+  isExternal: true
+  name: CreateCorrelatedMetricsInstance(Int16)
+  nameWithType: IInstrumentation.CreateCorrelatedMetricsInstance(Int16)
+  fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.CreateCorrelatedMetricsInstance(System.Int16)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.CreateCorrelatedMetricsInstance(System.Int16)
+    name: CreateCorrelatedMetricsInstance
+    nameWithType: IInstrumentation.CreateCorrelatedMetricsInstance
+    fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.CreateCorrelatedMetricsInstance
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int16
+    name: Int16
+    nameWithType: Int16
+    fullName: System.Int16
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.Diagnostics.IInstrumentation.CreateCorrelatedMetricsInstance(System.Int16)
+    name: CreateCorrelatedMetricsInstance
+    nameWithType: IInstrumentation.CreateCorrelatedMetricsInstance
+    fullName: Microsoft.Health.Utility.Diagnostics.IInstrumentation.CreateCorrelatedMetricsInstance
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int16
+    name: Int16
+    nameWithType: Int16
+    fullName: System.Int16
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int16
+  commentId: T:System.Int16
+  parent: System
+  isExternal: true
+  name: Int16
+  nameWithType: Int16
+  fullName: System.Int16
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation.NewInstance*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.Instrumentation.NewInstance
+  isExternal: false
+  name: NewInstance
+  nameWithType: Instrumentation.NewInstance
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation.NewInstance
+- uid: Microsoft.Health.Utility.Diagnostics.Instrumentation
+  commentId: T:Microsoft.Health.Utility.Diagnostics.Instrumentation
+  parent: Microsoft.Health.Utility.Diagnostics
+  isExternal: false
+  name: Instrumentation
+  nameWithType: Instrumentation
+  fullName: Microsoft.Health.Utility.Diagnostics.Instrumentation

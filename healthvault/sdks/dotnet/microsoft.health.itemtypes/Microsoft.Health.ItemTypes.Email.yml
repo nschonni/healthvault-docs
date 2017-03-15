@@ -1,0 +1,968 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.ItemTypes.Email
+  commentId: T:Microsoft.Health.ItemTypes.Email
+  id: Email
+  parent: Microsoft.Health.ItemTypes
+  children:
+  - Microsoft.Health.ItemTypes.Email.#ctor
+  - Microsoft.Health.ItemTypes.Email.#ctor(System.String)
+  - Microsoft.Health.ItemTypes.Email.#ctor(System.String,System.String,System.Boolean)
+  - Microsoft.Health.ItemTypes.Email.Address
+  - Microsoft.Health.ItemTypes.Email.Description
+  - Microsoft.Health.ItemTypes.Email.IsPrimary
+  - Microsoft.Health.ItemTypes.Email.ParseXml(System.Xml.XPath.XPathNavigator)
+  - Microsoft.Health.ItemTypes.Email.WriteXml(System.String,System.Xml.XmlWriter)
+  langs:
+  - csharp
+  - vb
+  name: Email
+  nameWithType: Email
+  fullName: Microsoft.Health.ItemTypes.Email
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Email.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Email
+    path: Email.cs
+    startLine: 19
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nRepresents an email address.\n"
+  example: []
+  syntax:
+    content: 'public class Email : HealthRecordItemData'
+    content.vb: >-
+      Public Class Email
+          Inherits HealthRecordItemData
+  inheritance:
+  - System.Object
+  - Microsoft.Health.ItemTypes.HealthRecordItemData
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.ItemTypes.Email.#ctor
+  commentId: M:Microsoft.Health.ItemTypes.Email.#ctor
+  id: '#ctor'
+  parent: Microsoft.Health.ItemTypes.Email
+  langs:
+  - csharp
+  - vb
+  name: Email()
+  nameWithType: Email.Email()
+  fullName: Microsoft.Health.ItemTypes.Email.Email()
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Email.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: Email.cs
+    startLine: 25
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.ItemTypes.Email\" data-throw-if-not-resolved=\"false\"></xref> class with default values.\n"
+  example: []
+  syntax:
+    content: public Email()
+    content.vb: Public Sub New
+  overload: Microsoft.Health.ItemTypes.Email.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.Email.#ctor(System.String)
+  commentId: M:Microsoft.Health.ItemTypes.Email.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: Microsoft.Health.ItemTypes.Email
+  langs:
+  - csharp
+  - vb
+  name: Email(String)
+  nameWithType: Email.Email(String)
+  fullName: Microsoft.Health.ItemTypes.Email.Email(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Email.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: Email.cs
+    startLine: 42
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.ItemTypes.Email\" data-throw-if-not-resolved=\"false\"></xref> class with the \nspecified email address.\n"
+  example: []
+  syntax:
+    content: public Email(string address)
+    content.vb: Public Sub New(address As String)
+    parameters:
+    - id: address
+      type: System.String
+      description: "\nThe email address.\n"
+  overload: Microsoft.Health.ItemTypes.Email.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nThe <span class=\"paramref\">address</span> parameter is <strong>null</strong> or empty.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.Email.#ctor(System.String,System.String,System.Boolean)
+  commentId: M:Microsoft.Health.ItemTypes.Email.#ctor(System.String,System.String,System.Boolean)
+  id: '#ctor(System.String,System.String,System.Boolean)'
+  parent: Microsoft.Health.ItemTypes.Email
+  langs:
+  - csharp
+  - vb
+  name: Email(String, String, Boolean)
+  nameWithType: Email.Email(String, String, Boolean)
+  fullName: Microsoft.Health.ItemTypes.Email.Email(System.String, System.String, System.Boolean)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Email.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: Email.cs
+    startLine: 69
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.ItemTypes.Email\" data-throw-if-not-resolved=\"false\"></xref> class with the \nspecified email address, description, and primary designation.\n"
+  example: []
+  syntax:
+    content: public Email(string address, string description, bool isPrimary)
+    content.vb: Public Sub New(address As String, description As String, isPrimary As Boolean)
+    parameters:
+    - id: address
+      type: System.String
+      description: "\nThe email address.\n"
+    - id: description
+      type: System.String
+      description: "\nThe description for the email address, such as personal or work.\n"
+    - id: isPrimary
+      type: System.Boolean
+      description: "\n<strong>true</strong> if this email address is the primary email address at which \nto contact the person; otherwise, <strong>false</strong>.\n"
+  overload: Microsoft.Health.ItemTypes.Email.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nThe <span class=\"paramref\">address</span> parameter is <strong>null</strong> or empty.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.Email.ParseXml(System.Xml.XPath.XPathNavigator)
+  commentId: M:Microsoft.Health.ItemTypes.Email.ParseXml(System.Xml.XPath.XPathNavigator)
+  id: ParseXml(System.Xml.XPath.XPathNavigator)
+  parent: Microsoft.Health.ItemTypes.Email
+  langs:
+  - csharp
+  - vb
+  name: ParseXml(XPathNavigator)
+  nameWithType: Email.ParseXml(XPathNavigator)
+  fullName: Microsoft.Health.ItemTypes.Email.ParseXml(System.Xml.XPath.XPathNavigator)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Email.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ParseXml
+    path: Email.cs
+    startLine: 88
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nPopulates the data from the specified XML.\n"
+  example: []
+  syntax:
+    content: public override void ParseXml(XPathNavigator navigator)
+    content.vb: Public Overrides Sub ParseXml(navigator As XPathNavigator)
+    parameters:
+    - id: navigator
+      type: System.Xml.XPath.XPathNavigator
+      description: "\nThe XML containing the email information.\n"
+  overridden: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  overload: Microsoft.Health.ItemTypes.Email.ParseXml*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">navigator</span> parameter is <strong>null</strong>.\n"
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Microsoft.Health.ItemTypes.Email.WriteXml(System.String,System.Xml.XmlWriter)
+  commentId: M:Microsoft.Health.ItemTypes.Email.WriteXml(System.String,System.Xml.XmlWriter)
+  id: WriteXml(System.String,System.Xml.XmlWriter)
+  parent: Microsoft.Health.ItemTypes.Email
+  langs:
+  - csharp
+  - vb
+  name: WriteXml(String, XmlWriter)
+  nameWithType: Email.WriteXml(String, XmlWriter)
+  fullName: Microsoft.Health.ItemTypes.Email.WriteXml(System.String, System.Xml.XmlWriter)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Email.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: WriteXml
+    path: Email.cs
+    startLine: 137
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nWrites the XML representation of the email address into\nthe specified XML writer.\n"
+  example: []
+  syntax:
+    content: public override void WriteXml(string nodeName, XmlWriter writer)
+    content.vb: Public Overrides Sub WriteXml(nodeName As String, writer As XmlWriter)
+    parameters:
+    - id: nodeName
+      type: System.String
+      description: "\nThe name of the outer node for the email address.\n"
+    - id: writer
+      type: System.Xml.XmlWriter
+      description: "\nThe XML writer into which the email address should be \nwritten.\n"
+  overridden: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+  overload: Microsoft.Health.ItemTypes.Email.WriteXml*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nThe <span class=\"paramref\">nodeName</span> parameter is <strong>null</strong> or empty.\n"
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">writer</span> parameter is <strong>null</strong>.\n"
+  - type: Microsoft.Health.HealthRecordItemSerializationException
+    commentId: T:Microsoft.Health.HealthRecordItemSerializationException
+    description: "\nThe <xref href=\"Microsoft.Health.ItemTypes.Email.Address\" data-throw-if-not-resolved=\"false\"></xref> property has not been set.\n"
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Microsoft.Health.ItemTypes.Email.Description
+  commentId: P:Microsoft.Health.ItemTypes.Email.Description
+  id: Description
+  parent: Microsoft.Health.ItemTypes.Email
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: Email.Description
+  fullName: Microsoft.Health.ItemTypes.Email.Description
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Email.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Description
+    path: Email.cs
+    startLine: 178
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the description for the email address.\n"
+  remarks: "\nSet the value to <strong>null</strong> if the description should not be stored.\n"
+  example: []
+  syntax:
+    content: public string Description { get; set; }
+    content.vb: Public Property Description As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nA string representing the description.\n"
+  overload: Microsoft.Health.ItemTypes.Email.Description*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">value</span> contains only whitespace.\n"
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.Email.IsPrimary
+  commentId: P:Microsoft.Health.ItemTypes.Email.IsPrimary
+  id: IsPrimary
+  parent: Microsoft.Health.ItemTypes.Email
+  langs:
+  - csharp
+  - vb
+  name: IsPrimary
+  nameWithType: Email.IsPrimary
+  fullName: Microsoft.Health.ItemTypes.Email.IsPrimary
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Email.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: IsPrimary
+    path: Email.cs
+    startLine: 202
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets a value indicating whether the email address is the \nprimary address for the person.\n"
+  remarks: "\nSet the value to <strong>null</strong> if this property should not be stored.\n"
+  example: []
+  syntax:
+    content: public bool ? IsPrimary { get; set; }
+    content.vb: Public Property IsPrimary As Boolean?
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+      description: "\n<strong>true</strong> if this email address is primary; otherwise, <strong>false</strong>.\n"
+  overload: Microsoft.Health.ItemTypes.Email.IsPrimary*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.Email.Address
+  commentId: P:Microsoft.Health.ItemTypes.Email.Address
+  id: Address
+  parent: Microsoft.Health.ItemTypes.Email
+  langs:
+  - csharp
+  - vb
+  name: Address
+  nameWithType: Email.Address
+  fullName: Microsoft.Health.ItemTypes.Email.Address
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Email.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Address
+    path: Email.cs
+    startLine: 222
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the email address.\n"
+  example: []
+  syntax:
+    content: public string Address { get; set; }
+    content.vb: Public Property Address As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nA string representing the email address.\n"
+  overload: Microsoft.Health.ItemTypes.Email.Address*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nThe <span class=\"paramref\">value</span> parameter is <strong>null</strong>, empty, or contains only \nwhitespace during set.\n"
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Microsoft.Health.ItemTypes
+  commentId: N:Microsoft.Health.ItemTypes
+  isExternal: false
+  name: Microsoft.Health.ItemTypes
+  nameWithType: Microsoft.Health.ItemTypes
+  fullName: Microsoft.Health.ItemTypes
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Microsoft.Health.ItemTypes.HealthRecordItemData
+  commentId: T:Microsoft.Health.ItemTypes.HealthRecordItemData
+  parent: Microsoft.Health.ItemTypes
+  isExternal: false
+  name: HealthRecordItemData
+  nameWithType: HealthRecordItemData
+  fullName: Microsoft.Health.ItemTypes.HealthRecordItemData
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.ItemTypes.Email
+  commentId: T:Microsoft.Health.ItemTypes.Email
+  parent: Microsoft.Health.ItemTypes
+  isExternal: false
+  name: Email
+  nameWithType: Email
+  fullName: Microsoft.Health.ItemTypes.Email
+- uid: Microsoft.Health.ItemTypes.Email.#ctor*
+  commentId: Overload:Microsoft.Health.ItemTypes.Email.#ctor
+  isExternal: false
+  name: Email
+  nameWithType: Email.Email
+  fullName: Microsoft.Health.ItemTypes.Email.Email
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  commentId: M:Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  parent: Microsoft.Health.ItemTypes.HealthRecordItemData
+  isExternal: true
+  name: ParseXml(XPathNavigator)
+  nameWithType: HealthRecordItemData.ParseXml(XPathNavigator)
+  fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  spec.csharp:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+    name: ParseXml
+    nameWithType: HealthRecordItemData.ParseXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XPath.XPathNavigator
+    name: XPathNavigator
+    nameWithType: XPathNavigator
+    fullName: System.Xml.XPath.XPathNavigator
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+    name: ParseXml
+    nameWithType: HealthRecordItemData.ParseXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XPath.XPathNavigator
+    name: XPathNavigator
+    nameWithType: XPathNavigator
+    fullName: System.Xml.XPath.XPathNavigator
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.Email.ParseXml*
+  commentId: Overload:Microsoft.Health.ItemTypes.Email.ParseXml
+  isExternal: false
+  name: ParseXml
+  nameWithType: Email.ParseXml
+  fullName: Microsoft.Health.ItemTypes.Email.ParseXml
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+- uid: System.Xml.XPath.XPathNavigator
+  commentId: T:System.Xml.XPath.XPathNavigator
+  parent: System.Xml.XPath
+  isExternal: true
+  name: XPathNavigator
+  nameWithType: XPathNavigator
+  fullName: System.Xml.XPath.XPathNavigator
+- uid: System.Xml.XPath
+  commentId: N:System.Xml.XPath
+  isExternal: false
+  name: System.Xml.XPath
+  nameWithType: System.Xml.XPath
+  fullName: System.Xml.XPath
+- uid: Microsoft.Health.ItemTypes.Email.Address
+  commentId: P:Microsoft.Health.ItemTypes.Email.Address
+- uid: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+  commentId: M:Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+  parent: Microsoft.Health.ItemTypes.HealthRecordItemData
+  isExternal: true
+  name: WriteXml(String, XmlWriter)
+  nameWithType: HealthRecordItemData.WriteXml(String, XmlWriter)
+  fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String, System.Xml.XmlWriter)
+  spec.csharp:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+    name: WriteXml
+    nameWithType: HealthRecordItemData.WriteXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+    name: WriteXml
+    nameWithType: HealthRecordItemData.WriteXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.Email.WriteXml*
+  commentId: Overload:Microsoft.Health.ItemTypes.Email.WriteXml
+  isExternal: false
+  name: WriteXml
+  nameWithType: Email.WriteXml
+  fullName: Microsoft.Health.ItemTypes.Email.WriteXml
+- uid: Microsoft.Health.HealthRecordItemSerializationException
+  commentId: T:Microsoft.Health.HealthRecordItemSerializationException
+- uid: System.Xml.XmlWriter
+  commentId: T:System.Xml.XmlWriter
+  parent: System.Xml
+  isExternal: true
+  name: XmlWriter
+  nameWithType: XmlWriter
+  fullName: System.Xml.XmlWriter
+- uid: System.Xml
+  commentId: N:System.Xml
+  isExternal: false
+  name: System.Xml
+  nameWithType: System.Xml
+  fullName: System.Xml
+- uid: Microsoft.Health.ItemTypes.Email.Description*
+  commentId: Overload:Microsoft.Health.ItemTypes.Email.Description
+  isExternal: false
+  name: Description
+  nameWithType: Email.Description
+  fullName: Microsoft.Health.ItemTypes.Email.Description
+- uid: Microsoft.Health.ItemTypes.Email.IsPrimary*
+  commentId: Overload:Microsoft.Health.ItemTypes.Email.IsPrimary
+  isExternal: false
+  name: IsPrimary
+  nameWithType: Email.IsPrimary
+  fullName: Microsoft.Health.ItemTypes.Email.IsPrimary
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Boolean>
+  nameWithType: Nullable<Boolean>
+  fullName: System.Nullable<System.Boolean>
+  nameWithType.vb: Nullable(Of Boolean)
+  fullName.vb: System.Nullable(Of System.Boolean)
+  name.vb: Nullable(Of Boolean)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.Email.Address*
+  commentId: Overload:Microsoft.Health.ItemTypes.Email.Address
+  isExternal: false
+  name: Address
+  nameWithType: Email.Address
+  fullName: Microsoft.Health.ItemTypes.Email.Address

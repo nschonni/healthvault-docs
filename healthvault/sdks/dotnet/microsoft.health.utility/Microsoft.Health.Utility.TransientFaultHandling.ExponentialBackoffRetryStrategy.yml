@@ -1,0 +1,1269 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy
+  commentId: T:Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy
+  id: ExponentialBackoffRetryStrategy
+  parent: Microsoft.Health.Utility.TransientFaultHandling
+  children:
+  - Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.#ctor
+  - Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.#ctor(System.Int32,System.Int32,System.Double)
+  - Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.BaseMultiplier
+  - Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.CreateRetryStrategy
+  - Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.GetNextRetryTime(System.Int32)
+  - Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.InitialDelay
+  - Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.MaximumRetryCount
+  langs:
+  - csharp
+  - vb
+  name: ExponentialBackoffRetryStrategy
+  nameWithType: ExponentialBackoffRetryStrategy
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ExponentialBackoffRetryStrategy
+    path: utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+    startLine: 15
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.TransientFaultHandling
+  summary: "\nAn exponential retry strategy.\n"
+  example: []
+  syntax:
+    content: 'public class ExponentialBackoffRetryStrategy : IRetryStrategy, IRetryStrategyFactory'
+    content.vb: >-
+      Public Class ExponentialBackoffRetryStrategy
+          Implements IRetryStrategy, IRetryStrategyFactory
+  inheritance:
+  - System.Object
+  implements:
+  - Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategy
+  - Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategyFactory
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  - System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.#ctor
+  commentId: M:Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.#ctor
+  id: '#ctor'
+  parent: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy
+  langs:
+  - csharp
+  - vb
+  name: ExponentialBackoffRetryStrategy()
+  nameWithType: ExponentialBackoffRetryStrategy.ExponentialBackoffRetryStrategy()
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.ExponentialBackoffRetryStrategy()
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+    startLine: 20
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.TransientFaultHandling
+  summary: "\nDefault constructor for deserialization.\n"
+  example: []
+  syntax:
+    content: public ExponentialBackoffRetryStrategy()
+    content.vb: Public Sub New
+  overload: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.#ctor(System.Int32,System.Int32,System.Double)
+  commentId: M:Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.#ctor(System.Int32,System.Int32,System.Double)
+  id: '#ctor(System.Int32,System.Int32,System.Double)'
+  parent: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy
+  langs:
+  - csharp
+  - vb
+  name: ExponentialBackoffRetryStrategy(Int32, Int32, Double)
+  nameWithType: ExponentialBackoffRetryStrategy.ExponentialBackoffRetryStrategy(Int32, Int32, Double)
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.ExponentialBackoffRetryStrategy(System.Int32, System.Int32, System.Double)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+    startLine: 27
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.TransientFaultHandling
+  syntax:
+    content: public ExponentialBackoffRetryStrategy(int maximumRetryCount, int initialDelay, double baseMultiplier)
+    content.vb: Public Sub New(maximumRetryCount As Integer, initialDelay As Integer, baseMultiplier As Double)
+    parameters:
+    - id: maximumRetryCount
+      type: System.Int32
+    - id: initialDelay
+      type: System.Int32
+    - id: baseMultiplier
+      type: System.Double
+  overload: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.MaximumRetryCount
+  commentId: P:Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.MaximumRetryCount
+  id: MaximumRetryCount
+  parent: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy
+  langs:
+  - csharp
+  - vb
+  name: MaximumRetryCount
+  nameWithType: ExponentialBackoffRetryStrategy.MaximumRetryCount
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.MaximumRetryCount
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: MaximumRetryCount
+    path: utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+    startLine: 56
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.TransientFaultHandling
+  summary: "\nThe maximum number of retries that should be\nattempted.\n"
+  example: []
+  syntax:
+    content: public int MaximumRetryCount { get; set; }
+    content.vb: Public Property MaximumRetryCount As Integer
+    parameters: []
+    return:
+      type: System.Int32
+  overload: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.MaximumRetryCount*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.InitialDelay
+  commentId: P:Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.InitialDelay
+  id: InitialDelay
+  parent: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy
+  langs:
+  - csharp
+  - vb
+  name: InitialDelay
+  nameWithType: ExponentialBackoffRetryStrategy.InitialDelay
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.InitialDelay
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: InitialDelay
+    path: utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+    startLine: 64
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.TransientFaultHandling
+  summary: "\nThe delay (in milliseconds) for first retry attempt,\nand added to ever retry attempt after.\n"
+  example: []
+  syntax:
+    content: public int InitialDelay { get; set; }
+    content.vb: Public Property InitialDelay As Integer
+    parameters: []
+    return:
+      type: System.Int32
+  overload: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.InitialDelay*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.BaseMultiplier
+  commentId: P:Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.BaseMultiplier
+  id: BaseMultiplier
+  parent: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy
+  langs:
+  - csharp
+  - vb
+  name: BaseMultiplier
+  nameWithType: ExponentialBackoffRetryStrategy.BaseMultiplier
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.BaseMultiplier
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: BaseMultiplier
+    path: utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+    startLine: 72
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.TransientFaultHandling
+  summary: "\nThe number that is multiplied by the exponential component\nof the backoff formula.\n"
+  example: []
+  syntax:
+    content: public double BaseMultiplier { get; set; }
+    content.vb: Public Property BaseMultiplier As Double
+    parameters: []
+    return:
+      type: System.Double
+  overload: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.BaseMultiplier*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.GetNextRetryTime(System.Int32)
+  commentId: M:Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.GetNextRetryTime(System.Int32)
+  id: GetNextRetryTime(System.Int32)
+  parent: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy
+  langs:
+  - csharp
+  - vb
+  name: GetNextRetryTime(Int32)
+  nameWithType: ExponentialBackoffRetryStrategy.GetNextRetryTime(Int32)
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.GetNextRetryTime(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetNextRetryTime
+    path: utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+    startLine: 76
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.TransientFaultHandling
+  syntax:
+    content: public int GetNextRetryTime(int attemptCount)
+    content.vb: Public Function GetNextRetryTime(attemptCount As Integer) As Integer
+    parameters:
+    - id: attemptCount
+      type: System.Int32
+    return:
+      type: System.Int32
+  overload: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.GetNextRetryTime*
+  implements:
+  - Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategy.GetNextRetryTime(System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.CreateRetryStrategy
+  commentId: M:Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.CreateRetryStrategy
+  id: CreateRetryStrategy
+  parent: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy
+  langs:
+  - csharp
+  - vb
+  name: CreateRetryStrategy()
+  nameWithType: ExponentialBackoffRetryStrategy.CreateRetryStrategy()
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.CreateRetryStrategy()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CreateRetryStrategy
+    path: utilities/TransientFaultHandling/ExponentialBackoffRetryStrategy.cs
+    startLine: 87
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.TransientFaultHandling
+  syntax:
+    content: public IRetryStrategy CreateRetryStrategy()
+    content.vb: Public Function CreateRetryStrategy As IRetryStrategy
+    return:
+      type: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategy
+  overload: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.CreateRetryStrategy*
+  implements:
+  - Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategyFactory.CreateRetryStrategy
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Microsoft.Health.Utility.TransientFaultHandling
+  commentId: N:Microsoft.Health.Utility.TransientFaultHandling
+  isExternal: false
+  name: Microsoft.Health.Utility.TransientFaultHandling
+  nameWithType: Microsoft.Health.Utility.TransientFaultHandling
+  fullName: Microsoft.Health.Utility.TransientFaultHandling
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategy
+  commentId: T:Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategy
+  parent: Microsoft.Health.Utility.TransientFaultHandling
+  isExternal: false
+  name: IRetryStrategy
+  nameWithType: IRetryStrategy
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategy
+- uid: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategyFactory
+  commentId: T:Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategyFactory
+  parent: Microsoft.Health.Utility.TransientFaultHandling
+  isExternal: false
+  name: IRetryStrategyFactory
+  nameWithType: IRetryStrategyFactory
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategyFactory
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  name: SetProperty(String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object())
+  name.vb: SetProperty(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  name: InvokeMethod(String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object())
+  name.vb: InvokeMethod(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  parent: Microsoft.Health.Utility.InvariantString
+  definition: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  name: ToStringInvariant()
+  nameWithType: InvariantString.ToStringInvariant()
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  parent: Microsoft.Health.Utility.TypeHelper
+  definition: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  name: ValueOrDbNull<ExponentialBackoffRetryStrategy>()
+  nameWithType: TypeHelper.ValueOrDbNull<ExponentialBackoffRetryStrategy>()
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy>()
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of ExponentialBackoffRetryStrategy)()
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy)()
+  name.vb: ValueOrDbNull(Of ExponentialBackoffRetryStrategy)()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull<ExponentialBackoffRetryStrategy>
+    nameWithType: TypeHelper.ValueOrDbNull<ExponentialBackoffRetryStrategy>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull(Of ExponentialBackoffRetryStrategy)
+    nameWithType: TypeHelper.ValueOrDbNull(Of ExponentialBackoffRetryStrategy)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  parent: Microsoft.Health.Utility.WCXmlHelper
+  definition: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  name: ToXml()
+  nameWithType: WCXmlHelper.ToXml()
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: SetProperty(Object, String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object())
+  name.vb: SetProperty(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions
+  commentId: T:Microsoft.Health.Utility.IDispatchExtensions
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: IDispatchExtensions
+  nameWithType: IDispatchExtensions
+  fullName: Microsoft.Health.Utility.IDispatchExtensions
+- uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: InvokeMethod(Object, String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object())
+  name.vb: InvokeMethod(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  isExternal: true
+  name: ToStringInvariant(Object)
+  nameWithType: InvariantString.ToStringInvariant(Object)
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString
+  commentId: T:Microsoft.Health.Utility.InvariantString
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: InvariantString
+  nameWithType: InvariantString
+  fullName: Microsoft.Health.Utility.InvariantString
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  isExternal: false
+  name: ValueOrDbNull<T>(T)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(T)
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(T)
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(T)
+  name.vb: ValueOrDbNull(Of T)(T)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull<T>
+    nameWithType: TypeHelper.ValueOrDbNull<T>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull(Of T)
+    nameWithType: TypeHelper.ValueOrDbNull(Of T)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+- uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  isExternal: true
+  name: ToXml(Object)
+  nameWithType: WCXmlHelper.ToXml(Object)
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.WCXmlHelper
+  commentId: T:Microsoft.Health.Utility.WCXmlHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: WCXmlHelper
+  nameWithType: WCXmlHelper
+  fullName: Microsoft.Health.Utility.WCXmlHelper
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.#ctor*
+  commentId: Overload:Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.#ctor
+  isExternal: false
+  name: ExponentialBackoffRetryStrategy
+  nameWithType: ExponentialBackoffRetryStrategy.ExponentialBackoffRetryStrategy
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.ExponentialBackoffRetryStrategy
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.MaximumRetryCount*
+  commentId: Overload:Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.MaximumRetryCount
+  isExternal: false
+  name: MaximumRetryCount
+  nameWithType: ExponentialBackoffRetryStrategy.MaximumRetryCount
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.MaximumRetryCount
+- uid: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.InitialDelay*
+  commentId: Overload:Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.InitialDelay
+  isExternal: false
+  name: InitialDelay
+  nameWithType: ExponentialBackoffRetryStrategy.InitialDelay
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.InitialDelay
+- uid: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.BaseMultiplier*
+  commentId: Overload:Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.BaseMultiplier
+  isExternal: false
+  name: BaseMultiplier
+  nameWithType: ExponentialBackoffRetryStrategy.BaseMultiplier
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.BaseMultiplier
+- uid: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.GetNextRetryTime*
+  commentId: Overload:Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.GetNextRetryTime
+  isExternal: false
+  name: GetNextRetryTime
+  nameWithType: ExponentialBackoffRetryStrategy.GetNextRetryTime
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.GetNextRetryTime
+- uid: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategy.GetNextRetryTime(System.Int32)
+  commentId: M:Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategy.GetNextRetryTime(System.Int32)
+  parent: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategy
+  isExternal: true
+  name: GetNextRetryTime(Int32)
+  nameWithType: IRetryStrategy.GetNextRetryTime(Int32)
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategy.GetNextRetryTime(System.Int32)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategy.GetNextRetryTime(System.Int32)
+    name: GetNextRetryTime
+    nameWithType: IRetryStrategy.GetNextRetryTime
+    fullName: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategy.GetNextRetryTime
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategy.GetNextRetryTime(System.Int32)
+    name: GetNextRetryTime
+    nameWithType: IRetryStrategy.GetNextRetryTime
+    fullName: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategy.GetNextRetryTime
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.CreateRetryStrategy*
+  commentId: Overload:Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.CreateRetryStrategy
+  isExternal: false
+  name: CreateRetryStrategy
+  nameWithType: ExponentialBackoffRetryStrategy.CreateRetryStrategy
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.ExponentialBackoffRetryStrategy.CreateRetryStrategy
+- uid: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategyFactory.CreateRetryStrategy
+  commentId: M:Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategyFactory.CreateRetryStrategy
+  parent: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategyFactory
+  isExternal: false
+  name: CreateRetryStrategy()
+  nameWithType: IRetryStrategyFactory.CreateRetryStrategy()
+  fullName: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategyFactory.CreateRetryStrategy()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategyFactory.CreateRetryStrategy
+    name: CreateRetryStrategy
+    nameWithType: IRetryStrategyFactory.CreateRetryStrategy
+    fullName: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategyFactory.CreateRetryStrategy
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategyFactory.CreateRetryStrategy
+    name: CreateRetryStrategy
+    nameWithType: IRetryStrategyFactory.CreateRetryStrategy
+    fullName: Microsoft.Health.Utility.TransientFaultHandling.IRetryStrategyFactory.CreateRetryStrategy
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

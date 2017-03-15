@@ -1,0 +1,1265 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.ItemTypeDataColumn
+  commentId: T:Microsoft.Health.ItemTypeDataColumn
+  id: ItemTypeDataColumn
+  parent: Microsoft.Health
+  children:
+  - Microsoft.Health.ItemTypeDataColumn.#ctor(System.String,System.String,System.Type,System.Int32,System.Boolean,System.String)
+  - Microsoft.Health.ItemTypeDataColumn.Clone
+  - Microsoft.Health.ItemTypeDataColumn.ColumnTypeName
+  - Microsoft.Health.ItemTypeDataColumn.ColumnWidth
+  - Microsoft.Health.ItemTypeDataColumn.OrderBy
+  - Microsoft.Health.ItemTypeDataColumn.ToString
+  - Microsoft.Health.ItemTypeDataColumn.VisibleByDefault
+  langs:
+  - csharp
+  - vb
+  name: ItemTypeDataColumn
+  nameWithType: ItemTypeDataColumn
+  fullName: Microsoft.Health.ItemTypeDataColumn
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health/ItemTypeDataColumn.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ItemTypeDataColumn
+    path: ItemTypeDataColumn.cs
+    startLine: 18
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nDescribes the schema of a column of health record item data when \ntransformed by the single-type item transform or multi-type item \ntransform.\n"
+  example: []
+  syntax:
+    content: 'public class ItemTypeDataColumn : DataColumn, IComponent, IDisposable, IServiceProvider'
+    content.vb: >-
+      Public Class ItemTypeDataColumn
+          Inherits DataColumn
+          Implements IComponent, IDisposable, IServiceProvider
+  inheritance:
+  - System.Object
+  - System.ComponentModel.MarshalByValueComponent
+  - System.Data.DataColumn
+  implements:
+  - System.ComponentModel.IComponent
+  - System.IDisposable
+  - System.IServiceProvider
+  inheritedMembers:
+  - System.Data.DataColumn.SetOrdinal(System.Int32)
+  - System.Data.DataColumn.CheckNotAllowNull
+  - System.Data.DataColumn.CheckUnique
+  - System.Data.DataColumn.OnPropertyChanging(System.ComponentModel.PropertyChangedEventArgs)
+  - System.Data.DataColumn.RaisePropertyChanging(System.String)
+  - System.Data.DataColumn.AllowDBNull
+  - System.Data.DataColumn.AutoIncrement
+  - System.Data.DataColumn.AutoIncrementSeed
+  - System.Data.DataColumn.AutoIncrementStep
+  - System.Data.DataColumn.Caption
+  - System.Data.DataColumn.ColumnName
+  - System.Data.DataColumn.Prefix
+  - System.Data.DataColumn.DataType
+  - System.Data.DataColumn.DateTimeMode
+  - System.Data.DataColumn.DefaultValue
+  - System.Data.DataColumn.Expression
+  - System.Data.DataColumn.ExtendedProperties
+  - System.Data.DataColumn.MaxLength
+  - System.Data.DataColumn.Namespace
+  - System.Data.DataColumn.Ordinal
+  - System.Data.DataColumn.ReadOnly
+  - System.Data.DataColumn.Table
+  - System.Data.DataColumn.Unique
+  - System.Data.DataColumn.ColumnMapping
+  - System.ComponentModel.MarshalByValueComponent.Dispose
+  - System.ComponentModel.MarshalByValueComponent.Dispose(System.Boolean)
+  - System.ComponentModel.MarshalByValueComponent.GetService(System.Type)
+  - System.ComponentModel.MarshalByValueComponent.Events
+  - System.ComponentModel.MarshalByValueComponent.Site
+  - System.ComponentModel.MarshalByValueComponent.Container
+  - System.ComponentModel.MarshalByValueComponent.DesignMode
+  - System.ComponentModel.MarshalByValueComponent.Disposed
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.ItemTypeDataColumn.#ctor(System.String,System.String,System.Type,System.Int32,System.Boolean,System.String)
+  commentId: M:Microsoft.Health.ItemTypeDataColumn.#ctor(System.String,System.String,System.Type,System.Int32,System.Boolean,System.String)
+  id: '#ctor(System.String,System.String,System.Type,System.Int32,System.Boolean,System.String)'
+  parent: Microsoft.Health.ItemTypeDataColumn
+  langs:
+  - csharp
+  - vb
+  name: ItemTypeDataColumn(String, String, Type, Int32, Boolean, String)
+  nameWithType: ItemTypeDataColumn.ItemTypeDataColumn(String, String, Type, Int32, Boolean, String)
+  fullName: Microsoft.Health.ItemTypeDataColumn.ItemTypeDataColumn(System.String, System.String, System.Type, System.Int32, System.Boolean, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/ItemTypeDataColumn.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ItemTypeDataColumn.cs
+    startLine: 90
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.ItemTypeDataColumn\" data-throw-if-not-resolved=\"false\"></xref> \nclass with the specified tag, label, data type, and column width.\n"
+  example: []
+  syntax:
+    content: public ItemTypeDataColumn(string tag, string label, Type type, int width, bool visible, string orderBy)
+    content.vb: Public Sub New(tag As String, label As String, type As Type, width As Integer, visible As Boolean, orderBy As String)
+    parameters:
+    - id: tag
+      type: System.String
+      description: "\nThe name of the column. The name should match the name of the\ndata, such as summary, wc-thingid.\n"
+    - id: label
+      type: System.String
+      description: "\nThe caption for the column, such as Date Created.\n"
+    - id: type
+      type: System.Type
+      description: "\nThe type of the data, such as DateTime, string. If <strong>null</strong>, \nSystem.Object is used.\n"
+    - id: width
+      type: System.Int32
+      description: "\nThe width of the column.\n"
+    - id: visible
+      type: System.Boolean
+      description: "\nTrue if the column should be shown by default or false otherwise.\n"
+    - id: orderBy
+      type: System.String
+      description: "\nThe property on which the column can be ordered by.\n"
+  overload: Microsoft.Health.ItemTypeDataColumn.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">type</span> parameter is <strong>null</strong>.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypeDataColumn.Clone
+  commentId: M:Microsoft.Health.ItemTypeDataColumn.Clone
+  id: Clone
+  parent: Microsoft.Health.ItemTypeDataColumn
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: ItemTypeDataColumn.Clone()
+  fullName: Microsoft.Health.ItemTypeDataColumn.Clone()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/ItemTypeDataColumn.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Clone
+    path: ItemTypeDataColumn.cs
+    startLine: 195
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nClones the column instance so that it can be added to another\nDataTable.\n"
+  example: []
+  syntax:
+    content: public ItemTypeDataColumn Clone()
+    content.vb: Public Function Clone As ItemTypeDataColumn
+    return:
+      type: Microsoft.Health.ItemTypeDataColumn
+      description: "\nA new instance of the column with the same definition.\n"
+  overload: Microsoft.Health.ItemTypeDataColumn.Clone*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypeDataColumn.ColumnTypeName
+  commentId: P:Microsoft.Health.ItemTypeDataColumn.ColumnTypeName
+  id: ColumnTypeName
+  parent: Microsoft.Health.ItemTypeDataColumn
+  langs:
+  - csharp
+  - vb
+  name: ColumnTypeName
+  nameWithType: ItemTypeDataColumn.ColumnTypeName
+  fullName: Microsoft.Health.ItemTypeDataColumn.ColumnTypeName
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ItemTypeDataColumn.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ColumnTypeName
+    path: ItemTypeDataColumn.cs
+    startLine: 225
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the column type name.\n"
+  remarks: "\nThe current types supported are:<br /><br />\nBoolean<br />\nString<br />\nDateTime<br />\nDouble<br />\nInt64<br />\nTimeSpan<br />\n"
+  example: []
+  syntax:
+    content: public string ColumnTypeName { get; }
+    content.vb: Public ReadOnly Property ColumnTypeName As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nA string representing the column type name.\n"
+  overload: Microsoft.Health.ItemTypeDataColumn.ColumnTypeName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ItemTypeDataColumn.ColumnWidth
+  commentId: P:Microsoft.Health.ItemTypeDataColumn.ColumnWidth
+  id: ColumnWidth
+  parent: Microsoft.Health.ItemTypeDataColumn
+  langs:
+  - csharp
+  - vb
+  name: ColumnWidth
+  nameWithType: ItemTypeDataColumn.ColumnWidth
+  fullName: Microsoft.Health.ItemTypeDataColumn.ColumnWidth
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ItemTypeDataColumn.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ColumnWidth
+    path: ItemTypeDataColumn.cs
+    startLine: 239
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the column display width.\n"
+  example: []
+  syntax:
+    content: public int ColumnWidth { get; }
+    content.vb: Public ReadOnly Property ColumnWidth As Integer
+    parameters: []
+    return:
+      type: System.Int32
+      description: "\nAn integer representing the column display width.\n"
+  overload: Microsoft.Health.ItemTypeDataColumn.ColumnWidth*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ItemTypeDataColumn.VisibleByDefault
+  commentId: P:Microsoft.Health.ItemTypeDataColumn.VisibleByDefault
+  id: VisibleByDefault
+  parent: Microsoft.Health.ItemTypeDataColumn
+  langs:
+  - csharp
+  - vb
+  name: VisibleByDefault
+  nameWithType: ItemTypeDataColumn.VisibleByDefault
+  fullName: Microsoft.Health.ItemTypeDataColumn.VisibleByDefault
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ItemTypeDataColumn.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: VisibleByDefault
+    path: ItemTypeDataColumn.cs
+    startLine: 253
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets whether or not the columns should be shown by default.\n"
+  example: []
+  syntax:
+    content: public bool VisibleByDefault { get; }
+    content.vb: Public ReadOnly Property VisibleByDefault As Boolean
+    parameters: []
+    return:
+      type: System.Boolean
+      description: "\nTrue indicates the column should be shown by default.\n"
+  overload: Microsoft.Health.ItemTypeDataColumn.VisibleByDefault*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ItemTypeDataColumn.OrderBy
+  commentId: P:Microsoft.Health.ItemTypeDataColumn.OrderBy
+  id: OrderBy
+  parent: Microsoft.Health.ItemTypeDataColumn
+  langs:
+  - csharp
+  - vb
+  name: OrderBy
+  nameWithType: ItemTypeDataColumn.OrderBy
+  fullName: Microsoft.Health.ItemTypeDataColumn.OrderBy
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ItemTypeDataColumn.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: OrderBy
+    path: ItemTypeDataColumn.cs
+    startLine: 267
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nThe property on which the column can be ordered by.\n"
+  example: []
+  syntax:
+    content: public string OrderBy { get; }
+    content.vb: Public ReadOnly Property OrderBy As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nA string representing the column property.\n"
+  overload: Microsoft.Health.ItemTypeDataColumn.OrderBy*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ItemTypeDataColumn.ToString
+  commentId: M:Microsoft.Health.ItemTypeDataColumn.ToString
+  id: ToString
+  parent: Microsoft.Health.ItemTypeDataColumn
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: ItemTypeDataColumn.ToString()
+  fullName: Microsoft.Health.ItemTypeDataColumn.ToString()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/ItemTypeDataColumn.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ToString
+    path: ItemTypeDataColumn.cs
+    startLine: 284
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets a string representation of the column definition.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    content.vb: Public Overrides Function ToString As String
+    return:
+      type: System.String
+      description: "\nA colon separated list of the fields that make up the column definition.\n"
+  overridden: System.Data.DataColumn.ToString
+  overload: Microsoft.Health.ItemTypeDataColumn.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: Microsoft.Health
+  commentId: N:Microsoft.Health
+  isExternal: false
+  name: Microsoft.Health
+  nameWithType: Microsoft.Health
+  fullName: Microsoft.Health
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.ComponentModel.MarshalByValueComponent
+  commentId: T:System.ComponentModel.MarshalByValueComponent
+  parent: System.ComponentModel
+  isExternal: true
+  name: MarshalByValueComponent
+  nameWithType: MarshalByValueComponent
+  fullName: System.ComponentModel.MarshalByValueComponent
+- uid: System.Data.DataColumn
+  commentId: T:System.Data.DataColumn
+  parent: System.Data
+  isExternal: true
+  name: DataColumn
+  nameWithType: DataColumn
+  fullName: System.Data.DataColumn
+- uid: System.ComponentModel.IComponent
+  commentId: T:System.ComponentModel.IComponent
+  parent: System.ComponentModel
+  isExternal: true
+  name: IComponent
+  nameWithType: IComponent
+  fullName: System.ComponentModel.IComponent
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.IServiceProvider
+  commentId: T:System.IServiceProvider
+  parent: System
+  isExternal: true
+  name: IServiceProvider
+  nameWithType: IServiceProvider
+  fullName: System.IServiceProvider
+- uid: System.Data.DataColumn.SetOrdinal(System.Int32)
+  commentId: M:System.Data.DataColumn.SetOrdinal(System.Int32)
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: SetOrdinal(Int32)
+  nameWithType: DataColumn.SetOrdinal(Int32)
+  fullName: System.Data.DataColumn.SetOrdinal(System.Int32)
+  spec.csharp:
+  - uid: System.Data.DataColumn.SetOrdinal(System.Int32)
+    name: SetOrdinal
+    nameWithType: DataColumn.SetOrdinal
+    fullName: System.Data.DataColumn.SetOrdinal
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Data.DataColumn.SetOrdinal(System.Int32)
+    name: SetOrdinal
+    nameWithType: DataColumn.SetOrdinal
+    fullName: System.Data.DataColumn.SetOrdinal
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Data.DataColumn.CheckNotAllowNull
+  commentId: M:System.Data.DataColumn.CheckNotAllowNull
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: CheckNotAllowNull()
+  nameWithType: DataColumn.CheckNotAllowNull()
+  fullName: System.Data.DataColumn.CheckNotAllowNull()
+  spec.csharp:
+  - uid: System.Data.DataColumn.CheckNotAllowNull
+    name: CheckNotAllowNull
+    nameWithType: DataColumn.CheckNotAllowNull
+    fullName: System.Data.DataColumn.CheckNotAllowNull
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Data.DataColumn.CheckNotAllowNull
+    name: CheckNotAllowNull
+    nameWithType: DataColumn.CheckNotAllowNull
+    fullName: System.Data.DataColumn.CheckNotAllowNull
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Data.DataColumn.CheckUnique
+  commentId: M:System.Data.DataColumn.CheckUnique
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: CheckUnique()
+  nameWithType: DataColumn.CheckUnique()
+  fullName: System.Data.DataColumn.CheckUnique()
+  spec.csharp:
+  - uid: System.Data.DataColumn.CheckUnique
+    name: CheckUnique
+    nameWithType: DataColumn.CheckUnique
+    fullName: System.Data.DataColumn.CheckUnique
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Data.DataColumn.CheckUnique
+    name: CheckUnique
+    nameWithType: DataColumn.CheckUnique
+    fullName: System.Data.DataColumn.CheckUnique
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Data.DataColumn.OnPropertyChanging(System.ComponentModel.PropertyChangedEventArgs)
+  commentId: M:System.Data.DataColumn.OnPropertyChanging(System.ComponentModel.PropertyChangedEventArgs)
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: OnPropertyChanging(PropertyChangedEventArgs)
+  nameWithType: DataColumn.OnPropertyChanging(PropertyChangedEventArgs)
+  fullName: System.Data.DataColumn.OnPropertyChanging(System.ComponentModel.PropertyChangedEventArgs)
+  spec.csharp:
+  - uid: System.Data.DataColumn.OnPropertyChanging(System.ComponentModel.PropertyChangedEventArgs)
+    name: OnPropertyChanging
+    nameWithType: DataColumn.OnPropertyChanging
+    fullName: System.Data.DataColumn.OnPropertyChanging
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.ComponentModel.PropertyChangedEventArgs
+    name: PropertyChangedEventArgs
+    nameWithType: PropertyChangedEventArgs
+    fullName: System.ComponentModel.PropertyChangedEventArgs
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Data.DataColumn.OnPropertyChanging(System.ComponentModel.PropertyChangedEventArgs)
+    name: OnPropertyChanging
+    nameWithType: DataColumn.OnPropertyChanging
+    fullName: System.Data.DataColumn.OnPropertyChanging
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.ComponentModel.PropertyChangedEventArgs
+    name: PropertyChangedEventArgs
+    nameWithType: PropertyChangedEventArgs
+    fullName: System.ComponentModel.PropertyChangedEventArgs
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Data.DataColumn.RaisePropertyChanging(System.String)
+  commentId: M:System.Data.DataColumn.RaisePropertyChanging(System.String)
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: RaisePropertyChanging(String)
+  nameWithType: DataColumn.RaisePropertyChanging(String)
+  fullName: System.Data.DataColumn.RaisePropertyChanging(System.String)
+  spec.csharp:
+  - uid: System.Data.DataColumn.RaisePropertyChanging(System.String)
+    name: RaisePropertyChanging
+    nameWithType: DataColumn.RaisePropertyChanging
+    fullName: System.Data.DataColumn.RaisePropertyChanging
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Data.DataColumn.RaisePropertyChanging(System.String)
+    name: RaisePropertyChanging
+    nameWithType: DataColumn.RaisePropertyChanging
+    fullName: System.Data.DataColumn.RaisePropertyChanging
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Data.DataColumn.AllowDBNull
+  commentId: P:System.Data.DataColumn.AllowDBNull
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: AllowDBNull
+  nameWithType: DataColumn.AllowDBNull
+  fullName: System.Data.DataColumn.AllowDBNull
+- uid: System.Data.DataColumn.AutoIncrement
+  commentId: P:System.Data.DataColumn.AutoIncrement
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: AutoIncrement
+  nameWithType: DataColumn.AutoIncrement
+  fullName: System.Data.DataColumn.AutoIncrement
+- uid: System.Data.DataColumn.AutoIncrementSeed
+  commentId: P:System.Data.DataColumn.AutoIncrementSeed
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: AutoIncrementSeed
+  nameWithType: DataColumn.AutoIncrementSeed
+  fullName: System.Data.DataColumn.AutoIncrementSeed
+- uid: System.Data.DataColumn.AutoIncrementStep
+  commentId: P:System.Data.DataColumn.AutoIncrementStep
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: AutoIncrementStep
+  nameWithType: DataColumn.AutoIncrementStep
+  fullName: System.Data.DataColumn.AutoIncrementStep
+- uid: System.Data.DataColumn.Caption
+  commentId: P:System.Data.DataColumn.Caption
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: Caption
+  nameWithType: DataColumn.Caption
+  fullName: System.Data.DataColumn.Caption
+- uid: System.Data.DataColumn.ColumnName
+  commentId: P:System.Data.DataColumn.ColumnName
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: ColumnName
+  nameWithType: DataColumn.ColumnName
+  fullName: System.Data.DataColumn.ColumnName
+- uid: System.Data.DataColumn.Prefix
+  commentId: P:System.Data.DataColumn.Prefix
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: Prefix
+  nameWithType: DataColumn.Prefix
+  fullName: System.Data.DataColumn.Prefix
+- uid: System.Data.DataColumn.DataType
+  commentId: P:System.Data.DataColumn.DataType
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: DataType
+  nameWithType: DataColumn.DataType
+  fullName: System.Data.DataColumn.DataType
+- uid: System.Data.DataColumn.DateTimeMode
+  commentId: P:System.Data.DataColumn.DateTimeMode
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: DateTimeMode
+  nameWithType: DataColumn.DateTimeMode
+  fullName: System.Data.DataColumn.DateTimeMode
+- uid: System.Data.DataColumn.DefaultValue
+  commentId: P:System.Data.DataColumn.DefaultValue
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: DefaultValue
+  nameWithType: DataColumn.DefaultValue
+  fullName: System.Data.DataColumn.DefaultValue
+- uid: System.Data.DataColumn.Expression
+  commentId: P:System.Data.DataColumn.Expression
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: Expression
+  nameWithType: DataColumn.Expression
+  fullName: System.Data.DataColumn.Expression
+- uid: System.Data.DataColumn.ExtendedProperties
+  commentId: P:System.Data.DataColumn.ExtendedProperties
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: ExtendedProperties
+  nameWithType: DataColumn.ExtendedProperties
+  fullName: System.Data.DataColumn.ExtendedProperties
+- uid: System.Data.DataColumn.MaxLength
+  commentId: P:System.Data.DataColumn.MaxLength
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: MaxLength
+  nameWithType: DataColumn.MaxLength
+  fullName: System.Data.DataColumn.MaxLength
+- uid: System.Data.DataColumn.Namespace
+  commentId: P:System.Data.DataColumn.Namespace
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: Namespace
+  nameWithType: DataColumn.Namespace
+  fullName: System.Data.DataColumn.Namespace
+- uid: System.Data.DataColumn.Ordinal
+  commentId: P:System.Data.DataColumn.Ordinal
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: Ordinal
+  nameWithType: DataColumn.Ordinal
+  fullName: System.Data.DataColumn.Ordinal
+- uid: System.Data.DataColumn.ReadOnly
+  commentId: P:System.Data.DataColumn.ReadOnly
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: ReadOnly
+  nameWithType: DataColumn.ReadOnly
+  fullName: System.Data.DataColumn.ReadOnly
+- uid: System.Data.DataColumn.Table
+  commentId: P:System.Data.DataColumn.Table
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: Table
+  nameWithType: DataColumn.Table
+  fullName: System.Data.DataColumn.Table
+- uid: System.Data.DataColumn.Unique
+  commentId: P:System.Data.DataColumn.Unique
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: Unique
+  nameWithType: DataColumn.Unique
+  fullName: System.Data.DataColumn.Unique
+- uid: System.Data.DataColumn.ColumnMapping
+  commentId: P:System.Data.DataColumn.ColumnMapping
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: ColumnMapping
+  nameWithType: DataColumn.ColumnMapping
+  fullName: System.Data.DataColumn.ColumnMapping
+- uid: System.ComponentModel.MarshalByValueComponent.Dispose
+  commentId: M:System.ComponentModel.MarshalByValueComponent.Dispose
+  parent: System.ComponentModel.MarshalByValueComponent
+  isExternal: true
+  name: Dispose()
+  nameWithType: MarshalByValueComponent.Dispose()
+  fullName: System.ComponentModel.MarshalByValueComponent.Dispose()
+  spec.csharp:
+  - uid: System.ComponentModel.MarshalByValueComponent.Dispose
+    name: Dispose
+    nameWithType: MarshalByValueComponent.Dispose
+    fullName: System.ComponentModel.MarshalByValueComponent.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ComponentModel.MarshalByValueComponent.Dispose
+    name: Dispose
+    nameWithType: MarshalByValueComponent.Dispose
+    fullName: System.ComponentModel.MarshalByValueComponent.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ComponentModel.MarshalByValueComponent.Dispose(System.Boolean)
+  commentId: M:System.ComponentModel.MarshalByValueComponent.Dispose(System.Boolean)
+  parent: System.ComponentModel.MarshalByValueComponent
+  isExternal: true
+  name: Dispose(Boolean)
+  nameWithType: MarshalByValueComponent.Dispose(Boolean)
+  fullName: System.ComponentModel.MarshalByValueComponent.Dispose(System.Boolean)
+  spec.csharp:
+  - uid: System.ComponentModel.MarshalByValueComponent.Dispose(System.Boolean)
+    name: Dispose
+    nameWithType: MarshalByValueComponent.Dispose
+    fullName: System.ComponentModel.MarshalByValueComponent.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ComponentModel.MarshalByValueComponent.Dispose(System.Boolean)
+    name: Dispose
+    nameWithType: MarshalByValueComponent.Dispose
+    fullName: System.ComponentModel.MarshalByValueComponent.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ComponentModel.MarshalByValueComponent.GetService(System.Type)
+  commentId: M:System.ComponentModel.MarshalByValueComponent.GetService(System.Type)
+  parent: System.ComponentModel.MarshalByValueComponent
+  isExternal: true
+  name: GetService(Type)
+  nameWithType: MarshalByValueComponent.GetService(Type)
+  fullName: System.ComponentModel.MarshalByValueComponent.GetService(System.Type)
+  spec.csharp:
+  - uid: System.ComponentModel.MarshalByValueComponent.GetService(System.Type)
+    name: GetService
+    nameWithType: MarshalByValueComponent.GetService
+    fullName: System.ComponentModel.MarshalByValueComponent.GetService
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ComponentModel.MarshalByValueComponent.GetService(System.Type)
+    name: GetService
+    nameWithType: MarshalByValueComponent.GetService
+    fullName: System.ComponentModel.MarshalByValueComponent.GetService
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ComponentModel.MarshalByValueComponent.Events
+  commentId: P:System.ComponentModel.MarshalByValueComponent.Events
+  parent: System.ComponentModel.MarshalByValueComponent
+  isExternal: true
+  name: Events
+  nameWithType: MarshalByValueComponent.Events
+  fullName: System.ComponentModel.MarshalByValueComponent.Events
+- uid: System.ComponentModel.MarshalByValueComponent.Site
+  commentId: P:System.ComponentModel.MarshalByValueComponent.Site
+  parent: System.ComponentModel.MarshalByValueComponent
+  isExternal: true
+  name: Site
+  nameWithType: MarshalByValueComponent.Site
+  fullName: System.ComponentModel.MarshalByValueComponent.Site
+- uid: System.ComponentModel.MarshalByValueComponent.Container
+  commentId: P:System.ComponentModel.MarshalByValueComponent.Container
+  parent: System.ComponentModel.MarshalByValueComponent
+  isExternal: true
+  name: Container
+  nameWithType: MarshalByValueComponent.Container
+  fullName: System.ComponentModel.MarshalByValueComponent.Container
+- uid: System.ComponentModel.MarshalByValueComponent.DesignMode
+  commentId: P:System.ComponentModel.MarshalByValueComponent.DesignMode
+  parent: System.ComponentModel.MarshalByValueComponent
+  isExternal: true
+  name: DesignMode
+  nameWithType: MarshalByValueComponent.DesignMode
+  fullName: System.ComponentModel.MarshalByValueComponent.DesignMode
+- uid: System.ComponentModel.MarshalByValueComponent.Disposed
+  commentId: E:System.ComponentModel.MarshalByValueComponent.Disposed
+  parent: System.ComponentModel.MarshalByValueComponent
+  isExternal: true
+  name: Disposed
+  nameWithType: MarshalByValueComponent.Disposed
+  fullName: System.ComponentModel.MarshalByValueComponent.Disposed
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: false
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+- uid: System.Data
+  commentId: N:System.Data
+  isExternal: false
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
+- uid: Microsoft.Health.ItemTypeDataColumn
+  commentId: T:Microsoft.Health.ItemTypeDataColumn
+  parent: Microsoft.Health
+  isExternal: false
+  name: ItemTypeDataColumn
+  nameWithType: ItemTypeDataColumn
+  fullName: Microsoft.Health.ItemTypeDataColumn
+- uid: Microsoft.Health.ItemTypeDataColumn.#ctor*
+  commentId: Overload:Microsoft.Health.ItemTypeDataColumn.#ctor
+  isExternal: false
+  name: ItemTypeDataColumn
+  nameWithType: ItemTypeDataColumn.ItemTypeDataColumn
+  fullName: Microsoft.Health.ItemTypeDataColumn.ItemTypeDataColumn
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Microsoft.Health.ItemTypeDataColumn.Clone*
+  commentId: Overload:Microsoft.Health.ItemTypeDataColumn.Clone
+  isExternal: false
+  name: Clone
+  nameWithType: ItemTypeDataColumn.Clone
+  fullName: Microsoft.Health.ItemTypeDataColumn.Clone
+- uid: Microsoft.Health.ItemTypeDataColumn.ColumnTypeName*
+  commentId: Overload:Microsoft.Health.ItemTypeDataColumn.ColumnTypeName
+  isExternal: false
+  name: ColumnTypeName
+  nameWithType: ItemTypeDataColumn.ColumnTypeName
+  fullName: Microsoft.Health.ItemTypeDataColumn.ColumnTypeName
+- uid: Microsoft.Health.ItemTypeDataColumn.ColumnWidth*
+  commentId: Overload:Microsoft.Health.ItemTypeDataColumn.ColumnWidth
+  isExternal: false
+  name: ColumnWidth
+  nameWithType: ItemTypeDataColumn.ColumnWidth
+  fullName: Microsoft.Health.ItemTypeDataColumn.ColumnWidth
+- uid: Microsoft.Health.ItemTypeDataColumn.VisibleByDefault*
+  commentId: Overload:Microsoft.Health.ItemTypeDataColumn.VisibleByDefault
+  isExternal: false
+  name: VisibleByDefault
+  nameWithType: ItemTypeDataColumn.VisibleByDefault
+  fullName: Microsoft.Health.ItemTypeDataColumn.VisibleByDefault
+- uid: Microsoft.Health.ItemTypeDataColumn.OrderBy*
+  commentId: Overload:Microsoft.Health.ItemTypeDataColumn.OrderBy
+  isExternal: false
+  name: OrderBy
+  nameWithType: ItemTypeDataColumn.OrderBy
+  fullName: Microsoft.Health.ItemTypeDataColumn.OrderBy
+- uid: System.Data.DataColumn.ToString
+  commentId: M:System.Data.DataColumn.ToString
+  parent: System.Data.DataColumn
+  isExternal: true
+  name: ToString()
+  nameWithType: DataColumn.ToString()
+  fullName: System.Data.DataColumn.ToString()
+  spec.csharp:
+  - uid: System.Data.DataColumn.ToString
+    name: ToString
+    nameWithType: DataColumn.ToString
+    fullName: System.Data.DataColumn.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Data.DataColumn.ToString
+    name: ToString
+    nameWithType: DataColumn.ToString
+    fullName: System.Data.DataColumn.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypeDataColumn.ToString*
+  commentId: Overload:Microsoft.Health.ItemTypeDataColumn.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: ItemTypeDataColumn.ToString
+  fullName: Microsoft.Health.ItemTypeDataColumn.ToString

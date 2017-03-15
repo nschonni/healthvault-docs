@@ -1,0 +1,2391 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.Caching.LRUCacheWithTtl`2
+  commentId: T:Microsoft.Health.Caching.LRUCacheWithTtl`2
+  id: LRUCacheWithTtl`2
+  parent: Microsoft.Health.Caching
+  children:
+  - Microsoft.Health.Caching.LRUCacheWithTtl`2.#ctor(System.String,System.Func{`0,`1},System.Func{`0,System.String},System.TimeSpan)
+  - Microsoft.Health.Caching.LRUCacheWithTtl`2.#ctor(System.String,System.Func{`0,`1},System.TimeSpan)
+  - Microsoft.Health.Caching.LRUCacheWithTtl`2.CacheItem(System.String,`1)
+  langs:
+  - csharp
+  - vb
+  name: LRUCacheWithTtl<K, V>
+  nameWithType: LRUCacheWithTtl<K, V>
+  fullName: Microsoft.Health.Caching.LRUCacheWithTtl<K, V>
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/CachingFacade.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: LRUCacheWithTtl
+    path: search/Cache/CachingFacade.cs
+    startLine: 252
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n"
+  example: []
+  syntax:
+    content: 'public class LRUCacheWithTtl<K, V> : LRUCache<K, V>, IDemandLoadable where V : class'
+    content.vb: >-
+      Public Class LRUCacheWithTtl(Of K, V As Class)
+          Inherits LRUCache(Of K, V)
+          Implements IDemandLoadable
+    typeParameters:
+    - id: K
+    - id: V
+  inheritance:
+  - System.Object
+  - Microsoft.Health.Caching.CachingFacade{{K},{V}}
+  - Microsoft.Health.Caching.LRUCache{{K},{V}}
+  implements:
+  - Microsoft.Health.Caching.IDemandLoadable
+  inheritedMembers:
+  - Microsoft.Health.Caching.LRUCache{{K},{V}}.GetValue({K})
+  - Microsoft.Health.Caching.LRUCache{{K},{V}}.LoadValue({K})
+  - Microsoft.Health.Caching.LRUCache{{K},{V}}.RemoveValue({K})
+  - Microsoft.Health.Caching.LRUCache{{K},{V}}.CacheItem(System.String,{V})
+  - Microsoft.Health.Caching.LRUCache{{K},{V}}.RemoveAll
+  - Microsoft.Health.Caching.CachingFacade{{K},{V}}.Item({K})
+  - Microsoft.Health.Caching.CachingFacade{{K},{V}}.Remove({K})
+  - Microsoft.Health.Caching.CachingFacade{{K},{V}}.Load(System.Boolean)
+  - Microsoft.Health.Caching.CachingFacade{{K},{V}}.Unload
+  - Microsoft.Health.Caching.CachingFacade{{K},{V}}.GetValue({K})
+  - Microsoft.Health.Caching.CachingFacade{{K},{V}}.LoadValue({K})
+  - Microsoft.Health.Caching.CachingFacade{{K},{V}}.RemoveValue({K})
+  - Microsoft.Health.Caching.CachingFacade{{K},{V}}.RemoveAll
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - Microsoft.Health.Caching.LRUCacheWithTtl`2.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  - System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  nameWithType.vb: LRUCacheWithTtl(Of K, V)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: Microsoft.Health.Caching.LRUCacheWithTtl(Of K, V)
+  name.vb: LRUCacheWithTtl(Of K, V)
+- uid: Microsoft.Health.Caching.LRUCacheWithTtl`2.#ctor(System.String,System.Func{`0,`1},System.TimeSpan)
+  commentId: M:Microsoft.Health.Caching.LRUCacheWithTtl`2.#ctor(System.String,System.Func{`0,`1},System.TimeSpan)
+  id: '#ctor(System.String,System.Func{`0,`1},System.TimeSpan)'
+  parent: Microsoft.Health.Caching.LRUCacheWithTtl`2
+  langs:
+  - csharp
+  - vb
+  name: LRUCacheWithTtl(String, Func<K, V>, TimeSpan)
+  nameWithType: LRUCacheWithTtl<K, V>.LRUCacheWithTtl(String, Func<K, V>, TimeSpan)
+  fullName: Microsoft.Health.Caching.LRUCacheWithTtl<K, V>.LRUCacheWithTtl(System.String, System.Func<K, V>, System.TimeSpan)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/CachingFacade.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: search/Cache/CachingFacade.cs
+    startLine: 257
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n"
+  example: []
+  syntax:
+    content: public LRUCacheWithTtl(string keyPrefix, Func<K, V> loader, TimeSpan ttl)
+    content.vb: Public Sub New(keyPrefix As String, loader As Func(Of K, V), ttl As TimeSpan)
+    parameters:
+    - id: keyPrefix
+      type: System.String
+    - id: loader
+      type: System.Func{{K},{V}}
+    - id: ttl
+      type: System.TimeSpan
+  overload: Microsoft.Health.Caching.LRUCacheWithTtl`2.#ctor*
+  nameWithType.vb: LRUCacheWithTtl(Of K, V).LRUCacheWithTtl(String, Func(Of K, V), TimeSpan)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.Caching.LRUCacheWithTtl(Of K, V).LRUCacheWithTtl(System.String, System.Func(Of K, V), System.TimeSpan)
+  name.vb: LRUCacheWithTtl(String, Func(Of K, V), TimeSpan)
+- uid: Microsoft.Health.Caching.LRUCacheWithTtl`2.#ctor(System.String,System.Func{`0,`1},System.Func{`0,System.String},System.TimeSpan)
+  commentId: M:Microsoft.Health.Caching.LRUCacheWithTtl`2.#ctor(System.String,System.Func{`0,`1},System.Func{`0,System.String},System.TimeSpan)
+  id: '#ctor(System.String,System.Func{`0,`1},System.Func{`0,System.String},System.TimeSpan)'
+  parent: Microsoft.Health.Caching.LRUCacheWithTtl`2
+  langs:
+  - csharp
+  - vb
+  name: LRUCacheWithTtl(String, Func<K, V>, Func<K, String>, TimeSpan)
+  nameWithType: LRUCacheWithTtl<K, V>.LRUCacheWithTtl(String, Func<K, V>, Func<K, String>, TimeSpan)
+  fullName: Microsoft.Health.Caching.LRUCacheWithTtl<K, V>.LRUCacheWithTtl(System.String, System.Func<K, V>, System.Func<K, System.String>, System.TimeSpan)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/CachingFacade.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: search/Cache/CachingFacade.cs
+    startLine: 265
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n"
+  example: []
+  syntax:
+    content: public LRUCacheWithTtl(string keyPrefix, Func<K, V> loader, Func<K, string> toString, TimeSpan ttl)
+    content.vb: Public Sub New(keyPrefix As String, loader As Func(Of K, V), toString As Func(Of K, String), ttl As TimeSpan)
+    parameters:
+    - id: keyPrefix
+      type: System.String
+    - id: loader
+      type: System.Func{{K},{V}}
+    - id: toString
+      type: System.Func{{K},System.String}
+    - id: ttl
+      type: System.TimeSpan
+  overload: Microsoft.Health.Caching.LRUCacheWithTtl`2.#ctor*
+  nameWithType.vb: LRUCacheWithTtl(Of K, V).LRUCacheWithTtl(String, Func(Of K, V), Func(Of K, String), TimeSpan)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.Caching.LRUCacheWithTtl(Of K, V).LRUCacheWithTtl(System.String, System.Func(Of K, V), System.Func(Of K, System.String), System.TimeSpan)
+  name.vb: LRUCacheWithTtl(String, Func(Of K, V), Func(Of K, String), TimeSpan)
+- uid: Microsoft.Health.Caching.LRUCacheWithTtl`2.CacheItem(System.String,`1)
+  commentId: M:Microsoft.Health.Caching.LRUCacheWithTtl`2.CacheItem(System.String,`1)
+  id: CacheItem(System.String,`1)
+  parent: Microsoft.Health.Caching.LRUCacheWithTtl`2
+  langs:
+  - csharp
+  - vb
+  name: CacheItem(String, V)
+  nameWithType: LRUCacheWithTtl<K, V>.CacheItem(String, V)
+  fullName: Microsoft.Health.Caching.LRUCacheWithTtl<K, V>.CacheItem(System.String, V)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/CachingFacade.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CacheItem
+    path: search/Cache/CachingFacade.cs
+    startLine: 273
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n"
+  example: []
+  syntax:
+    content: protected override void CacheItem(string cacheKey, V value)
+    content.vb: Protected Overrides Sub CacheItem(cacheKey As String, value As V)
+    parameters:
+    - id: cacheKey
+      type: System.String
+    - id: value
+      type: '{V}'
+  overridden: Microsoft.Health.Caching.LRUCache{{K},{V}}.CacheItem(System.String,{V})
+  overload: Microsoft.Health.Caching.LRUCacheWithTtl`2.CacheItem*
+  nameWithType.vb: LRUCacheWithTtl(Of K, V).CacheItem(String, V)
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+  fullName.vb: Microsoft.Health.Caching.LRUCacheWithTtl(Of K, V).CacheItem(System.String, V)
+references:
+- uid: Microsoft.Health.Caching
+  commentId: N:Microsoft.Health.Caching
+  isExternal: false
+  name: Microsoft.Health.Caching
+  nameWithType: Microsoft.Health.Caching
+  fullName: Microsoft.Health.Caching
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Microsoft.Health.Caching.CachingFacade{{K},{V}}
+  commentId: T:Microsoft.Health.Caching.CachingFacade{`0,`1}
+  parent: Microsoft.Health.Caching
+  definition: Microsoft.Health.Caching.CachingFacade`2
+  name: CachingFacade<K, V>
+  nameWithType: CachingFacade<K, V>
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>
+  nameWithType.vb: CachingFacade(Of K, V)
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V)
+  name.vb: CachingFacade(Of K, V)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2
+    name: CachingFacade
+    nameWithType: CachingFacade
+    fullName: Microsoft.Health.Caching.CachingFacade
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: V
+    nameWithType: V
+    fullName: V
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2
+    name: CachingFacade
+    nameWithType: CachingFacade
+    fullName: Microsoft.Health.Caching.CachingFacade
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: V
+    nameWithType: V
+    fullName: V
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.LRUCache{{K},{V}}
+  commentId: T:Microsoft.Health.Caching.LRUCache{`0,`1}
+  parent: Microsoft.Health.Caching
+  definition: Microsoft.Health.Caching.LRUCache`2
+  name: LRUCache<K, V>
+  nameWithType: LRUCache<K, V>
+  fullName: Microsoft.Health.Caching.LRUCache<K, V>
+  nameWithType.vb: LRUCache(Of K, V)
+  fullName.vb: Microsoft.Health.Caching.LRUCache(Of K, V)
+  name.vb: LRUCache(Of K, V)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.LRUCache`2
+    name: LRUCache
+    nameWithType: LRUCache
+    fullName: Microsoft.Health.Caching.LRUCache
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: V
+    nameWithType: V
+    fullName: V
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.Caching.LRUCache`2
+    name: LRUCache
+    nameWithType: LRUCache
+    fullName: Microsoft.Health.Caching.LRUCache
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: V
+    nameWithType: V
+    fullName: V
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.IDemandLoadable
+  commentId: T:Microsoft.Health.Caching.IDemandLoadable
+  parent: Microsoft.Health.Caching
+  isExternal: false
+  name: IDemandLoadable
+  nameWithType: IDemandLoadable
+  fullName: Microsoft.Health.Caching.IDemandLoadable
+- uid: Microsoft.Health.Caching.LRUCache{{K},{V}}.GetValue({K})
+  commentId: M:Microsoft.Health.Caching.LRUCache{`0,`1}.GetValue(`0)
+  parent: Microsoft.Health.Caching.LRUCache{{K},{V}}
+  definition: Microsoft.Health.Caching.LRUCache`2.GetValue(`0)
+  name: GetValue(K)
+  nameWithType: LRUCache<K, V>.GetValue(K)
+  fullName: Microsoft.Health.Caching.LRUCache<K, V>.GetValue(K)
+  nameWithType.vb: LRUCache(Of K, V).GetValue(K)
+  fullName.vb: Microsoft.Health.Caching.LRUCache(Of K, V).GetValue(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.LRUCache`2.GetValue(`0)
+    name: GetValue
+    nameWithType: LRUCache<K, V>.GetValue
+    fullName: Microsoft.Health.Caching.LRUCache<K, V>.GetValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.LRUCache`2.GetValue(`0)
+    name: GetValue
+    nameWithType: LRUCache(Of K, V).GetValue
+    fullName: Microsoft.Health.Caching.LRUCache(Of K, V).GetValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.LRUCache{{K},{V}}.LoadValue({K})
+  commentId: M:Microsoft.Health.Caching.LRUCache{`0,`1}.LoadValue(`0)
+  parent: Microsoft.Health.Caching.LRUCache{{K},{V}}
+  definition: Microsoft.Health.Caching.LRUCache`2.LoadValue(`0)
+  name: LoadValue(K)
+  nameWithType: LRUCache<K, V>.LoadValue(K)
+  fullName: Microsoft.Health.Caching.LRUCache<K, V>.LoadValue(K)
+  nameWithType.vb: LRUCache(Of K, V).LoadValue(K)
+  fullName.vb: Microsoft.Health.Caching.LRUCache(Of K, V).LoadValue(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.LRUCache`2.LoadValue(`0)
+    name: LoadValue
+    nameWithType: LRUCache<K, V>.LoadValue
+    fullName: Microsoft.Health.Caching.LRUCache<K, V>.LoadValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.LRUCache`2.LoadValue(`0)
+    name: LoadValue
+    nameWithType: LRUCache(Of K, V).LoadValue
+    fullName: Microsoft.Health.Caching.LRUCache(Of K, V).LoadValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.LRUCache{{K},{V}}.RemoveValue({K})
+  commentId: M:Microsoft.Health.Caching.LRUCache{`0,`1}.RemoveValue(`0)
+  parent: Microsoft.Health.Caching.LRUCache{{K},{V}}
+  definition: Microsoft.Health.Caching.LRUCache`2.RemoveValue(`0)
+  name: RemoveValue(K)
+  nameWithType: LRUCache<K, V>.RemoveValue(K)
+  fullName: Microsoft.Health.Caching.LRUCache<K, V>.RemoveValue(K)
+  nameWithType.vb: LRUCache(Of K, V).RemoveValue(K)
+  fullName.vb: Microsoft.Health.Caching.LRUCache(Of K, V).RemoveValue(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.LRUCache`2.RemoveValue(`0)
+    name: RemoveValue
+    nameWithType: LRUCache<K, V>.RemoveValue
+    fullName: Microsoft.Health.Caching.LRUCache<K, V>.RemoveValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.LRUCache`2.RemoveValue(`0)
+    name: RemoveValue
+    nameWithType: LRUCache(Of K, V).RemoveValue
+    fullName: Microsoft.Health.Caching.LRUCache(Of K, V).RemoveValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.LRUCache{{K},{V}}.CacheItem(System.String,{V})
+  commentId: M:Microsoft.Health.Caching.LRUCache{`0,`1}.CacheItem(System.String,`1)
+  parent: Microsoft.Health.Caching.LRUCache{{K},{V}}
+  definition: Microsoft.Health.Caching.LRUCache`2.CacheItem(System.String,`1)
+  name: CacheItem(String, V)
+  nameWithType: LRUCache<K, V>.CacheItem(String, V)
+  fullName: Microsoft.Health.Caching.LRUCache<K, V>.CacheItem(System.String, V)
+  nameWithType.vb: LRUCache(Of K, V).CacheItem(String, V)
+  fullName.vb: Microsoft.Health.Caching.LRUCache(Of K, V).CacheItem(System.String, V)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.LRUCache`2.CacheItem(System.String,`1)
+    name: CacheItem
+    nameWithType: LRUCache<K, V>.CacheItem
+    fullName: Microsoft.Health.Caching.LRUCache<K, V>.CacheItem
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: V
+    nameWithType: V
+    fullName: V
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.LRUCache`2.CacheItem(System.String,`1)
+    name: CacheItem
+    nameWithType: LRUCache(Of K, V).CacheItem
+    fullName: Microsoft.Health.Caching.LRUCache(Of K, V).CacheItem
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: V
+    nameWithType: V
+    fullName: V
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.LRUCache{{K},{V}}.RemoveAll
+  commentId: M:Microsoft.Health.Caching.LRUCache{`0,`1}.RemoveAll
+  parent: Microsoft.Health.Caching.LRUCache{{K},{V}}
+  definition: Microsoft.Health.Caching.LRUCache`2.RemoveAll
+  name: RemoveAll()
+  nameWithType: LRUCache<K, V>.RemoveAll()
+  fullName: Microsoft.Health.Caching.LRUCache<K, V>.RemoveAll()
+  nameWithType.vb: LRUCache(Of K, V).RemoveAll()
+  fullName.vb: Microsoft.Health.Caching.LRUCache(Of K, V).RemoveAll()
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.LRUCache`2.RemoveAll
+    name: RemoveAll
+    nameWithType: LRUCache<K, V>.RemoveAll
+    fullName: Microsoft.Health.Caching.LRUCache<K, V>.RemoveAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.LRUCache`2.RemoveAll
+    name: RemoveAll
+    nameWithType: LRUCache(Of K, V).RemoveAll
+    fullName: Microsoft.Health.Caching.LRUCache(Of K, V).RemoveAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade{{K},{V}}.Item({K})
+  commentId: P:Microsoft.Health.Caching.CachingFacade{`0,`1}.Item(`0)
+  parent: Microsoft.Health.Caching.CachingFacade{{K},{V}}
+  definition: Microsoft.Health.Caching.CachingFacade`2.Item(`0)
+  name: Item[K]
+  nameWithType: CachingFacade<K, V>.Item[K]
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Item[K]
+  nameWithType.vb: CachingFacade(Of K, V).Item(K)
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).Item(K)
+  name.vb: Item(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Item(`0)
+    name: Item
+    nameWithType: CachingFacade<K, V>.Item
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Item
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Item(`0)
+    name: Item
+    nameWithType: CachingFacade(Of K, V).Item
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).Item
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade{{K},{V}}.Remove({K})
+  commentId: M:Microsoft.Health.Caching.CachingFacade{`0,`1}.Remove(`0)
+  parent: Microsoft.Health.Caching.CachingFacade{{K},{V}}
+  definition: Microsoft.Health.Caching.CachingFacade`2.Remove(`0)
+  name: Remove(K)
+  nameWithType: CachingFacade<K, V>.Remove(K)
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Remove(K)
+  nameWithType.vb: CachingFacade(Of K, V).Remove(K)
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).Remove(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Remove(`0)
+    name: Remove
+    nameWithType: CachingFacade<K, V>.Remove
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Remove
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Remove(`0)
+    name: Remove
+    nameWithType: CachingFacade(Of K, V).Remove
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).Remove
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade{{K},{V}}.Load(System.Boolean)
+  commentId: M:Microsoft.Health.Caching.CachingFacade{`0,`1}.Load(System.Boolean)
+  parent: Microsoft.Health.Caching.CachingFacade{{K},{V}}
+  definition: Microsoft.Health.Caching.CachingFacade`2.Load(System.Boolean)
+  name: Load(Boolean)
+  nameWithType: CachingFacade<K, V>.Load(Boolean)
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Load(System.Boolean)
+  nameWithType.vb: CachingFacade(Of K, V).Load(Boolean)
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).Load(System.Boolean)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Load(System.Boolean)
+    name: Load
+    nameWithType: CachingFacade<K, V>.Load
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Load
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Load(System.Boolean)
+    name: Load
+    nameWithType: CachingFacade(Of K, V).Load
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).Load
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade{{K},{V}}.Unload
+  commentId: M:Microsoft.Health.Caching.CachingFacade{`0,`1}.Unload
+  parent: Microsoft.Health.Caching.CachingFacade{{K},{V}}
+  definition: Microsoft.Health.Caching.CachingFacade`2.Unload
+  name: Unload()
+  nameWithType: CachingFacade<K, V>.Unload()
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Unload()
+  nameWithType.vb: CachingFacade(Of K, V).Unload()
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).Unload()
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Unload
+    name: Unload
+    nameWithType: CachingFacade<K, V>.Unload
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Unload
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Unload
+    name: Unload
+    nameWithType: CachingFacade(Of K, V).Unload
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).Unload
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade{{K},{V}}.GetValue({K})
+  commentId: M:Microsoft.Health.Caching.CachingFacade{`0,`1}.GetValue(`0)
+  parent: Microsoft.Health.Caching.CachingFacade{{K},{V}}
+  definition: Microsoft.Health.Caching.CachingFacade`2.GetValue(`0)
+  name: GetValue(K)
+  nameWithType: CachingFacade<K, V>.GetValue(K)
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.GetValue(K)
+  nameWithType.vb: CachingFacade(Of K, V).GetValue(K)
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).GetValue(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.GetValue(`0)
+    name: GetValue
+    nameWithType: CachingFacade<K, V>.GetValue
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.GetValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.GetValue(`0)
+    name: GetValue
+    nameWithType: CachingFacade(Of K, V).GetValue
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).GetValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade{{K},{V}}.LoadValue({K})
+  commentId: M:Microsoft.Health.Caching.CachingFacade{`0,`1}.LoadValue(`0)
+  parent: Microsoft.Health.Caching.CachingFacade{{K},{V}}
+  definition: Microsoft.Health.Caching.CachingFacade`2.LoadValue(`0)
+  name: LoadValue(K)
+  nameWithType: CachingFacade<K, V>.LoadValue(K)
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.LoadValue(K)
+  nameWithType.vb: CachingFacade(Of K, V).LoadValue(K)
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).LoadValue(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.LoadValue(`0)
+    name: LoadValue
+    nameWithType: CachingFacade<K, V>.LoadValue
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.LoadValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.LoadValue(`0)
+    name: LoadValue
+    nameWithType: CachingFacade(Of K, V).LoadValue
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).LoadValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade{{K},{V}}.RemoveValue({K})
+  commentId: M:Microsoft.Health.Caching.CachingFacade{`0,`1}.RemoveValue(`0)
+  parent: Microsoft.Health.Caching.CachingFacade{{K},{V}}
+  definition: Microsoft.Health.Caching.CachingFacade`2.RemoveValue(`0)
+  name: RemoveValue(K)
+  nameWithType: CachingFacade<K, V>.RemoveValue(K)
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.RemoveValue(K)
+  nameWithType.vb: CachingFacade(Of K, V).RemoveValue(K)
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).RemoveValue(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.RemoveValue(`0)
+    name: RemoveValue
+    nameWithType: CachingFacade<K, V>.RemoveValue
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.RemoveValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.RemoveValue(`0)
+    name: RemoveValue
+    nameWithType: CachingFacade(Of K, V).RemoveValue
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).RemoveValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade{{K},{V}}.RemoveAll
+  commentId: M:Microsoft.Health.Caching.CachingFacade{`0,`1}.RemoveAll
+  parent: Microsoft.Health.Caching.CachingFacade{{K},{V}}
+  definition: Microsoft.Health.Caching.CachingFacade`2.RemoveAll
+  name: RemoveAll()
+  nameWithType: CachingFacade<K, V>.RemoveAll()
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.RemoveAll()
+  nameWithType.vb: CachingFacade(Of K, V).RemoveAll()
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).RemoveAll()
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.RemoveAll
+    name: RemoveAll
+    nameWithType: CachingFacade<K, V>.RemoveAll
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.RemoveAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.RemoveAll
+    name: RemoveAll
+    nameWithType: CachingFacade(Of K, V).RemoveAll
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).RemoveAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  name: SetProperty(String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object())
+  name.vb: SetProperty(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  name: InvokeMethod(String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object())
+  name.vb: InvokeMethod(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  parent: Microsoft.Health.Utility.InvariantString
+  definition: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  name: ToStringInvariant()
+  nameWithType: InvariantString.ToStringInvariant()
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.LRUCacheWithTtl`2.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  parent: Microsoft.Health.Utility.TypeHelper
+  definition: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  name: ValueOrDbNull<LRUCacheWithTtl<K, V>>()
+  nameWithType: TypeHelper.ValueOrDbNull<LRUCacheWithTtl<K, V>>()
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.Caching.LRUCacheWithTtl<K, V>>()
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of LRUCacheWithTtl(Of K, V))()
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.Caching.LRUCacheWithTtl(Of K, V))()
+  name.vb: ValueOrDbNull(Of LRUCacheWithTtl(Of K, V))()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull<LRUCacheWithTtl<K, V>>
+    nameWithType: TypeHelper.ValueOrDbNull<LRUCacheWithTtl<K, V>>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.Caching.LRUCacheWithTtl<K, V>>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull(Of LRUCacheWithTtl(Of K, V))
+    nameWithType: TypeHelper.ValueOrDbNull(Of LRUCacheWithTtl(Of K, V))
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.Caching.LRUCacheWithTtl(Of K, V))
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  parent: Microsoft.Health.Utility.WCXmlHelper
+  definition: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  name: ToXml()
+  nameWithType: WCXmlHelper.ToXml()
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.Caching.CachingFacade`2
+  commentId: T:Microsoft.Health.Caching.CachingFacade`2
+  isExternal: false
+  name: CachingFacade<K, V>
+  nameWithType: CachingFacade<K, V>
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>
+  nameWithType.vb: CachingFacade(Of K, V)
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V)
+  name.vb: CachingFacade(Of K, V)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2
+    name: CachingFacade
+    nameWithType: CachingFacade
+    fullName: Microsoft.Health.Caching.CachingFacade
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: V
+    nameWithType: V
+    fullName: V
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2
+    name: CachingFacade
+    nameWithType: CachingFacade
+    fullName: Microsoft.Health.Caching.CachingFacade
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: V
+    nameWithType: V
+    fullName: V
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.LRUCache`2
+  commentId: T:Microsoft.Health.Caching.LRUCache`2
+  isExternal: false
+  name: LRUCache<K, V>
+  nameWithType: LRUCache<K, V>
+  fullName: Microsoft.Health.Caching.LRUCache<K, V>
+  nameWithType.vb: LRUCache(Of K, V)
+  fullName.vb: Microsoft.Health.Caching.LRUCache(Of K, V)
+  name.vb: LRUCache(Of K, V)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.LRUCache`2
+    name: LRUCache
+    nameWithType: LRUCache
+    fullName: Microsoft.Health.Caching.LRUCache
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: V
+    nameWithType: V
+    fullName: V
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.Caching.LRUCache`2
+    name: LRUCache
+    nameWithType: LRUCache
+    fullName: Microsoft.Health.Caching.LRUCache
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: V
+    nameWithType: V
+    fullName: V
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.LRUCache`2.GetValue(`0)
+  commentId: M:Microsoft.Health.Caching.LRUCache`2.GetValue(`0)
+  isExternal: false
+  name: GetValue(K)
+  nameWithType: LRUCache<K, V>.GetValue(K)
+  fullName: Microsoft.Health.Caching.LRUCache<K, V>.GetValue(K)
+  nameWithType.vb: LRUCache(Of K, V).GetValue(K)
+  fullName.vb: Microsoft.Health.Caching.LRUCache(Of K, V).GetValue(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.LRUCache`2.GetValue(`0)
+    name: GetValue
+    nameWithType: LRUCache<K, V>.GetValue
+    fullName: Microsoft.Health.Caching.LRUCache<K, V>.GetValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.LRUCache`2.GetValue(`0)
+    name: GetValue
+    nameWithType: LRUCache(Of K, V).GetValue
+    fullName: Microsoft.Health.Caching.LRUCache(Of K, V).GetValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.LRUCache`2.LoadValue(`0)
+  commentId: M:Microsoft.Health.Caching.LRUCache`2.LoadValue(`0)
+  isExternal: false
+  name: LoadValue(K)
+  nameWithType: LRUCache<K, V>.LoadValue(K)
+  fullName: Microsoft.Health.Caching.LRUCache<K, V>.LoadValue(K)
+  nameWithType.vb: LRUCache(Of K, V).LoadValue(K)
+  fullName.vb: Microsoft.Health.Caching.LRUCache(Of K, V).LoadValue(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.LRUCache`2.LoadValue(`0)
+    name: LoadValue
+    nameWithType: LRUCache<K, V>.LoadValue
+    fullName: Microsoft.Health.Caching.LRUCache<K, V>.LoadValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.LRUCache`2.LoadValue(`0)
+    name: LoadValue
+    nameWithType: LRUCache(Of K, V).LoadValue
+    fullName: Microsoft.Health.Caching.LRUCache(Of K, V).LoadValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.LRUCache`2.RemoveValue(`0)
+  commentId: M:Microsoft.Health.Caching.LRUCache`2.RemoveValue(`0)
+  isExternal: false
+  name: RemoveValue(K)
+  nameWithType: LRUCache<K, V>.RemoveValue(K)
+  fullName: Microsoft.Health.Caching.LRUCache<K, V>.RemoveValue(K)
+  nameWithType.vb: LRUCache(Of K, V).RemoveValue(K)
+  fullName.vb: Microsoft.Health.Caching.LRUCache(Of K, V).RemoveValue(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.LRUCache`2.RemoveValue(`0)
+    name: RemoveValue
+    nameWithType: LRUCache<K, V>.RemoveValue
+    fullName: Microsoft.Health.Caching.LRUCache<K, V>.RemoveValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.LRUCache`2.RemoveValue(`0)
+    name: RemoveValue
+    nameWithType: LRUCache(Of K, V).RemoveValue
+    fullName: Microsoft.Health.Caching.LRUCache(Of K, V).RemoveValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.LRUCache`2.CacheItem(System.String,`1)
+  commentId: M:Microsoft.Health.Caching.LRUCache`2.CacheItem(System.String,`1)
+  isExternal: true
+  name: CacheItem(String, V)
+  nameWithType: LRUCache<K, V>.CacheItem(String, V)
+  fullName: Microsoft.Health.Caching.LRUCache<K, V>.CacheItem(System.String, V)
+  nameWithType.vb: LRUCache(Of K, V).CacheItem(String, V)
+  fullName.vb: Microsoft.Health.Caching.LRUCache(Of K, V).CacheItem(System.String, V)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.LRUCache`2.CacheItem(System.String,`1)
+    name: CacheItem
+    nameWithType: LRUCache<K, V>.CacheItem
+    fullName: Microsoft.Health.Caching.LRUCache<K, V>.CacheItem
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: V
+    nameWithType: V
+    fullName: V
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.LRUCache`2.CacheItem(System.String,`1)
+    name: CacheItem
+    nameWithType: LRUCache(Of K, V).CacheItem
+    fullName: Microsoft.Health.Caching.LRUCache(Of K, V).CacheItem
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: V
+    nameWithType: V
+    fullName: V
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.LRUCache`2.RemoveAll
+  commentId: M:Microsoft.Health.Caching.LRUCache`2.RemoveAll
+  isExternal: false
+  name: RemoveAll()
+  nameWithType: LRUCache<K, V>.RemoveAll()
+  fullName: Microsoft.Health.Caching.LRUCache<K, V>.RemoveAll()
+  nameWithType.vb: LRUCache(Of K, V).RemoveAll()
+  fullName.vb: Microsoft.Health.Caching.LRUCache(Of K, V).RemoveAll()
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.LRUCache`2.RemoveAll
+    name: RemoveAll
+    nameWithType: LRUCache<K, V>.RemoveAll
+    fullName: Microsoft.Health.Caching.LRUCache<K, V>.RemoveAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.LRUCache`2.RemoveAll
+    name: RemoveAll
+    nameWithType: LRUCache(Of K, V).RemoveAll
+    fullName: Microsoft.Health.Caching.LRUCache(Of K, V).RemoveAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade`2.Item(`0)
+  commentId: P:Microsoft.Health.Caching.CachingFacade`2.Item(`0)
+  isExternal: false
+  name: Item[K]
+  nameWithType: CachingFacade<K, V>.Item[K]
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Item[K]
+  nameWithType.vb: CachingFacade(Of K, V).Item(K)
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).Item(K)
+  name.vb: Item(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Item(`0)
+    name: Item
+    nameWithType: CachingFacade<K, V>.Item
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Item
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Item(`0)
+    name: Item
+    nameWithType: CachingFacade(Of K, V).Item
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).Item
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade`2.Remove(`0)
+  commentId: M:Microsoft.Health.Caching.CachingFacade`2.Remove(`0)
+  isExternal: false
+  name: Remove(K)
+  nameWithType: CachingFacade<K, V>.Remove(K)
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Remove(K)
+  nameWithType.vb: CachingFacade(Of K, V).Remove(K)
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).Remove(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Remove(`0)
+    name: Remove
+    nameWithType: CachingFacade<K, V>.Remove
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Remove
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Remove(`0)
+    name: Remove
+    nameWithType: CachingFacade(Of K, V).Remove
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).Remove
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade`2.Load(System.Boolean)
+  commentId: M:Microsoft.Health.Caching.CachingFacade`2.Load(System.Boolean)
+  isExternal: true
+  name: Load(Boolean)
+  nameWithType: CachingFacade<K, V>.Load(Boolean)
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Load(System.Boolean)
+  nameWithType.vb: CachingFacade(Of K, V).Load(Boolean)
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).Load(System.Boolean)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Load(System.Boolean)
+    name: Load
+    nameWithType: CachingFacade<K, V>.Load
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Load
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Load(System.Boolean)
+    name: Load
+    nameWithType: CachingFacade(Of K, V).Load
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).Load
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade`2.Unload
+  commentId: M:Microsoft.Health.Caching.CachingFacade`2.Unload
+  isExternal: false
+  name: Unload()
+  nameWithType: CachingFacade<K, V>.Unload()
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Unload()
+  nameWithType.vb: CachingFacade(Of K, V).Unload()
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).Unload()
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Unload
+    name: Unload
+    nameWithType: CachingFacade<K, V>.Unload
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.Unload
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.Unload
+    name: Unload
+    nameWithType: CachingFacade(Of K, V).Unload
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).Unload
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade`2.GetValue(`0)
+  commentId: M:Microsoft.Health.Caching.CachingFacade`2.GetValue(`0)
+  isExternal: false
+  name: GetValue(K)
+  nameWithType: CachingFacade<K, V>.GetValue(K)
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.GetValue(K)
+  nameWithType.vb: CachingFacade(Of K, V).GetValue(K)
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).GetValue(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.GetValue(`0)
+    name: GetValue
+    nameWithType: CachingFacade<K, V>.GetValue
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.GetValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.GetValue(`0)
+    name: GetValue
+    nameWithType: CachingFacade(Of K, V).GetValue
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).GetValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade`2.LoadValue(`0)
+  commentId: M:Microsoft.Health.Caching.CachingFacade`2.LoadValue(`0)
+  isExternal: false
+  name: LoadValue(K)
+  nameWithType: CachingFacade<K, V>.LoadValue(K)
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.LoadValue(K)
+  nameWithType.vb: CachingFacade(Of K, V).LoadValue(K)
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).LoadValue(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.LoadValue(`0)
+    name: LoadValue
+    nameWithType: CachingFacade<K, V>.LoadValue
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.LoadValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.LoadValue(`0)
+    name: LoadValue
+    nameWithType: CachingFacade(Of K, V).LoadValue
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).LoadValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade`2.RemoveValue(`0)
+  commentId: M:Microsoft.Health.Caching.CachingFacade`2.RemoveValue(`0)
+  isExternal: false
+  name: RemoveValue(K)
+  nameWithType: CachingFacade<K, V>.RemoveValue(K)
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.RemoveValue(K)
+  nameWithType.vb: CachingFacade(Of K, V).RemoveValue(K)
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).RemoveValue(K)
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.RemoveValue(`0)
+    name: RemoveValue
+    nameWithType: CachingFacade<K, V>.RemoveValue
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.RemoveValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.RemoveValue(`0)
+    name: RemoveValue
+    nameWithType: CachingFacade(Of K, V).RemoveValue
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).RemoveValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.CachingFacade`2.RemoveAll
+  commentId: M:Microsoft.Health.Caching.CachingFacade`2.RemoveAll
+  isExternal: false
+  name: RemoveAll()
+  nameWithType: CachingFacade<K, V>.RemoveAll()
+  fullName: Microsoft.Health.Caching.CachingFacade<K, V>.RemoveAll()
+  nameWithType.vb: CachingFacade(Of K, V).RemoveAll()
+  fullName.vb: Microsoft.Health.Caching.CachingFacade(Of K, V).RemoveAll()
+  spec.csharp:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.RemoveAll
+    name: RemoveAll
+    nameWithType: CachingFacade<K, V>.RemoveAll
+    fullName: Microsoft.Health.Caching.CachingFacade<K, V>.RemoveAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Caching.CachingFacade`2.RemoveAll
+    name: RemoveAll
+    nameWithType: CachingFacade(Of K, V).RemoveAll
+    fullName: Microsoft.Health.Caching.CachingFacade(Of K, V).RemoveAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: SetProperty(Object, String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object())
+  name.vb: SetProperty(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions
+  commentId: T:Microsoft.Health.Utility.IDispatchExtensions
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: IDispatchExtensions
+  nameWithType: IDispatchExtensions
+  fullName: Microsoft.Health.Utility.IDispatchExtensions
+- uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: InvokeMethod(Object, String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object())
+  name.vb: InvokeMethod(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  isExternal: true
+  name: ToStringInvariant(Object)
+  nameWithType: InvariantString.ToStringInvariant(Object)
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString
+  commentId: T:Microsoft.Health.Utility.InvariantString
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: InvariantString
+  nameWithType: InvariantString
+  fullName: Microsoft.Health.Utility.InvariantString
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  isExternal: false
+  name: ValueOrDbNull<T>(T)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(T)
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(T)
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(T)
+  name.vb: ValueOrDbNull(Of T)(T)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull<T>
+    nameWithType: TypeHelper.ValueOrDbNull<T>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull(Of T)
+    nameWithType: TypeHelper.ValueOrDbNull(Of T)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+- uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  isExternal: true
+  name: ToXml(Object)
+  nameWithType: WCXmlHelper.ToXml(Object)
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.WCXmlHelper
+  commentId: T:Microsoft.Health.Utility.WCXmlHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: WCXmlHelper
+  nameWithType: WCXmlHelper
+  fullName: Microsoft.Health.Utility.WCXmlHelper
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: Microsoft.Health.Caching.LRUCacheWithTtl`2.#ctor*
+  commentId: Overload:Microsoft.Health.Caching.LRUCacheWithTtl`2.#ctor
+  isExternal: false
+  name: LRUCacheWithTtl
+  nameWithType: LRUCacheWithTtl<K, V>.LRUCacheWithTtl
+  fullName: Microsoft.Health.Caching.LRUCacheWithTtl<K, V>.LRUCacheWithTtl
+  nameWithType.vb: LRUCacheWithTtl(Of K, V).LRUCacheWithTtl
+  fullName.vb: Microsoft.Health.Caching.LRUCacheWithTtl(Of K, V).LRUCacheWithTtl
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Func{{K},{V}}
+  commentId: T:System.Func{`0,`1}
+  parent: System
+  definition: System.Func`2
+  name: Func<K, V>
+  nameWithType: Func<K, V>
+  fullName: System.Func<K, V>
+  nameWithType.vb: Func(Of K, V)
+  fullName.vb: System.Func(Of K, V)
+  name.vb: Func(Of K, V)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: V
+    nameWithType: V
+    fullName: V
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: V
+    nameWithType: V
+    fullName: V
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{{K},System.String}
+  commentId: T:System.Func{`0,System.String}
+  parent: System
+  definition: System.Func`2
+  name: Func<K, String>
+  nameWithType: Func<K, String>
+  fullName: System.Func<K, System.String>
+  nameWithType.vb: Func(Of K, String)
+  fullName.vb: System.Func(Of K, System.String)
+  name.vb: Func(Of K, String)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.LRUCacheWithTtl`2.CacheItem*
+  commentId: Overload:Microsoft.Health.Caching.LRUCacheWithTtl`2.CacheItem
+  isExternal: false
+  name: CacheItem
+  nameWithType: LRUCacheWithTtl<K, V>.CacheItem
+  fullName: Microsoft.Health.Caching.LRUCacheWithTtl<K, V>.CacheItem
+  nameWithType.vb: LRUCacheWithTtl(Of K, V).CacheItem
+  fullName.vb: Microsoft.Health.Caching.LRUCacheWithTtl(Of K, V).CacheItem
+- uid: '{V}'
+  commentId: '!:V'
+  definition: V
+  name: V
+  nameWithType: V
+  fullName: V
+- uid: V
+  isExternal: false
+  name: V
+  nameWithType: V
+  fullName: V

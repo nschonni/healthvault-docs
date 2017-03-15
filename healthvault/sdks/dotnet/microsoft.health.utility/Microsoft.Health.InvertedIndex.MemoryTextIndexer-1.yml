@@ -1,0 +1,3465 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  commentId: T:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  id: MemoryTextIndexer`1
+  parent: Microsoft.Health.InvertedIndex
+  children:
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.#ctor
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add(System.UInt32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}})
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add(System.UInt32,System.Collections.Generic.IEnumerable{System.String})
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add(System.UInt32,System.Collections.Generic.IList{System.String})
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add(System.UInt32,System.String)
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex(System.UInt32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}})
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex(System.UInt32,System.Collections.Generic.IEnumerable{System.String})
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex(System.UInt32,System.Collections.Generic.IList{System.String})
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex(System.UInt32,System.String,System.Single)
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex(System.UInt32,System.String,System.Single,System.String,System.Single)
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.BeginIndexing(Microsoft.Health.InvertedIndex.TextIndex)
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CalculateTermInverseRecordFrequency(System.Int32)
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreateIndexObject
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreatePosting(System.UInt32,System.Single)
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreatePostingList(System.String,`0[])
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.DefaultListCapacity
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.GetTermInverseRecordFrequency(System.String)
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.GetTermRecordFrequency(System.String)
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.HasSequentialRecordIDs
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.IgnoreDuplicates
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Item(System.String)
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.ListGrowBy
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.PostingCount
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Postings
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.RecordCount
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.TermCount
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Terms
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.ToIndex
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.WordBreaker
+  langs:
+  - csharp
+  - vb
+  name: MemoryTextIndexer<TPosting>
+  nameWithType: MemoryTextIndexer<TPosting>
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: MemoryTextIndexer
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 20
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\nThis is a VERY simplistic indexer for creating medium sized in-memory search indexes. \n\nIt basically takes a incoming forward index and inverts it in memory.\n\nThis indexer does not do any vector space weight calculations - although inheritors might\n"
+  example: []
+  syntax:
+    content: 'public abstract class MemoryTextIndexer<TPosting> : ITextIndexer, ISearchIndexer<string>'
+    content.vb: >-
+      Public MustInherit Class MemoryTextIndexer(Of TPosting)
+          Implements ITextIndexer, ISearchIndexer(Of String)
+    typeParameters:
+    - id: TPosting
+      description: ''
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer
+  - Microsoft.Health.InvertedIndex.VectorMemoryTextIndexer
+  implements:
+  - Microsoft.Health.InvertedIndex.ITextIndexer
+  - Microsoft.Health.InvertedIndex.ISearchIndexer{System.String}
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  - System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  nameWithType.vb: MemoryTextIndexer(Of TPosting)
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting)
+  name.vb: MemoryTextIndexer(Of TPosting)
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.#ctor
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.#ctor
+  id: '#ctor'
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: MemoryTextIndexer()
+  nameWithType: MemoryTextIndexer<TPosting>.MemoryTextIndexer()
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.MemoryTextIndexer()
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 34
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected MemoryTextIndexer()
+    content.vb: Protected Sub New
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.#ctor*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).MemoryTextIndexer()
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).MemoryTextIndexer()
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.RecordCount
+  commentId: P:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.RecordCount
+  id: RecordCount
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: RecordCount
+  nameWithType: MemoryTextIndexer<TPosting>.RecordCount
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.RecordCount
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: RecordCount
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 45
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public int RecordCount { get; }
+    content.vb: Public ReadOnly Property RecordCount As Integer
+    parameters: []
+    return:
+      type: System.Int32
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.RecordCount*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).RecordCount
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).RecordCount
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.TermCount
+  commentId: P:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.TermCount
+  id: TermCount
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: TermCount
+  nameWithType: MemoryTextIndexer<TPosting>.TermCount
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.TermCount
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: TermCount
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 56
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public int TermCount { get; }
+    content.vb: Public ReadOnly Property TermCount As Integer
+    parameters: []
+    return:
+      type: System.Int32
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.TermCount*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).TermCount
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).TermCount
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.DefaultListCapacity
+  commentId: P:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.DefaultListCapacity
+  id: DefaultListCapacity
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: DefaultListCapacity
+  nameWithType: MemoryTextIndexer<TPosting>.DefaultListCapacity
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.DefaultListCapacity
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: DefaultListCapacity
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 67
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public int DefaultListCapacity { get; set; }
+    content.vb: Public Property DefaultListCapacity As Integer
+    parameters: []
+    return:
+      type: System.Int32
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.DefaultListCapacity*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).DefaultListCapacity
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).DefaultListCapacity
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.ListGrowBy
+  commentId: P:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.ListGrowBy
+  id: ListGrowBy
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: ListGrowBy
+  nameWithType: MemoryTextIndexer<TPosting>.ListGrowBy
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.ListGrowBy
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ListGrowBy
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 87
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public int ListGrowBy { get; set; }
+    content.vb: Public Property ListGrowBy As Integer
+    parameters: []
+    return:
+      type: System.Int32
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.ListGrowBy*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).ListGrowBy
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).ListGrowBy
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.WordBreaker
+  commentId: P:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.WordBreaker
+  id: WordBreaker
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: WordBreaker
+  nameWithType: MemoryTextIndexer<TPosting>.WordBreaker
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.WordBreaker
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: WordBreaker
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 107
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public virtual IWordBreaker WordBreaker { get; set; }
+    content.vb: Public Overridable Property WordBreaker As IWordBreaker
+    parameters: []
+    return:
+      type: Microsoft.Health.PhraseAnalyzer.IWordBreaker
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.WordBreaker*
+  implements:
+  - Microsoft.Health.InvertedIndex.ITextIndexer.WordBreaker
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).WordBreaker
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).WordBreaker
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.HasSequentialRecordIDs
+  commentId: F:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.HasSequentialRecordIDs
+  id: HasSequentialRecordIDs
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: HasSequentialRecordIDs
+  nameWithType: MemoryTextIndexer<TPosting>.HasSequentialRecordIDs
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.HasSequentialRecordIDs
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: HasSequentialRecordIDs
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 122
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public bool HasSequentialRecordIDs
+    content.vb: Public HasSequentialRecordIDs As Boolean
+    return:
+      type: System.Boolean
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).HasSequentialRecordIDs
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).HasSequentialRecordIDs
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.IgnoreDuplicates
+  commentId: F:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.IgnoreDuplicates
+  id: IgnoreDuplicates
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: IgnoreDuplicates
+  nameWithType: MemoryTextIndexer<TPosting>.IgnoreDuplicates
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.IgnoreDuplicates
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: IgnoreDuplicates
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 127
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\nIf duplicate terms are encountered, don't sum up their weights..\n"
+  example: []
+  syntax:
+    content: public bool IgnoreDuplicates
+    content.vb: Public IgnoreDuplicates As Boolean
+    return:
+      type: System.Boolean
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).IgnoreDuplicates
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).IgnoreDuplicates
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Item(System.String)
+  commentId: P:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Item(System.String)
+  id: Item(System.String)
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: Item[String]
+  nameWithType: MemoryTextIndexer<TPosting>.Item[String]
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.Item[System.String]
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: this[]
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 134
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public IndexList<TPosting> this[string term] { get; }
+    content.vb: Public ReadOnly Property Item(term As String) As IndexList(Of TPosting)
+    parameters:
+    - id: term
+      type: System.String
+      description: ''
+    return:
+      type: Microsoft.Health.InvertedIndex.IndexList{{TPosting}}
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Item*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).Item(String)
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).Item(System.String)
+  name.vb: Item(String)
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Terms
+  commentId: P:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Terms
+  id: Terms
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: Terms
+  nameWithType: MemoryTextIndexer<TPosting>.Terms
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.Terms
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Terms
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 151
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public IEnumerable<string> Terms { get; }
+    content.vb: Public ReadOnly Property Terms As IEnumerable(Of String)
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{System.String}
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Terms*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).Terms
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).Terms
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.PostingCount
+  commentId: P:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.PostingCount
+  id: PostingCount
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: PostingCount
+  nameWithType: MemoryTextIndexer<TPosting>.PostingCount
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.PostingCount
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: PostingCount
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 162
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public long PostingCount { get; }
+    content.vb: Public ReadOnly Property PostingCount As Long
+    parameters: []
+    return:
+      type: System.Int64
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.PostingCount*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).PostingCount
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).PostingCount
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Postings
+  commentId: P:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Postings
+  id: Postings
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: Postings
+  nameWithType: MemoryTextIndexer<TPosting>.Postings
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.Postings
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Postings
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 173
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public IEnumerable<KeyValuePair<string, IndexList<TPosting>>> Postings { get; }
+    content.vb: Public ReadOnly Property Postings As IEnumerable(Of KeyValuePair(Of String, IndexList(Of TPosting)))
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.Health.InvertedIndex.IndexList{{TPosting}}}}
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Postings*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).Postings
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).Postings
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add(System.UInt32,System.String)
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add(System.UInt32,System.String)
+  id: Add(System.UInt32,System.String)
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: Add(UInt32, String)
+  nameWithType: MemoryTextIndexer<TPosting>.Add(UInt32, String)
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.Add(System.UInt32, System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Add
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 186
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\nWord breaks the phrase and inserts the term stream.\n"
+  example: []
+  syntax:
+    content: public void Add(uint recordID, string item)
+    content.vb: Public Sub Add(recordID As UInteger, item As String)
+    parameters:
+    - id: recordID
+      type: System.UInt32
+      description: this phrase's id
+    - id: item
+      type: System.String
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add*
+  implements:
+  - Microsoft.Health.InvertedIndex.ISearchIndexer{System.String}.Add(System.UInt32,System.String)
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).Add(UInt32, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).Add(System.UInt32, System.String)
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add(System.UInt32,System.Collections.Generic.IList{System.String})
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add(System.UInt32,System.Collections.Generic.IList{System.String})
+  id: Add(System.UInt32,System.Collections.Generic.IList{System.String})
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: Add(UInt32, IList<String>)
+  nameWithType: MemoryTextIndexer<TPosting>.Add(UInt32, IList<String>)
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.Add(System.UInt32, System.Collections.Generic.IList<System.String>)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Add
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 212
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\nThe given record contains the \n"
+  example: []
+  syntax:
+    content: public void Add(uint recordID, IList<string> items)
+    content.vb: Public Sub Add(recordID As UInteger, items As IList(Of String))
+    parameters:
+    - id: recordID
+      type: System.UInt32
+      description: ''
+    - id: items
+      type: System.Collections.Generic.IList{System.String}
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add*
+  implements:
+  - Microsoft.Health.InvertedIndex.ISearchIndexer{System.String}.Add(System.UInt32,System.Collections.Generic.IList{System.String})
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).Add(UInt32, IList(Of String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).Add(System.UInt32, System.Collections.Generic.IList(Of System.String))
+  name.vb: Add(UInt32, IList(Of String))
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add(System.UInt32,System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add(System.UInt32,System.Collections.Generic.IEnumerable{System.String})
+  id: Add(System.UInt32,System.Collections.Generic.IEnumerable{System.String})
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: Add(UInt32, IEnumerable<String>)
+  nameWithType: MemoryTextIndexer<TPosting>.Add(UInt32, IEnumerable<String>)
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.Add(System.UInt32, System.Collections.Generic.IEnumerable<System.String>)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Add
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 265
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\nIndex the given record\n"
+  example: []
+  syntax:
+    content: public void Add(uint recordID, IEnumerable<string> items)
+    content.vb: Public Sub Add(recordID As UInteger, items As IEnumerable(Of String))
+    parameters:
+    - id: recordID
+      type: System.UInt32
+      description: The record's ID
+    - id: items
+      type: System.Collections.Generic.IEnumerable{System.String}
+      description: The terms in the record
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add*
+  implements:
+  - Microsoft.Health.InvertedIndex.ISearchIndexer{System.String}.Add(System.UInt32,System.Collections.Generic.IEnumerable{System.String})
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).Add(UInt32, IEnumerable(Of String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).Add(System.UInt32, System.Collections.Generic.IEnumerable(Of System.String))
+  name.vb: Add(UInt32, IEnumerable(Of String))
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add(System.UInt32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}})
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add(System.UInt32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}})
+  id: Add(System.UInt32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}})
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: Add(UInt32, IEnumerable<KeyValuePair<String, Single>>)
+  nameWithType: MemoryTextIndexer<TPosting>.Add(UInt32, IEnumerable<KeyValuePair<String, Single>>)
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.Add(System.UInt32, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, System.Single>>)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Add
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 291
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\nGiven a recordID, add all the terms in that record to the index.\nEach term is a string and has a weight. \n"
+  example: []
+  syntax:
+    content: public void Add(uint recordID, IEnumerable<KeyValuePair<string, float>> terms)
+    content.vb: Public Sub Add(recordID As UInteger, terms As IEnumerable(Of KeyValuePair(Of String, Single)))
+    parameters:
+    - id: recordID
+      type: System.UInt32
+    - id: terms
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}}
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add*
+  implements:
+  - Microsoft.Health.InvertedIndex.ITextIndexer.Add(System.UInt32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}})
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).Add(UInt32, IEnumerable(Of KeyValuePair(Of String, Single)))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).Add(System.UInt32, System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, System.Single)))
+  name.vb: Add(UInt32, IEnumerable(Of KeyValuePair(Of String, Single)))
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex(System.UInt32,System.String,System.Single)
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex(System.UInt32,System.String,System.Single)
+  id: AddToIndex(System.UInt32,System.String,System.Single)
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: AddToIndex(UInt32, String, Single)
+  nameWithType: MemoryTextIndexer<TPosting>.AddToIndex(UInt32, String, Single)
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.AddToIndex(System.UInt32, System.String, System.Single)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: AddToIndex
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 320
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\nOptimize for small records\n"
+  example: []
+  syntax:
+    content: protected virtual void AddToIndex(uint recordID, string term, float weight)
+    content.vb: Protected Overridable Sub AddToIndex(recordID As UInteger, term As String, weight As Single)
+    parameters:
+    - id: recordID
+      type: System.UInt32
+    - id: term
+      type: System.String
+    - id: weight
+      type: System.Single
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).AddToIndex(UInt32, String, Single)
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).AddToIndex(System.UInt32, System.String, System.Single)
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex(System.UInt32,System.String,System.Single,System.String,System.Single)
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex(System.UInt32,System.String,System.Single,System.String,System.Single)
+  id: AddToIndex(System.UInt32,System.String,System.Single,System.String,System.Single)
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: AddToIndex(UInt32, String, Single, String, Single)
+  nameWithType: MemoryTextIndexer<TPosting>.AddToIndex(UInt32, String, Single, String, Single)
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.AddToIndex(System.UInt32, System.String, System.Single, System.String, System.Single)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: AddToIndex
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 339
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected virtual void AddToIndex(uint recordID, string term1, float weight1, string term2, float weight2)
+    content.vb: Protected Overridable Sub AddToIndex(recordID As UInteger, term1 As String, weight1 As Single, term2 As String, weight2 As Single)
+    parameters:
+    - id: recordID
+      type: System.UInt32
+      description: ''
+    - id: term1
+      type: System.String
+      description: ''
+    - id: weight1
+      type: System.Single
+      description: ''
+    - id: term2
+      type: System.String
+      description: ''
+    - id: weight2
+      type: System.Single
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).AddToIndex(UInt32, String, Single, String, Single)
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).AddToIndex(System.UInt32, System.String, System.Single, System.String, System.Single)
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex(System.UInt32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}})
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex(System.UInt32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}})
+  id: AddToIndex(System.UInt32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}})
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: AddToIndex(UInt32, IEnumerable<KeyValuePair<String, Single>>)
+  nameWithType: MemoryTextIndexer<TPosting>.AddToIndex(UInt32, IEnumerable<KeyValuePair<String, Single>>)
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.AddToIndex(System.UInt32, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, System.Single>>)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: AddToIndex
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 357
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected virtual void AddToIndex(uint recordID, IEnumerable<KeyValuePair<string, float>> terms)
+    content.vb: Protected Overridable Sub AddToIndex(recordID As UInteger, terms As IEnumerable(Of KeyValuePair(Of String, Single)))
+    parameters:
+    - id: recordID
+      type: System.UInt32
+      description: ''
+    - id: terms
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}}
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).AddToIndex(UInt32, IEnumerable(Of KeyValuePair(Of String, Single)))
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).AddToIndex(System.UInt32, System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, System.Single)))
+  name.vb: AddToIndex(UInt32, IEnumerable(Of KeyValuePair(Of String, Single)))
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex(System.UInt32,System.Collections.Generic.IList{System.String})
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex(System.UInt32,System.Collections.Generic.IList{System.String})
+  id: AddToIndex(System.UInt32,System.Collections.Generic.IList{System.String})
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: AddToIndex(UInt32, IList<String>)
+  nameWithType: MemoryTextIndexer<TPosting>.AddToIndex(UInt32, IList<String>)
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.AddToIndex(System.UInt32, System.Collections.Generic.IList<System.String>)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: AddToIndex
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 378
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected virtual void AddToIndex(uint recordID, IList<string> terms)
+    content.vb: Protected Overridable Sub AddToIndex(recordID As UInteger, terms As IList(Of String))
+    parameters:
+    - id: recordID
+      type: System.UInt32
+      description: ''
+    - id: terms
+      type: System.Collections.Generic.IList{System.String}
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).AddToIndex(UInt32, IList(Of String))
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).AddToIndex(System.UInt32, System.Collections.Generic.IList(Of System.String))
+  name.vb: AddToIndex(UInt32, IList(Of String))
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex(System.UInt32,System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex(System.UInt32,System.Collections.Generic.IEnumerable{System.String})
+  id: AddToIndex(System.UInt32,System.Collections.Generic.IEnumerable{System.String})
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: AddToIndex(UInt32, IEnumerable<String>)
+  nameWithType: MemoryTextIndexer<TPosting>.AddToIndex(UInt32, IEnumerable<String>)
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.AddToIndex(System.UInt32, System.Collections.Generic.IEnumerable<System.String>)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: AddToIndex
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 398
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected virtual void AddToIndex(uint recordID, IEnumerable<string> terms)
+    content.vb: Protected Overridable Sub AddToIndex(recordID As UInteger, terms As IEnumerable(Of String))
+    parameters:
+    - id: recordID
+      type: System.UInt32
+      description: ''
+    - id: terms
+      type: System.Collections.Generic.IEnumerable{System.String}
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).AddToIndex(UInt32, IEnumerable(Of String))
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).AddToIndex(System.UInt32, System.Collections.Generic.IEnumerable(Of System.String))
+  name.vb: AddToIndex(UInt32, IEnumerable(Of String))
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.ToIndex
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.ToIndex
+  id: ToIndex
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: ToIndex()
+  nameWithType: MemoryTextIndexer<TPosting>.ToIndex()
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.ToIndex()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ToIndex
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 438
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\nSo far, what the indexer has collected is: for each term, a list of records that term shows up in.\nToIndex will do two things:\n- Transform these temporary lists into a form optimized for querying. For memory indexes, this means replacing dynamic lists\nwith arrays, which are a lot faster to traverse\n- Computing additional information about the index, such as tdf-idf (inverse document frequencies) and document normals. \n"
+  example: []
+  syntax:
+    content: public virtual TextIndex ToIndex()
+    content.vb: Public Overridable Function ToIndex As TextIndex
+    return:
+      type: Microsoft.Health.InvertedIndex.TextIndex
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.ToIndex*
+  implements:
+  - Microsoft.Health.InvertedIndex.ITextIndexer.ToIndex
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).ToIndex()
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).ToIndex()
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.GetTermRecordFrequency(System.String)
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.GetTermRecordFrequency(System.String)
+  id: GetTermRecordFrequency(System.String)
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: GetTermRecordFrequency(String)
+  nameWithType: MemoryTextIndexer<TPosting>.GetTermRecordFrequency(String)
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.GetTermRecordFrequency(System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetTermRecordFrequency
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 455
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\nReturn the # of records this key was found in\n"
+  example: []
+  syntax:
+    content: public int GetTermRecordFrequency(string key)
+    content.vb: Public Function GetTermRecordFrequency(key As String) As Integer
+    parameters:
+    - id: key
+      type: System.String
+    return:
+      type: System.Int32
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.GetTermRecordFrequency*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).GetTermRecordFrequency(String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).GetTermRecordFrequency(System.String)
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.GetTermInverseRecordFrequency(System.String)
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.GetTermInverseRecordFrequency(System.String)
+  id: GetTermInverseRecordFrequency(System.String)
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: GetTermInverseRecordFrequency(String)
+  nameWithType: MemoryTextIndexer<TPosting>.GetTermInverseRecordFrequency(String)
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.GetTermInverseRecordFrequency(System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetTermInverseRecordFrequency
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 467
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\nThe more common a term, the less relevant it is. Classic information theory. \nUse a Log to smoothen the curve out\nSearch literature calls this IDF - inverse document frequency\n"
+  example: []
+  syntax:
+    content: public float GetTermInverseRecordFrequency(string key)
+    content.vb: Public Function GetTermInverseRecordFrequency(key As String) As Single
+    parameters:
+    - id: key
+      type: System.String
+      description: ''
+    return:
+      type: System.Single
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.GetTermInverseRecordFrequency*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).GetTermInverseRecordFrequency(String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).GetTermInverseRecordFrequency(System.String)
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CalculateTermInverseRecordFrequency(System.Int32)
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CalculateTermInverseRecordFrequency(System.Int32)
+  id: CalculateTermInverseRecordFrequency(System.Int32)
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: CalculateTermInverseRecordFrequency(Int32)
+  nameWithType: MemoryTextIndexer<TPosting>.CalculateTermInverseRecordFrequency(Int32)
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.CalculateTermInverseRecordFrequency(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CalculateTermInverseRecordFrequency
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 476
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public float CalculateTermInverseRecordFrequency(int recordFrequency)
+    content.vb: Public Function CalculateTermInverseRecordFrequency(recordFrequency As Integer) As Single
+    parameters:
+    - id: recordFrequency
+      type: System.Int32
+      description: ''
+    return:
+      type: System.Single
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CalculateTermInverseRecordFrequency*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).CalculateTermInverseRecordFrequency(Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).CalculateTermInverseRecordFrequency(System.Int32)
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreateIndexObject
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreateIndexObject
+  id: CreateIndexObject
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: CreateIndexObject()
+  nameWithType: MemoryTextIndexer<TPosting>.CreateIndexObject()
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.CreateIndexObject()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CreateIndexObject
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 491
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected virtual TextIndex CreateIndexObject()
+    content.vb: Protected Overridable Function CreateIndexObject As TextIndex
+    return:
+      type: Microsoft.Health.InvertedIndex.TextIndex
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreateIndexObject*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).CreateIndexObject()
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).CreateIndexObject()
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.BeginIndexing(Microsoft.Health.InvertedIndex.TextIndex)
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.BeginIndexing(Microsoft.Health.InvertedIndex.TextIndex)
+  id: BeginIndexing(Microsoft.Health.InvertedIndex.TextIndex)
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: BeginIndexing(TextIndex)
+  nameWithType: MemoryTextIndexer<TPosting>.BeginIndexing(TextIndex)
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.BeginIndexing(Microsoft.Health.InvertedIndex.TextIndex)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: BeginIndexing
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 499
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected virtual void BeginIndexing(TextIndex index)
+    content.vb: Protected Overridable Sub BeginIndexing(index As TextIndex)
+    parameters:
+    - id: index
+      type: Microsoft.Health.InvertedIndex.TextIndex
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.BeginIndexing*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).BeginIndexing(TextIndex)
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).BeginIndexing(Microsoft.Health.InvertedIndex.TextIndex)
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreatePosting(System.UInt32,System.Single)
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreatePosting(System.UInt32,System.Single)
+  id: CreatePosting(System.UInt32,System.Single)
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: CreatePosting(UInt32, Single)
+  nameWithType: MemoryTextIndexer<TPosting>.CreatePosting(UInt32, Single)
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.CreatePosting(System.UInt32, System.Single)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CreatePosting
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 509
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected abstract TPosting CreatePosting(uint recordID, float weight)
+    content.vb: Protected MustOverride Function CreatePosting(recordID As UInteger, weight As Single) As TPosting
+    parameters:
+    - id: recordID
+      type: System.UInt32
+      description: ''
+    - id: weight
+      type: System.Single
+      description: ''
+    return:
+      type: '{TPosting}'
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreatePosting*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).CreatePosting(UInt32, Single)
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).CreatePosting(System.UInt32, System.Single)
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreatePostingList(System.String,`0[])
+  commentId: M:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreatePostingList(System.String,`0[])
+  id: CreatePostingList(System.String,`0[])
+  parent: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1
+  langs:
+  - csharp
+  - vb
+  name: CreatePostingList(String, TPosting[])
+  nameWithType: MemoryTextIndexer<TPosting>.CreatePostingList(String, TPosting[])
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.CreatePostingList(System.String, TPosting[])
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MemoryTextIndexer.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CreatePostingList
+    path: search/InvertedIndex/MemoryTextIndexer.cs
+    startLine: 517
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected abstract IRecordIDList CreatePostingList(string key, TPosting[] items)
+    content.vb: Protected MustOverride Function CreatePostingList(key As String, items As TPosting()) As IRecordIDList
+    parameters:
+    - id: key
+      type: System.String
+      description: ''
+    - id: items
+      type: '{TPosting}[]'
+      description: ''
+    return:
+      type: Microsoft.Health.InvertedIndex.IRecordIDList
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreatePostingList*
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).CreatePostingList(String, TPosting())
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).CreatePostingList(System.String, TPosting())
+  name.vb: CreatePostingList(String, TPosting())
+references:
+- uid: Microsoft.Health.InvertedIndex
+  commentId: N:Microsoft.Health.InvertedIndex
+  isExternal: false
+  name: Microsoft.Health.InvertedIndex
+  nameWithType: Microsoft.Health.InvertedIndex
+  fullName: Microsoft.Health.InvertedIndex
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Microsoft.Health.InvertedIndex.ITextIndexer
+  commentId: T:Microsoft.Health.InvertedIndex.ITextIndexer
+  parent: Microsoft.Health.InvertedIndex
+  isExternal: false
+  name: ITextIndexer
+  nameWithType: ITextIndexer
+  fullName: Microsoft.Health.InvertedIndex.ITextIndexer
+- uid: Microsoft.Health.InvertedIndex.ISearchIndexer{System.String}
+  commentId: T:Microsoft.Health.InvertedIndex.ISearchIndexer{System.String}
+  parent: Microsoft.Health.InvertedIndex
+  definition: Microsoft.Health.InvertedIndex.ISearchIndexer`1
+  name: ISearchIndexer<String>
+  nameWithType: ISearchIndexer<String>
+  fullName: Microsoft.Health.InvertedIndex.ISearchIndexer<System.String>
+  nameWithType.vb: ISearchIndexer(Of String)
+  fullName.vb: Microsoft.Health.InvertedIndex.ISearchIndexer(Of System.String)
+  name.vb: ISearchIndexer(Of String)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1
+    name: ISearchIndexer
+    nameWithType: ISearchIndexer
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1
+    name: ISearchIndexer
+    nameWithType: ISearchIndexer
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  name: SetProperty(String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object())
+  name.vb: SetProperty(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  name: InvokeMethod(String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object())
+  name.vb: InvokeMethod(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  parent: Microsoft.Health.Utility.InvariantString
+  definition: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  name: ToStringInvariant()
+  nameWithType: InvariantString.ToStringInvariant()
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  parent: Microsoft.Health.Utility.TypeHelper
+  definition: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  name: ValueOrDbNull<MemoryTextIndexer<TPosting>>()
+  nameWithType: TypeHelper.ValueOrDbNull<MemoryTextIndexer<TPosting>>()
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>>()
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of MemoryTextIndexer(Of TPosting))()
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting))()
+  name.vb: ValueOrDbNull(Of MemoryTextIndexer(Of TPosting))()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull<MemoryTextIndexer<TPosting>>
+    nameWithType: TypeHelper.ValueOrDbNull<MemoryTextIndexer<TPosting>>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull(Of MemoryTextIndexer(Of TPosting))
+    nameWithType: TypeHelper.ValueOrDbNull(Of MemoryTextIndexer(Of TPosting))
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting))
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  parent: Microsoft.Health.Utility.WCXmlHelper
+  definition: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  name: ToXml()
+  nameWithType: WCXmlHelper.ToXml()
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1
+  commentId: T:Microsoft.Health.InvertedIndex.ISearchIndexer`1
+  isExternal: false
+  name: ISearchIndexer<T>
+  nameWithType: ISearchIndexer<T>
+  fullName: Microsoft.Health.InvertedIndex.ISearchIndexer<T>
+  nameWithType.vb: ISearchIndexer(Of T)
+  fullName.vb: Microsoft.Health.InvertedIndex.ISearchIndexer(Of T)
+  name.vb: ISearchIndexer(Of T)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1
+    name: ISearchIndexer
+    nameWithType: ISearchIndexer
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1
+    name: ISearchIndexer
+    nameWithType: ISearchIndexer
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: SetProperty(Object, String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object())
+  name.vb: SetProperty(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions
+  commentId: T:Microsoft.Health.Utility.IDispatchExtensions
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: IDispatchExtensions
+  nameWithType: IDispatchExtensions
+  fullName: Microsoft.Health.Utility.IDispatchExtensions
+- uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: InvokeMethod(Object, String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object())
+  name.vb: InvokeMethod(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  isExternal: true
+  name: ToStringInvariant(Object)
+  nameWithType: InvariantString.ToStringInvariant(Object)
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString
+  commentId: T:Microsoft.Health.Utility.InvariantString
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: InvariantString
+  nameWithType: InvariantString
+  fullName: Microsoft.Health.Utility.InvariantString
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  isExternal: false
+  name: ValueOrDbNull<T>(T)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(T)
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(T)
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(T)
+  name.vb: ValueOrDbNull(Of T)(T)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull<T>
+    nameWithType: TypeHelper.ValueOrDbNull<T>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull(Of T)
+    nameWithType: TypeHelper.ValueOrDbNull(Of T)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+- uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  isExternal: true
+  name: ToXml(Object)
+  nameWithType: WCXmlHelper.ToXml(Object)
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.WCXmlHelper
+  commentId: T:Microsoft.Health.Utility.WCXmlHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: WCXmlHelper
+  nameWithType: WCXmlHelper
+  fullName: Microsoft.Health.Utility.WCXmlHelper
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.#ctor*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.#ctor
+  isExternal: false
+  name: MemoryTextIndexer
+  nameWithType: MemoryTextIndexer<TPosting>.MemoryTextIndexer
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.MemoryTextIndexer
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).MemoryTextIndexer
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).MemoryTextIndexer
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.RecordCount*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.RecordCount
+  isExternal: false
+  name: RecordCount
+  nameWithType: MemoryTextIndexer<TPosting>.RecordCount
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.RecordCount
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).RecordCount
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).RecordCount
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.TermCount*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.TermCount
+  isExternal: false
+  name: TermCount
+  nameWithType: MemoryTextIndexer<TPosting>.TermCount
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.TermCount
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).TermCount
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).TermCount
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.DefaultListCapacity*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.DefaultListCapacity
+  isExternal: false
+  name: DefaultListCapacity
+  nameWithType: MemoryTextIndexer<TPosting>.DefaultListCapacity
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.DefaultListCapacity
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).DefaultListCapacity
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).DefaultListCapacity
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.ListGrowBy*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.ListGrowBy
+  isExternal: false
+  name: ListGrowBy
+  nameWithType: MemoryTextIndexer<TPosting>.ListGrowBy
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.ListGrowBy
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).ListGrowBy
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).ListGrowBy
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.WordBreaker*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.WordBreaker
+  isExternal: false
+  name: WordBreaker
+  nameWithType: MemoryTextIndexer<TPosting>.WordBreaker
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.WordBreaker
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).WordBreaker
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).WordBreaker
+- uid: Microsoft.Health.InvertedIndex.ITextIndexer.WordBreaker
+  commentId: P:Microsoft.Health.InvertedIndex.ITextIndexer.WordBreaker
+  parent: Microsoft.Health.InvertedIndex.ITextIndexer
+  isExternal: false
+  name: WordBreaker
+  nameWithType: ITextIndexer.WordBreaker
+  fullName: Microsoft.Health.InvertedIndex.ITextIndexer.WordBreaker
+- uid: Microsoft.Health.PhraseAnalyzer.IWordBreaker
+  commentId: T:Microsoft.Health.PhraseAnalyzer.IWordBreaker
+  parent: Microsoft.Health.PhraseAnalyzer
+  isExternal: false
+  name: IWordBreaker
+  nameWithType: IWordBreaker
+  fullName: Microsoft.Health.PhraseAnalyzer.IWordBreaker
+- uid: Microsoft.Health.PhraseAnalyzer
+  commentId: N:Microsoft.Health.PhraseAnalyzer
+  isExternal: false
+  name: Microsoft.Health.PhraseAnalyzer
+  nameWithType: Microsoft.Health.PhraseAnalyzer
+  fullName: Microsoft.Health.PhraseAnalyzer
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Item*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Item
+  isExternal: false
+  name: Item
+  nameWithType: MemoryTextIndexer<TPosting>.Item
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.Item
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).Item
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).Item
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Microsoft.Health.InvertedIndex.IndexList{{TPosting}}
+  commentId: T:Microsoft.Health.InvertedIndex.IndexList{`0}
+  parent: Microsoft.Health.InvertedIndex
+  definition: Microsoft.Health.InvertedIndex.IndexList`1
+  name: IndexList<TPosting>
+  nameWithType: IndexList<TPosting>
+  fullName: Microsoft.Health.InvertedIndex.IndexList<TPosting>
+  nameWithType.vb: IndexList(Of TPosting)
+  fullName.vb: Microsoft.Health.InvertedIndex.IndexList(Of TPosting)
+  name.vb: IndexList(Of TPosting)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.IndexList`1
+    name: IndexList
+    nameWithType: IndexList
+    fullName: Microsoft.Health.InvertedIndex.IndexList
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TPosting
+    nameWithType: TPosting
+    fullName: TPosting
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.IndexList`1
+    name: IndexList
+    nameWithType: IndexList
+    fullName: Microsoft.Health.InvertedIndex.IndexList
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TPosting
+    nameWithType: TPosting
+    fullName: TPosting
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.IndexList`1
+  commentId: T:Microsoft.Health.InvertedIndex.IndexList`1
+  isExternal: false
+  name: IndexList<T>
+  nameWithType: IndexList<T>
+  fullName: Microsoft.Health.InvertedIndex.IndexList<T>
+  nameWithType.vb: IndexList(Of T)
+  fullName.vb: Microsoft.Health.InvertedIndex.IndexList(Of T)
+  name.vb: IndexList(Of T)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.IndexList`1
+    name: IndexList
+    nameWithType: IndexList
+    fullName: Microsoft.Health.InvertedIndex.IndexList
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.IndexList`1
+    name: IndexList
+    nameWithType: IndexList
+    fullName: Microsoft.Health.InvertedIndex.IndexList
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Terms*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Terms
+  isExternal: false
+  name: Terms
+  nameWithType: MemoryTextIndexer<TPosting>.Terms
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.Terms
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).Terms
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).Terms
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<String>
+  nameWithType: IEnumerable<String>
+  fullName: System.Collections.Generic.IEnumerable<System.String>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.PostingCount*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.PostingCount
+  isExternal: false
+  name: PostingCount
+  nameWithType: MemoryTextIndexer<TPosting>.PostingCount
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.PostingCount
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).PostingCount
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).PostingCount
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Postings*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Postings
+  isExternal: false
+  name: Postings
+  nameWithType: MemoryTextIndexer<TPosting>.Postings
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.Postings
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).Postings
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).Postings
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.Health.InvertedIndex.IndexList{{TPosting}}}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.Health.InvertedIndex.IndexList{`0}}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<KeyValuePair<String, IndexList<TPosting>>>
+  nameWithType: IEnumerable<KeyValuePair<String, IndexList<TPosting>>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, Microsoft.Health.InvertedIndex.IndexList<TPosting>>>
+  nameWithType.vb: IEnumerable(Of KeyValuePair(Of String, IndexList(Of TPosting)))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, Microsoft.Health.InvertedIndex.IndexList(Of TPosting)))
+  name.vb: IEnumerable(Of KeyValuePair(Of String, IndexList(Of TPosting)))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Microsoft.Health.InvertedIndex.IndexList`1
+    name: IndexList
+    nameWithType: IndexList
+    fullName: Microsoft.Health.InvertedIndex.IndexList
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TPosting
+    nameWithType: TPosting
+    fullName: TPosting
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Microsoft.Health.InvertedIndex.IndexList`1
+    name: IndexList
+    nameWithType: IndexList
+    fullName: Microsoft.Health.InvertedIndex.IndexList
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TPosting
+    nameWithType: TPosting
+    fullName: TPosting
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.Add
+  isExternal: false
+  name: Add
+  nameWithType: MemoryTextIndexer<TPosting>.Add
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.Add
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).Add
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).Add
+- uid: Microsoft.Health.InvertedIndex.ISearchIndexer{System.String}.Add(System.UInt32,System.String)
+  commentId: M:Microsoft.Health.InvertedIndex.ISearchIndexer{System.String}.Add(System.UInt32,System.String)
+  parent: Microsoft.Health.InvertedIndex.ISearchIndexer{System.String}
+  definition: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,`0)
+  name: Add(UInt32, String)
+  nameWithType: ISearchIndexer<String>.Add(UInt32, String)
+  fullName: Microsoft.Health.InvertedIndex.ISearchIndexer<System.String>.Add(System.UInt32, System.String)
+  nameWithType.vb: ISearchIndexer(Of String).Add(UInt32, String)
+  fullName.vb: Microsoft.Health.InvertedIndex.ISearchIndexer(Of System.String).Add(System.UInt32, System.String)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,`0)
+    name: Add
+    nameWithType: ISearchIndexer<String>.Add
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer<System.String>.Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,`0)
+    name: Add
+    nameWithType: ISearchIndexer(Of String).Add
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer(Of System.String).Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  name: UInt32
+  nameWithType: UInt32
+  fullName: System.UInt32
+- uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,`0)
+  commentId: M:Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,`0)
+  isExternal: true
+  name: Add(UInt32, T)
+  nameWithType: ISearchIndexer<T>.Add(UInt32, T)
+  fullName: Microsoft.Health.InvertedIndex.ISearchIndexer<T>.Add(System.UInt32, T)
+  nameWithType.vb: ISearchIndexer(Of T).Add(UInt32, T)
+  fullName.vb: Microsoft.Health.InvertedIndex.ISearchIndexer(Of T).Add(System.UInt32, T)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,`0)
+    name: Add
+    nameWithType: ISearchIndexer<T>.Add
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer<T>.Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,`0)
+    name: Add
+    nameWithType: ISearchIndexer(Of T).Add
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer(Of T).Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.ISearchIndexer{System.String}.Add(System.UInt32,System.Collections.Generic.IList{System.String})
+  commentId: M:Microsoft.Health.InvertedIndex.ISearchIndexer{System.String}.Add(System.UInt32,System.Collections.Generic.IList{System.String})
+  parent: Microsoft.Health.InvertedIndex.ISearchIndexer{System.String}
+  definition: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,System.Collections.Generic.IList{`0})
+  name: Add(UInt32, IList<String>)
+  nameWithType: ISearchIndexer<String>.Add(UInt32, IList<String>)
+  fullName: Microsoft.Health.InvertedIndex.ISearchIndexer<System.String>.Add(System.UInt32, System.Collections.Generic.IList<System.String>)
+  nameWithType.vb: ISearchIndexer(Of String).Add(UInt32, IList(Of String))
+  fullName.vb: Microsoft.Health.InvertedIndex.ISearchIndexer(Of System.String).Add(System.UInt32, System.Collections.Generic.IList(Of System.String))
+  name.vb: Add(UInt32, IList(Of String))
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,System.Collections.Generic.IList{`0})
+    name: Add
+    nameWithType: ISearchIndexer<String>.Add
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer<System.String>.Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,System.Collections.Generic.IList{`0})
+    name: Add
+    nameWithType: ISearchIndexer(Of String).Add
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer(Of System.String).Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList{System.String}
+  commentId: T:System.Collections.Generic.IList{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<String>
+  nameWithType: IList<String>
+  fullName: System.Collections.Generic.IList<System.String>
+  nameWithType.vb: IList(Of String)
+  fullName.vb: System.Collections.Generic.IList(Of System.String)
+  name.vb: IList(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,System.Collections.Generic.IList{`0})
+  commentId: M:Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,System.Collections.Generic.IList{`0})
+  isExternal: true
+  name: Add(UInt32, IList<T>)
+  nameWithType: ISearchIndexer<T>.Add(UInt32, IList<T>)
+  fullName: Microsoft.Health.InvertedIndex.ISearchIndexer<T>.Add(System.UInt32, System.Collections.Generic.IList<T>)
+  nameWithType.vb: ISearchIndexer(Of T).Add(UInt32, IList(Of T))
+  fullName.vb: Microsoft.Health.InvertedIndex.ISearchIndexer(Of T).Add(System.UInt32, System.Collections.Generic.IList(Of T))
+  name.vb: Add(UInt32, IList(Of T))
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,System.Collections.Generic.IList{`0})
+    name: Add
+    nameWithType: ISearchIndexer<T>.Add
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer<T>.Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,System.Collections.Generic.IList{`0})
+    name: Add
+    nameWithType: ISearchIndexer(Of T).Add
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer(Of T).Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.ISearchIndexer{System.String}.Add(System.UInt32,System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:Microsoft.Health.InvertedIndex.ISearchIndexer{System.String}.Add(System.UInt32,System.Collections.Generic.IEnumerable{System.String})
+  parent: Microsoft.Health.InvertedIndex.ISearchIndexer{System.String}
+  definition: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,System.Collections.Generic.IEnumerable{`0})
+  name: Add(UInt32, IEnumerable<String>)
+  nameWithType: ISearchIndexer<String>.Add(UInt32, IEnumerable<String>)
+  fullName: Microsoft.Health.InvertedIndex.ISearchIndexer<System.String>.Add(System.UInt32, System.Collections.Generic.IEnumerable<System.String>)
+  nameWithType.vb: ISearchIndexer(Of String).Add(UInt32, IEnumerable(Of String))
+  fullName.vb: Microsoft.Health.InvertedIndex.ISearchIndexer(Of System.String).Add(System.UInt32, System.Collections.Generic.IEnumerable(Of System.String))
+  name.vb: Add(UInt32, IEnumerable(Of String))
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,System.Collections.Generic.IEnumerable{`0})
+    name: Add
+    nameWithType: ISearchIndexer<String>.Add
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer<System.String>.Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,System.Collections.Generic.IEnumerable{`0})
+    name: Add
+    nameWithType: ISearchIndexer(Of String).Add
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer(Of System.String).Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,System.Collections.Generic.IEnumerable{`0})
+  commentId: M:Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  name: Add(UInt32, IEnumerable<T>)
+  nameWithType: ISearchIndexer<T>.Add(UInt32, IEnumerable<T>)
+  fullName: Microsoft.Health.InvertedIndex.ISearchIndexer<T>.Add(System.UInt32, System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: ISearchIndexer(Of T).Add(UInt32, IEnumerable(Of T))
+  fullName.vb: Microsoft.Health.InvertedIndex.ISearchIndexer(Of T).Add(System.UInt32, System.Collections.Generic.IEnumerable(Of T))
+  name.vb: Add(UInt32, IEnumerable(Of T))
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,System.Collections.Generic.IEnumerable{`0})
+    name: Add
+    nameWithType: ISearchIndexer<T>.Add
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer<T>.Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ISearchIndexer`1.Add(System.UInt32,System.Collections.Generic.IEnumerable{`0})
+    name: Add
+    nameWithType: ISearchIndexer(Of T).Add
+    fullName: Microsoft.Health.InvertedIndex.ISearchIndexer(Of T).Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.ITextIndexer.Add(System.UInt32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}})
+  commentId: M:Microsoft.Health.InvertedIndex.ITextIndexer.Add(System.UInt32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}})
+  parent: Microsoft.Health.InvertedIndex.ITextIndexer
+  isExternal: true
+  name: Add(UInt32, IEnumerable<KeyValuePair<String, Single>>)
+  nameWithType: ITextIndexer.Add(UInt32, IEnumerable<KeyValuePair<String, Single>>)
+  fullName: Microsoft.Health.InvertedIndex.ITextIndexer.Add(System.UInt32, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, System.Single>>)
+  nameWithType.vb: ITextIndexer.Add(UInt32, IEnumerable(Of KeyValuePair(Of String, Single)))
+  fullName.vb: Microsoft.Health.InvertedIndex.ITextIndexer.Add(System.UInt32, System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, System.Single)))
+  name.vb: Add(UInt32, IEnumerable(Of KeyValuePair(Of String, Single)))
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ITextIndexer.Add(System.UInt32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}})
+    name: Add
+    nameWithType: ITextIndexer.Add
+    fullName: Microsoft.Health.InvertedIndex.ITextIndexer.Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ITextIndexer.Add(System.UInt32,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}})
+    name: Add
+    nameWithType: ITextIndexer.Add
+    fullName: Microsoft.Health.InvertedIndex.ITextIndexer.Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<KeyValuePair<String, Single>>
+  nameWithType: IEnumerable<KeyValuePair<String, Single>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, System.Single>>
+  nameWithType.vb: IEnumerable(Of KeyValuePair(Of String, Single))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, System.Single))
+  name.vb: IEnumerable(Of KeyValuePair(Of String, Single))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.AddToIndex
+  isExternal: false
+  name: AddToIndex
+  nameWithType: MemoryTextIndexer<TPosting>.AddToIndex
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.AddToIndex
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).AddToIndex
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).AddToIndex
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.ToIndex*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.ToIndex
+  isExternal: false
+  name: ToIndex
+  nameWithType: MemoryTextIndexer<TPosting>.ToIndex
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.ToIndex
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).ToIndex
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).ToIndex
+- uid: Microsoft.Health.InvertedIndex.ITextIndexer.ToIndex
+  commentId: M:Microsoft.Health.InvertedIndex.ITextIndexer.ToIndex
+  parent: Microsoft.Health.InvertedIndex.ITextIndexer
+  isExternal: false
+  name: ToIndex()
+  nameWithType: ITextIndexer.ToIndex()
+  fullName: Microsoft.Health.InvertedIndex.ITextIndexer.ToIndex()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ITextIndexer.ToIndex
+    name: ToIndex
+    nameWithType: ITextIndexer.ToIndex
+    fullName: Microsoft.Health.InvertedIndex.ITextIndexer.ToIndex
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ITextIndexer.ToIndex
+    name: ToIndex
+    nameWithType: ITextIndexer.ToIndex
+    fullName: Microsoft.Health.InvertedIndex.ITextIndexer.ToIndex
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.TextIndex
+  commentId: T:Microsoft.Health.InvertedIndex.TextIndex
+  parent: Microsoft.Health.InvertedIndex
+  isExternal: false
+  name: TextIndex
+  nameWithType: TextIndex
+  fullName: Microsoft.Health.InvertedIndex.TextIndex
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.GetTermRecordFrequency*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.GetTermRecordFrequency
+  isExternal: false
+  name: GetTermRecordFrequency
+  nameWithType: MemoryTextIndexer<TPosting>.GetTermRecordFrequency
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.GetTermRecordFrequency
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).GetTermRecordFrequency
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).GetTermRecordFrequency
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.GetTermInverseRecordFrequency*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.GetTermInverseRecordFrequency
+  isExternal: false
+  name: GetTermInverseRecordFrequency
+  nameWithType: MemoryTextIndexer<TPosting>.GetTermInverseRecordFrequency
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.GetTermInverseRecordFrequency
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).GetTermInverseRecordFrequency
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).GetTermInverseRecordFrequency
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CalculateTermInverseRecordFrequency*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CalculateTermInverseRecordFrequency
+  isExternal: false
+  name: CalculateTermInverseRecordFrequency
+  nameWithType: MemoryTextIndexer<TPosting>.CalculateTermInverseRecordFrequency
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.CalculateTermInverseRecordFrequency
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).CalculateTermInverseRecordFrequency
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).CalculateTermInverseRecordFrequency
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreateIndexObject*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreateIndexObject
+  isExternal: false
+  name: CreateIndexObject
+  nameWithType: MemoryTextIndexer<TPosting>.CreateIndexObject
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.CreateIndexObject
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).CreateIndexObject
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).CreateIndexObject
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.BeginIndexing*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.BeginIndexing
+  isExternal: false
+  name: BeginIndexing
+  nameWithType: MemoryTextIndexer<TPosting>.BeginIndexing
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.BeginIndexing
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).BeginIndexing
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).BeginIndexing
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreatePosting*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreatePosting
+  isExternal: false
+  name: CreatePosting
+  nameWithType: MemoryTextIndexer<TPosting>.CreatePosting
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.CreatePosting
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).CreatePosting
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).CreatePosting
+- uid: '{TPosting}'
+  commentId: '!:TPosting'
+  definition: TPosting
+  name: TPosting
+  nameWithType: TPosting
+  fullName: TPosting
+- uid: TPosting
+  commentId: '!:TPosting'
+  isExternal: false
+  name: TPosting
+  nameWithType: TPosting
+  fullName: TPosting
+- uid: Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreatePostingList*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MemoryTextIndexer`1.CreatePostingList
+  isExternal: false
+  name: CreatePostingList
+  nameWithType: MemoryTextIndexer<TPosting>.CreatePostingList
+  fullName: Microsoft.Health.InvertedIndex.MemoryTextIndexer<TPosting>.CreatePostingList
+  nameWithType.vb: MemoryTextIndexer(Of TPosting).CreatePostingList
+  fullName.vb: Microsoft.Health.InvertedIndex.MemoryTextIndexer(Of TPosting).CreatePostingList
+- uid: '{TPosting}[]'
+  name: TPosting[]
+  nameWithType: TPosting[]
+  fullName: TPosting[]
+  nameWithType.vb: TPosting()
+  fullName.vb: TPosting()
+  name.vb: TPosting()
+  spec.csharp:
+  - name: TPosting
+    nameWithType: TPosting
+    fullName: TPosting
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - name: TPosting
+    nameWithType: TPosting
+    fullName: TPosting
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Microsoft.Health.InvertedIndex.IRecordIDList
+  commentId: T:Microsoft.Health.InvertedIndex.IRecordIDList
+  parent: Microsoft.Health.InvertedIndex
+  isExternal: false
+  name: IRecordIDList
+  nameWithType: IRecordIDList
+  fullName: Microsoft.Health.InvertedIndex.IRecordIDList

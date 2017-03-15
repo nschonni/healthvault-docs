@@ -1,0 +1,896 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.DirectoryProvider
+  commentId: T:Microsoft.Health.DirectoryProvider
+  id: DirectoryProvider
+  parent: Microsoft.Health
+  children:
+  - Microsoft.Health.DirectoryProvider.AppDirUrl
+  - Microsoft.Health.DirectoryProvider.DeviceDirUrl
+  - Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.DateTime,System.Nullable{System.DateTime}@)
+  - Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.Nullable{System.DateTime}@)
+  - Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.DateTime,System.Nullable{System.DateTime}@)
+  - Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.Nullable{System.DateTime}@)
+  langs:
+  - csharp
+  - vb
+  name: DirectoryProvider
+  nameWithType: DirectoryProvider
+  fullName: Microsoft.Health.DirectoryProvider
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.Directory/directoryprovider.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: DirectoryProvider
+    path: directoryprovider.cs
+    startLine: 21
+  assemblies:
+  - Microsoft.Health.Directory
+  namespace: Microsoft.Health
+  summary: "\nStatic factory to retrieve application and device directory from HealthVault.\n"
+  example: []
+  syntax:
+    content: public static class DirectoryProvider
+    content.vb: Public Module DirectoryProvider
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Microsoft.Health.DirectoryProvider.AppDirUrl
+  commentId: F:Microsoft.Health.DirectoryProvider.AppDirUrl
+  id: AppDirUrl
+  parent: Microsoft.Health.DirectoryProvider
+  langs:
+  - csharp
+  - vb
+  name: AppDirUrl
+  nameWithType: DirectoryProvider.AppDirUrl
+  fullName: Microsoft.Health.DirectoryProvider.AppDirUrl
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Directory/directoryprovider.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: AppDirUrl
+    path: directoryprovider.cs
+    startLine: 26
+  assemblies:
+  - Microsoft.Health.Directory
+  namespace: Microsoft.Health
+  summary: "\nApplication directory path\n"
+  example: []
+  syntax:
+    content: public const string AppDirUrl = "/directory/applications"
+    content.vb: Public Const AppDirUrl As String = "/directory/applications"
+    return:
+      type: System.String
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.DirectoryProvider.DeviceDirUrl
+  commentId: F:Microsoft.Health.DirectoryProvider.DeviceDirUrl
+  id: DeviceDirUrl
+  parent: Microsoft.Health.DirectoryProvider
+  langs:
+  - csharp
+  - vb
+  name: DeviceDirUrl
+  nameWithType: DirectoryProvider.DeviceDirUrl
+  fullName: Microsoft.Health.DirectoryProvider.DeviceDirUrl
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Directory/directoryprovider.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: DeviceDirUrl
+    path: directoryprovider.cs
+    startLine: 31
+  assemblies:
+  - Microsoft.Health.Directory
+  namespace: Microsoft.Health
+  summary: "\nDevice directory path\n"
+  example: []
+  syntax:
+    content: public const string DeviceDirUrl = "/directory/devices"
+    content.vb: Public Const DeviceDirUrl As String = "/directory/devices"
+    return:
+      type: System.String
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.Nullable{System.DateTime}@)
+  commentId: M:Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.Nullable{System.DateTime}@)
+  id: GetApplicationDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.Nullable{System.DateTime}@)
+  parent: Microsoft.Health.DirectoryProvider
+  langs:
+  - csharp
+  - vb
+  name: GetApplicationDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, out Nullable<DateTime>)
+  nameWithType: DirectoryProvider.GetApplicationDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, out Nullable<DateTime>)
+  fullName: Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection(Microsoft.Health.HealthServiceConnection, Microsoft.Health.DirectoryDataOptions, out System.Nullable<System.DateTime>)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Directory/directoryprovider.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetApplicationDirectoryCollection
+    path: directoryprovider.cs
+    startLine: 72
+  assemblies:
+  - Microsoft.Health.Directory
+  namespace: Microsoft.Health
+  summary: "\nGets the list of application directory items from HealthVault.\n"
+  remarks: "\n<p>\nThis method always calls HealthVault service to get the latest \ninformation. To improve performance and latency, it is recommended that the calling applications cache\nthe return values, and only call this method to update their cache.\n</p>\n<p>\nThis method currently requires ApplicationConnection or AuthenticatedConnection.\n</p>\n"
+  example: []
+  syntax:
+    content: public static IList<ApplicationDirectoryItem> GetApplicationDirectoryCollection(HealthServiceConnection connection, DirectoryDataOptions options, out DateTime? responseLastModified)
+    content.vb: Public Shared Function GetApplicationDirectoryCollection(connection As HealthServiceConnection, options As DirectoryDataOptions, ByRef responseLastModified As Date?) As IList(Of ApplicationDirectoryItem)
+    parameters:
+    - id: connection
+      type: Microsoft.Health.HealthServiceConnection
+      description: "\n<xref href=\"Microsoft.Health.HealthServiceConnection\" data-throw-if-not-resolved=\"false\"></xref> to call HealthVault.\n"
+    - id: options
+      type: Microsoft.Health.DirectoryDataOptions
+      description: "\n<xref href=\"Microsoft.Health.DirectoryDataOptions\" data-throw-if-not-resolved=\"false\"></xref> defines what set of data in <xref href=\"Microsoft.Health.ApplicationDirectoryItem\" data-throw-if-not-resolved=\"false\"></xref>(s) to retrieve.\nThe calling application can request all languages for the response return values.\n"
+    - id: responseLastModified
+      type: System.Nullable{System.DateTime}
+      description: "\nReturns the response's last modified datetime\n"
+    return:
+      type: System.Collections.Generic.IList{Microsoft.Health.ApplicationDirectoryItem}
+      description: "\n<p>\nA collection of application directory items with localized element values available for \nthe best match language or all languages as specified by\nthe <xref href=\"Microsoft.Health.DirectoryDataOptions\" data-throw-if-not-resolved=\"false\"></xref>.  In case of a language match, HealthVault service tries to \nfind caller's current language identifier by first trying to match\nentire language specifier in the request (e.g. es-US), then just the language base (e.g. es), \nand as last resort, defaults to base language in HealthVault (e.g. en).    \n</p>\n"
+  overload: Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection*
+  nameWithType.vb: DirectoryProvider.GetApplicationDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, ByRef Nullable(Of DateTime))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection(Microsoft.Health.HealthServiceConnection, Microsoft.Health.DirectoryDataOptions, ByRef System.Nullable(Of System.DateTime))
+  name.vb: GetApplicationDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, ByRef Nullable(Of DateTime))
+- uid: Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.DateTime,System.Nullable{System.DateTime}@)
+  commentId: M:Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.DateTime,System.Nullable{System.DateTime}@)
+  id: GetApplicationDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.DateTime,System.Nullable{System.DateTime}@)
+  parent: Microsoft.Health.DirectoryProvider
+  langs:
+  - csharp
+  - vb
+  name: GetApplicationDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, DateTime, out Nullable<DateTime>)
+  nameWithType: DirectoryProvider.GetApplicationDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, DateTime, out Nullable<DateTime>)
+  fullName: Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection(Microsoft.Health.HealthServiceConnection, Microsoft.Health.DirectoryDataOptions, System.DateTime, out System.Nullable<System.DateTime>)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Directory/directoryprovider.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetApplicationDirectoryCollection
+    path: directoryprovider.cs
+    startLine: 128
+  assemblies:
+  - Microsoft.Health.Directory
+  namespace: Microsoft.Health
+  summary: "\nGets the entire list of application directory items only if any items have been changed since the\nspecified last client refresh date.\n"
+  remarks: "\n<p>\nTo improve performance and latency, it is recommended that the calling applications cache\nthe return values, and only call this method to update their cache.\n</p>\n<p>\nThis method currently requires ApplicationConnection or AuthenticatedConnection.\n</p>\n"
+  example: []
+  syntax:
+    content: public static IList<ApplicationDirectoryItem> GetApplicationDirectoryCollection(HealthServiceConnection connection, DirectoryDataOptions options, DateTime lastClientRefreshDate, out DateTime? responseLastModified)
+    content.vb: Public Shared Function GetApplicationDirectoryCollection(connection As HealthServiceConnection, options As DirectoryDataOptions, lastClientRefreshDate As Date, ByRef responseLastModified As Date?) As IList(Of ApplicationDirectoryItem)
+    parameters:
+    - id: connection
+      type: Microsoft.Health.HealthServiceConnection
+      description: "\n<xref href=\"Microsoft.Health.HealthServiceConnection\" data-throw-if-not-resolved=\"false\"></xref> to call HealthVault.\n"
+    - id: options
+      type: Microsoft.Health.DirectoryDataOptions
+      description: "\n<xref href=\"Microsoft.Health.DirectoryDataOptions\" data-throw-if-not-resolved=\"false\"></xref> defines what set of data in <xref href=\"Microsoft.Health.ApplicationDirectoryItem\" data-throw-if-not-resolved=\"false\"></xref>(s) to retrieve.\nThe calling application can request all languages for the response return values.\n"
+    - id: lastClientRefreshDate
+      type: System.DateTime
+      description: "\nA <xref href=\"System.DateTime\" data-throw-if-not-resolved=\"false\"></xref> instance that specifies the time of the last refresh made by the client.\n"
+    - id: responseLastModified
+      type: System.Nullable{System.DateTime}
+      description: "\nReturns the response's last modified datetime\n"
+    return:
+      type: System.Collections.Generic.IList{Microsoft.Health.ApplicationDirectoryItem}
+      description: "\n<p>\nA collection of application directory items with localized element values available for \nthe best match language or all languages as specified by\nthe <xref href=\"Microsoft.Health.DirectoryDataOptions\" data-throw-if-not-resolved=\"false\"></xref>.  In case of a language match, HealthVault service tries to \nfind caller's current language identifier by first trying to match\nentire language specifier in the request (e.g. es-US), then just the language base (e.g. es), \nand as last resort, defaults to base language in HealthVault (e.g. en).    \n</p>\n"
+  overload: Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection*
+  nameWithType.vb: DirectoryProvider.GetApplicationDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, DateTime, ByRef Nullable(Of DateTime))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection(Microsoft.Health.HealthServiceConnection, Microsoft.Health.DirectoryDataOptions, System.DateTime, ByRef System.Nullable(Of System.DateTime))
+  name.vb: GetApplicationDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, DateTime, ByRef Nullable(Of DateTime))
+- uid: Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.Nullable{System.DateTime}@)
+  commentId: M:Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.Nullable{System.DateTime}@)
+  id: GetDeviceDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.Nullable{System.DateTime}@)
+  parent: Microsoft.Health.DirectoryProvider
+  langs:
+  - csharp
+  - vb
+  name: GetDeviceDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, out Nullable<DateTime>)
+  nameWithType: DirectoryProvider.GetDeviceDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, out Nullable<DateTime>)
+  fullName: Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection(Microsoft.Health.HealthServiceConnection, Microsoft.Health.DirectoryDataOptions, out System.Nullable<System.DateTime>)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Directory/directoryprovider.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetDeviceDirectoryCollection
+    path: directoryprovider.cs
+    startLine: 181
+  assemblies:
+  - Microsoft.Health.Directory
+  namespace: Microsoft.Health
+  summary: "\nGets the list of device directory items from HealthVault.\n"
+  remarks: "\n<p>\nThis method always calls HealthVault service to get the latest \ninformation. To improve performance and latency, it is recommended that the calling applications cache\nthe return values, and only call this method to update their cache.\n</p>\n<p>\nThis method currently requires ApplicationConnection or AuthenticatedConnection.\n</p>\n"
+  example: []
+  syntax:
+    content: public static IList<DeviceDirectoryItem> GetDeviceDirectoryCollection(HealthServiceConnection connection, DirectoryDataOptions options, out DateTime? responseLastModified)
+    content.vb: Public Shared Function GetDeviceDirectoryCollection(connection As HealthServiceConnection, options As DirectoryDataOptions, ByRef responseLastModified As Date?) As IList(Of DeviceDirectoryItem)
+    parameters:
+    - id: connection
+      type: Microsoft.Health.HealthServiceConnection
+      description: "\n<xref href=\"Microsoft.Health.HealthServiceConnection\" data-throw-if-not-resolved=\"false\"></xref> to call HealthVault.\n"
+    - id: options
+      type: Microsoft.Health.DirectoryDataOptions
+      description: "\n<xref href=\"Microsoft.Health.DirectoryDataOptions\" data-throw-if-not-resolved=\"false\"></xref> defines what set of data in <xref href=\"Microsoft.Health.DeviceDirectoryItem\" data-throw-if-not-resolved=\"false\"></xref>(s) to retrieve.\nThe calling application can request all languages for the response return values.\n"
+    - id: responseLastModified
+      type: System.Nullable{System.DateTime}
+      description: "\nReturns the response's last modified datetime\n"
+    return:
+      type: System.Collections.Generic.IList{Microsoft.Health.DeviceDirectoryItem}
+      description: "\n<p>\nA collection of device directory items with localized element values available for \nthe best match language or all languages as specified by\nthe <xref href=\"Microsoft.Health.DirectoryDataOptions\" data-throw-if-not-resolved=\"false\"></xref>.  In case of a language match, HealthVault service tries to \nfind caller's current language identifier by first trying to match\nentire language specifier in the request (e.g. es-US), then just the language base (e.g. es), \nand as last resort, defaults to base language in HealthVault (e.g. en).    \n</p>\n"
+  overload: Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection*
+  nameWithType.vb: DirectoryProvider.GetDeviceDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, ByRef Nullable(Of DateTime))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection(Microsoft.Health.HealthServiceConnection, Microsoft.Health.DirectoryDataOptions, ByRef System.Nullable(Of System.DateTime))
+  name.vb: GetDeviceDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, ByRef Nullable(Of DateTime))
+- uid: Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.DateTime,System.Nullable{System.DateTime}@)
+  commentId: M:Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.DateTime,System.Nullable{System.DateTime}@)
+  id: GetDeviceDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.DateTime,System.Nullable{System.DateTime}@)
+  parent: Microsoft.Health.DirectoryProvider
+  langs:
+  - csharp
+  - vb
+  name: GetDeviceDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, DateTime, out Nullable<DateTime>)
+  nameWithType: DirectoryProvider.GetDeviceDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, DateTime, out Nullable<DateTime>)
+  fullName: Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection(Microsoft.Health.HealthServiceConnection, Microsoft.Health.DirectoryDataOptions, System.DateTime, out System.Nullable<System.DateTime>)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Directory/directoryprovider.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetDeviceDirectoryCollection
+    path: directoryprovider.cs
+    startLine: 233
+  assemblies:
+  - Microsoft.Health.Directory
+  namespace: Microsoft.Health
+  summary: "\nGets the entire list of device directory items only if any items have been changed since the\nspecified last client refresh date.\n"
+  remarks: "\n<p>\nTo improve performance and latency, it is recommended that the calling applications cache\nthe return values, and only call this method to update their cache.\n</p>\n<p>\nThis method currently requires ApplicationConnection or AuthenticatedConnection.\n</p>\n"
+  example: []
+  syntax:
+    content: public static IList<DeviceDirectoryItem> GetDeviceDirectoryCollection(HealthServiceConnection connection, DirectoryDataOptions options, DateTime lastClientRefreshDate, out DateTime? responseLastModified)
+    content.vb: Public Shared Function GetDeviceDirectoryCollection(connection As HealthServiceConnection, options As DirectoryDataOptions, lastClientRefreshDate As Date, ByRef responseLastModified As Date?) As IList(Of DeviceDirectoryItem)
+    parameters:
+    - id: connection
+      type: Microsoft.Health.HealthServiceConnection
+      description: "\n<xref href=\"Microsoft.Health.HealthServiceConnection\" data-throw-if-not-resolved=\"false\"></xref> to call HealthVault.\n"
+    - id: options
+      type: Microsoft.Health.DirectoryDataOptions
+      description: "\n<xref href=\"Microsoft.Health.DirectoryDataOptions\" data-throw-if-not-resolved=\"false\"></xref> defines what set of data in <xref href=\"Microsoft.Health.DeviceDirectoryItem\" data-throw-if-not-resolved=\"false\"></xref>(s) to retrieve.\nThe calling application can request all languages for the response return values.\n"
+    - id: lastClientRefreshDate
+      type: System.DateTime
+      description: "\nA <xref href=\"System.DateTime\" data-throw-if-not-resolved=\"false\"></xref> instance that specifies the time of the last refresh made by the client.\n"
+    - id: responseLastModified
+      type: System.Nullable{System.DateTime}
+      description: "\nReturns the response's last modified datetime\n"
+    return:
+      type: System.Collections.Generic.IList{Microsoft.Health.DeviceDirectoryItem}
+      description: "\n<p>\nA collection of device directory items with localized element values available for \nthe best match language or all languages as specified by\nthe <xref href=\"Microsoft.Health.DirectoryDataOptions\" data-throw-if-not-resolved=\"false\"></xref>.  In case of a language match, HealthVault service tries to \nfind caller's current language identifier by first trying to match\nentire language specifier in the request (e.g. es-US), then just the language base (e.g. es), \nand as last resort, defaults to base language in HealthVault (e.g. en).    \n</p>\n"
+  overload: Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection*
+  nameWithType.vb: DirectoryProvider.GetDeviceDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, DateTime, ByRef Nullable(Of DateTime))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection(Microsoft.Health.HealthServiceConnection, Microsoft.Health.DirectoryDataOptions, System.DateTime, ByRef System.Nullable(Of System.DateTime))
+  name.vb: GetDeviceDirectoryCollection(HealthServiceConnection, DirectoryDataOptions, DateTime, ByRef Nullable(Of DateTime))
+references:
+- uid: Microsoft.Health
+  commentId: N:Microsoft.Health
+  isExternal: false
+  name: Microsoft.Health
+  nameWithType: Microsoft.Health
+  fullName: Microsoft.Health
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Microsoft.Health.HealthServiceConnection
+  commentId: T:Microsoft.Health.HealthServiceConnection
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthServiceConnection
+  nameWithType: HealthServiceConnection
+  fullName: Microsoft.Health.HealthServiceConnection
+- uid: Microsoft.Health.DirectoryDataOptions
+  commentId: T:Microsoft.Health.DirectoryDataOptions
+  parent: Microsoft.Health
+  isExternal: false
+  name: DirectoryDataOptions
+  nameWithType: DirectoryDataOptions
+  fullName: Microsoft.Health.DirectoryDataOptions
+- uid: Microsoft.Health.ApplicationDirectoryItem
+  commentId: T:Microsoft.Health.ApplicationDirectoryItem
+  isExternal: false
+  name: ApplicationDirectoryItem
+  nameWithType: ApplicationDirectoryItem
+  fullName: Microsoft.Health.ApplicationDirectoryItem
+- uid: Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection*
+  commentId: Overload:Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection
+  isExternal: false
+  name: GetApplicationDirectoryCollection
+  nameWithType: DirectoryProvider.GetApplicationDirectoryCollection
+  fullName: Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<DateTime>
+  nameWithType: Nullable<DateTime>
+  fullName: System.Nullable<System.DateTime>
+  nameWithType.vb: Nullable(Of DateTime)
+  fullName.vb: System.Nullable(Of System.DateTime)
+  name.vb: Nullable(Of DateTime)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList{Microsoft.Health.ApplicationDirectoryItem}
+  commentId: T:System.Collections.Generic.IList{Microsoft.Health.ApplicationDirectoryItem}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<ApplicationDirectoryItem>
+  nameWithType: IList<ApplicationDirectoryItem>
+  fullName: System.Collections.Generic.IList<Microsoft.Health.ApplicationDirectoryItem>
+  nameWithType.vb: IList(Of ApplicationDirectoryItem)
+  fullName.vb: System.Collections.Generic.IList(Of Microsoft.Health.ApplicationDirectoryItem)
+  name.vb: IList(Of ApplicationDirectoryItem)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.ApplicationDirectoryItem
+    name: ApplicationDirectoryItem
+    nameWithType: ApplicationDirectoryItem
+    fullName: Microsoft.Health.ApplicationDirectoryItem
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.ApplicationDirectoryItem
+    name: ApplicationDirectoryItem
+    nameWithType: ApplicationDirectoryItem
+    fullName: Microsoft.Health.ApplicationDirectoryItem
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: Microsoft.Health.DeviceDirectoryItem
+  commentId: T:Microsoft.Health.DeviceDirectoryItem
+  isExternal: false
+  name: DeviceDirectoryItem
+  nameWithType: DeviceDirectoryItem
+  fullName: Microsoft.Health.DeviceDirectoryItem
+- uid: Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection*
+  commentId: Overload:Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection
+  isExternal: false
+  name: GetDeviceDirectoryCollection
+  nameWithType: DirectoryProvider.GetDeviceDirectoryCollection
+  fullName: Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection
+- uid: System.Collections.Generic.IList{Microsoft.Health.DeviceDirectoryItem}
+  commentId: T:System.Collections.Generic.IList{Microsoft.Health.DeviceDirectoryItem}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<DeviceDirectoryItem>
+  nameWithType: IList<DeviceDirectoryItem>
+  fullName: System.Collections.Generic.IList<Microsoft.Health.DeviceDirectoryItem>
+  nameWithType.vb: IList(Of DeviceDirectoryItem)
+  fullName.vb: System.Collections.Generic.IList(Of Microsoft.Health.DeviceDirectoryItem)
+  name.vb: IList(Of DeviceDirectoryItem)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.DeviceDirectoryItem
+    name: DeviceDirectoryItem
+    nameWithType: DeviceDirectoryItem
+    fullName: Microsoft.Health.DeviceDirectoryItem
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.DeviceDirectoryItem
+    name: DeviceDirectoryItem
+    nameWithType: DeviceDirectoryItem
+    fullName: Microsoft.Health.DeviceDirectoryItem
+  - name: )
+    nameWithType: )
+    fullName: )

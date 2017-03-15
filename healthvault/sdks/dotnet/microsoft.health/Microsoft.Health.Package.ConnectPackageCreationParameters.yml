@@ -1,0 +1,1309 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters
+  commentId: T:Microsoft.Health.Package.ConnectPackageCreationParameters
+  id: ConnectPackageCreationParameters
+  parent: Microsoft.Health.Package
+  children:
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.#ctor(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String)
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.#ctor(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String,System.String)
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.ApplicationPatientId
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithm
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithmName
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.Connection
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithm
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithmName
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithm
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithmName
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.Dispose
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.Finalize
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.FriendlyName
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.IdentityCode
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.PasswordProtectAlgorithm
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.Salt
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityAnswer
+  - Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityQuestion
+  langs:
+  - csharp
+  - vb
+  name: ConnectPackageCreationParameters
+  nameWithType: ConnectPackageCreationParameters
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ConnectPackageCreationParameters
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 18
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nThe parameters that need to be supplied in order to create \na <xref href=\"Microsoft.Health.ItemTypes.PasswordProtectedPackage\" data-throw-if-not-resolved=\"false\"></xref> through the <xref href=\"Microsoft.Health.Package.ConnectPackage\" data-throw-if-not-resolved=\"false\"></xref>\ncreation API.\n"
+  example: []
+  syntax:
+    content: 'public class ConnectPackageCreationParameters : IDisposable'
+    content.vb: >-
+      Public Class ConnectPackageCreationParameters
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.#ctor(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String)
+  commentId: M:Microsoft.Health.Package.ConnectPackageCreationParameters.#ctor(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String)
+  id: '#ctor(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String)'
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: ConnectPackageCreationParameters(OfflineWebApplicationConnection, String, String, String, String)
+  nameWithType: ConnectPackageCreationParameters.ConnectPackageCreationParameters(OfflineWebApplicationConnection, String, String, String, String)
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageCreationParameters(Microsoft.Health.Web.OfflineWebApplicationConnection, System.String, System.String, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 65
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nConstructs an <xref href=\"Microsoft.Health.Package.ConnectPackageCreationParameters\" data-throw-if-not-resolved=\"false\"></xref> instance \nwith supplied values.\n"
+  example: []
+  syntax:
+    content: public ConnectPackageCreationParameters(OfflineWebApplicationConnection connection, string friendlyName, string securityQuestion, string securityAnswer, string applicationPatientId)
+    content.vb: Public Sub New(connection As OfflineWebApplicationConnection, friendlyName As String, securityQuestion As String, securityAnswer As String, applicationPatientId As String)
+    parameters:
+    - id: connection
+      type: Microsoft.Health.Web.OfflineWebApplicationConnection
+      description: "\nThe application connection to HealthVault. The application ID in the connection is used\nwhen making the patient connection.\n"
+    - id: friendlyName
+      type: System.String
+      description: "\nA friendly name for the patient connection which will be shown to the user when they\ngo to HealthVault Shell to validate the connection.\n"
+    - id: securityQuestion
+      type: System.String
+      description: "\nA question (usually provided by the patient) to which the patient must provide the \n<span class=\"paramref\">securityAnswer</span> when they go to validate the connection in the \nHealthVault Shell.\n"
+    - id: securityAnswer
+      type: System.String
+      description: "\nThe answer to the <span class=\"paramref\">securityQuestion</span> which the patient must use\nwhen adding the package to their record via HealthVault Shell. The answer is \ncase-insensitive but otherwise must match exactly. Additionally, it must be at least \n6 characters long.\n"
+    - id: applicationPatientId
+      type: System.String
+      description: "\nThe application specific identifier for the user. This identifier is used to uniquely\nidentify the user in the application data storage whereas the HealthVault person ID is\nused to identify the person in HealthVault.\n"
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">friendlyName</span>, \n<span class=\"paramref\">securityQuestion</span>, or\n<span class=\"paramref\">applicationPatientId</span> is\n<strong>null</strong> or empty.\n"
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "\nIf <span class=\"paramref\">securityAnswer</span> is less than 6 characters.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.#ctor(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String,System.String)
+  commentId: M:Microsoft.Health.Package.ConnectPackageCreationParameters.#ctor(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String,System.String)
+  id: '#ctor(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String,System.String)'
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: ConnectPackageCreationParameters(OfflineWebApplicationConnection, String, String, String, String, String)
+  nameWithType: ConnectPackageCreationParameters.ConnectPackageCreationParameters(OfflineWebApplicationConnection, String, String, String, String, String)
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageCreationParameters(Microsoft.Health.Web.OfflineWebApplicationConnection, System.String, System.String, System.String, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 133
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nConstructs an <xref href=\"Microsoft.Health.Package.ConnectPackageCreationParameters\" data-throw-if-not-resolved=\"false\"></xref> instance \nwith supplied values.\n"
+  example: []
+  syntax:
+    content: public ConnectPackageCreationParameters(OfflineWebApplicationConnection connection, string identityCode, string friendlyName, string securityQuestion, string securityAnswer, string applicationPatientId)
+    content.vb: Public Sub New(connection As OfflineWebApplicationConnection, identityCode As String, friendlyName As String, securityQuestion As String, securityAnswer As String, applicationPatientId As String)
+    parameters:
+    - id: connection
+      type: Microsoft.Health.Web.OfflineWebApplicationConnection
+      description: "\nThe application connection to HealthVault. The application ID in the connection is used\nwhen making the patient connection.\n"
+    - id: identityCode
+      type: System.String
+      description: "\nA package identity token previously obtained from \n<xref href=\"Microsoft.Health.Package.ConnectPackage.AllocatePackageId(Microsoft.Health.Web.OfflineWebApplicationConnection)\" data-throw-if-not-resolved=\"false\"></xref>.  \n"
+    - id: friendlyName
+      type: System.String
+      description: "\nA friendly name for the patient connection which will be shown to the user when they\ngo to HealthVault Shell to validate the connection.\n"
+    - id: securityQuestion
+      type: System.String
+      description: "\nA question (usually provided by the patient) to which the patient must provide the \n<span class=\"paramref\">securityAnswer</span> when they go to validate the connection in the \nHealthVault Shell.\n"
+    - id: securityAnswer
+      type: System.String
+      description: "\nThe answer to the <span class=\"paramref\">securityQuestion</span> which the patient must use\nwhen adding the package to their record via HealthVault Shell. The answer is \ncase-insensitive but otherwise must match exactly. Additionally, it must be at least \n6 characters long.\n"
+    - id: applicationPatientId
+      type: System.String
+      description: "\nThe application specific identifier for the user. This identifier is used to uniquely\nidentify the user in the application data storage whereas the HealthVault person ID is\nused to identify the person in HealthVault.\n"
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">identityCode</span>, <span class=\"paramref\">friendlyName</span>, \n<span class=\"paramref\">securityQuestion</span>, or\n<span class=\"paramref\">applicationPatientId</span> is\n<strong>null</strong> or empty.\n"
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "\nIf <span class=\"paramref\">securityAnswer</span> is less than 6 characters.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.IdentityCode
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.IdentityCode
+  id: IdentityCode
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: IdentityCode
+  nameWithType: ConnectPackageCreationParameters.IdentityCode
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.IdentityCode
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: IdentityCode
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 261
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nGets the package identity token previously obtained from \n<xref href=\"Microsoft.Health.Package.ConnectPackage.AllocatePackageId(Microsoft.Health.Web.OfflineWebApplicationConnection)\" data-throw-if-not-resolved=\"false\"></xref>.  \n"
+  example: []
+  syntax:
+    content: public string IdentityCode { get; }
+    content.vb: Public ReadOnly Property IdentityCode As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.IdentityCode*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.FriendlyName
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.FriendlyName
+  id: FriendlyName
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: FriendlyName
+  nameWithType: ConnectPackageCreationParameters.FriendlyName
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.FriendlyName
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: FriendlyName
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 271
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nGets the friendly name for the patient connection which will be shown to the user \nwhen they go to HealthVault Shell to validate the connection.\n"
+  example: []
+  syntax:
+    content: public string FriendlyName { get; }
+    content.vb: Public ReadOnly Property FriendlyName As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.FriendlyName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityQuestion
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityQuestion
+  id: SecurityQuestion
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: SecurityQuestion
+  nameWithType: ConnectPackageCreationParameters.SecurityQuestion
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityQuestion
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: SecurityQuestion
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 282
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nGets the question (usually provided by the patient) to which the patient must provide \nthe  <xref href=\"Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityAnswer\" data-throw-if-not-resolved=\"false\"></xref> when they go to validate the connection in the \nHealthVault Shell.\n"
+  example: []
+  syntax:
+    content: public string SecurityQuestion { get; }
+    content.vb: Public ReadOnly Property SecurityQuestion As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityQuestion*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityAnswer
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityAnswer
+  id: SecurityAnswer
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: SecurityAnswer
+  nameWithType: ConnectPackageCreationParameters.SecurityAnswer
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityAnswer
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: SecurityAnswer
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 292
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nGets the answer to the <xref href=\"Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityQuestion\" data-throw-if-not-resolved=\"false\"></xref> which the patient must use\nwhen adding the package to their record via HealthVault Shell.\n"
+  example: []
+  syntax:
+    content: public string SecurityAnswer { get; }
+    content.vb: Public ReadOnly Property SecurityAnswer As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityAnswer*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.ApplicationPatientId
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.ApplicationPatientId
+  id: ApplicationPatientId
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: ApplicationPatientId
+  nameWithType: ConnectPackageCreationParameters.ApplicationPatientId
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.ApplicationPatientId
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ApplicationPatientId
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 303
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nGets the application specific identifier for the user. This identifier is used to \nuniquely identify the user in the application data storage, whereas the HealthVault \nperson ID is used to identify the person in HealthVault.\n"
+  example: []
+  syntax:
+    content: public string ApplicationPatientId { get; }
+    content.vb: Public ReadOnly Property ApplicationPatientId As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.ApplicationPatientId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.Salt
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.Salt
+  id: Salt
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: Salt
+  nameWithType: ConnectPackageCreationParameters.Salt
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.Salt
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Salt
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 312
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nGets the salt used to encrypt the entities within the connect package.\n"
+  example: []
+  syntax:
+    content: public string Salt { get; }
+    content.vb: Public ReadOnly Property Salt As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.Salt*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithmName
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithmName
+  id: ConnectPackageHMACAlgorithmName
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: ConnectPackageHMACAlgorithmName
+  nameWithType: ConnectPackageCreationParameters.ConnectPackageHMACAlgorithmName
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithmName
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ConnectPackageHMACAlgorithmName
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 321
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nGets the name of the algorithm used to generate the HMAC for the connect package.\n"
+  example: []
+  syntax:
+    content: public string ConnectPackageHMACAlgorithmName { get; }
+    content.vb: Public ReadOnly Property ConnectPackageHMACAlgorithmName As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithmName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithm
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithm
+  id: ConnectPackageHMACAlgorithm
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: ConnectPackageHMACAlgorithm
+  nameWithType: ConnectPackageCreationParameters.ConnectPackageHMACAlgorithm
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithm
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ConnectPackageHMACAlgorithm
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 330
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nGets the algorithm used to generate the HMAC for the connect package.\n"
+  example: []
+  syntax:
+    content: public HMAC ConnectPackageHMACAlgorithm { get; }
+    content.vb: Public ReadOnly Property ConnectPackageHMACAlgorithm As HMAC
+    parameters: []
+    return:
+      type: System.Security.Cryptography.HMAC
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithm*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.PasswordProtectAlgorithm
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.PasswordProtectAlgorithm
+  id: PasswordProtectAlgorithm
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: PasswordProtectAlgorithm
+  nameWithType: ConnectPackageCreationParameters.PasswordProtectAlgorithm
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.PasswordProtectAlgorithm
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: PasswordProtectAlgorithm
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 339
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nGets the <xref href=\"Microsoft.Health.Package.ConnectPackageCreationParameters.PasswordProtectAlgorithm\" data-throw-if-not-resolved=\"false\"></xref> to be used in the connect package.\n"
+  example: []
+  syntax:
+    content: public PasswordProtectAlgorithm PasswordProtectAlgorithm { get; }
+    content.vb: Public ReadOnly Property PasswordProtectAlgorithm As PasswordProtectAlgorithm
+    parameters: []
+    return:
+      type: Microsoft.Health.ItemTypes.PasswordProtectAlgorithm
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.PasswordProtectAlgorithm*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithmName
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithmName
+  id: ConnectPackageEncryptionAlgorithmName
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: ConnectPackageEncryptionAlgorithmName
+  nameWithType: ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithmName
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithmName
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ConnectPackageEncryptionAlgorithmName
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 349
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nGets the name of the algorithm used to encrypt the <xref href=\"Microsoft.Health.HealthRecordItem\" data-throw-if-not-resolved=\"false\"></xref>s, \nthat form the contents of the connect package.\n"
+  example: []
+  syntax:
+    content: public string ConnectPackageEncryptionAlgorithmName { get; }
+    content.vb: Public ReadOnly Property ConnectPackageEncryptionAlgorithmName As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithmName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithm
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithm
+  id: ConnectPackageEncryptionAlgorithm
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: ConnectPackageEncryptionAlgorithm
+  nameWithType: ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithm
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithm
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ConnectPackageEncryptionAlgorithm
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 359
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nGets the algorithm used to encrypt the <xref href=\"Microsoft.Health.HealthRecordItem\" data-throw-if-not-resolved=\"false\"></xref>s, \nthat form the contents of the connect package.\n"
+  example: []
+  syntax:
+    content: public SymmetricAlgorithm ConnectPackageEncryptionAlgorithm { get; }
+    content.vb: Public ReadOnly Property ConnectPackageEncryptionAlgorithm As SymmetricAlgorithm
+    parameters: []
+    return:
+      type: System.Security.Cryptography.SymmetricAlgorithm
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithm*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithmName
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithmName
+  id: BlobChunkEncryptionAlgorithmName
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: BlobChunkEncryptionAlgorithmName
+  nameWithType: ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithmName
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithmName
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: BlobChunkEncryptionAlgorithmName
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 369
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nGets the name of the algorithm used to encrypt the <xref href=\"Microsoft.Health.BlobStream\" data-throw-if-not-resolved=\"false\"></xref>s\nthat belong to the <xref href=\"Microsoft.Health.HealthRecordItem\" data-throw-if-not-resolved=\"false\"></xref>s  within the connect package.\n"
+  example: []
+  syntax:
+    content: public string BlobChunkEncryptionAlgorithmName { get; }
+    content.vb: Public ReadOnly Property BlobChunkEncryptionAlgorithmName As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithmName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithm
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithm
+  id: BlobChunkEncryptionAlgorithm
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: BlobChunkEncryptionAlgorithm
+  nameWithType: ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithm
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithm
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: BlobChunkEncryptionAlgorithm
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 379
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nGets the algorithm used to encrypt the <xref href=\"Microsoft.Health.BlobStream\" data-throw-if-not-resolved=\"false\"></xref>s\nthat belong to the <xref href=\"Microsoft.Health.HealthRecordItem\" data-throw-if-not-resolved=\"false\"></xref>s  within the connect package.\n"
+  example: []
+  syntax:
+    content: public SymmetricAlgorithm BlobChunkEncryptionAlgorithm { get; }
+    content.vb: Public ReadOnly Property BlobChunkEncryptionAlgorithm As SymmetricAlgorithm
+    parameters: []
+    return:
+      type: System.Security.Cryptography.SymmetricAlgorithm
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithm*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.Connection
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.Connection
+  id: Connection
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: Connection
+  nameWithType: ConnectPackageCreationParameters.Connection
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.Connection
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Connection
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 389
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nGets the application connection to HealthVault. The application ID in the connection \nis used when making the patient connection.\n"
+  example: []
+  syntax:
+    content: public OfflineWebApplicationConnection Connection { get; }
+    content.vb: Public ReadOnly Property Connection As OfflineWebApplicationConnection
+    parameters: []
+    return:
+      type: Microsoft.Health.Web.OfflineWebApplicationConnection
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.Connection*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.Dispose
+  commentId: M:Microsoft.Health.Package.ConnectPackageCreationParameters.Dispose
+  id: Dispose
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: ConnectPackageCreationParameters.Dispose()
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Dispose
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 398
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nExplicit clean up.\n"
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.Finalize
+  commentId: M:Microsoft.Health.Package.ConnectPackageCreationParameters.Finalize
+  id: Finalize
+  parent: Microsoft.Health.Package.ConnectPackageCreationParameters
+  langs:
+  - csharp
+  - vb
+  name: Finalize()
+  nameWithType: ConnectPackageCreationParameters.Finalize()
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.Finalize()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/ConnectPackageCreationParameters.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Finalize
+    path: PatientConnect/ConnectPackageCreationParameters.cs
+    startLine: 407
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.Package
+  summary: "\nLast resort clean up.\n"
+  example: []
+  syntax:
+    content: protected void Finalize()
+    content.vb: Protected Sub Finalize
+  overload: Microsoft.Health.Package.ConnectPackageCreationParameters.Finalize*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: Microsoft.Health.ItemTypes.PasswordProtectedPackage
+  commentId: T:Microsoft.Health.ItemTypes.PasswordProtectedPackage
+  parent: Microsoft.Health.ItemTypes
+  isExternal: false
+  name: PasswordProtectedPackage
+  nameWithType: PasswordProtectedPackage
+  fullName: Microsoft.Health.ItemTypes.PasswordProtectedPackage
+- uid: Microsoft.Health.Package.ConnectPackage
+  commentId: T:Microsoft.Health.Package.ConnectPackage
+  isExternal: false
+  name: ConnectPackage
+  nameWithType: ConnectPackage
+  fullName: Microsoft.Health.Package.ConnectPackage
+- uid: Microsoft.Health.Package
+  commentId: N:Microsoft.Health.Package
+  isExternal: false
+  name: Microsoft.Health.Package
+  nameWithType: Microsoft.Health.Package
+  fullName: Microsoft.Health.Package
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes
+  commentId: N:Microsoft.Health.ItemTypes
+  isExternal: false
+  name: Microsoft.Health.ItemTypes
+  nameWithType: Microsoft.Health.ItemTypes
+  fullName: Microsoft.Health.ItemTypes
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters
+  commentId: T:Microsoft.Health.Package.ConnectPackageCreationParameters
+  parent: Microsoft.Health.Package
+  isExternal: false
+  name: ConnectPackageCreationParameters
+  nameWithType: ConnectPackageCreationParameters
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.#ctor*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.#ctor
+  isExternal: false
+  name: ConnectPackageCreationParameters
+  nameWithType: ConnectPackageCreationParameters.ConnectPackageCreationParameters
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageCreationParameters
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+- uid: Microsoft.Health.Web.OfflineWebApplicationConnection
+  commentId: T:Microsoft.Health.Web.OfflineWebApplicationConnection
+  parent: Microsoft.Health.Web
+  isExternal: false
+  name: OfflineWebApplicationConnection
+  nameWithType: OfflineWebApplicationConnection
+  fullName: Microsoft.Health.Web.OfflineWebApplicationConnection
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Microsoft.Health.Web
+  commentId: N:Microsoft.Health.Web
+  isExternal: false
+  name: Microsoft.Health.Web
+  nameWithType: Microsoft.Health.Web
+  fullName: Microsoft.Health.Web
+- uid: Microsoft.Health.Package.ConnectPackage.AllocatePackageId(Microsoft.Health.Web.OfflineWebApplicationConnection)
+  commentId: M:Microsoft.Health.Package.ConnectPackage.AllocatePackageId(Microsoft.Health.Web.OfflineWebApplicationConnection)
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.IdentityCode*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.IdentityCode
+  isExternal: false
+  name: IdentityCode
+  nameWithType: ConnectPackageCreationParameters.IdentityCode
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.IdentityCode
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.FriendlyName*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.FriendlyName
+  isExternal: false
+  name: FriendlyName
+  nameWithType: ConnectPackageCreationParameters.FriendlyName
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.FriendlyName
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityAnswer
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityAnswer
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityQuestion*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityQuestion
+  isExternal: false
+  name: SecurityQuestion
+  nameWithType: ConnectPackageCreationParameters.SecurityQuestion
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityQuestion
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityQuestion
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityQuestion
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityAnswer*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityAnswer
+  isExternal: false
+  name: SecurityAnswer
+  nameWithType: ConnectPackageCreationParameters.SecurityAnswer
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityAnswer
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.ApplicationPatientId*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.ApplicationPatientId
+  isExternal: false
+  name: ApplicationPatientId
+  nameWithType: ConnectPackageCreationParameters.ApplicationPatientId
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.ApplicationPatientId
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.Salt*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.Salt
+  isExternal: false
+  name: Salt
+  nameWithType: ConnectPackageCreationParameters.Salt
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.Salt
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithmName*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithmName
+  isExternal: false
+  name: ConnectPackageHMACAlgorithmName
+  nameWithType: ConnectPackageCreationParameters.ConnectPackageHMACAlgorithmName
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithmName
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithm*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithm
+  isExternal: false
+  name: ConnectPackageHMACAlgorithm
+  nameWithType: ConnectPackageCreationParameters.ConnectPackageHMACAlgorithm
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithm
+- uid: System.Security.Cryptography.HMAC
+  commentId: T:System.Security.Cryptography.HMAC
+  parent: System.Security.Cryptography
+  isExternal: true
+  name: HMAC
+  nameWithType: HMAC
+  fullName: System.Security.Cryptography.HMAC
+- uid: System.Security.Cryptography
+  commentId: N:System.Security.Cryptography
+  isExternal: false
+  name: System.Security.Cryptography
+  nameWithType: System.Security.Cryptography
+  fullName: System.Security.Cryptography
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.PasswordProtectAlgorithm
+  commentId: P:Microsoft.Health.Package.ConnectPackageCreationParameters.PasswordProtectAlgorithm
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.PasswordProtectAlgorithm*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.PasswordProtectAlgorithm
+  isExternal: false
+  name: PasswordProtectAlgorithm
+  nameWithType: ConnectPackageCreationParameters.PasswordProtectAlgorithm
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.PasswordProtectAlgorithm
+- uid: Microsoft.Health.ItemTypes.PasswordProtectAlgorithm
+  commentId: T:Microsoft.Health.ItemTypes.PasswordProtectAlgorithm
+  parent: Microsoft.Health.ItemTypes
+  isExternal: false
+  name: PasswordProtectAlgorithm
+  nameWithType: PasswordProtectAlgorithm
+  fullName: Microsoft.Health.ItemTypes.PasswordProtectAlgorithm
+- uid: Microsoft.Health.HealthRecordItem
+  commentId: T:Microsoft.Health.HealthRecordItem
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthRecordItem
+  nameWithType: HealthRecordItem
+  fullName: Microsoft.Health.HealthRecordItem
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithmName*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithmName
+  isExternal: false
+  name: ConnectPackageEncryptionAlgorithmName
+  nameWithType: ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithmName
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithmName
+- uid: Microsoft.Health
+  commentId: N:Microsoft.Health
+  isExternal: false
+  name: Microsoft.Health
+  nameWithType: Microsoft.Health
+  fullName: Microsoft.Health
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithm*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithm
+  isExternal: false
+  name: ConnectPackageEncryptionAlgorithm
+  nameWithType: ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithm
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithm
+- uid: System.Security.Cryptography.SymmetricAlgorithm
+  commentId: T:System.Security.Cryptography.SymmetricAlgorithm
+  parent: System.Security.Cryptography
+  isExternal: true
+  name: SymmetricAlgorithm
+  nameWithType: SymmetricAlgorithm
+  fullName: System.Security.Cryptography.SymmetricAlgorithm
+- uid: Microsoft.Health.BlobStream
+  commentId: T:Microsoft.Health.BlobStream
+  parent: Microsoft.Health
+  isExternal: false
+  name: BlobStream
+  nameWithType: BlobStream
+  fullName: Microsoft.Health.BlobStream
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithmName*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithmName
+  isExternal: false
+  name: BlobChunkEncryptionAlgorithmName
+  nameWithType: ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithmName
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithmName
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithm*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithm
+  isExternal: false
+  name: BlobChunkEncryptionAlgorithm
+  nameWithType: ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithm
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithm
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.Connection*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.Connection
+  isExternal: false
+  name: Connection
+  nameWithType: ConnectPackageCreationParameters.Connection
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.Connection
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.Dispose*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: ConnectPackageCreationParameters.Dispose
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Package.ConnectPackageCreationParameters.Finalize*
+  commentId: Overload:Microsoft.Health.Package.ConnectPackageCreationParameters.Finalize
+  isExternal: false
+  name: Finalize
+  nameWithType: ConnectPackageCreationParameters.Finalize
+  fullName: Microsoft.Health.Package.ConnectPackageCreationParameters.Finalize

@@ -1,0 +1,2119 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.Caching.Refresher
+  commentId: T:Microsoft.Health.Caching.Refresher
+  id: Refresher
+  parent: Microsoft.Health.Caching
+  children:
+  - Microsoft.Health.Caching.Refresher.#ctor(System.Int32)
+  - Microsoft.Health.Caching.Refresher.#ctor(System.Timers.Timer)
+  - Microsoft.Health.Caching.Refresher.Add(Microsoft.Health.Caching.IDemandLoadable)
+  - Microsoft.Health.Caching.Refresher.Clear
+  - Microsoft.Health.Caching.Refresher.Dispose
+  - Microsoft.Health.Caching.Refresher.Dispose(System.Boolean)
+  - Microsoft.Health.Caching.Refresher.ForceLoad
+  - Microsoft.Health.Caching.Refresher.GetEnumerator
+  - Microsoft.Health.Caching.Refresher.Interval
+  - Microsoft.Health.Caching.Refresher.m_inRefresh
+  - Microsoft.Health.Caching.Refresher.m_refreshList
+  - Microsoft.Health.Caching.Refresher.m_timer
+  - Microsoft.Health.Caching.Refresher.OnEndLoad
+  - Microsoft.Health.Caching.Refresher.OnError(Microsoft.Health.Caching.IDemandLoadable,System.Exception)
+  - Microsoft.Health.Caching.Refresher.OnStartLoad
+  - Microsoft.Health.Caching.Refresher.Refresh
+  - Microsoft.Health.Caching.Refresher.Remove(Microsoft.Health.Caching.IDemandLoadable)
+  - Microsoft.Health.Caching.Refresher.Start
+  - Microsoft.Health.Caching.Refresher.Stop
+  - Microsoft.Health.Caching.Refresher.System#Collections#IEnumerable#GetEnumerator
+  langs:
+  - csharp
+  - vb
+  name: Refresher
+  nameWithType: Refresher
+  fullName: Microsoft.Health.Caching.Refresher
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Refresher
+    path: search/Cache/Refresher.cs
+    startLine: 23
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\nAt a fixed interval, refresh all registered items, one after the other, in the order registered\n"
+  example: []
+  syntax:
+    content: 'public class Refresher : IDisposable, IEnumerable<IDemandLoadable>, IEnumerable'
+    content.vb: >-
+      Public Class Refresher
+          Implements IDisposable, IEnumerable(Of IDemandLoadable), IEnumerable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  - System.Collections.Generic.IEnumerable{Microsoft.Health.Caching.IDemandLoadable}
+  - System.Collections.IEnumerable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - Microsoft.Health.Caching.Refresher.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  - System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.Caching.Refresher.#ctor(System.Int32)
+  commentId: M:Microsoft.Health.Caching.Refresher.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: Refresher(Int32)
+  nameWithType: Refresher.Refresher(Int32)
+  fullName: Microsoft.Health.Caching.Refresher.Refresher(System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: search/Cache/Refresher.cs
+    startLine: 29
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public Refresher(int milliseconds)
+    content.vb: Public Sub New(milliseconds As Integer)
+    parameters:
+    - id: milliseconds
+      type: System.Int32
+      description: ''
+  overload: Microsoft.Health.Caching.Refresher.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Caching.Refresher.#ctor(System.Timers.Timer)
+  commentId: M:Microsoft.Health.Caching.Refresher.#ctor(System.Timers.Timer)
+  id: '#ctor(System.Timers.Timer)'
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: Refresher(Timer)
+  nameWithType: Refresher.Refresher(Timer)
+  fullName: Microsoft.Health.Caching.Refresher.Refresher(System.Timers.Timer)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: search/Cache/Refresher.cs
+    startLine: 40
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public Refresher(Timer timer)
+    content.vb: Public Sub New(timer As Timer)
+    parameters:
+    - id: timer
+      type: System.Timers.Timer
+      description: ''
+  overload: Microsoft.Health.Caching.Refresher.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Caching.Refresher.ForceLoad
+  commentId: F:Microsoft.Health.Caching.Refresher.ForceLoad
+  id: ForceLoad
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: ForceLoad
+  nameWithType: Refresher.ForceLoad
+  fullName: Microsoft.Health.Caching.Refresher.ForceLoad
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ForceLoad
+    path: search/Cache/Refresher.cs
+    startLine: 57
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public bool ForceLoad
+    content.vb: Public ForceLoad As Boolean
+    return:
+      type: System.Boolean
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Caching.Refresher.Interval
+  commentId: P:Microsoft.Health.Caching.Refresher.Interval
+  id: Interval
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: Interval
+  nameWithType: Refresher.Interval
+  fullName: Microsoft.Health.Caching.Refresher.Interval
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Interval
+    path: search/Cache/Refresher.cs
+    startLine: 62
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public int Interval { get; set; }
+    content.vb: Public Property Interval As Integer
+    parameters: []
+    return:
+      type: System.Int32
+  overload: Microsoft.Health.Caching.Refresher.Interval*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Caching.Refresher.Add(Microsoft.Health.Caching.IDemandLoadable)
+  commentId: M:Microsoft.Health.Caching.Refresher.Add(Microsoft.Health.Caching.IDemandLoadable)
+  id: Add(Microsoft.Health.Caching.IDemandLoadable)
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: Add(IDemandLoadable)
+  nameWithType: Refresher.Add(IDemandLoadable)
+  fullName: Microsoft.Health.Caching.Refresher.Add(Microsoft.Health.Caching.IDemandLoadable)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Add
+    path: search/Cache/Refresher.cs
+    startLine: 78
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public void Add(IDemandLoadable item)
+    content.vb: Public Sub Add(item As IDemandLoadable)
+    parameters:
+    - id: item
+      type: Microsoft.Health.Caching.IDemandLoadable
+      description: ''
+  overload: Microsoft.Health.Caching.Refresher.Add*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Caching.Refresher.Remove(Microsoft.Health.Caching.IDemandLoadable)
+  commentId: M:Microsoft.Health.Caching.Refresher.Remove(Microsoft.Health.Caching.IDemandLoadable)
+  id: Remove(Microsoft.Health.Caching.IDemandLoadable)
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: Remove(IDemandLoadable)
+  nameWithType: Refresher.Remove(IDemandLoadable)
+  fullName: Microsoft.Health.Caching.Refresher.Remove(Microsoft.Health.Caching.IDemandLoadable)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Remove
+    path: search/Cache/Refresher.cs
+    startLine: 95
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public void Remove(IDemandLoadable item)
+    content.vb: Public Sub Remove(item As IDemandLoadable)
+    parameters:
+    - id: item
+      type: Microsoft.Health.Caching.IDemandLoadable
+      description: ''
+  overload: Microsoft.Health.Caching.Refresher.Remove*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Caching.Refresher.Clear
+  commentId: M:Microsoft.Health.Caching.Refresher.Clear
+  id: Clear
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: Clear()
+  nameWithType: Refresher.Clear()
+  fullName: Microsoft.Health.Caching.Refresher.Clear()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Clear
+    path: search/Cache/Refresher.cs
+    startLine: 111
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public void Clear()
+    content.vb: Public Sub Clear
+  overload: Microsoft.Health.Caching.Refresher.Clear*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Caching.Refresher.Start
+  commentId: M:Microsoft.Health.Caching.Refresher.Start
+  id: Start
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: Start()
+  nameWithType: Refresher.Start()
+  fullName: Microsoft.Health.Caching.Refresher.Start()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Start
+    path: search/Cache/Refresher.cs
+    startLine: 122
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public void Start()
+    content.vb: Public Sub Start
+  overload: Microsoft.Health.Caching.Refresher.Start*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Caching.Refresher.Stop
+  commentId: M:Microsoft.Health.Caching.Refresher.Stop
+  id: Stop
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: Stop()
+  nameWithType: Refresher.Stop()
+  fullName: Microsoft.Health.Caching.Refresher.Stop()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Stop
+    path: search/Cache/Refresher.cs
+    startLine: 136
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public void Stop()
+    content.vb: Public Sub Stop
+  overload: Microsoft.Health.Caching.Refresher.Stop*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Caching.Refresher.Dispose
+  commentId: M:Microsoft.Health.Caching.Refresher.Dispose
+  id: Dispose
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: Refresher.Dispose()
+  fullName: Microsoft.Health.Caching.Refresher.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Dispose
+    path: search/Cache/Refresher.cs
+    startLine: 150
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: Microsoft.Health.Caching.Refresher.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Caching.Refresher.Dispose(System.Boolean)
+  commentId: M:Microsoft.Health.Caching.Refresher.Dispose(System.Boolean)
+  id: Dispose(System.Boolean)
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: Dispose(Boolean)
+  nameWithType: Refresher.Dispose(Boolean)
+  fullName: Microsoft.Health.Caching.Refresher.Dispose(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Dispose
+    path: search/Cache/Refresher.cs
+    startLine: 156
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  syntax:
+    content: protected virtual void Dispose(bool disposing)
+    content.vb: Protected Overridable Sub Dispose(disposing As Boolean)
+    parameters:
+    - id: disposing
+      type: System.Boolean
+  overload: Microsoft.Health.Caching.Refresher.Dispose*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: Microsoft.Health.Caching.Refresher.Refresh
+  commentId: M:Microsoft.Health.Caching.Refresher.Refresh
+  id: Refresh
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: Refresh()
+  nameWithType: Refresher.Refresh()
+  fullName: Microsoft.Health.Caching.Refresher.Refresh()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Refresh
+    path: search/Cache/Refresher.cs
+    startLine: 177
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public void Refresh()
+    content.vb: Public Sub Refresh
+  overload: Microsoft.Health.Caching.Refresher.Refresh*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Caching.Refresher.OnStartLoad
+  commentId: M:Microsoft.Health.Caching.Refresher.OnStartLoad
+  id: OnStartLoad
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: OnStartLoad()
+  nameWithType: Refresher.OnStartLoad()
+  fullName: Microsoft.Health.Caching.Refresher.OnStartLoad()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: OnStartLoad
+    path: search/Cache/Refresher.cs
+    startLine: 244
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected virtual void OnStartLoad()
+    content.vb: Protected Overridable Sub OnStartLoad
+  overload: Microsoft.Health.Caching.Refresher.OnStartLoad*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: Microsoft.Health.Caching.Refresher.OnError(Microsoft.Health.Caching.IDemandLoadable,System.Exception)
+  commentId: M:Microsoft.Health.Caching.Refresher.OnError(Microsoft.Health.Caching.IDemandLoadable,System.Exception)
+  id: OnError(Microsoft.Health.Caching.IDemandLoadable,System.Exception)
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: OnError(IDemandLoadable, Exception)
+  nameWithType: Refresher.OnError(IDemandLoadable, Exception)
+  fullName: Microsoft.Health.Caching.Refresher.OnError(Microsoft.Health.Caching.IDemandLoadable, System.Exception)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: OnError
+    path: search/Cache/Refresher.cs
+    startLine: 253
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected virtual void OnError(IDemandLoadable obj, Exception error)
+    content.vb: Protected Overridable Sub OnError(obj As IDemandLoadable, error As Exception)
+    parameters:
+    - id: obj
+      type: Microsoft.Health.Caching.IDemandLoadable
+      description: ''
+    - id: error
+      type: System.Exception
+      description: ''
+  overload: Microsoft.Health.Caching.Refresher.OnError*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: Microsoft.Health.Caching.Refresher.OnEndLoad
+  commentId: M:Microsoft.Health.Caching.Refresher.OnEndLoad
+  id: OnEndLoad
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: OnEndLoad()
+  nameWithType: Refresher.OnEndLoad()
+  fullName: Microsoft.Health.Caching.Refresher.OnEndLoad()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: OnEndLoad
+    path: search/Cache/Refresher.cs
+    startLine: 260
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected virtual void OnEndLoad()
+    content.vb: Protected Overridable Sub OnEndLoad
+  overload: Microsoft.Health.Caching.Refresher.OnEndLoad*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: Microsoft.Health.Caching.Refresher.GetEnumerator
+  commentId: M:Microsoft.Health.Caching.Refresher.GetEnumerator
+  id: GetEnumerator
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: Refresher.GetEnumerator()
+  fullName: Microsoft.Health.Caching.Refresher.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetEnumerator
+    path: search/Cache/Refresher.cs
+    startLine: 270
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public IEnumerator<IDemandLoadable> GetEnumerator()
+    content.vb: Public Function GetEnumerator As IEnumerator(Of IDemandLoadable)
+    return:
+      type: System.Collections.Generic.IEnumerator{Microsoft.Health.Caching.IDemandLoadable}
+      description: ''
+  overload: Microsoft.Health.Caching.Refresher.GetEnumerator*
+  implements:
+  - System.Collections.Generic.IEnumerable{Microsoft.Health.Caching.IDemandLoadable}.GetEnumerator
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Caching.Refresher.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:Microsoft.Health.Caching.Refresher.System#Collections#IEnumerable#GetEnumerator
+  id: System#Collections#IEnumerable#GetEnumerator
+  isEii: true
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: IEnumerable.GetEnumerator()
+  nameWithType: Refresher.IEnumerable.GetEnumerator()
+  fullName: Microsoft.Health.Caching.Refresher.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: System.Collections.IEnumerable.GetEnumerator
+    path: search/Cache/Refresher.cs
+    startLine: 279
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  syntax:
+    content: IEnumerator IEnumerable.GetEnumerator()
+    content.vb: Function System.Collections.IEnumerable.GetEnumerator As IEnumerator Implements IEnumerable.GetEnumerator
+    return:
+      type: System.Collections.IEnumerator
+  overload: Microsoft.Health.Caching.Refresher.System#Collections#IEnumerable#GetEnumerator*
+  implements:
+  - System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: Refresher.System.Collections.IEnumerable.GetEnumerator()
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+- uid: Microsoft.Health.Caching.Refresher.m_timer
+  commentId: F:Microsoft.Health.Caching.Refresher.m_timer
+  id: m_timer
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: m_timer
+  nameWithType: Refresher.m_timer
+  fullName: Microsoft.Health.Caching.Refresher.m_timer
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: m_timer
+    path: search/Cache/Refresher.cs
+    startLine: 289
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected Timer m_timer
+    content.vb: Protected m_timer As Timer
+    return:
+      type: System.Timers.Timer
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: Microsoft.Health.Caching.Refresher.m_refreshList
+  commentId: F:Microsoft.Health.Caching.Refresher.m_refreshList
+  id: m_refreshList
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: m_refreshList
+  nameWithType: Refresher.m_refreshList
+  fullName: Microsoft.Health.Caching.Refresher.m_refreshList
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: m_refreshList
+    path: search/Cache/Refresher.cs
+    startLine: 294
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected List<IDemandLoadable> m_refreshList
+    content.vb: Protected m_refreshList As List(Of IDemandLoadable)
+    return:
+      type: System.Collections.Generic.List{Microsoft.Health.Caching.IDemandLoadable}
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: Microsoft.Health.Caching.Refresher.m_inRefresh
+  commentId: F:Microsoft.Health.Caching.Refresher.m_inRefresh
+  id: m_inRefresh
+  parent: Microsoft.Health.Caching.Refresher
+  langs:
+  - csharp
+  - vb
+  name: m_inRefresh
+  nameWithType: Refresher.m_inRefresh
+  fullName: Microsoft.Health.Caching.Refresher.m_inRefresh
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/Cache/Refresher.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: m_inRefresh
+    path: search/Cache/Refresher.cs
+    startLine: 299
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Caching
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected int m_inRefresh
+    content.vb: Protected m_inRefresh As Integer
+    return:
+      type: System.Int32
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: Microsoft.Health.Caching
+  commentId: N:Microsoft.Health.Caching
+  isExternal: false
+  name: Microsoft.Health.Caching
+  nameWithType: Microsoft.Health.Caching
+  fullName: Microsoft.Health.Caching
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Collections.Generic.IEnumerable{Microsoft.Health.Caching.IDemandLoadable}
+  commentId: T:System.Collections.Generic.IEnumerable{Microsoft.Health.Caching.IDemandLoadable}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<IDemandLoadable>
+  nameWithType: IEnumerable<IDemandLoadable>
+  fullName: System.Collections.Generic.IEnumerable<Microsoft.Health.Caching.IDemandLoadable>
+  nameWithType.vb: IEnumerable(Of IDemandLoadable)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Microsoft.Health.Caching.IDemandLoadable)
+  name.vb: IEnumerable(Of IDemandLoadable)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.Caching.IDemandLoadable
+    name: IDemandLoadable
+    nameWithType: IDemandLoadable
+    fullName: Microsoft.Health.Caching.IDemandLoadable
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.Caching.IDemandLoadable
+    name: IDemandLoadable
+    nameWithType: IDemandLoadable
+    fullName: Microsoft.Health.Caching.IDemandLoadable
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  name: SetProperty(String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object())
+  name.vb: SetProperty(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  name: InvokeMethod(String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object())
+  name.vb: InvokeMethod(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  parent: Microsoft.Health.Utility.InvariantString
+  definition: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  name: ToStringInvariant()
+  nameWithType: InvariantString.ToStringInvariant()
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.Refresher.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  parent: Microsoft.Health.Utility.TypeHelper
+  definition: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  name: ValueOrDbNull<Refresher>()
+  nameWithType: TypeHelper.ValueOrDbNull<Refresher>()
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.Caching.Refresher>()
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of Refresher)()
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.Caching.Refresher)()
+  name.vb: ValueOrDbNull(Of Refresher)()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull<Refresher>
+    nameWithType: TypeHelper.ValueOrDbNull<Refresher>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.Caching.Refresher>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull(Of Refresher)
+    nameWithType: TypeHelper.ValueOrDbNull(Of Refresher)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.Caching.Refresher)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  parent: Microsoft.Health.Utility.WCXmlHelper
+  definition: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  name: ToXml()
+  nameWithType: WCXmlHelper.ToXml()
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: false
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+- uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: SetProperty(Object, String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object())
+  name.vb: SetProperty(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions
+  commentId: T:Microsoft.Health.Utility.IDispatchExtensions
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: IDispatchExtensions
+  nameWithType: IDispatchExtensions
+  fullName: Microsoft.Health.Utility.IDispatchExtensions
+- uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: InvokeMethod(Object, String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object())
+  name.vb: InvokeMethod(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  isExternal: true
+  name: ToStringInvariant(Object)
+  nameWithType: InvariantString.ToStringInvariant(Object)
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString
+  commentId: T:Microsoft.Health.Utility.InvariantString
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: InvariantString
+  nameWithType: InvariantString
+  fullName: Microsoft.Health.Utility.InvariantString
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  isExternal: false
+  name: ValueOrDbNull<T>(T)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(T)
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(T)
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(T)
+  name.vb: ValueOrDbNull(Of T)(T)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull<T>
+    nameWithType: TypeHelper.ValueOrDbNull<T>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull(Of T)
+    nameWithType: TypeHelper.ValueOrDbNull(Of T)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+- uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  isExternal: true
+  name: ToXml(Object)
+  nameWithType: WCXmlHelper.ToXml(Object)
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.WCXmlHelper
+  commentId: T:Microsoft.Health.Utility.WCXmlHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: WCXmlHelper
+  nameWithType: WCXmlHelper
+  fullName: Microsoft.Health.Utility.WCXmlHelper
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: Microsoft.Health.Caching.Refresher.#ctor*
+  commentId: Overload:Microsoft.Health.Caching.Refresher.#ctor
+  isExternal: false
+  name: Refresher
+  nameWithType: Refresher.Refresher
+  fullName: Microsoft.Health.Caching.Refresher.Refresher
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Timers.Timer
+  commentId: T:System.Timers.Timer
+  parent: System.Timers
+  isExternal: true
+  name: Timer
+  nameWithType: Timer
+  fullName: System.Timers.Timer
+- uid: System.Timers
+  commentId: N:System.Timers
+  isExternal: false
+  name: System.Timers
+  nameWithType: System.Timers
+  fullName: System.Timers
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Microsoft.Health.Caching.Refresher.Interval*
+  commentId: Overload:Microsoft.Health.Caching.Refresher.Interval
+  isExternal: false
+  name: Interval
+  nameWithType: Refresher.Interval
+  fullName: Microsoft.Health.Caching.Refresher.Interval
+- uid: Microsoft.Health.Caching.Refresher.Add*
+  commentId: Overload:Microsoft.Health.Caching.Refresher.Add
+  isExternal: false
+  name: Add
+  nameWithType: Refresher.Add
+  fullName: Microsoft.Health.Caching.Refresher.Add
+- uid: Microsoft.Health.Caching.IDemandLoadable
+  commentId: T:Microsoft.Health.Caching.IDemandLoadable
+  parent: Microsoft.Health.Caching
+  isExternal: false
+  name: IDemandLoadable
+  nameWithType: IDemandLoadable
+  fullName: Microsoft.Health.Caching.IDemandLoadable
+- uid: Microsoft.Health.Caching.Refresher.Remove*
+  commentId: Overload:Microsoft.Health.Caching.Refresher.Remove
+  isExternal: false
+  name: Remove
+  nameWithType: Refresher.Remove
+  fullName: Microsoft.Health.Caching.Refresher.Remove
+- uid: Microsoft.Health.Caching.Refresher.Clear*
+  commentId: Overload:Microsoft.Health.Caching.Refresher.Clear
+  isExternal: false
+  name: Clear
+  nameWithType: Refresher.Clear
+  fullName: Microsoft.Health.Caching.Refresher.Clear
+- uid: Microsoft.Health.Caching.Refresher.Start*
+  commentId: Overload:Microsoft.Health.Caching.Refresher.Start
+  isExternal: false
+  name: Start
+  nameWithType: Refresher.Start
+  fullName: Microsoft.Health.Caching.Refresher.Start
+- uid: Microsoft.Health.Caching.Refresher.Stop*
+  commentId: Overload:Microsoft.Health.Caching.Refresher.Stop
+  isExternal: false
+  name: Stop
+  nameWithType: Refresher.Stop
+  fullName: Microsoft.Health.Caching.Refresher.Stop
+- uid: Microsoft.Health.Caching.Refresher.Dispose*
+  commentId: Overload:Microsoft.Health.Caching.Refresher.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: Refresher.Dispose
+  fullName: Microsoft.Health.Caching.Refresher.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.Refresher.Refresh*
+  commentId: Overload:Microsoft.Health.Caching.Refresher.Refresh
+  isExternal: false
+  name: Refresh
+  nameWithType: Refresher.Refresh
+  fullName: Microsoft.Health.Caching.Refresher.Refresh
+- uid: Microsoft.Health.Caching.Refresher.OnStartLoad*
+  commentId: Overload:Microsoft.Health.Caching.Refresher.OnStartLoad
+  isExternal: false
+  name: OnStartLoad
+  nameWithType: Refresher.OnStartLoad
+  fullName: Microsoft.Health.Caching.Refresher.OnStartLoad
+- uid: Microsoft.Health.Caching.Refresher.OnError*
+  commentId: Overload:Microsoft.Health.Caching.Refresher.OnError
+  isExternal: false
+  name: OnError
+  nameWithType: Refresher.OnError
+  fullName: Microsoft.Health.Caching.Refresher.OnError
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: Microsoft.Health.Caching.Refresher.OnEndLoad*
+  commentId: Overload:Microsoft.Health.Caching.Refresher.OnEndLoad
+  isExternal: false
+  name: OnEndLoad
+  nameWithType: Refresher.OnEndLoad
+  fullName: Microsoft.Health.Caching.Refresher.OnEndLoad
+- uid: Microsoft.Health.Caching.Refresher.GetEnumerator*
+  commentId: Overload:Microsoft.Health.Caching.Refresher.GetEnumerator
+  isExternal: false
+  name: GetEnumerator
+  nameWithType: Refresher.GetEnumerator
+  fullName: Microsoft.Health.Caching.Refresher.GetEnumerator
+- uid: System.Collections.Generic.IEnumerable{Microsoft.Health.Caching.IDemandLoadable}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{Microsoft.Health.Caching.IDemandLoadable}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{Microsoft.Health.Caching.IDemandLoadable}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<IDemandLoadable>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<Microsoft.Health.Caching.IDemandLoadable>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of IDemandLoadable).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Microsoft.Health.Caching.IDemandLoadable).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<IDemandLoadable>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<Microsoft.Health.Caching.IDemandLoadable>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of IDemandLoadable).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of Microsoft.Health.Caching.IDemandLoadable).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator{Microsoft.Health.Caching.IDemandLoadable}
+  commentId: T:System.Collections.Generic.IEnumerator{Microsoft.Health.Caching.IDemandLoadable}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  name: IEnumerator<IDemandLoadable>
+  nameWithType: IEnumerator<IDemandLoadable>
+  fullName: System.Collections.Generic.IEnumerator<Microsoft.Health.Caching.IDemandLoadable>
+  nameWithType.vb: IEnumerator(Of IDemandLoadable)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of Microsoft.Health.Caching.IDemandLoadable)
+  name.vb: IEnumerator(Of IDemandLoadable)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.Caching.IDemandLoadable
+    name: IDemandLoadable
+    nameWithType: IDemandLoadable
+    fullName: Microsoft.Health.Caching.IDemandLoadable
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.Caching.IDemandLoadable
+    name: IDemandLoadable
+    nameWithType: IDemandLoadable
+    fullName: Microsoft.Health.Caching.IDemandLoadable
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<T>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of T).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of T).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Caching.Refresher.System#Collections#IEnumerable#GetEnumerator*
+  commentId: Overload:Microsoft.Health.Caching.Refresher.System#Collections#IEnumerable#GetEnumerator
+  isExternal: false
+  name: IEnumerable.GetEnumerator
+  nameWithType: Refresher.IEnumerable.GetEnumerator
+  fullName: Microsoft.Health.Caching.Refresher.System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: Refresher.System.Collections.IEnumerable.GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+- uid: System.Collections.IEnumerable.GetEnumerator
+  commentId: M:System.Collections.IEnumerable.GetEnumerator
+  parent: System.Collections.IEnumerable
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable.GetEnumerator()
+  fullName: System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator
+- uid: System.Collections.Generic.List{Microsoft.Health.Caching.IDemandLoadable}
+  commentId: T:System.Collections.Generic.List{Microsoft.Health.Caching.IDemandLoadable}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IDemandLoadable>
+  nameWithType: List<IDemandLoadable>
+  fullName: System.Collections.Generic.List<Microsoft.Health.Caching.IDemandLoadable>
+  nameWithType.vb: List(Of IDemandLoadable)
+  fullName.vb: System.Collections.Generic.List(Of Microsoft.Health.Caching.IDemandLoadable)
+  name.vb: List(Of IDemandLoadable)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.Caching.IDemandLoadable
+    name: IDemandLoadable
+    nameWithType: IDemandLoadable
+    fullName: Microsoft.Health.Caching.IDemandLoadable
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.Caching.IDemandLoadable
+    name: IDemandLoadable
+    nameWithType: IDemandLoadable
+    fullName: Microsoft.Health.Caching.IDemandLoadable
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

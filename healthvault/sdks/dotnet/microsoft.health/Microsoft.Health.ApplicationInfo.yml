@@ -1,0 +1,2487 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.ApplicationInfo
+  commentId: T:Microsoft.Health.ApplicationInfo
+  id: ApplicationInfo
+  parent: Microsoft.Health
+  children:
+  - Microsoft.Health.ApplicationInfo.#ctor
+  - Microsoft.Health.ApplicationInfo.#ctor(System.String,System.Collections.Generic.IList{System.Byte[]})
+  - Microsoft.Health.ApplicationInfo.ActionUrl
+  - Microsoft.Health.ApplicationInfo.ApplicationAttributes
+  - Microsoft.Health.ApplicationInfo.AuthorizationReason
+  - Microsoft.Health.ApplicationInfo.CallableMethods
+  - Microsoft.Health.ApplicationInfo.ChildVocabularyAuthorizationsCeiling
+  - Microsoft.Health.ApplicationInfo.ClientServiceToken
+  - Microsoft.Health.ApplicationInfo.ConfigurationOptions
+  - Microsoft.Health.ApplicationInfo.CultureSpecificAuthorizationReasons
+  - Microsoft.Health.ApplicationInfo.CultureSpecificDescriptions
+  - Microsoft.Health.ApplicationInfo.CultureSpecificNames
+  - Microsoft.Health.ApplicationInfo.Description
+  - Microsoft.Health.ApplicationInfo.DomainName
+  - Microsoft.Health.ApplicationInfo.DtcSuccessMessage
+  - Microsoft.Health.ApplicationInfo.ExpectedApplicationAttributes
+  - Microsoft.Health.ApplicationInfo.Id
+  - Microsoft.Health.ApplicationInfo.LargeLogo
+  - Microsoft.Health.ApplicationInfo.MeaningfulUseSources
+  - Microsoft.Health.ApplicationInfo.Name
+  - Microsoft.Health.ApplicationInfo.OfflineBaseAuthorizations
+  - Microsoft.Health.ApplicationInfo.OnlineBaseAuthorizations
+  - Microsoft.Health.ApplicationInfo.PersistentTokenTtlInSeconds
+  - Microsoft.Health.ApplicationInfo.PrivacyStatement
+  - Microsoft.Health.ApplicationInfo.PublicKeys
+  - Microsoft.Health.ApplicationInfo.SmallLogo
+  - Microsoft.Health.ApplicationInfo.SupportAllHealthVaultInstances
+  - Microsoft.Health.ApplicationInfo.SupportedHealthVaultInstances
+  - Microsoft.Health.ApplicationInfo.SupportedRecordLocations
+  - Microsoft.Health.ApplicationInfo.TermsOfUse
+  - Microsoft.Health.ApplicationInfo.Update(Microsoft.Health.ApplicationConnection)
+  - Microsoft.Health.ApplicationInfo.ValidIPPrefixes
+  - Microsoft.Health.ApplicationInfo.VocabularyAuthorizations
+  langs:
+  - csharp
+  - vb
+  name: ApplicationInfo
+  nameWithType: ApplicationInfo
+  fullName: Microsoft.Health.ApplicationInfo
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ApplicationInfo
+    path: ApplicationInfo.cs
+    startLine: 20
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nDefines the configuration for a HealthVault application.\n"
+  example: []
+  syntax:
+    content: public class ApplicationInfo
+    content.vb: Public Class ApplicationInfo
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.ApplicationInfo.#ctor
+  commentId: M:Microsoft.Health.ApplicationInfo.#ctor
+  id: '#ctor'
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: ApplicationInfo()
+  nameWithType: ApplicationInfo.ApplicationInfo()
+  fullName: Microsoft.Health.ApplicationInfo.ApplicationInfo()
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ApplicationInfo.cs
+    startLine: 26
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nConstructs an <xref href=\"Microsoft.Health.ApplicationInfo\" data-throw-if-not-resolved=\"false\"></xref> instance with default values.\n"
+  example: []
+  syntax:
+    content: public ApplicationInfo()
+    content.vb: Public Sub New
+  overload: Microsoft.Health.ApplicationInfo.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.#ctor(System.String,System.Collections.Generic.IList{System.Byte[]})
+  commentId: M:Microsoft.Health.ApplicationInfo.#ctor(System.String,System.Collections.Generic.IList{System.Byte[]})
+  id: '#ctor(System.String,System.Collections.Generic.IList{System.Byte[]})'
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: ApplicationInfo(String, IList<Byte[]>)
+  nameWithType: ApplicationInfo.ApplicationInfo(String, IList<Byte[]>)
+  fullName: Microsoft.Health.ApplicationInfo.ApplicationInfo(System.String, System.Collections.Generic.IList<System.Byte[]>)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ApplicationInfo.cs
+    startLine: 51
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nConstructs an <xref href=\"Microsoft.Health.ApplicationInfo\" data-throw-if-not-resolved=\"false\"></xref> instance with the specified application\nname and public keys.\n"
+  example: []
+  syntax:
+    content: public ApplicationInfo(string name, IList<byte[]> publicKeys)
+    content.vb: Public Sub New(name As String, publicKeys As IList(Of Byte()))
+    parameters:
+    - id: name
+      type: System.String
+      description: "\nThe name of the application.\n"
+    - id: publicKeys
+      type: System.Collections.Generic.IList{System.Byte[]}
+      description: "\nThe public key(s) used to uniquely and positively identify the application to the\nHealthVault service. The application signs it's first request to HealthVault using it's\napplication private which matches the public key being passed here. When HealthVault\nreceives that request it validates the signature using the public key.\n"
+  overload: Microsoft.Health.ApplicationInfo.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">publicKeys</span> is <strong>null</strong> or empty.\nIf <span class=\"paramref\">name</span> is <strong>null</strong> or empty.\n"
+  nameWithType.vb: ApplicationInfo.ApplicationInfo(String, IList(Of Byte()))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.ApplicationInfo.ApplicationInfo(System.String, System.Collections.Generic.IList(Of System.Byte()))
+  name.vb: ApplicationInfo(String, IList(Of Byte()))
+- uid: Microsoft.Health.ApplicationInfo.Update(Microsoft.Health.ApplicationConnection)
+  commentId: M:Microsoft.Health.ApplicationInfo.Update(Microsoft.Health.ApplicationConnection)
+  id: Update(Microsoft.Health.ApplicationConnection)
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: Update(ApplicationConnection)
+  nameWithType: ApplicationInfo.Update(ApplicationConnection)
+  fullName: Microsoft.Health.ApplicationInfo.Update(Microsoft.Health.ApplicationConnection)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Update
+    path: ApplicationInfo.cs
+    startLine: 263
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nUpdates the application's configuration in HealthVault.\n"
+  remarks: "\nThis method makes a remote call to the HealthVault service.\nThe calling application in the <span class=\"paramref\">connection</span> must be the same as\nthe application specified by this ApplicationInfo instance or its master application.\nNote, this update will replace all configuration elements for the application. It is \nadvised that <xref href=\"Microsoft.Health.ApplicationProvisioning.Provisioner.GetApplication(Microsoft.Health.Web.OfflineWebApplicationConnection%2cSystem.Guid)\" data-throw-if-not-resolved=\"false\"></xref> is \ncalled to retrieve the existing application configuration before changing values and \ncalling Update.\n"
+  example: []
+  syntax:
+    content: public void Update(ApplicationConnection connection)
+    content.vb: Public Sub Update(connection As ApplicationConnection)
+    parameters:
+    - id: connection
+      type: Microsoft.Health.ApplicationConnection
+      description: "\nThe connection to use to call HealthVault.\n"
+  overload: Microsoft.Health.ApplicationInfo.Update*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nIf <span class=\"paramref\">connection</span> is <strong>null</strong>.\n"
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: "\nIf <xref href=\"Microsoft.Health.ApplicationInfo.Id\" data-throw-if-not-resolved=\"false\"></xref> is <xref href=\"System.Guid.Empty\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  - type: Microsoft.Health.HealthServiceException
+    commentId: T:Microsoft.Health.HealthServiceException
+    description: "\nThe HealthVault service returned an error.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.Id
+  commentId: P:Microsoft.Health.ApplicationInfo.Id
+  id: Id
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: ApplicationInfo.Id
+  fullName: Microsoft.Health.ApplicationInfo.Id
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Id
+    path: ApplicationInfo.cs
+    startLine: 475
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the application id.\n"
+  remarks: "\nOn retrieving an application this value will be set to the application id.\nWhen creating or updating an application, this value is ignored.\n"
+  example: []
+  syntax:
+    content: public Guid Id { get; set; }
+    content.vb: Public Property Id As Guid
+    parameters: []
+    return:
+      type: System.Guid
+  overload: Microsoft.Health.ApplicationInfo.Id*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.Name
+  commentId: P:Microsoft.Health.ApplicationInfo.Name
+  id: Name
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ApplicationInfo.Name
+  fullName: Microsoft.Health.ApplicationInfo.Name
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Name
+    path: ApplicationInfo.cs
+    startLine: 491
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the name of the application.\n"
+  remarks: "\nOn updating an application configuration the name will only be updated if it\nis not null.\n"
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    content.vb: Public Property Name As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.ApplicationInfo.Name*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.CultureSpecificNames
+  commentId: P:Microsoft.Health.ApplicationInfo.CultureSpecificNames
+  id: CultureSpecificNames
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: CultureSpecificNames
+  nameWithType: ApplicationInfo.CultureSpecificNames
+  fullName: Microsoft.Health.ApplicationInfo.CultureSpecificNames
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CultureSpecificNames
+    path: ApplicationInfo.cs
+    startLine: 506
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets a dictionary of language specifiers and localized names of the application.\n"
+  example: []
+  syntax:
+    content: public CultureSpecificStringDictionary CultureSpecificNames { get; }
+    content.vb: Public ReadOnly Property CultureSpecificNames As CultureSpecificStringDictionary
+    parameters: []
+    return:
+      type: Microsoft.Health.CultureSpecificStringDictionary
+  overload: Microsoft.Health.ApplicationInfo.CultureSpecificNames*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ApplicationInfo.PublicKeys
+  commentId: P:Microsoft.Health.ApplicationInfo.PublicKeys
+  id: PublicKeys
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: PublicKeys
+  nameWithType: ApplicationInfo.PublicKeys
+  fullName: Microsoft.Health.ApplicationInfo.PublicKeys
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: PublicKeys
+    path: ApplicationInfo.cs
+    startLine: 526
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets a collection of the public keys for the application.\n"
+  remarks: "\nThe public key(s) are used to uniquely and positively identify the application to the\nHealthVault service. The application signs its first request to HealthVault using its\napplication private which matches the public key being passed here. When HealthVault\nreceives that request it validates the signature using the public key.\n\nOn updating an application configuration the public key(s) will only be updated if the\ncollection is not empty.\n"
+  example: []
+  syntax:
+    content: public Collection<byte[]> PublicKeys { get; }
+    content.vb: Public ReadOnly Property PublicKeys As Collection(Of Byte())
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{System.Byte[]}
+  overload: Microsoft.Health.ApplicationInfo.PublicKeys*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ApplicationInfo.OnlineBaseAuthorizations
+  commentId: P:Microsoft.Health.ApplicationInfo.OnlineBaseAuthorizations
+  id: OnlineBaseAuthorizations
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: OnlineBaseAuthorizations
+  nameWithType: ApplicationInfo.OnlineBaseAuthorizations
+  fullName: Microsoft.Health.ApplicationInfo.OnlineBaseAuthorizations
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: OnlineBaseAuthorizations
+    path: ApplicationInfo.cs
+    startLine: 544
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets a collection of the online base authorization rules for the application.\n"
+  remarks: "\nThe online base authorization rules represent the set of data that the application\ncan access when a user is logged on.\n\nOn updating an application configuration the online base authorization rules will only \nbe updated if the collection is not empty.\n"
+  example: []
+  syntax:
+    content: public Collection<AuthorizationRule> OnlineBaseAuthorizations { get; }
+    content.vb: Public ReadOnly Property OnlineBaseAuthorizations As Collection(Of AuthorizationRule)
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{Microsoft.Health.AuthorizationRule}
+  overload: Microsoft.Health.ApplicationInfo.OnlineBaseAuthorizations*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ApplicationInfo.OfflineBaseAuthorizations
+  commentId: P:Microsoft.Health.ApplicationInfo.OfflineBaseAuthorizations
+  id: OfflineBaseAuthorizations
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: OfflineBaseAuthorizations
+  nameWithType: ApplicationInfo.OfflineBaseAuthorizations
+  fullName: Microsoft.Health.ApplicationInfo.OfflineBaseAuthorizations
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: OfflineBaseAuthorizations
+    path: ApplicationInfo.cs
+    startLine: 563
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets a collection of the offline base authorization rules for the application.\n"
+  remarks: "\nThe offline base authorization rules represent the set of data that the application\ncan access when a user is not logged on.\n\nOn updating an application configuration the offline base authorization rules will only \nbe updated if the collection is not empty.\n"
+  example: []
+  syntax:
+    content: public Collection<AuthorizationRule> OfflineBaseAuthorizations { get; }
+    content.vb: Public ReadOnly Property OfflineBaseAuthorizations As Collection(Of AuthorizationRule)
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{Microsoft.Health.AuthorizationRule}
+  overload: Microsoft.Health.ApplicationInfo.OfflineBaseAuthorizations*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ApplicationInfo.CallableMethods
+  commentId: P:Microsoft.Health.ApplicationInfo.CallableMethods
+  id: CallableMethods
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: CallableMethods
+  nameWithType: ApplicationInfo.CallableMethods
+  fullName: Microsoft.Health.ApplicationInfo.CallableMethods
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CallableMethods
+    path: ApplicationInfo.cs
+    startLine: 579
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets a collection of the HealthVault methods the application can call.\n"
+  remarks: "\nOn updating an application configuration the callable methods will only \nbe updated if the collection is not empty.\n"
+  example: []
+  syntax:
+    content: public Collection<HealthVaultMethods> CallableMethods { get; }
+    content.vb: Public ReadOnly Property CallableMethods As Collection(Of HealthVaultMethods)
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{Microsoft.Health.HealthVaultMethods}
+  overload: Microsoft.Health.ApplicationInfo.CallableMethods*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ApplicationInfo.VocabularyAuthorizations
+  commentId: P:Microsoft.Health.ApplicationInfo.VocabularyAuthorizations
+  id: VocabularyAuthorizations
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: VocabularyAuthorizations
+  nameWithType: ApplicationInfo.VocabularyAuthorizations
+  fullName: Microsoft.Health.ApplicationInfo.VocabularyAuthorizations
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: VocabularyAuthorizations
+    path: ApplicationInfo.cs
+    startLine: 591
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets a collection of authorizations to HealthVault vocabularies, that the application\nhas access to.\n"
+  example: []
+  syntax:
+    content: public Collection<VocabularyAuthorization> VocabularyAuthorizations { get; }
+    content.vb: Public ReadOnly Property VocabularyAuthorizations As Collection(Of VocabularyAuthorization)
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{Microsoft.Health.VocabularyAuthorization}
+  overload: Microsoft.Health.ApplicationInfo.VocabularyAuthorizations*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ApplicationInfo.ChildVocabularyAuthorizationsCeiling
+  commentId: P:Microsoft.Health.ApplicationInfo.ChildVocabularyAuthorizationsCeiling
+  id: ChildVocabularyAuthorizationsCeiling
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: ChildVocabularyAuthorizationsCeiling
+  nameWithType: ApplicationInfo.ChildVocabularyAuthorizationsCeiling
+  fullName: Microsoft.Health.ApplicationInfo.ChildVocabularyAuthorizationsCeiling
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ChildVocabularyAuthorizationsCeiling
+    path: ApplicationInfo.cs
+    startLine: 603
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets a collection of authorizations to HealthVault vocabularies. This represents the\nmaximum authorization set that the application can grant to its child applications.\n"
+  example: []
+  syntax:
+    content: public Collection<VocabularyAuthorization> ChildVocabularyAuthorizationsCeiling { get; }
+    content.vb: Public ReadOnly Property ChildVocabularyAuthorizationsCeiling As Collection(Of VocabularyAuthorization)
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{Microsoft.Health.VocabularyAuthorization}
+  overload: Microsoft.Health.ApplicationInfo.ChildVocabularyAuthorizationsCeiling*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ApplicationInfo.ActionUrl
+  commentId: P:Microsoft.Health.ApplicationInfo.ActionUrl
+  id: ActionUrl
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: ActionUrl
+  nameWithType: ApplicationInfo.ActionUrl
+  fullName: Microsoft.Health.ApplicationInfo.ActionUrl
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ActionUrl
+    path: ApplicationInfo.cs
+    startLine: 624
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the action URL for the application.\n"
+  remarks: "\nThe action URL is the single point of re-entry to the application from the HealthVault\nShell. The implementation of the action URL must use the query string parameters to \ndetermine what the correct page is to show the user. See \nMicrosoft.Health.Web.HealthServiceActionPage for more information.\n\nOn updating an application configuration the action URL will only \nbe updated if the value is not null.\n"
+  example: []
+  syntax:
+    content: public Uri ActionUrl { get; set; }
+    content.vb: Public Property ActionUrl As Uri
+    parameters: []
+    return:
+      type: System.Uri
+  overload: Microsoft.Health.ApplicationInfo.ActionUrl*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.Description
+  commentId: P:Microsoft.Health.ApplicationInfo.Description
+  id: Description
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: ApplicationInfo.Description
+  fullName: Microsoft.Health.ApplicationInfo.Description
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Description
+    path: ApplicationInfo.cs
+    startLine: 641
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets a description of the application which is shown to the user when\nauthorizing the application to their record.\n"
+  remarks: "\nOn updating an application configuration the description will only \nbe updated if the value is not null.\n"
+  example: []
+  syntax:
+    content: public string Description { get; set; }
+    content.vb: Public Property Description As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.ApplicationInfo.Description*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.CultureSpecificDescriptions
+  commentId: P:Microsoft.Health.ApplicationInfo.CultureSpecificDescriptions
+  id: CultureSpecificDescriptions
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: CultureSpecificDescriptions
+  nameWithType: ApplicationInfo.CultureSpecificDescriptions
+  fullName: Microsoft.Health.ApplicationInfo.CultureSpecificDescriptions
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CultureSpecificDescriptions
+    path: ApplicationInfo.cs
+    startLine: 656
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nDictionary of language specifiers and localized descriptions of the application.\n"
+  example: []
+  syntax:
+    content: public CultureSpecificStringDictionary CultureSpecificDescriptions { get; }
+    content.vb: Public ReadOnly Property CultureSpecificDescriptions As CultureSpecificStringDictionary
+    parameters: []
+    return:
+      type: Microsoft.Health.CultureSpecificStringDictionary
+  overload: Microsoft.Health.ApplicationInfo.CultureSpecificDescriptions*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ApplicationInfo.AuthorizationReason
+  commentId: P:Microsoft.Health.ApplicationInfo.AuthorizationReason
+  id: AuthorizationReason
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: AuthorizationReason
+  nameWithType: ApplicationInfo.AuthorizationReason
+  fullName: Microsoft.Health.ApplicationInfo.AuthorizationReason
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: AuthorizationReason
+    path: ApplicationInfo.cs
+    startLine: 676
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the reason the application requires the base online and offline \nauthorization rules it is requesting.\n"
+  remarks: "\nThe authorization reason is shown to the user when they are authorizing the application\nto use their health record.\n\nOn updating an application configuration the authorization reason will only \nbe updated if the value is not null.\n"
+  example: []
+  syntax:
+    content: public string AuthorizationReason { get; set; }
+    content.vb: Public Property AuthorizationReason As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.ApplicationInfo.AuthorizationReason*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.CultureSpecificAuthorizationReasons
+  commentId: P:Microsoft.Health.ApplicationInfo.CultureSpecificAuthorizationReasons
+  id: CultureSpecificAuthorizationReasons
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: CultureSpecificAuthorizationReasons
+  nameWithType: ApplicationInfo.CultureSpecificAuthorizationReasons
+  fullName: Microsoft.Health.ApplicationInfo.CultureSpecificAuthorizationReasons
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CultureSpecificAuthorizationReasons
+    path: ApplicationInfo.cs
+    startLine: 692
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nDictionary of language specifiers and localized authorization reasons of the \napplication.\n"
+  example: []
+  syntax:
+    content: public CultureSpecificStringDictionary CultureSpecificAuthorizationReasons { get; }
+    content.vb: Public ReadOnly Property CultureSpecificAuthorizationReasons As CultureSpecificStringDictionary
+    parameters: []
+    return:
+      type: Microsoft.Health.CultureSpecificStringDictionary
+  overload: Microsoft.Health.ApplicationInfo.CultureSpecificAuthorizationReasons*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ApplicationInfo.DomainName
+  commentId: P:Microsoft.Health.ApplicationInfo.DomainName
+  id: DomainName
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: DomainName
+  nameWithType: ApplicationInfo.DomainName
+  fullName: Microsoft.Health.ApplicationInfo.DomainName
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: DomainName
+    path: ApplicationInfo.cs
+    startLine: 714
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the domain name for the application.\n"
+  remarks: "\nThe domain name is used when the application calls \nApplicationConnection.SendInsecureMessageFromApplication along with the\nspecified mailbox as the sending party. For example, if the domain name of the application\nis \"microsoft.com\" and the mailbox is \"example\", then the user will get an email from\n\"example@microsoft.com\".\n\nOn updating an application configuration the domain name will only \nbe updated if the value is not null.\n"
+  example: []
+  syntax:
+    content: public string DomainName { get; set; }
+    content.vb: Public Property DomainName As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.ApplicationInfo.DomainName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.LargeLogo
+  commentId: P:Microsoft.Health.ApplicationInfo.LargeLogo
+  id: LargeLogo
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: LargeLogo
+  nameWithType: ApplicationInfo.LargeLogo
+  fullName: Microsoft.Health.ApplicationInfo.LargeLogo
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: LargeLogo
+    path: ApplicationInfo.cs
+    startLine: 734
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the large logo for the application.\n"
+  remarks: "\nThe large logo is shown at various times to the user when interacting with the\nHealthVault Shell. The large logo must be 120x60 pixels or smaller, and is limited \nto 160kb in size.\n\nOn updating an application configuration the large logo will only \nbe updated if the value is not null.\n"
+  example: []
+  syntax:
+    content: public ApplicationBinaryConfiguration LargeLogo { get; set; }
+    content.vb: Public Property LargeLogo As ApplicationBinaryConfiguration
+    parameters: []
+    return:
+      type: Microsoft.Health.ApplicationBinaryConfiguration
+  overload: Microsoft.Health.ApplicationInfo.LargeLogo*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.SmallLogo
+  commentId: P:Microsoft.Health.ApplicationInfo.SmallLogo
+  id: SmallLogo
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: SmallLogo
+  nameWithType: ApplicationInfo.SmallLogo
+  fullName: Microsoft.Health.ApplicationInfo.SmallLogo
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: SmallLogo
+    path: ApplicationInfo.cs
+    startLine: 753
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the small logo for the application.\n"
+  remarks: "\nThe small logo is shown at various times to the user when interacting with the\nHealthVault Shell. The small logo is limited to 40kb in size.\n\nOn updating an application configuration the small logo will only \nbe updated if the value is not null.\n"
+  example: []
+  syntax:
+    content: public ApplicationBinaryConfiguration SmallLogo { get; set; }
+    content.vb: Public Property SmallLogo As ApplicationBinaryConfiguration
+    parameters: []
+    return:
+      type: Microsoft.Health.ApplicationBinaryConfiguration
+  overload: Microsoft.Health.ApplicationInfo.SmallLogo*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.PrivacyStatement
+  commentId: P:Microsoft.Health.ApplicationInfo.PrivacyStatement
+  id: PrivacyStatement
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: PrivacyStatement
+  nameWithType: ApplicationInfo.PrivacyStatement
+  fullName: Microsoft.Health.ApplicationInfo.PrivacyStatement
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: PrivacyStatement
+    path: ApplicationInfo.cs
+    startLine: 771
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the application's privacy statement.\n"
+  remarks: "\nA link is provided from the HealthVault Shell to the application's privacy statement.\n\nOn updating an application configuration the privacy statement will only \nbe updated if the value is not null.\n"
+  example: []
+  syntax:
+    content: public ApplicationBinaryConfiguration PrivacyStatement { get; set; }
+    content.vb: Public Property PrivacyStatement As ApplicationBinaryConfiguration
+    parameters: []
+    return:
+      type: Microsoft.Health.ApplicationBinaryConfiguration
+  overload: Microsoft.Health.ApplicationInfo.PrivacyStatement*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.TermsOfUse
+  commentId: P:Microsoft.Health.ApplicationInfo.TermsOfUse
+  id: TermsOfUse
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: TermsOfUse
+  nameWithType: ApplicationInfo.TermsOfUse
+  fullName: Microsoft.Health.ApplicationInfo.TermsOfUse
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: TermsOfUse
+    path: ApplicationInfo.cs
+    startLine: 789
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the application's terms of use.\n"
+  remarks: "\nA link is provided from the HealthVault Shell to the application's terms of use.\n\nOn updating an application configuration the terms of use will only \nbe updated if the value is not null.\n"
+  example: []
+  syntax:
+    content: public ApplicationBinaryConfiguration TermsOfUse { get; set; }
+    content.vb: Public Property TermsOfUse As ApplicationBinaryConfiguration
+    parameters: []
+    return:
+      type: Microsoft.Health.ApplicationBinaryConfiguration
+  overload: Microsoft.Health.ApplicationInfo.TermsOfUse*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.DtcSuccessMessage
+  commentId: P:Microsoft.Health.ApplicationInfo.DtcSuccessMessage
+  id: DtcSuccessMessage
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: DtcSuccessMessage
+  nameWithType: ApplicationInfo.DtcSuccessMessage
+  fullName: Microsoft.Health.ApplicationInfo.DtcSuccessMessage
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: DtcSuccessMessage
+    path: ApplicationInfo.cs
+    startLine: 805
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the application's Direct To Clinical success message.\n"
+  remarks: "\nOn updating an application configuration the dtc success message will only \nbe updated if the value is not null.\n"
+  example: []
+  syntax:
+    content: public ApplicationBinaryConfiguration DtcSuccessMessage { get; set; }
+    content.vb: Public Property DtcSuccessMessage As ApplicationBinaryConfiguration
+    parameters: []
+    return:
+      type: Microsoft.Health.ApplicationBinaryConfiguration
+  overload: Microsoft.Health.ApplicationInfo.DtcSuccessMessage*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.ApplicationAttributes
+  commentId: P:Microsoft.Health.ApplicationInfo.ApplicationAttributes
+  id: ApplicationAttributes
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: ApplicationAttributes
+  nameWithType: ApplicationInfo.ApplicationAttributes
+  fullName: Microsoft.Health.ApplicationInfo.ApplicationAttributes
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ApplicationAttributes
+    path: ApplicationInfo.cs
+    startLine: 820
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the application attributes.\n"
+  remarks: "\nSee <xref href=\"Microsoft.Health.ApplicationInfo.ExpectedApplicationAttributes\" data-throw-if-not-resolved=\"false\"></xref> for a list of expected values.\n"
+  example: []
+  syntax:
+    content: public Collection<string> ApplicationAttributes { get; }
+    content.vb: Public ReadOnly Property ApplicationAttributes As Collection(Of String)
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{System.String}
+  overload: Microsoft.Health.ApplicationInfo.ApplicationAttributes*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ApplicationInfo.ExpectedApplicationAttributes
+  commentId: F:Microsoft.Health.ApplicationInfo.ExpectedApplicationAttributes
+  id: ExpectedApplicationAttributes
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: ExpectedApplicationAttributes
+  nameWithType: ApplicationInfo.ExpectedApplicationAttributes
+  fullName: Microsoft.Health.ApplicationInfo.ExpectedApplicationAttributes
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ExpectedApplicationAttributes
+    path: ApplicationInfo.cs
+    startLine: 833
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nThe list of strings that are currently have meaning in\n<xref href=\"Microsoft.Health.ApplicationInfo.ApplicationAttributes\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: "\nMore expected values may be added at any time.\n"
+  example: []
+  syntax:
+    content: public static string[] ExpectedApplicationAttributes
+    content.vb: Public Shared ExpectedApplicationAttributes As String()
+    return:
+      type: System.String[]
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.ApplicationInfo.ConfigurationOptions
+  commentId: P:Microsoft.Health.ApplicationInfo.ConfigurationOptions
+  id: ConfigurationOptions
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationOptions
+  nameWithType: ApplicationInfo.ConfigurationOptions
+  fullName: Microsoft.Health.ApplicationInfo.ConfigurationOptions
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ConfigurationOptions
+    path: ApplicationInfo.cs
+    startLine: 848
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets various configuration options that applications can use.\n"
+  remarks: "\nThe configuration options tell HealthVault of any special behaviors that it should\nallow or enforce for this application. See <xref href=\"Microsoft.Health.ApplicationOptions\" data-throw-if-not-resolved=\"false\"></xref> for more \ninformation.\n\nOn updating an application configuration the configuration options will only \nbe updated if the value is not null.\n"
+  example: []
+  syntax:
+    content: public ApplicationOptions? ConfigurationOptions { get; set; }
+    content.vb: Public Property ConfigurationOptions As ApplicationOptions?
+    parameters: []
+    return:
+      type: System.Nullable{Microsoft.Health.ApplicationOptions}
+  overload: Microsoft.Health.ApplicationInfo.ConfigurationOptions*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.PersistentTokenTtlInSeconds
+  commentId: P:Microsoft.Health.ApplicationInfo.PersistentTokenTtlInSeconds
+  id: PersistentTokenTtlInSeconds
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: PersistentTokenTtlInSeconds
+  nameWithType: ApplicationInfo.PersistentTokenTtlInSeconds
+  fullName: Microsoft.Health.ApplicationInfo.PersistentTokenTtlInSeconds
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: PersistentTokenTtlInSeconds
+    path: ApplicationInfo.cs
+    startLine: 872
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the length of time a user token will persist if they choose the \"Keep me\nlogged in on this computer\" checkbox during HealthVault login.\n"
+  remarks: "\nThis value is only used if <xref href=\"Microsoft.Health.ApplicationOptions.PersistentTokensAllowed\" data-throw-if-not-resolved=\"false\"></xref> is\nspecified in the <xref href=\"Microsoft.Health.ApplicationInfo.ConfigurationOptions\" data-throw-if-not-resolved=\"false\"></xref>.\n\nOn updating an application configuration the persistent token ttl will only \nbe updated if the value is not null.\n"
+  example: []
+  syntax:
+    content: public int ? PersistentTokenTtlInSeconds { get; set; }
+    content.vb: Public Property PersistentTokenTtlInSeconds As Integer?
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+  overload: Microsoft.Health.ApplicationInfo.PersistentTokenTtlInSeconds*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "\nThe <span class=\"paramref\">value</span> parameter is less than or equal to zero.\n"
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.ValidIPPrefixes
+  commentId: P:Microsoft.Health.ApplicationInfo.ValidIPPrefixes
+  id: ValidIPPrefixes
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: ValidIPPrefixes
+  nameWithType: ApplicationInfo.ValidIPPrefixes
+  fullName: Microsoft.Health.ApplicationInfo.ValidIPPrefixes
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ValidIPPrefixes
+    path: ApplicationInfo.cs
+    startLine: 900
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the IP address masks from which the application can\ncall HealthVault.\n"
+  remarks: "\nA comma separated list of IP address masks from which the\napplication can call HealthVault.\nHealthVault provides some added security to applications by supporting\ncalls that come from valid IP addresses of the application. IP addresses\ncan be specified using a specific IP address and 32 bit mask like\n192.168.0.1/32 or by specifying a subnet and mask like 192.168.0.0/16.\nYou can have more than one IP address or mask by comma separating them.\n"
+  example: []
+  syntax:
+    content: public string ValidIPPrefixes { get; set; }
+    content.vb: Public Property ValidIPPrefixes As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.ApplicationInfo.ValidIPPrefixes*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.SupportedRecordLocations
+  commentId: P:Microsoft.Health.ApplicationInfo.SupportedRecordLocations
+  id: SupportedRecordLocations
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: SupportedRecordLocations
+  nameWithType: ApplicationInfo.SupportedRecordLocations
+  fullName: Microsoft.Health.ApplicationInfo.SupportedRecordLocations
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: SupportedRecordLocations
+    path: ApplicationInfo.cs
+    startLine: 910
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets a collection of the record locations supported by this application.\n"
+  example: []
+  syntax:
+    content: public LocationCollection SupportedRecordLocations { get; }
+    content.vb: Public ReadOnly Property SupportedRecordLocations As LocationCollection
+    parameters: []
+    return:
+      type: Microsoft.Health.LocationCollection
+  overload: Microsoft.Health.ApplicationInfo.SupportedRecordLocations*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ApplicationInfo.SupportedHealthVaultInstances
+  commentId: P:Microsoft.Health.ApplicationInfo.SupportedHealthVaultInstances
+  id: SupportedHealthVaultInstances
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: SupportedHealthVaultInstances
+  nameWithType: ApplicationInfo.SupportedHealthVaultInstances
+  fullName: Microsoft.Health.ApplicationInfo.SupportedHealthVaultInstances
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: SupportedHealthVaultInstances
+    path: ApplicationInfo.cs
+    startLine: 937
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the instance identifiers for the HealthVault instances the application supports.\n"
+  remarks: "\nUse the <xref href=\"Microsoft.Health.ServiceInfo\" data-throw-if-not-resolved=\"false\"></xref> class to get instance information using these \ninstance identifiers.\n\nWhen updating a child application, if the supported instances is left blank, only the\ninstance being connected to will be configured as the supported instances.\n"
+  example: []
+  syntax:
+    content: public Collection<string> SupportedHealthVaultInstances { get; }
+    content.vb: Public ReadOnly Property SupportedHealthVaultInstances As Collection(Of String)
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{System.String}
+  overload: Microsoft.Health.ApplicationInfo.SupportedHealthVaultInstances*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ApplicationInfo.SupportAllHealthVaultInstances
+  commentId: P:Microsoft.Health.ApplicationInfo.SupportAllHealthVaultInstances
+  id: SupportAllHealthVaultInstances
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: SupportAllHealthVaultInstances
+  nameWithType: ApplicationInfo.SupportAllHealthVaultInstances
+  fullName: Microsoft.Health.ApplicationInfo.SupportAllHealthVaultInstances
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: SupportAllHealthVaultInstances
+    path: ApplicationInfo.cs
+    startLine: 951
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets whether the application supports all HealthVault instances.\n"
+  remarks: "\nIf set to true, the value of <xref href=\"SupportedHealthVaultInstances\" data-throw-if-not-resolved=\"false\"></xref> is ignored.\n"
+  example: []
+  syntax:
+    content: public bool SupportAllHealthVaultInstances { get; set; }
+    content.vb: Public Property SupportAllHealthVaultInstances As Boolean
+    parameters: []
+    return:
+      type: System.Boolean
+  overload: Microsoft.Health.ApplicationInfo.SupportAllHealthVaultInstances*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ApplicationInfo.MeaningfulUseSources
+  commentId: P:Microsoft.Health.ApplicationInfo.MeaningfulUseSources
+  id: MeaningfulUseSources
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: MeaningfulUseSources
+  nameWithType: ApplicationInfo.MeaningfulUseSources
+  fullName: Microsoft.Health.ApplicationInfo.MeaningfulUseSources
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: MeaningfulUseSources
+    path: ApplicationInfo.cs
+    startLine: 965
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the list of Meaningful Use sources associated with this application.\n"
+  remarks: "\nGets the list of Meaningful Use sources associated with this application.\nFor partners that contribute CCDA documents to HealthVault using Direct Messaging and wish to retrieve Meaningful Use reports,\nHealthVault allows associating the Direct Messaging domain of the sender to an application ID that will retrieve the corresponding\nMeaningful Use reports. The MeaningfulUseSources field specifies these Direct Messaging domains as a list of semi-colon delimited strings.\nDevelopers can associate Direct Messaging domains with an application ID, using the HealthVault Application Configuration Center.\n"
+  example: []
+  syntax:
+    content: public Collection<string> MeaningfulUseSources { get; }
+    content.vb: Public ReadOnly Property MeaningfulUseSources As Collection(Of String)
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{System.String}
+  overload: Microsoft.Health.ApplicationInfo.MeaningfulUseSources*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ApplicationInfo.ClientServiceToken
+  commentId: P:Microsoft.Health.ApplicationInfo.ClientServiceToken
+  id: ClientServiceToken
+  parent: Microsoft.Health.ApplicationInfo
+  langs:
+  - csharp
+  - vb
+  name: ClientServiceToken
+  nameWithType: ApplicationInfo.ClientServiceToken
+  fullName: Microsoft.Health.ApplicationInfo.ClientServiceToken
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ApplicationInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ClientServiceToken
+    path: ApplicationInfo.cs
+    startLine: 981
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the client service token.\n"
+  remarks: "\nThe client service token is used by browser scripts to access HealthVault client services\nsuch as the vocabulary search service. The value of the client service token is set in \nthe application configuration center. \n"
+  example: []
+  syntax:
+    content: public Guid? ClientServiceToken { get; }
+    content.vb: Public ReadOnly Property ClientServiceToken As Guid?
+    parameters: []
+    return:
+      type: System.Nullable{System.Guid}
+  overload: Microsoft.Health.ApplicationInfo.ClientServiceToken*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: Microsoft.Health
+  commentId: N:Microsoft.Health
+  isExternal: false
+  name: Microsoft.Health
+  nameWithType: Microsoft.Health
+  fullName: Microsoft.Health
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.ApplicationInfo
+  commentId: T:Microsoft.Health.ApplicationInfo
+  parent: Microsoft.Health
+  isExternal: false
+  name: ApplicationInfo
+  nameWithType: ApplicationInfo
+  fullName: Microsoft.Health.ApplicationInfo
+- uid: Microsoft.Health.ApplicationInfo.#ctor*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.#ctor
+  isExternal: false
+  name: ApplicationInfo
+  nameWithType: ApplicationInfo.ApplicationInfo
+  fullName: Microsoft.Health.ApplicationInfo.ApplicationInfo
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Collections.Generic.IList{System.Byte[]}
+  commentId: T:System.Collections.Generic.IList{System.Byte[]}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<Byte[]>
+  nameWithType: IList<Byte[]>
+  fullName: System.Collections.Generic.IList<System.Byte[]>
+  nameWithType.vb: IList(Of Byte())
+  fullName.vb: System.Collections.Generic.IList(Of System.Byte())
+  name.vb: IList(Of Byte())
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Microsoft.Health.ApplicationProvisioning.Provisioner.GetApplication(Microsoft.Health.Web.OfflineWebApplicationConnection,System.Guid)
+  commentId: M:Microsoft.Health.ApplicationProvisioning.Provisioner.GetApplication(Microsoft.Health.Web.OfflineWebApplicationConnection,System.Guid)
+- uid: Microsoft.Health.ApplicationInfo.Id
+  commentId: P:Microsoft.Health.ApplicationInfo.Id
+- uid: System.Guid.Empty
+  commentId: F:System.Guid.Empty
+- uid: Microsoft.Health.ApplicationInfo.Update*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.Update
+  isExternal: false
+  name: Update
+  nameWithType: ApplicationInfo.Update
+  fullName: Microsoft.Health.ApplicationInfo.Update
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+- uid: Microsoft.Health.HealthServiceException
+  commentId: T:Microsoft.Health.HealthServiceException
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthServiceException
+  nameWithType: HealthServiceException
+  fullName: Microsoft.Health.HealthServiceException
+- uid: Microsoft.Health.ApplicationConnection
+  commentId: T:Microsoft.Health.ApplicationConnection
+  parent: Microsoft.Health
+  isExternal: false
+  name: ApplicationConnection
+  nameWithType: ApplicationConnection
+  fullName: Microsoft.Health.ApplicationConnection
+- uid: Microsoft.Health.ApplicationInfo.Id*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.Id
+  isExternal: false
+  name: Id
+  nameWithType: ApplicationInfo.Id
+  fullName: Microsoft.Health.ApplicationInfo.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: Microsoft.Health.ApplicationInfo.Name*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.Name
+  isExternal: false
+  name: Name
+  nameWithType: ApplicationInfo.Name
+  fullName: Microsoft.Health.ApplicationInfo.Name
+- uid: Microsoft.Health.ApplicationInfo.CultureSpecificNames*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.CultureSpecificNames
+  isExternal: false
+  name: CultureSpecificNames
+  nameWithType: ApplicationInfo.CultureSpecificNames
+  fullName: Microsoft.Health.ApplicationInfo.CultureSpecificNames
+- uid: Microsoft.Health.CultureSpecificStringDictionary
+  commentId: T:Microsoft.Health.CultureSpecificStringDictionary
+  parent: Microsoft.Health
+  isExternal: false
+  name: CultureSpecificStringDictionary
+  nameWithType: CultureSpecificStringDictionary
+  fullName: Microsoft.Health.CultureSpecificStringDictionary
+- uid: Microsoft.Health.ApplicationInfo.PublicKeys*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.PublicKeys
+  isExternal: false
+  name: PublicKeys
+  nameWithType: ApplicationInfo.PublicKeys
+  fullName: Microsoft.Health.ApplicationInfo.PublicKeys
+- uid: System.Collections.ObjectModel.Collection{System.Byte[]}
+  commentId: T:System.Collections.ObjectModel.Collection{System.Byte[]}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<Byte[]>
+  nameWithType: Collection<Byte[]>
+  fullName: System.Collections.ObjectModel.Collection<System.Byte[]>
+  nameWithType.vb: Collection(Of Byte())
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Byte())
+  name.vb: Collection(Of Byte())
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1
+  commentId: T:System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<T>
+  nameWithType: Collection<T>
+  fullName: System.Collections.ObjectModel.Collection<T>
+  nameWithType.vb: Collection(Of T)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T)
+  name.vb: Collection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: false
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+- uid: Microsoft.Health.ApplicationInfo.OnlineBaseAuthorizations*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.OnlineBaseAuthorizations
+  isExternal: false
+  name: OnlineBaseAuthorizations
+  nameWithType: ApplicationInfo.OnlineBaseAuthorizations
+  fullName: Microsoft.Health.ApplicationInfo.OnlineBaseAuthorizations
+- uid: System.Collections.ObjectModel.Collection{Microsoft.Health.AuthorizationRule}
+  commentId: T:System.Collections.ObjectModel.Collection{Microsoft.Health.AuthorizationRule}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<AuthorizationRule>
+  nameWithType: Collection<AuthorizationRule>
+  fullName: System.Collections.ObjectModel.Collection<Microsoft.Health.AuthorizationRule>
+  nameWithType.vb: Collection(Of AuthorizationRule)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of Microsoft.Health.AuthorizationRule)
+  name.vb: Collection(Of AuthorizationRule)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.AuthorizationRule
+    name: AuthorizationRule
+    nameWithType: AuthorizationRule
+    fullName: Microsoft.Health.AuthorizationRule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.AuthorizationRule
+    name: AuthorizationRule
+    nameWithType: AuthorizationRule
+    fullName: Microsoft.Health.AuthorizationRule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ApplicationInfo.OfflineBaseAuthorizations*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.OfflineBaseAuthorizations
+  isExternal: false
+  name: OfflineBaseAuthorizations
+  nameWithType: ApplicationInfo.OfflineBaseAuthorizations
+  fullName: Microsoft.Health.ApplicationInfo.OfflineBaseAuthorizations
+- uid: Microsoft.Health.ApplicationInfo.CallableMethods*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.CallableMethods
+  isExternal: false
+  name: CallableMethods
+  nameWithType: ApplicationInfo.CallableMethods
+  fullName: Microsoft.Health.ApplicationInfo.CallableMethods
+- uid: System.Collections.ObjectModel.Collection{Microsoft.Health.HealthVaultMethods}
+  commentId: T:System.Collections.ObjectModel.Collection{Microsoft.Health.HealthVaultMethods}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<HealthVaultMethods>
+  nameWithType: Collection<HealthVaultMethods>
+  fullName: System.Collections.ObjectModel.Collection<Microsoft.Health.HealthVaultMethods>
+  nameWithType.vb: Collection(Of HealthVaultMethods)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of Microsoft.Health.HealthVaultMethods)
+  name.vb: Collection(Of HealthVaultMethods)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.HealthVaultMethods
+    name: HealthVaultMethods
+    nameWithType: HealthVaultMethods
+    fullName: Microsoft.Health.HealthVaultMethods
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.HealthVaultMethods
+    name: HealthVaultMethods
+    nameWithType: HealthVaultMethods
+    fullName: Microsoft.Health.HealthVaultMethods
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ApplicationInfo.VocabularyAuthorizations*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.VocabularyAuthorizations
+  isExternal: false
+  name: VocabularyAuthorizations
+  nameWithType: ApplicationInfo.VocabularyAuthorizations
+  fullName: Microsoft.Health.ApplicationInfo.VocabularyAuthorizations
+- uid: System.Collections.ObjectModel.Collection{Microsoft.Health.VocabularyAuthorization}
+  commentId: T:System.Collections.ObjectModel.Collection{Microsoft.Health.VocabularyAuthorization}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<VocabularyAuthorization>
+  nameWithType: Collection<VocabularyAuthorization>
+  fullName: System.Collections.ObjectModel.Collection<Microsoft.Health.VocabularyAuthorization>
+  nameWithType.vb: Collection(Of VocabularyAuthorization)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of Microsoft.Health.VocabularyAuthorization)
+  name.vb: Collection(Of VocabularyAuthorization)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.VocabularyAuthorization
+    name: VocabularyAuthorization
+    nameWithType: VocabularyAuthorization
+    fullName: Microsoft.Health.VocabularyAuthorization
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.VocabularyAuthorization
+    name: VocabularyAuthorization
+    nameWithType: VocabularyAuthorization
+    fullName: Microsoft.Health.VocabularyAuthorization
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ApplicationInfo.ChildVocabularyAuthorizationsCeiling*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.ChildVocabularyAuthorizationsCeiling
+  isExternal: false
+  name: ChildVocabularyAuthorizationsCeiling
+  nameWithType: ApplicationInfo.ChildVocabularyAuthorizationsCeiling
+  fullName: Microsoft.Health.ApplicationInfo.ChildVocabularyAuthorizationsCeiling
+- uid: Microsoft.Health.ApplicationInfo.ActionUrl*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.ActionUrl
+  isExternal: false
+  name: ActionUrl
+  nameWithType: ApplicationInfo.ActionUrl
+  fullName: Microsoft.Health.ApplicationInfo.ActionUrl
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: Microsoft.Health.ApplicationInfo.Description*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.Description
+  isExternal: false
+  name: Description
+  nameWithType: ApplicationInfo.Description
+  fullName: Microsoft.Health.ApplicationInfo.Description
+- uid: Microsoft.Health.ApplicationInfo.CultureSpecificDescriptions*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.CultureSpecificDescriptions
+  isExternal: false
+  name: CultureSpecificDescriptions
+  nameWithType: ApplicationInfo.CultureSpecificDescriptions
+  fullName: Microsoft.Health.ApplicationInfo.CultureSpecificDescriptions
+- uid: Microsoft.Health.ApplicationInfo.AuthorizationReason*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.AuthorizationReason
+  isExternal: false
+  name: AuthorizationReason
+  nameWithType: ApplicationInfo.AuthorizationReason
+  fullName: Microsoft.Health.ApplicationInfo.AuthorizationReason
+- uid: Microsoft.Health.ApplicationInfo.CultureSpecificAuthorizationReasons*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.CultureSpecificAuthorizationReasons
+  isExternal: false
+  name: CultureSpecificAuthorizationReasons
+  nameWithType: ApplicationInfo.CultureSpecificAuthorizationReasons
+  fullName: Microsoft.Health.ApplicationInfo.CultureSpecificAuthorizationReasons
+- uid: Microsoft.Health.ApplicationInfo.DomainName*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.DomainName
+  isExternal: false
+  name: DomainName
+  nameWithType: ApplicationInfo.DomainName
+  fullName: Microsoft.Health.ApplicationInfo.DomainName
+- uid: Microsoft.Health.ApplicationInfo.LargeLogo*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.LargeLogo
+  isExternal: false
+  name: LargeLogo
+  nameWithType: ApplicationInfo.LargeLogo
+  fullName: Microsoft.Health.ApplicationInfo.LargeLogo
+- uid: Microsoft.Health.ApplicationBinaryConfiguration
+  commentId: T:Microsoft.Health.ApplicationBinaryConfiguration
+  parent: Microsoft.Health
+  isExternal: false
+  name: ApplicationBinaryConfiguration
+  nameWithType: ApplicationBinaryConfiguration
+  fullName: Microsoft.Health.ApplicationBinaryConfiguration
+- uid: Microsoft.Health.ApplicationInfo.SmallLogo*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.SmallLogo
+  isExternal: false
+  name: SmallLogo
+  nameWithType: ApplicationInfo.SmallLogo
+  fullName: Microsoft.Health.ApplicationInfo.SmallLogo
+- uid: Microsoft.Health.ApplicationInfo.PrivacyStatement*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.PrivacyStatement
+  isExternal: false
+  name: PrivacyStatement
+  nameWithType: ApplicationInfo.PrivacyStatement
+  fullName: Microsoft.Health.ApplicationInfo.PrivacyStatement
+- uid: Microsoft.Health.ApplicationInfo.TermsOfUse*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.TermsOfUse
+  isExternal: false
+  name: TermsOfUse
+  nameWithType: ApplicationInfo.TermsOfUse
+  fullName: Microsoft.Health.ApplicationInfo.TermsOfUse
+- uid: Microsoft.Health.ApplicationInfo.DtcSuccessMessage*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.DtcSuccessMessage
+  isExternal: false
+  name: DtcSuccessMessage
+  nameWithType: ApplicationInfo.DtcSuccessMessage
+  fullName: Microsoft.Health.ApplicationInfo.DtcSuccessMessage
+- uid: Microsoft.Health.ApplicationInfo.ExpectedApplicationAttributes
+  commentId: F:Microsoft.Health.ApplicationInfo.ExpectedApplicationAttributes
+- uid: Microsoft.Health.ApplicationInfo.ApplicationAttributes*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.ApplicationAttributes
+  isExternal: false
+  name: ApplicationAttributes
+  nameWithType: ApplicationInfo.ApplicationAttributes
+  fullName: Microsoft.Health.ApplicationInfo.ApplicationAttributes
+- uid: System.Collections.ObjectModel.Collection{System.String}
+  commentId: T:System.Collections.ObjectModel.Collection{System.String}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<String>
+  nameWithType: Collection<String>
+  fullName: System.Collections.ObjectModel.Collection<System.String>
+  nameWithType.vb: Collection(Of String)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.String)
+  name.vb: Collection(Of String)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ApplicationInfo.ApplicationAttributes
+  commentId: P:Microsoft.Health.ApplicationInfo.ApplicationAttributes
+- uid: System.String[]
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Microsoft.Health.ApplicationOptions
+  commentId: T:Microsoft.Health.ApplicationOptions
+  parent: Microsoft.Health
+  isExternal: false
+  name: ApplicationOptions
+  nameWithType: ApplicationOptions
+  fullName: Microsoft.Health.ApplicationOptions
+- uid: Microsoft.Health.ApplicationInfo.ConfigurationOptions*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.ConfigurationOptions
+  isExternal: false
+  name: ConfigurationOptions
+  nameWithType: ApplicationInfo.ConfigurationOptions
+  fullName: Microsoft.Health.ApplicationInfo.ConfigurationOptions
+- uid: System.Nullable{Microsoft.Health.ApplicationOptions}
+  commentId: T:System.Nullable{Microsoft.Health.ApplicationOptions}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<ApplicationOptions>
+  nameWithType: Nullable<ApplicationOptions>
+  fullName: System.Nullable<Microsoft.Health.ApplicationOptions>
+  nameWithType.vb: Nullable(Of ApplicationOptions)
+  fullName.vb: System.Nullable(Of Microsoft.Health.ApplicationOptions)
+  name.vb: Nullable(Of ApplicationOptions)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.ApplicationOptions
+    name: ApplicationOptions
+    nameWithType: ApplicationOptions
+    fullName: Microsoft.Health.ApplicationOptions
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.ApplicationOptions
+    name: ApplicationOptions
+    nameWithType: ApplicationOptions
+    fullName: Microsoft.Health.ApplicationOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ApplicationOptions.PersistentTokensAllowed
+  commentId: F:Microsoft.Health.ApplicationOptions.PersistentTokensAllowed
+- uid: Microsoft.Health.ApplicationInfo.ConfigurationOptions
+  commentId: P:Microsoft.Health.ApplicationInfo.ConfigurationOptions
+- uid: Microsoft.Health.ApplicationInfo.PersistentTokenTtlInSeconds*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.PersistentTokenTtlInSeconds
+  isExternal: false
+  name: PersistentTokenTtlInSeconds
+  nameWithType: ApplicationInfo.PersistentTokenTtlInSeconds
+  fullName: Microsoft.Health.ApplicationInfo.PersistentTokenTtlInSeconds
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Int32>
+  nameWithType: Nullable<Int32>
+  fullName: System.Nullable<System.Int32>
+  nameWithType.vb: Nullable(Of Int32)
+  fullName.vb: System.Nullable(Of System.Int32)
+  name.vb: Nullable(Of Int32)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ApplicationInfo.ValidIPPrefixes*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.ValidIPPrefixes
+  isExternal: false
+  name: ValidIPPrefixes
+  nameWithType: ApplicationInfo.ValidIPPrefixes
+  fullName: Microsoft.Health.ApplicationInfo.ValidIPPrefixes
+- uid: Microsoft.Health.ApplicationInfo.SupportedRecordLocations*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.SupportedRecordLocations
+  isExternal: false
+  name: SupportedRecordLocations
+  nameWithType: ApplicationInfo.SupportedRecordLocations
+  fullName: Microsoft.Health.ApplicationInfo.SupportedRecordLocations
+- uid: Microsoft.Health.LocationCollection
+  commentId: T:Microsoft.Health.LocationCollection
+  parent: Microsoft.Health
+  isExternal: false
+  name: LocationCollection
+  nameWithType: LocationCollection
+  fullName: Microsoft.Health.LocationCollection
+- uid: Microsoft.Health.ServiceInfo
+  commentId: T:Microsoft.Health.ServiceInfo
+  parent: Microsoft.Health
+  isExternal: false
+  name: ServiceInfo
+  nameWithType: ServiceInfo
+  fullName: Microsoft.Health.ServiceInfo
+- uid: Microsoft.Health.ApplicationInfo.SupportedHealthVaultInstances*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.SupportedHealthVaultInstances
+  isExternal: false
+  name: SupportedHealthVaultInstances
+  nameWithType: ApplicationInfo.SupportedHealthVaultInstances
+  fullName: Microsoft.Health.ApplicationInfo.SupportedHealthVaultInstances
+- uid: SupportedHealthVaultInstances
+  commentId: P:SupportedHealthVaultInstances
+- uid: Microsoft.Health.ApplicationInfo.SupportAllHealthVaultInstances*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.SupportAllHealthVaultInstances
+  isExternal: false
+  name: SupportAllHealthVaultInstances
+  nameWithType: ApplicationInfo.SupportAllHealthVaultInstances
+  fullName: Microsoft.Health.ApplicationInfo.SupportAllHealthVaultInstances
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Microsoft.Health.ApplicationInfo.MeaningfulUseSources*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.MeaningfulUseSources
+  isExternal: false
+  name: MeaningfulUseSources
+  nameWithType: ApplicationInfo.MeaningfulUseSources
+  fullName: Microsoft.Health.ApplicationInfo.MeaningfulUseSources
+- uid: Microsoft.Health.ApplicationInfo.ClientServiceToken*
+  commentId: Overload:Microsoft.Health.ApplicationInfo.ClientServiceToken
+  isExternal: false
+  name: ClientServiceToken
+  nameWithType: ApplicationInfo.ClientServiceToken
+  fullName: Microsoft.Health.ApplicationInfo.ClientServiceToken
+- uid: System.Nullable{System.Guid}
+  commentId: T:System.Nullable{System.Guid}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Guid>
+  nameWithType: Nullable<Guid>
+  fullName: System.Nullable<System.Guid>
+  nameWithType.vb: Nullable(Of Guid)
+  fullName.vb: System.Nullable(Of System.Guid)
+  name.vb: Nullable(Of Guid)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: System.Guid
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Guid
+    name: Guid
+    nameWithType: Guid
+    fullName: System.Guid
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,0 +1,1948 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific
+  commentId: T:Microsoft.Health.ItemTypes.ApplicationSpecific
+  id: ApplicationSpecific
+  parent: Microsoft.Health.ItemTypes
+  children:
+  - Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor
+  - Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor(System.Guid,System.String,System.String)
+  - Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor(System.String,System.String,System.String)
+  - Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationId
+  - Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecificXml
+  - Microsoft.Health.ItemTypes.ApplicationSpecific.Description
+  - Microsoft.Health.ItemTypes.ApplicationSpecific.ParseApplicationSpecificXml(System.Collections.Generic.IList{System.Xml.XPath.IXPathNavigable})
+  - Microsoft.Health.ItemTypes.ApplicationSpecific.ParseXml(System.Xml.XPath.IXPathNavigable)
+  - Microsoft.Health.ItemTypes.ApplicationSpecific.SubtypeTag
+  - Microsoft.Health.ItemTypes.ApplicationSpecific.ToString
+  - Microsoft.Health.ItemTypes.ApplicationSpecific.TypeId
+  - Microsoft.Health.ItemTypes.ApplicationSpecific.When
+  - Microsoft.Health.ItemTypes.ApplicationSpecific.WriteApplicationSpecificXml(System.Xml.XmlWriter)
+  - Microsoft.Health.ItemTypes.ApplicationSpecific.WriteXml(System.Xml.XmlWriter)
+  langs:
+  - csharp
+  - vb
+  name: ApplicationSpecific
+  nameWithType: ApplicationSpecific
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/ApplicationSpecific.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ApplicationSpecific
+    path: ApplicationSpecific.cs
+    startLine: 31
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nRepresents a health record item type that encapsulates application \nspecific data.\n"
+  remarks: "\nApplication specific data can only ever be read or updared by the application\nthat created.\n\nThis type is not all that interesting by itself but used as a base class\nit helps developers implement their own application specific type class\nto handle instances by registering the class using the\n<xref href=\"Microsoft.Health.ItemTypeManager.RegisterApplicationSpecificHandler(System.Guid%2cSystem.String%2cSystem.Type)\" data-throw-if-not-resolved=\"false\"></xref>\nmethod.\n"
+  example: []
+  syntax:
+    content: 'public class ApplicationSpecific : HealthRecordItem'
+    content.vb: >-
+      Public Class ApplicationSpecific
+          Inherits HealthRecordItem
+  inheritance:
+  - System.Object
+  - Microsoft.Health.HealthRecordItem
+  inheritedMembers:
+  - Microsoft.Health.HealthRecordItem.Sign(System.Security.Cryptography.X509Certificates.X509Certificate2)
+  - Microsoft.Health.HealthRecordItem.IsSignatureValid
+  - Microsoft.Health.HealthRecordItem.ValidateCertificate
+  - Microsoft.Health.HealthRecordItem.Key
+  - Microsoft.Health.HealthRecordItem.TypeName
+  - Microsoft.Health.HealthRecordItem.EffectiveDate
+  - Microsoft.Health.HealthRecordItem.State
+  - Microsoft.Health.HealthRecordItem.Flags
+  - Microsoft.Health.HealthRecordItem.IsPersonal
+  - Microsoft.Health.HealthRecordItem.IsDownVersioned
+  - Microsoft.Health.HealthRecordItem.IsUpVersioned
+  - Microsoft.Health.HealthRecordItem.UpdatedEndDate
+  - Microsoft.Health.HealthRecordItem.LastUpdated
+  - Microsoft.Health.HealthRecordItem.Created
+  - Microsoft.Health.HealthRecordItem.EffectivePermissions
+  - Microsoft.Health.HealthRecordItem.IsImmutable
+  - Microsoft.Health.HealthRecordItem.IsReadOnly
+  - Microsoft.Health.HealthRecordItem.TypeSpecificData
+  - Microsoft.Health.HealthRecordItem.TransformedXmlData
+  - Microsoft.Health.HealthRecordItem.CommonData
+  - Microsoft.Health.HealthRecordItem.GetBlobStore(Microsoft.Health.HealthRecordAccessor)
+  - Microsoft.Health.HealthRecordItem.GetBlobStore(Microsoft.Health.Package.ConnectPackageCreationParameters)
+  - Microsoft.Health.HealthRecordItem.Tags
+  - Microsoft.Health.HealthRecordItem.HealthRecordItemSignatures
+  - Microsoft.Health.HealthRecordItem.Sections
+  - Microsoft.Health.HealthRecordItem.GetSizeInBytes
+  - Microsoft.Health.HealthRecordItem.GetItemXml
+  - Microsoft.Health.HealthRecordItem.GetItemXml(Microsoft.Health.HealthRecordItemSections)
+  - Microsoft.Health.HealthRecordItem.GetItemXml(System.String)
+  - Microsoft.Health.HealthRecordItem.GetItemXml(Microsoft.Health.HealthRecordItemSections,System.String)
+  - Microsoft.Health.HealthRecordItem.Serialize
+  - Microsoft.Health.HealthRecordItem.Deserialize(System.String)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor
+  commentId: M:Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor
+  id: '#ctor'
+  parent: Microsoft.Health.ItemTypes.ApplicationSpecific
+  langs:
+  - csharp
+  - vb
+  name: ApplicationSpecific()
+  nameWithType: ApplicationSpecific.ApplicationSpecific()
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecific()
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/ApplicationSpecific.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ApplicationSpecific.cs
+    startLine: 43
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.ItemTypes.ApplicationSpecific\" data-throw-if-not-resolved=\"false\"></xref> class with default values.\n"
+  remarks: "\nThe item is not added to the health record until the\n<xref href=\"Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)\" data-throw-if-not-resolved=\"false\"></xref> method \nis called.\n"
+  example: []
+  syntax:
+    content: public ApplicationSpecific()
+    content.vb: Public Sub New
+  overload: Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor(System.Guid,System.String,System.String)
+  commentId: M:Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor(System.Guid,System.String,System.String)
+  id: '#ctor(System.Guid,System.String,System.String)'
+  parent: Microsoft.Health.ItemTypes.ApplicationSpecific
+  langs:
+  - csharp
+  - vb
+  name: ApplicationSpecific(Guid, String, String)
+  nameWithType: ApplicationSpecific.ApplicationSpecific(Guid, String, String)
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecific(System.Guid, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/ApplicationSpecific.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ApplicationSpecific.cs
+    startLine: 74
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.ItemTypes.ApplicationSpecific\" data-throw-if-not-resolved=\"false\"></xref> class with the \nspecified application ID, subtype tag, and description.\n"
+  example: []
+  syntax:
+    content: public ApplicationSpecific(Guid applicationId, string subtypeTag, string description)
+    content.vb: Public Sub New(applicationId As Guid, subtypeTag As String, description As String)
+    parameters:
+    - id: applicationId
+      type: System.Guid
+      description: "\nThe unique application identifier.\n"
+    - id: subtypeTag
+      type: System.String
+      description: "\nA string identifying a unique schema for the application specific\ntype. The string format is completely arbitrary and is used by\nthe application to identify the health record item application specific\ndata as a specific subtype.\n"
+    - id: description
+      type: System.String
+      description: "\nA descriptive display text for this item.\n"
+  overload: Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">applicationId</span> is <xref href=\"System.Guid.Empty\" data-throw-if-not-resolved=\"false\"></xref>,\nor if <span class=\"paramref\">subtypeTag</span> or <span class=\"paramref\">description</span> is\n<strong>null</strong> or empty.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor(System.String,System.String,System.String)
+  commentId: M:Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor(System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String)'
+  parent: Microsoft.Health.ItemTypes.ApplicationSpecific
+  langs:
+  - csharp
+  - vb
+  name: ApplicationSpecific(String, String, String)
+  nameWithType: ApplicationSpecific.ApplicationSpecific(String, String, String)
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecific(System.String, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/ApplicationSpecific.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ApplicationSpecific.cs
+    startLine: 107
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.ItemTypes.ApplicationSpecific\" data-throw-if-not-resolved=\"false\"></xref> class with the \nspecified application ID, subtype tag, and description.\n"
+  example: []
+  syntax:
+    content: public ApplicationSpecific(string applicationId, string subtypeTag, string description)
+    content.vb: Public Sub New(applicationId As String, subtypeTag As String, description As String)
+    parameters:
+    - id: applicationId
+      type: System.String
+      description: "\nThe unique application identifier.\n"
+    - id: subtypeTag
+      type: System.String
+      description: "\nA string identifying a unique schema for the application specific\ntype. The string format is completely arbitrary and is used by\nthe application to identify the health record item application specific\ndata as a specific subtype.\n"
+    - id: description
+      type: System.String
+      description: "\nA descriptive display text for this item.\n"
+  overload: Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">applicationId</span>, <span class=\"paramref\">subtypeTag</span>, or \n<span class=\"paramref\">description</span> is <strong>null</strong> or empty.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.TypeId
+  commentId: F:Microsoft.Health.ItemTypes.ApplicationSpecific.TypeId
+  id: TypeId
+  parent: Microsoft.Health.ItemTypes.ApplicationSpecific
+  langs:
+  - csharp
+  - vb
+  name: TypeId
+  nameWithType: ApplicationSpecific.TypeId
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.TypeId
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/ApplicationSpecific.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: TypeId
+    path: ApplicationSpecific.cs
+    startLine: 126
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nRetrieves the unique identifier for the item type.\n"
+  example: []
+  syntax:
+    content: public static readonly Guid TypeId
+    content.vb: Public Shared ReadOnly TypeId As Guid
+    return:
+      type: System.Guid
+      description: "\nA GUID.\n"
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.ParseXml(System.Xml.XPath.IXPathNavigable)
+  commentId: M:Microsoft.Health.ItemTypes.ApplicationSpecific.ParseXml(System.Xml.XPath.IXPathNavigable)
+  id: ParseXml(System.Xml.XPath.IXPathNavigable)
+  parent: Microsoft.Health.ItemTypes.ApplicationSpecific
+  langs:
+  - csharp
+  - vb
+  name: ParseXml(IXPathNavigable)
+  nameWithType: ApplicationSpecific.ParseXml(IXPathNavigable)
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.ParseXml(System.Xml.XPath.IXPathNavigable)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/ApplicationSpecific.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ParseXml
+    path: ApplicationSpecific.cs
+    startLine: 142
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nPopulates this <xref href=\"Microsoft.Health.ItemTypes.ApplicationSpecific\" data-throw-if-not-resolved=\"false\"></xref> instance from the data in the XML.\n"
+  example: []
+  syntax:
+    content: protected override void ParseXml(IXPathNavigable typeSpecificXml)
+    content.vb: Protected Overrides Sub ParseXml(typeSpecificXml As IXPathNavigable)
+    parameters:
+    - id: typeSpecificXml
+      type: System.Xml.XPath.IXPathNavigable
+      description: "\nThe XML to get the application specific data from.\n"
+  overridden: Microsoft.Health.HealthRecordItem.ParseXml(System.Xml.XPath.IXPathNavigable)
+  overload: Microsoft.Health.ItemTypes.ApplicationSpecific.ParseXml*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: "\nThe first node in <span class=\"paramref\">typeSpecificXml</span> is not\nan app-specific node.\n"
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.ParseApplicationSpecificXml(System.Collections.Generic.IList{System.Xml.XPath.IXPathNavigable})
+  commentId: M:Microsoft.Health.ItemTypes.ApplicationSpecific.ParseApplicationSpecificXml(System.Collections.Generic.IList{System.Xml.XPath.IXPathNavigable})
+  id: ParseApplicationSpecificXml(System.Collections.Generic.IList{System.Xml.XPath.IXPathNavigable})
+  parent: Microsoft.Health.ItemTypes.ApplicationSpecific
+  langs:
+  - csharp
+  - vb
+  name: ParseApplicationSpecificXml(IList<IXPathNavigable>)
+  nameWithType: ApplicationSpecific.ParseApplicationSpecificXml(IList<IXPathNavigable>)
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.ParseApplicationSpecificXml(System.Collections.Generic.IList<System.Xml.XPath.IXPathNavigable>)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/ApplicationSpecific.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ParseApplicationSpecificXml
+    path: ApplicationSpecific.cs
+    startLine: 200
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nParses the parts of the application specific item type that is specific\nto each application.\n"
+  remarks: "\nThe base elements that all application specific items contain are parsed by\nthe base class. The derived class overrides this method to parse all \napplication specific portions of the XML. The base class implementation\nplaces the application specific elements in the <xref href=\"Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecificXml\" data-throw-if-not-resolved=\"false\"></xref> \nproperty and then passes that collection to this method so that derived classes\ncan further process those elements.  The base class implementation does nothing\nto process these elements.\n"
+  example: []
+  syntax:
+    content: protected virtual void ParseApplicationSpecificXml(IList<IXPathNavigable> applicationSpecific)
+    content.vb: Protected Overridable Sub ParseApplicationSpecificXml(applicationSpecific As IList(Of IXPathNavigable))
+    parameters:
+    - id: applicationSpecific
+      type: System.Collections.Generic.IList{System.Xml.XPath.IXPathNavigable}
+      description: "\nAn <xref href=\"System.Xml.XPath.XPathNavigator\" data-throw-if-not-resolved=\"false\"></xref> focused on the \"app-specific\" \nelement in the item XML.\n"
+  overload: Microsoft.Health.ItemTypes.ApplicationSpecific.ParseApplicationSpecificXml*
+  nameWithType.vb: ApplicationSpecific.ParseApplicationSpecificXml(IList(Of IXPathNavigable))
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  fullName.vb: Microsoft.Health.ItemTypes.ApplicationSpecific.ParseApplicationSpecificXml(System.Collections.Generic.IList(Of System.Xml.XPath.IXPathNavigable))
+  name.vb: ParseApplicationSpecificXml(IList(Of IXPathNavigable))
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.WriteXml(System.Xml.XmlWriter)
+  commentId: M:Microsoft.Health.ItemTypes.ApplicationSpecific.WriteXml(System.Xml.XmlWriter)
+  id: WriteXml(System.Xml.XmlWriter)
+  parent: Microsoft.Health.ItemTypes.ApplicationSpecific
+  langs:
+  - csharp
+  - vb
+  name: WriteXml(XmlWriter)
+  nameWithType: ApplicationSpecific.WriteXml(XmlWriter)
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.WriteXml(System.Xml.XmlWriter)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/ApplicationSpecific.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: WriteXml
+    path: ApplicationSpecific.cs
+    startLine: 222
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nWrites the application specific data to the specified XmlWriter.\n"
+  example: []
+  syntax:
+    content: public override void WriteXml(XmlWriter writer)
+    content.vb: Public Overrides Sub WriteXml(writer As XmlWriter)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+      description: "\nThe XmlWriter to write the application specific data to.\n"
+  overridden: Microsoft.Health.HealthRecordItem.WriteXml(System.Xml.XmlWriter)
+  overload: Microsoft.Health.ItemTypes.ApplicationSpecific.WriteXml*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nIf <span class=\"paramref\">writer</span> is <strong>null</strong>.\n"
+  - type: Microsoft.Health.HealthRecordItemSerializationException
+    commentId: T:Microsoft.Health.HealthRecordItemSerializationException
+    description: "\nIf <xref href=\"Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationId\" data-throw-if-not-resolved=\"false\"></xref>,\n<xref href=\"Microsoft.Health.ItemTypes.ApplicationSpecific.SubtypeTag\" data-throw-if-not-resolved=\"false\"></xref>, or <xref href=\"Microsoft.Health.ItemTypes.ApplicationSpecific.Description\" data-throw-if-not-resolved=\"false\"></xref> is <strong>null</strong> or empty.\n"
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.WriteApplicationSpecificXml(System.Xml.XmlWriter)
+  commentId: M:Microsoft.Health.ItemTypes.ApplicationSpecific.WriteApplicationSpecificXml(System.Xml.XmlWriter)
+  id: WriteApplicationSpecificXml(System.Xml.XmlWriter)
+  parent: Microsoft.Health.ItemTypes.ApplicationSpecific
+  langs:
+  - csharp
+  - vb
+  name: WriteApplicationSpecificXml(XmlWriter)
+  nameWithType: ApplicationSpecific.WriteApplicationSpecificXml(XmlWriter)
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.WriteApplicationSpecificXml(System.Xml.XmlWriter)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/ApplicationSpecific.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: WriteApplicationSpecificXml
+    path: ApplicationSpecific.cs
+    startLine: 278
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nWrites the application specific XML to the specified writer.\n"
+  remarks: "\nThe XML for the base elements that all application specific items contain is written by  \nthe base class. The derived class overrides this method to write all \napplication specific portions of the XML. The base class implementation\nwrites the XML in the <xref href=\"Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecificXml\" data-throw-if-not-resolved=\"false\"></xref> property.\n"
+  example: []
+  syntax:
+    content: protected virtual void WriteApplicationSpecificXml(XmlWriter writer)
+    content.vb: Protected Overridable Sub WriteApplicationSpecificXml(writer As XmlWriter)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+      description: "\nThe XML writer to write the application specific XML to.\n"
+  overload: Microsoft.Health.ItemTypes.ApplicationSpecific.WriteApplicationSpecificXml*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationId
+  commentId: P:Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationId
+  id: ApplicationId
+  parent: Microsoft.Health.ItemTypes.ApplicationSpecific
+  langs:
+  - csharp
+  - vb
+  name: ApplicationId
+  nameWithType: ApplicationSpecific.ApplicationId
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationId
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/ApplicationSpecific.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ApplicationId
+    path: ApplicationSpecific.cs
+    startLine: 299
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the unique application identifier for which this application\nspecific information pertains.\n"
+  example: []
+  syntax:
+    content: public string ApplicationId { get; set; }
+    content.vb: Public Property ApplicationId As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe application identifier should be in the form of a <xref href=\"System.Guid\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  overload: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationId*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">value</span> is <strong>null</strong> or empty.\n"
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.SubtypeTag
+  commentId: P:Microsoft.Health.ItemTypes.ApplicationSpecific.SubtypeTag
+  id: SubtypeTag
+  parent: Microsoft.Health.ItemTypes.ApplicationSpecific
+  langs:
+  - csharp
+  - vb
+  name: SubtypeTag
+  nameWithType: ApplicationSpecific.SubtypeTag
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.SubtypeTag
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/ApplicationSpecific.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: SubtypeTag
+    path: ApplicationSpecific.cs
+    startLine: 319
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets a tag that uniquely identifies the schema for the application specific\ndata.\n"
+  example: []
+  syntax:
+    content: public string SubtypeTag { get; set; }
+    content.vb: Public Property SubtypeTag As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.ItemTypes.ApplicationSpecific.SubtypeTag*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">value</span> is <strong>null</strong>, empty, or contains only whitespace.\n"
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.When
+  commentId: P:Microsoft.Health.ItemTypes.ApplicationSpecific.When
+  id: When
+  parent: Microsoft.Health.ItemTypes.ApplicationSpecific
+  langs:
+  - csharp
+  - vb
+  name: When
+  nameWithType: ApplicationSpecific.When
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.When
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/ApplicationSpecific.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: When
+    path: ApplicationSpecific.cs
+    startLine: 340
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the date/time when the application specific item was created.\n"
+  example: []
+  syntax:
+    content: public HealthServiceDateTime When { get; set; }
+    content.vb: Public Property When As HealthServiceDateTime
+    parameters: []
+    return:
+      type: Microsoft.Health.ItemTypes.HealthServiceDateTime
+      description: "\nA <xref href=\"Microsoft.Health.ItemTypes.HealthServiceDateTime\" data-throw-if-not-resolved=\"false\"></xref> instance representing \nthe date. The default value is the current year, month, and day.\n"
+  overload: Microsoft.Health.ItemTypes.ApplicationSpecific.When*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.Description
+  commentId: P:Microsoft.Health.ItemTypes.ApplicationSpecific.Description
+  id: Description
+  parent: Microsoft.Health.ItemTypes.ApplicationSpecific
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: ApplicationSpecific.Description
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.Description
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/ApplicationSpecific.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Description
+    path: ApplicationSpecific.cs
+    startLine: 355
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the description of the item for display purposes.\n"
+  example: []
+  syntax:
+    content: public string Description { get; set; }
+    content.vb: Public Property Description As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.ItemTypes.ApplicationSpecific.Description*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">value</span> is <strong>null</strong>, empty, or contains only whitespace.\n"
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecificXml
+  commentId: P:Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecificXml
+  id: ApplicationSpecificXml
+  parent: Microsoft.Health.ItemTypes.ApplicationSpecific
+  langs:
+  - csharp
+  - vb
+  name: ApplicationSpecificXml
+  nameWithType: ApplicationSpecific.ApplicationSpecificXml
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecificXml
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/ApplicationSpecific.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ApplicationSpecificXml
+    path: ApplicationSpecific.cs
+    startLine: 377
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets a collection of the application specific XML.\n"
+  remarks: "\nTo change the application specific XML for the item, add or remove\nitems in the collection.\nDerived classes can ignore this member.\n"
+  example: []
+  syntax:
+    content: public Collection<IXPathNavigable> ApplicationSpecificXml { get; }
+    content.vb: Public ReadOnly Property ApplicationSpecificXml As Collection(Of IXPathNavigable)
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{System.Xml.XPath.IXPathNavigable}
+  overload: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecificXml*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.ToString
+  commentId: M:Microsoft.Health.ItemTypes.ApplicationSpecific.ToString
+  id: ToString
+  parent: Microsoft.Health.ItemTypes.ApplicationSpecific
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: ApplicationSpecific.ToString()
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.ToString()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/ApplicationSpecific.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ToString
+    path: ApplicationSpecific.cs
+    startLine: 392
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets a string representation of the application specific item.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    content.vb: Public Overrides Function ToString As String
+    return:
+      type: System.String
+      description: "\nA string representation of the application specific item.\n"
+  overridden: System.Object.ToString
+  overload: Microsoft.Health.ItemTypes.ApplicationSpecific.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: Microsoft.Health.ItemTypeManager.RegisterApplicationSpecificHandler(System.Guid,System.String,System.Type)
+  commentId: M:Microsoft.Health.ItemTypeManager.RegisterApplicationSpecificHandler(System.Guid,System.String,System.Type)
+- uid: Microsoft.Health.ItemTypes
+  commentId: N:Microsoft.Health.ItemTypes
+  isExternal: false
+  name: Microsoft.Health.ItemTypes
+  nameWithType: Microsoft.Health.ItemTypes
+  fullName: Microsoft.Health.ItemTypes
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Microsoft.Health.HealthRecordItem
+  commentId: T:Microsoft.Health.HealthRecordItem
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthRecordItem
+  nameWithType: HealthRecordItem
+  fullName: Microsoft.Health.HealthRecordItem
+- uid: Microsoft.Health.HealthRecordItem.Sign(System.Security.Cryptography.X509Certificates.X509Certificate2)
+  commentId: M:Microsoft.Health.HealthRecordItem.Sign(System.Security.Cryptography.X509Certificates.X509Certificate2)
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: true
+  name: Sign(X509Certificate2)
+  nameWithType: HealthRecordItem.Sign(X509Certificate2)
+  fullName: Microsoft.Health.HealthRecordItem.Sign(System.Security.Cryptography.X509Certificates.X509Certificate2)
+  spec.csharp:
+  - uid: Microsoft.Health.HealthRecordItem.Sign(System.Security.Cryptography.X509Certificates.X509Certificate2)
+    name: Sign
+    nameWithType: HealthRecordItem.Sign
+    fullName: Microsoft.Health.HealthRecordItem.Sign
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Security.Cryptography.X509Certificates.X509Certificate2
+    name: X509Certificate2
+    nameWithType: X509Certificate2
+    fullName: System.Security.Cryptography.X509Certificates.X509Certificate2
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.HealthRecordItem.Sign(System.Security.Cryptography.X509Certificates.X509Certificate2)
+    name: Sign
+    nameWithType: HealthRecordItem.Sign
+    fullName: Microsoft.Health.HealthRecordItem.Sign
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Security.Cryptography.X509Certificates.X509Certificate2
+    name: X509Certificate2
+    nameWithType: X509Certificate2
+    fullName: System.Security.Cryptography.X509Certificates.X509Certificate2
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.HealthRecordItem.IsSignatureValid
+  commentId: M:Microsoft.Health.HealthRecordItem.IsSignatureValid
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: IsSignatureValid()
+  nameWithType: HealthRecordItem.IsSignatureValid()
+  fullName: Microsoft.Health.HealthRecordItem.IsSignatureValid()
+  spec.csharp:
+  - uid: Microsoft.Health.HealthRecordItem.IsSignatureValid
+    name: IsSignatureValid
+    nameWithType: HealthRecordItem.IsSignatureValid
+    fullName: Microsoft.Health.HealthRecordItem.IsSignatureValid
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.HealthRecordItem.IsSignatureValid
+    name: IsSignatureValid
+    nameWithType: HealthRecordItem.IsSignatureValid
+    fullName: Microsoft.Health.HealthRecordItem.IsSignatureValid
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.HealthRecordItem.ValidateCertificate
+  commentId: M:Microsoft.Health.HealthRecordItem.ValidateCertificate
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: ValidateCertificate()
+  nameWithType: HealthRecordItem.ValidateCertificate()
+  fullName: Microsoft.Health.HealthRecordItem.ValidateCertificate()
+  spec.csharp:
+  - uid: Microsoft.Health.HealthRecordItem.ValidateCertificate
+    name: ValidateCertificate
+    nameWithType: HealthRecordItem.ValidateCertificate
+    fullName: Microsoft.Health.HealthRecordItem.ValidateCertificate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.HealthRecordItem.ValidateCertificate
+    name: ValidateCertificate
+    nameWithType: HealthRecordItem.ValidateCertificate
+    fullName: Microsoft.Health.HealthRecordItem.ValidateCertificate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.HealthRecordItem.Key
+  commentId: P:Microsoft.Health.HealthRecordItem.Key
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: Key
+  nameWithType: HealthRecordItem.Key
+  fullName: Microsoft.Health.HealthRecordItem.Key
+- uid: Microsoft.Health.HealthRecordItem.TypeName
+  commentId: P:Microsoft.Health.HealthRecordItem.TypeName
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: TypeName
+  nameWithType: HealthRecordItem.TypeName
+  fullName: Microsoft.Health.HealthRecordItem.TypeName
+- uid: Microsoft.Health.HealthRecordItem.EffectiveDate
+  commentId: P:Microsoft.Health.HealthRecordItem.EffectiveDate
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: EffectiveDate
+  nameWithType: HealthRecordItem.EffectiveDate
+  fullName: Microsoft.Health.HealthRecordItem.EffectiveDate
+- uid: Microsoft.Health.HealthRecordItem.State
+  commentId: P:Microsoft.Health.HealthRecordItem.State
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: State
+  nameWithType: HealthRecordItem.State
+  fullName: Microsoft.Health.HealthRecordItem.State
+- uid: Microsoft.Health.HealthRecordItem.Flags
+  commentId: P:Microsoft.Health.HealthRecordItem.Flags
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: Flags
+  nameWithType: HealthRecordItem.Flags
+  fullName: Microsoft.Health.HealthRecordItem.Flags
+- uid: Microsoft.Health.HealthRecordItem.IsPersonal
+  commentId: P:Microsoft.Health.HealthRecordItem.IsPersonal
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: IsPersonal
+  nameWithType: HealthRecordItem.IsPersonal
+  fullName: Microsoft.Health.HealthRecordItem.IsPersonal
+- uid: Microsoft.Health.HealthRecordItem.IsDownVersioned
+  commentId: P:Microsoft.Health.HealthRecordItem.IsDownVersioned
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: IsDownVersioned
+  nameWithType: HealthRecordItem.IsDownVersioned
+  fullName: Microsoft.Health.HealthRecordItem.IsDownVersioned
+- uid: Microsoft.Health.HealthRecordItem.IsUpVersioned
+  commentId: P:Microsoft.Health.HealthRecordItem.IsUpVersioned
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: IsUpVersioned
+  nameWithType: HealthRecordItem.IsUpVersioned
+  fullName: Microsoft.Health.HealthRecordItem.IsUpVersioned
+- uid: Microsoft.Health.HealthRecordItem.UpdatedEndDate
+  commentId: P:Microsoft.Health.HealthRecordItem.UpdatedEndDate
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: UpdatedEndDate
+  nameWithType: HealthRecordItem.UpdatedEndDate
+  fullName: Microsoft.Health.HealthRecordItem.UpdatedEndDate
+- uid: Microsoft.Health.HealthRecordItem.LastUpdated
+  commentId: P:Microsoft.Health.HealthRecordItem.LastUpdated
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: LastUpdated
+  nameWithType: HealthRecordItem.LastUpdated
+  fullName: Microsoft.Health.HealthRecordItem.LastUpdated
+- uid: Microsoft.Health.HealthRecordItem.Created
+  commentId: P:Microsoft.Health.HealthRecordItem.Created
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: Created
+  nameWithType: HealthRecordItem.Created
+  fullName: Microsoft.Health.HealthRecordItem.Created
+- uid: Microsoft.Health.HealthRecordItem.EffectivePermissions
+  commentId: P:Microsoft.Health.HealthRecordItem.EffectivePermissions
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: EffectivePermissions
+  nameWithType: HealthRecordItem.EffectivePermissions
+  fullName: Microsoft.Health.HealthRecordItem.EffectivePermissions
+- uid: Microsoft.Health.HealthRecordItem.IsImmutable
+  commentId: P:Microsoft.Health.HealthRecordItem.IsImmutable
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: IsImmutable
+  nameWithType: HealthRecordItem.IsImmutable
+  fullName: Microsoft.Health.HealthRecordItem.IsImmutable
+- uid: Microsoft.Health.HealthRecordItem.IsReadOnly
+  commentId: P:Microsoft.Health.HealthRecordItem.IsReadOnly
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: IsReadOnly
+  nameWithType: HealthRecordItem.IsReadOnly
+  fullName: Microsoft.Health.HealthRecordItem.IsReadOnly
+- uid: Microsoft.Health.HealthRecordItem.TypeSpecificData
+  commentId: P:Microsoft.Health.HealthRecordItem.TypeSpecificData
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: TypeSpecificData
+  nameWithType: HealthRecordItem.TypeSpecificData
+  fullName: Microsoft.Health.HealthRecordItem.TypeSpecificData
+- uid: Microsoft.Health.HealthRecordItem.TransformedXmlData
+  commentId: P:Microsoft.Health.HealthRecordItem.TransformedXmlData
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: TransformedXmlData
+  nameWithType: HealthRecordItem.TransformedXmlData
+  fullName: Microsoft.Health.HealthRecordItem.TransformedXmlData
+- uid: Microsoft.Health.HealthRecordItem.CommonData
+  commentId: P:Microsoft.Health.HealthRecordItem.CommonData
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: CommonData
+  nameWithType: HealthRecordItem.CommonData
+  fullName: Microsoft.Health.HealthRecordItem.CommonData
+- uid: Microsoft.Health.HealthRecordItem.GetBlobStore(Microsoft.Health.HealthRecordAccessor)
+  commentId: M:Microsoft.Health.HealthRecordItem.GetBlobStore(Microsoft.Health.HealthRecordAccessor)
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: GetBlobStore(HealthRecordAccessor)
+  nameWithType: HealthRecordItem.GetBlobStore(HealthRecordAccessor)
+  fullName: Microsoft.Health.HealthRecordItem.GetBlobStore(Microsoft.Health.HealthRecordAccessor)
+  spec.csharp:
+  - uid: Microsoft.Health.HealthRecordItem.GetBlobStore(Microsoft.Health.HealthRecordAccessor)
+    name: GetBlobStore
+    nameWithType: HealthRecordItem.GetBlobStore
+    fullName: Microsoft.Health.HealthRecordItem.GetBlobStore
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.HealthRecordAccessor
+    name: HealthRecordAccessor
+    nameWithType: HealthRecordAccessor
+    fullName: Microsoft.Health.HealthRecordAccessor
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.HealthRecordItem.GetBlobStore(Microsoft.Health.HealthRecordAccessor)
+    name: GetBlobStore
+    nameWithType: HealthRecordItem.GetBlobStore
+    fullName: Microsoft.Health.HealthRecordItem.GetBlobStore
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.HealthRecordAccessor
+    name: HealthRecordAccessor
+    nameWithType: HealthRecordAccessor
+    fullName: Microsoft.Health.HealthRecordAccessor
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.HealthRecordItem.GetBlobStore(Microsoft.Health.Package.ConnectPackageCreationParameters)
+  commentId: M:Microsoft.Health.HealthRecordItem.GetBlobStore(Microsoft.Health.Package.ConnectPackageCreationParameters)
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: GetBlobStore(ConnectPackageCreationParameters)
+  nameWithType: HealthRecordItem.GetBlobStore(ConnectPackageCreationParameters)
+  fullName: Microsoft.Health.HealthRecordItem.GetBlobStore(Microsoft.Health.Package.ConnectPackageCreationParameters)
+  spec.csharp:
+  - uid: Microsoft.Health.HealthRecordItem.GetBlobStore(Microsoft.Health.Package.ConnectPackageCreationParameters)
+    name: GetBlobStore
+    nameWithType: HealthRecordItem.GetBlobStore
+    fullName: Microsoft.Health.HealthRecordItem.GetBlobStore
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.Package.ConnectPackageCreationParameters
+    name: ConnectPackageCreationParameters
+    nameWithType: ConnectPackageCreationParameters
+    fullName: Microsoft.Health.Package.ConnectPackageCreationParameters
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.HealthRecordItem.GetBlobStore(Microsoft.Health.Package.ConnectPackageCreationParameters)
+    name: GetBlobStore
+    nameWithType: HealthRecordItem.GetBlobStore
+    fullName: Microsoft.Health.HealthRecordItem.GetBlobStore
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.Package.ConnectPackageCreationParameters
+    name: ConnectPackageCreationParameters
+    nameWithType: ConnectPackageCreationParameters
+    fullName: Microsoft.Health.Package.ConnectPackageCreationParameters
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.HealthRecordItem.Tags
+  commentId: P:Microsoft.Health.HealthRecordItem.Tags
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: Tags
+  nameWithType: HealthRecordItem.Tags
+  fullName: Microsoft.Health.HealthRecordItem.Tags
+- uid: Microsoft.Health.HealthRecordItem.HealthRecordItemSignatures
+  commentId: P:Microsoft.Health.HealthRecordItem.HealthRecordItemSignatures
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: HealthRecordItemSignatures
+  nameWithType: HealthRecordItem.HealthRecordItemSignatures
+  fullName: Microsoft.Health.HealthRecordItem.HealthRecordItemSignatures
+- uid: Microsoft.Health.HealthRecordItem.Sections
+  commentId: P:Microsoft.Health.HealthRecordItem.Sections
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: Sections
+  nameWithType: HealthRecordItem.Sections
+  fullName: Microsoft.Health.HealthRecordItem.Sections
+- uid: Microsoft.Health.HealthRecordItem.GetSizeInBytes
+  commentId: M:Microsoft.Health.HealthRecordItem.GetSizeInBytes
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: GetSizeInBytes()
+  nameWithType: HealthRecordItem.GetSizeInBytes()
+  fullName: Microsoft.Health.HealthRecordItem.GetSizeInBytes()
+  spec.csharp:
+  - uid: Microsoft.Health.HealthRecordItem.GetSizeInBytes
+    name: GetSizeInBytes
+    nameWithType: HealthRecordItem.GetSizeInBytes
+    fullName: Microsoft.Health.HealthRecordItem.GetSizeInBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.HealthRecordItem.GetSizeInBytes
+    name: GetSizeInBytes
+    nameWithType: HealthRecordItem.GetSizeInBytes
+    fullName: Microsoft.Health.HealthRecordItem.GetSizeInBytes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.HealthRecordItem.GetItemXml
+  commentId: M:Microsoft.Health.HealthRecordItem.GetItemXml
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: GetItemXml()
+  nameWithType: HealthRecordItem.GetItemXml()
+  fullName: Microsoft.Health.HealthRecordItem.GetItemXml()
+  spec.csharp:
+  - uid: Microsoft.Health.HealthRecordItem.GetItemXml
+    name: GetItemXml
+    nameWithType: HealthRecordItem.GetItemXml
+    fullName: Microsoft.Health.HealthRecordItem.GetItemXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.HealthRecordItem.GetItemXml
+    name: GetItemXml
+    nameWithType: HealthRecordItem.GetItemXml
+    fullName: Microsoft.Health.HealthRecordItem.GetItemXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.HealthRecordItem.GetItemXml(Microsoft.Health.HealthRecordItemSections)
+  commentId: M:Microsoft.Health.HealthRecordItem.GetItemXml(Microsoft.Health.HealthRecordItemSections)
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: GetItemXml(HealthRecordItemSections)
+  nameWithType: HealthRecordItem.GetItemXml(HealthRecordItemSections)
+  fullName: Microsoft.Health.HealthRecordItem.GetItemXml(Microsoft.Health.HealthRecordItemSections)
+  spec.csharp:
+  - uid: Microsoft.Health.HealthRecordItem.GetItemXml(Microsoft.Health.HealthRecordItemSections)
+    name: GetItemXml
+    nameWithType: HealthRecordItem.GetItemXml
+    fullName: Microsoft.Health.HealthRecordItem.GetItemXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.HealthRecordItemSections
+    name: HealthRecordItemSections
+    nameWithType: HealthRecordItemSections
+    fullName: Microsoft.Health.HealthRecordItemSections
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.HealthRecordItem.GetItemXml(Microsoft.Health.HealthRecordItemSections)
+    name: GetItemXml
+    nameWithType: HealthRecordItem.GetItemXml
+    fullName: Microsoft.Health.HealthRecordItem.GetItemXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.HealthRecordItemSections
+    name: HealthRecordItemSections
+    nameWithType: HealthRecordItemSections
+    fullName: Microsoft.Health.HealthRecordItemSections
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.HealthRecordItem.GetItemXml(System.String)
+  commentId: M:Microsoft.Health.HealthRecordItem.GetItemXml(System.String)
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: true
+  name: GetItemXml(String)
+  nameWithType: HealthRecordItem.GetItemXml(String)
+  fullName: Microsoft.Health.HealthRecordItem.GetItemXml(System.String)
+  spec.csharp:
+  - uid: Microsoft.Health.HealthRecordItem.GetItemXml(System.String)
+    name: GetItemXml
+    nameWithType: HealthRecordItem.GetItemXml
+    fullName: Microsoft.Health.HealthRecordItem.GetItemXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.HealthRecordItem.GetItemXml(System.String)
+    name: GetItemXml
+    nameWithType: HealthRecordItem.GetItemXml
+    fullName: Microsoft.Health.HealthRecordItem.GetItemXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.HealthRecordItem.GetItemXml(Microsoft.Health.HealthRecordItemSections,System.String)
+  commentId: M:Microsoft.Health.HealthRecordItem.GetItemXml(Microsoft.Health.HealthRecordItemSections,System.String)
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: true
+  name: GetItemXml(HealthRecordItemSections, String)
+  nameWithType: HealthRecordItem.GetItemXml(HealthRecordItemSections, String)
+  fullName: Microsoft.Health.HealthRecordItem.GetItemXml(Microsoft.Health.HealthRecordItemSections, System.String)
+  spec.csharp:
+  - uid: Microsoft.Health.HealthRecordItem.GetItemXml(Microsoft.Health.HealthRecordItemSections,System.String)
+    name: GetItemXml
+    nameWithType: HealthRecordItem.GetItemXml
+    fullName: Microsoft.Health.HealthRecordItem.GetItemXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.HealthRecordItemSections
+    name: HealthRecordItemSections
+    nameWithType: HealthRecordItemSections
+    fullName: Microsoft.Health.HealthRecordItemSections
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.HealthRecordItem.GetItemXml(Microsoft.Health.HealthRecordItemSections,System.String)
+    name: GetItemXml
+    nameWithType: HealthRecordItem.GetItemXml
+    fullName: Microsoft.Health.HealthRecordItem.GetItemXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.HealthRecordItemSections
+    name: HealthRecordItemSections
+    nameWithType: HealthRecordItemSections
+    fullName: Microsoft.Health.HealthRecordItemSections
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.HealthRecordItem.Serialize
+  commentId: M:Microsoft.Health.HealthRecordItem.Serialize
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: false
+  name: Serialize()
+  nameWithType: HealthRecordItem.Serialize()
+  fullName: Microsoft.Health.HealthRecordItem.Serialize()
+  spec.csharp:
+  - uid: Microsoft.Health.HealthRecordItem.Serialize
+    name: Serialize
+    nameWithType: HealthRecordItem.Serialize
+    fullName: Microsoft.Health.HealthRecordItem.Serialize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.HealthRecordItem.Serialize
+    name: Serialize
+    nameWithType: HealthRecordItem.Serialize
+    fullName: Microsoft.Health.HealthRecordItem.Serialize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.HealthRecordItem.Deserialize(System.String)
+  commentId: M:Microsoft.Health.HealthRecordItem.Deserialize(System.String)
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: true
+  name: Deserialize(String)
+  nameWithType: HealthRecordItem.Deserialize(String)
+  fullName: Microsoft.Health.HealthRecordItem.Deserialize(System.String)
+  spec.csharp:
+  - uid: Microsoft.Health.HealthRecordItem.Deserialize(System.String)
+    name: Deserialize
+    nameWithType: HealthRecordItem.Deserialize
+    fullName: Microsoft.Health.HealthRecordItem.Deserialize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.HealthRecordItem.Deserialize(System.String)
+    name: Deserialize
+    nameWithType: HealthRecordItem.Deserialize
+    fullName: Microsoft.Health.HealthRecordItem.Deserialize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health
+  commentId: N:Microsoft.Health
+  isExternal: false
+  name: Microsoft.Health
+  nameWithType: Microsoft.Health
+  fullName: Microsoft.Health
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific
+  commentId: T:Microsoft.Health.ItemTypes.ApplicationSpecific
+  isExternal: false
+  name: ApplicationSpecific
+  nameWithType: ApplicationSpecific
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific
+- uid: Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)
+  commentId: M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor*
+  commentId: Overload:Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor
+  isExternal: false
+  name: ApplicationSpecific
+  nameWithType: ApplicationSpecific.ApplicationSpecific
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecific
+- uid: System.Guid.Empty
+  commentId: F:System.Guid.Empty
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Microsoft.Health.HealthRecordItem.ParseXml(System.Xml.XPath.IXPathNavigable)
+  commentId: M:Microsoft.Health.HealthRecordItem.ParseXml(System.Xml.XPath.IXPathNavigable)
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: true
+  name: ParseXml(IXPathNavigable)
+  nameWithType: HealthRecordItem.ParseXml(IXPathNavigable)
+  fullName: Microsoft.Health.HealthRecordItem.ParseXml(System.Xml.XPath.IXPathNavigable)
+  spec.csharp:
+  - uid: Microsoft.Health.HealthRecordItem.ParseXml(System.Xml.XPath.IXPathNavigable)
+    name: ParseXml
+    nameWithType: HealthRecordItem.ParseXml
+    fullName: Microsoft.Health.HealthRecordItem.ParseXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XPath.IXPathNavigable
+    name: IXPathNavigable
+    nameWithType: IXPathNavigable
+    fullName: System.Xml.XPath.IXPathNavigable
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.HealthRecordItem.ParseXml(System.Xml.XPath.IXPathNavigable)
+    name: ParseXml
+    nameWithType: HealthRecordItem.ParseXml
+    fullName: Microsoft.Health.HealthRecordItem.ParseXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XPath.IXPathNavigable
+    name: IXPathNavigable
+    nameWithType: IXPathNavigable
+    fullName: System.Xml.XPath.IXPathNavigable
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.ParseXml*
+  commentId: Overload:Microsoft.Health.ItemTypes.ApplicationSpecific.ParseXml
+  isExternal: false
+  name: ParseXml
+  nameWithType: ApplicationSpecific.ParseXml
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.ParseXml
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+- uid: System.Xml.XPath.IXPathNavigable
+  commentId: T:System.Xml.XPath.IXPathNavigable
+  parent: System.Xml.XPath
+  isExternal: true
+  name: IXPathNavigable
+  nameWithType: IXPathNavigable
+  fullName: System.Xml.XPath.IXPathNavigable
+- uid: System.Xml.XPath
+  commentId: N:System.Xml.XPath
+  isExternal: false
+  name: System.Xml.XPath
+  nameWithType: System.Xml.XPath
+  fullName: System.Xml.XPath
+- uid: System.Xml.XPath.XPathNavigator
+  commentId: T:System.Xml.XPath.XPathNavigator
+  parent: System.Xml.XPath
+  isExternal: true
+  name: XPathNavigator
+  nameWithType: XPathNavigator
+  fullName: System.Xml.XPath.XPathNavigator
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecificXml
+  commentId: P:Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecificXml
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.ParseApplicationSpecificXml*
+  commentId: Overload:Microsoft.Health.ItemTypes.ApplicationSpecific.ParseApplicationSpecificXml
+  isExternal: false
+  name: ParseApplicationSpecificXml
+  nameWithType: ApplicationSpecific.ParseApplicationSpecificXml
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.ParseApplicationSpecificXml
+- uid: System.Collections.Generic.IList{System.Xml.XPath.IXPathNavigable}
+  commentId: T:System.Collections.Generic.IList{System.Xml.XPath.IXPathNavigable}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<IXPathNavigable>
+  nameWithType: IList<IXPathNavigable>
+  fullName: System.Collections.Generic.IList<System.Xml.XPath.IXPathNavigable>
+  nameWithType.vb: IList(Of IXPathNavigable)
+  fullName.vb: System.Collections.Generic.IList(Of System.Xml.XPath.IXPathNavigable)
+  name.vb: IList(Of IXPathNavigable)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Xml.XPath.IXPathNavigable
+    name: IXPathNavigable
+    nameWithType: IXPathNavigable
+    fullName: System.Xml.XPath.IXPathNavigable
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Xml.XPath.IXPathNavigable
+    name: IXPathNavigable
+    nameWithType: IXPathNavigable
+    fullName: System.Xml.XPath.IXPathNavigable
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationId
+  commentId: P:Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationId
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.SubtypeTag
+  commentId: P:Microsoft.Health.ItemTypes.ApplicationSpecific.SubtypeTag
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.Description
+  commentId: P:Microsoft.Health.ItemTypes.ApplicationSpecific.Description
+- uid: Microsoft.Health.HealthRecordItem.WriteXml(System.Xml.XmlWriter)
+  commentId: M:Microsoft.Health.HealthRecordItem.WriteXml(System.Xml.XmlWriter)
+  parent: Microsoft.Health.HealthRecordItem
+  isExternal: true
+  name: WriteXml(XmlWriter)
+  nameWithType: HealthRecordItem.WriteXml(XmlWriter)
+  fullName: Microsoft.Health.HealthRecordItem.WriteXml(System.Xml.XmlWriter)
+  spec.csharp:
+  - uid: Microsoft.Health.HealthRecordItem.WriteXml(System.Xml.XmlWriter)
+    name: WriteXml
+    nameWithType: HealthRecordItem.WriteXml
+    fullName: Microsoft.Health.HealthRecordItem.WriteXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.HealthRecordItem.WriteXml(System.Xml.XmlWriter)
+    name: WriteXml
+    nameWithType: HealthRecordItem.WriteXml
+    fullName: Microsoft.Health.HealthRecordItem.WriteXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.WriteXml*
+  commentId: Overload:Microsoft.Health.ItemTypes.ApplicationSpecific.WriteXml
+  isExternal: false
+  name: WriteXml
+  nameWithType: ApplicationSpecific.WriteXml
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.WriteXml
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+- uid: Microsoft.Health.HealthRecordItemSerializationException
+  commentId: T:Microsoft.Health.HealthRecordItemSerializationException
+- uid: System.Xml.XmlWriter
+  commentId: T:System.Xml.XmlWriter
+  parent: System.Xml
+  isExternal: true
+  name: XmlWriter
+  nameWithType: XmlWriter
+  fullName: System.Xml.XmlWriter
+- uid: System.Xml
+  commentId: N:System.Xml
+  isExternal: false
+  name: System.Xml
+  nameWithType: System.Xml
+  fullName: System.Xml
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.WriteApplicationSpecificXml*
+  commentId: Overload:Microsoft.Health.ItemTypes.ApplicationSpecific.WriteApplicationSpecificXml
+  isExternal: false
+  name: WriteApplicationSpecificXml
+  nameWithType: ApplicationSpecific.WriteApplicationSpecificXml
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.WriteApplicationSpecificXml
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationId*
+  commentId: Overload:Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationId
+  isExternal: false
+  name: ApplicationId
+  nameWithType: ApplicationSpecific.ApplicationId
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationId
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.SubtypeTag*
+  commentId: Overload:Microsoft.Health.ItemTypes.ApplicationSpecific.SubtypeTag
+  isExternal: false
+  name: SubtypeTag
+  nameWithType: ApplicationSpecific.SubtypeTag
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.SubtypeTag
+- uid: Microsoft.Health.ItemTypes.HealthServiceDateTime
+  commentId: T:Microsoft.Health.ItemTypes.HealthServiceDateTime
+  parent: Microsoft.Health.ItemTypes
+  isExternal: false
+  name: HealthServiceDateTime
+  nameWithType: HealthServiceDateTime
+  fullName: Microsoft.Health.ItemTypes.HealthServiceDateTime
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.When*
+  commentId: Overload:Microsoft.Health.ItemTypes.ApplicationSpecific.When
+  isExternal: false
+  name: When
+  nameWithType: ApplicationSpecific.When
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.When
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.Description*
+  commentId: Overload:Microsoft.Health.ItemTypes.ApplicationSpecific.Description
+  isExternal: false
+  name: Description
+  nameWithType: ApplicationSpecific.Description
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.Description
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecificXml*
+  commentId: Overload:Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecificXml
+  isExternal: false
+  name: ApplicationSpecificXml
+  nameWithType: ApplicationSpecific.ApplicationSpecificXml
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecificXml
+- uid: System.Collections.ObjectModel.Collection{System.Xml.XPath.IXPathNavigable}
+  commentId: T:System.Collections.ObjectModel.Collection{System.Xml.XPath.IXPathNavigable}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<IXPathNavigable>
+  nameWithType: Collection<IXPathNavigable>
+  fullName: System.Collections.ObjectModel.Collection<System.Xml.XPath.IXPathNavigable>
+  nameWithType.vb: Collection(Of IXPathNavigable)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Xml.XPath.IXPathNavigable)
+  name.vb: Collection(Of IXPathNavigable)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Xml.XPath.IXPathNavigable
+    name: IXPathNavigable
+    nameWithType: IXPathNavigable
+    fullName: System.Xml.XPath.IXPathNavigable
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Xml.XPath.IXPathNavigable
+    name: IXPathNavigable
+    nameWithType: IXPathNavigable
+    fullName: System.Xml.XPath.IXPathNavigable
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1
+  commentId: T:System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<T>
+  nameWithType: Collection<T>
+  fullName: System.Collections.ObjectModel.Collection<T>
+  nameWithType.vb: Collection(Of T)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T)
+  name.vb: Collection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: false
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.ApplicationSpecific.ToString*
+  commentId: Overload:Microsoft.Health.ItemTypes.ApplicationSpecific.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: ApplicationSpecific.ToString
+  fullName: Microsoft.Health.ItemTypes.ApplicationSpecific.ToString
