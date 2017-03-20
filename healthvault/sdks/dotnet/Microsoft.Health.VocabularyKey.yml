@@ -1,0 +1,1437 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.VocabularyKey
+  commentId: T:Microsoft.Health.VocabularyKey
+  id: VocabularyKey
+  parent: Microsoft.Health
+  children:
+  - Microsoft.Health.VocabularyKey.#ctor(System.String)
+  - Microsoft.Health.VocabularyKey.#ctor(System.String,System.String)
+  - Microsoft.Health.VocabularyKey.#ctor(System.String,System.String,System.String)
+  - Microsoft.Health.VocabularyKey.#ctor(System.String,System.String,System.String,System.String)
+  - Microsoft.Health.VocabularyKey.CodeValue
+  - Microsoft.Health.VocabularyKey.Description
+  - Microsoft.Health.VocabularyKey.Family
+  - Microsoft.Health.VocabularyKey.Name
+  - Microsoft.Health.VocabularyKey.ToString
+  - Microsoft.Health.VocabularyKey.Version
+  - Microsoft.Health.VocabularyKey.WriteXml(System.Xml.XmlWriter)
+  langs:
+  - csharp
+  - vb
+  name: VocabularyKey
+  nameWithType: VocabularyKey
+  fullName: Microsoft.Health.VocabularyKey
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyKey.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: VocabularyKey
+    path: ../Microsoft.Health/VocabularyKey.cs
+    startLine: 16
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nRepresents a key for identifying a Vocabulary in the HealthLexicon.\n"
+  example: []
+  syntax:
+    content: public class VocabularyKey
+    content.vb: Public Class VocabularyKey
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - Microsoft.Health.VocabularyKey.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  - System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.VocabularyKey.#ctor(System.String)
+  commentId: M:Microsoft.Health.VocabularyKey.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: Microsoft.Health.VocabularyKey
+  langs:
+  - csharp
+  - vb
+  name: VocabularyKey(String)
+  nameWithType: VocabularyKey.VocabularyKey(String)
+  fullName: Microsoft.Health.VocabularyKey.VocabularyKey(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyKey.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health/VocabularyKey.cs
+    startLine: 38
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.VocabularyKey\" data-throw-if-not-resolved=\"false\"></xref> class \nconsisting only of a vocabulary name.\n"
+  remarks: "\nSince the family is unspecified, it is assumed to be the\nHealthService family of vocabularies. Since the version is unspecified, \nthe most current version of the vocabulary is referenced for retrieval\nor searching.\n"
+  example: []
+  syntax:
+    content: public VocabularyKey(string name)
+    content.vb: Public Sub New(name As String)
+    parameters:
+    - id: name
+      type: System.String
+      description: "\nThe name of the vocabulary.\n"
+  overload: Microsoft.Health.VocabularyKey.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">name</span> is <strong>null</strong> or empty.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.VocabularyKey.#ctor(System.String,System.String)
+  commentId: M:Microsoft.Health.VocabularyKey.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: Microsoft.Health.VocabularyKey
+  langs:
+  - csharp
+  - vb
+  name: VocabularyKey(String, String)
+  nameWithType: VocabularyKey.VocabularyKey(String, String)
+  fullName: Microsoft.Health.VocabularyKey.VocabularyKey(System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyKey.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health/VocabularyKey.cs
+    startLine: 65
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.VocabularyKey\" data-throw-if-not-resolved=\"false\"></xref> class \nconsisting of a vocabulary name and the vocabulary family name. \n"
+  remarks: "\nSince the version is unspecified, the most current version of the \nvocabulary will be returned.\n"
+  example: []
+  syntax:
+    content: public VocabularyKey(string name, string family)
+    content.vb: Public Sub New(name As String, family As String)
+    parameters:
+    - id: name
+      type: System.String
+      description: "\nThe name of the vocabulary.\n"
+    - id: family
+      type: System.String
+      description: "\nThe name of the family the vocabulary belongs to. \n"
+  overload: Microsoft.Health.VocabularyKey.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">name</span> is <strong>null</strong> or empty.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.VocabularyKey.#ctor(System.String,System.String,System.String)
+  commentId: M:Microsoft.Health.VocabularyKey.#ctor(System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String)'
+  parent: Microsoft.Health.VocabularyKey
+  langs:
+  - csharp
+  - vb
+  name: VocabularyKey(String, String, String)
+  nameWithType: VocabularyKey.VocabularyKey(String, String, String)
+  fullName: Microsoft.Health.VocabularyKey.VocabularyKey(System.String, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyKey.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health/VocabularyKey.cs
+    startLine: 94
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.VocabularyKey\" data-throw-if-not-resolved=\"false\"></xref> class \nconsisting of a vocabulary name, vocabulary version, and the \nvocabulary family name.\n"
+  example: []
+  syntax:
+    content: public VocabularyKey(string name, string family, string version)
+    content.vb: Public Sub New(name As String, family As String, version As String)
+    parameters:
+    - id: name
+      type: System.String
+      description: "\nThe name of the vocabulary.\n"
+    - id: family
+      type: System.String
+      description: "\nThe name of the family the vocabulary belongs to.\n"
+    - id: version
+      type: System.String
+      description: "\nThe version of the vocabulary. \n"
+  overload: Microsoft.Health.VocabularyKey.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">name</span>  is <strong>null</strong> or empty.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.VocabularyKey.#ctor(System.String,System.String,System.String,System.String)
+  commentId: M:Microsoft.Health.VocabularyKey.#ctor(System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String,System.String)'
+  parent: Microsoft.Health.VocabularyKey
+  langs:
+  - csharp
+  - vb
+  name: VocabularyKey(String, String, String, String)
+  nameWithType: VocabularyKey.VocabularyKey(String, String, String, String)
+  fullName: Microsoft.Health.VocabularyKey.VocabularyKey(System.String, System.String, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyKey.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health/VocabularyKey.cs
+    startLine: 131
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.VocabularyKey\" data-throw-if-not-resolved=\"false\"></xref> class \nconsisting of a vocabulary name, vocabulary version, the \nvocabulary family name and the code value of the vocabulary item which should \nbe the first item in the result set of vocabulary items returned.\n"
+  example: []
+  syntax:
+    content: public VocabularyKey(string name, string family, string version, string codeValue)
+    content.vb: Public Sub New(name As String, family As String, version As String, codeValue As String)
+    parameters:
+    - id: name
+      type: System.String
+      description: "\nThe name of the vocabulary.\n"
+    - id: family
+      type: System.String
+      description: "\nThe name of the family the vocabulary belongs to.\n"
+    - id: version
+      type: System.String
+      description: "\nThe version of the vocabulary. \n"
+    - id: codeValue
+      type: System.String
+      description: "\nThe code value representing the vocabulary item which is to be the first item in the \nresult set of vocabulary items returned. \n"
+  overload: Microsoft.Health.VocabularyKey.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">name</span> is <strong>null</strong> or empty.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.VocabularyKey.Name
+  commentId: P:Microsoft.Health.VocabularyKey.Name
+  id: Name
+  parent: Microsoft.Health.VocabularyKey
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: VocabularyKey.Name
+  fullName: Microsoft.Health.VocabularyKey.Name
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyKey.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Name
+    path: ../Microsoft.Health/VocabularyKey.cs
+    startLine: 150
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the name of the Vocabulary.\n"
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    content.vb: Public Property Name As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.VocabularyKey.Name*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf the property value is <strong>null</strong> or empty.\n"
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.VocabularyKey.Family
+  commentId: P:Microsoft.Health.VocabularyKey.Family
+  id: Family
+  parent: Microsoft.Health.VocabularyKey
+  langs:
+  - csharp
+  - vb
+  name: Family
+  nameWithType: VocabularyKey.Family
+  fullName: Microsoft.Health.VocabularyKey.Family
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyKey.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Family
+    path: ../Microsoft.Health/VocabularyKey.cs
+    startLine: 174
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the name of the family the <xref href=\"Microsoft.Health.Vocabulary\" data-throw-if-not-resolved=\"false\"></xref> belongs to. \n"
+  remarks: "\nIf the family is unspecified, the system assumes that the requested\nvocabulary belongs to the HealthService family of vocabularies.\n"
+  example: []
+  syntax:
+    content: public string Family { get; set; }
+    content.vb: Public Property Family As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nA string representing the <xref href=\"Microsoft.Health.Vocabulary\" data-throw-if-not-resolved=\"false\"></xref> family name.\n"
+  overload: Microsoft.Health.VocabularyKey.Family*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.VocabularyKey.Version
+  commentId: P:Microsoft.Health.VocabularyKey.Version
+  id: Version
+  parent: Microsoft.Health.VocabularyKey
+  langs:
+  - csharp
+  - vb
+  name: Version
+  nameWithType: VocabularyKey.Version
+  fullName: Microsoft.Health.VocabularyKey.Version
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyKey.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Version
+    path: ../Microsoft.Health/VocabularyKey.cs
+    startLine: 194
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the version of the <xref href=\"Microsoft.Health.Vocabulary\" data-throw-if-not-resolved=\"false\"></xref>. \n"
+  remarks: "\nIf the version is unspecified, the most current version of the \nvocabulary is returned.\n"
+  example: []
+  syntax:
+    content: public string Version { get; set; }
+    content.vb: Public Property Version As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nA string representing the <xref href=\"Microsoft.Health.Vocabulary\" data-throw-if-not-resolved=\"false\"></xref> version.\n"
+  overload: Microsoft.Health.VocabularyKey.Version*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.VocabularyKey.CodeValue
+  commentId: P:Microsoft.Health.VocabularyKey.CodeValue
+  id: CodeValue
+  parent: Microsoft.Health.VocabularyKey
+  langs:
+  - csharp
+  - vb
+  name: CodeValue
+  nameWithType: VocabularyKey.CodeValue
+  fullName: Microsoft.Health.VocabularyKey.CodeValue
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyKey.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CodeValue
+    path: ../Microsoft.Health/VocabularyKey.cs
+    startLine: 231
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the code value of the vocabulary key.\n"
+  remarks: "\nUse the <xref href=\"Microsoft.Health.HealthVaultPlatform.GetVocabulary(Microsoft.Health.HealthServiceConnection%2cMicrosoft.Health.VocabularyKey%2cSystem.Boolean)\" data-throw-if-not-resolved=\"false\"></xref> \nmethod and a \n<xref href=\"Microsoft.Health.VocabularyKey\" data-throw-if-not-resolved=\"false\"></xref> to retrieve <xref href=\"Microsoft.Health.VocabularyItem\" data-throw-if-not-resolved=\"false\"></xref>\nobjects. The GetVocabulary method returns a \n<xref href=\"Microsoft.Health.Vocabulary\" data-throw-if-not-resolved=\"false\"></xref> object that contains \n<xref href=\"Microsoft.Health.VocabularyItem\" data-throw-if-not-resolved=\"false\"></xref> objects in the \nindicated vocabulary, sorted by code value, starting from the first \nvocabulary item that has a code value greater than the code value\nof the vocabulary key. If the code value of the vocabulary key is \nnull or the empty string, the collection begins with the first \nvocabulary item in the\nvocabulary. The maxVocabularyItems platform configuration item \nlimits maximum number of items the returned <xref href=\"Microsoft.Health.Vocabulary\" data-throw-if-not-resolved=\"false\"></xref> \nobject can contain. To retrieve the next set of vocabulary items,\nuse a vocabulary key that has a code value equal to the code value of\nthe last vocabulary item returned from the previous call.\n"
+  example: []
+  syntax:
+    content: public string CodeValue { get; set; }
+    content.vb: Public Property CodeValue As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe code value of the vocabulary key.\n"
+  overload: Microsoft.Health.VocabularyKey.CodeValue*
+  seealso:
+  - linkId: Microsoft.Health.HealthVaultPlatform.GetVocabulary(Microsoft.Health.HealthServiceConnection,Microsoft.Health.VocabularyKey,System.Boolean)
+    commentId: M:Microsoft.Health.HealthVaultPlatform.GetVocabulary(Microsoft.Health.HealthServiceConnection,Microsoft.Health.VocabularyKey,System.Boolean)
+    altText: "\nHealthVaultPlatform.GetVocabulary Method"
+  - linkId: Microsoft.Health.Vocabulary
+    commentId: T:Microsoft.Health.Vocabulary
+    altText: Vocabulary Class
+  - linkId: Microsoft.Health.VocabularyItem
+    commentId: T:Microsoft.Health.VocabularyItem
+    altText: VocabularyItem Class
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.VocabularyKey.Description
+  commentId: P:Microsoft.Health.VocabularyKey.Description
+  id: Description
+  parent: Microsoft.Health.VocabularyKey
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: VocabularyKey.Description
+  fullName: Microsoft.Health.VocabularyKey.Description
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyKey.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Description
+    path: ../Microsoft.Health/VocabularyKey.cs
+    startLine: 252
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets a text description of the <xref href=\"Microsoft.Health.Vocabulary\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: "\nThe description is not an integral part of the vocabulary itself, \nbut simply provides additional information about the vocabulary as \na whole.\n"
+  example: []
+  syntax:
+    content: public string Description { get; set; }
+    content.vb: Public Property Description As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nA string representing the description.\n"
+  overload: Microsoft.Health.VocabularyKey.Description*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.VocabularyKey.ToString
+  commentId: M:Microsoft.Health.VocabularyKey.ToString
+  id: ToString
+  parent: Microsoft.Health.VocabularyKey
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: VocabularyKey.ToString()
+  fullName: Microsoft.Health.VocabularyKey.ToString()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyKey.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ToString
+    path: ../Microsoft.Health/VocabularyKey.cs
+    startLine: 263
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nReturns a String that represents the current <xref href=\"Microsoft.Health.Vocabulary\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    content.vb: Public Overrides Function ToString As String
+    return:
+      type: System.String
+  overridden: System.Object.ToString
+  overload: Microsoft.Health.VocabularyKey.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Microsoft.Health.VocabularyKey.WriteXml(System.Xml.XmlWriter)
+  commentId: M:Microsoft.Health.VocabularyKey.WriteXml(System.Xml.XmlWriter)
+  id: WriteXml(System.Xml.XmlWriter)
+  parent: Microsoft.Health.VocabularyKey
+  langs:
+  - csharp
+  - vb
+  name: WriteXml(XmlWriter)
+  nameWithType: VocabularyKey.WriteXml(XmlWriter)
+  fullName: Microsoft.Health.VocabularyKey.WriteXml(System.Xml.XmlWriter)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/VocabularyKey.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: WriteXml
+    path: ../Microsoft.Health/VocabularyKey.cs
+    startLine: 293
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nWrites the vocabulary key to the specified XmlWriter.\n"
+  example: []
+  syntax:
+    content: public void WriteXml(XmlWriter writer)
+    content.vb: Public Sub WriteXml(writer As XmlWriter)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+      description: "\nThe XmlWriter to write the vocabulary key to.\n"
+  overload: Microsoft.Health.VocabularyKey.WriteXml*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Microsoft.Health
+  commentId: N:Microsoft.Health
+  isExternal: false
+  name: Microsoft.Health
+  nameWithType: Microsoft.Health
+  fullName: Microsoft.Health
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  name: SetProperty(String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object())
+  name.vb: SetProperty(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  name: InvokeMethod(String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object())
+  name.vb: InvokeMethod(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  parent: Microsoft.Health.Utility.InvariantString
+  definition: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  name: ToStringInvariant()
+  nameWithType: InvariantString.ToStringInvariant()
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.VocabularyKey.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  parent: Microsoft.Health.Utility.TypeHelper
+  definition: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  name: ValueOrDbNull<VocabularyKey>()
+  nameWithType: TypeHelper.ValueOrDbNull<VocabularyKey>()
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.VocabularyKey>()
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of VocabularyKey)()
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.VocabularyKey)()
+  name.vb: ValueOrDbNull(Of VocabularyKey)()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull<VocabularyKey>
+    nameWithType: TypeHelper.ValueOrDbNull<VocabularyKey>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.VocabularyKey>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull(Of VocabularyKey)
+    nameWithType: TypeHelper.ValueOrDbNull(Of VocabularyKey)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.VocabularyKey)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  parent: Microsoft.Health.Utility.WCXmlHelper
+  definition: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  name: ToXml()
+  nameWithType: WCXmlHelper.ToXml()
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: SetProperty(Object, String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object())
+  name.vb: SetProperty(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions
+  commentId: T:Microsoft.Health.Utility.IDispatchExtensions
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: IDispatchExtensions
+  nameWithType: IDispatchExtensions
+  fullName: Microsoft.Health.Utility.IDispatchExtensions
+- uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: InvokeMethod(Object, String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object())
+  name.vb: InvokeMethod(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  isExternal: true
+  name: ToStringInvariant(Object)
+  nameWithType: InvariantString.ToStringInvariant(Object)
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString
+  commentId: T:Microsoft.Health.Utility.InvariantString
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: InvariantString
+  nameWithType: InvariantString
+  fullName: Microsoft.Health.Utility.InvariantString
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  isExternal: false
+  name: ValueOrDbNull<T>(T)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(T)
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(T)
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(T)
+  name.vb: ValueOrDbNull(Of T)(T)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull<T>
+    nameWithType: TypeHelper.ValueOrDbNull<T>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull(Of T)
+    nameWithType: TypeHelper.ValueOrDbNull(Of T)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+- uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  isExternal: true
+  name: ToXml(Object)
+  nameWithType: WCXmlHelper.ToXml(Object)
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.WCXmlHelper
+  commentId: T:Microsoft.Health.Utility.WCXmlHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: WCXmlHelper
+  nameWithType: WCXmlHelper
+  fullName: Microsoft.Health.Utility.WCXmlHelper
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: Microsoft.Health.VocabularyKey
+  commentId: T:Microsoft.Health.VocabularyKey
+  parent: Microsoft.Health
+  isExternal: false
+  name: VocabularyKey
+  nameWithType: VocabularyKey
+  fullName: Microsoft.Health.VocabularyKey
+- uid: Microsoft.Health.VocabularyKey.#ctor*
+  commentId: Overload:Microsoft.Health.VocabularyKey.#ctor
+  isExternal: false
+  name: VocabularyKey
+  nameWithType: VocabularyKey.VocabularyKey
+  fullName: Microsoft.Health.VocabularyKey.VocabularyKey
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Microsoft.Health.VocabularyKey.Name*
+  commentId: Overload:Microsoft.Health.VocabularyKey.Name
+  isExternal: false
+  name: Name
+  nameWithType: VocabularyKey.Name
+  fullName: Microsoft.Health.VocabularyKey.Name
+- uid: Microsoft.Health.Vocabulary
+  commentId: T:Microsoft.Health.Vocabulary
+  parent: Microsoft.Health
+  isExternal: false
+  name: Vocabulary
+  nameWithType: Vocabulary
+  fullName: Microsoft.Health.Vocabulary
+- uid: Microsoft.Health.VocabularyKey.Family*
+  commentId: Overload:Microsoft.Health.VocabularyKey.Family
+  isExternal: false
+  name: Family
+  nameWithType: VocabularyKey.Family
+  fullName: Microsoft.Health.VocabularyKey.Family
+- uid: Microsoft.Health.VocabularyKey.Version*
+  commentId: Overload:Microsoft.Health.VocabularyKey.Version
+  isExternal: false
+  name: Version
+  nameWithType: VocabularyKey.Version
+  fullName: Microsoft.Health.VocabularyKey.Version
+- uid: Microsoft.Health.HealthVaultPlatform.GetVocabulary(Microsoft.Health.HealthServiceConnection,Microsoft.Health.VocabularyKey,System.Boolean)
+  commentId: M:Microsoft.Health.HealthVaultPlatform.GetVocabulary(Microsoft.Health.HealthServiceConnection,Microsoft.Health.VocabularyKey,System.Boolean)
+- uid: Microsoft.Health.VocabularyItem
+  commentId: T:Microsoft.Health.VocabularyItem
+  parent: Microsoft.Health
+  isExternal: false
+  name: VocabularyItem
+  nameWithType: VocabularyItem
+  fullName: Microsoft.Health.VocabularyItem
+- uid: Microsoft.Health.VocabularyKey.CodeValue*
+  commentId: Overload:Microsoft.Health.VocabularyKey.CodeValue
+  isExternal: false
+  name: CodeValue
+  nameWithType: VocabularyKey.CodeValue
+  fullName: Microsoft.Health.VocabularyKey.CodeValue
+- uid: Microsoft.Health.VocabularyKey.Description*
+  commentId: Overload:Microsoft.Health.VocabularyKey.Description
+  isExternal: false
+  name: Description
+  nameWithType: VocabularyKey.Description
+  fullName: Microsoft.Health.VocabularyKey.Description
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.VocabularyKey.ToString*
+  commentId: Overload:Microsoft.Health.VocabularyKey.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: VocabularyKey.ToString
+  fullName: Microsoft.Health.VocabularyKey.ToString
+- uid: Microsoft.Health.VocabularyKey.WriteXml*
+  commentId: Overload:Microsoft.Health.VocabularyKey.WriteXml
+  isExternal: false
+  name: WriteXml
+  nameWithType: VocabularyKey.WriteXml
+  fullName: Microsoft.Health.VocabularyKey.WriteXml
+- uid: System.Xml.XmlWriter
+  commentId: T:System.Xml.XmlWriter
+  parent: System.Xml
+  isExternal: true
+  name: XmlWriter
+  nameWithType: XmlWriter
+  fullName: System.Xml.XmlWriter
+- uid: System.Xml
+  commentId: N:System.Xml
+  isExternal: false
+  name: System.Xml
+  nameWithType: System.Xml
+  fullName: System.Xml

@@ -1,0 +1,1611 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.ItemTypes.Range`1
+  commentId: T:Microsoft.Health.ItemTypes.Range`1
+  id: Range`1
+  parent: Microsoft.Health.ItemTypes
+  children:
+  - Microsoft.Health.ItemTypes.Range`1.#ctor
+  - Microsoft.Health.ItemTypes.Range`1.#ctor(`0,`0)
+  - Microsoft.Health.ItemTypes.Range`1.DefaultMaxValue
+  - Microsoft.Health.ItemTypes.Range`1.DefaultMinValue
+  - Microsoft.Health.ItemTypes.Range`1.MaxRange
+  - Microsoft.Health.ItemTypes.Range`1.MinRange
+  - Microsoft.Health.ItemTypes.Range`1.ParseXml(System.Xml.XPath.XPathNavigator)
+  - Microsoft.Health.ItemTypes.Range`1.ReadRangeValue(System.Xml.XPath.XPathNavigator)
+  - Microsoft.Health.ItemTypes.Range`1.VerifyRangeValue(`0)
+  - Microsoft.Health.ItemTypes.Range`1.WriteRangeValue(System.String,`0,System.Xml.XmlWriter)
+  - Microsoft.Health.ItemTypes.Range`1.WriteXml(System.String,System.Xml.XmlWriter)
+  langs:
+  - csharp
+  - vb
+  name: Range<RangeType>
+  nameWithType: Range<RangeType>
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Range.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Range
+    path: ../Microsoft.Health.ItemTypes/Range.cs
+    startLine: 29
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nRepresents a data range based on a generic type.\n"
+  remarks: "\nA range consists of a minimum range value and a maximum range value of the specific\ngeneric type.\n"
+  example: []
+  syntax:
+    content: 'public abstract class Range<RangeType> : HealthRecordItemData'
+    content.vb: >-
+      Public MustInherit Class Range(Of RangeType)
+          Inherits HealthRecordItemData
+    typeParameters:
+    - id: RangeType
+      description: "\nThe type of the minimum and maximum values for the range.\n"
+  inheritance:
+  - System.Object
+  - Microsoft.Health.ItemTypes.HealthRecordItemData
+  derivedClasses:
+  - Microsoft.Health.ItemTypes.DoubleRange
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - Microsoft.Health.ItemTypes.Range`1.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  - System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  nameWithType.vb: Range(Of RangeType)
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType)
+  name.vb: Range(Of RangeType)
+- uid: Microsoft.Health.ItemTypes.Range`1.#ctor
+  commentId: M:Microsoft.Health.ItemTypes.Range`1.#ctor
+  id: '#ctor'
+  parent: Microsoft.Health.ItemTypes.Range`1
+  langs:
+  - csharp
+  - vb
+  name: Range()
+  nameWithType: Range<RangeType>.Range()
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.Range()
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Range.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health.ItemTypes/Range.cs
+    startLine: 36
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nCreates a new instance of the Range class with \ndefault values.\n"
+  example: []
+  syntax:
+    content: public Range()
+    content.vb: Public Sub New
+  overload: Microsoft.Health.ItemTypes.Range`1.#ctor*
+  nameWithType.vb: Range(Of RangeType).Range()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).Range()
+- uid: Microsoft.Health.ItemTypes.Range`1.#ctor(`0,`0)
+  commentId: M:Microsoft.Health.ItemTypes.Range`1.#ctor(`0,`0)
+  id: '#ctor(`0,`0)'
+  parent: Microsoft.Health.ItemTypes.Range`1
+  langs:
+  - csharp
+  - vb
+  name: Range(RangeType, RangeType)
+  nameWithType: Range<RangeType>.Range(RangeType, RangeType)
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.Range(RangeType, RangeType)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Range.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health.ItemTypes/Range.cs
+    startLine: 60
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nConstructs a new instance of the Range class with the \nspecified min and max range values.\n"
+  example: []
+  syntax:
+    content: public Range(RangeType minRange, RangeType maxRange)
+    content.vb: Public Sub New(minRange As RangeType, maxRange As RangeType)
+    parameters:
+    - id: minRange
+      type: '{RangeType}'
+      description: "\nThe minimum value for the range.\n"
+    - id: maxRange
+      type: '{RangeType}'
+      description: "\nThe maximum value for the range.\n"
+  overload: Microsoft.Health.ItemTypes.Range`1.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">minRange</span> or <span class=\"paramref\">maxRange</span> would cause the value to\nbe \"unset\".\n"
+  nameWithType.vb: Range(Of RangeType).Range(RangeType, RangeType)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).Range(RangeType, RangeType)
+- uid: Microsoft.Health.ItemTypes.Range`1.ParseXml(System.Xml.XPath.XPathNavigator)
+  commentId: M:Microsoft.Health.ItemTypes.Range`1.ParseXml(System.Xml.XPath.XPathNavigator)
+  id: ParseXml(System.Xml.XPath.XPathNavigator)
+  parent: Microsoft.Health.ItemTypes.Range`1
+  langs:
+  - csharp
+  - vb
+  name: ParseXml(XPathNavigator)
+  nameWithType: Range<RangeType>.ParseXml(XPathNavigator)
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.ParseXml(System.Xml.XPath.XPathNavigator)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Range.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ParseXml
+    path: ../Microsoft.Health.ItemTypes/Range.cs
+    startLine: 78
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nPopulates the data for the range from the XML.\n"
+  example: []
+  syntax:
+    content: public override void ParseXml(XPathNavigator navigator)
+    content.vb: Public Overrides Sub ParseXml(navigator As XPathNavigator)
+    parameters:
+    - id: navigator
+      type: System.Xml.XPath.XPathNavigator
+      description: "\nThe XML node representing the range.\n"
+  overridden: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  overload: Microsoft.Health.ItemTypes.Range`1.ParseXml*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">navigator</span> parameter is <strong>null</strong>.\n"
+  nameWithType.vb: Range(Of RangeType).ParseXml(XPathNavigator)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).ParseXml(System.Xml.XPath.XPathNavigator)
+- uid: Microsoft.Health.ItemTypes.Range`1.ReadRangeValue(System.Xml.XPath.XPathNavigator)
+  commentId: M:Microsoft.Health.ItemTypes.Range`1.ReadRangeValue(System.Xml.XPath.XPathNavigator)
+  id: ReadRangeValue(System.Xml.XPath.XPathNavigator)
+  parent: Microsoft.Health.ItemTypes.Range`1
+  langs:
+  - csharp
+  - vb
+  name: ReadRangeValue(XPathNavigator)
+  nameWithType: Range<RangeType>.ReadRangeValue(XPathNavigator)
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.ReadRangeValue(System.Xml.XPath.XPathNavigator)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Range.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ReadRangeValue
+    path: ../Microsoft.Health.ItemTypes/Range.cs
+    startLine: 111
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nReads the value from the specified <xref href=\"System.Xml.XPath.XPathNavigator\" data-throw-if-not-resolved=\"false\"></xref> as a \n<span class=\"typeparamref\">RangeType</span>.\n"
+  remarks: "\nDerived classes must override and read the value from the XML and convert it to the\ntype for the range.\n"
+  example: []
+  syntax:
+    content: protected abstract RangeType ReadRangeValue(XPathNavigator navigator)
+    content.vb: Protected MustOverride Function ReadRangeValue(navigator As XPathNavigator) As RangeType
+    parameters:
+    - id: navigator
+      type: System.Xml.XPath.XPathNavigator
+      description: "\nThe <xref href=\"System.Xml.XPath.XPathNavigator\" data-throw-if-not-resolved=\"false\"></xref> to read the value from.\n"
+    return:
+      type: '{RangeType}'
+      description: "\nThe value as a <span class=\"typeparamref\">RangeType</span>.\n"
+  overload: Microsoft.Health.ItemTypes.Range`1.ReadRangeValue*
+  nameWithType.vb: Range(Of RangeType).ReadRangeValue(XPathNavigator)
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).ReadRangeValue(System.Xml.XPath.XPathNavigator)
+- uid: Microsoft.Health.ItemTypes.Range`1.WriteXml(System.String,System.Xml.XmlWriter)
+  commentId: M:Microsoft.Health.ItemTypes.Range`1.WriteXml(System.String,System.Xml.XmlWriter)
+  id: WriteXml(System.String,System.Xml.XmlWriter)
+  parent: Microsoft.Health.ItemTypes.Range`1
+  langs:
+  - csharp
+  - vb
+  name: WriteXml(String, XmlWriter)
+  nameWithType: Range<RangeType>.WriteXml(String, XmlWriter)
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.WriteXml(System.String, System.Xml.XmlWriter)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Range.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: WriteXml
+    path: ../Microsoft.Health.ItemTypes/Range.cs
+    startLine: 133
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nWrites the range data to the specified XML writer.\n"
+  example: []
+  syntax:
+    content: public override void WriteXml(string nodeName, XmlWriter writer)
+    content.vb: Public Overrides Sub WriteXml(nodeName As String, writer As XmlWriter)
+    parameters:
+    - id: nodeName
+      type: System.String
+      description: "\nThe name of the outer element for the range data.\n"
+    - id: writer
+      type: System.Xml.XmlWriter
+      description: "\nThe XmlWriter to write the range data to.\n"
+  overridden: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+  overload: Microsoft.Health.ItemTypes.Range`1.WriteXml*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nThe <span class=\"paramref\">nodeName</span> parameter is <strong>null</strong> or empty.\n"
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">writer</span> parameter is <strong>null</strong>.\n"
+  nameWithType.vb: Range(Of RangeType).WriteXml(String, XmlWriter)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).WriteXml(System.String, System.Xml.XmlWriter)
+- uid: Microsoft.Health.ItemTypes.Range`1.WriteRangeValue(System.String,`0,System.Xml.XmlWriter)
+  commentId: M:Microsoft.Health.ItemTypes.Range`1.WriteRangeValue(System.String,`0,System.Xml.XmlWriter)
+  id: WriteRangeValue(System.String,`0,System.Xml.XmlWriter)
+  parent: Microsoft.Health.ItemTypes.Range`1
+  langs:
+  - csharp
+  - vb
+  name: WriteRangeValue(String, RangeType, XmlWriter)
+  nameWithType: Range<RangeType>.WriteRangeValue(String, RangeType, XmlWriter)
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.WriteRangeValue(System.String, RangeType, System.Xml.XmlWriter)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Range.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: WriteRangeValue
+    path: ../Microsoft.Health.ItemTypes/Range.cs
+    startLine: 167
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nWrites the specified range value to the specified writer with the specified node name.\n"
+  remarks: "\nDerived classes must override to provide the implementation of writing the value to\nthe XML.\n"
+  example: []
+  syntax:
+    content: protected abstract void WriteRangeValue(string nodeName, RangeType value, XmlWriter writer)
+    content.vb: Protected MustOverride Sub WriteRangeValue(nodeName As String, value As RangeType, writer As XmlWriter)
+    parameters:
+    - id: nodeName
+      type: System.String
+      description: "\nThe name of the node to use when writing the value.\n"
+    - id: value
+      type: '{RangeType}'
+      description: "\nThe value to be written.\n"
+    - id: writer
+      type: System.Xml.XmlWriter
+      description: "\nThe writer to write the value element to.\n"
+  overload: Microsoft.Health.ItemTypes.Range`1.WriteRangeValue*
+  nameWithType.vb: Range(Of RangeType).WriteRangeValue(String, RangeType, XmlWriter)
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).WriteRangeValue(System.String, RangeType, System.Xml.XmlWriter)
+- uid: Microsoft.Health.ItemTypes.Range`1.DefaultMinValue
+  commentId: P:Microsoft.Health.ItemTypes.Range`1.DefaultMinValue
+  id: DefaultMinValue
+  parent: Microsoft.Health.ItemTypes.Range`1
+  langs:
+  - csharp
+  - vb
+  name: DefaultMinValue
+  nameWithType: Range<RangeType>.DefaultMinValue
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.DefaultMinValue
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Range.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: DefaultMinValue
+    path: ../Microsoft.Health.ItemTypes/Range.cs
+    startLine: 177
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nInitializes the minimum range value to its default value.\n"
+  example: []
+  syntax:
+    content: protected abstract RangeType DefaultMinValue { get; }
+    content.vb: Protected MustOverride ReadOnly Property DefaultMinValue As RangeType
+    parameters: []
+    return:
+      type: '{RangeType}'
+      description: "\nThe default value for the minimum range value.\n"
+  overload: Microsoft.Health.ItemTypes.Range`1.DefaultMinValue*
+  nameWithType.vb: Range(Of RangeType).DefaultMinValue
+  modifiers.csharp:
+  - protected
+  - abstract
+  - get
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  - ReadOnly
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).DefaultMinValue
+- uid: Microsoft.Health.ItemTypes.Range`1.DefaultMaxValue
+  commentId: P:Microsoft.Health.ItemTypes.Range`1.DefaultMaxValue
+  id: DefaultMaxValue
+  parent: Microsoft.Health.ItemTypes.Range`1
+  langs:
+  - csharp
+  - vb
+  name: DefaultMaxValue
+  nameWithType: Range<RangeType>.DefaultMaxValue
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.DefaultMaxValue
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Range.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: DefaultMaxValue
+    path: ../Microsoft.Health.ItemTypes/Range.cs
+    startLine: 187
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets the maximum range value to its default value.\n"
+  example: []
+  syntax:
+    content: protected abstract RangeType DefaultMaxValue { get; }
+    content.vb: Protected MustOverride ReadOnly Property DefaultMaxValue As RangeType
+    parameters: []
+    return:
+      type: '{RangeType}'
+      description: "\nThe default value for the maximum range value.\n"
+  overload: Microsoft.Health.ItemTypes.Range`1.DefaultMaxValue*
+  nameWithType.vb: Range(Of RangeType).DefaultMaxValue
+  modifiers.csharp:
+  - protected
+  - abstract
+  - get
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  - ReadOnly
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).DefaultMaxValue
+- uid: Microsoft.Health.ItemTypes.Range`1.MinRange
+  commentId: P:Microsoft.Health.ItemTypes.Range`1.MinRange
+  id: MinRange
+  parent: Microsoft.Health.ItemTypes.Range`1
+  langs:
+  - csharp
+  - vb
+  name: MinRange
+  nameWithType: Range<RangeType>.MinRange
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.MinRange
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Range.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: MinRange
+    path: ../Microsoft.Health.ItemTypes/Range.cs
+    startLine: 202
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the minimum value of the range.\n"
+  example: []
+  syntax:
+    content: public RangeType MinRange { get; set; }
+    content.vb: Public Property MinRange As RangeType
+    parameters: []
+    return:
+      type: '{RangeType}'
+      description: "\nA value of <span class=\"typeparamref\">RangeType</span> that represents the minimum value of the range.\n"
+  overload: Microsoft.Health.ItemTypes.Range`1.MinRange*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">value</span> would cause the value to be \"unset\".\n"
+  nameWithType.vb: Range(Of RangeType).MinRange
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).MinRange
+- uid: Microsoft.Health.ItemTypes.Range`1.MaxRange
+  commentId: P:Microsoft.Health.ItemTypes.Range`1.MaxRange
+  id: MaxRange
+  parent: Microsoft.Health.ItemTypes.Range`1
+  langs:
+  - csharp
+  - vb
+  name: MaxRange
+  nameWithType: Range<RangeType>.MaxRange
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.MaxRange
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Range.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: MaxRange
+    path: ../Microsoft.Health.ItemTypes/Range.cs
+    startLine: 225
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the maximum value of the range.\n"
+  example: []
+  syntax:
+    content: public RangeType MaxRange { get; set; }
+    content.vb: Public Property MaxRange As RangeType
+    parameters: []
+    return:
+      type: '{RangeType}'
+      description: "\nA value of <span class=\"typeparamref\">RangeType</span> that represents the maximum value of the range.\n"
+  overload: Microsoft.Health.ItemTypes.Range`1.MaxRange*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">value</span> would cause the value to be \"unset\".\n"
+  nameWithType.vb: Range(Of RangeType).MaxRange
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).MaxRange
+- uid: Microsoft.Health.ItemTypes.Range`1.VerifyRangeValue(`0)
+  commentId: M:Microsoft.Health.ItemTypes.Range`1.VerifyRangeValue(`0)
+  id: VerifyRangeValue(`0)
+  parent: Microsoft.Health.ItemTypes.Range`1
+  langs:
+  - csharp
+  - vb
+  name: VerifyRangeValue(RangeType)
+  nameWithType: Range<RangeType>.VerifyRangeValue(RangeType)
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.VerifyRangeValue(RangeType)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/Range.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: VerifyRangeValue
+    path: ../Microsoft.Health.ItemTypes/Range.cs
+    startLine: 257
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nVerifies that the specified range value is an appropriate value for the range.\n"
+  remarks: "\nSince both the maximum and minimum values for the range must be set, this method is used\nto verify that the value is not \"unset\". For example, the value is not <strong>null</strong> for\na reference type. Derived classes should override and throw an \n<xref href=\"System.ArgumentException\" data-throw-if-not-resolved=\"false\"></xref> or appropriate derived exception if the \n<span class=\"paramref\">value</span> would cause the range value to be \"unset\".\nThe default implementation does nothing.\n"
+  example: []
+  syntax:
+    content: protected virtual void VerifyRangeValue(RangeType value)
+    content.vb: Protected Overridable Sub VerifyRangeValue(value As RangeType)
+    parameters:
+    - id: value
+      type: '{RangeType}'
+      description: "\nThe value to verify.\n"
+  overload: Microsoft.Health.ItemTypes.Range`1.VerifyRangeValue*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">value</span> would cause the value to be \"unset\".\n"
+  nameWithType.vb: Range(Of RangeType).VerifyRangeValue(RangeType)
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).VerifyRangeValue(RangeType)
+references:
+- uid: Microsoft.Health.ItemTypes
+  commentId: N:Microsoft.Health.ItemTypes
+  isExternal: false
+  name: Microsoft.Health.ItemTypes
+  nameWithType: Microsoft.Health.ItemTypes
+  fullName: Microsoft.Health.ItemTypes
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Microsoft.Health.ItemTypes.HealthRecordItemData
+  commentId: T:Microsoft.Health.ItemTypes.HealthRecordItemData
+  parent: Microsoft.Health.ItemTypes
+  isExternal: false
+  name: HealthRecordItemData
+  nameWithType: HealthRecordItemData
+  fullName: Microsoft.Health.ItemTypes.HealthRecordItemData
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  name: SetProperty(String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object())
+  name.vb: SetProperty(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  name: InvokeMethod(String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object())
+  name.vb: InvokeMethod(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  parent: Microsoft.Health.Utility.InvariantString
+  definition: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  name: ToStringInvariant()
+  nameWithType: InvariantString.ToStringInvariant()
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.Range`1.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  parent: Microsoft.Health.Utility.TypeHelper
+  definition: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  name: ValueOrDbNull<Range<RangeType>>()
+  nameWithType: TypeHelper.ValueOrDbNull<Range<RangeType>>()
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.ItemTypes.Range<RangeType>>()
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of Range(Of RangeType))()
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.ItemTypes.Range(Of RangeType))()
+  name.vb: ValueOrDbNull(Of Range(Of RangeType))()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull<Range<RangeType>>
+    nameWithType: TypeHelper.ValueOrDbNull<Range<RangeType>>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.ItemTypes.Range<RangeType>>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull(Of Range(Of RangeType))
+    nameWithType: TypeHelper.ValueOrDbNull(Of Range(Of RangeType))
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.ItemTypes.Range(Of RangeType))
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  parent: Microsoft.Health.Utility.WCXmlHelper
+  definition: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  name: ToXml()
+  nameWithType: WCXmlHelper.ToXml()
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: SetProperty(Object, String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object())
+  name.vb: SetProperty(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions
+  commentId: T:Microsoft.Health.Utility.IDispatchExtensions
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: IDispatchExtensions
+  nameWithType: IDispatchExtensions
+  fullName: Microsoft.Health.Utility.IDispatchExtensions
+- uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: InvokeMethod(Object, String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object())
+  name.vb: InvokeMethod(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  isExternal: true
+  name: ToStringInvariant(Object)
+  nameWithType: InvariantString.ToStringInvariant(Object)
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString
+  commentId: T:Microsoft.Health.Utility.InvariantString
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: InvariantString
+  nameWithType: InvariantString
+  fullName: Microsoft.Health.Utility.InvariantString
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  isExternal: false
+  name: ValueOrDbNull<T>(T)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(T)
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(T)
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(T)
+  name.vb: ValueOrDbNull(Of T)(T)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull<T>
+    nameWithType: TypeHelper.ValueOrDbNull<T>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull(Of T)
+    nameWithType: TypeHelper.ValueOrDbNull(Of T)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+- uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  isExternal: true
+  name: ToXml(Object)
+  nameWithType: WCXmlHelper.ToXml(Object)
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.WCXmlHelper
+  commentId: T:Microsoft.Health.Utility.WCXmlHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: WCXmlHelper
+  nameWithType: WCXmlHelper
+  fullName: Microsoft.Health.Utility.WCXmlHelper
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: Microsoft.Health.ItemTypes.Range`1.#ctor*
+  commentId: Overload:Microsoft.Health.ItemTypes.Range`1.#ctor
+  isExternal: false
+  name: Range
+  nameWithType: Range<RangeType>.Range
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.Range
+  nameWithType.vb: Range(Of RangeType).Range
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).Range
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: '{RangeType}'
+  commentId: '!:RangeType'
+  definition: RangeType
+  name: RangeType
+  nameWithType: RangeType
+  fullName: RangeType
+- uid: RangeType
+  isExternal: false
+  name: RangeType
+  nameWithType: RangeType
+  fullName: RangeType
+- uid: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  commentId: M:Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  parent: Microsoft.Health.ItemTypes.HealthRecordItemData
+  isExternal: true
+  name: ParseXml(XPathNavigator)
+  nameWithType: HealthRecordItemData.ParseXml(XPathNavigator)
+  fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  spec.csharp:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+    name: ParseXml
+    nameWithType: HealthRecordItemData.ParseXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XPath.XPathNavigator
+    name: XPathNavigator
+    nameWithType: XPathNavigator
+    fullName: System.Xml.XPath.XPathNavigator
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+    name: ParseXml
+    nameWithType: HealthRecordItemData.ParseXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XPath.XPathNavigator
+    name: XPathNavigator
+    nameWithType: XPathNavigator
+    fullName: System.Xml.XPath.XPathNavigator
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.Range`1.ParseXml*
+  commentId: Overload:Microsoft.Health.ItemTypes.Range`1.ParseXml
+  isExternal: false
+  name: ParseXml
+  nameWithType: Range<RangeType>.ParseXml
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.ParseXml
+  nameWithType.vb: Range(Of RangeType).ParseXml
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).ParseXml
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+- uid: System.Xml.XPath.XPathNavigator
+  commentId: T:System.Xml.XPath.XPathNavigator
+  parent: System.Xml.XPath
+  isExternal: true
+  name: XPathNavigator
+  nameWithType: XPathNavigator
+  fullName: System.Xml.XPath.XPathNavigator
+- uid: System.Xml.XPath
+  commentId: N:System.Xml.XPath
+  isExternal: false
+  name: System.Xml.XPath
+  nameWithType: System.Xml.XPath
+  fullName: System.Xml.XPath
+- uid: Microsoft.Health.ItemTypes.Range`1.ReadRangeValue*
+  commentId: Overload:Microsoft.Health.ItemTypes.Range`1.ReadRangeValue
+  isExternal: false
+  name: ReadRangeValue
+  nameWithType: Range<RangeType>.ReadRangeValue
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.ReadRangeValue
+  nameWithType.vb: Range(Of RangeType).ReadRangeValue
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).ReadRangeValue
+- uid: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+  commentId: M:Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+  parent: Microsoft.Health.ItemTypes.HealthRecordItemData
+  isExternal: true
+  name: WriteXml(String, XmlWriter)
+  nameWithType: HealthRecordItemData.WriteXml(String, XmlWriter)
+  fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String, System.Xml.XmlWriter)
+  spec.csharp:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+    name: WriteXml
+    nameWithType: HealthRecordItemData.WriteXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+    name: WriteXml
+    nameWithType: HealthRecordItemData.WriteXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.Range`1.WriteXml*
+  commentId: Overload:Microsoft.Health.ItemTypes.Range`1.WriteXml
+  isExternal: false
+  name: WriteXml
+  nameWithType: Range<RangeType>.WriteXml
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.WriteXml
+  nameWithType.vb: Range(Of RangeType).WriteXml
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).WriteXml
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Xml.XmlWriter
+  commentId: T:System.Xml.XmlWriter
+  parent: System.Xml
+  isExternal: true
+  name: XmlWriter
+  nameWithType: XmlWriter
+  fullName: System.Xml.XmlWriter
+- uid: System.Xml
+  commentId: N:System.Xml
+  isExternal: false
+  name: System.Xml
+  nameWithType: System.Xml
+  fullName: System.Xml
+- uid: Microsoft.Health.ItemTypes.Range`1.WriteRangeValue*
+  commentId: Overload:Microsoft.Health.ItemTypes.Range`1.WriteRangeValue
+  isExternal: false
+  name: WriteRangeValue
+  nameWithType: Range<RangeType>.WriteRangeValue
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.WriteRangeValue
+  nameWithType.vb: Range(Of RangeType).WriteRangeValue
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).WriteRangeValue
+- uid: Microsoft.Health.ItemTypes.Range`1.DefaultMinValue*
+  commentId: Overload:Microsoft.Health.ItemTypes.Range`1.DefaultMinValue
+  isExternal: false
+  name: DefaultMinValue
+  nameWithType: Range<RangeType>.DefaultMinValue
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.DefaultMinValue
+  nameWithType.vb: Range(Of RangeType).DefaultMinValue
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).DefaultMinValue
+- uid: Microsoft.Health.ItemTypes.Range`1.DefaultMaxValue*
+  commentId: Overload:Microsoft.Health.ItemTypes.Range`1.DefaultMaxValue
+  isExternal: false
+  name: DefaultMaxValue
+  nameWithType: Range<RangeType>.DefaultMaxValue
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.DefaultMaxValue
+  nameWithType.vb: Range(Of RangeType).DefaultMaxValue
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).DefaultMaxValue
+- uid: Microsoft.Health.ItemTypes.Range`1.MinRange*
+  commentId: Overload:Microsoft.Health.ItemTypes.Range`1.MinRange
+  isExternal: false
+  name: MinRange
+  nameWithType: Range<RangeType>.MinRange
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.MinRange
+  nameWithType.vb: Range(Of RangeType).MinRange
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).MinRange
+- uid: Microsoft.Health.ItemTypes.Range`1.MaxRange*
+  commentId: Overload:Microsoft.Health.ItemTypes.Range`1.MaxRange
+  isExternal: false
+  name: MaxRange
+  nameWithType: Range<RangeType>.MaxRange
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.MaxRange
+  nameWithType.vb: Range(Of RangeType).MaxRange
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).MaxRange
+- uid: Microsoft.Health.ItemTypes.Range`1.VerifyRangeValue*
+  commentId: Overload:Microsoft.Health.ItemTypes.Range`1.VerifyRangeValue
+  isExternal: false
+  name: VerifyRangeValue
+  nameWithType: Range<RangeType>.VerifyRangeValue
+  fullName: Microsoft.Health.ItemTypes.Range<RangeType>.VerifyRangeValue
+  nameWithType.vb: Range(Of RangeType).VerifyRangeValue
+  fullName.vb: Microsoft.Health.ItemTypes.Range(Of RangeType).VerifyRangeValue

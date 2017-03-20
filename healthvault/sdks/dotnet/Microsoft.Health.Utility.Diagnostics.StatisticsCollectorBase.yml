@@ -1,0 +1,1578 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase
+  commentId: T:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase
+  id: StatisticsCollectorBase
+  parent: Microsoft.Health.Utility.Diagnostics
+  children:
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.#ctor
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ApplicationName
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.BuildXmlFromDictionary``1(System.Collections.Generic.Dictionary{System.String,``0},System.String)
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ClearConfigurations
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String,Microsoft.Health.Utility.PrefixIpAddress[])
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String,System.Collections.IEnumerable,System.Char)
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String,System.Object)
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String,System.String,System.String)
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetConfig(System.String)
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetXmlConfigsReport
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterConfig(Microsoft.Health.Utility.Diagnostics.ConfigElement)
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterStatisticsElement``1(``0,System.Collections.Generic.Dictionary{System.String,``0})
+  langs:
+  - csharp
+  - vb
+  name: StatisticsCollectorBase
+  nameWithType: StatisticsCollectorBase
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: StatisticsCollectorBase
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+    startLine: 513
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nGeneric StatisticsCollector class that is responsible for holding the StatisticsElements\nthat will be output as Xml.\n"
+  example: []
+  syntax:
+    content: public abstract class StatisticsCollectorBase
+    content.vb: Public MustInherit Class StatisticsCollectorBase
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  - System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.#ctor
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.#ctor
+  id: '#ctor'
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase
+  langs:
+  - csharp
+  - vb
+  name: StatisticsCollectorBase()
+  nameWithType: StatisticsCollectorBase.StatisticsCollectorBase()
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.StatisticsCollectorBase()
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+    startLine: 522
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nCreates the base statistics collector, initalizing the 3 dictionaries that will hold\nelements, initializing the System Pefrmon counters, then calling the abstract \ninitializers for the application.\n"
+  example: []
+  syntax:
+    content: protected StatisticsCollectorBase()
+    content.vb: Protected Sub New
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ApplicationName
+  commentId: P:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ApplicationName
+  id: ApplicationName
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase
+  langs:
+  - csharp
+  - vb
+  name: ApplicationName
+  nameWithType: StatisticsCollectorBase.ApplicationName
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ApplicationName
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ApplicationName
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+    startLine: 533
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nProvides the resouce's name. This name is used to create the root tag.\nFor example, application-counters or application-configs. \nThe name should be a valid Xml string.\n"
+  example: []
+  syntax:
+    content: public abstract string ApplicationName { get; }
+    content.vb: Public MustOverride ReadOnly Property ApplicationName As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ApplicationName*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterStatisticsElement``1(``0,System.Collections.Generic.Dictionary{System.String,``0})
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterStatisticsElement``1(``0,System.Collections.Generic.Dictionary{System.String,``0})
+  id: RegisterStatisticsElement``1(``0,System.Collections.Generic.Dictionary{System.String,``0})
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase
+  langs:
+  - csharp
+  - vb
+  name: RegisterStatisticsElement<T>(T, Dictionary<String, T>)
+  nameWithType: StatisticsCollectorBase.RegisterStatisticsElement<T>(T, Dictionary<String, T>)
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterStatisticsElement<T>(T, System.Collections.Generic.Dictionary<System.String, T>)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: RegisterStatisticsElement
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+    startLine: 541
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nThis method allows for registering a statistics element in the specified dictionary.\n"
+  example: []
+  syntax:
+    content: 'protected void RegisterStatisticsElement<T>(T element, Dictionary<string, T> dictionary)where T : StatisticsElement'
+    content.vb: Protected Sub RegisterStatisticsElement(Of T As StatisticsElement)(element As T, dictionary As Dictionary(Of String, T))
+    parameters:
+    - id: element
+      type: '{T}'
+    - id: dictionary
+      type: System.Collections.Generic.Dictionary{System.String,{T}}
+    typeParameters:
+    - id: T
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterStatisticsElement*
+  nameWithType.vb: StatisticsCollectorBase.RegisterStatisticsElement(Of T)(T, Dictionary(Of String, T))
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterStatisticsElement(Of T)(T, System.Collections.Generic.Dictionary(Of System.String, T))
+  name.vb: RegisterStatisticsElement(Of T)(T, Dictionary(Of String, T))
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterConfig(Microsoft.Health.Utility.Diagnostics.ConfigElement)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterConfig(Microsoft.Health.Utility.Diagnostics.ConfigElement)
+  id: RegisterConfig(Microsoft.Health.Utility.Diagnostics.ConfigElement)
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase
+  langs:
+  - csharp
+  - vb
+  name: RegisterConfig(ConfigElement)
+  nameWithType: StatisticsCollectorBase.RegisterConfig(ConfigElement)
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterConfig(Microsoft.Health.Utility.Diagnostics.ConfigElement)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: RegisterConfig
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+    startLine: 571
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nRegisters a config key value pair for tracking.\n"
+  example: []
+  syntax:
+    content: public void RegisterConfig(ConfigElement config)
+    content.vb: Public Sub RegisterConfig(config As ConfigElement)
+    parameters:
+    - id: config
+      type: Microsoft.Health.Utility.Diagnostics.ConfigElement
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterConfig*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetConfig(System.String)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetConfig(System.String)
+  id: GetConfig(System.String)
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase
+  langs:
+  - csharp
+  - vb
+  name: GetConfig(String)
+  nameWithType: StatisticsCollectorBase.GetConfig(String)
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetConfig(System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetConfig
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+    startLine: 582
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nReturns the config from the application configs dictionary. Returns null if the \nkey doesn't map to a config.\n"
+  example: []
+  syntax:
+    content: public ConfigElement GetConfig(string key)
+    content.vb: Public Function GetConfig(key As String) As ConfigElement
+    parameters:
+    - id: key
+      type: System.String
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.ConfigElement
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetConfig*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ClearConfigurations
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ClearConfigurations
+  id: ClearConfigurations
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase
+  langs:
+  - csharp
+  - vb
+  name: ClearConfigurations()
+  nameWithType: StatisticsCollectorBase.ClearConfigurations()
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ClearConfigurations()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ClearConfigurations
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+    startLine: 590
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nClears the cache of configurations.\n"
+  example: []
+  syntax:
+    content: public void ClearConfigurations()
+    content.vb: Public Sub ClearConfigurations
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ClearConfigurations*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetXmlConfigsReport
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetXmlConfigsReport
+  id: GetXmlConfigsReport
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase
+  langs:
+  - csharp
+  - vb
+  name: GetXmlConfigsReport()
+  nameWithType: StatisticsCollectorBase.GetXmlConfigsReport()
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetXmlConfigsReport()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetXmlConfigsReport
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+    startLine: 601
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nReturns XML containing the key-vaule pair for the application's configs.\n"
+  example: []
+  syntax:
+    content: public string GetXmlConfigsReport()
+    content.vb: Public Function GetXmlConfigsReport As String
+    return:
+      type: System.String
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetXmlConfigsReport*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.BuildXmlFromDictionary``1(System.Collections.Generic.Dictionary{System.String,``0},System.String)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.BuildXmlFromDictionary``1(System.Collections.Generic.Dictionary{System.String,``0},System.String)
+  id: BuildXmlFromDictionary``1(System.Collections.Generic.Dictionary{System.String,``0},System.String)
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase
+  langs:
+  - csharp
+  - vb
+  name: BuildXmlFromDictionary<T>(Dictionary<String, T>, String)
+  nameWithType: StatisticsCollectorBase.BuildXmlFromDictionary<T>(Dictionary<String, T>, String)
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.BuildXmlFromDictionary<T>(System.Collections.Generic.Dictionary<System.String, T>, System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: BuildXmlFromDictionary
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+    startLine: 611
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nThis method will enumerate a dictionary and return the xml output from the elements.\n"
+  example: []
+  syntax:
+    content: 'protected string BuildXmlFromDictionary<T>(Dictionary<string, T> dictionary, string categoryName)where T : StatisticsElement'
+    content.vb: Protected Function BuildXmlFromDictionary(Of T As StatisticsElement)(dictionary As Dictionary(Of String, T), categoryName As String) As String
+    parameters:
+    - id: dictionary
+      type: System.Collections.Generic.Dictionary{System.String,{T}}
+    - id: categoryName
+      type: System.String
+    typeParameters:
+    - id: T
+    return:
+      type: System.String
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.BuildXmlFromDictionary*
+  nameWithType.vb: StatisticsCollectorBase.BuildXmlFromDictionary(Of T)(Dictionary(Of String, T), String)
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.BuildXmlFromDictionary(Of T)(System.Collections.Generic.Dictionary(Of System.String, T), System.String)
+  name.vb: BuildXmlFromDictionary(Of T)(Dictionary(Of String, T), String)
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String,Microsoft.Health.Utility.PrefixIpAddress[])
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String,Microsoft.Health.Utility.PrefixIpAddress[])
+  id: CreateConfigAndRegister(System.String,Microsoft.Health.Utility.PrefixIpAddress[])
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase
+  langs:
+  - csharp
+  - vb
+  name: CreateConfigAndRegister(String, PrefixIpAddress[])
+  nameWithType: StatisticsCollectorBase.CreateConfigAndRegister(String, PrefixIpAddress[])
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String, Microsoft.Health.Utility.PrefixIpAddress[])
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CreateConfigAndRegister
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+    startLine: 680
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public void CreateConfigAndRegister(string name, PrefixIpAddress[] value)
+    content.vb: Public Sub CreateConfigAndRegister(name As String, value As PrefixIpAddress())
+    parameters:
+    - id: name
+      type: System.String
+      description: ''
+    - id: value
+      type: Microsoft.Health.Utility.PrefixIpAddress[]
+      description: ''
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister*
+  nameWithType.vb: StatisticsCollectorBase.CreateConfigAndRegister(String, PrefixIpAddress())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String, Microsoft.Health.Utility.PrefixIpAddress())
+  name.vb: CreateConfigAndRegister(String, PrefixIpAddress())
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String,System.Collections.IEnumerable,System.Char)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String,System.Collections.IEnumerable,System.Char)
+  id: CreateConfigAndRegister(System.String,System.Collections.IEnumerable,System.Char)
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase
+  langs:
+  - csharp
+  - vb
+  name: CreateConfigAndRegister(String, IEnumerable, Char)
+  nameWithType: StatisticsCollectorBase.CreateConfigAndRegister(String, IEnumerable, Char)
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String, System.Collections.IEnumerable, System.Char)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CreateConfigAndRegister
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+    startLine: 694
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public void CreateConfigAndRegister(string name, IEnumerable value, char delimiter)
+    content.vb: Public Sub CreateConfigAndRegister(name As String, value As IEnumerable, delimiter As Char)
+    parameters:
+    - id: name
+      type: System.String
+      description: ''
+    - id: value
+      type: System.Collections.IEnumerable
+      description: ''
+    - id: delimiter
+      type: System.Char
+      description: ''
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String,System.Object)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String,System.Object)
+  id: CreateConfigAndRegister(System.String,System.Object)
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase
+  langs:
+  - csharp
+  - vb
+  name: CreateConfigAndRegister(String, Object)
+  nameWithType: StatisticsCollectorBase.CreateConfigAndRegister(String, Object)
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String, System.Object)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CreateConfigAndRegister
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+    startLine: 705
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nCreates and registers a config element within the StatisticsCollector\n"
+  example: []
+  syntax:
+    content: public void CreateConfigAndRegister(string name, object value)
+    content.vb: Public Sub CreateConfigAndRegister(name As String, value As Object)
+    parameters:
+    - id: name
+      type: System.String
+    - id: value
+      type: System.Object
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String,System.String,System.String)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String,System.String,System.String)
+  id: CreateConfigAndRegister(System.String,System.String,System.String)
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase
+  langs:
+  - csharp
+  - vb
+  name: CreateConfigAndRegister(String, String, String)
+  nameWithType: StatisticsCollectorBase.CreateConfigAndRegister(String, String, String)
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister(System.String, System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CreateConfigAndRegister
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCollector.cs
+    startLine: 716
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nCreates and registers a config element within the StatisticsCollector\n"
+  example: []
+  syntax:
+    content: public void CreateConfigAndRegister(string name, string value, string group)
+    content.vb: Public Sub CreateConfigAndRegister(name As String, value As String, group As String)
+    parameters:
+    - id: name
+      type: System.String
+    - id: value
+      type: System.String
+    - id: group
+      type: System.String
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Microsoft.Health.Utility.Diagnostics
+  commentId: N:Microsoft.Health.Utility.Diagnostics
+  isExternal: false
+  name: Microsoft.Health.Utility.Diagnostics
+  nameWithType: Microsoft.Health.Utility.Diagnostics
+  fullName: Microsoft.Health.Utility.Diagnostics
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  name: SetProperty(String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object())
+  name.vb: SetProperty(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  name: InvokeMethod(String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object())
+  name.vb: InvokeMethod(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  parent: Microsoft.Health.Utility.InvariantString
+  definition: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  name: ToStringInvariant()
+  nameWithType: InvariantString.ToStringInvariant()
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  parent: Microsoft.Health.Utility.TypeHelper
+  definition: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  name: ValueOrDbNull<StatisticsCollectorBase>()
+  nameWithType: TypeHelper.ValueOrDbNull<StatisticsCollectorBase>()
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase>()
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of StatisticsCollectorBase)()
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase)()
+  name.vb: ValueOrDbNull(Of StatisticsCollectorBase)()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull<StatisticsCollectorBase>
+    nameWithType: TypeHelper.ValueOrDbNull<StatisticsCollectorBase>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull(Of StatisticsCollectorBase)
+    nameWithType: TypeHelper.ValueOrDbNull(Of StatisticsCollectorBase)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  parent: Microsoft.Health.Utility.WCXmlHelper
+  definition: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  name: ToXml()
+  nameWithType: WCXmlHelper.ToXml()
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: SetProperty(Object, String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object())
+  name.vb: SetProperty(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions
+  commentId: T:Microsoft.Health.Utility.IDispatchExtensions
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: IDispatchExtensions
+  nameWithType: IDispatchExtensions
+  fullName: Microsoft.Health.Utility.IDispatchExtensions
+- uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: InvokeMethod(Object, String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object())
+  name.vb: InvokeMethod(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  isExternal: true
+  name: ToStringInvariant(Object)
+  nameWithType: InvariantString.ToStringInvariant(Object)
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString
+  commentId: T:Microsoft.Health.Utility.InvariantString
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: InvariantString
+  nameWithType: InvariantString
+  fullName: Microsoft.Health.Utility.InvariantString
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  isExternal: false
+  name: ValueOrDbNull<T>(T)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(T)
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(T)
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(T)
+  name.vb: ValueOrDbNull(Of T)(T)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull<T>
+    nameWithType: TypeHelper.ValueOrDbNull<T>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull(Of T)
+    nameWithType: TypeHelper.ValueOrDbNull(Of T)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+- uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  isExternal: true
+  name: ToXml(Object)
+  nameWithType: WCXmlHelper.ToXml(Object)
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.WCXmlHelper
+  commentId: T:Microsoft.Health.Utility.WCXmlHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: WCXmlHelper
+  nameWithType: WCXmlHelper
+  fullName: Microsoft.Health.Utility.WCXmlHelper
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.#ctor*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.#ctor
+  isExternal: false
+  name: StatisticsCollectorBase
+  nameWithType: StatisticsCollectorBase.StatisticsCollectorBase
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.StatisticsCollectorBase
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ApplicationName*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ApplicationName
+  isExternal: false
+  name: ApplicationName
+  nameWithType: StatisticsCollectorBase.ApplicationName
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ApplicationName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterStatisticsElement*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterStatisticsElement
+  isExternal: false
+  name: RegisterStatisticsElement
+  nameWithType: StatisticsCollectorBase.RegisterStatisticsElement
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterStatisticsElement
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Collections.Generic.Dictionary{System.String,{T}}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<String, T>
+  nameWithType: Dictionary<String, T>
+  fullName: System.Collections.Generic.Dictionary<System.String, T>
+  nameWithType.vb: Dictionary(Of String, T)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.String, T)
+  name.vb: Dictionary(Of String, T)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: T
+  isExternal: false
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterConfig*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterConfig
+  isExternal: false
+  name: RegisterConfig
+  nameWithType: StatisticsCollectorBase.RegisterConfig
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.RegisterConfig
+- uid: Microsoft.Health.Utility.Diagnostics.ConfigElement
+  commentId: T:Microsoft.Health.Utility.Diagnostics.ConfigElement
+  parent: Microsoft.Health.Utility.Diagnostics
+  isExternal: false
+  name: ConfigElement
+  nameWithType: ConfigElement
+  fullName: Microsoft.Health.Utility.Diagnostics.ConfigElement
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetConfig*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetConfig
+  isExternal: false
+  name: GetConfig
+  nameWithType: StatisticsCollectorBase.GetConfig
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetConfig
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ClearConfigurations*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ClearConfigurations
+  isExternal: false
+  name: ClearConfigurations
+  nameWithType: StatisticsCollectorBase.ClearConfigurations
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.ClearConfigurations
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetXmlConfigsReport*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetXmlConfigsReport
+  isExternal: false
+  name: GetXmlConfigsReport
+  nameWithType: StatisticsCollectorBase.GetXmlConfigsReport
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.GetXmlConfigsReport
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.BuildXmlFromDictionary*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.BuildXmlFromDictionary
+  isExternal: false
+  name: BuildXmlFromDictionary
+  nameWithType: StatisticsCollectorBase.BuildXmlFromDictionary
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.BuildXmlFromDictionary
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister
+  isExternal: false
+  name: CreateConfigAndRegister
+  nameWithType: StatisticsCollectorBase.CreateConfigAndRegister
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCollectorBase.CreateConfigAndRegister
+- uid: Microsoft.Health.Utility.PrefixIpAddress[]
+  name: PrefixIpAddress[]
+  nameWithType: PrefixIpAddress[]
+  fullName: Microsoft.Health.Utility.PrefixIpAddress[]
+  nameWithType.vb: PrefixIpAddress()
+  fullName.vb: Microsoft.Health.Utility.PrefixIpAddress()
+  name.vb: PrefixIpAddress()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.PrefixIpAddress
+    name: PrefixIpAddress
+    nameWithType: PrefixIpAddress
+    fullName: Microsoft.Health.Utility.PrefixIpAddress
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: Microsoft.Health.Utility.PrefixIpAddress
+    name: PrefixIpAddress
+    nameWithType: PrefixIpAddress
+    fullName: Microsoft.Health.Utility.PrefixIpAddress
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  name: Char
+  nameWithType: Char
+  fullName: System.Char
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: false
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections

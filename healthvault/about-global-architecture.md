@@ -174,9 +174,11 @@ The .NET SDK has rich support for building multi-instance applications. A few of
 
 -   The iOS SDK settings file has an **isMultiInstanceAware** setting that allows specifying that an app is multi-instance aware, and includes **serviceURL** and **shellURL** elements for specifying the default instance as shown below:
 
-    `<masterAppID>657324f2-4aca-42de-97a8-298873e355d7</masterAppID><appName>iOS SDKFeatures</appName><isMultiInstanceAware>true</isMultiInstanceAware><environment>  <name>US PPE</name>  <friendlyName>PPE - US Residents</friendlyName>  <serviceUrl>https://platform.healthvault-ppe.com/platform/wildcat.ashx</serviceUrl>  <shellUrl>https://account.healthvault-ppe.com</shellUrl></environment> `
+    ```xml
+    <masterAppID>657324f2-4aca-42de-97a8-298873e355d7</masterAppID><appName>iOS SDKFeatures</appName><isMultiInstanceAware>true</isMultiInstanceAware><environment>  <name>US PPE</name>  <friendlyName>PPE - US Residents</friendlyName>  <serviceUrl>https://platform.healthvault-ppe.com/platform/wildcat.ashx</serviceUrl>  <shellUrl>https://account.healthvault-ppe.com</shellUrl></environment> 
+    ```
 
--   The iOS [SDKFeatures sample app](https://github.com/microsoft-hsg/HVMobile_VNext/tree/master/Samples) is multi-instance aware and the code demonstrates how to build an iOS SODA app that is multi-instance aware using the iOS SDK.
+-   The iOS [SDKFeatures sample app](https://github.com/microsoft/HVMobile_VNext/tree/master/Samples) is multi-instance aware and the code demonstrates how to build an iOS SODA app that is multi-instance aware using the iOS SDK.
 
 ### Integrating with HealthVault
 

@@ -1,0 +1,2064 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.ServiceInfo
+  commentId: T:Microsoft.Health.ServiceInfo
+  id: ServiceInfo
+  parent: Microsoft.Health
+  children:
+  - Microsoft.Health.ServiceInfo.#ctor
+  - Microsoft.Health.ServiceInfo.Assemblies
+  - Microsoft.Health.ServiceInfo.ConfigurationValues
+  - Microsoft.Health.ServiceInfo.Create(System.Xml.XPath.XPathNavigator)
+  - Microsoft.Health.ServiceInfo.Current
+  - Microsoft.Health.ServiceInfo.CurrentInstance
+  - Microsoft.Health.ServiceInfo.GetXml
+  - Microsoft.Health.ServiceInfo.HealthServiceShellInfo
+  - Microsoft.Health.ServiceInfo.HealthServiceUrl
+  - Microsoft.Health.ServiceInfo.IncludedSchemaUrls
+  - Microsoft.Health.ServiceInfo.LastUpdated
+  - Microsoft.Health.ServiceInfo.MeaningfulUseInfo
+  - Microsoft.Health.ServiceInfo.Methods
+  - Microsoft.Health.ServiceInfo.ServiceInstances
+  - Microsoft.Health.ServiceInfo.SetSingletonProvider(Microsoft.Health.IServiceInfoProvider)
+  - Microsoft.Health.ServiceInfo.Version
+  langs:
+  - csharp
+  - vb
+  name: ServiceInfo
+  nameWithType: ServiceInfo
+  fullName: Microsoft.Health.ServiceInfo
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ServiceInfo
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 20
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nProvides information about the HealthVault service to which you are \nconnected.\n"
+  example: []
+  syntax:
+    content: public class ServiceInfo
+    content.vb: Public Class ServiceInfo
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - Microsoft.Health.ServiceInfo.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  - System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.ServiceInfo.Current
+  commentId: P:Microsoft.Health.ServiceInfo.Current
+  id: Current
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: Current
+  nameWithType: ServiceInfo.Current
+  fullName: Microsoft.Health.ServiceInfo.Current
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Current
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 43
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the HealthVault service information.\n"
+  remarks: "\n<p>\nBy default, retrieval of <xref href=\"Microsoft.Health.ServiceInfo\" data-throw-if-not-resolved=\"false\"></xref> through this singleton property is thread-safe. It is obtained from the\nconfigured default HealthVault web-service instance (<xref href=\"Microsoft.Health.HealthApplicationConfiguration.HealthVaultUrl\" data-throw-if-not-resolved=\"false\"></xref>) on the\nfirst get, and cached for a configured period of time (<xref href=\"Microsoft.Health.HealthApplicationConfiguration.ServiceInfoDefaultCacheTtl\" data-throw-if-not-resolved=\"false\"></xref>).\nThe next get after this cache has expired will result in calling the HealthVault web-service to check for updates to the service\ninformation, and retrieving the updated service information when there is an update.\n</p>\n\n<p>\nIf you want to control the retrieval behavior of <xref href=\"Microsoft.Health.ServiceInfo\" data-throw-if-not-resolved=\"false\"></xref> objects through this singleton,\nuse the <xref href=\"Microsoft.Health.ServiceInfo.SetSingletonProvider(Microsoft.Health.IServiceInfoProvider)\" data-throw-if-not-resolved=\"false\"></xref> method to set your own implementation of the provider.\n</p>\n"
+  example: []
+  syntax:
+    content: public static ServiceInfo Current { get; }
+    content.vb: Public Shared ReadOnly Property Current As ServiceInfo
+    parameters: []
+    return:
+      type: Microsoft.Health.ServiceInfo
+  overload: Microsoft.Health.ServiceInfo.Current*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Microsoft.Health.ServiceInfo.SetSingletonProvider(Microsoft.Health.IServiceInfoProvider)
+  commentId: M:Microsoft.Health.ServiceInfo.SetSingletonProvider(Microsoft.Health.IServiceInfoProvider)
+  id: SetSingletonProvider(Microsoft.Health.IServiceInfoProvider)
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: SetSingletonProvider(IServiceInfoProvider)
+  nameWithType: ServiceInfo.SetSingletonProvider(IServiceInfoProvider)
+  fullName: Microsoft.Health.ServiceInfo.SetSingletonProvider(Microsoft.Health.IServiceInfoProvider)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: SetSingletonProvider
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 59
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nSets the provider to be used for the <xref href=\"CurrentInfo\" data-throw-if-not-resolved=\"false\"></xref> singleton.\n"
+  example: []
+  syntax:
+    content: public static void SetSingletonProvider(IServiceInfoProvider defaultProvider)
+    content.vb: Public Shared Sub SetSingletonProvider(defaultProvider As IServiceInfoProvider)
+    parameters:
+    - id: defaultProvider
+      type: Microsoft.Health.IServiceInfoProvider
+      description: "\nThe service info provider to be used for the <xref href=\"CurrentInfo\" data-throw-if-not-resolved=\"false\"></xref> singleton.\n"
+  overload: Microsoft.Health.ServiceInfo.SetSingletonProvider*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.ServiceInfo.Create(System.Xml.XPath.XPathNavigator)
+  commentId: M:Microsoft.Health.ServiceInfo.Create(System.Xml.XPath.XPathNavigator)
+  id: Create(System.Xml.XPath.XPathNavigator)
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: Create(XPathNavigator)
+  nameWithType: ServiceInfo.Create(XPathNavigator)
+  fullName: Microsoft.Health.ServiceInfo.Create(System.Xml.XPath.XPathNavigator)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Create
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 76
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nCreates a ServiceInfo instance out of the service definition XML.\n"
+  example: []
+  syntax:
+    content: public static ServiceInfo Create(XPathNavigator serviceInfoXml)
+    content.vb: Public Shared Function Create(serviceInfoXml As XPathNavigator) As ServiceInfo
+    parameters:
+    - id: serviceInfoXml
+      type: System.Xml.XPath.XPathNavigator
+      description: "\nThe XML representation of the ServiceInfo object.\n"
+    return:
+      type: Microsoft.Health.ServiceInfo
+      description: "\nA ServiceInfo instance based on the specified service definition XML.\n"
+  overload: Microsoft.Health.ServiceInfo.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.ServiceInfo.GetXml
+  commentId: M:Microsoft.Health.ServiceInfo.GetXml
+  id: GetXml
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: GetXml()
+  nameWithType: ServiceInfo.GetXml()
+  fullName: Microsoft.Health.ServiceInfo.GetXml()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetXml
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 157
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets an XML representation of the ServiceInfo object.\n"
+  example: []
+  syntax:
+    content: public string GetXml()
+    content.vb: Public Function GetXml As String
+    return:
+      type: System.String
+      description: "\nAn XML string representing the ServiceInfo object.\n"
+  overload: Microsoft.Health.ServiceInfo.GetXml*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ServiceInfo.#ctor
+  commentId: M:Microsoft.Health.ServiceInfo.#ctor
+  id: '#ctor'
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: ServiceInfo()
+  nameWithType: ServiceInfo.ServiceInfo()
+  fullName: Microsoft.Health.ServiceInfo.ServiceInfo()
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 460
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nCreate a new instance of the <xref href=\"Microsoft.Health.ServiceInfo\" data-throw-if-not-resolved=\"false\"></xref> class for testing purposes.\n"
+  example: []
+  syntax:
+    content: protected ServiceInfo()
+    content.vb: Protected Sub New
+  overload: Microsoft.Health.ServiceInfo.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: Microsoft.Health.ServiceInfo.HealthServiceUrl
+  commentId: P:Microsoft.Health.ServiceInfo.HealthServiceUrl
+  id: HealthServiceUrl
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: HealthServiceUrl
+  nameWithType: ServiceInfo.HealthServiceUrl
+  fullName: Microsoft.Health.ServiceInfo.HealthServiceUrl
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: HealthServiceUrl
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 477
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the HealthVault URL.\n"
+  remarks: "\nThis is the URL to the wildcat.ashx which is used to call the\nHealthVault XML methods.\n"
+  example: []
+  syntax:
+    content: public Uri HealthServiceUrl { get; protected set; }
+    content.vb: Public Property HealthServiceUrl As Uri
+    parameters: []
+    return:
+      type: System.Uri
+      description: "\nA Uri representing a URL to the HealthVault service.\n"
+  overload: Microsoft.Health.ServiceInfo.HealthServiceUrl*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: Microsoft.Health.ServiceInfo.Version
+  commentId: P:Microsoft.Health.ServiceInfo.Version
+  id: Version
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: Version
+  nameWithType: ServiceInfo.Version
+  fullName: Microsoft.Health.ServiceInfo.Version
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Version
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 498
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the version of the HealthVault service.\n"
+  remarks: "\nThis value is generally in the format of a \n<xref href=\"System.Version\" data-throw-if-not-resolved=\"false\"></xref>, but can be changed by the\nHealthVault service provider.\n"
+  example: []
+  syntax:
+    content: public string Version { get; protected set; }
+    content.vb: Public Property Version As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nA string indicating the version of the HealthVault Service.\n"
+  overload: Microsoft.Health.ServiceInfo.Version*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: Microsoft.Health.ServiceInfo.HealthServiceShellInfo
+  commentId: P:Microsoft.Health.ServiceInfo.HealthServiceShellInfo
+  id: HealthServiceShellInfo
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: HealthServiceShellInfo
+  nameWithType: ServiceInfo.HealthServiceShellInfo
+  fullName: Microsoft.Health.ServiceInfo.HealthServiceShellInfo
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: HealthServiceShellInfo
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 509
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the latest information about the HealthVault Shell.\n"
+  example: []
+  syntax:
+    content: public HealthServiceShellInfo HealthServiceShellInfo { get; protected set; }
+    content.vb: Public Property HealthServiceShellInfo As HealthServiceShellInfo
+    parameters: []
+    return:
+      type: Microsoft.Health.HealthServiceShellInfo
+  overload: Microsoft.Health.ServiceInfo.HealthServiceShellInfo*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: Microsoft.Health.ServiceInfo.Assemblies
+  commentId: P:Microsoft.Health.ServiceInfo.Assemblies
+  id: Assemblies
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: Assemblies
+  nameWithType: ServiceInfo.Assemblies
+  fullName: Microsoft.Health.ServiceInfo.Assemblies
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Assemblies
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 531
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the latest information about the assemblies that represent \nthe HealthVault SDK.\n"
+  remarks: "\nThis property is no longer supported and will always return an empty \ncollection.\n"
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("No longer supported - remove references to this property.")]
+
+      public ReadOnlyCollection<HealthServiceAssemblyInfo> Assemblies { get; }
+    content.vb: >-
+      <Obsolete("No longer supported - remove references to this property.")>
+
+      Public ReadOnly Property Assemblies As ReadOnlyCollection(Of HealthServiceAssemblyInfo)
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ReadOnlyCollection{Microsoft.Health.HealthServiceAssemblyInfo}
+      description: "\nA read-only collection of information about the .NET assemblies\nthat can be used as helpers for accessing the HealthVault service.\n"
+  overload: Microsoft.Health.ServiceInfo.Assemblies*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: No longer supported - remove references to this property.
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ServiceInfo.Methods
+  commentId: P:Microsoft.Health.ServiceInfo.Methods
+  id: Methods
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: Methods
+  nameWithType: ServiceInfo.Methods
+  fullName: Microsoft.Health.ServiceInfo.Methods
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Methods
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 559
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets information about the methods that the HealthVault service\nexposes.\n"
+  remarks: "\nA HealthVault method is a named service point provided by the HealthVault\nservice that answers HTTP requests that contain XML adhering to \nthe HealthVault request schema. The elements of this collection\ndefine the method name, and request and response schemas for the \nmethod.\n"
+  example: []
+  syntax:
+    content: public ReadOnlyCollection<HealthServiceMethodInfo> Methods { get; protected set; }
+    content.vb: Public Property Methods As ReadOnlyCollection(Of HealthServiceMethodInfo)
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ReadOnlyCollection{Microsoft.Health.HealthServiceMethodInfo}
+      description: "\nA read-only collection of the HealthVault method definitions.\n"
+  overload: Microsoft.Health.ServiceInfo.Methods*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: Microsoft.Health.ServiceInfo.IncludedSchemaUrls
+  commentId: P:Microsoft.Health.ServiceInfo.IncludedSchemaUrls
+  id: IncludedSchemaUrls
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: IncludedSchemaUrls
+  nameWithType: ServiceInfo.IncludedSchemaUrls
+  fullName: Microsoft.Health.ServiceInfo.IncludedSchemaUrls
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: IncludedSchemaUrls
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 584
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the URLs of the common schemas that are included in the\nmethod XSDs.\n"
+  remarks: "\nMany of the <xref href=\"Microsoft.Health.ServiceInfo.Methods\" data-throw-if-not-resolved=\"false\"></xref> contain types that are common\nacross different method requests and responses. These types are\ndefined in the included schema URLs so that they can be referenced\nby each of the methods as needed.\n"
+  example: []
+  syntax:
+    content: public ReadOnlyCollection<Uri> IncludedSchemaUrls { get; protected set; }
+    content.vb: Public Property IncludedSchemaUrls As ReadOnlyCollection(Of Uri)
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ReadOnlyCollection{System.Uri}
+      description: "\nA read-only collection containing the URLs of the schemas that\nare included in the <xref href=\"Microsoft.Health.ServiceInfo.Methods\" data-throw-if-not-resolved=\"false\"></xref> request and response\nschemas.\n"
+  overload: Microsoft.Health.ServiceInfo.IncludedSchemaUrls*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: Microsoft.Health.ServiceInfo.ConfigurationValues
+  commentId: P:Microsoft.Health.ServiceInfo.ConfigurationValues
+  id: ConfigurationValues
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationValues
+  nameWithType: ServiceInfo.ConfigurationValues
+  fullName: Microsoft.Health.ServiceInfo.ConfigurationValues
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ConfigurationValues
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 601
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets or sets the public configuration values for the HealthVault service.\n"
+  example: []
+  syntax:
+    content: public Dictionary<string, string> ConfigurationValues { get; protected set; }
+    content.vb: Public Property ConfigurationValues As Dictionary(Of String, String)
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.String}
+      description: "\nThe dictionary returned uses the configuration value name as the key. All entries are\npublic configuration values that the HealthVault service exposes as information to \nHealthVault applications. Values can be used to throttle health record item queries, etc.\n"
+  overload: Microsoft.Health.ServiceInfo.ConfigurationValues*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: Microsoft.Health.ServiceInfo.ServiceInstances
+  commentId: P:Microsoft.Health.ServiceInfo.ServiceInstances
+  id: ServiceInstances
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: ServiceInstances
+  nameWithType: ServiceInfo.ServiceInstances
+  fullName: Microsoft.Health.ServiceInfo.ServiceInstances
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ServiceInstances
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 626
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the set of available HealthVault instances.\n"
+  remarks: "\nIn order to work seamlessly across the globe, HealthVault\nis deployed in multiple data centers around the world. Each\nof these deployments contains a complete instance of all\nHealthVault services, including both the HealthVault Shell\nand platform, and stores health record data primarily for\nusers from a particular region or constituent population.\nAlthough an instance can never access personal health data\nstored in another instance, it knows that the other instances\nexist. When an application or end user needs a user's health\nrecord data, they can make a call to any instance to learn\nof the instance in which that user's data is stored.\n"
+  example: []
+  syntax:
+    content: public Dictionary<string, HealthServiceInstance> ServiceInstances { get; }
+    content.vb: Public ReadOnly Property ServiceInstances As Dictionary(Of String, HealthServiceInstance)
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,Microsoft.Health.HealthServiceInstance}
+  overload: Microsoft.Health.ServiceInfo.ServiceInstances*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ServiceInfo.CurrentInstance
+  commentId: P:Microsoft.Health.ServiceInfo.CurrentInstance
+  id: CurrentInstance
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: CurrentInstance
+  nameWithType: ServiceInfo.CurrentInstance
+  fullName: Microsoft.Health.ServiceInfo.CurrentInstance
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CurrentInstance
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 637
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets a reference to the information for the HealthVault instance\nthat was used to get this ServiceInfo instance.\n"
+  example: []
+  syntax:
+    content: public HealthServiceInstance CurrentInstance { get; }
+    content.vb: Public ReadOnly Property CurrentInstance As HealthServiceInstance
+    parameters: []
+    return:
+      type: Microsoft.Health.HealthServiceInstance
+  overload: Microsoft.Health.ServiceInfo.CurrentInstance*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.ServiceInfo.MeaningfulUseInfo
+  commentId: P:Microsoft.Health.ServiceInfo.MeaningfulUseInfo
+  id: MeaningfulUseInfo
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: MeaningfulUseInfo
+  nameWithType: ServiceInfo.MeaningfulUseInfo
+  fullName: Microsoft.Health.ServiceInfo.MeaningfulUseInfo
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: MeaningfulUseInfo
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 642
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets configuration information for Meaningful Use features.\n"
+  example: []
+  syntax:
+    content: public HealthServiceMeaningfulUseInfo MeaningfulUseInfo { get; protected set; }
+    content.vb: Public Property MeaningfulUseInfo As HealthServiceMeaningfulUseInfo
+    parameters: []
+    return:
+      type: Microsoft.Health.HealthServiceMeaningfulUseInfo
+  overload: Microsoft.Health.ServiceInfo.MeaningfulUseInfo*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: Microsoft.Health.ServiceInfo.LastUpdated
+  commentId: P:Microsoft.Health.ServiceInfo.LastUpdated
+  id: LastUpdated
+  parent: Microsoft.Health.ServiceInfo
+  langs:
+  - csharp
+  - vb
+  name: LastUpdated
+  nameWithType: ServiceInfo.LastUpdated
+  fullName: Microsoft.Health.ServiceInfo.LastUpdated
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/ServiceInfo.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: LastUpdated
+    path: ../Microsoft.Health/ServiceInfo.cs
+    startLine: 658
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the timestamp of when the service definition was last modified on Platform.\n"
+  remarks: "\nBecause a call to Platform may be handled by any of several servers,\nall of which refresh at slightly different times, this timestamp will vary\namong several values across requests.\n"
+  example: []
+  syntax:
+    content: public DateTime LastUpdated { get; }
+    content.vb: Public ReadOnly Property LastUpdated As Date
+    parameters: []
+    return:
+      type: System.DateTime
+  overload: Microsoft.Health.ServiceInfo.LastUpdated*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: Microsoft.Health
+  commentId: N:Microsoft.Health
+  isExternal: false
+  name: Microsoft.Health
+  nameWithType: Microsoft.Health
+  fullName: Microsoft.Health
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  name: SetProperty(String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object())
+  name.vb: SetProperty(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  name: InvokeMethod(String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object())
+  name.vb: InvokeMethod(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  parent: Microsoft.Health.Utility.InvariantString
+  definition: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  name: ToStringInvariant()
+  nameWithType: InvariantString.ToStringInvariant()
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ServiceInfo.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  parent: Microsoft.Health.Utility.TypeHelper
+  definition: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  name: ValueOrDbNull<ServiceInfo>()
+  nameWithType: TypeHelper.ValueOrDbNull<ServiceInfo>()
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.ServiceInfo>()
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of ServiceInfo)()
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.ServiceInfo)()
+  name.vb: ValueOrDbNull(Of ServiceInfo)()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull<ServiceInfo>
+    nameWithType: TypeHelper.ValueOrDbNull<ServiceInfo>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.ServiceInfo>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull(Of ServiceInfo)
+    nameWithType: TypeHelper.ValueOrDbNull(Of ServiceInfo)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.ServiceInfo)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  parent: Microsoft.Health.Utility.WCXmlHelper
+  definition: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  name: ToXml()
+  nameWithType: WCXmlHelper.ToXml()
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: SetProperty(Object, String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object())
+  name.vb: SetProperty(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions
+  commentId: T:Microsoft.Health.Utility.IDispatchExtensions
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: IDispatchExtensions
+  nameWithType: IDispatchExtensions
+  fullName: Microsoft.Health.Utility.IDispatchExtensions
+- uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: InvokeMethod(Object, String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object())
+  name.vb: InvokeMethod(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  isExternal: true
+  name: ToStringInvariant(Object)
+  nameWithType: InvariantString.ToStringInvariant(Object)
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString
+  commentId: T:Microsoft.Health.Utility.InvariantString
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: InvariantString
+  nameWithType: InvariantString
+  fullName: Microsoft.Health.Utility.InvariantString
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  isExternal: false
+  name: ValueOrDbNull<T>(T)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(T)
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(T)
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(T)
+  name.vb: ValueOrDbNull(Of T)(T)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull<T>
+    nameWithType: TypeHelper.ValueOrDbNull<T>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull(Of T)
+    nameWithType: TypeHelper.ValueOrDbNull(Of T)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+- uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  isExternal: true
+  name: ToXml(Object)
+  nameWithType: WCXmlHelper.ToXml(Object)
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.WCXmlHelper
+  commentId: T:Microsoft.Health.Utility.WCXmlHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: WCXmlHelper
+  nameWithType: WCXmlHelper
+  fullName: Microsoft.Health.Utility.WCXmlHelper
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: Microsoft.Health.ServiceInfo
+  commentId: T:Microsoft.Health.ServiceInfo
+  parent: Microsoft.Health
+  isExternal: false
+  name: ServiceInfo
+  nameWithType: ServiceInfo
+  fullName: Microsoft.Health.ServiceInfo
+- uid: Microsoft.Health.HealthApplicationConfiguration.HealthVaultUrl
+  commentId: P:Microsoft.Health.HealthApplicationConfiguration.HealthVaultUrl
+  parent: Microsoft.Health.HealthApplicationConfiguration
+  isExternal: false
+  name: HealthVaultUrl
+  nameWithType: HealthApplicationConfiguration.HealthVaultUrl
+  fullName: Microsoft.Health.HealthApplicationConfiguration.HealthVaultUrl
+- uid: Microsoft.Health.HealthApplicationConfiguration.ServiceInfoDefaultCacheTtl
+  commentId: P:Microsoft.Health.HealthApplicationConfiguration.ServiceInfoDefaultCacheTtl
+  parent: Microsoft.Health.HealthApplicationConfiguration
+  isExternal: false
+  name: ServiceInfoDefaultCacheTtl
+  nameWithType: HealthApplicationConfiguration.ServiceInfoDefaultCacheTtl
+  fullName: Microsoft.Health.HealthApplicationConfiguration.ServiceInfoDefaultCacheTtl
+- uid: Microsoft.Health.ServiceInfo.SetSingletonProvider(Microsoft.Health.IServiceInfoProvider)
+  commentId: M:Microsoft.Health.ServiceInfo.SetSingletonProvider(Microsoft.Health.IServiceInfoProvider)
+- uid: Microsoft.Health.ServiceInfo.Current*
+  commentId: Overload:Microsoft.Health.ServiceInfo.Current
+  isExternal: false
+  name: Current
+  nameWithType: ServiceInfo.Current
+  fullName: Microsoft.Health.ServiceInfo.Current
+- uid: Microsoft.Health.HealthApplicationConfiguration
+  commentId: T:Microsoft.Health.HealthApplicationConfiguration
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthApplicationConfiguration
+  nameWithType: HealthApplicationConfiguration
+  fullName: Microsoft.Health.HealthApplicationConfiguration
+- uid: CurrentInfo
+  commentId: P:CurrentInfo
+- uid: Microsoft.Health.ServiceInfo.SetSingletonProvider*
+  commentId: Overload:Microsoft.Health.ServiceInfo.SetSingletonProvider
+  isExternal: false
+  name: SetSingletonProvider
+  nameWithType: ServiceInfo.SetSingletonProvider
+  fullName: Microsoft.Health.ServiceInfo.SetSingletonProvider
+- uid: Microsoft.Health.IServiceInfoProvider
+  commentId: T:Microsoft.Health.IServiceInfoProvider
+  parent: Microsoft.Health
+  isExternal: false
+  name: IServiceInfoProvider
+  nameWithType: IServiceInfoProvider
+  fullName: Microsoft.Health.IServiceInfoProvider
+- uid: Microsoft.Health.ServiceInfo.Create*
+  commentId: Overload:Microsoft.Health.ServiceInfo.Create
+  isExternal: false
+  name: Create
+  nameWithType: ServiceInfo.Create
+  fullName: Microsoft.Health.ServiceInfo.Create
+- uid: System.Xml.XPath.XPathNavigator
+  commentId: T:System.Xml.XPath.XPathNavigator
+  parent: System.Xml.XPath
+  isExternal: true
+  name: XPathNavigator
+  nameWithType: XPathNavigator
+  fullName: System.Xml.XPath.XPathNavigator
+- uid: System.Xml.XPath
+  commentId: N:System.Xml.XPath
+  isExternal: false
+  name: System.Xml.XPath
+  nameWithType: System.Xml.XPath
+  fullName: System.Xml.XPath
+- uid: Microsoft.Health.ServiceInfo.GetXml*
+  commentId: Overload:Microsoft.Health.ServiceInfo.GetXml
+  isExternal: false
+  name: GetXml
+  nameWithType: ServiceInfo.GetXml
+  fullName: Microsoft.Health.ServiceInfo.GetXml
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Microsoft.Health.ServiceInfo.#ctor*
+  commentId: Overload:Microsoft.Health.ServiceInfo.#ctor
+  isExternal: false
+  name: ServiceInfo
+  nameWithType: ServiceInfo.ServiceInfo
+  fullName: Microsoft.Health.ServiceInfo.ServiceInfo
+- uid: Microsoft.Health.ServiceInfo.HealthServiceUrl*
+  commentId: Overload:Microsoft.Health.ServiceInfo.HealthServiceUrl
+  isExternal: false
+  name: HealthServiceUrl
+  nameWithType: ServiceInfo.HealthServiceUrl
+  fullName: Microsoft.Health.ServiceInfo.HealthServiceUrl
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: System.Version
+  commentId: T:System.Version
+- uid: Microsoft.Health.ServiceInfo.Version*
+  commentId: Overload:Microsoft.Health.ServiceInfo.Version
+  isExternal: false
+  name: Version
+  nameWithType: ServiceInfo.Version
+  fullName: Microsoft.Health.ServiceInfo.Version
+- uid: Microsoft.Health.ServiceInfo.HealthServiceShellInfo*
+  commentId: Overload:Microsoft.Health.ServiceInfo.HealthServiceShellInfo
+  isExternal: false
+  name: HealthServiceShellInfo
+  nameWithType: ServiceInfo.HealthServiceShellInfo
+  fullName: Microsoft.Health.ServiceInfo.HealthServiceShellInfo
+- uid: Microsoft.Health.HealthServiceShellInfo
+  commentId: T:Microsoft.Health.HealthServiceShellInfo
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthServiceShellInfo
+  nameWithType: HealthServiceShellInfo
+  fullName: Microsoft.Health.HealthServiceShellInfo
+- uid: Microsoft.Health.ServiceInfo.Assemblies*
+  commentId: Overload:Microsoft.Health.ServiceInfo.Assemblies
+  isExternal: false
+  name: Assemblies
+  nameWithType: ServiceInfo.Assemblies
+  fullName: Microsoft.Health.ServiceInfo.Assemblies
+- uid: System.Collections.ObjectModel.ReadOnlyCollection{Microsoft.Health.HealthServiceAssemblyInfo}
+  commentId: T:System.Collections.ObjectModel.ReadOnlyCollection{Microsoft.Health.HealthServiceAssemblyInfo}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.ReadOnlyCollection`1
+  name: ReadOnlyCollection<HealthServiceAssemblyInfo>
+  nameWithType: ReadOnlyCollection<HealthServiceAssemblyInfo>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<Microsoft.Health.HealthServiceAssemblyInfo>
+  nameWithType.vb: ReadOnlyCollection(Of HealthServiceAssemblyInfo)
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of Microsoft.Health.HealthServiceAssemblyInfo)
+  name.vb: ReadOnlyCollection(Of HealthServiceAssemblyInfo)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.HealthServiceAssemblyInfo
+    name: HealthServiceAssemblyInfo
+    nameWithType: HealthServiceAssemblyInfo
+    fullName: Microsoft.Health.HealthServiceAssemblyInfo
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.HealthServiceAssemblyInfo
+    name: HealthServiceAssemblyInfo
+    nameWithType: HealthServiceAssemblyInfo
+    fullName: Microsoft.Health.HealthServiceAssemblyInfo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+  commentId: T:System.Collections.ObjectModel.ReadOnlyCollection`1
+  isExternal: true
+  name: ReadOnlyCollection<T>
+  nameWithType: ReadOnlyCollection<T>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<T>
+  nameWithType.vb: ReadOnlyCollection(Of T)
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of T)
+  name.vb: ReadOnlyCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: false
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+- uid: Microsoft.Health.ServiceInfo.Methods*
+  commentId: Overload:Microsoft.Health.ServiceInfo.Methods
+  isExternal: false
+  name: Methods
+  nameWithType: ServiceInfo.Methods
+  fullName: Microsoft.Health.ServiceInfo.Methods
+- uid: System.Collections.ObjectModel.ReadOnlyCollection{Microsoft.Health.HealthServiceMethodInfo}
+  commentId: T:System.Collections.ObjectModel.ReadOnlyCollection{Microsoft.Health.HealthServiceMethodInfo}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.ReadOnlyCollection`1
+  name: ReadOnlyCollection<HealthServiceMethodInfo>
+  nameWithType: ReadOnlyCollection<HealthServiceMethodInfo>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<Microsoft.Health.HealthServiceMethodInfo>
+  nameWithType.vb: ReadOnlyCollection(Of HealthServiceMethodInfo)
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of Microsoft.Health.HealthServiceMethodInfo)
+  name.vb: ReadOnlyCollection(Of HealthServiceMethodInfo)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.HealthServiceMethodInfo
+    name: HealthServiceMethodInfo
+    nameWithType: HealthServiceMethodInfo
+    fullName: Microsoft.Health.HealthServiceMethodInfo
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.HealthServiceMethodInfo
+    name: HealthServiceMethodInfo
+    nameWithType: HealthServiceMethodInfo
+    fullName: Microsoft.Health.HealthServiceMethodInfo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ServiceInfo.Methods
+  commentId: P:Microsoft.Health.ServiceInfo.Methods
+- uid: Microsoft.Health.ServiceInfo.IncludedSchemaUrls*
+  commentId: Overload:Microsoft.Health.ServiceInfo.IncludedSchemaUrls
+  isExternal: false
+  name: IncludedSchemaUrls
+  nameWithType: ServiceInfo.IncludedSchemaUrls
+  fullName: Microsoft.Health.ServiceInfo.IncludedSchemaUrls
+- uid: System.Collections.ObjectModel.ReadOnlyCollection{System.Uri}
+  commentId: T:System.Collections.ObjectModel.ReadOnlyCollection{System.Uri}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.ReadOnlyCollection`1
+  name: ReadOnlyCollection<Uri>
+  nameWithType: ReadOnlyCollection<Uri>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<System.Uri>
+  nameWithType.vb: ReadOnlyCollection(Of Uri)
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of System.Uri)
+  name.vb: ReadOnlyCollection(Of Uri)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: System.Uri
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: System.Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ServiceInfo.ConfigurationValues*
+  commentId: Overload:Microsoft.Health.ServiceInfo.ConfigurationValues
+  isExternal: false
+  name: ConfigurationValues
+  nameWithType: ServiceInfo.ConfigurationValues
+  fullName: Microsoft.Health.ServiceInfo.ConfigurationValues
+- uid: System.Collections.Generic.Dictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<String, String>
+  nameWithType: Dictionary<String, String>
+  fullName: System.Collections.Generic.Dictionary<System.String, System.String>
+  nameWithType.vb: Dictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.String, System.String)
+  name.vb: Dictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Microsoft.Health.ServiceInfo.ServiceInstances*
+  commentId: Overload:Microsoft.Health.ServiceInfo.ServiceInstances
+  isExternal: false
+  name: ServiceInstances
+  nameWithType: ServiceInfo.ServiceInstances
+  fullName: Microsoft.Health.ServiceInfo.ServiceInstances
+- uid: System.Collections.Generic.Dictionary{System.String,Microsoft.Health.HealthServiceInstance}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,Microsoft.Health.HealthServiceInstance}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<String, HealthServiceInstance>
+  nameWithType: Dictionary<String, HealthServiceInstance>
+  fullName: System.Collections.Generic.Dictionary<System.String, Microsoft.Health.HealthServiceInstance>
+  nameWithType.vb: Dictionary(Of String, HealthServiceInstance)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.String, Microsoft.Health.HealthServiceInstance)
+  name.vb: Dictionary(Of String, HealthServiceInstance)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Microsoft.Health.HealthServiceInstance
+    name: HealthServiceInstance
+    nameWithType: HealthServiceInstance
+    fullName: Microsoft.Health.HealthServiceInstance
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Microsoft.Health.HealthServiceInstance
+    name: HealthServiceInstance
+    nameWithType: HealthServiceInstance
+    fullName: Microsoft.Health.HealthServiceInstance
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ServiceInfo.CurrentInstance*
+  commentId: Overload:Microsoft.Health.ServiceInfo.CurrentInstance
+  isExternal: false
+  name: CurrentInstance
+  nameWithType: ServiceInfo.CurrentInstance
+  fullName: Microsoft.Health.ServiceInfo.CurrentInstance
+- uid: Microsoft.Health.HealthServiceInstance
+  commentId: T:Microsoft.Health.HealthServiceInstance
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthServiceInstance
+  nameWithType: HealthServiceInstance
+  fullName: Microsoft.Health.HealthServiceInstance
+- uid: Microsoft.Health.ServiceInfo.MeaningfulUseInfo*
+  commentId: Overload:Microsoft.Health.ServiceInfo.MeaningfulUseInfo
+  isExternal: false
+  name: MeaningfulUseInfo
+  nameWithType: ServiceInfo.MeaningfulUseInfo
+  fullName: Microsoft.Health.ServiceInfo.MeaningfulUseInfo
+- uid: Microsoft.Health.HealthServiceMeaningfulUseInfo
+  commentId: T:Microsoft.Health.HealthServiceMeaningfulUseInfo
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthServiceMeaningfulUseInfo
+  nameWithType: HealthServiceMeaningfulUseInfo
+  fullName: Microsoft.Health.HealthServiceMeaningfulUseInfo
+- uid: Microsoft.Health.ServiceInfo.LastUpdated*
+  commentId: Overload:Microsoft.Health.ServiceInfo.LastUpdated
+  isExternal: false
+  name: LastUpdated
+  nameWithType: ServiceInfo.LastUpdated
+  fullName: Microsoft.Health.ServiceInfo.LastUpdated
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime

@@ -1,0 +1,1503 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  id: TypeHelper
+  parent: Microsoft.Health.Utility
+  children:
+  - Microsoft.Health.Utility.TypeHelper.Bool2Xml(System.Boolean)
+  - Microsoft.Health.Utility.TypeHelper.ByteArrayToHexString(System.Byte[])
+  - Microsoft.Health.Utility.TypeHelper.DateTime2Xml(System.String,System.DateTime)
+  - Microsoft.Health.Utility.TypeHelper.DateTimeToInt64(System.DateTime)
+  - Microsoft.Health.Utility.TypeHelper.DateUnspecified
+  - Microsoft.Health.Utility.TypeHelper.DefaultAsNullable``1(``0)
+  - Microsoft.Health.Utility.TypeHelper.GenerateExceptionStringNoStack(System.Exception)
+  - Microsoft.Health.Utility.TypeHelper.GenerateFullExceptionString(System.Exception,System.String)
+  - Microsoft.Health.Utility.TypeHelper.GetBytesFromHexString(System.String)
+  - Microsoft.Health.Utility.TypeHelper.HexCharsToByte(System.Char,System.Char)
+  - Microsoft.Health.Utility.TypeHelper.Int64ToDateTime(System.Int64)
+  - Microsoft.Health.Utility.TypeHelper.ParseDateTimeToUtc(System.String)
+  - Microsoft.Health.Utility.TypeHelper.SplitAndTrim(System.String,System.Char)
+  - Microsoft.Health.Utility.TypeHelper.String2Bool(System.String,System.Boolean)
+  - Microsoft.Health.Utility.TypeHelper.String2Double(System.String,System.Double)
+  - Microsoft.Health.Utility.TypeHelper.String2Int32(System.String,System.Int32)
+  - Microsoft.Health.Utility.TypeHelper.String2UInt16(System.String,System.UInt16)
+  - Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  - Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(System.Nullable{``0})
+  langs:
+  - csharp
+  - vb
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: TypeHelper
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 16
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nCollection of type conversion helper routines\n"
+  example: []
+  syntax:
+    content: public static class TypeHelper
+    content.vb: Public Module TypeHelper
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  id: ValueOrDbNull``1(``0)
+  isExtensionMethod: true
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: ValueOrDbNull<T>(T)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(T)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ValueOrDbNull
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 21
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  syntax:
+    content: 'public static object ValueOrDbNull<T>(this T value)where T : class'
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ValueOrDbNull(Of T As Class)(value As T) As Object
+    parameters:
+    - id: value
+      type: '{T}'
+    typeParameters:
+    - id: T
+    return:
+      type: System.Object
+  overload: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull*
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(T)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(T)
+  name.vb: ValueOrDbNull(Of T)(T)
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(System.Nullable{``0})
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(System.Nullable{``0})
+  id: ValueOrDbNull``1(System.Nullable{``0})
+  isExtensionMethod: true
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: ValueOrDbNull<T>(Nullable<T>)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(Nullable<T>)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(System.Nullable<T>)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ValueOrDbNull
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 27
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  syntax:
+    content: 'public static object ValueOrDbNull<T>(this T? value)where T : struct'
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ValueOrDbNull(Of T As Structure)(value As T?) As Object
+    parameters:
+    - id: value
+      type: System.Nullable{{T}}
+    typeParameters:
+    - id: T
+    return:
+      type: System.Object
+  overload: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull*
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(Nullable(Of T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(System.Nullable(Of T))
+  name.vb: ValueOrDbNull(Of T)(Nullable(Of T))
+- uid: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.DefaultAsNullable``1(``0)
+  id: DefaultAsNullable``1(``0)
+  isExtensionMethod: true
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: DefaultAsNullable<T>(T)
+  nameWithType: TypeHelper.DefaultAsNullable<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable<T>(T)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: DefaultAsNullable
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 33
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  syntax:
+    content: 'public static T? DefaultAsNullable<T>(this T value)where T : struct'
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function DefaultAsNullable(Of T As Structure)(value As T) As T?
+    parameters:
+    - id: value
+      type: '{T}'
+    typeParameters:
+    - id: T
+    return:
+      type: System.Nullable{{T}}
+  overload: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable*
+  nameWithType.vb: TypeHelper.DefaultAsNullable(Of T)(T)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable(Of T)(T)
+  name.vb: DefaultAsNullable(Of T)(T)
+- uid: Microsoft.Health.Utility.TypeHelper.DateUnspecified
+  commentId: F:Microsoft.Health.Utility.TypeHelper.DateUnspecified
+  id: DateUnspecified
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: DateUnspecified
+  nameWithType: TypeHelper.DateUnspecified
+  fullName: Microsoft.Health.Utility.TypeHelper.DateUnspecified
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: DateUnspecified
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 42
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nMarker for unspecified DateTime values\n"
+  example: []
+  syntax:
+    content: public static readonly DateTime DateUnspecified
+    content.vb: Public Shared ReadOnly DateUnspecified As Date
+    return:
+      type: System.DateTime
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Microsoft.Health.Utility.TypeHelper.ParseDateTimeToUtc(System.String)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ParseDateTimeToUtc(System.String)
+  id: ParseDateTimeToUtc(System.String)
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: ParseDateTimeToUtc(String)
+  nameWithType: TypeHelper.ParseDateTimeToUtc(String)
+  fullName: Microsoft.Health.Utility.TypeHelper.ParseDateTimeToUtc(System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ParseDateTimeToUtc
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 48
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nParses into UTC time to ensure consistency with db ops that\nblow off the \"kind\"\n"
+  example: []
+  syntax:
+    content: public static DateTime ParseDateTimeToUtc(string value)
+    content.vb: Public Shared Function ParseDateTimeToUtc(value As String) As Date
+    parameters:
+    - id: value
+      type: System.String
+    return:
+      type: System.DateTime
+  overload: Microsoft.Health.Utility.TypeHelper.ParseDateTimeToUtc*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.Utility.TypeHelper.DateTimeToInt64(System.DateTime)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.DateTimeToInt64(System.DateTime)
+  id: DateTimeToInt64(System.DateTime)
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: DateTimeToInt64(DateTime)
+  nameWithType: TypeHelper.DateTimeToInt64(DateTime)
+  fullName: Microsoft.Health.Utility.TypeHelper.DateTimeToInt64(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: DateTimeToInt64
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 67
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nConverts a DateTime to an Int64 of the format\nYYYYMMDDHHMISSsss\nwhere   YYYY    -&gt; 4 digit year\n    MM      -&gt; 2 digit month\n    DD      -&gt; 2 digit day\n    HH      -&gt; 2 digt 24-hour\n    MI      -&gt; 2 digit minute\n    SS      -&gt; 2 digit second\n    sss     -&gt; 3 digit millisecond\n"
+  example: []
+  syntax:
+    content: public static long DateTimeToInt64(DateTime dateTime)
+    content.vb: Public Shared Function DateTimeToInt64(dateTime As Date) As Long
+    parameters:
+    - id: dateTime
+      type: System.DateTime
+      description: The DateTime value to be converted
+    return:
+      type: System.Int64
+      description: An Int64 representation of dateTime
+  overload: Microsoft.Health.Utility.TypeHelper.DateTimeToInt64*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.Utility.TypeHelper.Int64ToDateTime(System.Int64)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.Int64ToDateTime(System.Int64)
+  id: Int64ToDateTime(System.Int64)
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: Int64ToDateTime(Int64)
+  nameWithType: TypeHelper.Int64ToDateTime(Int64)
+  fullName: Microsoft.Health.Utility.TypeHelper.Int64ToDateTime(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Int64ToDateTime
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 94
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nConverts an Int64 value into a DateTime. The format of the Int64\nvalue is expected to be:\nYYYYMMDDHHMISSsss\nwhere   YYYY    -&gt; 4 digit year\n    MM      -&gt; 2 digit month\n    DD      -&gt; 2 digit day\n    HH      -&gt; 2 digt 24-hour\n    MI      -&gt; 2 digit minute\n    SS      -&gt; 2 digit second\n    sss     -&gt; 3 digit millisecond\n"
+  example: []
+  syntax:
+    content: public static DateTime Int64ToDateTime(long dateTimeAsInt64)
+    content.vb: Public Shared Function Int64ToDateTime(dateTimeAsInt64 As Long) As Date
+    parameters:
+    - id: dateTimeAsInt64
+      type: System.Int64
+      description: >-
+        The Int64 value to be
+
+        converted
+    return:
+      type: System.DateTime
+      description: A DateTime value that corresponds to Int64
+  overload: Microsoft.Health.Utility.TypeHelper.Int64ToDateTime*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.Utility.TypeHelper.String2Double(System.String,System.Double)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.String2Double(System.String,System.Double)
+  id: String2Double(System.String,System.Double)
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: String2Double(String, Double)
+  nameWithType: TypeHelper.String2Double(String, Double)
+  fullName: Microsoft.Health.Utility.TypeHelper.String2Double(System.String, System.Double)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: String2Double
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 133
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nconvert a string to a double\n"
+  example: []
+  syntax:
+    content: public static double String2Double(string blobToConvert, double def)
+    content.vb: Public Shared Function String2Double(blobToConvert As String, def As Double) As Double
+    parameters:
+    - id: blobToConvert
+      type: System.String
+      description: String to convert.
+    - id: def
+      type: System.Double
+      description: Default value to return if conversion fails.
+    return:
+      type: System.Double
+      description: ''
+  overload: Microsoft.Health.Utility.TypeHelper.String2Double*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.Utility.TypeHelper.String2Int32(System.String,System.Int32)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.String2Int32(System.String,System.Int32)
+  id: String2Int32(System.String,System.Int32)
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: String2Int32(String, Int32)
+  nameWithType: TypeHelper.String2Int32(String, Int32)
+  fullName: Microsoft.Health.Utility.TypeHelper.String2Int32(System.String, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: String2Int32
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 149
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nconverts a string to an Int32\n"
+  example: []
+  syntax:
+    content: public static int String2Int32(string blobToConvert, int def)
+    content.vb: Public Shared Function String2Int32(blobToConvert As String, def As Integer) As Integer
+    parameters:
+    - id: blobToConvert
+      type: System.String
+      description: String to convert.
+    - id: def
+      type: System.Int32
+      description: Default value to return if conversion fails.
+    return:
+      type: System.Int32
+      description: ''
+  overload: Microsoft.Health.Utility.TypeHelper.String2Int32*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.Utility.TypeHelper.String2UInt16(System.String,System.UInt16)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.String2UInt16(System.String,System.UInt16)
+  id: String2UInt16(System.String,System.UInt16)
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: String2UInt16(String, UInt16)
+  nameWithType: TypeHelper.String2UInt16(String, UInt16)
+  fullName: Microsoft.Health.Utility.TypeHelper.String2UInt16(System.String, System.UInt16)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: String2UInt16
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 165
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nconverts a string to an UInt16\n"
+  example: []
+  syntax:
+    content: public static ushort String2UInt16(string blobToConvert, ushort def)
+    content.vb: Public Shared Function String2UInt16(blobToConvert As String, def As UShort) As UShort
+    parameters:
+    - id: blobToConvert
+      type: System.String
+      description: String to convert.
+    - id: def
+      type: System.UInt16
+      description: Default value to return if conversion fails.
+    return:
+      type: System.UInt16
+      description: ''
+  overload: Microsoft.Health.Utility.TypeHelper.String2UInt16*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.Utility.TypeHelper.String2Bool(System.String,System.Boolean)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.String2Bool(System.String,System.Boolean)
+  id: String2Bool(System.String,System.Boolean)
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: String2Bool(String, Boolean)
+  nameWithType: TypeHelper.String2Bool(String, Boolean)
+  fullName: Microsoft.Health.Utility.TypeHelper.String2Bool(System.String, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: String2Bool
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 181
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nconverts a string to a boolean\n"
+  example: []
+  syntax:
+    content: public static bool String2Bool(string blobToConvert, bool def)
+    content.vb: Public Shared Function String2Bool(blobToConvert As String, def As Boolean) As Boolean
+    parameters:
+    - id: blobToConvert
+      type: System.String
+      description: ''
+    - id: def
+      type: System.Boolean
+      description: ''
+    return:
+      type: System.Boolean
+      description: ''
+  overload: Microsoft.Health.Utility.TypeHelper.String2Bool*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.Utility.TypeHelper.Bool2Xml(System.Boolean)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.Bool2Xml(System.Boolean)
+  id: Bool2Xml(System.Boolean)
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: Bool2Xml(Boolean)
+  nameWithType: TypeHelper.Bool2Xml(Boolean)
+  fullName: Microsoft.Health.Utility.TypeHelper.Bool2Xml(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Bool2Xml
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 196
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nConverts a boolean to Xml string representation.\n"
+  example: []
+  syntax:
+    content: public static string Bool2Xml(bool boolToConvert)
+    content.vb: Public Shared Function Bool2Xml(boolToConvert As Boolean) As String
+    parameters:
+    - id: boolToConvert
+      type: System.Boolean
+      description: boolean value to convert
+    return:
+      type: System.String
+      description: xml string representation of the boolean value
+  overload: Microsoft.Health.Utility.TypeHelper.Bool2Xml*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.Utility.TypeHelper.DateTime2Xml(System.String,System.DateTime)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.DateTime2Xml(System.String,System.DateTime)
+  id: DateTime2Xml(System.String,System.DateTime)
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: DateTime2Xml(String, DateTime)
+  nameWithType: TypeHelper.DateTime2Xml(String, DateTime)
+  fullName: Microsoft.Health.Utility.TypeHelper.DateTime2Xml(System.String, System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: DateTime2Xml
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 207
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nUses LINQ to XML to store DateTime in the standard XML format,\nindependent of culture settings. Doing it this way makes the code \nreally portable as this is a standard format, and code in other \nlanguages can read this value as well.\n"
+  example: []
+  syntax:
+    content: public static XElement DateTime2Xml(string elementName, DateTime dateTimeValue)
+    content.vb: Public Shared Function DateTime2Xml(elementName As String, dateTimeValue As Date) As XElement
+    parameters:
+    - id: elementName
+      type: System.String
+    - id: dateTimeValue
+      type: System.DateTime
+    return:
+      type: System.Xml.Linq.XElement
+  overload: Microsoft.Health.Utility.TypeHelper.DateTime2Xml*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.Utility.TypeHelper.GetBytesFromHexString(System.String)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.GetBytesFromHexString(System.String)
+  id: GetBytesFromHexString(System.String)
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: GetBytesFromHexString(String)
+  nameWithType: TypeHelper.GetBytesFromHexString(String)
+  fullName: Microsoft.Health.Utility.TypeHelper.GetBytesFromHexString(System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetBytesFromHexString
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 230
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nConverts a hexadecimal value represented as a string to a byte \narray.\n"
+  example: []
+  syntax:
+    content: public static byte[] GetBytesFromHexString(string hexString)
+    content.vb: Public Shared Function GetBytesFromHexString(hexString As String) As Byte()
+    parameters:
+    - id: hexString
+      type: System.String
+      description: "\nA string containing hexadecimal numbers (no '0x' preceeding \nnumbers).\n"
+    return:
+      type: System.Byte[]
+      description: "\nThe byte representation of the hexadecimal numbers represented in \nthe string.\n"
+  overload: Microsoft.Health.Utility.TypeHelper.GetBytesFromHexString*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.Utility.TypeHelper.HexCharsToByte(System.Char,System.Char)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.HexCharsToByte(System.Char,System.Char)
+  id: HexCharsToByte(System.Char,System.Char)
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: HexCharsToByte(Char, Char)
+  nameWithType: TypeHelper.HexCharsToByte(Char, Char)
+  fullName: Microsoft.Health.Utility.TypeHelper.HexCharsToByte(System.Char, System.Char)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: HexCharsToByte
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 288
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nConverts a pair of hexadecimal characters to a byte.\n"
+  example: []
+  syntax:
+    content: public static byte HexCharsToByte(char higherOrderHexChar, char lowerOrderHexChar)
+    content.vb: Public Shared Function HexCharsToByte(higherOrderHexChar As Char, lowerOrderHexChar As Char) As Byte
+    parameters:
+    - id: higherOrderHexChar
+      type: System.Char
+      description: "\nThe hex character representing the 4 higher order bits of the byte.\n"
+    - id: lowerOrderHexChar
+      type: System.Char
+      description: "\nThe hex character representing the 4 lower order bits of the byte.\n"
+    return:
+      type: System.Byte
+      description: "\nThe byte representation of the hexadecimal characters.\n"
+  overload: Microsoft.Health.Utility.TypeHelper.HexCharsToByte*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf either <see paramref=\"higherOrderHexChar\"></see> or \n<see paramref=\"higherOrderHexChar\"></see> is a non-hexadecimal\ncharacter.\n"
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.Utility.TypeHelper.ByteArrayToHexString(System.Byte[])
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ByteArrayToHexString(System.Byte[])
+  id: ByteArrayToHexString(System.Byte[])
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: ByteArrayToHexString(Byte[])
+  nameWithType: TypeHelper.ByteArrayToHexString(Byte[])
+  fullName: Microsoft.Health.Utility.TypeHelper.ByteArrayToHexString(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ByteArrayToHexString
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 352
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nConverts the specified byte array to a hex string.\n"
+  example: []
+  syntax:
+    content: public static string ByteArrayToHexString(byte[] bytes)
+    content.vb: Public Shared Function ByteArrayToHexString(bytes As Byte()) As String
+    parameters:
+    - id: bytes
+      type: System.Byte[]
+      description: "\nThe bytes to convert.\n"
+    return:
+      type: System.String
+      description: "\nA string representation of the byte array.\n"
+  overload: Microsoft.Health.Utility.TypeHelper.ByteArrayToHexString*
+  nameWithType.vb: TypeHelper.ByteArrayToHexString(Byte())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ByteArrayToHexString(System.Byte())
+  name.vb: ByteArrayToHexString(Byte())
+- uid: Microsoft.Health.Utility.TypeHelper.SplitAndTrim(System.String,System.Char)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.SplitAndTrim(System.String,System.Char)
+  id: SplitAndTrim(System.String,System.Char)
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: SplitAndTrim(String, Char)
+  nameWithType: TypeHelper.SplitAndTrim(String, Char)
+  fullName: Microsoft.Health.Utility.TypeHelper.SplitAndTrim(System.String, System.Char)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: SplitAndTrim
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 363
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nSplits a given string into parts using the separator and trims the\nindividual parts and returns them in a string array.\n"
+  example: []
+  syntax:
+    content: public static string[] SplitAndTrim(string all, char separator)
+    content.vb: Public Shared Function SplitAndTrim(all As String, separator As Char) As String()
+    parameters:
+    - id: all
+      type: System.String
+    - id: separator
+      type: System.Char
+    return:
+      type: System.String[]
+  overload: Microsoft.Health.Utility.TypeHelper.SplitAndTrim*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.Utility.TypeHelper.GenerateFullExceptionString(System.Exception,System.String)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.GenerateFullExceptionString(System.Exception,System.String)
+  id: GenerateFullExceptionString(System.Exception,System.String)
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: GenerateFullExceptionString(Exception, String)
+  nameWithType: TypeHelper.GenerateFullExceptionString(Exception, String)
+  fullName: Microsoft.Health.Utility.TypeHelper.GenerateFullExceptionString(System.Exception, System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GenerateFullExceptionString
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 383
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nReturn the exception and all nested exceptions as a string.\n"
+  example: []
+  syntax:
+    content: public static string GenerateFullExceptionString(Exception ex, string callStackTrace = null)
+    content.vb: Public Shared Function GenerateFullExceptionString(ex As Exception, callStackTrace As String = Nothing) As String
+    parameters:
+    - id: ex
+      type: System.Exception
+    - id: callStackTrace
+      type: System.String
+    return:
+      type: System.String
+  overload: Microsoft.Health.Utility.TypeHelper.GenerateFullExceptionString*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.Utility.TypeHelper.GenerateExceptionStringNoStack(System.Exception)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.GenerateExceptionStringNoStack(System.Exception)
+  id: GenerateExceptionStringNoStack(System.Exception)
+  parent: Microsoft.Health.Utility.TypeHelper
+  langs:
+  - csharp
+  - vb
+  name: GenerateExceptionStringNoStack(Exception)
+  nameWithType: TypeHelper.GenerateExceptionStringNoStack(Exception)
+  fullName: Microsoft.Health.Utility.TypeHelper.GenerateExceptionStringNoStack(System.Exception)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/utilities/TypeHelper.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GenerateExceptionStringNoStack
+    path: ../Microsoft.Health.Utility/utilities/TypeHelper.cs
+    startLine: 406
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility
+  summary: "\nReturn the exception and all nested exceptions as a string\nwithout the stack trace. \n"
+  example: []
+  syntax:
+    content: public static string GenerateExceptionStringNoStack(Exception ex)
+    content.vb: Public Shared Function GenerateExceptionStringNoStack(ex As Exception) As String
+    parameters:
+    - id: ex
+      type: System.Exception
+    return:
+      type: System.String
+  overload: Microsoft.Health.Utility.TypeHelper.GenerateExceptionStringNoStack*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull
+  isExternal: false
+  name: ValueOrDbNull
+  nameWithType: TypeHelper.ValueOrDbNull
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  isExternal: false
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Nullable{{T}}
+  commentId: T:System.Nullable{``0}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.DefaultAsNullable
+  isExternal: false
+  name: DefaultAsNullable
+  nameWithType: TypeHelper.DefaultAsNullable
+  fullName: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: Microsoft.Health.Utility.TypeHelper.ParseDateTimeToUtc*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.ParseDateTimeToUtc
+  isExternal: false
+  name: ParseDateTimeToUtc
+  nameWithType: TypeHelper.ParseDateTimeToUtc
+  fullName: Microsoft.Health.Utility.TypeHelper.ParseDateTimeToUtc
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Microsoft.Health.Utility.TypeHelper.DateTimeToInt64*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.DateTimeToInt64
+  isExternal: false
+  name: DateTimeToInt64
+  nameWithType: TypeHelper.DateTimeToInt64
+  fullName: Microsoft.Health.Utility.TypeHelper.DateTimeToInt64
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: Microsoft.Health.Utility.TypeHelper.Int64ToDateTime*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.Int64ToDateTime
+  isExternal: false
+  name: Int64ToDateTime
+  nameWithType: TypeHelper.Int64ToDateTime
+  fullName: Microsoft.Health.Utility.TypeHelper.Int64ToDateTime
+- uid: Microsoft.Health.Utility.TypeHelper.String2Double*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.String2Double
+  isExternal: false
+  name: String2Double
+  nameWithType: TypeHelper.String2Double
+  fullName: Microsoft.Health.Utility.TypeHelper.String2Double
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: Microsoft.Health.Utility.TypeHelper.String2Int32*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.String2Int32
+  isExternal: false
+  name: String2Int32
+  nameWithType: TypeHelper.String2Int32
+  fullName: Microsoft.Health.Utility.TypeHelper.String2Int32
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Microsoft.Health.Utility.TypeHelper.String2UInt16*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.String2UInt16
+  isExternal: false
+  name: String2UInt16
+  nameWithType: TypeHelper.String2UInt16
+  fullName: Microsoft.Health.Utility.TypeHelper.String2UInt16
+- uid: System.UInt16
+  commentId: T:System.UInt16
+  parent: System
+  isExternal: true
+  name: UInt16
+  nameWithType: UInt16
+  fullName: System.UInt16
+- uid: Microsoft.Health.Utility.TypeHelper.String2Bool*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.String2Bool
+  isExternal: false
+  name: String2Bool
+  nameWithType: TypeHelper.String2Bool
+  fullName: Microsoft.Health.Utility.TypeHelper.String2Bool
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Microsoft.Health.Utility.TypeHelper.Bool2Xml*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.Bool2Xml
+  isExternal: false
+  name: Bool2Xml
+  nameWithType: TypeHelper.Bool2Xml
+  fullName: Microsoft.Health.Utility.TypeHelper.Bool2Xml
+- uid: Microsoft.Health.Utility.TypeHelper.DateTime2Xml*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.DateTime2Xml
+  isExternal: false
+  name: DateTime2Xml
+  nameWithType: TypeHelper.DateTime2Xml
+  fullName: Microsoft.Health.Utility.TypeHelper.DateTime2Xml
+- uid: System.Xml.Linq.XElement
+  commentId: T:System.Xml.Linq.XElement
+  parent: System.Xml.Linq
+  isExternal: true
+  name: XElement
+  nameWithType: XElement
+  fullName: System.Xml.Linq.XElement
+- uid: System.Xml.Linq
+  commentId: N:System.Xml.Linq
+  isExternal: false
+  name: System.Xml.Linq
+  nameWithType: System.Xml.Linq
+  fullName: System.Xml.Linq
+- uid: Microsoft.Health.Utility.TypeHelper.GetBytesFromHexString*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.GetBytesFromHexString
+  isExternal: false
+  name: GetBytesFromHexString
+  nameWithType: TypeHelper.GetBytesFromHexString
+  fullName: Microsoft.Health.Utility.TypeHelper.GetBytesFromHexString
+- uid: System.Byte[]
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Microsoft.Health.Utility.TypeHelper.HexCharsToByte*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.HexCharsToByte
+  isExternal: false
+  name: HexCharsToByte
+  nameWithType: TypeHelper.HexCharsToByte
+  fullName: Microsoft.Health.Utility.TypeHelper.HexCharsToByte
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  name: Char
+  nameWithType: Char
+  fullName: System.Char
+- uid: System.Byte
+  commentId: T:System.Byte
+  parent: System
+  isExternal: true
+  name: Byte
+  nameWithType: Byte
+  fullName: System.Byte
+- uid: Microsoft.Health.Utility.TypeHelper.ByteArrayToHexString*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.ByteArrayToHexString
+  isExternal: false
+  name: ByteArrayToHexString
+  nameWithType: TypeHelper.ByteArrayToHexString
+  fullName: Microsoft.Health.Utility.TypeHelper.ByteArrayToHexString
+- uid: Microsoft.Health.Utility.TypeHelper.SplitAndTrim*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.SplitAndTrim
+  isExternal: false
+  name: SplitAndTrim
+  nameWithType: TypeHelper.SplitAndTrim
+  fullName: Microsoft.Health.Utility.TypeHelper.SplitAndTrim
+- uid: System.String[]
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Microsoft.Health.Utility.TypeHelper.GenerateFullExceptionString*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.GenerateFullExceptionString
+  isExternal: false
+  name: GenerateFullExceptionString
+  nameWithType: TypeHelper.GenerateFullExceptionString
+  fullName: Microsoft.Health.Utility.TypeHelper.GenerateFullExceptionString
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: Microsoft.Health.Utility.TypeHelper.GenerateExceptionStringNoStack*
+  commentId: Overload:Microsoft.Health.Utility.TypeHelper.GenerateExceptionStringNoStack
+  isExternal: false
+  name: GenerateExceptionStringNoStack
+  nameWithType: TypeHelper.GenerateExceptionStringNoStack
+  fullName: Microsoft.Health.Utility.TypeHelper.GenerateExceptionStringNoStack

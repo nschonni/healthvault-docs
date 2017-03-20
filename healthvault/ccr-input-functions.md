@@ -7,7 +7,7 @@ The logic behind the transforms is described in detail in [HealthVault CCR Input
 
 ### IsConcept(text, concept)
 
-```
+```pseudocode
 If(Vocabulary[concept].ImportText.Contains(text)) 
     return true 
 Else 
@@ -16,63 +16,63 @@ Else
 
 ### IsConcept(ccrtype, concept)
 
-```
+```pseudocode
 return  IsConcept(ccrtype/type/text, concept)
 ```
 
 ### Concat(args\[\], separator)
 
-```
+```pseudocode
 return args[0] + (for (i = 1 to args.Length - 1) { if exists(args[i]) (separator + args[i]) } )
 ```
 
 ### ResolveActor(actorid)
 
-```
+```pseudocode
 return /ContinuityOfCareRecord/Actors/Actor[./ActorObjectID = actorid]
 ```
 
 ### ResolveActorInRole(actorrefs, role)
 
-```
-$ActorRef = actorrefs[  IsConcept(./ActorRole, role)] 
+```pseudocode
+$ActorRef = actorrefs[IsConcept(./ActorRole, role)] 
 return /ContinuityOfCareRecord/Actors/Actor[./ActorObjectID = $ActorRef/ActorID] 
 ```
 
 ### ResolveLink(linkRef)
 
-```
+```pseudocode
 return /ContinuityOfCareRecord/Body/node()[./CCRDataObjectID = linkRef/LinkID]
 ```
 
 ### ResolveComment(id)
 
-```
+```pseudocode
 return /ContinuityOfCareRecord/Comments/Comment[./CommentObjectID = id]/Description/Text
 ```
 
 ### ResolveComment(concept)
 
-```
+```pseudocode
 return /ContinuityOfCareRecord/Comments/Comment[  IsConcept(./Type/Text, concept)]/Description/Text
 ```
 
 ### ResolveReference(ref)
 
-```
+```pseudocode
 return /ContinuityOfCareRecord/References/Reference[./ReferenceObjectID = id]
 ```
 
 ### FindActorInSource(sources, role)
 
-```
+```pseudocode
 $Source = sources[  IsConcept(./ActorRole, role)] 
 return /ContinuityOfCareRecord/Actors/Actor[./ActorObjectID = $Source/ActorID] 
 ```
 
 ### ActorToString(ccractorref)
 
-```
+```pseudocode
 $Actor =  ResolveActor(ccractorref/ActorID) 
 If Exists($Actor/Person/Name) 
     If Exists($Actor/Person/Name/DisplayName) 
@@ -92,7 +92,7 @@ Else
 
 ### ActorToStringDetailed(ccractorref)
 
-```
+```pseudocode
 $String =  ActorToString(ccractorref) 
 $Actor =  ResolveActor(ccractorref/ActorID) 
 ForEach($Actor/Address) 
@@ -106,31 +106,31 @@ return $String
 
 ### AddressToString(node)
 
-```
+```pseudocode
 return  Concat(node/Line1, node/Line2, node/City, node/State, node/PostalCode, node/Country, "\n")
 ```
 
 ### CommunicationTypeToString(node)
 
-```
+```pseudocode
 return  Concat(./node/Value, ./node/Type/Text)
 ```
 
 ### PersonNameTypeToString(node)
 
-```
+```pseudocode
 return  Concat(node/Title, node/Given, node/Middle, node/Family, node/Suffix, " ")
 ```
 
 ### LocationToString(node)
 
-```
+```pseudocode
 return  Concat(node/Description/text,  ActorToStringDetailed(node/Actor), "\n")
 ```
 
 ### ReferenceTypeToString(node)
 
-```
+```pseudocode
 $String = node/Description/Text 
 ForEach(node/Locations/Location) 
     $String =  Concat($String,  LocationToString(.), "\n\n") 
@@ -139,7 +139,7 @@ return $String
 
 ### SourceTypeToString(node)
 
-```
+```pseudocode
 If(node/Description/Text = "Unknown") 
     return node/Description/Text 
 Else If Exists(node/Actor) 
@@ -151,14 +151,14 @@ return $Comment/Description/Text
 
 ### GetDefaultDate(node)
 
-```
+```pseudocode
 If (count(node/DateTime)= 1) and If Not Exists (node/DateTime[1]/Type))
     return node/DateTime[1]
 ```
 
 ### GetDateTime(node, concept)
 
-```
+```pseudocode
 $DateTime = node/DateTime[IsConcept(./Type/Text, concept)][1]
 If Not Exists($dateTime)
     $DateTime = GetDefaultDate(node)

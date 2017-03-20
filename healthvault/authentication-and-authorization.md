@@ -8,7 +8,16 @@ HealthVault platform authentication
 
 If an application uses managed code interfaces to the HealthVault platform, it can create HealthVault authentication protected pages by inheriting from Microsoft.Health.Web.HealthServicePage. In its default state, a HealthServicePage requires authentication, but you can override this requirement by changing the LogOnRequired attribute of the derived class. By overriding LogOnRequired attribute to false, the page can be displayed withouth HealthVault authenticattion.
 
-`protected override bool LogOnRequired { get { returnfalse; } } `
+```c#
+protected override bool LogOnRequired 
+{ 
+    get 
+    { 
+        return false; 
+    } 
+} 
+```
+
 If the application has set LogOnRequired to false, it can redirect to HealthVault’s authentication page using the HealthServicePage.RedirectToLogOn API.
 
 Application can determine programmatically whether a user is signed in to a HealthServicePage by looking at HealthServicePage.IsLoggedIn. It is set to true when user is signed in. HealthServicePage.PersonInfo.SelectedRecord contains information about the record that the user is currently working with.
