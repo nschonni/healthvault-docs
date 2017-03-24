@@ -33,10 +33,19 @@ Query to find out whether a data type can be accessed
 
 As mentioned earlier, applications have to determine what kind of access a record grants on a specific type. This can be done with the following code:
 
-`HealthRecordItemTypePermission SelectRecordQueryPermission(Guid typeId){    List<Guid> items = new List<Guid>();    items.Add(typeId);    return PersonInfo.SelectedRecord.QueryPermissions(items)[0];} `
+```cs
+HealthRecordItemTypePermission SelectRecordQueryPermission(Guid typeId)
+{
+        List<Guid> items = new List<Guid>();
+        items.Add(typeId);
+        return PersonInfo.SelectedRecord.QueryPermissions(items)[0];
+} 
+```
 and then called with this code:
 
-`HealthRecordItemTypePermission heightPermission = SelectRecordQueryPermission(Height.TypeId);`
+```cs
+HealthRecordItemTypePermission heightPermission = SelectRecordQueryPermission(Height.TypeId);
+```
 The returned permission mask describes the access the application is granted (create/read/update/delete) in both online and offline modes.
 
 Ask users additional authorization
@@ -50,13 +59,19 @@ Applications may need additional authorization from the users. It can send users
 The parameter names for the rule identifiers are the series onopt1, onopt2, onopt3, ... for online rule and offopt1, offopt2, offopt3, ... for offline rule, where the number is sequential so the parameters have different names.
 Example:
 
-`onopt1=<rule name>&onopt2=<rule name>&offopt1=<rule name>`
+```
+onopt1=<rule name>&onopt2=<rule name>&offopt1=<rule name>
+```
 
 Rule names are defined at Application Configuration Center.
 
 Here's an example of using optional authorization.
 
-`string TargetQuery = "appid=11111111-1111-1111-1111-111111111111&onopt1=name1&onopt2=name2";HealthServicePage ServicePage = new HealthServicePage();ServicePage.RedirectToShellUrl("APPAUTH", TargetQuery); `
+```cs
+string TargetQuery = "appid=11111111-1111-1111-1111-111111111111&onopt1=name1&onopt2=name2";
+HealthServicePage ServicePage = new HealthServicePage();
+ServicePage.RedirectToShellUrl("APPAUTH", TargetQuery); 
+```
 
 ### Integrating with HealthVault
 

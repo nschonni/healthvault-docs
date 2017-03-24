@@ -10,7 +10,42 @@ Example thing XML
 
 The following blood pressure thing XML is used as an example in the other sections in this article.
 
-`<thing>  <thing-id version-stamp="4d5fb486-0459-45a4-ba97-8b4c75c30f3f">31713110-026c-4d24-8549-cec9effe9b0d</thing-id>  <type-id>ca3c57f4-f4c1-4e15-be67-0a3caf5414ed</type-id>  <eff-date>2008-12-10 03:47:35.550</eff-date>  <created>    <timestamp>2008-12-2 10:31:16.345</timestamp>    <app-id>4d5fb486-0459-45a4-ba97-8b4c75c30f3f</app-id>    <person-id>b6f890a1-8755-4c87-98ce-3e8678bd4bae</person-id>  </created>  <updated>    <timestamp>2008-12-10 03:47:35.550</timestamp>    <app-id>4d5fb486-0459-45a4-ba97-8b4c75c30f3f</app-id>    <person-id>b6f890a1-8755-4c87-98ce-3e8678bd4bae</person-id>  </updated>  <data-xml>    <blood-pressure>      <when>        <date>          <y>2006</y>          <m>12</m>          <d>22</d>        </date>      </when>      <systolic>123</systolic>      <diastolic>68</diastolic>    </blood-pressure>    <common>      <source>MicroLife BP</source>      <note>Reading was taken while seated</note>      <client-thing-id>19823452</client-thing-id>    </common>  </data-xml></thing>`
+```xml
+<thing>
+  <thing-id version-stamp="4d5fb486-0459-45a4-ba97-8b4c75c30f3f">31713110-026c-4d24-8549-cec9effe9b0d</thing-id>
+  <type-id>ca3c57f4-f4c1-4e15-be67-0a3caf5414ed</type-id>
+  <eff-date>2008-12-10 03:47:35.550</eff-date>
+  <created>
+    <timestamp>2008-12-2 10:31:16.345</timestamp>
+    <app-id>4d5fb486-0459-45a4-ba97-8b4c75c30f3f</app-id>
+    <person-id>b6f890a1-8755-4c87-98ce-3e8678bd4bae</person-id>
+  </created>
+  <updated>
+    <timestamp>2008-12-10 03:47:35.550</timestamp>
+    <app-id>4d5fb486-0459-45a4-ba97-8b4c75c30f3f</app-id>
+    <person-id>b6f890a1-8755-4c87-98ce-3e8678bd4bae</person-id>
+  </updated>
+  <data-xml>
+    <blood-pressure>
+      <when>
+        <date>
+          <y>2006</y>
+          <m>12</m>
+          <d>22</d>
+        </date>
+      </when>
+      <systolic>123</systolic>
+      <diastolic>68</diastolic>
+    </blood-pressure>
+    <common>
+      <source>MicroLife BP</source>
+      <note>Reading was taken while seated</note>
+      <client-thing-id>19823452</client-thing-id>
+    </common>
+  </data-xml>
+</thing>
+```
+
 Thing identifiers
 -----------------
 
@@ -267,14 +302,34 @@ The **blob-payload** element can contain one or more blobs. Each blob has a uniq
 
 Immediately following the **data-xml** section is the **blob-payload** section:
 
-`<blob-payload>  <blob>    <blob-info>      <name>MyBlob</name>      <content-type>application/octet-stream</content-type>    </blob-info>    …  </blob></blob-payload>`
+```xml
+<blob-payload>
+  <blob>
+    <blob-info>
+      <name>MyBlob</name>
+      <content-type>application/octet-stream</content-type>
+    </blob-info>
+    …
+  </blob>
+</blob-payload>
+```
 Blobs that are uploaded or downloaded entirely within the thing XML are considered inline blobs. Alternatively, blobs can be uploaded or downloaded using the HealthVault streaming mechanism.
 
 ### Inline blobs
 
 Inline blobs have their entire binary content base64-encoded within the thing data. Inbound requests to HealthVault have a maximum size, and the total bytes of the request, including the base64-encoded data, cannot exceed this maximum size. The current maximum allowed request size can be obtained through the public configuration item **maxRequestUncompressedSizeBytes**. Public configuration items are available in the Service definition details section of the [Method browser](http://go.microsoft.com/?linkid=9810881).
 
-`<blob-payload>  <blob>    <blob-info>      <name>MyBlob</name>      <content-type>application/octet-stream</content-type>    </blob-info>    <base64data>CgoKCgoKCgoKCg==</base64data>  </blob></blob-payload>`
+```xml
+<blob-payload>
+  <blob>
+    <blob-info>
+      <name>MyBlob</name>
+      <content-type>application/octet-stream</content-type>
+    </blob-info>
+    <base64data>CgoKCgoKCgoKCg==</base64data>
+  </blob>
+</blob-payload>
+```
 When accessing HealthVault data, if you want to access a small blob, you can obtain an inline blob directly from the **GetThings** response. Using an inline blob can avoid an extra request to download the blob through the HealthVault streaming service. An example is obtaining the record's personal image, which is a small format image.
 
 ### Streamed blobs
@@ -289,7 +344,19 @@ Blobs are written to a URL obtained from the **BeginPutBlob** request. The same 
 
 -   For the current values of configuration items, see the Service definition details in the [Method browser](http://go.microsoft.com/?linkid=9810881), or query the service definition directly.
 
-`<blob-payload>  <blob>    <blob-info>      <name>MyBlob</name>      <content-type>application/octet-stream</content-type>    </blob-info>    <blob-ref-url>https://platform.healthvault.com/streaming/wildcatblob.ashx?blob-ref-token=ASAAANQgT2YQJwRHpC...</blob-ref-url>  </blob></blob-payload>`
+```xml
+<blob-payload>
+  <blob>
+    <blob-info>
+      <name>MyBlob</name>
+      <content-type>application/octet-stream</content-type>
+    </blob-info>
+    <blob-ref-url>
+    https://platform.healthvault.com/streaming/wildcatblob.ashx?blob-ref-token=ASAAANQgT2YQJwRHpC...
+    </blob-ref-url>
+  </blob></blob-payload>
+```
+
 Digital signatures
 ------------------
 
@@ -316,7 +383,79 @@ HealthVault provides message and signer authentication for thing data in the req
 
 The digital signature applies to the data-xml element and to all blobs attached to the thing—streamed and inline.
 
-`<signature-info>   <sig-data>     <hv-signature-method>HVSignatureMethod2</hv-signature-method>     <blob-signature-info>       <item>         <blob-info>           <name>A</name>           <content-type>application/octet-stream</content-type>           <hash-info>             <algorithm>SHA256Block</algorithm>             <params>               <block-size>2097152</block-size>             </params>             <hash>7iY6hyYpcAM1cs23dxsUT0Dhvm9f3GUKWarxhdMGXAc=</hash>           </hash-info>         </blob-info>       </item>     </blob-signature-info>     <algorithm-tag>rsa-sha1</algorithm-tag>   </sig-data>   <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">     <SignedInfo>       <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />       <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />       <Reference URI="">         <Transforms>           <Transform Algorithm="http://www.w3.org/TR/1999/REC-xslt-19991116">             <xs:stylesheet xmlns:xs="http://www.w3.org/1999/XSL/Transform" version="1.0">               <xs:template match="thing">                 <hv:signed-thing-data xmlns:hv="urn:com.microsoft.wc.thing.signing.2.xsl">                   <xs:copy-of select="data-xml" />                   <xs:copy-of select="signature-info/sig-data" />                 </hv:signed-thing-data>               </xs:template>             </xs:stylesheet>           </Transform>           <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />         </Transforms>         <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />         <DigestValue>ssSRETq36vU7ZDCHw92HyK9BckI=</DigestValue>       </Reference>     </SignedInfo>     <SignatureValue>BPgZoIu7l3G4r...</SignatureValue>     <KeyInfo>       <X509Data>         <X509Certificate>MIIEyDCCA7CgAwIBA...</X509Certificate>       </X509Data>     </KeyInfo>   </Signature> </signature-info>`
+```xml
+<signature-info>
+	<sig-data>
+		<hv-signature-method>
+			HVSignatureMethod2
+		</hv-signature-method>
+		<blob-signature-info>
+			<item>
+				<blob-info>	
+					<name>
+						A
+					</name>
+					<content-type>
+						application/octet-stream
+					</content-type>
+					<hash-info>
+						<algorithm>
+							SHA256Block
+						</algorithm>
+						<params>
+							<block-size>
+								2097152
+							</block-size>
+						</params>
+						<hash>
+							7iY6hyYpcAM1cs23dxsUT0Dhvm9f3GUKWarxhdMGXAc=
+						</hash>
+					</hash-info>
+				</blob-info>
+			</item>
+		</blob-signature-info>
+		<algorithm-tag>
+			rsa-sha1
+		</algorithm-tag>
+	</sig-data>
+	<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<SignedInfo>
+			<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+			<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+			<Reference URI="">
+				<Transforms>
+					<Transform Algorithm="http://www.w3.org/TR/1999/REC-xslt-19991116">
+						<stylesheet xmlns:xs="http://www.w3.org/1999/XSL/Transform" version="1.0">
+							<template match="thing">
+								<signed-thing-data xmlns:hv="urn:com.microsoft.wc.thing.signing.2.xsl">
+									<copy-of select="data-xml" />
+									<copy-of select="signature-info/sig-data" />
+								</signed-thing-data>
+							</template>
+						</stylesheet>
+					</Transform>
+					<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+				</Transforms>
+				<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+				<DigestValue>
+					ssSRETq36vU7ZDCHw92HyK9BckI=
+				</DigestValue>
+			</Reference>
+		</SignedInfo>
+		<SignatureValue>
+			BPgZoIu7l3G4r...
+		</SignatureValue>
+		<KeyInfo>
+			<X509Data>
+				<X509Certificate>
+					MIIEyDCCA7CgAwIBA...
+				</X509Certificate>
+			</X509Data>
+		</KeyInfo>
+	</Signature>
+</signature-info>
+
+```
 ### Signed blobs
 
 Blobs can be very large and time consuming to verify. To overcome this, HealthVault signs a hash of each blob. Each blob can then be verified by ensuring the blob's hash matches the one in the **blob-signature-info** element. HealthVault uses names to uniquely identify blobs.

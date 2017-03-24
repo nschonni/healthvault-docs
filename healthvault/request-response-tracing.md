@@ -7,6 +7,7 @@ The following may be useful for low-level debugging of the traffic between your 
 2.  Open the web.config file.
 3.  Add the following (if the system.diagnostics section already exists, just add the inner elements to the existing section):
 
+```xml
         <system.diagnostics>
             <sources>
                 <source name="HealthVaultTraceSource"
@@ -27,6 +28,7 @@ The following may be useful for low-level debugging of the traffic between your 
                 <!--add name="HealthVaultTraceSourceSwitch" value="Off" -->
             </switches>
         </system.diagnostics>
+```
 
 4.  Run the scenario, and look at the sdk.log file that is generated in the application directory. You may need to shut down the application to get the complete set of data from the tracing infrastructure.
 5.  If the log file is not created and you are sure a request was made to HealthVault, change “sdk.log” to be the complete path to a directory that the ASP.NET worker process has write access to, and try again.

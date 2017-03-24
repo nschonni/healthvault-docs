@@ -15,7 +15,34 @@ Creating read-only data
 
 Creating data in HealthVault is done via a **PutThings** request. To specify that an item should be read-only, set the read-only flag. A flag is a numeric value on a thing that describes its attributes. The read-only flag has a decimal value of 16. For more information about flags, see the Flags section of the  <a href="thing-type-schema.md" id="PageContent_14096_2">thing type schema</a>.
 
-`<info>  <thing>    <type-id>7ea7a1f9-880b-4bd4-b593-f5660f20eda8</type-id>    <flags>16</flags>    <data-xml>      <condition>         <name>          <text>Pneumonia</text>          <code>            <value>233604007</value>            <type>snomed-ct</type>          </code>        </name>        <onset-date>          <structured>            <date>              <y>1999</y>              <m>3</m>              <d>1</d>            </date>          </structured>        </onset-date>      </condition>    </data-xml>  </thing></info>`
+```xml
+<info>
+  <thing>
+    <type-id>7ea7a1f9-880b-4bd4-b593-f5660f20eda8</type-id>
+    <flags>16</flags>
+    <data-xml>
+      <condition>
+         <name>
+           <text>Pneumonia</text>
+           <code>            
+            <value>233604007</value>
+            <type>snomed-ct</type>
+           </code>
+         </name>        
+         <onset-date>          
+            <structured> 
+              <date>
+                <y>1999</y>
+                <m>3</m>
+                <d>1</d>
+              </date>
+            </structured>
+          </onset-date>
+        </condition>
+      </data-xml>
+    </thing>
+  </info>
+  ```
 A thing can be marked read-only when it is created in HealthVault for the first time. An existing item that is not read-only cannot be updated to be read-only. Attempting to do this will result in a **CannotSetReadOnlyFlag** (161) error. For more information about error codes, see <a href="status-codes.md" id="PageContent_14096_3">Status Codes</a>.
 
 Updating read-only data
@@ -64,7 +91,23 @@ Querying data from HealthVault is done via a **GetThings** request. To query for
 
 The following example shows a **GetThings** request that includes the **Core** section.
 
-`<request>  <!-- ... -->  <info>    <group name="height things">      <filter>        <type-id>40750a6a-89b2-455c-bd8d-b420a4cb500b</type-id>      </filter>      <format>        <section>core</section>        <xml/>      </format>    </group>  </info></request> `
+```xml
+<request>
+  <!-- ... -->
+  <info>
+    <group name="height things">
+      <filter>
+        <type-id>40750a6a-89b2-455c-bd8d-b420a4cb500b</type-id>
+      </filter>
+      <format>
+        <section>core</section>
+        <xml/>
+      </format>
+    </group>
+  </info>
+</request> 
+```
+
 It is not possible to use a filter to query for things that are read-only.
 
 Data types that support read-only instances
@@ -137,7 +180,7 @@ By default, the individual items reconciled from a clinical document are not rea
 
 When using the HealthVault .NET SDK for querying and writing data, use the [HealthRecordAccessor](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecordaccessor.aspx) class.
 
-To specify that a thing instance should be read-only when creating data, set the [HealthRecordItem<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>IsReadOnly](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecorditem.isreadonly.aspx) property to **true**.
+To specify that a thing instance should be read-only when creating data, set the [HealthRecordItem.IsReadOnly](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecorditem.isreadonly.aspx) property to **true**.
 
 To determine if a thing instance is read-only when reading data, check the value of the **IsReadOnly** property. Note that you must query for the **Core** or **Effective Permissions** section to retrieve the value of the **IsReadOnly** property.
 
@@ -146,13 +189,39 @@ To determine if a thing instance is read-only when reading data, check the value
 
 The following example stores a read-only thing instance.
 
-`// Create a read-only Medication thing Medication med = new Medication(new CodableValue("My read-only medication"));med.IsReadOnly = true;PersonInfo.SelectedRecord.NewItem(med); `
+```cs
+// Create a read-only Medication thing 
+Medication med = new Medication(new CodableValue("My read-only medication"));
+med.IsReadOnly = true;
+PersonInfo.SelectedRecord.NewItem(med); 
+```
 The following example edits the **Updated End Date** field on a read-only thing.
 
-`// Edit updated end date on a read-only thing to the current time. This // indicates the user considers the medication inactive as of the current time. void EditUpdatedEndDate(){    // In this example, "9b3ef8ad-dd4a-484c-aa05-66f967470e0f" is the thing id     // for an existing Medication instance that is read-only.    HealthRecordItem med =        PersonInfo.SelectedRecord.GetItem(new Guid("9b3ef8ad-dd4a-484c-aa05-66f967470e0f"));    med.UpdatedEndDate = DateTime.Now;    PersonInfo.SelectedRecord.UpdateItem(med);} `
+```cs
+// Edit updated end date on a read-only thing to the current time. This 
+// indicates the user considers the medication inactive as of the current time. 
+void EditUpdatedEndDate(){    
+    // In this example, "9b3ef8ad-dd4a-484c-aa05-66f967470e0f" is the thing id     
+    // for an existing Medication instance that is read-only.    
+    HealthRecordItem med =        
+        PersonInfo.SelectedRecord.GetItem(new Guid("9b3ef8ad-dd4a-484c-aa05-66f967470e0f"));    
+        med.UpdatedEndDate = DateTime.Now;    PersonInfo.SelectedRecord.UpdateItem(med);
+} 
+```
 The following example specifies that items from a CCD should be reconciled as read-only.
 
-`// Specifies that a CCD document's items should be reconciled as read-only void CreateCCDWithReadOnlyItems(){    XmlDocument ccdDocument = new XmlDocument();    // ExampleCCD.xml is located in the HealthVault SDK at    // \Microsoft HealthVault\SDK\DotNet\WebSamples\ccr_ccd_example\website\ExampleCCD.xml    ccdDocument.Load(MapPath("ExampleCCD.xml"));    HealthRecordItem ccd = new HealthRecordItem(CCD.TypeId, ccdDocument);    ccd.IsReadOnly = true;    PersonInfo.SelectedRecord.NewItem(ccd);} `
+```cs
+// Specifies that a CCD document's items should be reconciled as read-only 
+void CreateCCDWithReadOnlyItems(){    
+    XmlDocument ccdDocument = new XmlDocument();    
+    // ExampleCCD.xml is located in the HealthVault SDK at    
+    // \Microsoft HealthVault\SDK\DotNet\WebSamples\ccr_ccd_example\website\ExampleCCD.xml
+    ccdDocument.Load(MapPath("ExampleCCD.xml"));
+    HealthRecordItem ccd = new HealthRecordItem(CCD.TypeId, ccdDocument);   
+    ccd.IsReadOnly = true;    
+    PersonInfo.SelectedRecord.NewItem(ccd);
+} 
+```
 
 ### Integrating with HealthVault
 

@@ -161,10 +161,48 @@ Putting this together in an example, the following is an XML snippet of a CCDA d
 
 HealthVault CCDA thing with extension overrides
 
-`<info>  <thing>    <type-id>9c48a2b8-952c-4f5a-935d-f3292326bf54</type-id>    <data-xml>      <ClinicalDocument          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"          xmlns="urn:hl7-org:v3"          xmlns:cda="urn:hl7-org:v3"           xmlns:sdtc="urn:hl7-org:sdtc">      ......      </ClinicalDocument>      <common>        <extension source="hv-meaningfuluse">          <event-date>2013-09-10T18:12:54Z</event-date>          <patient-id>TestPatientId</patient-id>        </extension>      </common>    </data-xml>  </thing></info> `
+```xml
+<info>
+  <thing>
+    <type-id>9c48a2b8-952c-4f5a-935d-f3292326bf54</type-id>
+    <data-xml>
+      <ClinicalDocument
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="urn:hl7-org:v3"
+          xmlns:cda="urn:hl7-org:v3"
+           xmlns:sdtc="urn:hl7-org:sdtc">
+       ......
+       </ClinicalDocument>
+       <common>
+         <extension source="hv-meaningfuluse">
+           <event-date>2013-09-10T18:12:54Z</event-date>
+           <patient-id>TestPatientId</patient-id>
+         </extension>
+       </common>
+     </data-xml>
+   </thing>
+ </info> 
+ ```
 The following is a code sample demonstrating how to specify the event date and patient id thing extension overrides in the HealthVault .NET SDK:
 
-`HealthRecordItem ccda = new HealthRecordItem(    new Guid("9c48a2b8-952c-4f5a-935d-f3292326bf54"),     ccdaDocumentData);StringBuilder stringBuilder = new StringBuilder(150);string extSource = "hv-meaningfuluse";using (XmlWriter writer = XmlWriter.Create(stringBuilder, new XmlWriterSettings() { OmitXmlDeclaration=true })){    writer.WriteStartElement("extension");    writer.WriteAttributeString("source", extSource);    writer.WriteElementString("event-date", "2013-10-30T18:12:54Z");    writer.WriteElementString("patient-id", "12345678");    writer.WriteEndElement();}HealthRecordItemExtension ext = new HealthRecordItemExtension(extSource);ext.ExtensionData.CreateNavigator().InnerXml = stringBuilder.ToString(); ccda.CommonData.Extensions.Add(ext);`
+```cs
+HealthRecordItem ccda = new HealthRecordItem(
+        new Guid("9c48a2b8-952c-4f5a-935d-f3292326bf54"),
+         ccdaDocumentData);
+     StringBuilder stringBuilder = new StringBuilder(150);
+     string extSource = "hv-meaningfuluse";
+     using (XmlWriter writer = XmlWriter.Create(stringBuilder, new XmlWriterSettings() { OmitXmlDeclaration=true }))
+     {    
+         writer.WriteStartElement("extension");
+         writer.WriteAttributeString("source", extSource);
+         writer.WriteElementString("event-date", "2013-10-30T18:12:54Z");
+         writer.WriteElementString("patient-id", "12345678");    
+         writer.WriteEndElement();
+     }
+     HealthRecordItemExtension ext = new HealthRecordItemExtension(extSource);
+     ext.ExtensionData.CreateNavigator().InnerXml = stringBuilder.ToString(); 
+     ccda.CommonData.Extensions.Add(ext);
+```
 See <a href="extending-data-types.md" id="PageContent_14102_3">Extending data types</a> for more information on specifying thing extensions.
 
 In the HealthVault .NET SDK, the [HealthRecordItemExtension](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecorditemextension.aspx) class is used to specify extensions.
@@ -277,13 +315,36 @@ The HealthVault method used to retrieve the VDT report is *GetMeaningfulUseVDTRe
 
 The following is an XML snippet of a request to HealthVault for the VDT report.
 
-`<info>  <filters>    <reporting-period>      <min-date>2013-09-11T18:50:49.1216167Z</min-date>      <max-date>2013-09-15T18:50:49.1216167Z</max-date>    </reporting-period>  </filters></info> `
+```xml
+<info>
+  <filters>
+    <reporting-period>
+      <min-date>2013-09-11T18:50:49.1216167Z</min-date>
+      <max-date>2013-09-15T18:50:49.1216167Z</max-date>
+    </reporting-period>
+  </filters>
+</info> 
+```
 The following is an XML snippet of the response from HealthVault with the VDT report.
 
-`<wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.GetMeaningfulUseVDTReport">  <sources>    <source id="AppId">      <patient-activities>        <activity patient-id="X" />        ....      </patient-activities>    </source>  </sources></wc:info> `
+```xml
+<wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.GetMeaningfulUseVDTReport">
+  <sources>
+    <source id="AppId">
+      <patient-activities>
+        <activity patient-id="X" />
+        ....
+      </patient-activities>
+    </source>
+  </sources>
+</wc:info> 
+```
 A code snippet demonstrating how to retrieve the report when using the HealthVault .NET SDK follows.
 
-`DateRange dateFilter = new DateRange(DateTime.UtcNow.AddMonths(-1), DateTime.UtcNow);IEnumerable<PatientActivity> resultActivities = appConnection.GetMeaningfulUseVDTReport(dateFilter); `
+```cs 
+DateRange dateFilter = new DateRange(DateTime.UtcNow.AddMonths(-1), DateTime.UtcNow);
+IEnumerable<PatientActivity> resultActivities = appConnection.GetMeaningfulUseVDTReport(dateFilter);
+```
 Refer to <span class="nolink">GetMeaningfulUseVDTReport</span> in the .NET SDK.
 
 ### Integrating with HealthVault
