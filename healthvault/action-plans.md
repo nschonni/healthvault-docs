@@ -34,8 +34,10 @@ To access a patient’s record, the patient must provide consent to a registered
 
 1.  Navigate to the [HealthVault Application Config Center (ACC)](https://go.microsoft.com/fwlink/?linkid=838954) on a desktop browser.
 2.  Login with your Microsoft Account.
+
     > [!NOTE]
     > This account will be the default administrator of the app you create. HealthVault allows existing administrators to invite new administrators to manage this app.
+
 3.  Create a new application.
     1.  The Application id will be generated for you.
     2.  Enter the application name that users will see when they interact or give consent to your application. For example, we have created one called “Fabrikam Health Solutions”.
@@ -79,10 +81,10 @@ Your application will request permission to access these data types when users j
 
 ### Add your ApplicationID to the sample
 
-The HealthVaultProviderManagementPortal sample includes a PowerShell script you can use to update the project with the ApplicationID you just created using the Application Configuration Center. You should have already cloned the project from [GitHub](https://go.microsoft.com/fwlink/?linkid=839405). If you have, then open a PowerShell console, navigate to the folder you chose for your local repository, then navigate to dotNET/HealthVaultProviderManagementPortal and run the following command, specifying your ApplicationID <span style="COLOR: #c00">here</span>.
+The HealthVaultProviderManagementPortal sample includes a PowerShell script you can use to update the project with the ApplicationID you just created using the Application Configuration Center. You should have already cloned the project from [GitHub](https://go.microsoft.com/fwlink/?linkid=839405). If you have, then open a PowerShell console, navigate to the folder you chose for your local repository, then navigate to dotNET/HealthVaultProviderManagementPortal and run the following command, specifying your ApplicationID below.
 
 ```powershell
-.\\Update-WebConfig.ps1 -ApplicationId "<span style="COLOR: #c00">00000000-0000-0000-0000-000000000000</span>"
+.\\Update-WebConfig.ps1 -ApplicationId" 00000000-0000-0000-0000-000000000000"
 ```
 
 ### Generate and send invitations to remote patients
@@ -165,7 +167,7 @@ Appendix
 2.  On previous versions of Windows
 
     1.  Open a Visual Studio Developer Command Prompt as an Administrator.
-    2.  Execute the following command, replacing <span style="COLOR: #c00">this GUID</span> with your own application ID:
+    2.  Execute the following command, replacing each instance of  the GUID below with your own application ID:
 
     ```cmd
     makecert -a sha256 -n "CN=WildcatApp-6f147b94-56d5-4e10-a44e-3a4bea89d878" -sr LocalMachine -ss My -sky signature -pe -len 2048 
