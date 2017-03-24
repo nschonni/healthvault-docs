@@ -6,11 +6,230 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
 ---
 
 <div id="main" class="v2">
-    [!include[
-    <carousel1>](
-        <carousel1.md>)]
             <div class="container">
                 <ul class="pivots">
+                    <li>
+                        <a href="#overview">Overview</a>
+                        <ul id="overview">
+                            <li>
+            <a data-default="true" href="#Introduction">Introduction</a>
+            <ul id="Introduction" class="cardsA">
+                <li><a href="why-healthvault.md">
+                <div class="cardSize">
+                            <div class="cardPadding">
+                                <div class="card">
+                                    <div class="cardImageOuter">
+                                        <div class="cardImage">
+                                            <img src="images/placeholder.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="cardText">
+                                        <h3>Why HealthVault? </h3>
+                                        <p>Provides an overview of HealthVault offerings </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li><li><a href="technical-overview.md"><div class="cardSize">
+                            <div class="cardPadding">
+                                <div class="card">
+                                    <div class="cardImageOuter">
+                                        <div class="cardImage">
+                                            <img src="images/placeholder.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="cardText">
+                                        <h3>Technical Overview</h3>
+                                        <p>How can you plug-in to HealthVault? </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li><li><a href="interoperability.md"><div class="cardSize">
+                            <div class="cardPadding">
+                                <div class="card">
+                                    <div class="cardImageOuter">
+                                        <div class="cardImage">
+                                            <img src="images/placeholder.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="cardText">
+                                        <h3>Interoperability</h3>
+                                        <p>Understand industry standards, protocols that HealthVault implements </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li><li><a href="hipaa-and-hitech.md"><div class="cardSize">
+                            <div class="cardPadding">
+                                <div class="card">
+                                    <div class="cardImageOuter">
+                                        <div class="cardImage">
+                                            <img src="images/placeholder.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="cardText">
+                                        <h3>HIPAA and HITECH</h3>
+                                        <p>How does HealthVault support covered entities in achieving their software goals?  </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li></ul></li><li>
+            <a data-default="true" href="#Scenarios">Scenarios</a>
+            <ul id="Scenarios" class="cardsA"><li><a href="action-plans.md"><div class="cardSize">
+                            <div class="cardPadding">
+                                <div class="card">
+                                    <div class="cardImageOuter">
+                                        <div class="cardImage">
+                                            <img src="images/placeholder.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="cardText">
+                                        <h3>Action Plans</h3>
+                                        <p>Use Action Plans Framework to enable remote monitoring of patients </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li><li><a href="meaningful-use.md"><div class="cardSize">
+                            <div class="cardPadding">
+                                <div class="card">
+                                    <div class="cardImageOuter">
+                                        <div class="cardImage">
+                                            <img src="images/placeholder.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="cardText">
+                                        <h3>Meaningful Use 2 (MU2)</h3>
+                                        <p>How to use HealthVault to satisfy MU2 requirements? </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li><li><a href="emergency-preparedness.md"><div class="cardSize">
+                            <div class="cardPadding">
+                                <div class="card">
+                                    <div class="cardImageOuter">
+                                        <div class="cardImage">
+                                            <img src="images/placeholder.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="cardText">
+                                        <h3>Emergency Preparedness</h3>
+                                        <p>How can HealthVault help you in an emergency? </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li></ul></li><li>
+            <a data-default="true" href="#Publishing">Publishing</a>
+            <ul id="Publishing" class="cardsA"><li><a href="become-a-solution-provider.md"><div class="cardSize">
+                            <div class="cardPadding">
+                                <div class="card">
+                                    <div class="cardImageOuter">
+                                        <div class="cardImage">
+                                            <img src="images/placeholder.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="cardText">
+                                        <h3>Become a Solution Provider</h3>
+                                        <p>How to become a solution provider using HealthVault? </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li><li><a href="brand-materials.md"><div class="cardSize">
+                            <div class="cardPadding">
+                                <div class="card">
+                                    <div class="cardImageOuter">
+                                        <div class="cardImage">
+                                            <img src="images/placeholder.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="cardText">
+                                        <h3>Brand Materials</h3>
+                                        <p>Providers can leverage these assets to advertise their integration with HealthVault </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li><li><a href="go-live.md"><div class="cardSize">
+                            <div class="cardPadding">
+                                <div class="card">
+                                    <div class="cardImageOuter">
+                                        <div class="cardImage">
+                                            <img src="images/placeholder.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="cardText">
+                                        <h3>Go Live</h3>
+                                        <p>Outlines the process and requirements to go live with your app </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li><li><a href="updates.md"><div class="cardSize">
+                            <div class="cardPadding">
+                                <div class="card">
+                                    <div class="cardImageOuter">
+                                        <div class="cardImage">
+                                            <img src="images/placeholder.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="cardText">
+                                        <h3>Updates</h3>
+                                        <p>Outlines the process for making subsequent updates to a live app </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li><li><a href="territories.md"><div class="cardSize">
+                            <div class="cardPadding">
+                                <div class="card">
+                                    <div class="cardImageOuter">
+                                        <div class="cardImage">
+                                            <img src="images/placeholder.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="cardText">
+                                        <h3>Territories</h3>
+                                        <p>Check to see if HealthVault is available in your region </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li><li><a href="nhs.md"><div class="cardSize">
+                            <div class="cardPadding">
+                                <div class="card">
+                                    <div class="cardImageOuter">
+                                        <div class="cardImage">
+                                            <img src="images/placeholder.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="cardText">
+                                        <h3>National Health Service (NHS)</h3>
+                                        <p>Learn more about how HealthVault supports NHS organisations.  </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li></ul></li>
+
+                        </ul>
                     <li>
                         <a href="#sdkstools">SDKs/Tools</a>
                         <ul id="sdkstools">
@@ -33,10 +252,10 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                     </div>
                                                     <div class="cardText">
                                                         <h3>
-                                                            <a href="https://docs.microsoft.com/rest/api/">Get started with REST</a>
+                                                            <a href="rest-api/">Get started with REST</a>
                                                         </h3>
                                                         <p>
-                                                            <a href="/rest/api">Reference</a>
+                                                            <a href="/rest-api/">Reference</a>
                                                         </p>
                                                         <p>
                                                             <a href="https://azure.microsoft.com/documentation/samples/?platform=rest">Get samples</a>
@@ -84,6 +303,9 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                         <h3>
                                                             <a href="https://www.github.com/microsoft/hvmobile_vnext">Get the iOS SDK</a>
                                                         </h3>
+                                                        <p>
+                                                            <a href="https://github.com/Microsoft/HVMobile_VNext/tree/master/Samples">Get samples</a>
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -144,6 +366,11 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                         </div>
                                     </li>
                                     <li>
+                                        <div class="container">
+                                            <h1>Tools</h1>
+                                        </div>
+                                    </li>
+                                    <li>
                                         <div class="cardSize">
                                             <div class="cardPadding">
                                                 <div class="card">
@@ -162,6 +389,28 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                         </p>
                                                         <p>
                                                             <a href="/powershell/">Reference</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="cardSize">
+                                            <div class="cardPadding">
+                                                <div class="card">
+                                                    <div class="cardImageOuter">
+                                                        <div class="cardImage">
+                                                            ACC
+                                                        </div>
+                                                    </div>
+                                                    <div class="cardText">
+                                                        <h3>Application Configuration Center</h3>
+                                                        <p>
+                                                            <a href="https://config.healthvault-ppe.com/">Get Started</a>
+                                                        </p>
+                                                        <p>
+                                                            <a href="tools/acc/acc-tool.md">Reference</a>
                                                         </p>
                                                     </div>
                                                 </div>

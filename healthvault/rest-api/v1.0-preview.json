@@ -1,0 +1,1700 @@
+﻿{
+    "swagger": "2.0",
+    "info": {
+        "version": "REST",
+        "title": "Microsoft HealthVault - REST API"
+    },
+    "host": "data.microsofthealth.net",
+    "schemes": ["https"],
+    "paths": {
+        "/v3/ActionPlans": {
+            "get": {
+                "tags": ["ActionPlans"],
+                "summary": "Get a collection of action plans",
+                "operationId": "Action Plans - Get a list",
+                "consumes": [],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "maxPageSize",
+                    "in": "query",
+                    "description": "The maximum number of entries to return per page. Defaults to 1000.",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int32"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.Responses.ActionPlansResponse[Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanInstance]"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse"
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "put": {
+                "tags": ["ActionPlans"],
+                "summary": "Update/Replace a complete action plan instance with no merge.",
+                "operationId": "Action Plans - Update an action plan",
+                "consumes": ["application/json", "text/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "actionPlan",
+                    "in": "body",
+                    "description": "The instance of the plan to update. The entire plan will be replaced with this version.",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanInstance"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.Responses.ActionPlansResponse[Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanInstance]"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse"
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "post": {
+                "tags": ["ActionPlans"],
+                "summary": "Post an action plan instance",
+                "operationId": "Action Plans - Create an action plan",
+                "consumes": ["application/json", "text/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "actionPlan",
+                    "in": "body",
+                    "description": "The instance of the plan to create.",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlan"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/System.Object"
+                        }
+                    },
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.Responses.ActionPlansResponse[Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanInstance]"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse"
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "patch": {
+                "tags": ["ActionPlans"],
+                "summary": "Update an action plan instance with merge",
+                "operationId": "Action Plans - Update an action plan",
+                "consumes": ["application/json", "text/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "actionPlan",
+                    "in": "body",
+                    "description": "The instance of the plan to update. Only the fields present in the passed in model will be updated. All other fields and colelctions\r\n            will be left, as is, unless invalid.",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanInstance"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.Responses.ActionPlansResponse[Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanInstance]"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse"
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v3/ActionPlans/{actionPlanId}": {
+            "get": {
+                "tags": ["ActionPlans"],
+                "summary": "Get an instance of a specific action plan",
+                "operationId": "Action Plans - Get By Id",
+                "consumes": [],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "actionPlanId",
+                    "in": "path",
+                    "description": "The action plan to update.",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanInstance"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse"
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "delete": {
+                "tags": ["ActionPlans"],
+                "summary": "Delete an action plan instance",
+                "operationId": "Action Plans - Delete an action plan",
+                "consumes": [],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "actionPlanId",
+                    "in": "path",
+                    "description": "The instance of the plan to delete.",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/System.Object"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse"
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v3/ActionPlans/{actionPlanId}/Objectives/{objectiveId}": {
+            "delete": {
+                "tags": ["ActionPlans"],
+                "summary": "Remove an action plan objective",
+                "operationId": "Action Plans - Delete an action plan objective",
+                "consumes": [],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "actionPlanId",
+                    "in": "path",
+                    "description": "The instance of the plan that the objective belongs to.",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "objectiveId",
+                    "in": "path",
+                    "description": "The instance of the objective to delete.",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/System.Object"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse"
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v3/ActionPlans/{actionPlanId}/Adherence": {
+            "get": {
+                "tags": ["ActionPlans"],
+                "summary": "Gets adherence information for an action plan.",
+                "operationId": "ActionPlan - Get Adherence",
+                "consumes": [],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "startTime",
+                    "in": "query",
+                    "description": "The start time.",
+                    "required": true,
+                    "type": "string",
+                    "format": "date-time"
+                }, {
+                    "name": "endTime",
+                    "in": "query",
+                    "description": "The end time.",
+                    "required": true,
+                    "type": "string",
+                    "format": "date-time"
+                }, {
+                    "name": "actionPlanId",
+                    "in": "path",
+                    "description": "The action plan identifier.",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "objectiveId",
+                    "in": "query",
+                    "description": "The objective to filter the report to.",
+                    "required": false,
+                    "type": "string"
+                }, {
+                    "name": "taskId",
+                    "in": "query",
+                    "description": "The task to filter the report to.",
+                    "required": false,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanAdherenceSummary"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse"
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v3/ActionPlanTasks": {
+            "get": {
+                "tags": ["ActionPlanTasks"],
+                "summary": "Get a collection of task definitions",
+                "operationId": "ActionPlanTasks - Get",
+                "consumes": [],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "actionPlanTaskStatus",
+                    "in": "query",
+                    "required": false,
+                    "type": "string",
+                    "enum": ["Unknown", "Archived", "InProgress", "Recommended", "Completed", "Template"]
+                }, {
+                    "name": "maxPageSize",
+                    "in": "query",
+                    "description": "The maximum number of entries to return per page. Defaults to 1000.",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int32"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.Responses.ActionPlanTasksResponse[Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskInstance]"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse"
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "put": {
+                "tags": ["ActionPlanTasks"],
+                "summary": "Put an update for an action plan task",
+                "operationId": "ActionPlanTasks - Put",
+                "consumes": ["application/json", "text/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "actionPlanTask",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskInstance"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.Responses.ActionPlanTasksResponse[Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskInstance]"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse"
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "post": {
+                "tags": ["ActionPlanTasks"],
+                "summary": "Post a new action plan task",
+                "operationId": "ActionPlanTasks - Post",
+                "consumes": ["application/json", "text/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "actionPlanTask",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTask"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/System.Object"
+                        }
+                    },
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.Responses.ActionPlanTasksResponse[Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskInstance]"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse"
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "patch": {
+                "tags": ["ActionPlanTasks"],
+                "summary": "Patch an update for an action plan task",
+                "operationId": "ActionPlanTasks - Patch",
+                "consumes": ["application/json", "text/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "actionPlanTask",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskInstance"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.Responses.ActionPlanTasksResponse[Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskInstance]"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse"
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v3/ActionPlanTasks/{actionPlanTaskId}": {
+            "get": {
+                "tags": ["ActionPlanTasks"],
+                "summary": "Get a task by id",
+                "operationId": "ActionPlanTasks - Get by id",
+                "consumes": [],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "actionPlanTaskId",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.Responses.ActionPlanTasksResponse[Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskInstance]"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse"
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "delete": {
+                "tags": ["ActionPlanTasks"],
+                "summary": "Delete a task by id",
+                "operationId": "ActionPlanTasks - Delete by id",
+                "consumes": [],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "actionPlanTaskId",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/System.Object"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse"
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/v3/Onboarding/GenerateInviteCode": {
+            "post": {
+                "tags": ["Onboarding"],
+                "summary": "Onboard a user",
+                "operationId": "Onboarding - Step 1: create an invite code from PII",
+                "consumes": ["application/json", "text/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "onboardingRequest",
+                    "in": "body",
+                    "description": "The meta data associated with an onboarding request",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.OnboardingRequest"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.Responses.OnboardingResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse"
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "definitions": {
+        "System.Threading.CancellationToken": {
+            "type": "object",
+            "properties": {
+                "isCancellationRequested": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "canBeCanceled": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "waitHandle": {
+                    "$ref": "#/definitions/System.Threading.WaitHandle",
+                    "readOnly": true
+                }
+            },
+            "x-id": "CancellationToken"
+        },
+        "System.Threading.WaitHandle": {
+            "type": "object",
+            "properties": {
+                "handle": {
+                    "$ref": "#/definitions/System.Object"
+                },
+                "safeWaitHandle": {
+                    "$ref": "#/definitions/Microsoft.Win32.SafeHandles.SafeWaitHandle"
+                }
+            },
+            "x-id": "WaitHandle"
+        },
+        "System.Object": {
+            "type": "object",
+            "properties": {},
+            "x-id": "Object"
+        },
+        "Microsoft.Win32.SafeHandles.SafeWaitHandle": {
+            "type": "object",
+            "properties": {
+                "isInvalid": {
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "isClosed": {
+                    "type": "boolean",
+                    "readOnly": true
+                }
+            },
+            "x-id": "SafeWaitHandle"
+        },
+        "Microsoft.Health.Platform.Entities.V3.Responses.ActionPlansResponse[Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanInstance]": {
+            "description": "The action plans collection response.",
+            "type": "object",
+            "properties": {
+                "plans": {
+                    "description": "The collection of action plans",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanInstance"
+                    }
+                },
+                "nextLink": {
+                    "description": "The URI for the next page of data",
+                    "type": "string"
+                }
+            },
+            "x-id": "ActionPlansResponse`1"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanInstance": {
+            "description": "An instance of an action plan associated to a user",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "The ID of the plan instance",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "The status of the plan",
+                    "enum": ["Unknown", "Archived", "Recommended", "InProgress", "Completed", "Template"],
+                    "type": "string"
+                },
+                "associatedTasks": {
+                    "description": "The Task instances associated with this plan",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskInstance"
+                    }
+                },
+                "name": {
+                    "description": "The name of the plan, localized",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "The description of the plan, localized",
+                    "type": "string"
+                },
+                "imageUrl": {
+                    "description": "A URL to an image for the plan. Suggested resolution is 212 x 212",
+                    "type": "string"
+                },
+                "thumbnailImageUrl": {
+                    "description": "A URL to a thumbnail image for the plan. Suggested resolution is 212 x 212",
+                    "type": "string"
+                },
+                "organizationId": {
+                    "description": "The ID of the organization that manages this plan",
+                    "type": "string"
+                },
+                "organizationName": {
+                    "description": "The name of the organization that manages this plan",
+                    "type": "string"
+                },
+                "organizationLogoUrl": {
+                    "description": "A URL to the logo of the organization that manages this plan",
+                    "type": "string"
+                },
+                "organizationLongFormImageUrl": {
+                    "description": "A URL to a larger image for the organization logo that may include the wordmark",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "The category of the plan",
+                    "enum": ["Unknown", "Health", "Sleep", "Activity", "Stress"],
+                    "type": "string"
+                },
+                "objectives": {
+                    "description": "The Collection of objectives for the plan",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.Objective"
+                    }
+                }
+            },
+            "x-id": "ActionPlanInstance"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskInstance": {
+            "description": "An instance of an action a user should complete.\r\n            Adherence to a plan is measured by completion statistics against tasks",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "The Id of the task instance",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "The status of the task",
+                    "enum": ["Unknown", "Archived", "InProgress", "Recommended", "Completed", "Template"],
+                    "type": "string"
+                },
+                "startDate": {
+                    "format": "date-time",
+                    "description": "The date that the task was started. Read-only",
+                    "type": "string"
+                },
+                "endDate": {
+                    "format": "date-time",
+                    "description": "The date that the task was ended. Read-only",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The friendly name of the task",
+                    "type": "string"
+                },
+                "shortDescription": {
+                    "description": "The short description of the task",
+                    "type": "string"
+                },
+                "longDescription": {
+                    "description": "The detailed description of the task",
+                    "type": "string"
+                },
+                "imageUrl": {
+                    "description": "The image URL of the task. Suggested resolution is 200 x 200",
+                    "type": "string"
+                },
+                "thumbnailImageUrl": {
+                    "description": "The thumbnail image URL of the task. Suggested resolution is 90 x 90",
+                    "type": "string"
+                },
+                "organizationId": {
+                    "description": "The ID of the organization that owns this task",
+                    "type": "string"
+                },
+                "organizationName": {
+                    "description": "The name of the organization that owns this task",
+                    "type": "string"
+                },
+                "taskType": {
+                    "description": "The type of the task, used to choose the UI editor for the task",
+                    "enum": ["Unknown", "BloodPressure"],
+                    "type": "string"
+                },
+                "trackingPolicy": {
+                    "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTrackingPolicy",
+                    "description": "The tracking policy"
+                },
+                "signupName": {
+                    "description": "The text shown during task signup.",
+                    "type": "string"
+                },
+                "associatedPlanId": {
+                    "description": "The ID of the associated plan. This is not needed when adding a task as part of a new plan",
+                    "type": "string"
+                },
+                "associatedObjectiveIds": {
+                    "description": "The list of objective IDs the task is associated with",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "completionType": {
+                    "description": "The Completion Type of the Task",
+                    "enum": ["Unknown", "Frequency", "Scheduled"],
+                    "type": "string"
+                },
+                "frequencyTaskCompletionMetrics": {
+                    "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanFrequencyTaskCompletionMetrics",
+                    "description": "Completion metrics for frequency based tasks"
+                },
+                "scheduledTaskCompletionMetrics": {
+                    "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanScheduledTaskCompletionMetrics",
+                    "description": "Completion metrics for schedule based tasks"
+                }
+            },
+            "x-id": "ActionPlanTaskInstance"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.Objective": {
+            "description": "An objective is a high-level concept of what a user wants to accomplish as part of their enrollment in various action plans\r\n            A user may have more than one objective\r\n            A plan may contribute to more than one objective\r\n            Each objective can have one measurable outcome",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "The unique identifier of the instance of the objective",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name of the objective",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "The description of the objective",
+                    "type": "string"
+                },
+                "state": {
+                    "description": "The state of the objective",
+                    "enum": ["Unknown", "Inactive", "Active"],
+                    "type": "string"
+                },
+                "outcomeName": {
+                    "description": "Gets or sets the name of the outcome",
+                    "type": "string"
+                },
+                "outcomeType": {
+                    "description": "Gets or sets the type of the outcome",
+                    "enum": ["Unknown", "StepsPerDay", "CaloriesPerDay", "ExerciseHoursPerWeek", "SleepHoursPerNight", "MinutesToFallAsleepPerNight"],
+                    "type": "string"
+                }
+            },
+            "x-id": "Objective"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTrackingPolicy": {
+            "description": "The tracking policy to apply to the Action Plan Task",
+            "type": "object",
+            "properties": {
+                "isAutoTrackable": {
+                    "description": "Gets or sets an indicator as to whether or not the Tracking Policy is AutoTrackable",
+                    "type": "boolean"
+                },
+                "occurrenceMetrics": {
+                    "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskOccurrenceMetrics",
+                    "description": "Gets or sets the Occurrence Metrics for the tracking policy"
+                },
+                "targetEvents": {
+                    "description": "The target events to track against",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskTargetEvent"
+                    }
+                }
+            },
+            "x-id": "ActionPlanTrackingPolicy"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanFrequencyTaskCompletionMetrics": {
+            "description": "The Completion Metrics for frequency based tasks",
+            "type": "object",
+            "properties": {
+                "windowType": {
+                    "description": "The window in which the occurrences must be completed",
+                    "enum": ["Unknown", "None", "Daily", "Weekly"],
+                    "type": "string"
+                },
+                "occurrenceCount": {
+                    "format": "int32",
+                    "description": "The number of times the Task has to be completed",
+                    "type": "integer"
+                },
+                "reminderState": {
+                    "description": "The reminder state of the task",
+                    "enum": ["Unknown", "Off", "OnTime", "Before5Minutes", "Before10Minutes", "Before15Minutes", "Before30Minutes", "Before1Hour", "Before2Hours", "Before4Hours", "Before8Hours"],
+                    "type": "string"
+                },
+                "scheduledDays": {
+                    "description": "The days that this will show for the user\r\n            Expected values: { 'Unknown', 'Everyday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' }",
+                    "type": "array",
+                    "items": {
+                        "enum": ["Unknown", "Everyday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                        "type": "string"
+                    }
+                }
+            },
+            "x-id": "ActionPlanFrequencyTaskCompletionMetrics"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanScheduledTaskCompletionMetrics": {
+            "description": "The Completion Metrics for scheduled tasks",
+            "type": "object",
+            "properties": {
+                "scheduledTime": {
+                    "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.Time",
+                    "description": "The time at which this task is scheduled"
+                },
+                "reminderState": {
+                    "description": "The reminder state of the task",
+                    "enum": ["Unknown", "Off", "OnTime", "Before5Minutes", "Before10Minutes", "Before15Minutes", "Before30Minutes", "Before1Hour", "Before2Hours", "Before4Hours", "Before8Hours"],
+                    "type": "string"
+                },
+                "scheduledDays": {
+                    "description": "The days that this will show for the user\r\n            Expected values: { 'Unknown', 'Everyday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' }",
+                    "type": "array",
+                    "items": {
+                        "enum": ["Unknown", "Everyday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                        "type": "string"
+                    }
+                }
+            },
+            "x-id": "ActionPlanScheduledTaskCompletionMetrics"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskOccurrenceMetrics": {
+            "description": "The task occurrence metrics",
+            "type": "object",
+            "properties": {
+                "evaluateTargets": {
+                    "description": "Gets or sets a value indicating whether or not to evaluate the targets",
+                    "type": "boolean"
+                },
+                "targets": {
+                    "description": "Gets or sets the targets to evaluate",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanRangeMetric"
+                    }
+                }
+            },
+            "x-id": "ActionPlanTaskOccurrenceMetrics"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskTargetEvent": {
+            "description": "The tracking properties of a HealthVault event",
+            "type": "object",
+            "properties": {
+                "elementXPath": {
+                    "description": "XML XPath to the property for which task should be tracked",
+                    "type": "string"
+                },
+                "elementValues": {
+                    "description": "List of all of the possible values for a given xPath property. (i.e. \"run\", \"running\", \"walk\" etc).",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "isNegated": {
+                    "description": "Flag to indicate if the condition mentioned above is negated. e.g. Item shouldn't be a run or a walk.",
+                    "type": "boolean"
+                }
+            },
+            "x-id": "ActionPlanTaskTargetEvent"
+        },
+        "Microsoft.Health.Platform.Entities.V3.Time": {
+            "description": "Represents a time without a date",
+            "type": "object",
+            "properties": {
+                "hours": {
+                    "format": "int32",
+                    "description": "Hours from 0 - 23",
+                    "type": "integer"
+                },
+                "minutes": {
+                    "format": "int32",
+                    "description": "Minutes from 0 - 59",
+                    "type": "integer"
+                }
+            },
+            "x-id": "Time"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanRangeMetric": {
+            "description": "Defines the Action Plan Range Numeric",
+            "type": "object",
+            "properties": {
+                "propertyName": {
+                    "description": "Gets or sets the property name the metric applies to",
+                    "type": "string"
+                },
+                "valueType": {
+                    "description": "Gets or sets the Value Type of the Metric",
+                    "enum": ["Unknown", "MinutesToMidnight"],
+                    "type": "string"
+                },
+                "maxTarget": {
+                    "format": "double",
+                    "description": "Gets or sets the Max value of the target",
+                    "type": "number"
+                },
+                "minTarget": {
+                    "format": "double",
+                    "description": "Gets or sets the min value of the target",
+                    "type": "number"
+                },
+                "propertyXPath": {
+                    "description": "Gets or sets the XPath of the property that the metric applies to",
+                    "type": "string"
+                }
+            },
+            "x-id": "ActionPlanRangeMetric"
+        },
+        "Microsoft.Khronos.Cloud.Common.Errors.ErrorResponse": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorInformation"
+                }
+            },
+            "x-id": "ErrorResponse"
+        },
+      "Microsoft.Khronos.Cloud.Common.Errors.ErrorInformation": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorInformation"
+            }
+          },
+          "innererror": {
+            "$ref": "#/definitions/Microsoft.Khronos.Cloud.Common.Errors.ErrorInformation"
+          },
+          "exception": {
+            "$ref": "#/definitions/System.Object"
+          }
+        },
+        "x-id": "ErrorInformation"
+      },
+        "Microsoft.Health.Platform.Entities.V1.HeartRateZones": {
+            "description": "Distribution of Heart Rates through a range of values defined by Fitness experts \r\n            which determine the effectiveness of the exercise",
+            "type": "object",
+            "properties": {
+                "underHealthyHeart": {
+                    "format": "int32",
+                    "description": "The number of minutes where the HR was below 50% of the user's max HR",
+                    "type": "integer"
+                },
+                "underAerobic": {
+                    "format": "int32",
+                    "description": "Note: this field is deprecated. The correct field name is now UnderHealthyHeart. Populated for backwards compatibility until V2\r\n            The number of minutes where the HR was below 50% of the user's max HR",
+                    "type": "integer"
+                },
+                "aerobic": {
+                    "format": "int32",
+                    "description": "The number of minutes where the HR was between 70-80% of the user's max HR",
+                    "type": "integer"
+                },
+                "anaerobic": {
+                    "format": "int32",
+                    "description": "The number of minutes where the HR was between 80-90% of the user's max HR",
+                    "type": "integer"
+                },
+                "fitnessZone": {
+                    "format": "int32",
+                    "description": "The number of minutes where the HR was between 60-70% of the user's max HR",
+                    "type": "integer"
+                },
+                "healthyHeart": {
+                    "format": "int32",
+                    "description": "The number of minutes where the HR was between 50-60% of the user's max HR",
+                    "type": "integer"
+                },
+                "redline": {
+                    "format": "int32",
+                    "description": "The number of minutes where the HR was between 90-100% of the user's max HR",
+                    "type": "integer"
+                },
+                "overRedline": {
+                    "format": "int32",
+                    "description": "The number of minutes above the user's max HR",
+                    "type": "integer"
+                }
+            },
+            "x-id": "HeartRateZones"
+        },
+        "Microsoft.Health.Platform.Entities.V1.Sensors.GPSPoint": {
+            "description": "GPS Point sensor",
+            "type": "object",
+            "properties": {
+                "speedOverGround": {
+                    "format": "int32",
+                    "description": "The speed over ground for the GPS point in m/s * 100",
+                    "type": "integer"
+                },
+                "latitude": {
+                    "format": "int32",
+                    "description": "The latitude for the GPS point in degrees * 10^7 (+ = North)",
+                    "type": "integer"
+                },
+                "longitude": {
+                    "format": "int32",
+                    "description": "The longitude for the GPS point in degrees * 10^7 (+ = East)",
+                    "type": "integer"
+                },
+                "elevationFromMeanSeaLevel": {
+                    "format": "int32",
+                    "description": "The elevation from mean sea level in m * 100",
+                    "type": "integer"
+                },
+                "estimatedHorizontalError": {
+                    "format": "int32",
+                    "description": "The estimated horizontal error in m * 100",
+                    "type": "integer"
+                },
+                "estimatedVerticalError": {
+                    "format": "int32",
+                    "description": "The estimated vertical error in m * 100",
+                    "type": "integer"
+                }
+            },
+            "x-id": "GPSPoint"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlan": {
+            "description": "An action plan being created for a user",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "The name of the plan, localized",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "The description of the plan, localized",
+                    "type": "string"
+                },
+                "imageUrl": {
+                    "description": "A URL to an image for the plan. Suggested resolution is 212 x 212",
+                    "type": "string"
+                },
+                "thumbnailImageUrl": {
+                    "description": "A URL to a thumbnail image for the plan. Suggested resolution is 212 x 212",
+                    "type": "string"
+                },
+                "organizationId": {
+                    "description": "The ID of the organization that manages this plan",
+                    "type": "string"
+                },
+                "organizationName": {
+                    "description": "The name of the organization that manages this plan",
+                    "type": "string"
+                },
+                "organizationLogoUrl": {
+                    "description": "A URL to the logo of the organization that manages this plan",
+                    "type": "string"
+                },
+                "organizationLongFormImageUrl": {
+                    "description": "A URL to a larger image for the organization logo that may include the wordmark",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "The category of the plan",
+                    "enum": ["Unknown", "Health", "Sleep", "Activity", "Stress"],
+                    "type": "string"
+                },
+                "objectives": {
+                    "description": "The Collection of objectives for the plan",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.Objective"
+                    }
+                },
+                "associatedTasks": {
+                    "description": "The Tasks associated with this plan",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTask"
+                    }
+                }
+            },
+            "x-id": "ActionPlan"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTask": {
+            "description": "An action a user should complete.\r\n            Adherence to a plan is measured by completion statistics against tasks",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "The friendly name of the task",
+                    "type": "string"
+                },
+                "shortDescription": {
+                    "description": "The short description of the task",
+                    "type": "string"
+                },
+                "longDescription": {
+                    "description": "The detailed description of the task",
+                    "type": "string"
+                },
+                "imageUrl": {
+                    "description": "The image URL of the task. Suggested resolution is 200 x 200",
+                    "type": "string"
+                },
+                "thumbnailImageUrl": {
+                    "description": "The thumbnail image URL of the task. Suggested resolution is 90 x 90",
+                    "type": "string"
+                },
+                "organizationId": {
+                    "description": "The ID of the organization that owns this task",
+                    "type": "string"
+                },
+                "organizationName": {
+                    "description": "The name of the organization that owns this task",
+                    "type": "string"
+                },
+                "taskType": {
+                    "description": "The type of the task, used to choose the UI editor for the task",
+                    "enum": ["Unknown", "BloodPressure"],
+                    "type": "string"
+                },
+                "trackingPolicy": {
+                    "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTrackingPolicy",
+                    "description": "The tracking policy"
+                },
+                "signupName": {
+                    "description": "The text shown during task signup.",
+                    "type": "string"
+                },
+                "associatedPlanId": {
+                    "description": "The ID of the associated plan. This is not needed when adding a task as part of a new plan",
+                    "type": "string"
+                },
+                "associatedObjectiveIds": {
+                    "description": "The list of objective IDs the task is associated with",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "completionType": {
+                    "description": "The Completion Type of the Task",
+                    "enum": ["Unknown", "Frequency", "Scheduled"],
+                    "type": "string"
+                },
+                "frequencyTaskCompletionMetrics": {
+                    "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanFrequencyTaskCompletionMetrics",
+                    "description": "Completion metrics for frequency based tasks"
+                },
+                "scheduledTaskCompletionMetrics": {
+                    "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanScheduledTaskCompletionMetrics",
+                    "description": "Completion metrics for schedule based tasks"
+                }
+            },
+            "x-id": "ActionPlanTask"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanAdherenceSummary": {
+            "description": "An action plan for adherence reporting purposes",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "The ID of the plan",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name of the plan",
+                    "type": "string"
+                },
+                "startDate": {
+                    "format": "date-time",
+                    "description": "The starting date of the adherence summary.",
+                    "type": "string"
+                },
+                "endDate": {
+                    "format": "date-time",
+                    "description": "The ending date of the adherence summary.",
+                    "type": "string"
+                },
+                "objectives": {
+                    "description": "The Collection of objectives for the plan",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ObjectiveAdherenceSummary"
+                    }
+                }
+            },
+            "x-id": "ActionPlanAdherenceSummary"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.ObjectiveAdherenceSummary": {
+            "description": "An action plan objective for the purpose of the adherence report",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "The unique identifier of the instance of the objective",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name of the objective",
+                    "type": "string"
+                },
+                "outcomeName": {
+                    "description": "The name of the associated outcome",
+                    "type": "string"
+                },
+                "associatedTasks": {
+                    "description": "The Tasks associated with this plan",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskAdherenceSummary"
+                    }
+                }
+            },
+            "x-id": "ObjectiveAdherenceSummary"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskAdherenceSummary": {
+            "description": "An adherence summary for a task in an action plan",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "The Id of the task",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name of the task",
+                    "type": "string"
+                },
+                "windowType": {
+                    "description": "The recurrence type of the schedule window",
+                    "enum": ["Unknown", "None", "Daily", "Weekly"],
+                    "type": "string"
+                },
+                "startDate": {
+                    "format": "date-time",
+                    "description": "The starting date of the task or the start date requested, whichever is later.",
+                    "type": "string"
+                },
+                "endDate": {
+                    "format": "date-time",
+                    "description": "The ending date of the task or the end date requested, whichever is earlier.",
+                    "type": "string"
+                },
+                "weeklyAdherence": {
+                    "description": "A list of weekly adherence summaries",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.WeeklyAdherenceSummary"
+                    }
+                }
+            },
+            "x-id": "ActionPlanTaskAdherenceSummary"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.WeeklyAdherenceSummary": {
+            "description": "A summary of a tasks weekly adherence",
+            "type": "object",
+            "properties": {
+                "weekStart": {
+                    "format": "date-time",
+                    "description": "The start of the week",
+                    "type": "string"
+                },
+                "completions": {
+                    "format": "int32",
+                    "description": "The # of completions that occurred this week",
+                    "type": "integer"
+                },
+                "intendedCompletions": {
+                    "format": "int32",
+                    "description": "The # of completions that were intended for this week",
+                    "type": "integer"
+                },
+                "intendedOccurrences": {
+                    "format": "int32",
+                    "description": "The # of occurrences that were intended for this week",
+                    "type": "integer"
+                },
+                "manualTrackedOccurrences": {
+                    "format": "int32",
+                    "description": "The # of occurrences that were manually tracked this week",
+                    "type": "integer"
+                },
+                "automaticTrackedOccurrences": {
+                    "format": "int32",
+                    "description": "The # of occurrences that were automatically tracked this week",
+                    "type": "integer"
+                },
+                "automaticTrackedOccurrenceEvidence": {
+                    "description": "A list of evidence (HealthVault Thing IDs) that were automatically tracked",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "x-id": "WeeklyAdherenceSummary"
+        },
+        "Microsoft.Health.Platform.Entities.V3.Responses.ActionPlanTasksResponse[Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskInstance]": {
+            "description": "The action plans task collection response",
+            "type": "object",
+            "properties": {
+                "tasks": {
+                    "description": "The collection of tasks",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanTaskInstance"
+                    }
+                },
+                "nextLink": {
+                    "description": "The URI for the next page of data",
+                    "type": "string"
+                }
+            },
+            "x-id": "ActionPlanTasksResponse`1"
+        },
+        "Microsoft.Health.Platform.Entities.V3.HeartRateZones": {
+            "description": "Distribution of Heart Rates through a range of values defined by Fitness experts \r\n            which determine the effectiveness of the exercise",
+            "type": "object",
+            "properties": {
+                "underHealthyHeart": {
+                    "format": "int32",
+                    "description": "The number of minutes where the HR was below 50% of the user's max HR",
+                    "type": "integer"
+                },
+                "underAerobic": {
+                    "format": "int32",
+                    "description": "Note: this field is deprecated. The correct field name is now UnderHealthyHeart. Populated for backwards compatibility until V2\r\n            The number of minutes where the HR was below 50% of the user's max HR",
+                    "type": "integer"
+                },
+                "aerobic": {
+                    "format": "int32",
+                    "description": "The number of minutes where the HR was between 70-80% of the user's max HR",
+                    "type": "integer"
+                },
+                "anaerobic": {
+                    "format": "int32",
+                    "description": "The number of minutes where the HR was between 80-90% of the user's max HR",
+                    "type": "integer"
+                },
+                "fitnessZone": {
+                    "format": "int32",
+                    "description": "The number of minutes where the HR was between 60-70% of the user's max HR",
+                    "type": "integer"
+                },
+                "healthyHeart": {
+                    "format": "int32",
+                    "description": "The number of minutes where the HR was between 50-60% of the user's max HR",
+                    "type": "integer"
+                },
+                "redline": {
+                    "format": "int32",
+                    "description": "The number of minutes where the HR was between 90-100% of the user's max HR",
+                    "type": "integer"
+                },
+                "overRedline": {
+                    "format": "int32",
+                    "description": "The number of minutes above the user's max HR",
+                    "type": "integer"
+                }
+            },
+            "x-id": "HeartRateZones"
+        },
+        "Microsoft.Health.Platform.Entities.V3.Sensors.GPSPoint": {
+            "description": "GPS Point sensor",
+            "type": "object",
+            "properties": {
+                "speedOverGround": {
+                    "format": "int32",
+                    "description": "The speed over ground for the GPS point in m/s * 100",
+                    "type": "integer"
+                },
+                "latitude": {
+                    "format": "int32",
+                    "description": "The latitude for the GPS point in degrees * 10^7 (+ = North)",
+                    "type": "integer"
+                },
+                "longitude": {
+                    "format": "int32",
+                    "description": "The longitude for the GPS point in degrees * 10^7 (+ = East)",
+                    "type": "integer"
+                },
+                "elevationFromMeanSeaLevel": {
+                    "format": "int32",
+                    "description": "The elevation from mean sea level in m * 100",
+                    "type": "integer"
+                },
+                "estimatedHorizontalError": {
+                    "format": "int32",
+                    "description": "The estimated horizontal error in m * 100",
+                    "type": "integer"
+                },
+                "estimatedVerticalError": {
+                    "format": "int32",
+                    "description": "The estimated vertical error in m * 100",
+                    "type": "integer"
+                }
+            },
+            "x-id": "GPSPoint"
+        },
+        "Microsoft.Health.Platform.Entities.V3.OnboardingRequest": {
+            "description": "The content passed from a client during the onboarding process",
+            "type": "object",
+            "properties": {
+                "friendlyName": {
+                    "description": "Gets sets the friendly name",
+                    "type": "string"
+                },
+                "applicationPatientId": {
+                    "description": "Gets sets ApplicationPatientId",
+                    "type": "string"
+                },
+                "secretQuestion": {
+                    "description": "Gets or sets the user's secret question",
+                    "type": "string"
+                },
+                "secretAnswer": {
+                    "description": "Gets or sets the user's secret answer",
+                    "type": "string"
+                },
+                "firstName": {
+                    "description": "Gets or sets the user's first name.",
+                    "type": "string"
+                },
+                "lastName": {
+                    "description": "Gets or sets the user's last name.",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "Gets or sets the user's email address",
+                    "type": "string"
+                },
+                "zipCode": {
+                    "description": "Gets and sets the user zip code/postal code",
+                    "type": "string"
+                },
+                "state": {
+                    "description": "Gets and sets the user's state",
+                    "type": "string"
+                },
+                "country": {
+                    "description": "Gets and sets the user's country/region",
+                    "type": "string"
+                },
+                "birthday": {
+                    "format": "date-time",
+                    "description": "Gets and sets the user's birthday",
+                    "type": "string"
+                },
+                "gender": {
+                    "description": "Gets and sets the user gender",
+                    "enum": ["Unknown", "Male", "Female"],
+                    "type": "string"
+                },
+                "weight": {
+                    "format": "int32",
+                    "description": "Gets and sets the user's weight",
+                    "type": "integer"
+                },
+                "height": {
+                    "format": "int32",
+                    "description": "Gets and sets the user's Height",
+                    "type": "integer"
+                },
+                "actionPlanTemplateIds": {
+                    "description": "Gets or sets the list of action plan template ids to which the user \r\n            will be assigned upon account creation",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "conditions": {
+                    "description": "Gets or sets the list of health conditions that will be displayed to the user during consent collection",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "x-id": "OnboardingRequest"
+        },
+        "Microsoft.Health.Platform.Entities.V3.Responses.OnboardingResponse": {
+            "description": "The Onboarding response",
+            "type": "object",
+            "properties": {
+                "invitationCode": {
+                    "description": "Gets or sets the invitation code.",
+                    "type": "string"
+                },
+                "inviteUrl": {
+                    "description": "Get Or Set the invite url",
+                    "type": "string"
+                },
+                "nextLink": {
+                    "description": "The URI for the next page of data",
+                    "type": "string"
+                }
+            },
+            "x-id": "OnboardingResponse"
+        },
+        "Microsoft.Health.Platform.Entities.V3.Responses.OnboardingPersonInfoResponse": {
+            "description": "The onboarding person info response.",
+            "type": "object",
+            "properties": {
+                "retriesRemaining": {
+                    "format": "int32",
+                    "description": "Gets or sets the retries remaining.",
+                    "type": "integer"
+                },
+                "applicationId": {
+                    "description": "Gets or sets the Application ID",
+                    "type": "string"
+                },
+                "firstName": {
+                    "description": "Gets or sets the user's first name.",
+                    "type": "string"
+                },
+                "lastName": {
+                    "description": "Gets or sets the user's last name.",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "Gets or sets the user's email address",
+                    "type": "string"
+                },
+                "zipCode": {
+                    "description": "Gets and sets the user zip code/postal code",
+                    "type": "string"
+                },
+                "state": {
+                    "description": "Gets and sets the user's state",
+                    "type": "string"
+                },
+                "country": {
+                    "description": "Gets and sets the user's country/region",
+                    "type": "string"
+                },
+                "birthday": {
+                    "format": "date-time",
+                    "description": "Gets and sets the user's birthday",
+                    "type": "string"
+                },
+                "gender": {
+                    "description": "Gets and sets the user gender",
+                    "enum": ["Unknown", "Male", "Female"],
+                    "type": "string"
+                },
+                "weight": {
+                    "format": "int32",
+                    "description": "Gets and sets the user's weight",
+                    "type": "integer"
+                },
+                "height": {
+                    "format": "int32",
+                    "description": "Gets and sets the user's Height",
+                    "type": "integer"
+                },
+                "actionPlanTemplateIds": {
+                    "description": "Gets or sets the list of action plan template ids to which the user \r\n            will be assigned upon account creation",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "x-id": "OnboardingPersonInfoResponse"
+        },
+        "Microsoft.Health.Platform.Entities.V3.OnboardingPersonalInformation": {
+            "description": "Class to capture user personal information for onboarding process",
+            "type": "object",
+            "properties": {
+                "appId": {
+                    "description": "Gets or sets the app id.",
+                    "type": "string"
+                },
+                "firstName": {
+                    "description": "Gets or sets the user's first name.",
+                    "type": "string"
+                },
+                "lastName": {
+                    "description": "Gets or sets the user's last name.",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "Gets or sets the user's email address",
+                    "type": "string"
+                },
+                "zipCode": {
+                    "description": "Gets and sets the user zip code/postal code",
+                    "type": "string"
+                },
+                "state": {
+                    "description": "Gets and sets the user's state",
+                    "type": "string"
+                },
+                "country": {
+                    "description": "Gets and sets the user's country/region",
+                    "type": "string"
+                },
+                "birthday": {
+                    "format": "date-time",
+                    "description": "Gets and sets the user's birthday",
+                    "type": "string"
+                },
+                "gender": {
+                    "description": "Gets and sets the user gender",
+                    "enum": ["Unknown", "Male", "Female"],
+                    "type": "string"
+                },
+                "weight": {
+                    "format": "int32",
+                    "description": "Gets and sets the user's weight",
+                    "type": "integer"
+                },
+                "height": {
+                    "format": "int32",
+                    "description": "Gets and sets the user's Height",
+                    "type": "integer"
+                },
+                "dropOffPickupId": {
+                    "description": "Gets or sets the DropOffPickupId.",
+                    "type": "string"
+                },
+                "platformUrl": {
+                    "description": "Gets or sets the platform url.",
+                    "type": "string"
+                },
+                "timestamp": {
+                    "format": "date-time",
+                    "description": "Gets or sets the timestamp.",
+                    "type": "string"
+                }
+            },
+            "x-id": "OnboardingPersonalInformation"
+        },
+        "Microsoft.Health.Platform.Entities.V3.ActionPlans.ActionPlanConsents": {
+            "description": "The action plan consents.",
+            "type": "object",
+            "properties": {
+                "offlineConsents": {
+                    "description": "Gets or sets the consents.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Microsoft.Health.Cloud.Common.Data.TransferObjects.ActionPlan.Consents.HealthVaultAuthorizationRule"
+                    }
+                },
+                "onlineConsents": {
+                    "description": "Gets or sets the online consents.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Microsoft.Health.Cloud.Common.Data.TransferObjects.ActionPlan.Consents.HealthVaultAuthorizationRule"
+                    }
+                }
+            },
+            "x-id": "ActionPlanConsents"
+        },
+        "Microsoft.Health.Cloud.Common.Data.TransferObjects.ActionPlan.Consents.HealthVaultAuthorizationRule": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            },
+            "x-id": "HealthVaultAuthorizationRule"
+        }
+    }
+}
