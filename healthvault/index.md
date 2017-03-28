@@ -295,8 +295,8 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                             <div class="cardPadding">
                                                 <div class="card">
                                                     <div class="cardImageOuter">
-                                                        <div class="cardImage">
-                                                            <img src="images/ios.svg" alt="" />
+                                                        <div class="cardImage" style="font-family:'Segoe UI Light'; font-size:22px;">
+                                                            iOS
                                                         </div>
                                                     </div>
                                                     <div class="cardText">
@@ -421,116 +421,9 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#architecture">Architecture</a>
-                        <ul id="architecture">
-                            <li>
-                                <a href="#architecture1"></a>
-                                <ul id="architecture1" class="cardsC">
-                                    <li>
-                                        <div class="container intro">
-                                            <p>A set of recommended architectures for cloud applications. Each architecture includes recommended practices, prescriptive steps, and an executable component that embodies the recommendations.</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="http://aka.ms/cloud-fundamentals">
-                                            <div class="cardSize">
-                                                <div class="cardPadding">
-                                                    <div class="card">
-                                                        <div class="cardImageOuter">
-                                                            <div class="cardImage">
-                                                                <img data-scaleimage="media/index/azure-arch-1.svg" src="media/index/azure-arch-1.svg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="cardText">
-                                                            <h3>Cloud Fundamentals</h3>
-                                                            <p>Fundamental knowledge to be successful in the cloud. If you’re new to the cloud or new to Azure, start here.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://aka.ms/architecture">
-                                            <div class="cardSize">
-                                                <div class="cardPadding">
-                                                    <div class="card">
-                                                        <div class="cardImageOuter">
-                                                            <div class="cardImage">
-                                                                <img data-scaleimage="media/index/azure-arch-2.svg" src="media/index/azure-arch-2.svg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="cardText">
-                                                            <h3>Reference Architectures</h3>
-                                                            <p>A set of recommended architectures for the cloud. Each architecture includes best practices, prescriptive steps, and a deployable solution.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://aka.ms/cloud-design-patterns">
-                                            <div class="cardSize">
-                                                <div class="cardPadding">
-                                                    <div class="card">
-                                                        <div class="cardImageOuter">
-                                                            <div class="cardImage">
-                                                                <img data-scaleimage="media/index/azure-arch-3.svg" src="media/index/azure-arch-3.svg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="cardText">
-                                                            <h3>Cloud Design Patterns</h3>
-                                                            <p>Design patterns for the cloud. Each pattern describes a problem, a pattern that addresses the problem, and an example based on Azure.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://aka.ms/practices">
-                                            <div class="cardSize">
-                                                <div class="cardPadding">
-                                                    <div class="card">
-                                                        <div class="cardImageOuter">
-                                                            <div class="cardImage">
-                                                                <img data-scaleimage="media/index/azure-arch-4.svg" src="media/index/azure-arch-4.svg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="cardText">
-                                                            <h3>Best Practices for Cloud Applications</h3>
-                                                            <p>A set of best practices for cloud applications, covering aspects such as auto-scaling, caching, data partitioning, API design, and monitoring.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://aka.ms/cloud-scenarios">
-                                            <div class="cardSize">
-                                                <div class="cardPadding">
-                                                    <div class="card">
-                                                        <div class="cardImageOuter">
-                                                            <div class="cardImage">
-                                                                <img data-scaleimage="media/index/azure-arch-5.svg" src="media/index/azure-arch-5.svg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="cardText">
-                                                            <h3>Scenario Guides</h3>
-                                                            <p>Guidance for various end-to-end application scenarios in the cloud. Includes written guidance and reference implementations.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+                                
+                                    
+                 
                 </ul>
             </div>
 </div>
