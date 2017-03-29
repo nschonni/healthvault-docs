@@ -15,11 +15,17 @@ Client is getting one of the following error messages with a WebException (these
 
     **Dev/test environment:**
 
-    `<add key="ShellUrl"     value="https://www.healthvault-ppe.com/" /><add key="HealthServiceUrl"     value="http://platform.healthvault-ppe.com/Platform/" />`
+    ```xml
+    <add key="ShellUrl" value="https://www.healthvault-ppe.com/" />
+    <add key="HealthServiceUrl" value="http://platform.healthvault-ppe.com/Platform/" />
+    ```
 
     **Production:**
 
-    `<add key="ShellUrl"    value="https://account.healthvault.com/" /><add key="HealthServiceUrl"    value="https://platform.healthvault.com/Platform/" />`
+    ```xml
+    <add key="ShellUrl" value="https://account.healthvault.com/" />
+    <add key="HealthServiceUrl" value="https://platform.healthvault.com/Platform/" />
+    ```
 
     If you are getting the “For security reasons DTD is prohibited in this XML document” error, the most likely cause is an incorrect HealthServiceUrl. This error occurs when the response to an SDK request is HTML.
 
@@ -35,7 +41,13 @@ Client is getting one of the following error messages with a WebException (these
     3.  Verify the &lt;defaultProxy&gt; element is present.
     4.  If the &lt;system.net&gt; or &lt;defaultProxy&gt; elements are missing, add them. Place the proxy server and port settings with those retrieved in step 1. If no port, leave off the “:port” portion of the address.
 
-        `<defaultProxy>    <proxy usesystemdefault = "false"           proxyaddress=” http://proxyserver:port”           bypassonlocal="true" /></defaultProxy>`
+        ```xml
+        <defaultProxy>
+            <proxy usesystemdefault = "false"
+                   proxyaddress=” http://proxyserver:port”           
+                   bypassonlocal="true" />
+        </defaultProxy>
+        ```
 
 4.  If connection errors continue to occur, other tools must be used to diagnose the problems.
     1.  Install Fiddler v2 from <http://www.fiddler2.com/Fiddler2/version.asp>.

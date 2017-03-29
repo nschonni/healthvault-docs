@@ -1,0 +1,1555 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.ItemTypes.DisplayValue
+  commentId: T:Microsoft.Health.ItemTypes.DisplayValue
+  id: DisplayValue
+  parent: Microsoft.Health.ItemTypes
+  children:
+  - Microsoft.Health.ItemTypes.DisplayValue.#ctor
+  - Microsoft.Health.ItemTypes.DisplayValue.#ctor(System.Double)
+  - Microsoft.Health.ItemTypes.DisplayValue.#ctor(System.Double,System.String)
+  - Microsoft.Health.ItemTypes.DisplayValue.#ctor(System.Double,System.String,System.String)
+  - Microsoft.Health.ItemTypes.DisplayValue.ParseXml(System.Xml.XPath.XPathNavigator)
+  - Microsoft.Health.ItemTypes.DisplayValue.Text
+  - Microsoft.Health.ItemTypes.DisplayValue.ToString
+  - Microsoft.Health.ItemTypes.DisplayValue.Units
+  - Microsoft.Health.ItemTypes.DisplayValue.UnitsCode
+  - Microsoft.Health.ItemTypes.DisplayValue.Value
+  - Microsoft.Health.ItemTypes.DisplayValue.WriteXml(System.String,System.Xml.XmlWriter)
+  langs:
+  - csharp
+  - vb
+  name: DisplayValue
+  nameWithType: DisplayValue
+  fullName: Microsoft.Health.ItemTypes.DisplayValue
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/DisplayValue.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: DisplayValue
+    path: ../Microsoft.Health.ItemTypes/DisplayValue.cs
+    startLine: 34
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nRepresents the display value for a length, weight, or other type\nof measurement.\n"
+  remarks: "\nA display value differs from a value in that it is the value as entered\nby the user rather than the value converted to a base unit. The unit\nused can also reference the unit through the HealthVault dictionary code.\n\nSingle-valued display values (\"15 pounds\") should be expressed using the\n<xref href=\"Microsoft.Health.ItemTypes.DisplayValue.Value\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"Microsoft.Health.ItemTypes.DisplayValue.Units\" data-throw-if-not-resolved=\"false\"></xref> properties. \n\nMulti-valued display values (\"12 pounds 3 ounces\") can be expressed using the \n<xref href=\"Microsoft.Health.ItemTypes.DisplayValue.Text\" data-throw-if-not-resolved=\"false\"></xref> property, but should also be expressed using value and \nunits (\"12.25 pounds\").\n"
+  example: []
+  syntax:
+    content: 'public class DisplayValue : HealthRecordItemData'
+    content.vb: >-
+      Public Class DisplayValue
+          Inherits HealthRecordItemData
+  inheritance:
+  - System.Object
+  - Microsoft.Health.ItemTypes.HealthRecordItemData
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - Microsoft.Health.ItemTypes.DisplayValue.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  - System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.ItemTypes.DisplayValue.#ctor
+  commentId: M:Microsoft.Health.ItemTypes.DisplayValue.#ctor
+  id: '#ctor'
+  parent: Microsoft.Health.ItemTypes.DisplayValue
+  langs:
+  - csharp
+  - vb
+  name: DisplayValue()
+  nameWithType: DisplayValue.DisplayValue()
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.DisplayValue()
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/DisplayValue.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health.ItemTypes/DisplayValue.cs
+    startLine: 40
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.ItemTypes.DisplayValue\" data-throw-if-not-resolved=\"false\"></xref> class with empty values.\n"
+  example: []
+  syntax:
+    content: public DisplayValue()
+    content.vb: Public Sub New
+  overload: Microsoft.Health.ItemTypes.DisplayValue.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.DisplayValue.#ctor(System.Double)
+  commentId: M:Microsoft.Health.ItemTypes.DisplayValue.#ctor(System.Double)
+  id: '#ctor(System.Double)'
+  parent: Microsoft.Health.ItemTypes.DisplayValue
+  langs:
+  - csharp
+  - vb
+  name: DisplayValue(Double)
+  nameWithType: DisplayValue.DisplayValue(Double)
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.DisplayValue(System.Double)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/DisplayValue.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health.ItemTypes/DisplayValue.cs
+    startLine: 53
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.ItemTypes.DisplayValue\" data-throw-if-not-resolved=\"false\"></xref> class \nwith the specified value.\n"
+  example: []
+  syntax:
+    content: public DisplayValue(double value)
+    content.vb: Public Sub New(value As Double)
+    parameters:
+    - id: value
+      type: System.Double
+      description: "\nThe value as it was entered.\n"
+  overload: Microsoft.Health.ItemTypes.DisplayValue.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.DisplayValue.#ctor(System.Double,System.String)
+  commentId: M:Microsoft.Health.ItemTypes.DisplayValue.#ctor(System.Double,System.String)
+  id: '#ctor(System.Double,System.String)'
+  parent: Microsoft.Health.ItemTypes.DisplayValue
+  langs:
+  - csharp
+  - vb
+  name: DisplayValue(Double, String)
+  nameWithType: DisplayValue.DisplayValue(Double, String)
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.DisplayValue(System.Double, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/DisplayValue.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health.ItemTypes/DisplayValue.cs
+    startLine: 76
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.ItemTypes.DisplayValue\" data-throw-if-not-resolved=\"false\"></xref> class \nwith the specified value and units.\n"
+  example: []
+  syntax:
+    content: public DisplayValue(double value, string units)
+    content.vb: Public Sub New(value As Double, units As String)
+    parameters:
+    - id: value
+      type: System.Double
+      description: "\nThe value as it was entered.\n"
+    - id: units
+      type: System.String
+      description: "\nThe units of the <span class=\"paramref\">value</span> as it was\nentered.\n"
+  overload: Microsoft.Health.ItemTypes.DisplayValue.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nThe <span class=\"paramref\">units</span> is <strong>null</strong> or empty.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.DisplayValue.#ctor(System.Double,System.String,System.String)
+  commentId: M:Microsoft.Health.ItemTypes.DisplayValue.#ctor(System.Double,System.String,System.String)
+  id: '#ctor(System.Double,System.String,System.String)'
+  parent: Microsoft.Health.ItemTypes.DisplayValue
+  langs:
+  - csharp
+  - vb
+  name: DisplayValue(Double, String, String)
+  nameWithType: DisplayValue.DisplayValue(Double, String, String)
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.DisplayValue(System.Double, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/DisplayValue.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health.ItemTypes/DisplayValue.cs
+    startLine: 105
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nCreates a new instance of the <xref href=\"Microsoft.Health.ItemTypes.DisplayValue\" data-throw-if-not-resolved=\"false\"></xref> class with \nthe specified value, units, and units code.\n"
+  example: []
+  syntax:
+    content: public DisplayValue(double value, string units, string unitsCode)
+    content.vb: Public Sub New(value As Double, units As String, unitsCode As String)
+    parameters:
+    - id: value
+      type: System.Double
+      description: "\nThe value as it was entered.\n"
+    - id: units
+      type: System.String
+      description: "\nThe units of the <span class=\"paramref\">value</span> as it was\nentered.\n"
+    - id: unitsCode
+      type: System.String
+      description: "\nThe Health Lexicon vocabulary code for the unit of measure.\n"
+  overload: Microsoft.Health.ItemTypes.DisplayValue.#ctor*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nThe <span class=\"paramref\">units</span> is <strong>null</strong> or empty.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.DisplayValue.ParseXml(System.Xml.XPath.XPathNavigator)
+  commentId: M:Microsoft.Health.ItemTypes.DisplayValue.ParseXml(System.Xml.XPath.XPathNavigator)
+  id: ParseXml(System.Xml.XPath.XPathNavigator)
+  parent: Microsoft.Health.ItemTypes.DisplayValue
+  langs:
+  - csharp
+  - vb
+  name: ParseXml(XPathNavigator)
+  nameWithType: DisplayValue.ParseXml(XPathNavigator)
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.ParseXml(System.Xml.XPath.XPathNavigator)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/DisplayValue.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ParseXml
+    path: ../Microsoft.Health.ItemTypes/DisplayValue.cs
+    startLine: 123
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nPopulates the data for the display value from the XML.\n"
+  example: []
+  syntax:
+    content: public override void ParseXml(XPathNavigator navigator)
+    content.vb: Public Overrides Sub ParseXml(navigator As XPathNavigator)
+    parameters:
+    - id: navigator
+      type: System.Xml.XPath.XPathNavigator
+      description: "\nThe XML node representing the display value.\n"
+  overridden: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  overload: Microsoft.Health.ItemTypes.DisplayValue.ParseXml*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">navigator</span> parameter is <strong>null</strong>.\n"
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Microsoft.Health.ItemTypes.DisplayValue.WriteXml(System.String,System.Xml.XmlWriter)
+  commentId: M:Microsoft.Health.ItemTypes.DisplayValue.WriteXml(System.String,System.Xml.XmlWriter)
+  id: WriteXml(System.String,System.Xml.XmlWriter)
+  parent: Microsoft.Health.ItemTypes.DisplayValue
+  langs:
+  - csharp
+  - vb
+  name: WriteXml(String, XmlWriter)
+  nameWithType: DisplayValue.WriteXml(String, XmlWriter)
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.WriteXml(System.String, System.Xml.XmlWriter)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/DisplayValue.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: WriteXml
+    path: ../Microsoft.Health.ItemTypes/DisplayValue.cs
+    startLine: 167
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nWrites the display value to the specified XML writer.\n"
+  example: []
+  syntax:
+    content: public override void WriteXml(string nodeName, XmlWriter writer)
+    content.vb: Public Overrides Sub WriteXml(nodeName As String, writer As XmlWriter)
+    parameters:
+    - id: nodeName
+      type: System.String
+      description: "\nThe name of the outer element for the display value.\n"
+    - id: writer
+      type: System.Xml.XmlWriter
+      description: "\nThe XmlWriter to write the display value to.\n"
+  overridden: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+  overload: Microsoft.Health.ItemTypes.DisplayValue.WriteXml*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nThe <span class=\"paramref\">nodeName</span> parameter is <strong>null</strong> or empty.\n"
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">writer</span> parameter is <strong>null</strong>.\n"
+  - type: Microsoft.Health.HealthRecordItemSerializationException
+    commentId: T:Microsoft.Health.HealthRecordItemSerializationException
+    description: "\nThe <xref href=\"Microsoft.Health.ItemTypes.DisplayValue.Units\" data-throw-if-not-resolved=\"false\"></xref> property has not been set.\n"
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Microsoft.Health.ItemTypes.DisplayValue.ToString
+  commentId: M:Microsoft.Health.ItemTypes.DisplayValue.ToString
+  id: ToString
+  parent: Microsoft.Health.ItemTypes.DisplayValue
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: DisplayValue.ToString()
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.ToString()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/DisplayValue.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ToString
+    path: ../Microsoft.Health.ItemTypes/DisplayValue.cs
+    startLine: 200
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nRetrieves a string representation of the display value.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    content.vb: Public Overrides Function ToString As String
+    return:
+      type: System.String
+      description: "\nThe value with the optional units.\n"
+  overridden: System.Object.ToString
+  overload: Microsoft.Health.ItemTypes.DisplayValue.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Microsoft.Health.ItemTypes.DisplayValue.UnitsCode
+  commentId: P:Microsoft.Health.ItemTypes.DisplayValue.UnitsCode
+  id: UnitsCode
+  parent: Microsoft.Health.ItemTypes.DisplayValue
+  langs:
+  - csharp
+  - vb
+  name: UnitsCode
+  nameWithType: DisplayValue.UnitsCode
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.UnitsCode
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/DisplayValue.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: UnitsCode
+    path: ../Microsoft.Health.ItemTypes/DisplayValue.cs
+    startLine: 241
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the code used in the HealthVault Dictionary to represent\nthe units.\n"
+  remarks: "\nThe code is used to abstract the units from the application so\nthat the application can retrieve the appropriate value for the\nculture desired.\n"
+  example: []
+  syntax:
+    content: public string UnitsCode { get; set; }
+    content.vb: Public Property UnitsCode As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nA string representing the code.\n"
+  overload: Microsoft.Health.ItemTypes.DisplayValue.UnitsCode*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.DisplayValue.Units
+  commentId: P:Microsoft.Health.ItemTypes.DisplayValue.Units
+  id: Units
+  parent: Microsoft.Health.ItemTypes.DisplayValue
+  langs:
+  - csharp
+  - vb
+  name: Units
+  nameWithType: DisplayValue.Units
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.Units
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/DisplayValue.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Units
+    path: ../Microsoft.Health.ItemTypes/DisplayValue.cs
+    startLine: 266
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the units of measure as defined by the user.\n"
+  remarks: "\nWhen the units are different from the base units for the particular\ntype of measurement, the units should be set and if possible the\n<xref href=\"Microsoft.Health.ItemTypes.DisplayValue.UnitsCode\" data-throw-if-not-resolved=\"false\"></xref> should also be set.\n"
+  example: []
+  syntax:
+    content: public string Units { get; set; }
+    content.vb: Public Property Units As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nA string representing the units.\n"
+  overload: Microsoft.Health.ItemTypes.DisplayValue.Units*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nThe <span class=\"paramref\">value</span> set is <strong>null</strong>, empty.\n"
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.DisplayValue.Value
+  commentId: P:Microsoft.Health.ItemTypes.DisplayValue.Value
+  id: Value
+  parent: Microsoft.Health.ItemTypes.DisplayValue
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: DisplayValue.Value
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.Value
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/DisplayValue.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Value
+    path: ../Microsoft.Health.ItemTypes/DisplayValue.cs
+    startLine: 285
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the display value.\n"
+  example: []
+  syntax:
+    content: public double Value { get; set; }
+    content.vb: Public Property Value As Double
+    parameters: []
+    return:
+      type: System.Double
+      description: "\nA number representing the display value.\n"
+  overload: Microsoft.Health.ItemTypes.DisplayValue.Value*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.ItemTypes.DisplayValue.Text
+  commentId: P:Microsoft.Health.ItemTypes.DisplayValue.Text
+  id: Text
+  parent: Microsoft.Health.ItemTypes.DisplayValue
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: DisplayValue.Text
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.Text
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.ItemTypes/DisplayValue.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Text
+    path: ../Microsoft.Health.ItemTypes/DisplayValue.cs
+    startLine: 314
+  assemblies:
+  - Microsoft.Health.ItemTypes
+  namespace: Microsoft.Health.ItemTypes
+  summary: "\nGets or sets the display text.\n"
+  remarks: "\nIf the display value cannot be properly expressed as \"number units\", the\nText property can be used to express the display value. An\nexample of this would be expressing a height as \"5 feet 8 inches\".\n\nApplications that use the Text property should still express the value\nin the \"number units\" format for applications that predate the introduction\nof this property.\n"
+  example: []
+  syntax:
+    content: public string Text { get; set; }
+    content.vb: Public Property Text As String
+    parameters: []
+    return:
+      type: System.String
+      description: "\nA string representing the display value.\n"
+  overload: Microsoft.Health.ItemTypes.DisplayValue.Text*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nThe <span class=\"paramref\">value</span> set is <strong>null</strong> or empty.\n"
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Microsoft.Health.ItemTypes.DisplayValue.Value
+  commentId: P:Microsoft.Health.ItemTypes.DisplayValue.Value
+- uid: Microsoft.Health.ItemTypes.DisplayValue.Units
+  commentId: P:Microsoft.Health.ItemTypes.DisplayValue.Units
+- uid: Microsoft.Health.ItemTypes.DisplayValue.Text
+  commentId: P:Microsoft.Health.ItemTypes.DisplayValue.Text
+- uid: Microsoft.Health.ItemTypes
+  commentId: N:Microsoft.Health.ItemTypes
+  isExternal: false
+  name: Microsoft.Health.ItemTypes
+  nameWithType: Microsoft.Health.ItemTypes
+  fullName: Microsoft.Health.ItemTypes
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Microsoft.Health.ItemTypes.HealthRecordItemData
+  commentId: T:Microsoft.Health.ItemTypes.HealthRecordItemData
+  parent: Microsoft.Health.ItemTypes
+  isExternal: false
+  name: HealthRecordItemData
+  nameWithType: HealthRecordItemData
+  fullName: Microsoft.Health.ItemTypes.HealthRecordItemData
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  name: SetProperty(String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object())
+  name.vb: SetProperty(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  name: InvokeMethod(String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object())
+  name.vb: InvokeMethod(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  parent: Microsoft.Health.Utility.InvariantString
+  definition: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  name: ToStringInvariant()
+  nameWithType: InvariantString.ToStringInvariant()
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.DisplayValue.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  parent: Microsoft.Health.Utility.TypeHelper
+  definition: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  name: ValueOrDbNull<DisplayValue>()
+  nameWithType: TypeHelper.ValueOrDbNull<DisplayValue>()
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.ItemTypes.DisplayValue>()
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of DisplayValue)()
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.ItemTypes.DisplayValue)()
+  name.vb: ValueOrDbNull(Of DisplayValue)()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull<DisplayValue>
+    nameWithType: TypeHelper.ValueOrDbNull<DisplayValue>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.ItemTypes.DisplayValue>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull(Of DisplayValue)
+    nameWithType: TypeHelper.ValueOrDbNull(Of DisplayValue)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.ItemTypes.DisplayValue)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  parent: Microsoft.Health.Utility.WCXmlHelper
+  definition: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  name: ToXml()
+  nameWithType: WCXmlHelper.ToXml()
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: SetProperty(Object, String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object())
+  name.vb: SetProperty(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions
+  commentId: T:Microsoft.Health.Utility.IDispatchExtensions
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: IDispatchExtensions
+  nameWithType: IDispatchExtensions
+  fullName: Microsoft.Health.Utility.IDispatchExtensions
+- uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: InvokeMethod(Object, String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object())
+  name.vb: InvokeMethod(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  isExternal: true
+  name: ToStringInvariant(Object)
+  nameWithType: InvariantString.ToStringInvariant(Object)
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString
+  commentId: T:Microsoft.Health.Utility.InvariantString
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: InvariantString
+  nameWithType: InvariantString
+  fullName: Microsoft.Health.Utility.InvariantString
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  isExternal: false
+  name: ValueOrDbNull<T>(T)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(T)
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(T)
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(T)
+  name.vb: ValueOrDbNull(Of T)(T)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull<T>
+    nameWithType: TypeHelper.ValueOrDbNull<T>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull(Of T)
+    nameWithType: TypeHelper.ValueOrDbNull(Of T)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+- uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  isExternal: true
+  name: ToXml(Object)
+  nameWithType: WCXmlHelper.ToXml(Object)
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.WCXmlHelper
+  commentId: T:Microsoft.Health.Utility.WCXmlHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: WCXmlHelper
+  nameWithType: WCXmlHelper
+  fullName: Microsoft.Health.Utility.WCXmlHelper
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: Microsoft.Health.ItemTypes.DisplayValue
+  commentId: T:Microsoft.Health.ItemTypes.DisplayValue
+  parent: Microsoft.Health.ItemTypes
+  isExternal: false
+  name: DisplayValue
+  nameWithType: DisplayValue
+  fullName: Microsoft.Health.ItemTypes.DisplayValue
+- uid: Microsoft.Health.ItemTypes.DisplayValue.#ctor*
+  commentId: Overload:Microsoft.Health.ItemTypes.DisplayValue.#ctor
+  isExternal: false
+  name: DisplayValue
+  nameWithType: DisplayValue.DisplayValue
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.DisplayValue
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  commentId: M:Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  parent: Microsoft.Health.ItemTypes.HealthRecordItemData
+  isExternal: true
+  name: ParseXml(XPathNavigator)
+  nameWithType: HealthRecordItemData.ParseXml(XPathNavigator)
+  fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+  spec.csharp:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+    name: ParseXml
+    nameWithType: HealthRecordItemData.ParseXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XPath.XPathNavigator
+    name: XPathNavigator
+    nameWithType: XPathNavigator
+    fullName: System.Xml.XPath.XPathNavigator
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml(System.Xml.XPath.XPathNavigator)
+    name: ParseXml
+    nameWithType: HealthRecordItemData.ParseXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.ParseXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XPath.XPathNavigator
+    name: XPathNavigator
+    nameWithType: XPathNavigator
+    fullName: System.Xml.XPath.XPathNavigator
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.DisplayValue.ParseXml*
+  commentId: Overload:Microsoft.Health.ItemTypes.DisplayValue.ParseXml
+  isExternal: false
+  name: ParseXml
+  nameWithType: DisplayValue.ParseXml
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.ParseXml
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+- uid: System.Xml.XPath.XPathNavigator
+  commentId: T:System.Xml.XPath.XPathNavigator
+  parent: System.Xml.XPath
+  isExternal: true
+  name: XPathNavigator
+  nameWithType: XPathNavigator
+  fullName: System.Xml.XPath.XPathNavigator
+- uid: System.Xml.XPath
+  commentId: N:System.Xml.XPath
+  isExternal: false
+  name: System.Xml.XPath
+  nameWithType: System.Xml.XPath
+  fullName: System.Xml.XPath
+- uid: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+  commentId: M:Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+  parent: Microsoft.Health.ItemTypes.HealthRecordItemData
+  isExternal: true
+  name: WriteXml(String, XmlWriter)
+  nameWithType: HealthRecordItemData.WriteXml(String, XmlWriter)
+  fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String, System.Xml.XmlWriter)
+  spec.csharp:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+    name: WriteXml
+    nameWithType: HealthRecordItemData.WriteXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml(System.String,System.Xml.XmlWriter)
+    name: WriteXml
+    nameWithType: HealthRecordItemData.WriteXml
+    fullName: Microsoft.Health.ItemTypes.HealthRecordItemData.WriteXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.DisplayValue.WriteXml*
+  commentId: Overload:Microsoft.Health.ItemTypes.DisplayValue.WriteXml
+  isExternal: false
+  name: WriteXml
+  nameWithType: DisplayValue.WriteXml
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.WriteXml
+- uid: Microsoft.Health.HealthRecordItemSerializationException
+  commentId: T:Microsoft.Health.HealthRecordItemSerializationException
+  isExternal: false
+  name: HealthRecordItemSerializationException
+  nameWithType: HealthRecordItemSerializationException
+  fullName: Microsoft.Health.HealthRecordItemSerializationException
+- uid: System.Xml.XmlWriter
+  commentId: T:System.Xml.XmlWriter
+  parent: System.Xml
+  isExternal: true
+  name: XmlWriter
+  nameWithType: XmlWriter
+  fullName: System.Xml.XmlWriter
+- uid: System.Xml
+  commentId: N:System.Xml
+  isExternal: false
+  name: System.Xml
+  nameWithType: System.Xml
+  fullName: System.Xml
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.ItemTypes.DisplayValue.ToString*
+  commentId: Overload:Microsoft.Health.ItemTypes.DisplayValue.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: DisplayValue.ToString
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.ToString
+- uid: Microsoft.Health.ItemTypes.DisplayValue.UnitsCode*
+  commentId: Overload:Microsoft.Health.ItemTypes.DisplayValue.UnitsCode
+  isExternal: false
+  name: UnitsCode
+  nameWithType: DisplayValue.UnitsCode
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.UnitsCode
+- uid: Microsoft.Health.ItemTypes.DisplayValue.UnitsCode
+  commentId: P:Microsoft.Health.ItemTypes.DisplayValue.UnitsCode
+- uid: Microsoft.Health.ItemTypes.DisplayValue.Units*
+  commentId: Overload:Microsoft.Health.ItemTypes.DisplayValue.Units
+  isExternal: false
+  name: Units
+  nameWithType: DisplayValue.Units
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.Units
+- uid: Microsoft.Health.ItemTypes.DisplayValue.Value*
+  commentId: Overload:Microsoft.Health.ItemTypes.DisplayValue.Value
+  isExternal: false
+  name: Value
+  nameWithType: DisplayValue.Value
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.Value
+- uid: Microsoft.Health.ItemTypes.DisplayValue.Text*
+  commentId: Overload:Microsoft.Health.ItemTypes.DisplayValue.Text
+  isExternal: false
+  name: Text
+  nameWithType: DisplayValue.Text
+  fullName: Microsoft.Health.ItemTypes.DisplayValue.Text

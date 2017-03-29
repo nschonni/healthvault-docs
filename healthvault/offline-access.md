@@ -13,7 +13,12 @@ Your application must be configured on Microsoft’s servers to request offline 
 
 When you know that your application requests offline access, here is some sample code to get you up and running:
 
-`OfflineWebApplicationConnectionofflineConn =    new OfflineWebApplicationConnection(offlineUser);offlineConn.Authenticate();HealthRecordAccessor accessor =    new HealthRecordAccessor(offlineConn, <RECORD_GUID>);`
+```cs
+OfflineWebApplicationConnectionofflineConn =
+    new OfflineWebApplicationConnection(offlineUser);
+offlineConn.Authenticate();HealthRecordAccessor accessor = 
+   new HealthRecordAccessor(offlineConn, <RECORD_GUID>);
+```
 You can then use the Accessor to build a Searcher and pull the desired HealthRecordItems.
 
 Note that you should have cached the record GUID when the user was online and configured/authorized your background process.

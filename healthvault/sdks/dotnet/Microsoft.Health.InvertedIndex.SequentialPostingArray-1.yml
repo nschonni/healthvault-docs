@@ -1,0 +1,2205 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1
+  commentId: T:Microsoft.Health.InvertedIndex.SequentialPostingArray`1
+  id: SequentialPostingArray`1
+  parent: Microsoft.Health.InvertedIndex
+  children:
+  - Microsoft.Health.InvertedIndex.SequentialPostingArray`1.#ctor(`0[])
+  - Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Count
+  - Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetEnumerator
+  - Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetIDs
+  - Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetPropertyEnumerator
+  - Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetSkipEnumerator
+  - Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Item(System.Int32)
+  - Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Items
+  - Microsoft.Health.InvertedIndex.SequentialPostingArray`1.SerializationTokenName
+  - Microsoft.Health.InvertedIndex.SequentialPostingArray`1.System#Collections#IEnumerable#GetEnumerator
+  langs:
+  - csharp
+  - vb
+  name: SequentialPostingArray<T>
+  nameWithType: SequentialPostingArray<T>
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: SequentialPostingArray
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+    startLine: 19
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\nA very specialized collection of postings. \nIf recordIDs are in sorted and sequential order with NO RECORDIDs missing - then you \ndon't need to actually store the recordIDs, which are implied. Savings in space and speed. \nThis operator is useful where we need to iterate over information that applies to every \nsingle record - e.g. record normals\n"
+  example: []
+  syntax:
+    content: 'public class SequentialPostingArray<T> : IRecordPropertyList<T>, IRecordIDList, ISkipEnumerable<uint>, IEnumerable<uint>, IEnumerable, ISerializableIndexType'
+    content.vb: >-
+      Public Class SequentialPostingArray(Of T)
+          Implements IRecordPropertyList(Of T), IRecordIDList, ISkipEnumerable(Of UInteger), IEnumerable(Of UInteger), IEnumerable, ISerializableIndexType
+    typeParameters:
+    - id: T
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - Microsoft.Health.InvertedIndex.SequentialFloatPostingArray
+  implements:
+  - Microsoft.Health.InvertedIndex.IRecordPropertyList{{T}}
+  - Microsoft.Health.InvertedIndex.IRecordIDList
+  - Microsoft.Health.InvertedIndex.ISkipEnumerable{System.UInt32}
+  - System.Collections.Generic.IEnumerable{System.UInt32}
+  - System.Collections.IEnumerable
+  - Microsoft.Health.InvertedIndex.ISerializableIndexType
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  - System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  nameWithType.vb: SequentialPostingArray(Of T)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T)
+  name.vb: SequentialPostingArray(Of T)
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.#ctor(`0[])
+  commentId: M:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.#ctor(`0[])
+  id: '#ctor(`0[])'
+  parent: Microsoft.Health.InvertedIndex.SequentialPostingArray`1
+  langs:
+  - csharp
+  - vb
+  name: SequentialPostingArray(T[])
+  nameWithType: SequentialPostingArray<T>.SequentialPostingArray(T[])
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.SequentialPostingArray(T[])
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+    startLine: 26
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public SequentialPostingArray(T[] items)
+    content.vb: Public Sub New(items As T())
+    parameters:
+    - id: items
+      type: '{T}[]'
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.#ctor*
+  nameWithType.vb: SequentialPostingArray(Of T).SequentialPostingArray(T())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).SequentialPostingArray(T())
+  name.vb: SequentialPostingArray(T())
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Count
+  commentId: P:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Count
+  id: Count
+  parent: Microsoft.Health.InvertedIndex.SequentialPostingArray`1
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: SequentialPostingArray<T>.Count
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.Count
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Count
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+    startLine: 35
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public int Count { get; }
+    content.vb: Public ReadOnly Property Count As Integer
+    parameters: []
+    return:
+      type: System.Int32
+  overload: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Count*
+  implements:
+  - Microsoft.Health.InvertedIndex.IRecordIDList.Count
+  nameWithType.vb: SequentialPostingArray(Of T).Count
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).Count
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Items
+  commentId: P:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Items
+  id: Items
+  parent: Microsoft.Health.InvertedIndex.SequentialPostingArray`1
+  langs:
+  - csharp
+  - vb
+  name: Items
+  nameWithType: SequentialPostingArray<T>.Items
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.Items
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Items
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+    startLine: 46
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public T[] Items { get; }
+    content.vb: Public ReadOnly Property Items As T()
+    parameters: []
+    return:
+      type: '{T}[]'
+  overload: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Items*
+  nameWithType.vb: SequentialPostingArray(Of T).Items
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).Items
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Item(System.Int32)
+  commentId: P:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Item(System.Int32)
+  id: Item(System.Int32)
+  parent: Microsoft.Health.InvertedIndex.SequentialPostingArray`1
+  langs:
+  - csharp
+  - vb
+  name: Item[Int32]
+  nameWithType: SequentialPostingArray<T>.Item[Int32]
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.Item[System.Int32]
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: this[]
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+    startLine: 59
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public T this[int i] { get; }
+    content.vb: Public ReadOnly Property Item(i As Integer) As T
+    parameters:
+    - id: i
+      type: System.Int32
+      description: ''
+    return:
+      type: '{T}'
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Item*
+  nameWithType.vb: SequentialPostingArray(Of T).Item(Int32)
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).Item(System.Int32)
+  name.vb: Item(Int32)
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.SerializationTokenName
+  commentId: P:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.SerializationTokenName
+  id: SerializationTokenName
+  parent: Microsoft.Health.InvertedIndex.SequentialPostingArray`1
+  langs:
+  - csharp
+  - vb
+  name: SerializationTokenName
+  nameWithType: SequentialPostingArray<T>.SerializationTokenName
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.SerializationTokenName
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: SerializationTokenName
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+    startLine: 70
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public virtual string SerializationTokenName { get; }
+    content.vb: Public Overridable ReadOnly Property SerializationTokenName As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.SerializationTokenName*
+  implements:
+  - Microsoft.Health.InvertedIndex.ISerializableIndexType.SerializationTokenName
+  nameWithType.vb: SequentialPostingArray(Of T).SerializationTokenName
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  modifiers.vb:
+  - Public
+  - Overridable
+  - ReadOnly
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).SerializationTokenName
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetPropertyEnumerator
+  commentId: M:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetPropertyEnumerator
+  id: GetPropertyEnumerator
+  parent: Microsoft.Health.InvertedIndex.SequentialPostingArray`1
+  langs:
+  - csharp
+  - vb
+  name: GetPropertyEnumerator()
+  nameWithType: SequentialPostingArray<T>.GetPropertyEnumerator()
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.GetPropertyEnumerator()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetPropertyEnumerator
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+    startLine: 82
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public RecordPropertyEnumerator<T> GetPropertyEnumerator()
+    content.vb: Public Function GetPropertyEnumerator As RecordPropertyEnumerator(Of T)
+    return:
+      type: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator{{T}}
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetPropertyEnumerator*
+  implements:
+  - Microsoft.Health.InvertedIndex.IRecordPropertyList{{T}}.GetPropertyEnumerator
+  nameWithType.vb: SequentialPostingArray(Of T).GetPropertyEnumerator()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).GetPropertyEnumerator()
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetIDs
+  commentId: M:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetIDs
+  id: GetIDs
+  parent: Microsoft.Health.InvertedIndex.SequentialPostingArray`1
+  langs:
+  - csharp
+  - vb
+  name: GetIDs()
+  nameWithType: SequentialPostingArray<T>.GetIDs()
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.GetIDs()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetIDs
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+    startLine: 91
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public RecordIDEnumerator GetIDs()
+    content.vb: Public Function GetIDs As RecordIDEnumerator
+    return:
+      type: Microsoft.Health.InvertedIndex.RecordIDEnumerator
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetIDs*
+  implements:
+  - Microsoft.Health.InvertedIndex.IRecordIDList.GetIDs
+  nameWithType.vb: SequentialPostingArray(Of T).GetIDs()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).GetIDs()
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetSkipEnumerator
+  commentId: M:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetSkipEnumerator
+  id: GetSkipEnumerator
+  parent: Microsoft.Health.InvertedIndex.SequentialPostingArray`1
+  langs:
+  - csharp
+  - vb
+  name: GetSkipEnumerator()
+  nameWithType: SequentialPostingArray<T>.GetSkipEnumerator()
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.GetSkipEnumerator()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetSkipEnumerator
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+    startLine: 100
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public ISkipEnumerator<uint> GetSkipEnumerator()
+    content.vb: Public Function GetSkipEnumerator As ISkipEnumerator(Of UInteger)
+    return:
+      type: Microsoft.Health.InvertedIndex.ISkipEnumerator{System.UInt32}
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetSkipEnumerator*
+  implements:
+  - Microsoft.Health.InvertedIndex.ISkipEnumerable{System.UInt32}.GetSkipEnumerator
+  nameWithType.vb: SequentialPostingArray(Of T).GetSkipEnumerator()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).GetSkipEnumerator()
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetEnumerator
+  commentId: M:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetEnumerator
+  id: GetEnumerator
+  parent: Microsoft.Health.InvertedIndex.SequentialPostingArray`1
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: SequentialPostingArray<T>.GetEnumerator()
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetEnumerator
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+    startLine: 109
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public IEnumerator<uint> GetEnumerator()
+    content.vb: Public Function GetEnumerator As IEnumerator(Of UInteger)
+    return:
+      type: System.Collections.Generic.IEnumerator{System.UInt32}
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetEnumerator*
+  implements:
+  - System.Collections.Generic.IEnumerable{System.UInt32}.GetEnumerator
+  nameWithType.vb: SequentialPostingArray(Of T).GetEnumerator()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).GetEnumerator()
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.System#Collections#IEnumerable#GetEnumerator
+  id: System#Collections#IEnumerable#GetEnumerator
+  isEii: true
+  parent: Microsoft.Health.InvertedIndex.SequentialPostingArray`1
+  langs:
+  - csharp
+  - vb
+  name: IEnumerable.GetEnumerator()
+  nameWithType: SequentialPostingArray<T>.IEnumerable.GetEnumerator()
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: System.Collections.IEnumerable.GetEnumerator
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/SequentialPostingArray.cs
+    startLine: 116
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  syntax:
+    content: IEnumerator IEnumerable.GetEnumerator()
+    content.vb: Function System.Collections.IEnumerable.GetEnumerator As IEnumerator Implements IEnumerable.GetEnumerator
+    return:
+      type: System.Collections.IEnumerator
+  overload: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.System#Collections#IEnumerable#GetEnumerator*
+  implements:
+  - System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: SequentialPostingArray(Of T).System.Collections.IEnumerable.GetEnumerator()
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).System.Collections.IEnumerable.GetEnumerator()
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+references:
+- uid: Microsoft.Health.InvertedIndex
+  commentId: N:Microsoft.Health.InvertedIndex
+  isExternal: false
+  name: Microsoft.Health.InvertedIndex
+  nameWithType: Microsoft.Health.InvertedIndex
+  fullName: Microsoft.Health.InvertedIndex
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Microsoft.Health.InvertedIndex.IRecordPropertyList{{T}}
+  commentId: T:Microsoft.Health.InvertedIndex.IRecordPropertyList{`0}
+  parent: Microsoft.Health.InvertedIndex
+  definition: Microsoft.Health.InvertedIndex.IRecordPropertyList`1
+  name: IRecordPropertyList<T>
+  nameWithType: IRecordPropertyList<T>
+  fullName: Microsoft.Health.InvertedIndex.IRecordPropertyList<T>
+  nameWithType.vb: IRecordPropertyList(Of T)
+  fullName.vb: Microsoft.Health.InvertedIndex.IRecordPropertyList(Of T)
+  name.vb: IRecordPropertyList(Of T)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.IRecordPropertyList`1
+    name: IRecordPropertyList
+    nameWithType: IRecordPropertyList
+    fullName: Microsoft.Health.InvertedIndex.IRecordPropertyList
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.IRecordPropertyList`1
+    name: IRecordPropertyList
+    nameWithType: IRecordPropertyList
+    fullName: Microsoft.Health.InvertedIndex.IRecordPropertyList
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.IRecordIDList
+  commentId: T:Microsoft.Health.InvertedIndex.IRecordIDList
+  parent: Microsoft.Health.InvertedIndex
+  isExternal: false
+  name: IRecordIDList
+  nameWithType: IRecordIDList
+  fullName: Microsoft.Health.InvertedIndex.IRecordIDList
+- uid: Microsoft.Health.InvertedIndex.ISkipEnumerable{System.UInt32}
+  commentId: T:Microsoft.Health.InvertedIndex.ISkipEnumerable{System.UInt32}
+  parent: Microsoft.Health.InvertedIndex
+  definition: Microsoft.Health.InvertedIndex.ISkipEnumerable`1
+  name: ISkipEnumerable<UInt32>
+  nameWithType: ISkipEnumerable<UInt32>
+  fullName: Microsoft.Health.InvertedIndex.ISkipEnumerable<System.UInt32>
+  nameWithType.vb: ISkipEnumerable(Of UInt32)
+  fullName.vb: Microsoft.Health.InvertedIndex.ISkipEnumerable(Of System.UInt32)
+  name.vb: ISkipEnumerable(Of UInt32)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ISkipEnumerable`1
+    name: ISkipEnumerable
+    nameWithType: ISkipEnumerable
+    fullName: Microsoft.Health.InvertedIndex.ISkipEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ISkipEnumerable`1
+    name: ISkipEnumerable
+    nameWithType: ISkipEnumerable
+    fullName: Microsoft.Health.InvertedIndex.ISkipEnumerable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{System.UInt32}
+  commentId: T:System.Collections.Generic.IEnumerable{System.UInt32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<UInt32>
+  nameWithType: IEnumerable<UInt32>
+  fullName: System.Collections.Generic.IEnumerable<System.UInt32>
+  nameWithType.vb: IEnumerable(Of UInt32)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.UInt32)
+  name.vb: IEnumerable(Of UInt32)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: Microsoft.Health.InvertedIndex.ISerializableIndexType
+  commentId: T:Microsoft.Health.InvertedIndex.ISerializableIndexType
+  parent: Microsoft.Health.InvertedIndex
+  isExternal: false
+  name: ISerializableIndexType
+  nameWithType: ISerializableIndexType
+  fullName: Microsoft.Health.InvertedIndex.ISerializableIndexType
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  name: SetProperty(String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object())
+  name.vb: SetProperty(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  name: InvokeMethod(String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object())
+  name.vb: InvokeMethod(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  parent: Microsoft.Health.Utility.InvariantString
+  definition: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  name: ToStringInvariant()
+  nameWithType: InvariantString.ToStringInvariant()
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  parent: Microsoft.Health.Utility.TypeHelper
+  definition: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  name: ValueOrDbNull<SequentialPostingArray<T>>()
+  nameWithType: TypeHelper.ValueOrDbNull<SequentialPostingArray<T>>()
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.InvertedIndex.SequentialPostingArray<T>>()
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of SequentialPostingArray(Of T))()
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T))()
+  name.vb: ValueOrDbNull(Of SequentialPostingArray(Of T))()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull<SequentialPostingArray<T>>
+    nameWithType: TypeHelper.ValueOrDbNull<SequentialPostingArray<T>>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.InvertedIndex.SequentialPostingArray<T>>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull(Of SequentialPostingArray(Of T))
+    nameWithType: TypeHelper.ValueOrDbNull(Of SequentialPostingArray(Of T))
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T))
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  parent: Microsoft.Health.Utility.WCXmlHelper
+  definition: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  name: ToXml()
+  nameWithType: WCXmlHelper.ToXml()
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.InvertedIndex.IRecordPropertyList`1
+  commentId: T:Microsoft.Health.InvertedIndex.IRecordPropertyList`1
+  isExternal: false
+  name: IRecordPropertyList<T>
+  nameWithType: IRecordPropertyList<T>
+  fullName: Microsoft.Health.InvertedIndex.IRecordPropertyList<T>
+  nameWithType.vb: IRecordPropertyList(Of T)
+  fullName.vb: Microsoft.Health.InvertedIndex.IRecordPropertyList(Of T)
+  name.vb: IRecordPropertyList(Of T)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.IRecordPropertyList`1
+    name: IRecordPropertyList
+    nameWithType: IRecordPropertyList
+    fullName: Microsoft.Health.InvertedIndex.IRecordPropertyList
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.IRecordPropertyList`1
+    name: IRecordPropertyList
+    nameWithType: IRecordPropertyList
+    fullName: Microsoft.Health.InvertedIndex.IRecordPropertyList
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.ISkipEnumerable`1
+  commentId: T:Microsoft.Health.InvertedIndex.ISkipEnumerable`1
+  isExternal: false
+  name: ISkipEnumerable<T>
+  nameWithType: ISkipEnumerable<T>
+  fullName: Microsoft.Health.InvertedIndex.ISkipEnumerable<T>
+  nameWithType.vb: ISkipEnumerable(Of T)
+  fullName.vb: Microsoft.Health.InvertedIndex.ISkipEnumerable(Of T)
+  name.vb: ISkipEnumerable(Of T)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ISkipEnumerable`1
+    name: ISkipEnumerable
+    nameWithType: ISkipEnumerable
+    fullName: Microsoft.Health.InvertedIndex.ISkipEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ISkipEnumerable`1
+    name: ISkipEnumerable
+    nameWithType: ISkipEnumerable
+    fullName: Microsoft.Health.InvertedIndex.ISkipEnumerable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: false
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+- uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: SetProperty(Object, String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object())
+  name.vb: SetProperty(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions
+  commentId: T:Microsoft.Health.Utility.IDispatchExtensions
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: IDispatchExtensions
+  nameWithType: IDispatchExtensions
+  fullName: Microsoft.Health.Utility.IDispatchExtensions
+- uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: InvokeMethod(Object, String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object())
+  name.vb: InvokeMethod(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  isExternal: true
+  name: ToStringInvariant(Object)
+  nameWithType: InvariantString.ToStringInvariant(Object)
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString
+  commentId: T:Microsoft.Health.Utility.InvariantString
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: InvariantString
+  nameWithType: InvariantString
+  fullName: Microsoft.Health.Utility.InvariantString
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  isExternal: false
+  name: ValueOrDbNull<T>(T)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(T)
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(T)
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(T)
+  name.vb: ValueOrDbNull(Of T)(T)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull<T>
+    nameWithType: TypeHelper.ValueOrDbNull<T>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull(Of T)
+    nameWithType: TypeHelper.ValueOrDbNull(Of T)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+- uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  isExternal: true
+  name: ToXml(Object)
+  nameWithType: WCXmlHelper.ToXml(Object)
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.WCXmlHelper
+  commentId: T:Microsoft.Health.Utility.WCXmlHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: WCXmlHelper
+  nameWithType: WCXmlHelper
+  fullName: Microsoft.Health.Utility.WCXmlHelper
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.#ctor*
+  commentId: Overload:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.#ctor
+  isExternal: false
+  name: SequentialPostingArray
+  nameWithType: SequentialPostingArray<T>.SequentialPostingArray
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.SequentialPostingArray
+  nameWithType.vb: SequentialPostingArray(Of T).SequentialPostingArray
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).SequentialPostingArray
+- uid: '{T}[]'
+  name: T[]
+  nameWithType: T[]
+  fullName: T[]
+  nameWithType.vb: T()
+  fullName.vb: T()
+  name.vb: T()
+  spec.csharp:
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Count*
+  commentId: Overload:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Count
+  isExternal: false
+  name: Count
+  nameWithType: SequentialPostingArray<T>.Count
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.Count
+  nameWithType.vb: SequentialPostingArray(Of T).Count
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).Count
+- uid: Microsoft.Health.InvertedIndex.IRecordIDList.Count
+  commentId: P:Microsoft.Health.InvertedIndex.IRecordIDList.Count
+  parent: Microsoft.Health.InvertedIndex.IRecordIDList
+  isExternal: false
+  name: Count
+  nameWithType: IRecordIDList.Count
+  fullName: Microsoft.Health.InvertedIndex.IRecordIDList.Count
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Items*
+  commentId: Overload:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Items
+  isExternal: false
+  name: Items
+  nameWithType: SequentialPostingArray<T>.Items
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.Items
+  nameWithType.vb: SequentialPostingArray(Of T).Items
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).Items
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Item*
+  commentId: Overload:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.Item
+  isExternal: false
+  name: Item
+  nameWithType: SequentialPostingArray<T>.Item
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.Item
+  nameWithType.vb: SequentialPostingArray(Of T).Item
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).Item
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  isExternal: false
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.SerializationTokenName*
+  commentId: Overload:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.SerializationTokenName
+  isExternal: false
+  name: SerializationTokenName
+  nameWithType: SequentialPostingArray<T>.SerializationTokenName
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.SerializationTokenName
+  nameWithType.vb: SequentialPostingArray(Of T).SerializationTokenName
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).SerializationTokenName
+- uid: Microsoft.Health.InvertedIndex.ISerializableIndexType.SerializationTokenName
+  commentId: P:Microsoft.Health.InvertedIndex.ISerializableIndexType.SerializationTokenName
+  parent: Microsoft.Health.InvertedIndex.ISerializableIndexType
+  isExternal: false
+  name: SerializationTokenName
+  nameWithType: ISerializableIndexType.SerializationTokenName
+  fullName: Microsoft.Health.InvertedIndex.ISerializableIndexType.SerializationTokenName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetPropertyEnumerator*
+  commentId: Overload:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetPropertyEnumerator
+  isExternal: false
+  name: GetPropertyEnumerator
+  nameWithType: SequentialPostingArray<T>.GetPropertyEnumerator
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.GetPropertyEnumerator
+  nameWithType.vb: SequentialPostingArray(Of T).GetPropertyEnumerator
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).GetPropertyEnumerator
+- uid: Microsoft.Health.InvertedIndex.IRecordPropertyList{{T}}.GetPropertyEnumerator
+  commentId: M:Microsoft.Health.InvertedIndex.IRecordPropertyList{`0}.GetPropertyEnumerator
+  parent: Microsoft.Health.InvertedIndex.IRecordPropertyList{{T}}
+  definition: Microsoft.Health.InvertedIndex.IRecordPropertyList`1.GetPropertyEnumerator
+  name: GetPropertyEnumerator()
+  nameWithType: IRecordPropertyList<T>.GetPropertyEnumerator()
+  fullName: Microsoft.Health.InvertedIndex.IRecordPropertyList<T>.GetPropertyEnumerator()
+  nameWithType.vb: IRecordPropertyList(Of T).GetPropertyEnumerator()
+  fullName.vb: Microsoft.Health.InvertedIndex.IRecordPropertyList(Of T).GetPropertyEnumerator()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.IRecordPropertyList`1.GetPropertyEnumerator
+    name: GetPropertyEnumerator
+    nameWithType: IRecordPropertyList<T>.GetPropertyEnumerator
+    fullName: Microsoft.Health.InvertedIndex.IRecordPropertyList<T>.GetPropertyEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.IRecordPropertyList`1.GetPropertyEnumerator
+    name: GetPropertyEnumerator
+    nameWithType: IRecordPropertyList(Of T).GetPropertyEnumerator
+    fullName: Microsoft.Health.InvertedIndex.IRecordPropertyList(Of T).GetPropertyEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator{{T}}
+  commentId: T:Microsoft.Health.InvertedIndex.RecordPropertyEnumerator{`0}
+  parent: Microsoft.Health.InvertedIndex
+  definition: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator`1
+  name: RecordPropertyEnumerator<T>
+  nameWithType: RecordPropertyEnumerator<T>
+  fullName: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator<T>
+  nameWithType.vb: RecordPropertyEnumerator(Of T)
+  fullName.vb: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator(Of T)
+  name.vb: RecordPropertyEnumerator(Of T)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator`1
+    name: RecordPropertyEnumerator
+    nameWithType: RecordPropertyEnumerator
+    fullName: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator`1
+    name: RecordPropertyEnumerator
+    nameWithType: RecordPropertyEnumerator
+    fullName: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.IRecordPropertyList`1.GetPropertyEnumerator
+  commentId: M:Microsoft.Health.InvertedIndex.IRecordPropertyList`1.GetPropertyEnumerator
+  isExternal: false
+  name: GetPropertyEnumerator()
+  nameWithType: IRecordPropertyList<T>.GetPropertyEnumerator()
+  fullName: Microsoft.Health.InvertedIndex.IRecordPropertyList<T>.GetPropertyEnumerator()
+  nameWithType.vb: IRecordPropertyList(Of T).GetPropertyEnumerator()
+  fullName.vb: Microsoft.Health.InvertedIndex.IRecordPropertyList(Of T).GetPropertyEnumerator()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.IRecordPropertyList`1.GetPropertyEnumerator
+    name: GetPropertyEnumerator
+    nameWithType: IRecordPropertyList<T>.GetPropertyEnumerator
+    fullName: Microsoft.Health.InvertedIndex.IRecordPropertyList<T>.GetPropertyEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.IRecordPropertyList`1.GetPropertyEnumerator
+    name: GetPropertyEnumerator
+    nameWithType: IRecordPropertyList(Of T).GetPropertyEnumerator
+    fullName: Microsoft.Health.InvertedIndex.IRecordPropertyList(Of T).GetPropertyEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator`1
+  commentId: T:Microsoft.Health.InvertedIndex.RecordPropertyEnumerator`1
+  isExternal: false
+  name: RecordPropertyEnumerator<T>
+  nameWithType: RecordPropertyEnumerator<T>
+  fullName: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator<T>
+  nameWithType.vb: RecordPropertyEnumerator(Of T)
+  fullName.vb: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator(Of T)
+  name.vb: RecordPropertyEnumerator(Of T)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator`1
+    name: RecordPropertyEnumerator
+    nameWithType: RecordPropertyEnumerator
+    fullName: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator`1
+    name: RecordPropertyEnumerator
+    nameWithType: RecordPropertyEnumerator
+    fullName: Microsoft.Health.InvertedIndex.RecordPropertyEnumerator
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetIDs*
+  commentId: Overload:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetIDs
+  isExternal: false
+  name: GetIDs
+  nameWithType: SequentialPostingArray<T>.GetIDs
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.GetIDs
+  nameWithType.vb: SequentialPostingArray(Of T).GetIDs
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).GetIDs
+- uid: Microsoft.Health.InvertedIndex.IRecordIDList.GetIDs
+  commentId: M:Microsoft.Health.InvertedIndex.IRecordIDList.GetIDs
+  parent: Microsoft.Health.InvertedIndex.IRecordIDList
+  isExternal: false
+  name: GetIDs()
+  nameWithType: IRecordIDList.GetIDs()
+  fullName: Microsoft.Health.InvertedIndex.IRecordIDList.GetIDs()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.IRecordIDList.GetIDs
+    name: GetIDs
+    nameWithType: IRecordIDList.GetIDs
+    fullName: Microsoft.Health.InvertedIndex.IRecordIDList.GetIDs
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.IRecordIDList.GetIDs
+    name: GetIDs
+    nameWithType: IRecordIDList.GetIDs
+    fullName: Microsoft.Health.InvertedIndex.IRecordIDList.GetIDs
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.RecordIDEnumerator
+  commentId: T:Microsoft.Health.InvertedIndex.RecordIDEnumerator
+  parent: Microsoft.Health.InvertedIndex
+  isExternal: false
+  name: RecordIDEnumerator
+  nameWithType: RecordIDEnumerator
+  fullName: Microsoft.Health.InvertedIndex.RecordIDEnumerator
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetSkipEnumerator*
+  commentId: Overload:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetSkipEnumerator
+  isExternal: false
+  name: GetSkipEnumerator
+  nameWithType: SequentialPostingArray<T>.GetSkipEnumerator
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.GetSkipEnumerator
+  nameWithType.vb: SequentialPostingArray(Of T).GetSkipEnumerator
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).GetSkipEnumerator
+- uid: Microsoft.Health.InvertedIndex.ISkipEnumerable{System.UInt32}.GetSkipEnumerator
+  commentId: M:Microsoft.Health.InvertedIndex.ISkipEnumerable{System.UInt32}.GetSkipEnumerator
+  parent: Microsoft.Health.InvertedIndex.ISkipEnumerable{System.UInt32}
+  definition: Microsoft.Health.InvertedIndex.ISkipEnumerable`1.GetSkipEnumerator
+  name: GetSkipEnumerator()
+  nameWithType: ISkipEnumerable<UInt32>.GetSkipEnumerator()
+  fullName: Microsoft.Health.InvertedIndex.ISkipEnumerable<System.UInt32>.GetSkipEnumerator()
+  nameWithType.vb: ISkipEnumerable(Of UInt32).GetSkipEnumerator()
+  fullName.vb: Microsoft.Health.InvertedIndex.ISkipEnumerable(Of System.UInt32).GetSkipEnumerator()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ISkipEnumerable`1.GetSkipEnumerator
+    name: GetSkipEnumerator
+    nameWithType: ISkipEnumerable<UInt32>.GetSkipEnumerator
+    fullName: Microsoft.Health.InvertedIndex.ISkipEnumerable<System.UInt32>.GetSkipEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ISkipEnumerable`1.GetSkipEnumerator
+    name: GetSkipEnumerator
+    nameWithType: ISkipEnumerable(Of UInt32).GetSkipEnumerator
+    fullName: Microsoft.Health.InvertedIndex.ISkipEnumerable(Of System.UInt32).GetSkipEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.ISkipEnumerator{System.UInt32}
+  commentId: T:Microsoft.Health.InvertedIndex.ISkipEnumerator{System.UInt32}
+  parent: Microsoft.Health.InvertedIndex
+  definition: Microsoft.Health.InvertedIndex.ISkipEnumerator`1
+  name: ISkipEnumerator<UInt32>
+  nameWithType: ISkipEnumerator<UInt32>
+  fullName: Microsoft.Health.InvertedIndex.ISkipEnumerator<System.UInt32>
+  nameWithType.vb: ISkipEnumerator(Of UInt32)
+  fullName.vb: Microsoft.Health.InvertedIndex.ISkipEnumerator(Of System.UInt32)
+  name.vb: ISkipEnumerator(Of UInt32)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ISkipEnumerator`1
+    name: ISkipEnumerator
+    nameWithType: ISkipEnumerator
+    fullName: Microsoft.Health.InvertedIndex.ISkipEnumerator
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ISkipEnumerator`1
+    name: ISkipEnumerator
+    nameWithType: ISkipEnumerator
+    fullName: Microsoft.Health.InvertedIndex.ISkipEnumerator
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.ISkipEnumerable`1.GetSkipEnumerator
+  commentId: M:Microsoft.Health.InvertedIndex.ISkipEnumerable`1.GetSkipEnumerator
+  isExternal: false
+  name: GetSkipEnumerator()
+  nameWithType: ISkipEnumerable<T>.GetSkipEnumerator()
+  fullName: Microsoft.Health.InvertedIndex.ISkipEnumerable<T>.GetSkipEnumerator()
+  nameWithType.vb: ISkipEnumerable(Of T).GetSkipEnumerator()
+  fullName.vb: Microsoft.Health.InvertedIndex.ISkipEnumerable(Of T).GetSkipEnumerator()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ISkipEnumerable`1.GetSkipEnumerator
+    name: GetSkipEnumerator
+    nameWithType: ISkipEnumerable<T>.GetSkipEnumerator
+    fullName: Microsoft.Health.InvertedIndex.ISkipEnumerable<T>.GetSkipEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ISkipEnumerable`1.GetSkipEnumerator
+    name: GetSkipEnumerator
+    nameWithType: ISkipEnumerable(Of T).GetSkipEnumerator
+    fullName: Microsoft.Health.InvertedIndex.ISkipEnumerable(Of T).GetSkipEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.ISkipEnumerator`1
+  commentId: T:Microsoft.Health.InvertedIndex.ISkipEnumerator`1
+  isExternal: false
+  name: ISkipEnumerator<T>
+  nameWithType: ISkipEnumerator<T>
+  fullName: Microsoft.Health.InvertedIndex.ISkipEnumerator<T>
+  nameWithType.vb: ISkipEnumerator(Of T)
+  fullName.vb: Microsoft.Health.InvertedIndex.ISkipEnumerator(Of T)
+  name.vb: ISkipEnumerator(Of T)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.ISkipEnumerator`1
+    name: ISkipEnumerator
+    nameWithType: ISkipEnumerator
+    fullName: Microsoft.Health.InvertedIndex.ISkipEnumerator
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.ISkipEnumerator`1
+    name: ISkipEnumerator
+    nameWithType: ISkipEnumerator
+    fullName: Microsoft.Health.InvertedIndex.ISkipEnumerator
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetEnumerator*
+  commentId: Overload:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.GetEnumerator
+  isExternal: false
+  name: GetEnumerator
+  nameWithType: SequentialPostingArray<T>.GetEnumerator
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.GetEnumerator
+  nameWithType.vb: SequentialPostingArray(Of T).GetEnumerator
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).GetEnumerator
+- uid: System.Collections.Generic.IEnumerable{System.UInt32}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{System.UInt32}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{System.UInt32}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<UInt32>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<System.UInt32>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of UInt32).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.UInt32).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<UInt32>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<System.UInt32>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of UInt32).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of System.UInt32).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator{System.UInt32}
+  commentId: T:System.Collections.Generic.IEnumerator{System.UInt32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  name: IEnumerator<UInt32>
+  nameWithType: IEnumerator<UInt32>
+  fullName: System.Collections.Generic.IEnumerator<System.UInt32>
+  nameWithType.vb: IEnumerator(Of UInt32)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of System.UInt32)
+  name.vb: IEnumerator(Of UInt32)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<T>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of T).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of T).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.SequentialPostingArray`1.System#Collections#IEnumerable#GetEnumerator*
+  commentId: Overload:Microsoft.Health.InvertedIndex.SequentialPostingArray`1.System#Collections#IEnumerable#GetEnumerator
+  isExternal: false
+  name: IEnumerable.GetEnumerator
+  nameWithType: SequentialPostingArray<T>.IEnumerable.GetEnumerator
+  fullName: Microsoft.Health.InvertedIndex.SequentialPostingArray<T>.System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: SequentialPostingArray(Of T).System.Collections.IEnumerable.GetEnumerator
+  fullName.vb: Microsoft.Health.InvertedIndex.SequentialPostingArray(Of T).System.Collections.IEnumerable.GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+- uid: System.Collections.IEnumerable.GetEnumerator
+  commentId: M:System.Collections.IEnumerable.GetEnumerator
+  parent: System.Collections.IEnumerable
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable.GetEnumerator()
+  fullName: System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator

@@ -12,7 +12,8 @@ If you’re new to the HealthVault platform, please first review the [technical 
 
 The easiest way to get started with Action Plans is to clone the HealthVaultProviderManagementPortal sample from [GitHub](https://go.microsoft.com/fwlink/?linkid=839405). This sample automatically acquires the HealthVault .NET SDK via Nuget to interface with HealthVault for authentication, and then illustrates 1) how a provider can onboard a patient, and 2) how an app can create and send an Action Plan to that user. Action Plans leverage a new RESTful API, which is detailed in the [HealthVault reference](https://go.microsoft.com/fwlink/?linkid=839407).
 
-**Note:** Users must register their account in the HealthVault Insights app in order to receive Action Plans. HealthVault Insights is currently only available to users in the United States and the United Kingdom.
+> [!NOTE]
+> Users must register their account in the HealthVault Insights app in order to receive Action Plans. HealthVault Insights is currently only available to users in the United States and the United Kingdom.
 
 ### Environments
 
@@ -33,7 +34,10 @@ To access a patient’s record, the patient must provide consent to a registered
 
 1.  Navigate to the [HealthVault Application Config Center (ACC)](https://go.microsoft.com/fwlink/?linkid=838954) on a desktop browser.
 2.  Login with your Microsoft Account.
-    Note: This account will be the default administrator of the app you create. HealthVault allows existing administrators to invite new administrators to manage this app.
+
+    > [!NOTE]
+    > This account will be the default administrator of the app you create. HealthVault allows existing administrators to invite new administrators to manage this app.
+
 3.  Create a new application.
     1.  The Application id will be generated for you.
     2.  Enter the application name that users will see when they interact or give consent to your application. For example, we have created one called “Fabrikam Health Solutions”.
@@ -41,19 +45,19 @@ To access a patient’s record, the patient must provide consent to a registered
     4.  Create a new certificate and upload. See instructions to [generate a self-signed certificate](#_Certificates).
     5.  Accept the developer terms and conditions and click “Create application”.
     6.  Make a note of the Application id.
-        <img src="https://i-msdn.sec.s-msft.com/dynimg/IC866205.png" title="Creating Fabrikam Health Solutions" alt="Creating Fabrikam Health Solutions" id="HVActionPlans_fig01" /> 
+        <img src="images/IC866205.png" title="Creating Fabrikam Health Solutions" alt="Creating Fabrikam Health Solutions" id="HVActionPlans_fig01" /> 
 
         Figure 1: Creating Fabrikam Health Solutions
 
 4.  To invite users to participate in your health program, you need to update your app’s supported Methods.
     1.  After creating your app, you will see confirmation that your app has been created. Click the application id to view and modify the app details.
 
-        <img src="https://i-msdn.sec.s-msft.com/dynimg/IC866206.png" title="Confirmation of app creation" alt="Confirmation of app creation" id="HVActionPlans_fig02" /> 
+        <img src="images/IC866206.png" title="Confirmation of app creation" alt="Confirmation of app creation" id="HVActionPlans_fig02" /> 
         Alternatively, you can also click the application id from the home screen.
-        <img src="https://i-msdn.sec.s-msft.com/dynimg/IC866207.png" title="Application id on the home screen" alt="Application id on the home screen" id="HVActionPlans_fig03" /> 
+        <img src="images/IC866207.png" title="Application id on the home screen" alt="Application id on the home screen" id="HVActionPlans_fig03" /> 
 
     2.  On the app details screen, select the “Methods” tab, check the “Application requires access to REST APIs” and “Application requires access to onboarding APIs” options, and click “Save”.
-        <img src="https://i-msdn.sec.s-msft.com/dynimg/IC867985.png" title="Configuring app to send email" alt="Configuring app to send email" id="img1" /> 
+        <img src="images/IC867985.png" title="Configuring app to send email" alt="Configuring app to send email" id="img1" /> 
 
 #### Adding authorization rules
 
@@ -73,13 +77,15 @@ Your application will request permission to access these data types when users j
 -   Weight
 -   Contact
 
-### <img src="https://i-msdn.sec.s-msft.com/dynimg/IC866202.png" title="Selecting data types" alt="Selecting data types" id="HVActionPlans_fig05" /> 
+### <img src="images/IC866202.png" title="Selecting data types" alt="Selecting data types" id="HVActionPlans_fig05" /> 
 
 ### Add your ApplicationID to the sample
 
-The HealthVaultProviderManagementPortal sample includes a PowerShell script you can use to update the project with the ApplicationID you just created using the Application Configuration Center. You should have already cloned the project from [GitHub](https://go.microsoft.com/fwlink/?linkid=839405). If you have, then open a PowerShell console, navigate to the folder you chose for your local repository, then navigate to dotNET/HealthVaultProviderManagementPortal and run the following command, specifying your ApplicationID <span style="COLOR: #c00">here</span>.
+The HealthVaultProviderManagementPortal sample includes a PowerShell script you can use to update the project with the ApplicationID you just created using the Application Configuration Center. You should have already cloned the project from [GitHub](https://go.microsoft.com/fwlink/?linkid=839405). If you have, then open a PowerShell console, navigate to the folder you chose for your local repository, then navigate to dotNET/HealthVaultProviderManagementPortal and run the following command, specifying your ApplicationID below.
 
-.\\Update-WebConfig.ps1 -ApplicationId "<span style="COLOR: #c00">00000000-0000-0000-0000-000000000000</span>"
+```powershell
+.\\Update-WebConfig.ps1 -ApplicationId" 00000000-0000-0000-0000-000000000000"
+```
 
 ### Generate and send invitations to remote patients
 
@@ -106,13 +112,13 @@ To get the list of users who have authorized your app to have access to their he
 
 Once your app has been authorized to access a user’s data, your app can retrieve it on demand. Please refer to the HealthVaultProviderManagementPortal sample for code which demonstrates this scenario for retrieving user data offline.
 
-For more information, see the [GetThings documentation](https://developer.healthvault.com/Methods/Overview?Name=GetThings&Version=3) and “Related articles” linked from that page.
+For more information, see the [GetThings documentation](https://developer.healthvault.com/Methods/Overview?Name=GetThings&Version=3) and "Related articles" linked from that page.
 
 #### ***Creating or updating data***
 
 In this scenario, Fabrikam’s doctors need to create records for a user’s latest height and weight values. Please refer to the HealthVaultProviderManagementPortal sample for code which demonstrates this scenario.
 
-For more information, see the [PutThings documentation](https://developer.healthvault.com/Methods/Overview?Name=PutThings&Version=2) and “Related articles” linked from that page.
+For more information, see the [PutThings documentation](https://developer.healthvault.com/Methods/Overview?Name=PutThings&Version=2) and "Related articles" linked from that page.
 
 #### ***Deleting data***
 
@@ -122,32 +128,49 @@ For more information, see the [RemoveThings documentation](https://developer.hea
 
 ### Creating, assigning, and updating Action Plans
 
-Note: to create an Action Plan, the patient receiving the plan must have already enrolled in HealthVault Insights. The invitation URL generated earlier will guide them through this process.
+> [!NOTE]
+> To create an Action Plan, the patient receiving the plan must have already enrolled in HealthVault Insights. The invitation URL generated earlier will guide them through this process.
 
 Please refer to the HealthVaultProviderManagementPortal sample for code which demonstrates how to create, assign and update Action Plans. For more information, please see the [HealthVault REST API](https://go.microsoft.com/fwlink/?linkid=839407) documentation.
 
 The diagram below provides a high-level overview of the structure of an Action Plan. An ActionPlan is comprised of one or more Objectives. An Objective is comprised of one or more Tasks.
 
-<img src="https://i-msdn.sec.s-msft.com/dynimg/IC866028.png" title="Action plan hierarchy" alt="Action plan hierarchy" id="HVActionPlans_fig06" /> 
+<img src="images/IC866028.png" title="Action plan hierarchy" alt="Action plan hierarchy" id="HVActionPlans_fig06" /> 
 
 Appendix
 --------
 
-### Generating a test certificate using makecert.exe
+### Generating a test certificate
 
-1.  In Windows 10
+1.  In Windows 10/Server 2016
     1.  Open PowerShell as an Administrator
     2.  Paste the following content into PowerShell, replacing “Insert your ApplicationID here” with the ApplicationID you received from HealthVault’s Application Configuration Center.
 
-    `function Create-HealthVaultCert([guid]$applicationID) {    $cert = New-SelfSignedCertificate -DnsName "WildcatApp-$applicationID" -CertStoreLocation "cert:\\LocalMachine\My" -HashAlgorithm "SHA256" -Provider'Microsoft Enhanced RSA and AES Cryptographic Provider'    Export-Certificate -Cert $cert -FilePath$env:USERPROFILE\Downloads\${applicationID}.cer    Set-ReadPermissionsForCert $cert}function Set-ReadPermissionsForCert([System.Security.Cryptography.X509Certificates.X509Certificate]$Cert, [string]$Username = $env:USERNAME) {    $keyPath = "C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys\"    $fullPath =$keyPath+$Cert.PrivateKey.CspKeyContainerInfo.UniqueKeyContainerName    $acl = Get-Acl -Path $fullPath    $permission = $Username,"Read","Allow"    $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule$permission    $acl.AddAccessRule($accessRule)     Set-Acl $fullPath $acl} #Edit the string below to specify the appropriate ApplicationID you received from the Application Configuration CenterCreate-HealthVaultCert("Insert Your ApplicationID Here")`
+    ```powershell
+    function Create-HealthVaultCert([guid]$applicationID) {
+        $cert = New-SelfSignedCertificate -DnsName "WildcatApp-$applicationID" -CertStoreLocation "cert:\\LocalMachine\My" -HashAlgorithm "SHA256" -Provider'Microsoft Enhanced RSA and AES Cryptographic Provider'    
+        Export-Certificate -Cert $cert -FilePath$env:USERPROFILE\Downloads\${applicationID}.cer    
+        Set-ReadPermissionsForCert $cert
+    }
+    function Set-ReadPermissionsForCert([System.Security.Cryptography.X509Certificates.X509Certificate]$Cert, [string]$Username = $env:USERNAME) {
+        $keyPath = "C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys\"    
+        $fullPath =$keyPath+$Cert.PrivateKey.CspKeyContainerInfo.UniqueKeyContainerName
+        $acl = Get-Acl -Path $fullPath    
+        $permission = $Username,"Read","Allow"    
+        $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule$permission    
+        $acl.AddAccessRule($accessRule)     
+        Set-Acl $fullPath $acl
+    } 
+    #Edit the string below to specify the appropriate ApplicationID you received from the Application Configuration Center
+    Create-HealthVaultCert("Insert Your ApplicationID Here")
+    ```
 2.  On previous versions of Windows
 
     1.  Open a Visual Studio Developer Command Prompt as an Administrator.
-    2.  Execute the following command, replacing <span style="COLOR: #c00">this GUID</span> with your own application ID:
+    2.  Execute the following command, replacing each instance of  the GUID below with your own application ID:
 
-    ```
-    makecert -a sha256 -n "CN=WildcatApp-6f147b94-56d5-4e10-a44e-3a4bea89d878" -
-    sr LocalMachine -ss My -sky signature -pe -len 2048
+    ```cmd
+    makecert -a sha256 -n "CN=WildcatApp-6f147b94-56d5-4e10-a44e-3a4bea89d878" -sr LocalMachine -ss My -sky signature -pe -len 2048 
      "%USERPROFILE%\Downloads\6f147b94-56d5-4e10-a44e-3a4bea89d878.cer" 
     ```
 

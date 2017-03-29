@@ -93,7 +93,7 @@ Next, configure the application as a SODA master application in the Application 
 <span id="sectionToggleID0ECAAA"></span>
 The client application runs locally on a client machine and uses the API to authenticate against and access data on the HealthVault servers.
 
-The following example creates a C\# Windows console application that communicates with the HealthVault platform and shell services using the .NET API.
+The following example creates a C# Windows console application that communicates with the HealthVault platform and shell services using the .NET API.
 
 <table>
 <colgroup>
@@ -101,7 +101,7 @@ The following example creates a C\# Windows console application that communicate
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="https://i-msdn.sec.s-msft.com/areas/global/content/clear.gif" title="Note" alt="Ff803624.alert_note(en-us,MSDN.10).gif" id="alert_note" class="cl_IC101471" /> <strong>Note</strong></th>
+<th><img src="images/clear.gif" title="Note" alt="Ff803624.alert_note(en-us,MSDN.10).gif" id="alert_note" class="cl_IC101471" /> <strong>Note</strong></th>
 </tr>
 </thead>
 <tbody>

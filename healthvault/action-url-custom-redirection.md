@@ -5,7 +5,39 @@ The HealthServiceActionPage gives you a mechanism (see <a href="action-url.md" i
 
 Here is a code snippet that illustrates how to extend the HealthServiceActionPage:
 
-`using System;public partial class Redirect : Microsoft.Health.Web.HealthServiceActionPage {     // We don't want this page to require log on because when we sign out,    // we still want this page to read the WCPage_ActionSignOut key in the     protected override bool LogOnRequired     {        get        {           return false;        }    }    public const String ActionQueryStringValue = "actionqs";     public const String DefaultURL = "http://www.healthapp.com/username";    protected override void OnActionApplicationAuthorizationSuccessful(        string action,        string actionQueryString)    {        string targetLocation;        String fullTargetLocation;        string url = Request.QueryString[ActionQueryStringValue];        // TODO: Validate that the URL is from home domain         if (url != null)        {            targetLocation = url;        }        else        {            targetLocation = DefaultURL;         }        // we assume that the query string startswith ‘?’        fullTargetLocation = targetLocation + actionQueryString;        Response.Redirect(fullTargetLocation);    }}`
+```c#
+using System;
+public partial class Redirect : Microsoft.Health.Web.HealthServiceActionPage {
+     // We don't want this page to require log on because when we sign out,    
+     // we still want this page to read the WCPage_ActionSignOut key in the     
+     protected override bool LogOnRequired     
+     {
+         get { return false; }    
+     }
+     public const String ActionQueryStringValue = "actionqs";
+     public const String DefaultURL = "http://www.healthapp.com/username";    
+
+     protected override void OnActionApplicationAuthorizationSuccessful(string action, string actionQueryString) 
+     {        
+         string targetLocation;        
+         string fullTargetLocation;        
+         string url = Request.QueryString[ActionQueryStringValue];        
+         // TODO: Validate that the URL is from home domain         
+         if (url != null)        
+         {            
+             targetLocation = url;        
+         } 
+         else        
+         {            
+             targetLocation = DefaultURL;         
+         }        
+         // we assume that the query string startswith ‘?’        
+         fullTargetLocation = targetLocation + actionQueryString;        
+         Response.Redirect(fullTargetLocation);    
+     }
+}
+```
+
 The magic is in the OnActionApplicationAuthorizationSuccessful method, which allows us to override the authorization successful target. The HealthVault SDK HealthServiceActionPage now provides us several OnAction methods that could be used to override the particular APPAUTH targets.
 
 ### Integrating with HealthVault

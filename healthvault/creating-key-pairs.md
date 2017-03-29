@@ -32,16 +32,39 @@ If you lose the file that MakeCert generated, or if you generated your private k
 
 To create the private/public key pair:
 
-1.  Find makecert.exe in the bin directory of the Microsoft Visual Studio installation. It is also available in the Downloads section of the HealthVault MSDN site.
-2.  Using the MakeCert command:
+1. In Windows 10/Server 2016
+    1.  Open PowerShell as an Administrator
+    2.  Paste the following content into PowerShell, replacing “Insert your ApplicationID here” with the ApplicationID you received from HealthVault’s Application Configuration Center.
 
-    <span class="code">makecert.exe "&lt;OutputPath&gt;\\&lt;CertFileName&gt;.cer" -a sha1 -n "CN=WildcatApp-&lt;AppId&gt;" -sr LocalMachine -ss My -sky signature -pe -len 2048</span>
+    ```powershell
+    function Create-HealthVaultCert([guid]$applicationID) {
+        $cert = New-SelfSignedCertificate -DnsName "WildcatApp-$applicationID" -CertStoreLocation "cert:\\LocalMachine\My" -HashAlgorithm "SHA256" -Provider'Microsoft Enhanced RSA and AES Cryptographic Provider'    
+        Export-Certificate -Cert $cert -FilePath$env:USERPROFILE\Downloads\${applicationID}.cer    
+        Set-ReadPermissionsForCert $cert
+    }
+    function Set-ReadPermissionsForCert([System.Security.Cryptography.X509Certificates.X509Certificate]$Cert, [string]$Username = $env:USERNAME) {
+        $keyPath = "C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys\"    
+        $fullPath =$keyPath+$Cert.PrivateKey.CspKeyContainerInfo.UniqueKeyContainerName
+        $acl = Get-Acl -Path $fullPath    
+        $permission = $Username,"Read","Allow"    
+        $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule$permission    
+        $acl.AddAccessRule($accessRule)     
+        Set-Acl $fullPath $acl
+    } 
+    #Edit the string below to specify the appropriate ApplicationID you received from the Application Configuration Center
+    Create-HealthVaultCert("Insert Your ApplicationID Here")
+    ```
+2.  On previous versions of Windows
 
-    For example:
+    1.  Open a Visual Studio Developer Command Prompt as an Administrator.
+    2.  Execute the following command, replacing <span style="COLOR: #c00">this GUID</span> with your own application ID:
 
-    <span class="code">makecert.exe "c:\\temp\\MyCert.cer" -a sha1 -n "CN=WildcatApp-6296418d-a6c7-418d-84ea-f4c04b9dd1b6" -sr LocalMachine -ss My -sky signature -pe -len 2048</span>
+    ```cmd
+    makecert -a sha256 -n "CN=WildcatApp-6f147b94-56d5-4e10-a44e-3a4bea89d878" -sr LocalMachine -ss My -sky signature -pe -len 2048 
+     "%USERPROFILE%\Downloads\6f147b94-56d5-4e10-a44e-3a4bea89d878.cer" 
+    ```
 
-3.  Upload the resulting CER file and associated with your application using Application Configuration Center. This file contains the DER-encoded public key.
+3.  These commands will install the private key on your machine and write the public key to the specified certificate file. You will find the signed certificate in the Downloads folder for the currently logged in user.
 
 Exporting your private key and installing it on your application server
 -----------------------------------------------------------------------

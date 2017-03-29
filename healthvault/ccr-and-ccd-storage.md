@@ -5,19 +5,17 @@ Both the Continuity of Care Record ([CCR](http://www.centerforhit.org/online/chi
 
 To operate with such types, you need to use the HealthRecordItem type directly. To do so, you need to know the GUID associated with each type. You get the GUIDs from the [Thing Types Reference](http://developer.healthvault.com/types/types.aspx) page and encode them using the following:
 
-```
+```c#
       
-        readonly Guid CCR_THING_GUID =  
-    new Guid("1e1ccbfc-a55d-4d91-8940-fa2fbf73c195"); 
-readonly Guid CCD_THING_GUID =  
-    new Guid("9c48a2b8-952c-4f5a-935d-f3292326bf54");
+readonly Guid CCR_THING_GUID =  new Guid("1e1ccbfc-a55d-4d91-8940-fa2fbf73c195"); 
+readonly Guid CCD_THING_GUID =  new Guid("9c48a2b8-952c-4f5a-935d-f3292326bf54");
     
 ```
 
 To insert a CCR, use the following:
 
-```
-      voidAddCCR() 
+```c#
+void AddCCR() 
 { 
    XmlDocument ccrDocument = new XmlDocument(); 
    ccrDocument.Load(MapPath("ExampleCCR.xml")); 
@@ -26,7 +24,6 @@ To insert a CCR, use the following:
  
    PersonInfo.SelectedRecord.NewItem(ccr); 
 }
-    
 ```
 
 You might want to use XPathDocument instead of XMLDocument because it is cheaper than XMLDocument to use. Also note that the ExampleCCR.xml file must not have anything before the "&lt;ContinuityOfCareRecord&gt;" element—if it does, the framework rejects the file as poorly formatted.
@@ -35,7 +32,7 @@ To do the same thing with a CCD, change the appropriate "r" characters in the co
 
 To retrieve the types is also fairly simple. To look at all the CCDs stored in a record:
 
-```
+```c#
       List<HealthRecordItem> ccdItems =  
      GetValues<HealthRecordItem>(CCD_THING_GUID); 
  
@@ -43,7 +40,7 @@ foreach (HealthRecordItem ccd in ccdItems) 
 { 
    // ccd xml data is in ccd.TypeSpecificData 
 }  
-where GetValues() is from the HelloWorld sample.
+//where GetValues() is from the HelloWorld sample.
     
 ```
 

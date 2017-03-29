@@ -1,0 +1,1638 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  commentId: T:Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  id: StatisticsCounter
+  parent: Microsoft.Health.Utility.Diagnostics
+  children:
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.#ctor(System.String,System.String,Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit,Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes)
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.#ctor(System.String,System.String,System.String,Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit,Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes)
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Attributes
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.BindPerformanceCounter(System.String,System.String)
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.BindPerformanceCounter(System.String,System.String,System.String)
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Decrement
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Dispose
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Dispose(System.Boolean)
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Group
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Increment
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Name
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Reset
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Subgroup
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Units
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.UpdateAverage(System.Int64)
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Value
+  langs:
+  - csharp
+  - vb
+  name: StatisticsCounter
+  nameWithType: StatisticsCounter
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: StatisticsCounter
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 19
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nThis class provides the implementation for a statistical counter\nwith the ability to attach a system perf counter\n"
+  example: []
+  syntax:
+    content: 'public class StatisticsCounter : IDisposable'
+    content.vb: >-
+      Public Class StatisticsCounter
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  - System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.#ctor(System.String,System.String,System.String,Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit,Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.#ctor(System.String,System.String,System.String,Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit,Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes)
+  id: '#ctor(System.String,System.String,System.String,Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit,Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes)'
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: StatisticsCounter(String, String, String, StatisticsCounterUnit, StatisticsCounterAttributes)
+  nameWithType: StatisticsCounter.StatisticsCounter(String, String, String, StatisticsCounterUnit, StatisticsCounterAttributes)
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.StatisticsCounter(System.String, System.String, System.String, Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit, Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 37
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nInitializes a new instance of the stats counter.\n"
+  example: []
+  syntax:
+    content: public StatisticsCounter(string name, string group, string subgroup, StatisticsCounterUnit units, StatisticsCounterAttributes attributes)
+    content.vb: Public Sub New(name As String, group As String, subgroup As String, units As StatisticsCounterUnit, attributes As StatisticsCounterAttributes)
+    parameters:
+    - id: name
+      type: System.String
+      description: ''
+    - id: group
+      type: System.String
+      description: ''
+    - id: subgroup
+      type: System.String
+      description: ''
+    - id: units
+      type: Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit
+      description: ''
+    - id: attributes
+      type: Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes
+      description: ''
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.#ctor(System.String,System.String,Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit,Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.#ctor(System.String,System.String,Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit,Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes)
+  id: '#ctor(System.String,System.String,Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit,Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes)'
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: StatisticsCounter(String, String, StatisticsCounterUnit, StatisticsCounterAttributes)
+  nameWithType: StatisticsCounter.StatisticsCounter(String, String, StatisticsCounterUnit, StatisticsCounterAttributes)
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.StatisticsCounter(System.String, System.String, Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit, Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 58
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nInitializes a new instance of the stats counter.\n"
+  example: []
+  syntax:
+    content: public StatisticsCounter(string name, string group, StatisticsCounterUnit units, StatisticsCounterAttributes attributes)
+    content.vb: Public Sub New(name As String, group As String, units As StatisticsCounterUnit, attributes As StatisticsCounterAttributes)
+    parameters:
+    - id: name
+      type: System.String
+      description: ''
+    - id: group
+      type: System.String
+      description: ''
+    - id: units
+      type: Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit
+      description: ''
+    - id: attributes
+      type: Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Name
+  commentId: P:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Name
+  id: Name
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: StatisticsCounter.Name
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Name
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Name
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 70
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nGets the stats counter name.\n"
+  example: []
+  syntax:
+    content: public string Name { get; }
+    content.vb: Public ReadOnly Property Name As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Name*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Group
+  commentId: P:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Group
+  id: Group
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: Group
+  nameWithType: StatisticsCounter.Group
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Group
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Group
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 75
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nGets the stats counter group.\n"
+  example: []
+  syntax:
+    content: public string Group { get; }
+    content.vb: Public ReadOnly Property Group As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Group*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Subgroup
+  commentId: P:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Subgroup
+  id: Subgroup
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: Subgroup
+  nameWithType: StatisticsCounter.Subgroup
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Subgroup
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Subgroup
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 80
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nGets the stats counter sub-group.\n"
+  example: []
+  syntax:
+    content: public string Subgroup { get; }
+    content.vb: Public ReadOnly Property Subgroup As String
+    parameters: []
+    return:
+      type: System.String
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Subgroup*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Units
+  commentId: P:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Units
+  id: Units
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: Units
+  nameWithType: StatisticsCounter.Units
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Units
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Units
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 85
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nGets the units for the stats counter.\n"
+  example: []
+  syntax:
+    content: public StatisticsCounterUnit Units { get; }
+    content.vb: Public ReadOnly Property Units As StatisticsCounterUnit
+    parameters: []
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Units*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Attributes
+  commentId: P:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Attributes
+  id: Attributes
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: Attributes
+  nameWithType: StatisticsCounter.Attributes
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Attributes
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Attributes
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 90
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nGets the stats counter attributes.\n"
+  example: []
+  syntax:
+    content: public StatisticsCounterAttributes Attributes { get; }
+    content.vb: Public ReadOnly Property Attributes As StatisticsCounterAttributes
+    parameters: []
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Attributes*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Value
+  commentId: P:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Value
+  id: Value
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: StatisticsCounter.Value
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Value
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Value
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 95
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nGets the absolute stats counter value.\n"
+  example: []
+  syntax:
+    content: public long Value { get; }
+    content.vb: Public ReadOnly Property Value As Long
+    parameters: []
+    return:
+      type: System.Int64
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Value*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Increment
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Increment
+  id: Increment
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: Increment()
+  nameWithType: StatisticsCounter.Increment()
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Increment()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Increment
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 188
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nIncrements the counter value by 1.\n"
+  example: []
+  syntax:
+    content: public void Increment()
+    content.vb: Public Sub Increment
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Increment*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Decrement
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Decrement
+  id: Decrement
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: Decrement()
+  nameWithType: StatisticsCounter.Decrement()
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Decrement()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Decrement
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 210
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nDecrements the counter value by 1.\n"
+  example: []
+  syntax:
+    content: public void Decrement()
+    content.vb: Public Sub Decrement
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Decrement*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.UpdateAverage(System.Int64)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.UpdateAverage(System.Int64)
+  id: UpdateAverage(System.Int64)
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: UpdateAverage(Int64)
+  nameWithType: StatisticsCounter.UpdateAverage(Int64)
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.UpdateAverage(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: UpdateAverage
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 233
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nUpdates the stat counter average value.\n"
+  example: []
+  syntax:
+    content: public void UpdateAverage(long value)
+    content.vb: Public Sub UpdateAverage(value As Long)
+    parameters:
+    - id: value
+      type: System.Int64
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.UpdateAverage*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Reset
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Reset
+  id: Reset
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: Reset()
+  nameWithType: StatisticsCounter.Reset()
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Reset()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Reset
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 288
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nResets the stats counters.\n"
+  example: []
+  syntax:
+    content: public void Reset()
+    content.vb: Public Sub Reset
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Reset*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.BindPerformanceCounter(System.String,System.String)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.BindPerformanceCounter(System.String,System.String)
+  id: BindPerformanceCounter(System.String,System.String)
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: BindPerformanceCounter(String, String)
+  nameWithType: StatisticsCounter.BindPerformanceCounter(String, String)
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.BindPerformanceCounter(System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: BindPerformanceCounter
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 316
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nBinds the perf counter.\n"
+  example: []
+  syntax:
+    content: public void BindPerformanceCounter(string categoryName, string counterName)
+    content.vb: Public Sub BindPerformanceCounter(categoryName As String, counterName As String)
+    parameters:
+    - id: categoryName
+      type: System.String
+      description: ''
+    - id: counterName
+      type: System.String
+      description: ''
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.BindPerformanceCounter*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.BindPerformanceCounter(System.String,System.String,System.String)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.BindPerformanceCounter(System.String,System.String,System.String)
+  id: BindPerformanceCounter(System.String,System.String,System.String)
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: BindPerformanceCounter(String, String, String)
+  nameWithType: StatisticsCounter.BindPerformanceCounter(String, String, String)
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.BindPerformanceCounter(System.String, System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: BindPerformanceCounter
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 329
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nBinds the perf counter.\n"
+  example: []
+  syntax:
+    content: public void BindPerformanceCounter(string categoryName, string counterName, string instanceName)
+    content.vb: Public Sub BindPerformanceCounter(categoryName As String, counterName As String, instanceName As String)
+    parameters:
+    - id: categoryName
+      type: System.String
+      description: ''
+    - id: counterName
+      type: System.String
+      description: ''
+    - id: instanceName
+      type: System.String
+      description: ''
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.BindPerformanceCounter*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Dispose
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Dispose
+  id: Dispose
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: StatisticsCounter.Dispose()
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Dispose
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 414
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Dispose(System.Boolean)
+  commentId: M:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Dispose(System.Boolean)
+  id: Dispose(System.Boolean)
+  parent: Microsoft.Health.Utility.Diagnostics.StatisticsCounter
+  langs:
+  - csharp
+  - vb
+  name: Dispose(Boolean)
+  nameWithType: StatisticsCounter.Dispose(Boolean)
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Dispose(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Dispose
+    path: ../Microsoft.Health.Utility/Diagnostics/Statistics/StatisticsCounter.cs
+    startLine: 420
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  syntax:
+    content: protected virtual void Dispose(bool disposing)
+    content.vb: Protected Overridable Sub Dispose(disposing As Boolean)
+    parameters:
+    - id: disposing
+      type: System.Boolean
+  overload: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Dispose*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+references:
+- uid: Microsoft.Health.Utility.Diagnostics
+  commentId: N:Microsoft.Health.Utility.Diagnostics
+  isExternal: false
+  name: Microsoft.Health.Utility.Diagnostics
+  nameWithType: Microsoft.Health.Utility.Diagnostics
+  fullName: Microsoft.Health.Utility.Diagnostics
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  name: SetProperty(String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object())
+  name.vb: SetProperty(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  name: InvokeMethod(String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object())
+  name.vb: InvokeMethod(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  parent: Microsoft.Health.Utility.InvariantString
+  definition: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  name: ToStringInvariant()
+  nameWithType: InvariantString.ToStringInvariant()
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  parent: Microsoft.Health.Utility.TypeHelper
+  definition: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  name: ValueOrDbNull<StatisticsCounter>()
+  nameWithType: TypeHelper.ValueOrDbNull<StatisticsCounter>()
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.Utility.Diagnostics.StatisticsCounter>()
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of StatisticsCounter)()
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.Utility.Diagnostics.StatisticsCounter)()
+  name.vb: ValueOrDbNull(Of StatisticsCounter)()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull<StatisticsCounter>
+    nameWithType: TypeHelper.ValueOrDbNull<StatisticsCounter>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.Utility.Diagnostics.StatisticsCounter>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull(Of StatisticsCounter)
+    nameWithType: TypeHelper.ValueOrDbNull(Of StatisticsCounter)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.Utility.Diagnostics.StatisticsCounter)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  parent: Microsoft.Health.Utility.WCXmlHelper
+  definition: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  name: ToXml()
+  nameWithType: WCXmlHelper.ToXml()
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: SetProperty(Object, String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object())
+  name.vb: SetProperty(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions
+  commentId: T:Microsoft.Health.Utility.IDispatchExtensions
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: IDispatchExtensions
+  nameWithType: IDispatchExtensions
+  fullName: Microsoft.Health.Utility.IDispatchExtensions
+- uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: InvokeMethod(Object, String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object())
+  name.vb: InvokeMethod(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  isExternal: true
+  name: ToStringInvariant(Object)
+  nameWithType: InvariantString.ToStringInvariant(Object)
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString
+  commentId: T:Microsoft.Health.Utility.InvariantString
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: InvariantString
+  nameWithType: InvariantString
+  fullName: Microsoft.Health.Utility.InvariantString
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  isExternal: false
+  name: ValueOrDbNull<T>(T)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(T)
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(T)
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(T)
+  name.vb: ValueOrDbNull(Of T)(T)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull<T>
+    nameWithType: TypeHelper.ValueOrDbNull<T>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull(Of T)
+    nameWithType: TypeHelper.ValueOrDbNull(Of T)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+- uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  isExternal: true
+  name: ToXml(Object)
+  nameWithType: WCXmlHelper.ToXml(Object)
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.WCXmlHelper
+  commentId: T:Microsoft.Health.Utility.WCXmlHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: WCXmlHelper
+  nameWithType: WCXmlHelper
+  fullName: Microsoft.Health.Utility.WCXmlHelper
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.#ctor*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.#ctor
+  isExternal: false
+  name: StatisticsCounter
+  nameWithType: StatisticsCounter.StatisticsCounter
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.StatisticsCounter
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit
+  commentId: T:Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit
+  parent: Microsoft.Health.Utility.Diagnostics
+  isExternal: false
+  name: StatisticsCounterUnit
+  nameWithType: StatisticsCounterUnit
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounterUnit
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes
+  commentId: T:Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes
+  parent: Microsoft.Health.Utility.Diagnostics
+  isExternal: false
+  name: StatisticsCounterAttributes
+  nameWithType: StatisticsCounterAttributes
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounterAttributes
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Name*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Name
+  isExternal: false
+  name: Name
+  nameWithType: StatisticsCounter.Name
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Name
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Group*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Group
+  isExternal: false
+  name: Group
+  nameWithType: StatisticsCounter.Group
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Group
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Subgroup*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Subgroup
+  isExternal: false
+  name: Subgroup
+  nameWithType: StatisticsCounter.Subgroup
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Subgroup
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Units*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Units
+  isExternal: false
+  name: Units
+  nameWithType: StatisticsCounter.Units
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Units
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Attributes*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Attributes
+  isExternal: false
+  name: Attributes
+  nameWithType: StatisticsCounter.Attributes
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Attributes
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Value*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Value
+  isExternal: false
+  name: Value
+  nameWithType: StatisticsCounter.Value
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Value
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Increment*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Increment
+  isExternal: false
+  name: Increment
+  nameWithType: StatisticsCounter.Increment
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Increment
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Decrement*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Decrement
+  isExternal: false
+  name: Decrement
+  nameWithType: StatisticsCounter.Decrement
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Decrement
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.UpdateAverage*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.UpdateAverage
+  isExternal: false
+  name: UpdateAverage
+  nameWithType: StatisticsCounter.UpdateAverage
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.UpdateAverage
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Reset*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Reset
+  isExternal: false
+  name: Reset
+  nameWithType: StatisticsCounter.Reset
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Reset
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.BindPerformanceCounter*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.BindPerformanceCounter
+  isExternal: false
+  name: BindPerformanceCounter
+  nameWithType: StatisticsCounter.BindPerformanceCounter
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.BindPerformanceCounter
+- uid: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Dispose*
+  commentId: Overload:Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: StatisticsCounter.Dispose
+  fullName: Microsoft.Health.Utility.Diagnostics.StatisticsCounter.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

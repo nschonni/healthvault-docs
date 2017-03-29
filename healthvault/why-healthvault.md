@@ -3,8 +3,6 @@ Why create HealthVault-enabled applications?
 
 Microsoft HealthVault allows people to store and transfer information between a variety of health-related applications, devices, services, and even clinical systems. As a platform, HealthVault makes it easy for you to build an online tool for your community members.
 
-CHANGE
-
 Why should you create HealthVault-enabled applications?
 -------------------------------------------------------
 

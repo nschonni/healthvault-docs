@@ -16,7 +16,164 @@ You can limit the number of full items returned by specifying the **max-full** a
 
 The following series of **GetThings** requests and responses demonstrates how to page through data. To make the example shorter, the example requests weight measurement data, requests only three full things per **GetThings** request, and some of the XML has been removed and replaced with comments.
 
-`<wc-request:request xmlns:wc-request="urn:com.microsoft.wc.request">  <auth><!-- ... --></auth>  <header><!-- ... --></header>  <info>    <group name="Weight" max-full="3">      <filter>        <type-id>3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>        <thing-state>Active</thing-state>      </filter>      <format>        <section>core</section>        <xml />        <type-version-format>3d34d87e-7fc1-4153-800f-f56592cb0d17</type-version-format>      </format>    </group>  </info></wc-request:request><response>  <status>    <code>0</code>  </status>  <wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.GetThings3">    <group name="Weight">      <thing>        <thing-id version-stamp="72161432-13aa-4a34-b969-92a83527ffb3">            26a4598d-7db2-4d96-85bc-3e3dca5dce4b</thing-id>        <type-id name="Weight Measurement">3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>        <thing-state>Active</thing-state>        <flags>0</flags>        <eff-date>2012-08-30T00:00:00</eff-date>        <data-xml><!-- ... --></data-xml>      </thing>      <thing><!-- ... --></thing>      <thing><!-- ... --></thing>      <unprocessed-thing-key-info>        <thing-id version-stamp="212eaf83-0396-4f4f-b8e1-1099f8c091ef">            829adb77-22de-48e8-8017-e6e5acf0dd3e</thing-id>        <type-id name="Weight Measurement">3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>        <eff-date>2012-08-27T00:00:00</eff-date>      </unprocessed-thing-key-info>      <unprocessed-thing-key-info>        <thing-id version-stamp="7c345b6b-5072-4aca-a454-5aa7148982cf">            373c0743-2a7c-4d0c-967c-f6bdccb6a75d</thing-id>        <!-- ... -->      </unprocessed-thing-key-info>      <unprocessed-thing-key-info>        <thing-id version-stamp="6672961b-3715-4b52-8426-6671841cc430">            a73685c8-9e08-499b-99c5-abed52aea730</thing-id>          <!-- ... -->      </unprocessed-thing-key-info>      <!-- ... -->    </group>  </wc:info></response><wc-request:request xmlns:wc-request="urn:com.microsoft.wc.request">  <!-- ... -->  <info>    <group>      <key version-stamp="212eaf83-0396-4f4f-b8e1-1099f8c091ef">        829adb77-22de-48e8-8017-e6e5acf0dd3e</key>      <key version-stamp="7c345b6b-5072-4aca-a454-5aa7148982cf">        373c0743-2a7c-4d0c-967c-f6bdccb6a75d</key>      <key version-stamp="6672961b-3715-4b52-8426-6671841cc430">        a73685c8-9e08-499b-99c5-abed52aea730</key>      <format><!-- ... --></format>      <current-version-only>true</current-version-only>    </group>  </info></wc-request:request><response>  <status><code>0</code></status>  <wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.GetThings3">    <group>      <thing>        <thing-id version-stamp="212eaf83-0396-4f4f-b8e1-1099f8c091ef">            829adb77-22de-48e8-8017-e6e5acf0dd3e</thing-id>        <type-id name="Weight Measurement">3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>        <thing-state>Active</thing-state>        <flags>0</flags>        <eff-date>2012-08-27T00:00:00</eff-date>        <data-xml><!-- ... --></data-xml>      </thing>      <thing>        <thing-id version-stamp="7c345b6b-5072-4aca-a454-5aa7148982cf">          373c0743-2a7c-4d0c-967c-f6bdccb6a75d</thing-id>          <!-- ... -->      </thing>      <thing>        <thing-id version-stamp="6672961b-3715-4b52-8426-6671841cc430">            a73685c8-9e08-499b-99c5-abed52aea730</thing-id>          <!-- ... -->      </thing>    </group>  </wc:info></response> `
+```xml
+<request xmlns:wc-request="urn:com.microsoft.wc.request">
+	<auth>
+		<!-- ... -->
+	</auth>	
+	<header>
+		<!-- ... -->
+	</header>
+	<info>
+		<group name="Weight" max-full="3">	
+			<filter>
+				<type-id>
+					3d34d87e-7fc1-4153-800f-f56592cb0d17
+				</type-id>
+				<thing-state>
+					Active
+				</thing-state>
+			</filter>
+			<format>
+				<section>
+					core
+				</section>
+				<xml />
+				<type-version-format>
+					3d34d87e-7fc1-4153-800f-f56592cb0d17
+				</type-version-format>
+			</format>
+		</group>
+	</info>
+</request>
+<response>
+	<status>
+		<code>
+			0
+		</code>
+	</status>
+	<info xmlns:wc="urn:com.microsoft.wc.methods.response.GetThings3">
+		<group name="Weight">
+			<thing>
+				<thing-id version-stamp="72161432-13aa-4a34-b969-92a83527ffb3">
+					26a4598d-7db2-4d96-85bc-3e3dca5dce4b
+				</thing-id>
+				<type-id name="Weight Measurement">
+					3d34d87e-7fc1-4153-800f-f56592cb0d17
+				</type-id>
+				<thing-state>
+					Active
+				</thing-state>
+				<flags>
+					0
+				</flags>
+				<eff-date>
+					2012-08-30T00:00:00
+				</eff-date>
+				<data-xml>
+					<!-- ... -->
+				</data-xml>
+			</thing>
+			<thing>
+				<!-- ... -->
+			</thing>
+			<thing>
+				<!-- ... -->
+			</thing>
+			<unprocessed-thing-key-info>
+				<thing-id version-stamp="212eaf83-0396-4f4f-b8e1-1099f8c091ef">
+					829adb77-22de-48e8-8017-e6e5acf0dd3e
+				</thing-id>
+				<type-id name="Weight Measurement">
+					3d34d87e-7fc1-4153-800f-f56592cb0d17
+				</type-id>
+				<eff-date>
+					2012-08-27T00:00:00
+				</eff-date>
+			</unprocessed-thing-key-info>
+			<unprocessed-thing-key-info>
+				<thing-id version-stamp="7c345b6b-5072-4aca-a454-5aa7148982cf">
+					373c0743-2a7c-4d0c-967c-f6bdccb6a75d
+				</thing-id>
+				<!-- ... -->
+			</unprocessed-thing-key-info>
+			<unprocessed-thing-key-info>
+				<thing-id version-stamp="6672961b-3715-4b52-8426-6671841cc430">
+					a73685c8-9e08-499b-99c5-abed52aea730
+				</thing-id>
+				<!-- ... -->
+			</unprocessed-thing-key-info>
+			<!-- ... -->
+		</group>
+	</info>
+</response>
+<request xmlns:wc-request="urn:com.microsoft.wc.request">
+	<!-- ... -->
+	<info>
+		<group>	
+			<key version-stamp="212eaf83-0396-4f4f-b8e1-1099f8c091ef">
+				829adb77-22de-48e8-8017-e6e5acf0dd3e
+			</key>
+			<key version-stamp="7c345b6b-5072-4aca-a454-5aa7148982cf">
+				373c0743-2a7c-4d0c-967c-f6bdccb6a75d
+			</key>
+			<key version-stamp="6672961b-3715-4b52-8426-6671841cc430">
+				a73685c8-9e08-499b-99c5-abed52aea730
+			</key>
+			<format>
+				<!-- ... -->
+			</format>
+			<current-version-only>
+				true
+			</current-version-only>
+		</group>
+	</info>
+</request>
+<response>
+	<status>
+		<code>
+			0
+		</code>
+	</status>
+	<info xmlns:wc="urn:com.microsoft.wc.methods.response.GetThings3">
+		<group>
+			<thing>
+				<thing-id version-stamp="212eaf83-0396-4f4f-b8e1-1099f8c091ef">
+					829adb77-22de-48e8-8017-e6e5acf0dd3e
+				</thing-id>
+				<type-id name="Weight Measurement">
+					3d34d87e-7fc1-4153-800f-f56592cb0d17
+				</type-id>
+				<thing-state>
+					Active
+				</thing-state>
+				<flags>
+					0
+				</flags>
+				<eff-date>
+					2012-08-27T00:00:00
+				</eff-date>
+				<data-xml>
+					<!-- ... -->
+				</data-xml>
+			</thing>
+			<thing>
+				<thing-id version-stamp="7c345b6b-5072-4aca-a454-5aa7148982cf">
+					373c0743-2a7c-4d0c-967c-f6bdccb6a75d
+				</thing-id>
+				<!-- ... -->
+			</thing>
+			<thing>
+				<thing-id version-stamp="6672961b-3715-4b52-8426-6671841cc430">
+					a73685c8-9e08-499b-99c5-abed52aea730
+				</thing-id>
+				<!-- ... -->
+			</thing>
+		</group>
+	</info>
+</response>
+
+```
 Performance considerations
 --------------------------
 
@@ -33,7 +190,27 @@ To specify the maximum number of full things in a response in the HealthVault .N
 
 The following example contains a method that returns a **HealthRecordItemCollection** that retreives a page of items per **GetThings** request.
 
-`private  static HealthRecordItemCollection GetItemCollection(        HealthRecordAccessor accessor,        Guid typeId,        int maxFullItems){    // Create a filter to retrieve the thing type.    string groupName = ItemTypeManager.GetRegisteredTypeForTypeId(typeId).Name;    HealthRecordFilter filter = new HealthRecordFilter(typeId);    filter.Name = groupName;    filter.MaxFullItemsReturnedPerRequest = maxFullItems;    // Search the health record for the specified type.    HealthRecordSearcher searcher = accessor.CreateSearcher();    searcher.Filters.Add(filter);    // Since the searcher has only one filter, the search results    // contain only one item group.    return searcher.GetMatchingItems()[0];} `
+```cs
+private  static HealthRecordItemCollection GetItemCollection(
+        HealthRecordAccessor accessor,
+        Guid typeId,
+        int maxFullItems)
+{    
+    // Create a filter to retrieve the thing type.    
+    string groupName = ItemTypeManager.GetRegisteredTypeForTypeId(typeId).Name;
+    HealthRecordFilter filter = new HealthRecordFilter(typeId);    
+    filter.Name = groupName;    
+    filter.MaxFullItemsReturnedPerRequest = maxFullItems;
+    
+    // Search the health record for the specified type.
+    HealthRecordSearcher searcher = accessor.CreateSearcher();    
+    searcher.Filters.Add(filter);    
+    // Since the searcher has only one filter, the search results
+    // contain only one item group.    
+    return searcher.GetMatchingItems()[0];
+}
+```
+
 The HealthVault .Net SDK also provides an ASP.NET server control for viewing health record items that implements paging, the [HealthRecordItemDataGrid](https://msdn.microsoft.com/en-us/library/microsoft.health.web.healthrecorditemdatagrid.aspx) class. The source code is a great place to see how to incorporate paging with a grid view.
 
 ### Integrating with HealthVault

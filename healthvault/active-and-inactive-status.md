@@ -60,13 +60,37 @@ Inactive items have an updated end date in the past. To query for these, set the
 
 The following example creates an inactive item.
 
-`// This example shows how to mark an item as inactive Medication med = new Medication(new CodableValue("My medication"));med.UpdatedEndDate = new DateTime(2013, 6, 8); PersonInfo.SelectedRecord.NewItem(med);`
+```c#
+// This example shows how to mark an item as inactive 
+Medication med = new Medication(new CodableValue("My medication"));
+med.UpdatedEndDate = new DateTime(2013, 6, 8); 
+PersonInfo.SelectedRecord.NewItem(med);
+```
+
 The following example clears the updated end date of an item.
 
-`// In this example, "9b3ef8ad-dd4a-484c-aa05-66f967470e0f" is the thing id // for an existing Medication instance. HealthRecordItem med = PersonInfo.SelectedRecord.GetItem(new Guid("9b3ef8ad-dd4a-484c-aa05-66f967470e0f"));med.UpdatedEndDate = DateTime.MaxValue;PersonInfo.SelectedRecord.UpdateItem(med);`
+```c#
+// In this example, "9b3ef8ad-dd4a-484c-aa05-66f967470e0f" is the thing id 
+// for an existing Medication instance. 
+HealthRecordItem med = PersonInfo.SelectedRecord.GetItem(new Guid("9b3ef8ad-dd4a-484c-aa05-66f967470e0f"));
+med.UpdatedEndDate = DateTime.MaxValue;
+PersonInfo.SelectedRecord.UpdateItem(med);
+```
+
 The following example queries for active items.
 
-`// This example shows how to query for active items, which have // an updated end date in the future HealthRecordItemCollection GetActiveItems(Guid typeId){    HealthRecordSearcher searcher = PersonInfo.SelectedRecord.CreateSearcher();    HealthRecordFilter filter = new HealthRecordFilter(typeId);    filter.UpdatedEndDateMin = DateTime.Today;     searcher.Filters.Add(filter);    HealthRecordItemCollection items = searcher.GetMatchingItems()[0];}`
+```c#
+// This example shows how to query for active items, which have 
+// an updated end date in the future 
+HealthRecordItemCollection GetActiveItems(Guid typeId) 
+{    
+    HealthRecordSearcher searcher = PersonInfo.SelectedRecord.CreateSearcher();    
+    HealthRecordFilter filter = new HealthRecordFilter(typeId);    
+    filter.UpdatedEndDateMin = DateTime.Today;     
+    searcher.Filters.Add(filter);    
+    ealthRecordItemCollection items = searcher.GetMatchingItems()[0];
+}
+```
 
 ### Integrating with HealthVault
 

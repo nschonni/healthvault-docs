@@ -145,10 +145,55 @@ Code samples using the .NET SDK
 
 The following example creates a connect request
 
-`private void CreateConnectRequest(    string friendlyName,    string secretQuestion,    string secretAnswer,    string patientId){    // Create an offline connection    OfflineWebApplicationConnection connection = new OfflineWebApplicationConnection(        ApplicationId,        HealthServiceUrl,        Guid.Empty /* offlinePersonId */);    // Create the connect request    string code = PatientConnection.Create(        connection,        friendlyName,        secretQuestion,        secretAnswer,        null/* callbackUrl -- not implemented */,        patientId);    // Email the URL and code to the user    SendConnectRequestMail(patientId, code);}`
+```cs
+private void CreateConnectRequest(
+    string friendlyName,
+    string secretQuestion,
+    string secretAnswer,
+    string patientId)
+{
+    // Create an offline connection
+    OfflineWebApplicationConnection connection = new OfflineWebApplicationConnection(
+            ApplicationId,
+            HealthServiceUrl,
+            Guid.Empty /* offlinePersonId */);
+    // Create the connect request
+    string code = PatientConnection.Create(
+            connection,
+            friendlyName,
+            secretQuestion,
+            secretAnswer,
+            null/* callbackUrl -- not implemented */,
+            patientId);    
+    
+    // Email the URL and code to the user    
+    SendConnectRequestMail(patientId, code);
+}
+```
 The following example retrieves authorized connect requests
 
-`private void GetAuthorizedRequests(DateTime validatedSince){    // Create an offline connection    OfflineWebApplicationConnection connection = new OfflineWebApplicationConnection(    ApplicationId,    HealthServiceUrl,    Guid.Empty /* offlinePersonId */);    // Retrieve connections validated since validatedSince    Collection&lt;ValidatedPatientConnection> validatedConnections =    PatientConnection.GetValidatedConnections(connection, validatedSince);    // Update local store with HealthVault IDs    foreach (ValidatedPatientConnection validatedConnection in validatedConnections)    {        UpdateHealthVaultIds(        validatedConnection.ApplicationPatientId,        validatedConnection.PersonId,        validatedConnection.RecordId);    }} `
+```cs
+private void GetAuthorizedRequests(DateTime validatedSince)
+{    
+    // Create an offline connection    
+    OfflineWebApplicationConnection connection = new OfflineWebApplicationConnection(
+        ApplicationId,
+        HealthServiceUrl,
+        Guid.Empty /* offlinePersonId */);
+
+    // Retrieve connections validated since validatedSince
+    Collection<ValidatedPatientConnection> validatedConnections =
+        PatientConnection.GetValidatedConnections(connection, validatedSince);    
+    // Update local store with HealthVault IDs    
+    foreach (ValidatedPatientConnection validatedConnection in validatedConnections)    
+    {        
+        UpdateHealthVaultIds(
+            validatedConnection.ApplicationPatientId,
+            validatedConnection.PersonId,
+            validatedConnection.RecordId);
+     }
+} 
+```
 
 ### Integrating with HealthVault
 
