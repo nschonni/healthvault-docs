@@ -102,13 +102,11 @@
 ### [ACC Online and Offline Rules Tab](tools/acc/acc-online-and-offline-rules-tab.md)
 ### [ACC Public Certs Tab](tools/acc/acc-public-certs-tab.md)
 
-# SDKs
+# Reference
 ## .NET
 ### [HealthVault .NET SDK reference](healthvault-.net-sdk-reference.md)
 ### [.NET SDK version](.net-sdk-version.md)
-## iOS
-
-## Java
+## [REST API](apis/)
 
 ## [Device Driver Kit](device-overview.md)
 ### [Device Code 10 Errors](device-code-10-errors.md)
