@@ -106,7 +106,7 @@
 ## .NET
 ### [HealthVault .NET SDK reference](sdks/dotnet/toc.yml)
 ### [.NET SDK version](.net-sdk-version.md)
-## [REST API](apis/)
+## [REST API](apis/toc.yml)
 
 ## [Device Driver Kit](device-overview.md)
 ### [Device Code 10 Errors](device-code-10-errors.md)

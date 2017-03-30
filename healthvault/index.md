@@ -239,6 +239,9 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                     <li>
                                         <div class="container">
                                             <h1>Languages &amp; Frameworks</h1>
+                                                                    <p>
+                            HealthVault has SDKs available for many popular languages and frameworks. 
+                        </p>
                                         </div>
                                     </li>
                                     <li>
@@ -382,13 +385,10 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                     <div class="cardText">
                                                         <h3>PowerShell</h3>
                                                         <p>
-                                                            <a href="/azure/powershell-install-configure">Get Started</a>
+                                                            <a href="https://github.com/Microsoft/healthvault-samples/tree/master/powershell">HealthVault tools for PowerShell</a>
                                                         </p>
                                                         <p>
                                                             <a href="https://github.com/PowerShell/PowerShell/blob/master/docs/installation/">Download PowerShell</a>
-                                                        </p>
-                                                        <p>
-                                                            <a href="/powershell/">Reference</a>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -405,10 +405,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                         </div>
                                                     </div>
                                                     <div class="cardText">
-                                                        <h3>Application Configuration Center</h3>
-                                                        <p>
-                                                            <a href="https://config.healthvault-ppe.com/">Get Started</a>
-                                                        </p>
+                                                        <h3><a href="https://config.healthvault-ppe.com/">Application Configuration Center</a></h3>
                                                         <p>
                                                             <a href="tools/acc/acc-tool.md">Reference</a>
                                                         </p>

@@ -114,7 +114,7 @@ Platform XML methods
 .NET SDK
 --------
 
-The HealthVault .NET SDK contains classes and methods in the [Microsoft.Health.Package](microsoft.health.package-namespace.md) namespace for creating and managing DOPU packages.
+The HealthVault .NET SDK contains classes and methods in the [Microsoft.Health.Package](sdks/dotnet/microsoft.health.package.yml) namespace for creating and managing DOPU packages.
 
 Creating the package
 --------------------
@@ -139,7 +139,44 @@ The unencrypted data should be a sequence of thing XMLs of any HealthVault data 
 
 For example:
 
-`<thing>  <type-id>3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>  <data-xml>    <weight>      <when>        <date>          <y>2006</y>          <m>12</m>          <d>22</d>        </date>      </when>      <value>        <kg>125</kg>        <display units="lb" units-code="lb">275.5625</display>      </value>    </weight>  </data-xml></thing><thing>  <type-id>3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>  <data-xml>    <weight>      <when>        <date>          <y>2006</y>          <m>12</m>          <d>22</d>        </date>      </when>      <value>        <kg>114</kg>        <display units="lb" units-code="lb">251.313</display>      </value>    </weight>  </data-xml></thing> `
+```xml
+<thing>  
+    <type-id>3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>  
+    <data-xml>    
+        <weight>     
+            <when>        
+                <date>          
+                    <y>2006</y>         
+                    <m>12</m>          
+                    <d>22</d>        
+                </date>      
+            </when>      
+            <value>        
+                <kg>125</kg>        
+                <display units="lb" units-code="lb">275.5625</display>      
+            </value>    
+        </weight>  
+    </data-xml>
+</thing>
+<thing>  
+    <type-id>3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>  
+    <data-xml>    
+        <weight>      
+            <when>        
+                <date>          
+                    <y>2006</y>          
+                    <m>12</m>          
+                    <d>22</d>        
+                </date>      
+            </when>      
+            <value>        
+                <kg>114</kg>        
+                <display units="lb" units-code="lb">251.313</display>
+            </value>    
+        </weight>  
+    </data-xml>
+</thing> 
+```
 Adding blobs to package data items is very similar to adding blobs to regular items – the only difference is that you need to call BeginPutConnectPackageBlob instead of BeginPutBlob when initiating a streamed blob for DOPU packages. Using the blob URL returned by BeginPutConnectPackageBlob, you stream the blob data to HealthVault and add the blob metadata to the thing XML as with regular items.
 
 To preserve the confidentiality of the DOPU package, the data should be encrypted based on the user's secret answer before uploading to HealthVault. The encryption key should be derived using the user's secret answer and a salt and iteration count specified by the app. (See the IETF RFC 2892 as a reference.) To ensure case-insensitivity, HealthVault converts the secret answer to lowercase when attempting to decrypt the package, so the answer should be converted to lowercase when encrypting the package as well. The .NET SDK does this automatically. In addition, the unencrypted data should include a Hash-based Message Authentication Code (HMAC) based on the same salt as the encryption key in order for HealthVault to confirm the integrity of the data when the package is picked up.
@@ -238,7 +275,46 @@ Code sample using the .NET SDK
 
 Creating a DOPU package:
 
-`private static void CreateDopuPackage(    string friendlyName,    string secretQuestion,    string secretAnswer,    string patientId,    double weight,    double height,    string imagePath){    // Create an offline connection    OfflineWebApplicationConnection connection = new OfflineWebApplicationConnection(        ApplicationId,        HealthServiceUrl,        Guid.Empty /* offlinePersonId */);    // Create package parameters    ConnectPackageCreationParameters parameters = new ConnectPackageCreationParameters(        connection,        friendlyName,        secretQuestion,        secretAnswer,        patientId);    // Create items    Weight weightItem = new Weight(    new HealthServiceDateTime(DateTime.Now), new WeightValue(weight));    Height heightItem = new Height(height);    // Stream a blob    BlobStore blobStore = heightItem.GetBlobStore(parameters);    using (IO.FileStream stream = new IO.FileStream(imagePath, IO.FileMode.Open))    {        blobStore.Write("attachment", "image\\jpg", stream);    }    // Create the package    string code = ConnectPackage.Create(        parameters,        new List<HealthRecordItem>() { weightItem, heightItem });    // Email the URL and code to the user    SendConnectPackageMail(patientId, code);}`
+```cs
+private static void CreateDopuPackage(
+        string friendlyName,   
+        string secretQuestion,    
+        string secretAnswer,    
+        string patientId,    
+        double weight,   
+        double height,    
+        string imagePath)
+{
+        // Create an offline connection    
+    OfflineWebApplicationConnection connection = new OfflineWebApplicationConnection(        
+        ApplicationId,        
+        HealthServiceUrl,        
+        Guid.Empty /* offlinePersonId */);    
+        // Create package parameters    
+    ConnectPackageCreationParameters parameters = new ConnectPackageCreationParameters(        
+        connection,        
+        friendlyName,        
+        secretQuestion,        
+        secretAnswer,        
+        patientId);    
+        // Create items   
+    Weight weightItem = new Weight(    
+        new HealthServiceDateTime(DateTime.Now), new WeightValue(weight));    
+        Height heightItem = new Height(height);    
+    // Stream a blob    
+    BlobStore blobStore = heightItem.GetBlobStore(parameters);    
+    using (IO.FileStream stream = new IO.FileStream(imagePath, IO.FileMode.Open))    
+    {        
+        blobStore.Write("attachment", "image\\jpg", stream);   
+    }    
+    // Create the package    
+    string code = ConnectPackage.Create(        
+        parameters,        
+        new List<HealthRecordItem>() { weightItem, heightItem });    
+    // Email the URL and code to the user   
+    SendConnectPackageMail(patientId, code);
+}
+```
 
 ### Integrating with HealthVault
 

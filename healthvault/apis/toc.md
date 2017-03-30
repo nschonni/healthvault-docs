@@ -1,1 +1,0 @@
-# [HealthVault REST API v1.0-preview](v1.0-preview.swagger.json)
