@@ -36,5 +36,4 @@ See also
 
 -   <a href="https://msdn.microsoft.com/en-us/healthvault/dn798744" id="RightRailLinkListSection_13996_9">SDK Downloads</a>
 -   <a href="sdk-releases.md" id="RightRailLinkListSection_13996_8">SDK Release History</a>
--   <a href="healthvault-reference.md" id="RightRailLinkListSection_13996_10">SDK Reference Documentation</a>
 

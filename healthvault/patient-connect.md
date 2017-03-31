@@ -107,7 +107,7 @@ See the [HealthVault method browser](http://developer.healthvault.com/methods/me
 
 ### .NET SDK
 
-The HealthVault .NET SDK contains classes and methods in the [Microsoft.Health.PatientConnect](sdks/dotnet/microsoft.health.patientconnect) namespace for creating and managing Patient Connect connect requests.
+The HealthVault .NET SDK contains classes and methods in the [Microsoft.Health.PatientConnect](sdks/dotnet/microsoft.health.patientconnect.yml) namespace for creating and managing Patient Connect connect requests.
 
 Managing Patient Connect connections
 ------------------------------------
