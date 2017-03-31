@@ -97,17 +97,17 @@
 ### [Device Non-PnP](device-non-pnp.md)
 ### [Device Code 10 Errors](device-code-10-errors.md)
 ## Tools
-## [ACC Tool](tools/acc/acc-tool.md)
-### [ACC Admins Tab](tools/acc/acc-admins-tab.md)
-### [ACC Create or Edit a Device Directory Page](tools/acc/acc-create-or-edit-a-device-directory-page.md)
-### [ACC Create or Edit an Application Directory Page](tools/acc/acc-create-or-edit-an-application-directory-page.md)
-### [ACC Home Tab](tools/acc/acc-home-tab.md)
-### [ACC Information Tab](tools/acc/acc-information-tab.md)
-### [ACC Localize Tab](tools/acc/acc-localize-tab.md)
-### [ACC Methods Tab](tools/acc/acc-methods-tab.md)
-### [ACC Misc Tab](tools/acc/acc-misc-tab.md)
-### [ACC Online and Offline Rules Tab](tools/acc/acc-online-and-offline-rules-tab.md)
-### [ACC Public Certs Tab](tools/acc/acc-public-certs-tab.md)
+### [Application Configuration Center](tools/acc/acc-tool.md)
+#### [ACC Admins Tab](tools/acc/acc-admins-tab.md)
+#### [ACC Create or Edit a Device Directory Page](tools/acc/acc-create-or-edit-a-device-directory-page.md)
+#### [ACC Create or Edit an Application Directory Page](tools/acc/acc-create-or-edit-an-application-directory-page.md)
+#### [ACC Home Tab](tools/acc/acc-home-tab.md)
+#### [ACC Information Tab](tools/acc/acc-information-tab.md)
+#### [ACC Localize Tab](tools/acc/acc-localize-tab.md)
+#### [ACC Methods Tab](tools/acc/acc-methods-tab.md)
+#### [ACC Misc Tab](tools/acc/acc-misc-tab.md)
+#### [ACC Online and Offline Rules Tab](tools/acc/acc-online-and-offline-rules-tab.md)
+#### [ACC Public Certs Tab](tools/acc/acc-public-certs-tab.md)
 
 
 

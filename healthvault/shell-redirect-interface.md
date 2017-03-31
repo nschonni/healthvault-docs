@@ -34,7 +34,7 @@ You should URL-encode the targetqs. For example:
 
 ### Using the .NET SDK
 
-The .NET SDK has some helper methods that create the URL for you. Using the classes in the [Microsoft.Health.Web](sdks/dotnet/microsoft.health.web.yml) namespace, a web application can extend the [HealthServicePage](sdks/dotnet//microsoft.health.web.healthservicepage.yml) class and invoke the [RedirectToShellUrl](sdks/dotnet/microsoft.health.web.healthservicepage.redirecttoshellurl.yml) method or can use the [WebApplicationUtilities](sdks/dotnet/microsoft.health.web.webapplicationutilities.yml) class to redirect to the Shell. For example, if the page extends from the **HealthServicePage** class:
+The .NET SDK has some helper methods that create the URL for you. Using the classes in the [Microsoft.Health.Web](sdks/dotnet/microsoft.health.web.yml) namespace, a web application can extend the [HealthServicePage](sdks/dotnet//microsoft.health.web.healthservicepage.yml) class and invoke the RedirectToShellUrl()) method or can use the [WebApplicationUtilities](sdks/dotnet/microsoft.health.web.webapplicationutilities.yml) class to redirect to the Shell. For example, if the page extends from the **HealthServicePage** class:
 
 ```cs
 this.RedirectToShellUrl("APPAUTH", "appid=" + this.ApplicationId.ToString() + "&ismra=true" + "&extrecordid=12854139-f27b-4ab4-ab68-c1757b9fad0w"); 
@@ -1072,7 +1072,7 @@ Returned when the CCR/CCD reconcile transaction fails.
 
 Returned from an APPAUTH request where the user selects a new record for use in an SRA application .
 
-It is important that the application refresh any cached record-related information when this target is received. Users of the .NET SDK can use the [HealthServicePage.RefreshAndPersist](sdks/dotnet/microsoft.health.web.healthservicepage.refreshandpersist.yml) method to accomplish this refresh.
+It is important that the application refresh any cached record-related information when this target is received. Users of the .NET SDK can use the [HealthServicePage.RefreshAndPersist()](sdks/dotnet/microsoft.health.web.healthservicepage.yml) method to accomplish this refresh.
 
 **SHARERECORDFAILED**
 
