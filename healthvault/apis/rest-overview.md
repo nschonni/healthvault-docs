@@ -5,6 +5,3 @@ HealthVault offers a REST API for a select set of scenarios. If your scenario is
 # Scenarios
 * **Onboarding** - Invite patients to join onboard into your Action Plans
 * **Action Plans** - Administrate Action Plans for onboarded patients
-
-#Reference
-For more information, see the [REST API Reference](rest-reference.md) documentation. 

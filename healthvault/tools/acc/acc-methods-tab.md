@@ -14,7 +14,7 @@ The default set of methods selected are Basic Set and Hosted Web Application, ex
 
 <span class="label">Application requires access to create an OpenQuery</span>: Optional. This method allows your application to use OpenQuery. When selected, this item may require additional review.
 
-<span class="label">Application requires access to be Master (should remain checked for master app) for application provisioning</span>: Optional. This method set allows a master application access to provision child applications and to get authorized connect requests for child applications. For more information, see <span>[Master and Child Applications](master-and-child-applications.md)</span>.
+<span class="label">Application requires access to be Master (should remain checked for master app) for application provisioning</span>: Optional. This method set allows a master application access to provision child applications and to get authorized connect requests for child applications. For more information, see <span>[Master and Child Applications](../../master-and-child-applications.md)</span>.
 
 <table>
 <colgroup>
@@ -34,7 +34,7 @@ The default set of methods selected are Basic Set and Hosted Web Application, ex
 
 <span class="label">Application requires access to Signup methods</span>: Optional. In special instances we do support creating HealthVault accounts from outside the U.S. and by enabling this; application will be able to create signup code, which is required during HealthVault account creation.
 
-<span class="label">Application requires access to Eventing methods</span>: Optional. HealthVault Eventing is a framework that enables HealthVault applications to subscribe to and receive notification of selected events that occur within the HealthVault platform. This method selection will enable your HealthVault application to consume the HealthVault evening feature. For more information about eventing, see <span>[HealthVault eventing](healthvault-eventing.md)</span>.
+<span class="label">Application requires access to Eventing methods</span>: Optional. HealthVault Eventing is a framework that enables HealthVault applications to subscribe to and receive notification of selected events that occur within the HealthVault platform. This method selection will enable your HealthVault application to consume the HealthVault evening feature. For more information about eventing, see <span>[HealthVault eventing](../../healthvault-eventing.md)</span>.
 
 <span class="label">Application requires access to send e-mail through HealthVault</span>: Optional. This method allows your application to send email to HealthVault account owners through the HealthVault platform. When this is selected, the Domain sending e-mail is required. This item may require additional review.
 

@@ -239,9 +239,10 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                     <li>
                                         <div class="container">
                                             <h1>Languages &amp; Frameworks</h1>
-                                                                    <p>
-                            HealthVault has SDKs available for many popular languages and frameworks. 
-                        </p>
+                                                <p>
+                                                    HealthVault has SDKs available for many popular languages and frameworks. 
+                                                </p>
+                                                <br/>
                                         </div>
                                     </li>
                                     <li>
@@ -255,13 +256,10 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                     </div>
                                                     <div class="cardText">
                                                         <h3>
-                                                            <a href="rest-api/">Get started with REST</a>
+                                                            <a href="apis/rest-overview.md">Get started with REST</a>
                                                         </h3>
                                                         <p>
-                                                            <a href="/rest-api/">Reference</a>
-                                                        </p>
-                                                        <p>
-                                                            <a href="https://azure.microsoft.com/documentation/samples/?platform=rest">Get samples</a>
+                                                            <a href="/apis/v1.0-Preview.swagger.json">Reference</a>
                                                         </p>
                                                     </div>
                                                 </div>

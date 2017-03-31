@@ -34,9 +34,12 @@ You should URL-encode the targetqs. For example:
 
 ### Using the .NET SDK
 
-The .NET SDK has some helper methods that create the URL for you. Using the classes in the [Microsoft.Health.Web](microsoft.health.web-namespace.md) namespace, a web application can extend the [HealthServicePage](https://msdn.microsoft.com/en-us/library/microsoft.health.web.healthservicepage.aspx) class and invoke the [RedirectToShellUrl](https://msdn.microsoft.com/en-us/library/microsoft.health.web.healthservicepage.redirecttoshellurl.aspx) method or can use the [WebApplicationUtilities](https://msdn.microsoft.com/en-us/library/microsoft.health.web.webapplicationutilities.aspx) class to redirect to the Shell. For example, if the page extends from the **HealthServicePage** class:
+The .NET SDK has some helper methods that create the URL for you. Using the classes in the [Microsoft.Health.Web](sdks/dotnet/microsoft.health.web) namespace, a web application can extend the [HealthServicePage](sdks/dotnet//microsoft.health.web.healthservicepage) class and invoke the [RedirectToShellUrl](sdks/dotnet/microsoft.health.web.healthservicepage.redirecttoshellurl) method or can use the [WebApplicationUtilities](sdks/dotnet/microsoft.health.web.webapplicationutilities) class to redirect to the Shell. For example, if the page extends from the **HealthServicePage** class:
 
-`this.RedirectToShellUrl("APPAUTH", "appid=" + this.ApplicationId.ToString() + "&ismra=true" + "&extrecordid=12854139-f27b-4ab4-ab68-c1757b9fad0w"); `
+```cs
+this.RedirectToShellUrl("APPAUTH", "appid=" + this.ApplicationId.ToString() + "&ismra=true" + "&extrecordid=12854139-f27b-4ab4-ab68-c1757b9fad0w"); 
+```
+
 ### Redirecting the Shell back to your app
 
 After the target action, the Shell will redirect to the application using its ActionURL, which is specified in the application metadata set in the [Application Configuration Center (ACC)](https://config.healthvault-ppe.com).
@@ -1069,7 +1072,7 @@ Returned when the CCR/CCD reconcile transaction fails.
 
 Returned from an APPAUTH request where the user selects a new record for use in an SRA application .
 
-It is important that the application refresh any cached record-related information when this target is received. Users of the .NET SDK can use the [HealthServicePage<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>RefreshAndPersist](https://msdn.microsoft.com/en-us/library/microsoft.health.web.healthservicepage.refreshandpersist.aspx) method to accomplish this refresh.
+It is important that the application refresh any cached record-related information when this target is received. Users of the .NET SDK can use the [HealthServicePage.RefreshAndPersist](sdks/dotnet/microsoft.health.web.healthservicepage.refreshandpersist) method to accomplish this refresh.
 
 **SHARERECORDFAILED**
 
