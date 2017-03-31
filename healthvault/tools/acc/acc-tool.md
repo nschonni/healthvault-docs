@@ -1,6 +1,6 @@
 # Application Configuration Center
 
-The HealthVault [Application Configuration Center (ACC)](https://msdn.microsoft.com/en-us/healthvault/jj127439) is used to configure your HealthVault integrated application as well your HealthVault application and device directory listing in the partner production environment (PPE). You can login to this tool with a HealthVault-PPE account and it will show you the list of Application IDs and Directory IDs for which you have admin rights.
+The HealthVault [Application Configuration Center (ACC)](https://config.healthvault-ppe.com) is used to configure your HealthVault integrated application as well your HealthVault application and device directory listing in the partner production environment (PPE). You can login to this tool with a HealthVault-PPE account and it will show you the list of Application IDs and Directory IDs for which you have admin rights.
 
 For more information on the features provided in ACC, see the following topics.
 
