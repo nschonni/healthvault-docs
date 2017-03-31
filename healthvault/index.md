@@ -296,7 +296,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                             <div class="cardPadding">
                                                 <div class="card">
                                                     <div class="cardImageOuter">
-                                                        <div class="cardImage" style="font-family:'Segoe UI Light'; font-size:22px;">
+                                                        <div class="cardImage" style="font-family:'Segoe UI Light'; font-size:28px;">
                                                             iOS
                                                         </div>
                                                     </div>
