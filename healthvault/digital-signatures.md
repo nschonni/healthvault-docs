@@ -15,7 +15,14 @@ The signing functionality uses four members of the HealthRecordItem class:
 
 The following code shows how to sign an item:
 
-`HealthRecordInfo record = base.CommonAuthenticatedConnection.GetPersonInfo().GetSelfRecord();X509Certificate2 cert = new X509Certificate2();cert.Import(".\\valid_cert.pfx");dataItem.Sign(cert);record.NewItem(thingItem);`
+```cs
+HealthRecordInfo record = base.CommonAuthenticatedConnection.GetPersonInfo().GetSelfRecord();
+X509Certificate2 cert = new X509Certificate2();
+cert.Import(".\\valid_cert.pfx");
+dataItem.Sign(cert);
+record.NewItem(thingItem);
+```
+
 A SignatureFailureException is raised when a signature fails verification at the server. Because the platform verification includes checking against the certificate issuer’s CRL, certificates validate only if they have a CDP (CRL Distribution Point) Extended Property in the Certificate or their CA has the same property.
 
 Handling timeouts with a retry loop
@@ -27,7 +34,19 @@ If your code uses digital signatures, you need to wrap your call to NewItem() wi
 
 The following code demonstrates the necessary retry logic:
 
-`for (int i = 0; i < 9; i++){    try    {        record.NewItem(thingItem);        break;    }    catch    {    }} `
+```cs
+for (int i = 0; i < 9; i++)
+{    
+    try    
+    {        
+        record.NewItem(thingItem);
+        break;
+    }    
+    catch
+    {    }
+} 
+```
+
 Seed prefetching
 ----------------
 
@@ -47,15 +66,24 @@ When fetching a data item, the signature information is not returned by default.
 
 The following code shows how to sign an item:
 
-`HealthRecordItem signedItem = record.GetItem(itemId, HealthRecordItemSections.Core | HealthRecordItemSections.Xml | HealthRecordItemSections.Signature);`
+```cs
+HealthRecordItem signedItem = record.GetItem(itemId, HealthRecordItemSections.Core | HealthRecordItemSections.Xml | HealthRecordItemSections.Signature);
+```
 Now that you have fetched a signed item, you can call ValidateCertificate() to validate each of the certificates using X509Certificate2.Verify():
 
-`signedItem.ValidateCertificate();`
+```cs
+signedItem.ValidateCertificate();
+```
 This method throws an exception if validation fails. You can also call IsSignatureValid() to check whether the signature on the data item is valid. This is done by calling SignedXml.CheckSignature() for each signature on the data item.
 
 Finally, you can access the signatures directly through the HealthRecordSignatures collection, and extract the certificate:
 
-`foreach (HealthRecordSignatures signature in signedItem.HealthRecordSignatures) {    X509Certificate2 certificate = signature.GetCertificate<X509Certificate2>(); }`
+```cs
+foreach (HealthRecordSignatures signature in signedItem.HealthRecordSignatures) 
+{    
+    X509Certificate2 certificate = signature.GetCertificate<X509Certificate2>(); 
+}
+```
 Recognized certificates
 -----------------------
 
@@ -65,17 +93,3 @@ HealthVault currently supports digital certificates whose chain of trust links b
 -   Entrust
 -   Geotrust
 -   Verisign
-
-### Integrating with HealthVault
-
-Schema
-
--   <a href="thing-type-schema.md" id="RightRailLinkListSection_14029_7">Thing type schema</a>
--   <a href="downloading-type-schemas.md" id="RightRailLinkListSection_14029_8">Downloading type schemas</a>
--   <a href="thing-type-versioning.md" id="RightRailLinkListSection_14029_9">Thing type versioning</a>
--   <a href="common-data-types.md" id="RightRailLinkListSection_14029_10">Common data types</a>
--   <a href="extending-data-types.md" id="RightRailLinkListSection_14029_11">Extending data types</a>
--   <a href="custom-data-types.md" id="RightRailLinkListSection_14029_12">Custom data types</a>
--   <a href="active-and-inactive-status.md" id="RightRailLinkListSection_14029_13">Active and inactive status</a>
--   <a href="digital-signatures.md" id="RightRailLinkListSection_14029_14">Digital signatures</a>
-
