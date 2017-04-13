@@ -1,5 +1,13 @@
-Creating a private key-public key pair
-======================================
+---
+title: Creating certificates
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+---
+
+# Creating a public/private key pair for HealthVault
 
 A HealthVault application uses a private key to encrypt the first handshake message that it sends to the platform service.  HealthVault then uses a public key to verify the sender.  The public key must be registered with HealthVault through the [Application Configuration Center](https://config.healthvault-ppe.com).  The private key is securely stored by the application and is never shared with HealthVault.
 
@@ -16,19 +24,16 @@ Deleting an old key
 -------------------
 
 -   Open the Certificates MMC console for the local machine store. For information about opening the Certificates MMC console, see [How to: View Certificates with the MMC Snap-in](https://msdn.microsoft.com/library/ms788967).
-
 -   Open the Personal folder, and then open the Cetificates subfolder.
-
 -   Right-click the old certificate and select **Delete**.
 
 Old certificates are not cleanly deleted if a process currently has them open. You may need to shut off any web server instances that are currently running.
 
 Creating the key pair
 ---------------------
+Windows includes a couple of ways to generate a HealthVault compatible X509 certificate. 
 
-The MakeCert.exe utility creates a private certificate and loads it to the personal certificate store on the machine (LocalMachine\\My).  MakeCert also creates a corresponding public certificate that matches the private key.  The public certificate is stored in a file specified at the command line.  
-
-If you lose the file that MakeCert generated, or if you generated your private key in a different way, you can export a DER-encoded public certificate using the Microsoft Management Console. The corresponding private key is wrapped in a certificate that has been installed in your LocalMachine\\My store.
+If you lose the certificate in the future, or if you generated your private key in a different way, you can export a DER-encoded public certificate using the Microsoft Management Console. The corresponding private key is wrapped in a certificate that has been installed in your LocalMachine\\My store.
 
 To create the private/public key pair:
 
@@ -91,9 +96,6 @@ To install the PFX:
 
     `WinHttpCertCfg.exe -g -a NetworkService -c Local_Machine\My -s "WildcatApp-<AppId>"`
 
-### Integrating with HealthVault
-
-See also
-
--   <a href="https://msdn.microsoft.com/en-us/library/ms788967" id="RightRailLinkListSection_14010_7">How to view certificates with MMC</a>
+### See also
+- [How to view certificates with MMC](https://msdn.microsoft.com/en-us/library/ms788967)
 
