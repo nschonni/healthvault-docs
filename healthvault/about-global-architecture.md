@@ -1,9 +1,18 @@
-Global architecture
-===================
+---
+title: Global architecture
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn how to build an app using HealthVault that targets region-specific instances. 
+---
+
+# Targeting global HealthVault instances
 
 HealthVault is a global service comprised of multiple nodes, each called a HealthVault instance. A single HealthVault instance is made up of a HealthVault Platform service, a HealthVault Shell, and stores the people, records and thing data for the users mapped to the instance.
 
-If you are new to HealthVault, the <a href="technical-overview.md" id="PageContent_13994_27">HealthVault platform technical overview</a>  provides an introduction to the core HealthVault concepts you should understand before reading further.
+If you are new to HealthVault, the [Technical Overview](technical-overview.md) provides an introduction to the core HealthVault concepts you should understand before reading further.
 
 HealthVault instances
 ---------------------
@@ -68,11 +77,11 @@ Application developers can choose to support all instances of HealthVault or onl
 
 **Single-instance applications** are those that connect to a single HealthVault instance only.
 
-HealthVault makes it easy to configure an application to be multi-instance or single-instance. During the <a href="go-live.md" id="PageContent_13994_5">HealthVault go-live process</a>, the application administrator is asked to specify the instances that the app should support and the HealthVault go-live team will configure the application to support these instances.
+HealthVault makes it easy to configure an application to be multi-instance or single-instance. During the [HealthVault go-live process](go-live.md), the application administrator is asked to specify the instances that the app should support and the HealthVault go-live team will configure the application to support these instances.
 
 ### The allow instance bounce (aib) parameter
 
-In addition to the server-side configuration for supported instances, the <a href="shell-redirect-interface.md" id="PageContent_13994_15">Shell Redirect Interface</a> supports an **aib** (allow instance bounce) parameter, which specifies whether a user can be redirected between instances during a Shell redirect request. If the value is **true**, the user can be redirected between instances during a Shell target action. If the value is **false**, the user cannot be redirected between instances during the Shell target action. The default value is true.
+In addition to the server-side configuration for supported instances, the [Shell Redirect Interface](shell-redirect-interface.md) supports an **aib** (allow instance bounce) parameter, which specifies whether a user can be redirected between instances during a Shell redirect request. If the value is **true**, the user can be redirected between instances during a Shell target action. If the value is **false**, the user cannot be redirected between instances during the Shell target action. The default value is true.
 
 For single-instance apps that connect to a single instance, the **aib** parameter is not relevant. For multi-instance applications, the value of the **aib** parameter must be **true** when redirecting the user to a Shell target. Additionally, as discussed above, the server-side configuration set by the HealthVault go-live team must reflect multiple instances.
 
@@ -109,9 +118,9 @@ Mobile or SODA applications that run on devices and mobile platforms access data
 
 ### DOPU and Patient Connect applications
 
-<a href="dopu.md" id="PageContent_13994_17">HealthVault drop-off and pick-up (DOPU)</a> workflows typically involve an in-person encounter. After the in-person encounter, the application drops off the data in an instance and notifies the user, normally through e-mail, that a package is waiting in HealthVault for the user to pick-up. The notification includes a link to the HealthVault instance where the package is stored. Applications that send data to users using the DOPU mechanism must determine the destination HealthVault instance for a package at the time they create the package. It’s not possible for a DOPU package stored in one instance to be picked-up by a user with an account in a different instance.
+[HealthVault drop-off and pick-up (DOPU)](dopu.md) workflows typically involve an in-person encounter. After the in-person encounter, the application drops off the data in an instance and notifies the user, normally through e-mail, that a package is waiting in HealthVault for the user to pick-up. The notification includes a link to the HealthVault instance where the package is stored. Applications that send data to users using the DOPU mechanism must determine the destination HealthVault instance for a package at the time they create the package. It’s not possible for a DOPU package stored in one instance to be picked-up by a user with an account in a different instance.
 
-Applications that use the <a href="patient-connect.md" id="PageContent_13994_18">Patient Connect</a> model to establish authorization with users also typically involve an in-person encounter and a notification to the user with a link to a specific HealthVault instance where a connect request is waiting for the user to pick-up. Similar to DOPU packages, with Patient Connect, the application must determine the destination instance for the connect request at the time the request is created. It is not possible for a Patient Connect request to be stored in one instance and to be picked-up by a user with an account in a different instance.
+Applications that use the [Patient Connect](patient-connect.md) model to establish authorization with users also typically involve an in-person encounter and a notification to the user with a link to a specific HealthVault instance where a connect request is waiting for the user to pick-up. Similar to DOPU packages, with Patient Connect, the application must determine the destination instance for the connect request at the time the request is created. It is not possible for a Patient Connect request to be stored in one instance and to be picked-up by a user with an account in a different instance.
 
 DOPU and Patient Connect applications can choose the destination instance for packages and connect requests based on the target population of the application and the user's country. For example, a US-based hospital that largely serves a region-specific population of the US will likely choose to drop-off packages and connect requests in the US instance only.
 
@@ -127,7 +136,7 @@ HealthVault allows records to be shared between people who have accounts in the 
 Eventing
 --------
 
-Multi-instance applications that leverage <a href="subscribing-to-events.md" id="PageContent_13994_8">eventing</a> to receive notifications must subscribe to the desired events in each instance the application supports. It's not possible to create event subscriptions in one instance only and receive event notifications from a different instance. The app uses the same process for creating subscriptions in all instances it supports.
+Multi-instance applications that leverage [eventing](subscribing-to-events.md) to receive notifications must subscribe to the desired events in each instance the application supports. It's not possible to create event subscriptions in one instance only and receive event notifications from a different instance. The app uses the same process for creating subscriptions in all instances it supports.
 
 HealthVault SDKs and samples for the global architecture
 --------------------------------------------------------
@@ -141,43 +150,37 @@ Global architecture support in the Java and Windows Phone libraries will be adde
 The .NET SDK has rich support for building multi-instance applications. A few of the key aspects of this support include:
 
 -   The application's default instance platform URL and shell URLs can be specified in the **HealthServiceUrl** and **ShellUrl** parameters in the application's web.config file.
-
--   The various SDK connection constructors have a parameter for a [Microsoft.Health<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>HealthServiceInstance](https://msdn.microsoft.com/en-us/library/microsoft.health.healthserviceinstance.aspx) object for creating a connection to a specific instance. For example, the <span class="unresolvedLink">OfflineWebApplicationConnection</span> constructor for creating an offline connection to a specific instance.
-
+-   The various SDK connection constructors have a parameter for a [Microsoft.Health.HealthServiceInstance](/sdks/dotnet/microsoft.health.healthserviceinstance.aspx) object for creating a connection to a specific instance. 
 -   The web layer automatically supports creating a connection to the target instance after a user authorizes a web application.
-
 -   Specifying that an app supports multiple instances (see the **aib** parameter discussion earlier) is supported through a web.config setting as shown below:
 
-    `<configuration>  <appSettings>    <add key="MultiInstanceAware" value="true" />  </appSettings></configuration> `
-
-    Note that in the .NET SDK, the default value of **MultiInstanceAware** is **true**.
-
--   The sample apps in the .NET SDK package have been updated to support multiple instances.
-
-    -   **Hello World** demonstrates a multi-instance online web app
-
-    -   **Offline Access** demonstrates a multi-instance offline application
-
-    -   **HVClientSample** demonstrates a multi-instance SODA client application on Windows.
-
-### HealthVault library for Windows 8
-
--   The [HealthVault Library for Windows 8](http://healthvaultwin8.codeplex.com/SourceControl/latest) supports SODA authorization and multi-instance connectivity.
-
--   The **HealthVaultAppSettings** class allows specifying that an app is multi-instance aware, and also specifies the default instance URLs for platform and shell.
-
--   The Windows 8 sample app is multi-instance aware and the code demonstrates how to connect to multiple instances using the library for Windows 8.
+    ```xml
+    <configuration>
+      <appSettings>
+        <add key="MultiInstanceAware" value="true" />
+      </appSettings>
+    </configuration> 
+    ```
+    > [!NOTE]
+    > In the .NET SDK, the default value of **MultiInstanceAware** is **true**.
+-   [HVClientSample](https://github.com/Microsoft/healthvault-samples/tree/master/dotNET/hvclientsample) demonstrates a multi-instance SODA client application on Windows.
 
 ### iOS library for HealthVault
 
--   The [iOS library](https://github.com/microsoft-hsg/HealthVault-Mobile-iOS-Library) for HealthVault supports SODA authorization and multi-instance connectivity.
-
+-   The [iOS library](https://github.com/microsoft/HVMobileVNext) for HealthVault supports SODA authorization and multi-instance connectivity.
 -   The iOS SDK settings file has an **isMultiInstanceAware** setting that allows specifying that an app is multi-instance aware, and includes **serviceURL** and **shellURL** elements for specifying the default instance as shown below:
 
     ```xml
-    <masterAppID>657324f2-4aca-42de-97a8-298873e355d7</masterAppID><appName>iOS SDKFeatures</appName><isMultiInstanceAware>true</isMultiInstanceAware><environment>  <name>US PPE</name>  <friendlyName>PPE - US Residents</friendlyName>  <serviceUrl>https://platform.healthvault-ppe.com/platform/wildcat.ashx</serviceUrl>  <shellUrl>https://account.healthvault-ppe.com</shellUrl></environment> 
+    <masterAppID>657324f2-4aca-42de-97a8-298873e355d7</masterAppID>
+    <appName>iOS SDKFeatures</appName>
+    <isMultiInstanceAware>true</isMultiInstanceAware>
+    <environment>
+      <name>US PPE</name>
+      <friendlyName>PPE - US Residents</friendlyName>
+      <serviceUrl>https://platform.healthvault-ppe.com/platform/wildcat.ashx</serviceUrl>
+      <shellUrl>https://account.healthvault-ppe.com</shellUrl>
+    </environment> 
     ```
-
 -   The iOS [SDKFeatures sample app](https://github.com/microsoft/HVMobile_VNext/tree/master/Samples) is multi-instance aware and the code demonstrates how to build an iOS SODA app that is multi-instance aware using the iOS SDK.
 
 ### Integrating with HealthVault
