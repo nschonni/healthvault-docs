@@ -1,11 +1,23 @@
-# ACC: Create or Edit a Device Directory Page
+---
+title: Application Configuration Center:  Device directory
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+---
 
-Once your device directory listed under the directories on the Home tab, you can edit the directory page accordingly. In addition to the below items, it has the same configuration details as [Create or Edit an application directory page](acc-create-or-edit-an-application-directory-page.md).
+# Create or Edit a Device Directory Page
 
-#Categories: 
+Once your device directory listed under the directories on the Home tab, you can edit the directory page accordingly. 
+
+> [!NOTE] 
+> The device directory page supports all of the same configuration options as the [Create or Edit an application directory page](acc-create-or-edit-an-application-directory-page.md). This article describes only the options which are specific to devices. 
+
+# Categories
 * Device types – You can choose the type of the device here. For example, Blood Pressure Monitor or ECG Device.
 
-# Device models: 
+# Device models
 Optional. You can choose the different model devices here.
 * Device model name: Your device model’s unique name.
 * Device model display name: Your device model’s display name.
@@ -23,7 +35,7 @@ Optional. You can upload your application screen captures here and it can take u
 * Caption – You can set the caption for each screen capture here.
 * Image – ACC supports images up to 150 × 150; however, the recommended image size is 149 × 100 pixels.
 
-# Driver packages: 
+# Driver packages 
 The list of driver packages available for your device model.
 * Supported platforms – You can choose the Windows platform for your device model.
 * Driver package url – Your device model’s driver package url.
@@ -31,6 +43,6 @@ The list of driver packages available for your device model.
 * Instructions url – Optional. URL to a page for driver package instructions.
 * Validation code (recommended security best practice) – Optional. This value holds the signer name of the package so that the customer can verify when they download the driver.
 
-#Supported locations: 
+# Supported locations
 Specifies the countries/regions where the device is available. There are 2 options to specify the locations. The first is to use a linked application's supported locations by selecting an application from the dropdown list. The second is to set a device's supported location directly.
 
