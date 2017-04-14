@@ -186,7 +186,7 @@ Appendix
 
 3.  These commands will install the private key on your machine and write the public key to the specified certificate file. You will find the signed certificate in the Downloads folder for the currently logged in user.
 
-For more information, please refer to: [https://msdn.microsoft.com/en-us/healthvault/dn781357](creating-key-pairs.md)
+For more information, please refer to: [https://msdn.microsoft.com/en-us/healthvault/dn781357](/healthvault/concepts/authorization/creating-key-pairs.md)
 
 ### (Optional) Installing a test certificate on other machines
 

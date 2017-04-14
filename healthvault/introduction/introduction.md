@@ -99,7 +99,7 @@ Providers can create and deliver customized chronic care or wellness plans for t
 The Action Plans framework enables healthcare providers to quickly create and send digitized care plans to their patients. Providers can access patient data for remote monitoring in between follow-up visits.
 These APIs work directly with the HealthVault service and HealthVault Insights app to drive ongoing patient engagement.
 
-App developers can find information about creating action plans [here](action-plans.md).
+App developers can find information about creating action plans [here](/healthvault/scenarios/action-plans.md).
 
 Device connectivity
 -------------------
