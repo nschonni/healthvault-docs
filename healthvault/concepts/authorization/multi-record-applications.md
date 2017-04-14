@@ -24,30 +24,3 @@ The existence of multiple records is the reason why you need to use PersonInfo.S
 An application can access PersonInfo.PersonId and SelectedRecord.Id, and use those to uniquely identify that user and record.
 
 But, to make it harder to correlate information between applications, the same person using two separate applications is going to have two different values of PersonInfo.PersonId and SelectedRecord.Id.
-
-### Integrating with HealthVault
-
-Connections
-
--   <a href="connectivity.md" id="RightRailLinkListSection_14002_7">Establishing connectivity</a>
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14002_8">Web connections</a>
--   <a href="patient-connect.md" id="RightRailLinkListSection_14002_9">Patient Connect</a>
--   <a href="dopu.md" id="RightRailLinkListSection_14002_10">Drop-off-and-pick-up (DOPU)</a>
--   <a href="direct-messaging.md" id="RightRailLinkListSection_14002_11">Direct Messaging</a>
--   <a href="mobile-devices.md" id="RightRailLinkListSection_14002_12">Mobile devices (SODA)</a>
--   <a href="soda-walkthrough.md" id="RightRailLinkListSection_14002_13">SODA example</a>
--   <a href="connection-troubleshooting.md" id="RightRailLinkListSection_14002_14">Troubleshooting connections</a>
-
-Authorization
-
--   <a href="authentication-and-authorization.md" id="RightRailLinkListSection_14002_15">Authentication and authorization</a>
--   <a href="offline-access.md" id="RightRailLinkListSection_14002_16">Offline access</a>
--   <a href="optional-authorization.md" id="RightRailLinkListSection_14002_17">Optional authorization</a>
--   <a href="authorization-changes.md" id="RightRailLinkListSection_14002_18">Authorization changes</a>
--   <a href="alternate-user-identifiers.md" id="RightRailLinkListSection_14002_19">Alternate user IDs</a>
--   <a href="multi-record-applications.md" id="RightRailLinkListSection_14002_20">Multi-record applications</a>
-
-See also
-
--   <a href="shell-redirect-interface.md" id="RightRailLinkListSection_14002_21">Shell redirect interface</a>
-

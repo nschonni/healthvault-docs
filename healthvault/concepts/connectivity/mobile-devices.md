@@ -11,9 +11,9 @@ The advantage of using the SODA approach is that each instance of your applicati
 
 Additionally, users need to authorize the mobile application by signing into HealthVault only once, and the application instance will have access to the user's record throughout the lifetime of the application or until the application or the user chooses to disconnect (de-authorize) the user's health records from the application.
 
-The SODA approach is specifically tailored for writing HealthVault-enabled applications for mobile devices such as the iPhone, Android, and Windows Phone, as well as tablets and PCs. In addition to the HealthVault .NET SDK there are open-source libraries for [Windows Phone](http://healthvaultwp7.codeplex.com/), [iOS](https://github.com/microsoft-hsg/HealthVault-Mobile-iOS-Library), and [Java](http://healthvaultjavalib.codeplex.com/).
+The SODA approach is specifically tailored for writing HealthVault-enabled applications for mobile devices such as the iPhone, Android, and Windows Phone, as well as tablets and PCs. In addition to the HealthVault .NET SDK there are open-source libraries for [iOS](https://github.com/microsoft/hvmobile_vnext), and [Java](http://www.github.com/microsoft/healthvault-java-sdk).
 
-Websites that wish to connect to mobile users exclusively through a device's web browser (for example, the application is not installed on the device) should not use the SODA approach. For more information, see <a href="web-connectivity.md" id="PageContent_14090_2">web connectivity</a>.
+Websites that wish to connect to mobile users exclusively through a device's web browser (for example, the application is not installed on the device) should not use the SODA approach. For more information, see [web connectivity](/healthvault/concepts/connectivity/web-connectivity.md).
 
 Establishing a connection on a mobile device
 --------------------------------------------
@@ -22,13 +22,13 @@ Following is a typical connection workflow for a HealthVault mobile application:
 
 1.  User launches application for the first time.
 
-2.  Application obtains a new <span class="parameter">application identifier</span>, <span class="parameter">shared secret</span>, and <span class="parameter">app creation token</span> by calling the HealthVault web service and passing in the <span class="parameter">master application identifier</span>, as described below in [Creating a HealthVault mobile master application](https://msdn.microsoft.com/en-us/library/hh567903.aspx#creatingAMobileMasterApp) (See the **NewApplicationCreationInfo** request in the [Method browser](http://go.microsoft.com/?linkid=9810881).)
+2.  Application obtains a new <span class="parameter">application identifier</span>, <span class="parameter">shared secret</span>, and <span class="parameter">app creation token</span> by calling the HealthVault web service and passing in the <span class="parameter">master application identifier</span>, as described below in [Creating a HealthVault mobile master application](/healthvault/concepts/advanced/master-and-child-applications.md) (See the **NewApplicationCreationInfo** request in the [Method browser](http://go.microsoft.com/?linkid=9810881).)
 
 3.  Application directs user to HealthVault Shell for authentication and authorization, passing along the app creation token. (See the CREATEAPPLICATION target in the Shell targets section of <a href="shell-redirect-interface.md" id="PageContent_14090_3">Shell Redirect Interface</a>.
 
 4.  The user signs in to HealthVault Shell and grants the application access to the user's records.
 
-5.  The HealthVault Shell redirects the user back to the application, indicating success or failure, as described below, and returns an identifier for the instance in which the user granted access. For more information about instance IDs see <a href="global-architecture.md" id="PageContent_14090_4">global architecture</a>.
+5.  The HealthVault Shell redirects the user back to the application, indicating success or failure, as described below, and returns an identifier for the instance in which the user granted access. For more information about instance IDs see [global architecture](/healthvault/concepts/advanced/global-architecture.md).
 
 6.  Application stores the new application identifier and shared secret, and the instance ID or URLs of the instance where the user authorized the application.
 
@@ -77,43 +77,158 @@ Mobile application interaction example
 
 Call HealthVault web service with **NewApplicationCreationInfo** with master application ID 6556d00c-cb8d-4004-90d6-8be528420ff7.
 
-`<wc-request:request xmlns:wc-request="urn:com.microsoft.wc.request">  <header>    <method>NewApplicationCreationInfo</method>    <method-version>1</method-version>    <app-id>6556d00c-cb8d-4004-90d6-8be528420ff7</app-id>    <language>en</language>    <country>US</country>    <msg-time>2012-04-28T19:10:41.3940000Z</msg-time>    <msg-ttl>1800</msg-ttl>    <version>foo v1.0</version>  </header>  <info /></wc-request:request>``<response>  <status>    <code>0</code>  </status>  <wc:info xmlns:wc=      "urn:com.microsoft.wc.methods.response.NewApplicationCreationInfo">    <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>    <shared-secret>RaFzI5JVbg0...Bk/iU0pg=</shared-secret>    <app-token>ASAAAJMipARM...5OBFdAISE</app-token>  </wc:info></response> `
-Redirect user to Shell to initiate creation of application instance and request user authorization.
+### Request
+```xml
+<wc-request:request xmlns:wc-request="urn:com.microsoft.wc.request">
+  <header>
+    <method>NewApplicationCreationInfo</method>
+    <method-version>1</method-version>
+    <app-id>6556d00c-cb8d-4004-90d6-8be528420ff7</app-id>
+    <language>en</language>
+    <country>US</country>
+    <msg-time>2012-04-28T19:10:41.3940000Z</msg-time>
+    <msg-ttl>1800</msg-ttl>
+    <version>foo v1.0</version>
+  </header>
+  <info />
+</wc-request:request>
+```
+### Response
+```xml
+<response>
+  <status>
+    <code>0</code>
+  </status>
+  <wc:info xmlns:wc=
+      "urn:com.microsoft.wc.methods.response.NewApplicationCreationInfo">
+    <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>
+    <shared-secret>RaFzI5JVbg0...Bk/iU0pg=</shared-secret>
+    <app-token>ASAAAJMipARM...5OBFdAISE</app-token>
+  </wc:info>
+</response> 
+```
 
-`ShellURL/redirect.aspx?target=CREATEAPPLICATION&targetqs=%3Fappid%3D6556d00c-cb8d-4004-90d6-8be528420ff7%26appCreationToken%3DASAAAJMipARM...5OBFdAISE`
-Shell redirects back
+### Redirect user to Shell to initiate creation of application instance and request user authorization.
 
-`ShellURL/application/complete?appid=39a952bb-aac4-4a3d-8fba-f53e5605eca5&target=AppAuthSuccess&instanceId=1`
-Call the **CreateAuthenticatedSessionToken** method on the HealthVault web service corresponding to instanceID 1.
+```
+ShellURL/redirect.aspx?target=CREATEAPPLICATION&targetqs=%3Fappid%3D6556d00c-cb8d-4004-90d6-8be528420ff7%26appCreationToken%3DASAAAJMipARM...5OBFdAISE
+```
 
-`<wc-request:request xmlns:wc-request="urn:com.microsoft.wc.request">  <header>    <method>CreateAuthenticatedSessionToken</method>    <method-version>2</method-version>    <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>    <language>en</language>    <country>US</country>    <msg-time>2012-04-28T19:11:42.0720000Z</msg-time>    <msg-ttl>1800</msg-ttl>    <version>foo v1.0</version>  </header>  <info>    <auth-info>      <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>      <credential>        <appserver2>          <hmacSig algName="HMACSHA256">BSMSUpf...n1k/To3A=</hmacSig>          <content>            <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>            <hmac>HMACSHA256</hmac>            <signing-time>2012-04-28T19:11:42.0580000Z</signing-time>          </content>        </appserver2>      </credential>    </auth-info>  </info></wc-request:request> ``<?xml version="1.0" encoding="utf-8"?><response>  <status>    <code>0</code>  </status>  <wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.CreateAuthenticatedSessionToken2">    <token app-id="39a952bb-aac4-4a3d-8fba-f53e5605eca5"        app-record-auth-action="NoActionRequired">ASAAAPmoT...PwuWA==</token>    <shared-secret>zecX0M6EfF0... +BUXnBg==</shared-secret>  </wc:info></response> `
-At this point, your application can operate like any other offline application. For example, to get a list of all accounts currently authorized with this instance of the application.
+### Shell redirects back
 
-`<wc-request:request xmlns:wc-request="urn:com.microsoft.wc.request">  <auth>    <hmac-data algName="HMACSHA256">0tOW1...nCSQA</hmac-data>  </auth>  <header>    <method>GetAuthorizedPeople</method>    <method-version>1</method-version>    <auth-session>      <auth-token>ASAAAPmoT...PwuWA==</auth-token>    </auth-session>    <language>en</language>    <country>US</country>     <msg-time>2012-04-28T19:11:42.4870000Z</msg-time>    <msg-ttl>1800</msg-ttl>    <version>foo v1.0</version>    <info-hash>      <hash-data algName="SHA256">NqMlA...yc4=</hash-data>    </info-hash>  </header>  <info>    <parameters />  </info></wc-request:request> ``<response>  <status>    <code>0</code>  </status>  <wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.GetAuthorizedPeople">    <response-results>      <person-info>        <person-id>f0199615-0979-4dcd-a7ca-b9530d2b787d</person-id>        <name>Michel Cordani</name>        <record id="6f8a2949-b5de-431b-a2ba-cc03277f65e9"            record-custodian="true"            rel-type="2"            rel-name="Other"            auth-expires="9999-12-31T23:59:59.999Z"            display-name="Michel"            state="Active"            date-created="2008-01-22T22:12:07.91Z"            max-size-bytes="4294967296"            size-bytes="101555"            app-record-auth-action="NoActionRequired"            app-specific-record-id="1587152">Michel</record>        <preferred-culture>          <language>en</language>          <country>US</country>        </preferred-culture>        <preferred-uiculture>          <language>en</language>          <country>US</country>        </preferred-uiculture>      </person-info>      <more-results>false</more-results>    </response-results>  </wc:info></response> `
+```
+ShellURL/application/complete?appid=39a952bb-aac4-4a3d-8fba-f53e5605eca5&target=AppAuthSuccess&instanceId=1
+```
 
-### Integrating with HealthVault
+### Call the **CreateAuthenticatedSessionToken** method on the HealthVault web service corresponding to instanceID 1.
 
-Connections
+```xml
+<wc-request:request xmlns:wc-request="urn:com.microsoft.wc.request">
+  <header>    <method>CreateAuthenticatedSessionToken</method>
+    <method-version>2</method-version>
+    <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>
+    <language>en</language>
+    <country>US</country>
+    <msg-time>2012-04-28T19:11:42.0720000Z</msg-time>
+    <msg-ttl>1800</msg-ttl>
+    <version>foo v1.0</version>
+  </header>
+  <info>
+    <auth-info>
+      <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>
+      <credential>
+        <appserver2>
+          <hmacSig algName="HMACSHA256">BSMSUpf...n1k/To3A=</hmacSig>
+          <content>
+            <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>
+            <hmac>HMACSHA256</hmac>
+            <signing-time>2012-04-28T19:11:42.0580000Z</signing-time>
+          </content>
+        </appserver2>
+      </credential>
+    </auth-info>
+  </info>
+</wc-request:request>
+```
+### Response
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<response>
+  <status>
+    <code>0</code>
+  </status>
+  <wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.CreateAuthenticatedSessionToken2">
+    <token app-id="39a952bb-aac4-4a3d-8fba-f53e5605eca5" 
+       app-record-auth-action="NoActionRequired">ASAAAPmoT...PwuWA==</token>
+     <shared-secret>zecX0M6EfF0... +BUXnBg==</shared-secret>
+   </wc:info>
+ </response> 
+```
 
--   <a href="connectivity.md" id="RightRailLinkListSection_14090_13">Establishing connectivity</a>
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14090_14">Web connections</a>
--   <a href="patient-connect.md" id="RightRailLinkListSection_14090_15">Patient Connect</a>
--   <a href="dopu.md" id="RightRailLinkListSection_14090_16">Drop-off-and-pick-up (DOPU)</a>
--   <a href="direct-messaging.md" id="RightRailLinkListSection_14090_17">Direct Messaging</a>
--   <a href="mobile-devices.md" id="RightRailLinkListSection_14090_18">Mobile devices (SODA)</a>
--   <a href="soda-walkthrough.md" id="RightRailLinkListSection_14090_20">SODA example</a>
--   <a href="connection-troubleshooting.md" id="RightRailLinkListSection_14090_19">Troubleshooting connections</a>
+At this point, your application can operate like any other offline application. 
 
-Authorization
+For example, to get a list of all accounts currently authorized with this instance of the application, make the following request to GetAuthorizedPeople
 
--   <a href="authentication-and-authorization.md" id="RightRailLinkListSection_14090_21">Authentication and authorization</a>
--   <a href="offline-access.md" id="RightRailLinkListSection_14090_22">Offline access</a>
--   <a href="optional-authorization.md" id="RightRailLinkListSection_14090_23">Optional authorization</a>
--   <a href="authorization-changes.md" id="RightRailLinkListSection_14090_24">Authorization changes</a>
--   <a href="alternate-user-identifiers.md" id="RightRailLinkListSection_14090_25">Alternate user IDs</a>
--   <a href="multi-record-applications.md" id="RightRailLinkListSection_14090_27">Multi-record applications</a>
+```xml
+<wc-request:request xmlns:wc-request="urn:com.microsoft.wc.request">
+  <auth>
+    <hmac-data algName="HMACSHA256">0tOW1...nCSQA</hmac-data>
+  </auth>
+  <header>
+    <method>GetAuthorizedPeople</method>
+    <method-version>1</method-version>
+    <auth-session>
+      <auth-token>ASAAAPmoT...PwuWA==</auth-token>
+    </auth-session>
+    <language>en</language>
+    <country>US</country>
+     <msg-time>2012-04-28T19:11:42.4870000Z</msg-time>
+    <msg-ttl>1800</msg-ttl>
+    <version>foo v1.0</version>
+    <info-hash>
+      <hash-data algName="SHA256">NqMlA...yc4=</hash-data>
+    </info-hash>
+  </header>
+  <info>
+    <parameters />
+  </info>
+</wc-request:request> 
+```
 
-See also
-
--   <a href="master-and-child-applications.md" id="RightRailLinkListSection_14090_26">Master-child applications</a>
-
+And your app would receive this repsonse. 
+```xml
+<response>
+  <status>
+    <code>0</code>
+  </status>
+  <wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.GetAuthorizedPeople">
+    <response-results>
+      <person-info>
+        <person-id>f0199615-0979-4dcd-a7ca-b9530d2b787d</person-id>
+        <name>Michel Cordani</name>
+        <record id="6f8a2949-b5de-431b-a2ba-cc03277f65e9"
+            record-custodian="true"
+            rel-type="2"
+            rel-name="Other"
+            auth-expires="9999-12-31T23:59:59.999Z"
+            display-name="Michel"
+            state="Active"
+            date-created="2008-01-22T22:12:07.91Z"
+            max-size-bytes="4294967296"
+            size-bytes="101555"
+            app-record-auth-action="NoActionRequired"
+            app-specific-record-id="1587152">Michel</record>
+        <preferred-culture>
+          <language>en</language>
+          <country>US</country>
+        </preferred-culture>
+        <preferred-uiculture>
+          <language>en</language>
+          <country>US</country>
+        </preferred-uiculture>
+      </person-info>
+      <more-results>false</more-results>
+    </response-results>
+  </wc:info>
+</response> 
+```

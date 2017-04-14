@@ -240,17 +240,72 @@ That's essentially unchanged except for two changes. First, if there's a wrapped
 
 ### On to ParseXml()
 
-`protected override void ParseXml(IXPathNavigable typeSpecificXml){    XPathNavigator navigator = typeSpecificXml.CreateNavigator();    navigator = navigator.SelectSingleNode("app-specific");    if (navigator == null)    {    throw new ArgumentNullException("null navigator");    }    XPathNavigator when = navigator.SelectSingleNode("when");    m_when = new HealthServiceDateTime();    m_when.ParseXml(when);    XPathNavigator formatAppid = navigator.SelectSingleNode("format-appid");    string appid = formatAppid.Value;    XPathNavigator formatTag = navigator.SelectSingleNode("format-tag");    string wrappedTypeName = formatTag.Value;    if (wrappedTypeName != NullObjectTypeName)    {        m_wrappedObject = (HealthRecordItemCustomBase)        CreateObjectByName(wrappedTypeName);        if (m_wrappedObject != null)        {            m_wrappedObject.Wrapper = this;            XPathNavigator customType =             navigator.SelectSingleNode("CustomType");            if (customType != null)            {                m_wrappedObject.ParseXml(customType);            }        }    }}`
+```c#
+protected override void ParseXml(IXPathNavigable typeSpecificXml)
+{
+    XPathNavigator navigator = typeSpecificXml.CreateNavigator();
+    navigator = navigator.SelectSingleNode("app-specific");
+    if (navigator == null)
+    {
+        throw new ArgumentNullException("null navigator");
+    }
+    XPathNavigator when = navigator.SelectSingleNode("when");
+    m_when = new HealthServiceDateTime();
+    m_when.ParseXml(when);
+    XPathNavigator formatAppid = navigator.SelectSingleNode("format-appid");
+    string appid = formatAppid.Value;
+    XPathNavigator formatTag = navigator.SelectSingleNode("format-tag");
+    string wrappedTypeName = formatTag.Value;
+    if (wrappedTypeName != NullObjectTypeName)
+    {
+            m_wrappedObject = (HealthRecordItemCustomBase)
+            CreateObjectByName(wrappedTypeName);
+            if (m_wrappedObject != null)
+            {
+                    m_wrappedObject.Wrapper = this;
+                    XPathNavigator customType =
+                        navigator.SelectSingleNode("CustomType");
+                        if (customType != null)
+                        {
+                                m_wrappedObject.ParseXml(customType);
+                     }
+            }
+    }
+}
+```
 This is also not very different. The big change is that if there is a type name stored in format-tag, you create an instance of that type, find the custom data for it, and then call ParseXml() on that object. Note that it's possible that that format-tag isn't a type that you know about, so you have to deal with those cases.
 
 The object instances are created by CreateObjectByName():
 
-`public object CreateObjectByName(string typeName){    Type type = Type.GetType(typeName);    object o = null;    if (type != null)    {        if (type.BaseType != typeof(HealthRecordItemCustomBase))        {            throw new ApplicationException("Custom type not derived from HealthRecordItemCustomBase");        }        o = Activator.CreateInstance(type);    }    return o;}`
+```c#
+public object CreateObjectByName(string typeName){
+    Type type = Type.GetType(typeName);
+    object o = null;
+    if (type != null)
+    {        
+        if (type.BaseType != typeof(HealthRecordItemCustomBase))
+        {
+            throw new ApplicationException("Custom type not derived from HealthRecordItemCustomBase");
+        }
+        o = Activator.CreateInstance(type);
+    }    
+return o;
+}
+```
+
 Look up the type to see if it's one you recognize. Make sure that it's derived from your base type, and then create an instance of it.
 
 That's the basic scheme. You also provide a helper method to register the custom type:
 
-`public const string ApplicationCustomTypeID = "a5033c9d-08cf-4204-9bd3-cb412ce39fc0";public static void RegisterCustomDataType(){    ItemTypeManager.RegisterTypeHandler(        new Guid(ApplicationCustomTypeID),        typeof(CustomHealthTypeWrapper), true);}`
+```c#
+public const string ApplicationCustomTypeID = "a5033c9d-08cf-4204-9bd3-cb412ce39fc0";
+public static void RegisterCustomDataType()
+{
+        ItemTypeManager.RegisterTypeHandler(
+                new Guid(ApplicationCustomTypeID),
+                typeof(CustomHealthTypeWrapper), true);
+}
+```
 You'll need to make sure this method is called before saving or loading any custom types.
 
 Custom type XML format
@@ -265,7 +320,17 @@ The wrapper type is fairly easy to use—instead of saving an instance of the cu
 
 When you're querying, there is an extra step. You get back a HealthRecordItemCollection full of CustomHealthTypeWrapper instances. Some of them wrap the type you want, some of them wrap some other type, and some of them won't wrap anything. So you need to write something like the following:
 
-`List<MyCustomObject> customItems = new List<MyCustomObject>();foreach (HealthRecordItem item in items){    CustomHealthWrapper wrapper = (CustomHealthTypeWrapper)item;    MyCustomObject custom = wrapper.WrappedObject as BPZone;    if (custom != null)    {        customItems.Add(custom);    }}`
+```c#
+List<MyCustomObject> customItems = new List<MyCustomObject>();
+foreach (HealthRecordItem item in items){
+    CustomHealthWrapper wrapper = (CustomHealthTypeWrapper)item;
+    MyCustomObject custom = wrapper.WrappedObject as BPZone;
+    if (custom != null)
+    {
+            customItems.Add(custom);
+    }
+}
+```
 Then you end up with an array that has only the types you care about.
 
 A final bit of goodness
@@ -273,25 +338,17 @@ A final bit of goodness
 
 The scheme as described is a bit unfortunate, in that the type derived from HealthRecordItemCustomBase doesn't have the base class items that are present in the HealthRecordItem. So, if you want to get the Key value, you have to write:
 
-`myCustomInstance.Wrapper.Key`
+```c#
+myCustomInstance.Wrapper.Key
+```
 and similarly for the CommonData stuff:
 
-`myCustomInstance.Wrapper.CommonData.Note`
+```c#
+myCustomInstance.Wrapper.CommonData.Note
+```
 The final bit of goodness is to add a few properties in the HealthRecordItemCustomBase class that forward requests to the wrapper class, so you can write:
 
-`myCustomInstance.CommonData.Note`
+```c#
+myCustomInstance.CommonData.Note
+```
 and have it refer to the information in the wrapper class.
-
-### Integrating with HealthVault
-
-Schema
-
--   <a href="thing-type-schema.md" id="RightRailLinkListSection_14083_7">Thing type schema</a>
--   <a href="downloading-type-schemas.md" id="RightRailLinkListSection_14083_8">Downloading type schemas</a>
--   <a href="thing-type-versioning.md" id="RightRailLinkListSection_14083_9">Thing type versioning</a>
--   <a href="common-data-types.md" id="RightRailLinkListSection_14083_10">Common data types</a>
--   <a href="extending-data-types.md" id="RightRailLinkListSection_14083_11">Extending data types</a>
--   <a href="custom-data-types.md" id="RightRailLinkListSection_14083_12">Custom data types</a>
--   <a href="active-and-inactive-status.md" id="RightRailLinkListSection_14083_13">Active and inactive status</a>
--   <a href="digital-signatures.md" id="RightRailLinkListSection_14083_14">Digital signatures</a>
-

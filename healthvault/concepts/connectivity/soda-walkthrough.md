@@ -337,8 +337,8 @@ Sample code
 
 The following is the complete source code for the sample application, including additional comments and exception handling.
 
-```
-      using System;
+```c#
+using System;
 using System.Collections.Generic;
 using Microsoft.Health;
 using Microsoft.Health.ItemTypes;
@@ -347,9 +347,33 @@ namespace ConsoleApplication1
 {
     class Program
     {
-        // ----------------------------------------------------------------------// Introductory HealthVault SODA client application////   This application demonstrates the minimum functionality of a//      HealthVault SODA client.//   It uses the .NET API to:////      * Connect to the HealthVault platform//      * Establish an authorized connection to a user account//      * Use offline access rules inherited from a SODA master //          application to read a HealthVault data item from a user //          record////   It is intended to be used with the following MSDN document://      "Creating a HealthVault SODA Application"//      http://msdn.microsoft.com/en-us/healthvault/ee708278.aspxstaticvoid Main(string[] args)
+        // ----------------------------------------------------------------------
+        // Introductory HealthVault SODA client application
+        //
+        //   This application demonstrates the minimum functionality of a
+        //      HealthVault SODA client.
+        //   It uses the .NET API to:
+        //
+        //      * Connect to the HealthVault platform
+        //      * Establish an authorized connection to a user account
+        //      * Use offline access rules inherited from a SODA master 
+        //          application to read a HealthVault data item from a user 
+        //          record
+        //
+        //   It is intended to be used with the following MSDN document:
+        //      "Creating a HealthVault SODA Application"
+        //      http://msdn.microsoft.com/en-us/healthvault/ee708278.aspx
+        static void Main(string[] args)
         {
-            // ------------------------------------------------------------------// Create application instance with a new client ID, existing master//   ID, and URLs for the HealthVault pre-production //   environment (PPE).// The values for the master app ID, shell URL, and platform URL are //   specified in the application config file (Settings.settings in //   the Visual Studio Solution Explorer).// The value of the client ID is managed by GetClientID(), which //   creates and stores a unique ID in each user's config file.
+            // ------------------------------------------------------------------
+            // Create application instance with a new client ID, existing master
+            //   ID, and URLs for the HealthVault pre-production 
+            //   environment (PPE).
+            // The values for the master app ID, shell URL, and platform URL are 
+            //   specified in the application config file (Settings.settings in 
+            //   the Visual Studio Solution Explorer).
+            // The value of the client ID is managed by GetClientID(), which 
+            //   creates and stores a unique ID in each user's config file.
 
             HealthClientApplication clientApp = HealthClientApplication.Create(
                 GetClientID(),
@@ -358,23 +382,35 @@ namespace ConsoleApplication1
                 new Uri(Properties.Settings.Default.platformUrl)
                 );
 
-            // Verify the application instance.//   Create a new instance if necessary.if (clientApp.GetApplicationInfo() == null)
+            // Verify the application instance.
+            //   Create a new instance if necessary.
+            if (clientApp.GetApplicationInfo() == null)
             {
                 // Create a new client instance.                  
                 clientApp.StartApplicationCreationProcess();
 
-                // A new client instance always requests authorization from the //   current user using the default browser.// Wait for the user to return from the shell.
+                // A new client instance always requests authorization from the 
+                //   current user using the default browser.
+                // Wait for the user to return from the shell.
                 Console.WriteLine("Authorizing new application:");
                 Console.WriteLine("When authorization is complete, press a key to continue.");
                 Console.WriteLine();
                 Console.ReadKey(true);
             }
 
-            // ------------------------------------------------------------------// Use an anonymous connection to get a list of HealthVault users //   that have authorized this client instance (not the master //   application) to read basic demographic data.// Anonymous connections provide limited functionality and cannot be //   used to query individual user records.
+            // ------------------------------------------------------------------
+            // Use an anonymous connection to get a list of HealthVault users 
+            //   that have authorized this client instance (not the master 
+            //   application) to read basic demographic data.
+            // Anonymous connections provide limited functionality and cannot be 
+            //   used to query individual user records.
 
             List<PersonInfo> authorizedPeople = new List<PersonInfo>(clientApp.ApplicationConnection.GetAuthorizedPeople());
 
-            // ------------------------------------------------------------------// Verify that there is at least one authorized user.//   If there isn't, request authorization from the current user //   using the default browser.if (authorizedPeople.Count == 0)
+            // ------------------------------------------------------------------
+            // Verify that there is at least one authorized user.
+            //   If there isn't, request authorization from the current user 
+            //   using the default browser.if (authorizedPeople.Count == 0)
             {
                 // Request authorization.
                 clientApp.StartUserAuthorizationProcess();
@@ -389,7 +425,11 @@ namespace ConsoleApplication1
                 authorizedPeople = new List<PersonInfo>(clientApp.ApplicationConnection.GetAuthorizedPeople());
             }
 
-            // ------------------------------------------------------------------// Create an authorized connection for each person on the list, then //   read and display some basic demographic information for each //   user.if (authorizedPeople.Count > 0)
+            // ------------------------------------------------------------------
+            // Create an authorized connection for each person on the list, then 
+            //   read and display some basic demographic information for each 
+            //   user.
+            if (authorizedPeople.Count > 0)
                 Console.WriteLine("Authorized users:");
             else
                 Console.WriteLine("There are no authorized users available.");            
@@ -398,13 +438,17 @@ namespace ConsoleApplication1
             {
                 try
                 {
-                    // Create an authorized connection for each person on the //   list.
+                    // Create an authorized connection for each person on the 
+                    //   list.
                     HealthClientAuthorizedConnection authConnection = clientApp.CreateAuthorizedConnection(authorizedPerson.PersonId);
 
-                    // Use the authorized connection to read the user's default //   health record.
+                    // Use the authorized connection to read the user's default 
+                    //   health record.
                     HealthRecordAccessor access = new HealthRecordAccessor(authConnection, authConnection.GetPersonInfo().GetSelfRecord().Id);
 
-                    // Search the health record for basic demographic //   information.//   Most user records contain an item of this type.
+                    // Search the health record for basic demographic 
+                    //   information.
+                    //   Most user records contain an item of this type.
                     HealthRecordSearcher search = access.CreateSearcher();
                     search.Filters.Add(new HealthRecordFilter(Basic.TypeId));
                     HealthRecordItemCollection searchResultsGroup = search.GetMatchingItems()[0];
@@ -412,7 +456,8 @@ namespace ConsoleApplication1
                     Console.Write(authorizedPerson.Name + ": ");
                     if (searchResultsGroup.Count > 0)
                     {
-                        // Success - write the user name and default basic //   demographic info to the console.
+                        // Success - write the user name and default basic 
+                        //   demographic info to the console.
                         Basic info = (Basic)searchResultsGroup[0];
                         Console.WriteLine(info.ToString());
                     }
@@ -436,12 +481,15 @@ namespace ConsoleApplication1
             Console.ReadKey(true);
         }
 
-        // ----------------------------------------------------------------------// Retrieve the client application ID from user.config//static Guid GetClientID()
+        // ----------------------------------------------------------------------
+        // Retrieve the client application ID from user.config//static Guid GetClientID()
         {
             // Read the client ID from the user settings file.
             Guid ClientID = Properties.Settings.Default.clientAppId;
 
-            // If the stored value is Guid.Empty, create and store//   a new ID.if (ClientID.CompareTo(Guid.Empty) == 0)
+            // If the stored value is Guid.Empty, create and store
+            //   a new ID.
+            if (ClientID.CompareTo(Guid.Empty) == 0)
             {
                 ClientID = Guid.NewGuid();
                 Properties.Settings.Default.clientAppId = ClientID;
@@ -453,31 +501,3 @@ namespace ConsoleApplication1
     }
 }
 ```
-
-See also
---------
-
--   <a href="master-and-child-applications.md" id="PageContent_14119_2">Master Child Applications</a> 
-
-### Integrating with HealthVault
-
-Connections
-
--   <a href="connectivity.md" id="RightRailLinkListSection_14119_8">Establishing connectivity</a>
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14119_9">Web connections</a>
--   <a href="patient-connect.md" id="RightRailLinkListSection_14119_10">Patient Connect</a>
--   <a href="dopu.md" id="RightRailLinkListSection_14119_11">Drop-off-and-pick-up (DOPU)</a>
--   <a href="direct-messaging.md" id="RightRailLinkListSection_14119_12">Direct Messaging</a>
--   <a href="mobile-devices.md" id="RightRailLinkListSection_14119_13">Mobile devices (SODA)</a>
--   <a href="soda-walkthrough.md" id="RightRailLinkListSection_14119_14">SODA example</a>
--   <a href="connection-troubleshooting.md" id="RightRailLinkListSection_14119_15">Troubleshooting connections</a>
-
-Authorization
-
--   <a href="authentication-and-authorization.md" id="RightRailLinkListSection_14119_16">Authentication and authorization</a>
--   <a href="offline-access.md" id="RightRailLinkListSection_14119_17">Offline access</a>
--   <a href="optional-authorization.md" id="RightRailLinkListSection_14119_18">Optional authorization</a>
--   <a href="authorization-changes.md" id="RightRailLinkListSection_14119_19">Authorization changes</a>
--   <a href="alternate-user-identifiers.md" id="RightRailLinkListSection_14119_20">Alternate user IDs</a>
--   <a href="multi-record-applications.md" id="RightRailLinkListSection_14119_21">Multi-record applications</a>
-

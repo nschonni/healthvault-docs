@@ -33,7 +33,7 @@ Testing a multi-instance app
 
 To test your multi-instance application in PPE:
 
-1.  Choose the US PPE as the default instance for the application by pointing the application's platform URL and Shell URL there to start. For more information, see <a href="configurations.md" id="PageContent_13993_13">instance configurations</a>.
+1.  Choose the US PPE as the default instance for the application by pointing the application's platform URL and Shell URL there to start. For more information, see [instance configurations](/healthvault/concepts/advanced/configurations.md).
 
 2.  Start the application
 
@@ -54,12 +54,5 @@ Multi-instance apps in Production
 
 The production environment may have more instances than PPE. However, the mechanism for connecting to two instances like in PPE, is the same as for connecting to a multitude of instances.
 
-During the HealthVault <a href="go-live.md" id="PageContent_13993_2">go-live process</a>, the app administrator will specify the instances that the app will support. The HealthVault go-live team will provision the application in these production instances. For information about choosing the supported instances for an application, see <a href="global-architecture.md" id="PageContent_13993_8">global architecture</a>.
-
-### Integrating with HealthVault
-
-See also
-
--   <a href="global-architecture.md" id="RightRailLinkListSection_13993_19">Global architecture</a>
--   <a href="configurations.md" id="RightRailLinkListSection_13993_20">Instance configurations</a>
+During the HealthVault [go-live process](/healthvault/publishing/go-live.md), the app administrator will specify the instances that the app will support. The HealthVault go-live team will provision the application in these production instances. For information about choosing the supported instances for an application, see [global architecture](/healthvault/concepts/global-architecture.md).
 

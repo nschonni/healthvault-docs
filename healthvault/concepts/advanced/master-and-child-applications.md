@@ -46,9 +46,4 @@ The ApplicationInfo .NET API class includes the properties that make up the conf
 -   Single-practice systems pass text blobs to the **privacyStatement** and **termsOfUse** properties.
 -   Multi-physician online services pass in a URL to the **actionUrl** property that can redirect to both these documents depending on which query parameter is passed in (“privacy” or “serviceagreement”).
 
-### Integrating with HealthVault
-
-See also
-
--   <a href="mobile-devices.md" id="RightRailLinkListSection_13988_7">Mobile devices (SODA)</a>
 

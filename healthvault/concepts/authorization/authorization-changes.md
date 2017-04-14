@@ -40,7 +40,7 @@ Online Single Record Applications (SRA) don't need to check for sufficient autho
 
 ## Multi-Record Applications (MRA)
 
-HealthVault handles <a href="multi-record-applications.md" id="PageContent_14080_2">multi-record applications</a> slightly differently. HealthVault returns an authentication token if the user has fully authorized any record for the application. You should inspect the record’s authorization status, as described below, before accessing the record.
+HealthVault handles [multi-record applications](/healthvault/concepts/authorization/multi-record-applications.md) slightly differently. HealthVault returns an authentication token if the user has fully authorized any record for the application. You should inspect the record’s authorization status, as described below, before accessing the record.
 
 ## Offline applications and applications with optional rules
 
@@ -51,7 +51,7 @@ Offline applications and applications using optional authentication might need t
 
 # Checking for sufficient authorization
 
-There are several ways to find out whether or not an application can access a record and what permissions it has. The **GetPersonInfo**, **QueryPermissions**, and **GetAuthorizedRecords** requests all return authorization information. For more information about these requests, see the [HealthVault XML method browser](http://developer.healthvault.com/pages/methods/methods.aspx) or the .NET SDK [ApplicationConnection.GetPersonInfo](sdks/dotnet/microsoft.health.applicationconnection.getpersoninfo.aspx), [HealthRecordAccessor.QueryPermissions](sdks/dotnet/microsoft.health.healthrecordaccessor.querypermissions.aspx), and [ApplicationConnection.GetAuthorizedRecords](sdks/dotnet/microsoft.health.applicationconnection.getauthorizedrecords.aspx) methods.
+There are several ways to find out whether or not an application can access a record and what permissions it has. The **GetPersonInfo**, **QueryPermissions**, and **GetAuthorizedRecords** requests all return authorization information. For more information about these requests, see the [HealthVault XML method browser](http://developer.healthvault.com/pages/methods/methods.aspx) or the .NET SDK [ApplicationConnection.GetPersonInfo](/healthvault/sdks/dotnet/microsoft.health.applicationconnection.getpersoninfo.aspx), [HealthRecordAccessor.QueryPermissions](/healthvault/sdks/dotnet/microsoft.health.healthrecordaccessor.querypermissions.aspx), and [ApplicationConnection.GetAuthorizedRecords](/healthvault/sdks/dotnet/microsoft.health.applicationconnection.getauthorizedrecords.aspx) methods.
 
 -   If **GetPersonInfo** returns **AccessDenied**, the user has revoked all access to all of their records. Otherwise, **GetPersonInfo** returns a list of records, each with an authorization status (discussed below).
 -   **QueryPermissions** can be used to determine the permission level of access to specific thing types. When upgrading an offline application or handling optional authentication, an application can query the access to a specific thing type before attempting to access the record. For optional authentication, the application can then direct the user to authorize a rule. For offline applications, the application might simply skip processing any unauthorized types.
@@ -89,6 +89,6 @@ HealthVault returns the authorization status in response to **GetPersonInfo** an
 Requesting authorization to optional rules
 ------------------------------------------
 
-When creating an authorization rule, you assign a unique name to each rule. When requesting a user to authorize a rule, pass the rule’s unique name and your application ID in the query string to the APPAUTH target of the <a href="shell-redirect-interface.md" id="PageContent_14080_3">shell redirect interface</a>.
+When creating an authorization rule, you assign a unique name to each rule. When requesting a user to authorize a rule, pass the rule’s unique name and your application ID in the query string to the APPAUTH target of the [shell redirect interface](/healthvault/concepts/authorization/shell-redirect-interface.md).
 
-For more information, see <a href="optional-authorization.md" id="PageContent_14080_4">optional authorization</a>.
+For more information, see [optional authorization](/healthvault/concepts/authorization/optional-authorization.md).

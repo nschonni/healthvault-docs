@@ -42,26 +42,3 @@ Partner applications that use offline access currently need a portal page that u
 Because having to create a portal application just to do this is a bit clumsy, we have added a platform feature where the offline system can "register" an identifier that lets them know who a person is with HealthVault, and HealthVault would return a validation code to the system. The user could then go to HealthVault, select the appropriate application, and enter that validation code, which would be recorded.
 
 At a later time, the offline system could query for new validations. It would then get back the identifier it registered along with user ID and record ID, and at that point it could use offline access.
-
-### Integrating with HealthVault
-
-Connections
-
--   <a href="connectivity.md" id="RightRailLinkListSection_14000_15">Establishing connectivity</a>
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14000_7">Web connections</a>
--   <a href="patient-connect.md" id="RightRailLinkListSection_14000_8">Patient Connect</a>
--   <a href="dopu.md" id="RightRailLinkListSection_14000_9">Drop-off-and-pick-up (DOPU)</a>
--   <a href="direct-messaging.md" id="RightRailLinkListSection_14000_10">Direct Messaging</a>
--   <a href="mobile-devices.md" id="RightRailLinkListSection_14000_18">Mobile devices (SODA)</a>
--   <a href="soda-walkthrough.md" id="RightRailLinkListSection_14000_19">SODA example</a>
--   <a href="connection-troubleshooting.md" id="RightRailLinkListSection_14000_16">Troubleshooting connections</a>
-
-Authorization
-
--   <a href="authentication-and-authorization.md" id="RightRailLinkListSection_14000_11">Authentication and authorization</a>
--   <a href="offline-access.md" id="RightRailLinkListSection_14000_12">Offline access</a>
--   <a href="optional-authorization.md" id="RightRailLinkListSection_14000_13">Optional authorization</a>
--   <a href="authorization-changes.md" id="RightRailLinkListSection_14000_14">Authorization changes</a>
--   <a href="alternate-user-identifiers.md" id="RightRailLinkListSection_14000_17">Alternate user IDs</a>
--   <a href="multi-record-applications.md" id="RightRailLinkListSection_14000_20">Multi-record applications</a>
-

@@ -107,7 +107,7 @@ See the [HealthVault method browser](http://developer.healthvault.com/methods/me
 
 ### .NET SDK
 
-The HealthVault .NET SDK contains classes and methods in the [Microsoft.Health.PatientConnect](sdks/dotnet/microsoft.health.patientconnect.yml) namespace for creating and managing Patient Connect connect requests.
+The HealthVault .NET SDK contains classes and methods in the [Microsoft.Health.PatientConnect](/healthvault/sdks/dotnet/microsoft.health.patientconnect.yml) namespace for creating and managing Patient Connect connect requests.
 
 Managing Patient Connect connections
 ------------------------------------
@@ -194,26 +194,3 @@ private void GetAuthorizedRequests(DateTime validatedSince)
      }
 } 
 ```
-
-### Integrating with HealthVault
-
-Connections
-
--   <a href="connectivity.md" id="RightRailLinkListSection_14091_16">Establishing connectivity</a>
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14091_8">Web connections</a>
--   <a href="patient-connect.md" id="RightRailLinkListSection_14091_9">Patient Connect</a>
--   <a href="dopu.md" id="RightRailLinkListSection_14091_10">Drop-off-and-pick-up (DOPU)</a>
--   <a href="direct-messaging.md" id="RightRailLinkListSection_14091_11">Direct Messaging</a>
--   <a href="mobile-devices.md" id="RightRailLinkListSection_14091_18">Mobile devices (SODA)</a>
--   <a href="soda-walkthrough.md" id="RightRailLinkListSection_14091_19">SODA example</a>
--   <a href="connection-troubleshooting.md" id="RightRailLinkListSection_14091_17">Troubleshooting connections</a>
-
-Authorization
-
--   <a href="authentication-and-authorization.md" id="RightRailLinkListSection_14091_12">Authentication and authorization</a>
--   <a href="offline-access.md" id="RightRailLinkListSection_14091_13">Offline access</a>
--   <a href="optional-authorization.md" id="RightRailLinkListSection_14091_14">Optional authorization</a>
--   <a href="authorization-changes.md" id="RightRailLinkListSection_14091_15">Authorization changes</a>
--   <a href="alternate-user-identifiers.md" id="RightRailLinkListSection_14091_20">Alternate user IDs</a>
--   <a href="multi-record-applications.md" id="RightRailLinkListSection_14091_21">Multi-record applications</a>
-

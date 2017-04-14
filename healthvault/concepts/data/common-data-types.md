@@ -153,21 +153,3 @@ The following table shows the structured date/time types and what parts are requ
 ### Approximate date/time
 
 The approx-date-time type allows for either a structured date/time or a descriptive one. The structured date/time is simply an instance of the StructuredApproxDate described above. The descriptive choice is a simple string and is intended to be less specific than can be described by a structured date. For example, "as an infant" or "after puberty" indicate date/time values that cannot be expressed by year, month, day, etc. These string-based representations of time are common in medicine and need to be accounted for.
-
-### Integrating with HealthVault
-
-Schema
-
--   <a href="thing-type-schema.md" id="RightRailLinkListSection_14095_8">Thing type schema</a>
--   <a href="downloading-type-schemas.md" id="RightRailLinkListSection_14095_9">Downloading type schemas</a>
--   <a href="thing-type-versioning.md" id="RightRailLinkListSection_14095_10">Thing type versioning</a>
--   <a href="common-data-types.md" id="RightRailLinkListSection_14095_11">Common data types</a>
--   <a href="extending-data-types.md" id="RightRailLinkListSection_14095_12">Extending data types</a>
--   <a href="custom-data-types.md" id="RightRailLinkListSection_14095_13">Custom data types</a>
--   <a href="active-and-inactive-status.md" id="RightRailLinkListSection_14095_14">Active and inactive status</a>
--   <a href="digital-signatures.md" id="RightRailLinkListSection_14095_15">Digital signatures</a>
-
-See also
-
--   <a href="vocabularies-and-codable-values.md" id="RightRailLinkListSection_14095_16">Vocabularies and codable values</a>
-

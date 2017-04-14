@@ -3,7 +3,7 @@ CCR Input Functions
 
 The transforms that convert CCR data into HealthVault types are not simple mappings of one data value onto another. The mappings are context sensitive and depend on both the presence and value of individual elements of the CCR.
 
-The logic behind the transforms is described in detail in [HealthVault CCR Input Mappings](https://msdn.microsoft.com/en-us/healthvault/ee663895). In order to improve the readability of those descriptions, some sections of the transform logic are described as procedure or function calls. This document provides pseudocode descriptions of those calls.
+The logic behind the transforms is described in detail in [HealthVault CCR Input Mappings](ccr-input-mappings.md). In order to improve the readability of those descriptions, some sections of the transform logic are described as procedure or function calls. This document provides pseudocode descriptions of those calls.
 
 ### IsConcept(text, concept)
 

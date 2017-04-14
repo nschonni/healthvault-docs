@@ -33,7 +33,7 @@ There are some special considerations for setting this field that developers sho
 
 ## Read-Only data and updated-end-date
 
-When an item in HealthVault is [read-only](read-only-data.md), it cannot be modified. 
+When an item in HealthVault is [read-only](/healthvault/concepts/data/read-only-data.md), it cannot be modified. 
 
 The **updated-end-date** field is defined in a section of the thing schema where the read-only restriction doesn't apply, so it can be modified even if an item is read-only. This allows applications or users to specify an updated end date to indicate whether a read-only item is active or not.
 

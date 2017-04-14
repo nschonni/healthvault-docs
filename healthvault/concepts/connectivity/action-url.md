@@ -43,6 +43,6 @@ Registering an **ActionUrl** is one of the steps on the Go-Live checklist that e
 ActionUrl targets
 -----------------
 
-For production environments you must implement handling of redirection from the shell back to your application for the Application Targets listed on the <a href="shell-redirect-interface.md" id="PageContent_14027_2">Shell Redirect Interface</a>. In the production environment, the action URL must use SSL (e.g., https).
+For production environments you must implement handling of redirection from the shell back to your application for the Application Targets listed on the [shell redirect interface](/healthvault/concepts/connectivity/shell-redirect-interface.md). In the production environment, the action URL must use SSL (e.g., https).
 
 

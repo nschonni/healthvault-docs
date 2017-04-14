@@ -94,21 +94,3 @@ EU HealthVault instance
 | Target Population                      | Most other countries                                                      | The target population the instance serves.                                                           |
 | Account sign-up age minimum            | 16 years                                                                  | The minimum age for a valid new HealthVault account.                                                 |
 | instanceID                             | 2                                                                         | The instanceID of the EU instance.                                                                   |
-
-<span id="singleColInThreeColLayout"></span>
-
-### Integrating with HealthVault
-
-Go-live process
-
--   <a href="go-live.md" id="RightRailLinkListSection_13991_16">Go-live guide</a>
--   <a href="updates.md" id="RightRailLinkListSection_13991_17">Updating your application</a>
--   <a href="configurations.md" id="RightRailLinkListSection_13991_23">Instance configurations</a>
--   <a href="brand-materials.md" id="RightRailLinkListSection_13991_19">Brand materials</a>
--   <a href="territories.md" id="RightRailLinkListSection_13991_18">Territories</a>
-
-See also
-
--   <a href="global-architecture.md" id="RightRailLinkListSection_13991_21">Global architecture</a>
--   <a href="multi-instance-applications.md" id="RightRailLinkListSection_13991_22">Multi-instance applications</a>
-

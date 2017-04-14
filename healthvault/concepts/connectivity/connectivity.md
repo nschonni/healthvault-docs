@@ -83,7 +83,7 @@ The following summarizes the process of establishing a record authorization from
 
 <img src="https://i-msdn.sec.s-msft.com/dynimg/IC698759.png" title="Web Summary" alt="Web Summary" id="Web Summary" />
 
-See <a href="web-connectivity.md" id="PageContent_14118_2">web connectivity</a> for more information and code samples.
+See [web connectivity](/healthvault/concepts/connectivity/web-connectivity.md) for more information and code samples.
 
 ### Patient Connect
 
@@ -102,15 +102,15 @@ The following describes the end-to-end workflow.
 The following summarizes the Patient Connect workflow.
 
 <img src="https://i-msdn.sec.s-msft.com/dynimg/IC698760.png" title="Patient Connect Summary" alt="Patient Connect Summary" id="Patient Connect Summary" />
-See <a href="patient-connect.md" id="PageContent_14118_3">Establishing authorization with a user using Patient Connect</a> for more information and code samples.
+See [Establishing authorization with a user using Patient Connect](/healthvault/concepts/connectivity/patient-connect.md) for more information and code samples.
 
 ### Software on Device Authentication (SODA)
 
 The SODA model allows native applications that run on mobile and other client devices to establish authorization with HealthVault records.
 
-See <a href="mobile-devices.md" id="PageContent_14118_4">HealthVault mobile</a> for more information and code samples.
+See [HealthVault on mobile devices](/healthvault/concepts/connectivity/mobile-devices.md) for more information and code samples.
 
-DOPU
+Drop-off/Pick-up
 ----
 
 Drop-off Pick-up (DOPU) provides a simple method for applications to send data to HealthVault records without the need to first establish a record authorization. With DOPU, applications send a data package to HealthVault whenever new data is available. The user has to explicitly pick up the data in order to integrate it with his HealthVault record. DOPU is simpler to implement than the record authorization approaches in that establishing and maintaining a record authorization is not required.
@@ -129,32 +129,9 @@ The following summarizes the DOPU workflow.
 
 <img src="https://i-msdn.sec.s-msft.com/dynimg/IC698761.png" title="DOPUSummary" alt="DOPUSummary" id="DOPU Summary" />
 
-See <a href="dopu.md" id="PageContent_14118_5">drop-off and pick-up (DOPU)</a> for more information and code samples.
+See [drop-off and pick-up (DOPU)](/healthvault/concepts/connectivity/drop-off-pick-up.md) for more information and code samples.
 
 Direct Messaging
 ----------------
 
-HealthVault provides Direct Messaging addresses for every HealthVault user. Organizations that support Direct Messaging protocols can use this capability to exchange messages with HealthVault users. This includes the ability to send clinical document attachments that are integrated into the user’s record. For more information see <a href="direct-messaging.md" id="PageContent_14118_6">Direct Messaging</a>.
-
-### Integrating with HealthVault
-
-Connections
-
--   <a href="connectivity.md" id="RightRailLinkListSection_14118_20">Establishing connectivity</a>
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14118_12">Web connections</a>
--   <a href="patient-connect.md" id="RightRailLinkListSection_14118_15">Patient Connect</a>
--   <a href="dopu.md" id="RightRailLinkListSection_14118_13">Drop-off-and-pick-up (DOPU)</a>
--   <a href="direct-messaging.md" id="RightRailLinkListSection_14118_14">Direct Messaging</a>
--   <a href="mobile-devices.md" id="RightRailLinkListSection_14118_22">Mobile devices (SODA)</a>
--   <a href="soda-walkthrough.md" id="RightRailLinkListSection_14118_23">SODA example</a>
--   <a href="connection-troubleshooting.md" id="RightRailLinkListSection_14118_21">Troubleshooting connections</a>
-
-Authorization
-
--   <a href="authentication-and-authorization.md" id="RightRailLinkListSection_14118_16">Authentication and authorization</a>
--   <a href="offline-access.md" id="RightRailLinkListSection_14118_17">Offline access</a>
--   <a href="optional-authorization.md" id="RightRailLinkListSection_14118_18">Optional authorization</a>
--   <a href="authorization-changes.md" id="RightRailLinkListSection_14118_19">Authorization changes</a>
--   <a href="alternate-user-identifiers.md" id="RightRailLinkListSection_14118_24">Alternate user IDs</a>
--   <a href="multi-record-applications.md" id="RightRailLinkListSection_14118_25">Multi-record applications</a>
-
+HealthVault provides Direct Messaging addresses for every HealthVault user. Organizations that support Direct Messaging protocols can use this capability to exchange messages with HealthVault users. This includes the ability to send clinical document attachments that are integrated into the user’s record. For more information see [Direct Messaging](/healthvault/concepts/connectivity/direct-messaging.md).

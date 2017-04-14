@@ -1,7 +1,7 @@
 Drop-off pick-up (DOPU)
 =======================
 
-Drop-off and pick-up (DOPU) is a way for an application to send health data to a user without requiring a patient-facing user interface. It's a good choice for applications that don't have a user interface and want a one-time push of data to users. For an ongoing relationship with users, see <a href="patient-connect.md" id="PageContent_14092_2">Patient Connect</a>.
+Drop-off and pick-up (DOPU) is a way for an application to send health data to a user without requiring a patient-facing user interface. It's a good choice for applications that don't have a user interface and want a one-time push of data to users. For an ongoing relationship with users, see [Patient Connect](/healthvault/concepts/connectivity/patient-connect.md).
 
 For example, a lab may support sending results to HealthVault, but it doesn't have a website that allows users to log in and connect via the online web user approach. It's also not interested in establishing a connection with the user and exchanging data on an ongoing basis. In this case it can create a DOPU package containing the lab results and send it to HealthVault for the user to pick up.
 
@@ -315,26 +315,3 @@ private static void CreateDopuPackage(
     SendConnectPackageMail(patientId, code);
 }
 ```
-
-### Integrating with HealthVault
-
-Connections
-
--   <a href="connectivity.md" id="RightRailLinkListSection_14092_20">Establishing connectivity</a>
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14092_12">Web connections</a>
--   <a href="patient-connect.md" id="RightRailLinkListSection_14092_13">Patient Connect</a>
--   <a href="dopu.md" id="RightRailLinkListSection_14092_14">Drop-off-and-pick-up (DOPU)</a>
--   <a href="direct-messaging.md" id="RightRailLinkListSection_14092_15">Direct Messaging</a>
--   <a href="mobile-devices.md" id="RightRailLinkListSection_14092_22">Mobile devices (SODA)</a>
--   <a href="soda-walkthrough.md" id="RightRailLinkListSection_14092_23">SODA example</a>
--   <a href="connection-troubleshooting.md" id="RightRailLinkListSection_14092_21">Troubleshooting connections</a>
-
-Authorization
-
--   <a href="authentication-and-authorization.md" id="RightRailLinkListSection_14092_16">Authentication and authorization</a>
--   <a href="offline-access.md" id="RightRailLinkListSection_14092_17">Offline access</a>
--   <a href="optional-authorization.md" id="RightRailLinkListSection_14092_18">Optional authorization</a>
--   <a href="authorization-changes.md" id="RightRailLinkListSection_14092_19">Authorization changes</a>
--   <a href="alternate-user-identifiers.md" id="RightRailLinkListSection_14092_24">Alternate user IDs</a>
--   <a href="multi-record-applications.md" id="RightRailLinkListSection_14092_25">Multi-record applications</a>
-

@@ -20,11 +20,11 @@ To use Shell functionality, the application should construct the redirect URL wi
 
     -   **extrecordid** is optional and used only for targets that act on a particular record (for example, SHARERECORD). If present, it should be the record identifier for the record that the application wants the Shell to work against.
 
-    -   **lcid** or **culture** is used to specify the display language for the destination target. The lcid parameter must be a valid Locale ID (decimal, such as 1033, not hex). The culture parameter must be a valid ISO format (such as en-US). The language must be supported on that instance of HealthVault. For more information about supported languages, see <a href="configurations.md" id="PageContent_14089_2">instance configurations</a>.
+    -   **lcid** or **culture** is used to specify the display language for the destination target. The lcid parameter must be a valid Locale ID (decimal, such as 1033, not hex). The culture parameter must be a valid ISO format (such as en-US). The language must be supported on that instance of HealthVault. For more information about supported languages, see [instance configurations](/healthvault/concepts/advanced/configurations.md).
 
     -   **target-specific parameters** may be required by some of the redirect targets. These parameters are documented with each redirect target below.
 
-    -   **aib** (allow instance bounce) indicates whether the user can be redirected to another instance on this request. For more information, see <a href="global-architecture.md" id="PageContent_14089_3">global architecture</a>.
+    -   **aib** (allow instance bounce) indicates whether the user can be redirected to another instance on this request. For more information, see [global architecture](/healthvault/concepts/advanced/global-architecture.md).
 
 An application can use Shell functionality by creating a proper redirect URL. Construct the redirect URL with target query parameters: https:// <span class="parameter">ShellUrl</span>/redirect.aspx?target= <span class="parameter">TARGET</span>&targetqs= <span class="parameter">TARGETQS</span>.
 
@@ -34,7 +34,7 @@ You should URL-encode the targetqs. For example:
 
 ### Using the .NET SDK
 
-The .NET SDK has some helper methods that create the URL for you. Using the classes in the [Microsoft.Health.Web](sdks/dotnet/microsoft.health.web.yml) namespace, a web application can extend the [HealthServicePage](sdks/dotnet//microsoft.health.web.healthservicepage.yml) class and invoke the RedirectToShellUrl()) method or can use the [WebApplicationUtilities](sdks/dotnet/microsoft.health.web.webapplicationutilities.yml) class to redirect to the Shell. For example, if the page extends from the **HealthServicePage** class:
+The .NET SDK has some helper methods that create the URL for you. Using the classes in the [Microsoft.Health.Web](/healthvault/sdks/dotnet/microsoft.health.web.yml) namespace, a web application can extend the [HealthServicePage](/healthvault/sdks/dotnet//microsoft.health.web.healthservicepage.yml) class and invoke the RedirectToShellUrl()) method or can use the [WebApplicationUtilities](/healthvault/sdks/dotnet/microsoft.health.web.webapplicationutilities.yml) class to redirect to the Shell. For example, if the page extends from the **HealthServicePage** class:
 
 ```cs
 this.RedirectToShellUrl("APPAUTH", "appid=" + this.ApplicationId.ToString() + "&ismra=true" + "&extrecordid=12854139-f27b-4ab4-ab68-c1757b9fad0w"); 
@@ -234,7 +234,7 @@ An example response URL:
 
 <span class="literalValue">https:// <span class="parameter">ActionURL</span>?target=SignOut</span>
 
-The .NET SDK wrapper for this target is the [HealthServicePage<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>SignOut](https://msdn.microsoft.com/en-us/library/microsoft.health.web.healthservicepage.signout.aspx) method. This method also discards the application auth cookie; discarding the cookie is required to sign the user out of the application. If the application does not use this method, it must manually delete the auth cookie when signing the user out.
+The .NET SDK wrapper for this target is the [HealthServicePage.SignOut](/healthvault/sdks/dotnet/microsoft.health.web.healthservicepage.signout.aspx) method. This method also discards the application auth cookie; discarding the cookie is required to sign the user out of the application. If the application does not use this method, it must manually delete the auth cookie when signing the user out.
 
 ### AUTH
 
@@ -285,7 +285,7 @@ Response URL example:
 
 <span class="literalValue">http:// <span class="parameter">ActionURL</span>?target=SelectedRecordChanged</span>
 
-The .NET SDK wrapper for this target is the [HealthServicePage<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>RedirectToLogOn](https://msdn.microsoft.com/en-us/library/microsoft.health.web.healthservicepage.redirecttologon.aspx) method, which additionally sets the *actionqs* parameter to the full relative path of the current page, including query string parameters, which is used to ensure that the user lands back on the page they started from. However, this use of actionqs is by convention only and other platforms need not follow it.
+The .NET SDK wrapper for this target is the [HealthServicePage.RedirectToLogOn](/healthvault/sdks/dotnet/microsoft.health.web.healthservicepage.redirecttologon.aspx) method, which additionally sets the *actionqs* parameter to the full relative path of the current page, including query string parameters, which is used to ensure that the user lands back on the page they started from. However, this use of actionqs is by convention only and other platforms need not follow it.
 
 In case of an online web application, the application needs to store the auth token and should exchange it in any further calls to the HealthVault web service.
 
@@ -1034,7 +1034,7 @@ Returned when the Shell finds an invalid record id in the extrecordid parameter.
 
 Returned when the user canceled an application auth request.
 
-If this return is the result of the .NET SDK [HealthServicePage<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>RedirectToLogOn](https://msdn.microsoft.com/en-us/library/microsoft.health.web.healthservicepage.redirecttologon.aspx) or [WebApplicationUtilities<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>RedirectToLogOn](https://msdn.microsoft.com/en-us/library/microsoft.health.web.webapplicationutilities.redirecttologon.aspx) method, the actionqs parameter is set to the relative path and query string that the user was viewing when the logon request was initiated.
+If this return is the result of the .NET SDK [HealthServicePage.RedirectToLogOn](/healthvault/sdks/dotnet/microsoft.health.web.healthservicepage.redirecttologon.aspx) or [WebApplicationUtilities.RedirectToLogOn](/healthvault/sdks/dotnet/microsoft.health.web.webapplicationutilities.redirecttologon.aspx) method, the actionqs parameter is set to the relative path and query string that the user was viewing when the logon request was initiated.
 
 In addition, TargetDetails are also appended to the return target; either CREATEACCOUNTSUCCESS or CREATEACCOUNTFAILURE.
 
@@ -1072,7 +1072,7 @@ Returned when the CCR/CCD reconcile transaction fails.
 
 Returned from an APPAUTH request where the user selects a new record for use in an SRA application .
 
-It is important that the application refresh any cached record-related information when this target is received. Users of the .NET SDK can use the [HealthServicePage.RefreshAndPersist()](sdks/dotnet/microsoft.health.web.healthservicepage.yml) method to accomplish this refresh.
+It is important that the application refresh any cached record-related information when this target is received. Users of the .NET SDK can use the [HealthServicePage.RefreshAndPersist()](/healthvault/sdks/dotnet/microsoft.health.web.healthservicepage.yml) method to accomplish this refresh.
 
 **SHARERECORDFAILED**
 
@@ -1085,20 +1085,3 @@ Returned when a record sharing invitation was sent successfully.
 **SIGNOUT**
 
 Returned from an APPSIGNOUT request to the Shell.
-
-### Integrating with HealthVault
-
-Web development
-
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14089_18">Web connections</a>
--   <a href="shell-redirect-interface.md" id="RightRailLinkListSection_14089_19">Shell redirect interface</a>
--   <a href="code-security-requirements.md" id="RightRailLinkListSection_14089_22">Code access security permissions</a>
--   <a href="action-url.md" id="RightRailLinkListSection_14089_20">Interacting with ActionUrl</a>
--   <a href="action-url-custom-redirection.md" id="RightRailLinkListSection_14089_21">Customizing redirection</a>
-
-See also
-
--   <a href="global-architecture.md" id="RightRailLinkListSection_14089_23">Global architecture</a>
--   <a href="emergency-preparedness.md" id="RightRailLinkListSection_14089_25">Emergency preparedness</a>
--   <a href="configurations.md" id="RightRailLinkListSection_14089_24">Instance configurations</a>
-

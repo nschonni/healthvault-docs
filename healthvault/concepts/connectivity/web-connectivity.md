@@ -34,7 +34,7 @@ An example response URL:
 
 <span class="command">https:// <span class="parameter">applicationActionURL</span>?target=AppAuthSuccess&wctoken= <span class="parameter">auth\_token</span>&instanceId=1</span>
 
-You can choose either Get or Post for receiving the auth token, using the optional **trm** parameter of the AUTH target (default is Get). Once you have the auth token, call the HealthVault [WebApplicationUtilities<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetPersonInfo](https://msdn.microsoft.com/en-us/library/microsoft.health.web.webapplicationutilities.getpersoninfo.aspx) method and pass back the auth token to get the [PersonInfo](https://msdn.microsoft.com/en-us/library/microsoft.health.personinfo.aspx) object, which will contain the PersonID and their RecordIDs that are authorized to the application.
+You can choose either Get or Post for receiving the auth token, using the optional **trm** parameter of the AUTH target (default is Get). Once you have the auth token, call the HealthVault [WebApplicationUtilities.GetPersonInfo](https://msdn.microsoft.com/en-us/library/microsoft.health.web.webapplicationutilities.getpersoninfo.aspx) method and pass back the auth token to get the [PersonInfo](https://msdn.microsoft.com/en-us/library/microsoft.health.personinfo.aspx) object, which will contain the PersonID and their RecordIDs that are authorized to the application.
 
 The following diagram depicts the auth process.
 
@@ -62,7 +62,7 @@ The process works like this:
 
     <span class="command">https:// <span class="parameter">applicationActionURL</span>?actionqs= <span class="parameter">AppUserId</span>&instanceID=1</span>
 
-    For more information about instance IDs see <a href="global-architecture.md" id="PageContent_14079_3">HealthVault global architecture</a>.
+    For more information about instance IDs see [HealthVault global architecture](/healthvault/concepts/advanced/global-architecture.md).
 
 Authorizing application access to the user's records
 ----------------------------------------------------
@@ -95,34 +95,3 @@ After record creation, the user is then immediately presented with a workflow to
 The following diagram depicts this process.
 
 <img src="https://i-msdn.sec.s-msft.com/dynimg/IC630937.png" title="Application-initiated account or record creation" alt="Application-initiated account or record creation" id="IC630937" /> 
-
-### Integrating with HealthVault
-
-Connections
-
--   <a href="connectivity.md" id="RightRailLinkListSection_14079_19">Establishing connectivity</a>
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14079_11">Web connections</a>
--   <a href="patient-connect.md" id="RightRailLinkListSection_14079_12">Patient Connect</a>
--   <a href="dopu.md" id="RightRailLinkListSection_14079_13">Drop-off-and-pick-up (DOPU)</a>
--   <a href="direct-messaging.md" id="RightRailLinkListSection_14079_14">Direct Messaging</a>
--   <a href="mobile-devices.md" id="RightRailLinkListSection_14079_26">Mobile devices (SODA)</a>
--   <a href="soda-walkthrough.md" id="RightRailLinkListSection_14079_27">SODA example</a>
--   <a href="connection-troubleshooting.md" id="RightRailLinkListSection_14079_20">Troubleshooting connections</a>
-
-Authorization
-
--   <a href="authentication-and-authorization.md" id="RightRailLinkListSection_14079_15">Authentication and authorization</a>
--   <a href="offline-access.md" id="RightRailLinkListSection_14079_16">Offline access</a>
--   <a href="optional-authorization.md" id="RightRailLinkListSection_14079_17">Optional authorization</a>
--   <a href="authorization-changes.md" id="RightRailLinkListSection_14079_18">Authorization changes</a>
--   <a href="alternate-user-identifiers.md" id="RightRailLinkListSection_14079_28">Alternate user IDs</a>
--   <a href="multi-record-applications.md" id="RightRailLinkListSection_14079_29">Multi-record applications</a>
-
-Web development
-
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14079_21">Web connections</a>
--   <a href="shell-redirect-interface.md" id="RightRailLinkListSection_14079_22">Shell redirect interface</a>
--   <a href="code-security-requirements.md" id="RightRailLinkListSection_14079_25">Code access security permissions</a>
--   <a href="action-url.md" id="RightRailLinkListSection_14079_23">Interacting with ActionUrl</a>
--   <a href="action-url-custom-redirection.md" id="RightRailLinkListSection_14079_24">Customizing redirection</a>
-

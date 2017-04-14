@@ -7,7 +7,7 @@ The logic behind each transform is described below. In order to improve the read
 
 1.  **Value mappings**. Each "Map values" statement is followed by one or more table rows, each of which describes a direct mapping of a specific element in a HealthVault type onto an element in a CCR. Mappings described in adjacent rows should be applied together, and in the sequence indicated.
     Each row contains the following elements:
-    1.  **HealthVault**. The element in the HealthVault type whose value is used to populate the CCR, or a function (see below) whose return value will be used. Note that the [GetConcept](https://msdn.microsoft.com/en-us/healthvault/ee663896) functions use the values defined in the "Export Text" column <a href="ccr-vocabularies.md" id="PageContent_14115_2">HealthVault CCR Vocabularies</a> to assign an element name to a concept.
+    1.  **HealthVault**. The element in the HealthVault type whose value is used to populate the CCR, or a function (see below) whose return value will be used. Note that the [GetConcept](ccr-output-functions.md) functions use the values defined in the "Export Text" column <a href="ccr-vocabularies.md" id="PageContent_14115_2">HealthVault CCR Vocabularies</a> to assign an element name to a concept.
     2.  **CCR**. The CCR element whose value will be set.
     3.  **Conversion** (optional.) This may specify a simple type conversion (such as Boolean), an externally defined conversion (such as the ISO-8601 date standard), or a named conversion defined elsewhere in this document.
 2.  **Scope**. Each line that is not a table row is indented to indicate the scope of loops and conditional elements within the transform logic.

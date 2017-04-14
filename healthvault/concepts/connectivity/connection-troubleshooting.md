@@ -58,31 +58,3 @@ Client is getting one of the following error messages with a WebException (these
         3.  Click **OK**.
     4.  Run the scenario that causes the connection problem.
     5.  Analyze the Fiddler logs.
-
-### Integrating with HealthVault
-
-Connections
-
--   <a href="connectivity.md" id="RightRailLinkListSection_14011_15">Establishing connectivity</a>
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14011_7">Web connections</a>
--   <a href="patient-connect.md" id="RightRailLinkListSection_14011_8">Patient Connect</a>
--   <a href="dopu.md" id="RightRailLinkListSection_14011_9">Drop-off-and-pick-up (DOPU)</a>
--   <a href="direct-messaging.md" id="RightRailLinkListSection_14011_10">Direct Messaging</a>
--   <a href="mobile-devices.md" id="RightRailLinkListSection_14011_17">Mobile devices (SODA)</a>
--   <a href="soda-walkthrough.md" id="RightRailLinkListSection_14011_18">SODA example</a>
--   <a href="connection-troubleshooting.md" id="RightRailLinkListSection_14011_16">Troubleshooting connections</a>
-
-Authorization
-
--   <a href="authentication-and-authorization.md" id="RightRailLinkListSection_14011_11">Authentication and authorization</a>
--   <a href="offline-access.md" id="RightRailLinkListSection_14011_12">Offline access</a>
--   <a href="optional-authorization.md" id="RightRailLinkListSection_14011_13">Optional authorization</a>
--   <a href="authorization-changes.md" id="RightRailLinkListSection_14011_14">Authorization changes</a>
--   <a href="alternate-user-identifiers.md" id="RightRailLinkListSection_14011_19">Alternate user IDs</a>
--   <a href="multi-record-applications.md" id="RightRailLinkListSection_14011_20">Multi-record applications</a>
-
-See also
-
--   <a href="request-response-tracing.md" id="RightRailLinkListSection_14011_22">Request-response tracing</a>
--   <a href="status-codes.md" id="RightRailLinkListSection_14011_21">Status codes</a>
-

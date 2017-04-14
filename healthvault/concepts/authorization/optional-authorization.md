@@ -72,30 +72,3 @@ string TargetQuery = "appid=11111111-1111-1111-1111-111111111111&onopt1=name1&on
 HealthServicePage ServicePage = new HealthServicePage();
 ServicePage.RedirectToShellUrl("APPAUTH", TargetQuery); 
 ```
-
-### Integrating with HealthVault
-
-Connections
-
--   <a href="connectivity.md" id="RightRailLinkListSection_14001_15">Establishing connectivity</a>
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14001_7">Web connections</a>
--   <a href="patient-connect.md" id="RightRailLinkListSection_14001_8">Patient Connect</a>
--   <a href="dopu.md" id="RightRailLinkListSection_14001_9">Drop-off-and-pick-up (DOPU)</a>
--   <a href="direct-messaging.md" id="RightRailLinkListSection_14001_10">Direct Messaging</a>
--   <a href="mobile-devices.md" id="RightRailLinkListSection_14001_18">Mobile devices (SODA)</a>
--   <a href="soda-walkthrough.md" id="RightRailLinkListSection_14001_19">SODA example</a>
--   <a href="connection-troubleshooting.md" id="RightRailLinkListSection_14001_16">Troubleshooting connections</a>
-
-Authorization
-
--   <a href="authentication-and-authorization.md" id="RightRailLinkListSection_14001_11">Authentication and authorization</a>
--   <a href="offline-access.md" id="RightRailLinkListSection_14001_12">Offline access</a>
--   <a href="optional-authorization.md" id="RightRailLinkListSection_14001_13">Optional authorization</a>
--   <a href="authorization-changes.md" id="RightRailLinkListSection_14001_14">Authorization changes</a>
--   <a href="alternate-user-identifiers.md" id="RightRailLinkListSection_14001_17">Alternate user IDs</a>
--   <a href="multi-record-applications.md" id="RightRailLinkListSection_14001_20">Multi-record applications</a>
-
-See also
-
--   <a href="https://config.healthvault-ppe.com" id="RightRailLinkListSection_14001_21">Application Configuration Center (ACC)</a>
-

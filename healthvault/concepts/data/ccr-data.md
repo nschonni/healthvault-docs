@@ -48,13 +48,3 @@ The output descriptions are similar to the input descriptions, except that the v
 ### Vocabularies
 
 The output transforms always use the same label to refer to a given concept when it is written to a CCR. That value is defined in the "Output Text" column for the concept in <a href="ccr-vocabularies.md" id="PageContent_14108_2">HealthVault CCR Vocabularies</a>.
-
-### Integrate with HealthVault
-
-Data types
-
--   <a href="emergency-preparedness.md" id="RightRailLinkListSection_14108_12">Emergency preparedness</a>
--   <a href="medical-imaging.md" id="RightRailLinkListSection_14108_13">Medical imaging</a>
--   <a href="personal-images.md" id="RightRailLinkListSection_14108_14">Personal images</a>
--   <a href="vocabularies-and-codable-values.md" id="RightRailLinkListSection_14108_15">Vocabularies and codable values</a>
-

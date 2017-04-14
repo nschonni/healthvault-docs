@@ -10,13 +10,13 @@ Required permissions
 
 The following permissions are always required by Microsoft.Health.Web.dll:
 
--   [System.Web<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>AspNetHostingPermission](http://msdn2.microsoft.com/en-us/library/w3ht8sy3)
--   [System.Security.Permissions<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>EnvironmentPermission](http://msdn2.microsoft.com/en-us/library/eh3hcfha)
--   [System.Security.Permissions<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>FileIOPermission](http://msdn2.microsoft.com/en-us/library/6485ct6t)
--   [System.Security.Permissions<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>ReflectionPermission](http://msdn2.microsoft.com/en-us/library/079csk9t)
--   [System.Security.Permissions<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>RegistryPermission](http://msdn2.microsoft.com/en-us/library/88b6xhxd)
--   [System.Security.Permissions<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>KeyContainerPermission](http://msdn2.microsoft.com/en-us/library/bk0z5tde)
--   [System.Security.Permissions<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>SecurityPermission](http://msdn2.microsoft.com/en-us/library/k820e6k8)
+-   [System.Web.AspNetHostingPermission](http://msdn2.microsoft.com/en-us/library/w3ht8sy3)
+-   [System.Security.Permissions.EnvironmentPermission](http://msdn2.microsoft.com/en-us/library/eh3hcfha)
+-   [System.Security.Permissions.FileIOPermission](http://msdn2.microsoft.com/en-us/library/6485ct6t)
+-   [System.Security.Permissions.ReflectionPermission](http://msdn2.microsoft.com/en-us/library/079csk9t)
+-   [System.Security.Permissions.RegistryPermission](http://msdn2.microsoft.com/en-us/library/88b6xhxd)
+-   [System.Security.Permissions.KeyContainerPermission](http://msdn2.microsoft.com/en-us/library/bk0z5tde)
+-   [System.Security.Permissions.SecurityPermission](http://msdn2.microsoft.com/en-us/library/k820e6k8)
 
 Additional permissions
 ----------------------
@@ -25,21 +25,10 @@ Certain features exposed through Microsoft.Health.Web.dll and Microsoft.Health.d
 
 ### Microsoft.Health.dll
 
-All HealthVault exceptions are serializable using the [ISerializable<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetObjectData](http://msdn2.microsoft.com/en-us/library/27cxsdk6) virtual method, which requires a [LinkDemand](https://msdn.microsoft.com/en-us/library/3ky50t49) for the [SecurityPermissionAttribute<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>SerializationFormatter](http://msdn2.microsoft.com/en-us/library/176fk2k2) property.
+All HealthVault exceptions are serializable using the [ISerializable.GetObjectData](http://msdn2.microsoft.com/en-us/library/27cxsdk6) virtual method, which requires a [LinkDemand](https://msdn.microsoft.com/en-us/library/3ky50t49) for the [SecurityPermissionAttribute.SerializationFormatter](http://msdn2.microsoft.com/en-us/library/176fk2k2) property.
 
-In addition, the [HealthRecordItem<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>ValidateCertificate](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecorditem.validatecertificate.aspx) and [HealthRecordItem<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>IsSignatureValid](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecorditem.issignaturevalid.aspx) methods require full trust in order to run. Calls to these methods will fail in partial trust environments.
+In addition, the [HealthRecordItem.ValidateCertificate](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecorditem.validatecertificate.aspx) and [HealthRecordItem.IsSignatureValid](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecorditem.issignaturevalid.aspx) methods require full trust in order to run. Calls to these methods will fail in partial trust environments.
 
 ### Microsoft.Health.Web.dll
 
 In a Minimal trust environment, both a **LinkDemand** and an [InheritanceDemand](https://msdn.microsoft.com/en-us/library/x4yx82e6) are required for the [HealthRecordItemDataGrid](https://msdn.microsoft.com/en-us/library/microsoft.health.web.healthrecorditemdatagrid.aspx) and [HealthServicePage](https://msdn.microsoft.com/en-us/library/microsoft.health.web.healthservicepage.aspx) classes.
-
-### Integrating with HealthVault
-
-Web development
-
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14028_7">Web connections</a>
--   <a href="shell-redirect-interface.md" id="RightRailLinkListSection_14028_8">Shell redirect interface</a>
--   <a href="code-security-requirements.md" id="RightRailLinkListSection_14028_9">Code access security permissions</a>
--   <a href="action-url.md" id="RightRailLinkListSection_14028_10">Interacting with ActionUrl</a>
--   <a href="action-url-custom-redirection.md" id="RightRailLinkListSection_14028_11">Customizing redirection</a>
-
