@@ -50,4 +50,5 @@ void SaveTypeXSD(HealthRecordItemTypeDefinition definition, string name)
     }
 } 
 ```
+
 Note that it puts the schema definitions in a directory named platform\\web\\xsd.
