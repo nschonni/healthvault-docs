@@ -38,7 +38,13 @@
 ### [SODA Apps](soda-walkthrough.md)
 ### [Troubleshooting Connectivity Issues](connection-troubleshooting.md)
 ### [Creating a Certificate](creating-key-pairs.md)
-## Authorization(concepts/authorization/toc.yml)
+
+## Authorization
+### [Authentication and Authorization](authentication-and-authorization.md)
+### [Offline Data Access](offline-access.md)
+### [Optional Authorization](optional-authorization.md)
+### [Authorization Changes](authorization-changes.md)
+### [Multi Record Applications](multi-record-applications.md)
 ## Data
 ### [Thing Type Schema](thing-type-schema.md)
 ### [Downloading Type Schemas](downloading-type-schemas.md)
@@ -61,6 +67,7 @@
 #### [CCR Vocabularies](ccr-vocabularies.md)
 ### [Medical Imaging](medical-imaging.md)
 #### [Medical Imaging Sample Application](medical-imaging-sample-application.md)
+
 ## XML API
 ### [Querying Data](querying-data.md)
 ### [Writing Data](writing-data.md)
@@ -73,7 +80,13 @@
 ### [HealthVault eventing](healthvault-eventing.md)
 ### [Status Codes](status-codes.md)
 ### [Request-Response Tracing](request-response-tracing.md)
-## Advanced(concepts/advanced/toc.yml)
+
+## Advanced
+### [Global Architecture](global-architecture.md)
+### [Multi Instance Applications](multi-instance-applications.md)
+### [Master Child Applications](master-and-child-applications.md)
+### [Alternate User Identifiers](alternate-user-identifiers.md)
+### [Global Instance Configuration](configurations.xml)
 
 
 # Reference
