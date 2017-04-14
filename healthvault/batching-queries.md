@@ -1,10 +1,20 @@
+---
+title: Batching queries for performance
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Improve performance by batching many queries using a HealthRecordSearcher
+---
+
 Batching queries for performance
 ================================
 
 When you first start using the HealthVault SDK, you might write code like this, based on what you have seen before:
 
 ```c#
-HealthRecordSearchersearcher = PersonInfo.SelectedRecord.CreateSearcher();
+HealthRecordSearcher searcher = PersonInfo.SelectedRecord.CreateSearcher();
 HealthRecordFilter filter = new HealthRecordFilter(Height.TypeID);
 searcher.Filters.Add(filter);
 HealthRecordItemCollectionitems = searcher.GetMatchingItems()[0];
@@ -61,17 +71,3 @@ This table shows data for fetching 16 items:
 | 8          | 0.49            |
 | 16         | 0.42            |
 | 32         | 0.39            |
-
-### Integrating with HealthVault
-
-Reading and writing data
-
--   <a href="querying-data.md" id="RightRailLinkListSection_14004_7">Querying data</a>
--   <a href="writing-data.md" id="RightRailLinkListSection_14004_8">Writing data</a>
--   <a href="paging-data.md" id="RightRailLinkListSection_14004_9">Paging data</a>
--   <a href="batching-queries.md" id="RightRailLinkListSection_14004_10">Batching queries for performance</a>
--   <a href="subscribing-to-events.md" id="RightRailLinkListSection_14004_11">Subscribing to events</a>
--   <a href="tracking-data-items.md" id="RightRailLinkListSection_14004_12">Tracking data items</a>
--   <a href="version-stamps.md" id="RightRailLinkListSection_14004_13">Version stamps on data items</a>
--   <a href="read-only-data.md" id="RightRailLinkListSection_14004_14">Using read-only data</a>
-

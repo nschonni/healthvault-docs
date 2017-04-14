@@ -1,13 +1,14 @@
 ---
-title: Action URL
+title: ActionURL
 author: jhutchings1
 ms.author: justhu
 ms.date: 04/12/2017
 ms.topic: article
 ms.prod: healthvault
+description: What is an ActionUrl and how can a HealthVault web application specify one to handle redirection during authentication scenarios. 
 ---
 
-Interacting with ActionUrl
+Specifying an ActionUrl for HealthVault 
 ==========================
 
 For security reasons, the production version of the HealthVault Web site redirects only to URLs that have been submitted to Microsoft in advance. Each application must register an **ActionUrl** on the HealthVault server. The page at this **ActionUrl** should be capable of understanding the targets that can be passed to the application by the HealthVault Web site.
@@ -44,13 +45,4 @@ ActionUrl targets
 
 For production environments you must implement handling of redirection from the shell back to your application for the Application Targets listed on the <a href="shell-redirect-interface.md" id="PageContent_14027_2">Shell Redirect Interface</a>. In the production environment, the action URL must use SSL (e.g., https).
 
-### Integrating with HealthVault
-
-Web development
-
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14027_9">Web connections</a>
--   <a href="shell-redirect-interface.md" id="RightRailLinkListSection_14027_10">Shell redirect interface</a>
--   <a href="action-url.md" id="RightRailLinkListSection_14027_11">Interacting with ActionUrl</a>
--   <a href="action-url-custom-redirection.md" id="RightRailLinkListSection_14027_12">Customizing redirection</a>
--   <a href="code-security-requirements.md" id="RightRailLinkListSection_14027_13">Code access security permissions</a>
 

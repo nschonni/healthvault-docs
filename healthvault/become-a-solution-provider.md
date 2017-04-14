@@ -1,14 +1,23 @@
-Becoming a HealthVault solution provider
-========================================
+---
+title: Become a HealthVault solution provider
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about the process for becoming a HealthVault solution provider. 
+---
+
+# Process for becoming a HealthVault solution provider
 
 There are four phases to becoming a HealthVault Solution Provider:
 
-1.  [Learn – Learn about HealthVault (FAQs)](#learn)
+1.  [Learn – Learn about HealthVault (FAQs)](#learn---frequently-asked-questions)
 2.  [Develop – Design and build a HealthVault-compatible application, device or mobile connection](#develop)
 3.  [Contract – Sign a Solution Provider Agreement and Order Sheet](#contract)
-4.  [Go-Live – Get your application up and running and deploy to your market](#golive)
+4.  [Go-Live – Get your application up and running and deploy to your market](#Go-live-with-HealthVault)
 
-### What is HealthVault?
+## What is HealthVault?
 
 Microsoft HealthVault is a cloud-based platform designed to put people in control of their health data.
 
@@ -25,7 +34,7 @@ HealthVault provides a unique, feature-rich development platform for consumer an
 -   A flexible health data type system that supports data interoperability
 -   Device connectivity
 
-### Why should I become a HealthVault solution provider?
+## Why should I become a HealthVault solution provider?
 
 When you create an application that works with HealthVault, you can deliver richer experiences to your users while lowering your costs by leveraging our investments in storage and authentication, and reducing the need for multiple program interfaces. HealthVault enables solution providers to:
 
@@ -37,8 +46,7 @@ When you create an application that works with HealthVault, you can deliver rich
 
     HealthVault gives providers a unique ability to access a single platform that, with the user's permission, can bring together lab values, device data, medication information, and more, from multiple sources. Innovative applications can provide individuals and caregivers new ways to better manage their health and fitness. When you create a HealthVault-compatible application, you make it easy for your users to use and add to health information that they've already stored and recorded. This ease of use can motivate users to sign up for, and use, your services.
 
-LEARN - FAQs
-------------
+## Learn - Frequently asked questions
 
 ### What is a solution provider agreement?
 
@@ -47,13 +55,11 @@ LEARN - FAQs
 1.  **Reseller Agreement** – This agreement applies to companies who will connect an application to HealthVault and resell the combined solution to non-end-user customers.
 2.  **Direct Agreement** – Applies to companies whom connect an application to HealthVault and offer it directly to end users (individual HealthVault account-holders).
 
-[This form](https://www.healthvault.com/inquiry/business) will put you in contact with our business development team, who can help you understand the business agreements and fees associated with connecting to HealthVault. Before getting in touch here, we encourage your team to explore the introductory documents and sample code on [MSDN](http://msdn.com/healthvault).
-
-Doing so will put us in a much better position to quickly have a productive discussion.
+[This form](https://www.healthvault.com/inquiry/business) will put you in contact with our business development team, who can help you understand the business agreements and fees associated with connecting to HealthVault. Before getting in touch here, we encourage your team to explore the introductory documents and sample code here. Doing so will put us in a much better position to quickly have a productive discussion.
 
 ### How much does it cost to access Microsoft resources about developing a HealthVault-enabled application?
 
-The HealthVault SDK is publicly available to developers at no cost. We encourage your team to explore the introductory documents and sample code on [MSDN](http://msdn.com/healthvault).
+The HealthVault SDK is publicly available to developers at no cost. We encourage your team to explore the introductory documents and sample code here. 
 
 ### Is HealthVault secure?
 
@@ -81,7 +87,7 @@ Due to the high volume and variety of marketing requests, please complete [this 
 
 ### I don't have the technical expertise to develop an application, can Microsoft help me?
 
-The HealthVault team does not build customer applications. However, there are a variety of consultants who have experience developing HealthVault-enabled applications. Some of them are listed on [MSDN](https://msdn.microsoft.com/en-us/healthvault/cc136753.aspx).
+The HealthVault team does not build customer applications. However, there are a variety of consultants who have experience developing HealthVault-enabled applications. 
 
 ### I am a doctor, how can I connect with my patients via HealthVault?
 
@@ -101,15 +107,13 @@ To find out the full array of options, please see how [healthcare providers can 
 
 Any company can develop a HealthVault-compatible application, including those in research and academia. Keep in mind that the operating and security requirements are unchanged. HealthVault does not sell patient data for any reason and maintains end user controls under a strong privacy statement. In other words, end users have the choice to opt in to sharing their data.
 
-DEVELOP
--------
+## Develop
 
 HealthVault is an open platform where developers and customers can build their own applications that leverage the HealthVault architecture. While Microsoft provides tools for developers who would like to build HealthVault-enabled applications (via the Microsoft Developers network), customers are responsible for developing or licensing their applications. The following links are to MSDN and are relevant for a technical audience.
 
 If you do not have the technical expertise or capacity to build your own HealthVault-enabled application, there are HealthVault consultants who have experience creating HealthVault-enabled applications for clients. Some of these consultants can be found on the consultant directory.
 
-CONTRACT
---------
+## Contract
 
 Before your connection can go live, you will need to contact a member of the HealthVault Business Development team to complete a HealthVault solution provider agreement and associated order form.
 
@@ -124,8 +128,7 @@ You should be ready to review the option of Reseller vs. Direct partnership and 
 
 If you are ready to discuss your HealthVault-enabled application, [please contact](https://www.healthvault.com/inquiry/business) a member of our HealthVault Business Development team.
 
-GO-LIVE with HEALTHVAULT
-------------------------
+## Go-live with HealthVault
 
 Once you have completed and executed a solution provider agreement and associated order form with our business development team and developed a HealthVault-enabled application that works in a pre-production environment, you are ready to begin the Go-Live Review process.
 

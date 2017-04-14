@@ -5,7 +5,7 @@ ms.author: justhu
 ms.date: 04/12/2017
 ms.topic: article
 ms.prod: healthvault
-ms.devlang: devlang-csharp
+description: Web apps often need custom redirection behaviors after authentication. This page provides an overview of how implement these behaviors using HealthVault. 
 ---
 
 Customizing HealthServiceActionPage redirection

@@ -1,3 +1,13 @@
+---
+title: Alternate user identifiers
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Apps with offline access to a user's data may want to associate the user's record with the primary key of their own database. Learn how to use AlternateIds to achieve this. 
+---
+
 Alternate user identifiers
 ==========================
 
@@ -43,26 +53,3 @@ Once the association is created, an application can easily go from an alternate 
 The alternate id is up to 255 characters in length and is case sensitive. The id string must be unique for a given application, though multiple alternate ids may be registered for a single record.
 
 Applications that wish to remove the association can use HealthRecordAccessor.DisassociateAlternateId().
-
-### Integrating with HealthVault
-
-Connections
-
--   <a href="connectivity.md" id="RightRailLinkListSection_14071_12">Establishing connectivity</a>
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14071_13">Web connections</a>
--   <a href="patient-connect.md" id="RightRailLinkListSection_14071_14">Patient Connect</a>
--   <a href="dopu.md" id="RightRailLinkListSection_14071_15">Drop-off-and-pick-up (DOPU)</a>
--   <a href="direct-messaging.md" id="RightRailLinkListSection_14071_16">Direct Messaging</a>
--   <a href="mobile-devices.md" id="RightRailLinkListSection_14071_17">Mobile devices (SODA)</a>
--   <a href="soda-walkthrough.md" id="RightRailLinkListSection_14071_18">SODA example</a>
--   <a href="connection-troubleshooting.md" id="RightRailLinkListSection_14071_19">Troubleshooting connections</a>
-
-Authorization
-
--   <a href="authentication-and-authorization.md" id="RightRailLinkListSection_14071_7">Authentication and authorization</a>
--   <a href="offline-access.md" id="RightRailLinkListSection_14071_8">Offline access</a>
--   <a href="optional-authorization.md" id="RightRailLinkListSection_14071_9">Optional authorization</a>
--   <a href="authorization-changes.md" id="RightRailLinkListSection_14071_10">Authorization changes</a>
--   <a href="alternate-user-identifiers.md" id="RightRailLinkListSection_14071_11">Alternate user IDs</a>
--   <a href="multi-record-applications.md" id="RightRailLinkListSection_14071_20">Multi-record applications</a>
-

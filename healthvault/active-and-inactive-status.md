@@ -5,7 +5,7 @@ ms.author: justhu
 ms.date: 04/12/2017
 ms.topic: article
 ms.prod: healthvault
-ms.devlang: devlang-csharp
+description: Learn about the best way to determine if a HealthVault Thing is current or historical. 
 ---
 
 # Determining which HealthVault items are active

@@ -5,6 +5,7 @@ ms.author: justhu
 ms.date: 04/12/2017
 ms.topic: article
 ms.prod: healthvault
+description: Learn about how the Action Plans framework can help increase patient engagement
 ---
 
 Action Plans framework

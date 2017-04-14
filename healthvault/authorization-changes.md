@@ -1,11 +1,16 @@
-Authorization changes
-=====================
+---
+title: Changing authorization rules
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about how to change your app's authorization rules and the important caveats to consider when doing so. 
+---
 
-Application authorization rules comprise required and optional rules.
+# Prepare for authorization changes
 
-When an application redirects a user to sign in to HealthVault, all current required rules must be authorized by the user for the current record before HealthVault will return an authentication token to the application.
-
-After an application is authorized for a person’s record, several events may affect the application's ability to access the record, including (but not limited to) the following:
+Application authorization rules comprise required and optional rules. When an application redirects a user to sign in to HealthVault, all current required rules must be authorized by the user for the current record before HealthVault will return an authentication token to the application. After an application is authorized for a person’s record, several events may affect the application's ability to access the record, including (but not limited to) the following:
 
 -   The application might update its authorization rules, which may or may not require re-authorization by the user (see "Updating authorization rules" below).
 -   The user or application might revoke the application’s access.
@@ -13,8 +18,7 @@ After an application is authorized for a person’s record, several events may a
 
 Applications should be prepared to handle changing access scenarios.
 
-Updating authorization rules
-----------------------------
+# Updating authorization rules
 
 When you update your application's authorization rules, it may affect the application’s access to a record.
 
@@ -26,30 +30,28 @@ Depending on the change, the following situations can occur:
 
 Applications using offline access may continue to use the existing authorized access even after updating any required rules.
 
-Determining whether your app needs to check for sufficient authorization
-------------------------------------------------------------------------
+# Determining whether your app needs to check for sufficient authorization
 
 Whether or not you need to check for sufficient authorization to a record depends on what type of HealthVault interaction model your app uses.
 
-### Online Single-Record Applications (SRA)
+## Online Single-Record Applications (SRA)
 
 Online Single Record Applications (SRA) don't need to check for sufficient authorization to a record, because HealthVault will ensure the user has granted sufficient access to the selected record before returning an authentication token. If the application loses access during the user’s session, HealthVault will return an AccessDenied error. In that case, redirecting the user back to HealthVault for reauthorization can resolve the issue.
 
-### Multi-Record Applications (MRA)
+## Multi-Record Applications (MRA)
 
 HealthVault handles <a href="multi-record-applications.md" id="PageContent_14080_2">multi-record applications</a> slightly differently. HealthVault returns an authentication token if the user has fully authorized any record for the application. You should inspect the record’s authorization status, as described below, before accessing the record.
 
-### Offline applications and applications with optional rules
+## Offline applications and applications with optional rules
 
 Offline applications and applications using optional authentication might need to check the specific permissions granted to the application.
 
 -   If the application updates its rules and adds new types, then inspecting the authorized permissions before accessing a record can be useful. After an application updates its rules, HealthVault allows offline access for the permissions already granted by the user. The application may then have more access to some records than to others.
 -   If an offline application never changes its authorization rules, it doesn't need to check for sufficient authorization. The application either has access or it doesn't.
 
-Checking for sufficient authorization
--------------------------------------
+# Checking for sufficient authorization
 
-There are several ways to find out whether or not an application can access a record and what permissions it has. The **GetPersonInfo**, **QueryPermissions**, and **GetAuthorizedRecords** requests all return authorization information. For more information about these requests, see the [HealthVault XML method browser](http://developer.healthvault.com/pages/methods/methods.aspx) or the .NET SDK [ApplicationConnection<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetPersonInfo](https://msdn.microsoft.com/en-us/library/microsoft.health.applicationconnection.getpersoninfo.aspx), [HealthRecordAccessor<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>QueryPermissions](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecordaccessor.querypermissions.aspx), and [ApplicationConnection<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetAuthorizedRecords](https://msdn.microsoft.com/en-us/library/microsoft.health.applicationconnection.getauthorizedrecords.aspx) methods.
+There are several ways to find out whether or not an application can access a record and what permissions it has. The **GetPersonInfo**, **QueryPermissions**, and **GetAuthorizedRecords** requests all return authorization information. For more information about these requests, see the [HealthVault XML method browser](http://developer.healthvault.com/pages/methods/methods.aspx) or the .NET SDK [ApplicationConnection.GetPersonInfo](sdks/dotnet/microsoft.health.applicationconnection.getpersoninfo.aspx), [HealthRecordAccessor.QueryPermissions](sdks/dotnet/microsoft.health.healthrecordaccessor.querypermissions.aspx), and [ApplicationConnection.GetAuthorizedRecords](sdks/dotnet/microsoft.health.applicationconnection.getauthorizedrecords.aspx) methods.
 
 -   If **GetPersonInfo** returns **AccessDenied**, the user has revoked all access to all of their records. Otherwise, **GetPersonInfo** returns a list of records, each with an authorization status (discussed below).
 -   **QueryPermissions** can be used to determine the permission level of access to specific thing types. When upgrading an offline application or handling optional authentication, an application can query the access to a specific thing type before attempting to access the record. For optional authentication, the application can then direct the user to authorize a rule. For offline applications, the application might simply skip processing any unauthorized types.
@@ -90,35 +92,3 @@ Requesting authorization to optional rules
 When creating an authorization rule, you assign a unique name to each rule. When requesting a user to authorize a rule, pass the rule’s unique name and your application ID in the query string to the APPAUTH target of the <a href="shell-redirect-interface.md" id="PageContent_14080_3">shell redirect interface</a>.
 
 For more information, see <a href="optional-authorization.md" id="PageContent_14080_4">optional authorization</a>.
-
-See also
---------
-
--   [ApplicationConnection<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetPersonInfo](https://msdn.microsoft.com/en-us/library/microsoft.health.applicationconnection.getpersoninfo.aspx)
--   [HealthRecordAccessor<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>QueryPermissions](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecordaccessor.querypermissions.aspx)
--   [ApplicationConnection<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetAuthorizedRecords](https://msdn.microsoft.com/en-us/library/microsoft.health.applicationconnection.getauthorizedrecords.aspx)
--   [HealthRecordAuthorizationStatus](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecordauthorizationstatus.aspx)
--   [HealthRecordInfo<span class="languageSpecificText" xmlns="http://www.w3.org/1999/xhtml"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>HealthRecordAuthorizationStatus](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecordinfo.healthrecordauthorizationstatus.aspx)
-
-### Integrating with HealthVault
-
-Connections
-
--   <a href="connectivity.md" id="RightRailLinkListSection_14080_18">Establishing connectivity</a>
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14080_10">Web connections</a>
--   <a href="patient-connect.md" id="RightRailLinkListSection_14080_11">Patient Connect</a>
--   <a href="dopu.md" id="RightRailLinkListSection_14080_12">Drop-off-and-pick-up (DOPU)</a>
--   <a href="direct-messaging.md" id="RightRailLinkListSection_14080_13">Direct Messaging</a>
--   <a href="mobile-devices.md" id="RightRailLinkListSection_14080_21">Mobile devices (SODA)</a>
--   <a href="soda-walkthrough.md" id="RightRailLinkListSection_14080_22">SODA example</a>
--   <a href="connection-troubleshooting.md" id="RightRailLinkListSection_14080_19">Troubleshooting connections</a>
-
-Authorization
-
--   <a href="authentication-and-authorization.md" id="RightRailLinkListSection_14080_14">Authentication and authorization</a>
--   <a href="offline-access.md" id="RightRailLinkListSection_14080_15">Offline access</a>
--   <a href="optional-authorization.md" id="RightRailLinkListSection_14080_16">Optional authorization</a>
--   <a href="authorization-changes.md" id="RightRailLinkListSection_14080_17">Authorization changes</a>
--   <a href="alternate-user-identifiers.md" id="RightRailLinkListSection_14080_20">Alternate user IDs</a>
--   <a href="multi-record-applications.md" id="RightRailLinkListSection_14080_23">Multi-record applications</a>
-

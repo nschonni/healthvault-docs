@@ -1,9 +1,16 @@
-Choosing a HealthVault Application Architecture
-===============================================
+---
+title: Supported app architectures
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about the best way to determine if a HealthVault Thing is current or historical. 
+---
 
-The HealthVault platform supports several different application architectures.
+# Architectural decisions before you build your first HealthVault application
 
-The choice of architecture has a significant impact on the desirability and the usability of the application for users, and on the effort required for development and maintenance of the application. Our goal is to provide guidance to allow you to select the application type that results in the best experience for both you and your users.
+The HealthVault platform supports several different application architectures.The choice of architecture has a significant impact on the desirability and the usability of the application for users, and on the effort required for development and maintenance of the application. Our goal is to provide guidance to allow you to select the application type that results in the best experience for both you and your users.
 
 Our guidance is structured around  the following questions:
 
@@ -13,7 +20,7 @@ Our guidance is structured around  the following questions:
 
 Each question is discussed in a separate section, with recommendations at the end of each section.
 
-After you read through the guide, if you still have questions about your specific scenario, you can ask them through the HealthVault MSDN forum, or directly at <hvbd@microsoft.com>.
+After you read through the guide, if you still have questions about your specific scenario, you can ask them through the HealthVault forum, or directly at <hvbd@microsoft.com>.
 
 Where Is the Data Stored?
 -------------------------
