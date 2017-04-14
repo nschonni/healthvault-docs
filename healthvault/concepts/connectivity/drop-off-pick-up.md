@@ -113,7 +113,6 @@ Platform XML methods
 
 .NET SDK
 --------
-
 The HealthVault .NET SDK contains classes and methods in the [Microsoft.Health.Package](/healthvault/sdks/dotnet/microsoft.health.package.yml) namespace for creating and managing DOPU packages.
 
 Creating the package

@@ -113,7 +113,9 @@ An example request URL with redirected response:
 <tr class="even">
 <td><p>ismra (optional)</p></td>
 <td><p>True or False</p></td>
+
 <td><p>Default is False. If this value is True, it is an indication that this application wants to be treated as an <a href="/healthvault/concepts/authorization/multi-record-applications.md" id="PageContent_14089_6">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
+
 </tr>
 <tr class="odd">
 <td><p>extrecordid (optional)</p></td>

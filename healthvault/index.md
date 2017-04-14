@@ -300,6 +300,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                             <div class="cardText">
                                                 <h3>
                                                     <a href="/healthvault/apis/v1.0-preview">Reference</a>
+
                                                 </h3>
                                             </div>
                                         </div>
@@ -318,6 +319,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                             <div class="cardText">
                                                 <h3>
                                                     <a href="https://www.nuget.org/packages/HealthVault.net">Get the .NET SDK</a>
+
                                                 </h3>
                                                 <p>
                                                     <a href="/healthvault/sdks/dotnet/microsoft.health">API reference</a>
@@ -345,6 +347,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                 </h3>
                                                 <p>
                                                     <a href="https://github.com/Microsoft/HVMobile_VNext/tree/master/Samples">Get samples</a>
+
                                                 </p>
                                             </div>
                                         </div>

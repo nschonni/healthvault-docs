@@ -19,3 +19,4 @@ Error Messages
 <span style="FONT-SIZE: 9pt; FONT-FAMILY: 'Segoe UI',sans-serif; COLOR: #333333">If you are impacted by this certificate update then the error messages you receive will be dependent on the type of environment you are running in and which scenario you are impacted by.  You should check Windows Application event logs, CAPI2 event logs, and custom application logs.  Here is an example of an error message you may receive in the Application event logs:</span>
 
 <span style="FONT-SIZE: 9pt; FONT-FAMILY: 'Segoe UI',sans-serif; COLOR: #333333">An operation failed because the following certificate has validation errors:\\n\\nSubjectName: CN=accesscontrol.windows.net\\nIssuer Name: CN=MSIT Machine Auth CA 2,DC=redmond, DC=corp, DC=microsoft, DC=com\\nThumbprint:XXXXXXB2583B8E4AA74E4E6C07A0A419B1XXXXXX\\n\\nErrors:\\n\\n The root of the certificate chain is not a trusted root authority.</span>
+

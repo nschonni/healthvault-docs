@@ -43,3 +43,4 @@ You must submit a completed copy of this document with your go-live request.  T
 <a href="http://download.microsoft.com/download/7/4/E/74EA8944-199C-4F56-B3BB-8105869425BC/HealthVault%20Application%20Walkthrough%20document.docx" id="StructuredSectionGroup_14012_31">Application walk-through document</a>
 
 You must submit a completed copy of this document with your go-live request. This document is used to demonstrate the user experience and workflows of your application.
+

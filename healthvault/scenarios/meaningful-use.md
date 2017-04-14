@@ -203,6 +203,7 @@ HealthRecordItem ccda = new HealthRecordItem(
      ext.ExtensionData.CreateNavigator().InnerXml = stringBuilder.ToString(); 
      ccda.CommonData.Extensions.Add(ext);
 ```
+
 See <a href="/healthvault/concepts/data/extending-data-types.md" id="PageContent_14102_3">Extending data types</a> for more information on specifying thing extensions.
 
 In the HealthVault .NET SDK, the [HealthRecordItemExtension](/healthvault/sdks/dotnet/microsoft.health.healthrecorditemextension.aspx) class is used to specify extensions.
@@ -348,6 +349,5 @@ IEnumerable<PatientActivity> resultActivities = appConnection.GetMeaningfulUseVD
 Refer to <span class="nolink">GetMeaningfulUseVDTReport</span> in the .NET SDK.
 
 ### See also
-
 -   <a href="https://www.healthvault.com/us/en/Meaningful-Use" id="RightRailLinkListSection_14102_9">HealthVault MU2 certification</a>
 
