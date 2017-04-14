@@ -11,9 +11,9 @@ To put it another way, if you create a data item and then modify it over time, o
 
 By default, you see only the current state of the data items, but this is controlled by the filter that you use when you query for items. Here are the filter properties that let you do this:
 
-The [CurrentVersionOnly](https://msdn.microsoft.com/en-US/library/microsoft.health.healthrecordfilter.currentversiononly.aspx) property is true by default. Set it to false to get all the versions back.
+The [CurrentVersionOnly](/healthvault/sdks/dotnet/microsoft.health.healthrecordfilter.currentversiononly.yml) property is true by default. Set it to false to get all the versions back.
 
-The [States](https://msdn.microsoft.com/en-US/library/microsoft.health.healthrecordfilter.states.aspx) property can be used to get all of the data, or just the active or deleted data. For more information, see the [HealthRecordItemStates](https://msdn.microsoft.com/en-US/library/microsoft.health.healthrecorditemstates.aspx) enumeration.
+The [States](/healthvault/sdks/dotnet/microsoft.health.healthrecordfilter.states.yml) property can be used to get all of the data, or just the active or deleted data. For more information, see the [HealthRecordItemStates](/healthvault/sdks/dotnet/microsoft.health.healthrecorditemstates.yml) enumeration.
 
 Who changed my data?
 --------------------
@@ -23,17 +23,3 @@ Those two properties are enough to get you all the items when you execute a quer
 To find out who made the changes, you request the audit information. You do this through another filter's **View.Sections** property by adding Audits to that field.
 
 Once you do that, the **LastUpdated** property on each item that you fetch now contains a live HealthServiceAudit record, which gives you information about the source of the record.
-
-### Integrating with HealthVault
-
-Reading and writing data
-
--   <a href="querying-data.md" id="RightRailLinkListSection_14031_7">Querying data</a>
--   <a href="writing-data.md" id="RightRailLinkListSection_14031_8">Writing data</a>
--   <a href="paging-data.md" id="RightRailLinkListSection_14031_9">Paging data</a>
--   <a href="batching-queries.md" id="RightRailLinkListSection_14031_10">Batching queries for performance</a>
--   <a href="subscribing-to-events.md" id="RightRailLinkListSection_14031_11">Subscribing to events</a>
--   <a href="tracking-data-items.md" id="RightRailLinkListSection_14031_12">Tracking data items</a>
--   <a href="version-stamps.md" id="RightRailLinkListSection_14031_13">Version stamps on data items</a>
--   <a href="read-only-data.md" id="RightRailLinkListSection_14031_14">Using read-only data</a>
-

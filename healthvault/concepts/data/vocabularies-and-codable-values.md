@@ -1,7 +1,7 @@
 Vocabularies and CodableValue
 =============================
 
-The [Vocabulary](https://msdn.microsoft.com/en-US/library/microsoft.health.vocabulary.aspx) and [CodableValue](https://msdn.microsoft.com/en-US/library/microsoft.health.itemtypes.codablevalue.aspx) types are designed to solve two issues:
+The [Vocabulary](/healthvault/sdks/dotnet/microsoft.health.vocabulary.yml) and [CodableValue](/healthvault/sdks/dotnet/microsoft.health.itemtypes.codablevalue.yml) types are designed to solve two issues:
 
 In medicine, there are long lists of lab tests you can order, medications you can prescribe, physician specialties, and so on. The names of items in these lists can be unwieldy. For physician specialties, you see things like:
 
@@ -9,12 +9,19 @@ In medicine, there are long lists of lab tests you can order, medications you ca
 -   Neurodevelopmental Disabilities (Pediatrics)
 -   Adult Reconstructive Orthopedics
 
-So to make things simpler, there is a set of codes—using one to three letters in this case—that are the "standard" ways of encoding the longer strings (what we'll call the "Display Text"). Combine that code with the display text (and sometimes an abbreviation) to get a vocabulary item. Create a list of [VocabularyItem](https://msdn.microsoft.com/en-US/library/microsoft.health.vocabularyitem.aspx) objects (along with some other information discussed later) and you have a Vocabulary, which defines both a list of possible options and the accepted way of encoding them (the key).
+So to make things simpler, there is a set of codes—using one to three letters in this case—that are the "standard" ways of encoding the longer strings (what we'll call the "Display Text"). Combine that code with the display text (and sometimes an abbreviation) to get a vocabulary item. Create a list of [VocabularyItem](/healthvault/sdks/dotnet/microsoft.health.vocabularyitem.yml) objects (along with some other information discussed later) and you have a Vocabulary, which defines both a list of possible options and the accepted way of encoding them (the key).
 
 To fetch a vocabulary describing the different kinds of aerobic activities:
 
-`Vocabulary vocabulary = ApplicationConnection.GetVocabulary("aerobic-activites");foreach (KeyValuePair<string,VocabularyItem> item in vocabulary){    string key = item.Key;    string displayText = item.Value.DisplayText;    string abbreviation = item.Value.AbbreviationText;}`
-If you look closely at the <span class="code">foreach</span> part, you notice that item's **Value** property returns a [VocabularyItem](https://msdn.microsoft.com/en-US/library/microsoft.health.vocabularyitem.aspx) object, and that's where the [DisplayText](https://msdn.microsoft.com/en-US/library/microsoft.health.vocabularyitem.displaytext.aspx) and [AbbreviationText](https://msdn.microsoft.com/en-US/library/microsoft.health.vocabularyitem.abbreviationtext.aspx) properties are defined.
+```c#
+Vocabulary vocabulary = ApplicationConnection.GetVocabulary("aerobic-activites");
+foreach (KeyValuePair<string,VocabularyItem> item in vocabulary){
+    string key = item.Key;
+    string displayText = item.Value.DisplayText;
+    string abbreviation = item.Value.AbbreviationText;
+}
+```
+If you look closely at the <span class="code">foreach</span> part, you notice that item's **Value** property returns a [VocabularyItem](/healthvault/sdks/dotnet/microsoft.health.vocabularyitem.yml) object, and that's where the [DisplayText](/healthvault/sdks/dotnet/microsoft.health.vocabularyitem.displaytext.yml) and [AbbreviationText](/healthvault/sdks/dotnet/microsoft.health.vocabularyitem.abbreviationtext.yml) properties are defined.
 
 Here's what you get from executing that code:
 
@@ -29,21 +36,21 @@ Here's what you get from executing that code:
 | walk | walking     | walk             |
 | row  | rowing      | row              |
 
-In addition to the information on a specific vocabulary item, there is some general information on the [Vocabulary](https://msdn.microsoft.com/en-US/library/microsoft.health.vocabulary.aspx) type.
+In addition to the information on a specific vocabulary item, there is some general information on the [Vocabulary](/healthvault/sdks/dotnet/microsoft.health.vocabulary.yml) type.
 
-[Culture](https://msdn.microsoft.com/en-US/library/microsoft.health.vocabulary.culture.aspx)
+[Culture](/healthvault/sdks/dotnet/microsoft.health.vocabulary.culture.yml)
 
 The culture tells you the culture of the vocabulary. When you fetch a vocabulary, it comes back for the current culture, and you can control whether there is a fallback to other cultures if there is not one specific to the current culture. Note that the key is culture-invariant, and therefore may not make sense to users in your current culture.
 
-[Family](https://msdn.microsoft.com/en-US/library/microsoft.health.vocabulary.family.aspx)
+[Family](/healthvault/sdks/dotnet/microsoft.health.vocabulary.family.yml)
 
 The family defines the overall source for the vocabulary. If it's from HL7, HL7 would presumably be identified as the source. Or for example, it might say "AMA". The family lets you understand where the vocabulary came from. If it's something the HealthVault team defined, the family is "wc".
 
-[Name](https://msdn.microsoft.com/en-US/library/microsoft.health.vocabulary.name.aspx)
+[Name](/healthvault/sdks/dotnet/microsoft.health.vocabulary.name.yml)
 
 The name of the vocabulary. Together with the family, the name fully identifies the source.
 
-[Version](https://msdn.microsoft.com/en-US/library/microsoft.health.vocabulary.version.aspx)
+[Version](/healthvault/sdks/dotnet/microsoft.health.vocabulary.version.yml)
 
 A string defining a version of the vocabulary.
 
@@ -52,12 +59,12 @@ Coded and codable values
 
 How is a reference to a specific vocabulary item stored in HealthVault?
 
-It is stored through the [CodedValue](https://msdn.microsoft.com/en-US/library/microsoft.health.itemtypes.codedvalue.aspx) type. A quick look at the type shows the following properties:
+It is stored through the [CodedValue](/healthvault/sdks/dotnet/microsoft.health.itemtypes.codedvalue.yml) type. A quick look at the type shows the following properties:
 
--   [Family](https://msdn.microsoft.com/en-US/library/microsoft.health.itemtypes.codedvalue.family.aspx)
--   [Value](https://msdn.microsoft.com/en-US/library/microsoft.health.itemtypes.codedvalue.value.aspx)
--   [Version](https://msdn.microsoft.com/en-US/library/microsoft.health.itemtypes.codedvalue.version.aspx)
--   [VocabularyName](https://msdn.microsoft.com/en-US/library/microsoft.health.itemtypes.codedvalue.vocabularyname.aspx)
+-   [Family](/healthvault/sdks/dotnet/microsoft.health.itemtypes.codedvalue.family.yml)
+-   [Value](/healthvault/sdks/dotnet/microsoft.health.itemtypes.codedvalue.value.yml)
+-   [Version](/healthvault/sdks/dotnet/microsoft.health.itemtypes.codedvalue.version.yml)
+-   [VocabularyName](/healthvault/sdks/dotnet/microsoft.health.itemtypes.codedvalue.vocabularyname.yml)
 
 **Family**, **Version**, and **VocabularyName** are used to indicate what vocabulary you are using, and **Value** is used to store the key for the specific vocabulary item. An application can figure out exactly you mean by looking at a **CodedValue** object.
 
@@ -69,7 +76,7 @@ In other words, sometimes you have very precise information, and sometimes the i
 
 The second, rarer scenario is that there are times where a single entry may need to store multiple values.
 
-Both of these scenarios are supported through the [CodableValue](https://msdn.microsoft.com/en-US/library/microsoft.health.itemtypes.codablevalue.aspx) type, and that's the type that you see used in the data types. It provides a [Text](https://msdn.microsoft.com/en-US/library/microsoft.health.itemtypes.codablevalue.text.aspx) property and a way of having multiple coded values.
+Both of these scenarios are supported through the [CodableValue](/healthvault/sdks/dotnet/microsoft.health.itemtypes.codablevalue.yml) type, and that's the type that you see used in the data types. It provides a [Text](/healthvault/sdks/dotnet/microsoft.health.itemtypes.codablevalue.text.yml) property and a way of having multiple coded values.
 
 The **Text** property is always set for all codable values, and that's the one that you display when you're showing that value to a user. Any underlying **CodedValue** instances are of a "more information" category: The application can use them to find out more information about that text.
 

@@ -11,15 +11,3 @@ Only solution providers that have a signed Solution Provider Agreement may use t
 
 <a href="http://download.microsoft.com/download/7/4/E/74EA8944-199C-4F56-B3BB-8105869425BC/Microsoft%20HealthVault%20Brand%20Materials.zip" id="StructuredSectionGroup_14069_12">Download Microsoft HealthVault Brand Materials.zip (244 kB)</a>
 
-<span id="singleColInThreeColLayout"></span>
-
-### Integrating with HealthVault
-
-Go-live process
-
--   <a href="go-live.md" id="RightRailLinkListSection_14069_10">Go-live guide</a>
--   <a href="updates.md" id="RightRailLinkListSection_14069_11">Updating your application</a>
--   <a href="configurations.md" id="RightRailLinkListSection_14069_13">Instance configurations</a>
--   <a href="brand-materials.md" id="RightRailLinkListSection_14069_15">Brand materials</a>
--   <a href="territories.md" id="RightRailLinkListSection_14069_14">Territories</a>
-

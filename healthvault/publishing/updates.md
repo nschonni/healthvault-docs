@@ -24,16 +24,6 @@ Consider updating the text or screenshots in your existing Application Directory
 
 <span id="singleColInThreeColLayout"></span>
 
-### Integrating with HealthVault
-
-Go-live process
-
--   <a href="go-live.md" id="RightRailLinkListSection_13986_15">Go-live guide</a>
--   <a href="updates.md" id="RightRailLinkListSection_13986_24">Updating your application</a>
--   <a href="configurations.md" id="RightRailLinkListSection_13986_20">Instance configurations</a>
--   <a href="brand-materials.md" id="RightRailLinkListSection_13986_19">Brand materials</a>
--   <a href="territories.md" id="RightRailLinkListSection_13986_21">Territories</a>
-
 Templates
 
 -   <a href="http://download.microsoft.com/download/7/4/E/74EA8944-199C-4F56-B3BB-8105869425BC/HealthVault%20Application%20Information%20Template.docx" id="RightRailLinkListSection_13986_25">Application data sheet</a>

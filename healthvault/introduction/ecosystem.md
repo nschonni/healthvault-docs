@@ -14,8 +14,8 @@ For solution providers
 
 HealthVault makes it easy for a broad ecosystem of device and application providers to build innovative health and wellness solutions with privacy- and security-enhanced online-service features. Our goal is to foster the growth of a health application ecosystem that supports better care and better outcomes for more people.
 
--   <a href="why-healthvault.md" id="PageContent_13984_2">Why create HealthVault-enabled applications?</a>
--   <a href="device-overview.md" id="PageContent_13984_3">Overview of devices</a>
+-   [Why create HealthVault-enabled applications?](/healthvault/introduction/why-healthvault.md)
+-   [Overview of devices](/healthvault/concepts/device-driver-kit/device-overview.md)
 
 For individuals
 ---------------
@@ -44,8 +44,6 @@ Learn how solution providers are using the Microsoft HealthVault platform to off
 
 Additional resources
 --------------------
-
--   <a href="why-healthvault.md" id="PageContent_13984_5">Why create HealthVault-enabled applications?</a>
 -   [Microsoft HealthVault Overview Brochure](http://download.microsoft.com/download/5/3/F/53F61716-24A3-4EA4-936E-38F865D546DE/HealthVaultFactSheet.pdf)
 -   [Microsoft HealthVault Message Center Fact Sheet](https://messagecenter.healthvault.com/MessageCenterBrochure.pdf)
 -   [HealthVault.com](http://www.healthvault.com/)

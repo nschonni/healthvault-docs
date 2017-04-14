@@ -8,7 +8,7 @@ Versioning
 
 When applications are developed, they have an explicit understanding of a specific XML schema defined for a type. This <span class="parameter">type contract</span> is defined through the base authorization rules for the application.
 
-Whenever an application requests data for a versioned type, HealthVault transforms the data of that type in the record to the schema for the type defined by the application's type contract. This ensures that HealthVault always returns data in the format that matches the application's authorization rule for that data type, even when other versions of the type exist. In some cases, HealthVault might remove data fields that are not part of the schema the app expects. In other cases, HealthVault might restructure the data to fit the schema. The **flags** element in the common section indicates whether the data has been up-versioned or down-versioned. For more information about the flags element, see the Flags section of <a href="thing-type-schema.md" id="PageContent_14094_2">Thing Type Schema</a>.
+Whenever an application requests data for a versioned type, HealthVault transforms the data of that type in the record to the schema for the type defined by the application's type contract. This ensures that HealthVault always returns data in the format that matches the application's authorization rule for that data type, even when other versions of the type exist. In some cases, HealthVault might remove data fields that are not part of the schema the app expects. In other cases, HealthVault might restructure the data to fit the schema. The **flags** element in the common section indicates whether the data has been up-versioned or down-versioned. For more information about the flags element, see the Flags section of [thing type schema](/healthvault/concepts/data/thing-types.md).
 
 For writing or updating existing data:
 
@@ -32,17 +32,3 @@ Both applications have graphs for the systolic and diastolic data. The user woul
 AppBPV1 reads the blood pressure data from the record. Some of the data in the record is already in the version 1 format and will be returned directly. Any data in the version 2 format (which was created by AppBPV2) will be run through an XSL transform that transforms the data into the version 1 format before it is returned. In this case, that means removing the body position information.
 
 AppBPV1 now has all the data in version 1 format and can display it to the user without any code changes to understand the new version format.
-
-### Integrating with HealthVault
-
-Schema
-
--   <a href="thing-type-schema.md" id="RightRailLinkListSection_14094_8">Thing type schema</a>
--   <a href="downloading-type-schemas.md" id="RightRailLinkListSection_14094_9">Downloading type schemas</a>
--   <a href="thing-type-versioning.md" id="RightRailLinkListSection_14094_10">Thing type versioning</a>
--   <a href="common-data-types.md" id="RightRailLinkListSection_14094_11">Common data types</a>
--   <a href="extending-data-types.md" id="RightRailLinkListSection_14094_12">Extending data types</a>
--   <a href="custom-data-types.md" id="RightRailLinkListSection_14094_13">Custom data types</a>
--   <a href="active-and-inactive-status.md" id="RightRailLinkListSection_14094_14">Active and inactive status</a>
--   <a href="digital-signatures.md" id="RightRailLinkListSection_14094_15">Digital signatures</a>
-

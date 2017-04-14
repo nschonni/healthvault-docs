@@ -32,8 +32,7 @@ A growing number of HealthVault-enabled health and fitness devices are helping m
 Solution Provider Resources
 ---------------------------
 
--   <a href="ecosystem.md" id="PageContent_14068_2">Ecosystem overview</a> 
--   <a href="technical-overview.md" id="PageContent_14068_6">Technical overview</a>  
--   <a href="https://msdn.microsoft.com/en-US/HealthVault/dn798744" id="PageContent_14068_4">SDKs for HealthVault</a> 
+-   <a href="/healthvault/introduction/ecosystem.md" id="PageContent_14068_2">Ecosystem overview</a> 
+-   <a href="/healthvault/introduction/technical-overview.md" id="PageContent_14068_6">Technical overview</a>  
 -   <a href="hipaa-and-hitech.md" id="PageContent_14068_5">HIPAA and HITECH</a> 
 

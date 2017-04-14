@@ -19,7 +19,7 @@ There are two common problems of this type:
 
 If Depends.exe loads the DLL successfully, but you still have a code 10, your driver is likely loading, but failing to start. The best thing to do is to debug the driver when it is loaded/started. Follow these steps to debug the driver start.
 
-1.  WUDF has a registry entry that helps with debugging. This entry causes the WUDF service to wait while a debugger is attached for a specified amount of time. See [http://msdn.microsoft.com/en-us/library/ff554716.aspx](https://msdn.microsoft.com/en-us/library/ff554716.aspx).
+1.  WUDF has a registry entry that helps with debugging. This entry causes the WUDF service to wait while a debugger is attached for a specified amount of time. See [How to enable a debugger](https://msdn.microsoft.com/en-us/library/ff554716.aspx) for more information. .
 2.  Set the registry value at "HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\WUDF\\Services\\{193a1820-d9ac-4997-8c55-be817523f6aa}\\HostProcessDbgBreakOnStart" to 0x00030000.
 3.  In Device Manager, disable your WPD device.
 4.  In Visual Studio 2005, open your driver project and then open the source file 'device.cpp'.
@@ -32,21 +32,3 @@ If Depends.exe loads the DLL successfully, but you still have a code 10, your dr
 10. Press F5 in Visual Studio 2005; it hits your Breakpoint in 'device.cpp'.
 11. Walk through your driver start-up code.
     NOTE: You must not return an error from CDevice::OnPrepareHardware( ) because returning an error tells PnP that your driver has a critical error and cannot load. If your device is not available at load time, that is fine—you should still return success (you just do not have any data yet).
-
-### Devices and HealthVault
-
-Development
-
--   <a href="device-overview.md" id="RightRailLinkListSection_13997_15">Building HealthVault-compatible devices</a>
--   <a href="device-wpd-overview.md" id="RightRailLinkListSection_13997_7">Overview of Windows Portable Devices</a>
--   <a href="device-code-10-errors.md" id="RightRailLinkListSection_13997_8">Code 10 errors with WPD drivers</a>
--   <a href="device-non-pnp.md" id="RightRailLinkListSection_13997_9">Enabling detection of non-PnP devices</a>
--   <a href="https://www.microsoft.com/en-us/download/details.aspx?id=26801" id="RightRailLinkListSection_13997_10">Device Driver Development Package</a>
-
-More resources
-
--   <a href="https://config.healthvault-ppe.com/" id="RightRailLinkListSection_13997_11">Application Configuration Center (ACC)</a>
--   <a href="https://www.healthvault.com/connection-center" id="RightRailLinkListSection_13997_12">Connection Center</a>
--   <a href="https://msdn.microsoft.com/en-us/healthvault/dn798735" id="RightRailLinkListSection_13997_13">Consultant Directory</a>
--   <a href="https://account.healthvault.com/Directory?target=Devices" id="RightRailLinkListSection_13997_14">Device Directory</a>
-

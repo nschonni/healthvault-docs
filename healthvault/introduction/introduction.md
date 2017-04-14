@@ -63,7 +63,7 @@ HealthVault isn’t tied to a particular healthcare provider, health system, dev
 
 Users benefit from creating a portable health record they own and control. They can easily share information with their doctors and other caregivers, and store data from many sources, such as pharmacies, hospitals, consumer apps, and personal health devices.
 
-The HealthVault platform exposes an XML-over-HTTP interface to web, rich client, and mobile applications. As an app developer, you benefit from interoperability with apps running on numerous platforms, including [Windows/.NET](https://www.microsoft.com/download/en/details.aspx?displaylang=en&id=3418), [Java](http://healthvaultjavalib.codeplex.com/), [Windows Phone](http://healthvaultwp7.codeplex.com/), [iPhone](https://github.com/microsoft-hsg/HealthVault-Mobile-iOS-Library), and [Android](http://healthvaultjavalib.codeplex.com/). It’s easy to connect to HealthVault from any modern development platform.
+The HealthVault platform exposes an XML-over-HTTP interface to web, rich client, and mobile applications. As an app developer, you benefit from interoperability with apps running on numerous platforms, including [Windows/.NET](https://www.microsoft.com/download/en/details.aspx?displaylang=en&id=3418), [Java](http://healthvaultjavalib.codeplex.com/), [iPhone](https://github.com/microsoft-hsg/HealthVault-Mobile-iOS-Library), and [Android](http://healthvaultjavalib.codeplex.com/). It’s easy to connect to HealthVault from any modern development platform.
 
 A flexible health data type system that supports data interoperability
 ----------------------------------------------------------------------

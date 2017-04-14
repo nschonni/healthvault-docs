@@ -1,28 +1,28 @@
-# [Home](index.md)
+# [Home](/healthvault/index.md)
 
-# [Introduction](introduction/introduction.md)
-## [Why HealthVault](introduction/why-healthvault.md)
-## [Technical Overview](introduction/technical-overview.md)
-### [Technical Overview - Applications](introduction/technical-overview-applications.md)
-### [Technical Overview - Connectivity](introduction/technical-overview-connectivity.md)
-### [Technical Overview - Exchanging Data](introduction/technical-overview-exchanging-data.md)
-### [Technical Overview - Permissions](introduction/technical-overview-permissions.md)
-## [Interoperability](introduction/interoperability.md)
-## [HIPAA and HITECH](introduction/hipaa-and-hitech.md)
-## [Ecosystem](introduction/ecosystem.md)
+# [Introduction](/healthvault/introduction/introduction.md)
+## [Why HealthVault](/healthvault/introduction/why-healthvault.md)
+## [Technical Overview](/healthvault/introduction/technical-overview.md)
+### [Technical Overview - Applications](/healthvault/introduction/technical-overview-applications.md)
+### [Technical Overview - Connectivity](/healthvault/introduction/technical-overview-connectivity.md)
+### [Technical Overview - Exchanging Data](/healthvault/introduction/technical-overview-exchanging-data.md)
+### [Technical Overview - Permissions](/healthvault/introduction/technical-overview-permissions.md)
+## [Interoperability](/healthvault/introduction/interoperability.md)
+## [HIPAA and HITECH](/healthvault/introduction/hipaa-and-hitech.md)
+## [Ecosystem](/healthvault/introduction/ecosystem.md)
 
 # Scenarios
-## [Action Plans](scenarios/action-plans.md)
-## [Meaningful Use](scenarios/meaningful-use.md)
-## [Emergency Preparedness](scenarios/emergency-preparedness.md)
+## [Action Plans](/healthvault/scenarios/action-plans.md)
+## [Meaningful Use](/healthvault/scenarios/meaningful-use.md)
+## [Emergency Preparedness](/healthvault/scenarios/emergency-preparedness.md)
 
 # Publishing
-## [Become a Solution Provider](publishing/become-a-solution-provider.md)
-## [Brand Materials](publishing/brand-materials.md)
-## [Go-Live](publishing/go-live.md)
-## [Updating a live app](publishing/updates.md)
-## [Territories](publishing/territories.md)
-### [United Kingdom - National Health Service (NHS)](publishing/nhs.md)
+## [Become a Solution Provider](/healthvault/publishing/become-a-solution-provider.md)
+## [Brand Materials](/healthvault/publishing/brand-materials.md)
+## [Go-Live](/healthvault/publishing/go-live.md)
+## [Updating a live app](/healthvault/publishing/updates.md)
+## [Territories](/healthvault/publishing/territories.md)
+### [United Kingdom - National Health Service (NHS)](/healthvault/publishing/nhs.md)
 
 
 # Concepts
@@ -92,22 +92,22 @@
 ### [Device Code 10 Errors](/healthvault/concepts/device-driver-kit/device-code-10-errors.md)
 
 ## Tools
-### [Application Configuration Center](tools/acc/acc-tool.md)
-#### [ACC Admins Tab](tools/acc/acc-admins-tab.md)
-#### [ACC Create or Edit a Device Directory Page](tools/acc/acc-create-or-edit-a-device-directory-page.md)
-#### [ACC Create or Edit an Application Directory Page](tools/acc/acc-create-or-edit-an-application-directory-page.md)
-#### [ACC Home Tab](tools/acc/acc-home-tab.md)
-#### [ACC Information Tab](tools/acc/acc-information-tab.md)
-#### [ACC Localize Tab](tools/acc/acc-localize-tab.md)
-#### [ACC Methods Tab](tools/acc/acc-methods-tab.md)
-#### [ACC Misc Tab](tools/acc/acc-misc-tab.md)
-#### [ACC Online and Offline Rules Tab](tools/acc/acc-online-and-offline-rules-tab.md)
-#### [ACC Public Certs Tab](tools/acc/acc-public-certs-tab.md)
+### [Application Configuration Center](/healthvault/tools/acc/acc-tool.md)
+#### [ACC Admins Tab](/healthvault/tools/acc/acc-admins-tab.md)
+#### [ACC Create or Edit a Device Directory Page](/healthvault/tools/acc/acc-create-or-edit-a-device-directory-page.md)
+#### [ACC Create or Edit an Application Directory Page](/healthvault/tools/acc/acc-create-or-edit-an-application-directory-page.md)
+#### [ACC Home Tab](/healthvault/tools/acc/acc-home-tab.md)
+#### [ACC Information Tab](/healthvault/tools/acc/acc-information-tab.md)
+#### [ACC Localize Tab](/healthvault/tools/acc/acc-localize-tab.md)
+#### [ACC Methods Tab](/healthvault/tools/acc/acc-methods-tab.md)
+#### [ACC Misc Tab](/healthvault/tools/acc/acc-misc-tab.md)
+#### [ACC Online and Offline Rules Tab](/healthvault/tools/acc/acc-online-and-offline-rules-tab.md)
+#### [ACC Public Certs Tab](/healthvault/tools/acc/acc-public-certs-tab.md)
 
 # Reference
 ## .NET
-### [HealthVault .NET SDK reference](sdks/dotnet/toc.yml)
-## [REST API](apis/toc.yml)
+### [HealthVault .NET SDK reference](/healthvault/sdks/dotnet/toc.yml)
+## [REST API](/healthvault/apis/toc.yml)
 
 
 

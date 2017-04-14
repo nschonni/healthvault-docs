@@ -184,9 +184,9 @@ For some thing types, the full thing is much larger that the partial thing. In t
 .NET SDK
 --------
 
-If you are using the HealthVault .Net SDK, the paging logic is handled for you. The [GetMatchingItems](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecordsearcher.getmatchingitems.aspx) method of the [HealthRecordSearcher](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecordsearcher.aspx) class returns a collection of [HealthRecordItemCollection](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecorditemcollection.aspx) objects, one for each filter in the searcher object's [Filters](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecordsearcher.filters.aspx) collection. The **HealthRecordItemCollection** automatically makes **GetThings** requests for partial items as you iterate through the collection. Thus, when you are finished processing all the items, the entire result set will be in memory. The value of the [MaxFullItemsReturnedPerRequest](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecordfilter.maxfullitemsreturnedperrequest.aspx) property of the associated filter limits the number of full things per **GetThings** request by the **HealthRecordItemCollection** object.
+If you are using the HealthVault .Net SDK, the paging logic is handled for you. The [GetMatchingItems](/healthvault/sdks/dotnet/microsoft.health.healthrecordsearcher.getmatchingitems.yml) method of the [HealthRecordSearcher](/healthvault/sdks/dotnet/microsoft.health.healthrecordsearcher.yml) class returns a collection of [HealthRecordItemCollection](/healthvault/sdks/dotnet/microsoft.health.healthrecorditemcollection.yml) objects, one for each filter in the searcher object's [Filters](/healthvault/sdks/dotnet/microsoft.health.healthrecordsearcher.filters.yml) collection. The **HealthRecordItemCollection** automatically makes **GetThings** requests for partial items as you iterate through the collection. Thus, when you are finished processing all the items, the entire result set will be in memory. The value of the [MaxFullItemsReturnedPerRequest](/healthvault/sdks/dotnet/microsoft.health.healthrecordfilter.maxfullitemsreturnedperrequest.yml) property of the associated filter limits the number of full things per **GetThings** request by the **HealthRecordItemCollection** object.
 
-To specify the maximum number of full things in a response in the HealthVault .Net SDK, modify the corresponding filter in the **HealthRecordSearcher** object. Set the **MaxFullItemsReturnedPerRequest** property of the [HealthRecordFilter](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecordfilter.aspx) object to the desired page size.
+To specify the maximum number of full things in a response in the HealthVault .Net SDK, modify the corresponding filter in the **HealthRecordSearcher** object. Set the **MaxFullItemsReturnedPerRequest** property of the [HealthRecordFilter](/healthvault/sdks/dotnet/microsoft.health.healthrecordfilter.yml) object to the desired page size.
 
 The following example contains a method that returns a **HealthRecordItemCollection** that retreives a page of items per **GetThings** request.
 
@@ -211,18 +211,4 @@ private  static HealthRecordItemCollection GetItemCollection(
 }
 ```
 
-The HealthVault .Net SDK also provides an ASP.NET server control for viewing health record items that implements paging, the [HealthRecordItemDataGrid](https://msdn.microsoft.com/en-us/library/microsoft.health.web.healthrecorditemdatagrid.aspx) class. The source code is a great place to see how to incorporate paging with a grid view.
-
-### Integrating with HealthVault
-
-Reading and writing data
-
--   <a href="querying-data.md" id="RightRailLinkListSection_14099_10">Querying data</a>
--   <a href="writing-data.md" id="RightRailLinkListSection_14099_11">Writing data</a>
--   <a href="paging-data.md" id="RightRailLinkListSection_14099_12">Paging data</a>
--   <a href="batching-queries.md" id="RightRailLinkListSection_14099_13">Batching queries for performance</a>
--   <a href="subscribing-to-events.md" id="RightRailLinkListSection_14099_14">Subscribing to events</a>
--   <a href="tracking-data-items.md" id="RightRailLinkListSection_14099_15">Tracking data items</a>
--   <a href="version-stamps.md" id="RightRailLinkListSection_14099_16">Version stamps on data items</a>
--   <a href="read-only-data.md" id="RightRailLinkListSection_14099_17">Using read-only data</a>
-
+The HealthVault .Net SDK also provides an ASP.NET server control for viewing health record items that implements paging, the [HealthRecordItemDataGrid](/healthvault/sdks/dotnet/microsoft.health.web.healthrecorditemdatagrid.yml) class. The source code is a great place to see how to incorporate paging with a grid view.

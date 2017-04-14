@@ -754,11 +754,3 @@ The following status and error codes may be returned by the HealthVault platform
 </tr>
 </tbody>
 </table>
-
-### Integrating with HealthVault
-
-See also
-
--   <a href="request-response-tracing.md" id="RightRailLinkListSection_14075_7">Request/response tracing</a>
--   <a href="connection-troubleshooting.md" id="RightRailLinkListSection_14075_8">Troubleshooting connection problems</a>
-

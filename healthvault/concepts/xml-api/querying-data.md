@@ -19,7 +19,36 @@ The response is a collection of datasets, each containing the results for the gr
 
 The following example request-response XML illustrates how a named group in the request matches a named group in the response:
 
-`<request>  <!-- ... -->  <info>    <group name="height things">      <filter>        <type-id>40750a6a-89b2-455c-bd8d-b420a4cb500b</type-id>      </filter>      <format>        <section>core</section>        <xml/>      </format>    </group>  </info></request> ``<response>  <!-- ... -->  <info>    <group name="height things">      <thing>        <!-- ... -->      </thing>    </group>  </info></response> `
+###Request
+```xml
+<request>
+  <!-- ... -->
+  <info>
+    <group name="height things">
+      <filter>
+        <type-id>40750a6a-89b2-455c-bd8d-b420a4cb500b</type-id>
+      </filter>
+      <format>
+        <section>core</section>
+        <xml/>
+      </format>
+    </group>
+  </info>
+</request>
+```
+###Response
+```xml
+<response>
+  <!-- ... -->
+  <info>
+    <group name="height things">
+      <thing>
+        <!-- ... -->
+      </thing>
+    </group>
+  </info>
+</response>
+```
 Groups
 ------
 
@@ -29,7 +58,28 @@ Each group consists of a set of filters and formats that tell HealthVault what d
 
 To query for the most recent instance of height and weight data, with each in a different data set, create two groups. For example, Let's say you call one group <span class="literalValue">height</span> and the other group <span class="literalValue">weight</span>. The group for height will contain a filter specifying only the height thing type, while the weight group will specify only the weight thing type. On each group, you would set the maximum number of returned things to be <span class="literalValue">1</span>. The result will contain two groups with the names specified in the request. The <span class="literalValue">height</span> group will contain only the most recent instance of height data, and the <span class="literalValue">weight</span> group only the most recent instance of weight data.
 
-`<info>  <group name="height" max="1">    <filter>      <type-id>40750a6a-89b2-455c-bd8d-b420a4cb500b</type-id>    </filter>    <format>      <section>core</section>      <xml/>    </format>  </group>  <group name="weight" max="1">    <filter>      <type-id>3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>    </filter>    <format>      <section>core</section>      <xml/>    </format>  </group></info>`
+```xml
+<info>
+  <group name="height" max="1">
+    <filter>
+      <type-id>40750a6a-89b2-455c-bd8d-b420a4cb500b</type-id>
+    </filter>
+    <format>
+      <section>core</section>
+      <xml/>
+    </format>
+  </group>
+  <group name="weight" max="1">
+    <filter>
+      <type-id>3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>
+    </filter>
+    <format>
+      <section>core</section>
+      <xml/>
+    </format>
+  </group>
+</info>
+```
 Query format
 ------------
 
@@ -77,7 +127,7 @@ Optional header sections are:
 </tr>
 <tr class="even">
 <td><p>Digital signatures</p></td>
-<td><p>Digital signature information including the key and cryptographic hash, which can be used to verify that the contents of the thing haven't been changed since the data was signed. Retrieve this section only if you want to validate the cryptographic hash or the signature. For more information, see <a href="digital-signatures.md" id="PageContent_14098_2">Digital Signatures</a>.</p></td>
+<td><p>Digital signature information including the key and cryptographic hash, which can be used to verify that the contents of the thing haven't been changed since the data was signed. Retrieve this section only if you want to validate the cryptographic hash or the signature. For more information, see [digital signatures](/healthvault/concepts/data/digital-signatures.md).</p></td>
 </tr>
 <tr class="odd">
 <td><p>Tags</p></td>
@@ -135,7 +185,7 @@ The blob format determines how those blobs are returned. Options include:
 <td><p>Streamed</p></td>
 <td><p>This is the preferred method for retrieving blobs. The streaming mechanism doesn’t have the same size limitations that retrieving blobs inline does.</p>
 <p>Metadata sufficient for retrieving the blob via an <span class="code">HTTP GET</span> is returned. The metadata includes a URL directly to the blob, as well as the content encoding of that blob (if any).</p>
-<p>For more information on retrieving blobs through streaming, see the <a href="thing-types.md">Blobs</a> section in <a href="thing-types.md">Thing types</a>.</p></td>
+<p>For more information on retrieving blobs through streaming, see the [blobs section](/healthvault/concepts/data/thing-types.md) section of the thing type page.</p></td>
 </tr>
 </tbody>
 </table>
@@ -265,10 +315,16 @@ Compound queries and predicates other than those described above are not optimiz
 
 Example - string predicates
 
-`/thing/data-xml/medication/name/text[. = "Aspirin"]/thing/data-xml/medication/name/text[@myattribute = "value"] `
+```xpath
+ /thing/data-xml/medication/name/text[. = "Aspirin"]/thing/data-xml/medication/name/text[@myattribute = "value"] 
+```
+
 Example - numeric predicates
 
-`/thing/data-xml/weight/value/kg[. = 150]/thing/data-xml/weight/value/kg[. > 150]/thing/data-xml/weight/value/kg[. < 150] `
+```xpath
+/thing/data-xml/weight/value/kg[. = 150]/thing/data-xml/weight/value/kg[. > 150]/thing/data-xml/weight/value/kg[. < 150] 
+```
+
 Full and partial things
 -----------------------
 
@@ -289,24 +345,4 @@ The **GetServiceDefinition** request returns information about Microsoft HealthV
 .NET SDK
 --------
 
-The HealthVault .Net SDK provides classes for reading and writing data. For querying and writing data, use the [HealthRecordAccessor](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecordaccessor.aspx) class. For advanced querying, use the [HealthRecordSearcher](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecordsearcher.aspx) class.
-
-See Also
---------
-
--   [HealthRecordAccessor](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecordaccessor.aspx)
--   [HealthRecordSearcher](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecordsearcher.aspx)
-
-### Integrating with HealthVault
-
-Reading and writing data
-
--   <a href="querying-data.md" id="RightRailLinkListSection_14098_10">Querying data</a>
--   <a href="writing-data.md" id="RightRailLinkListSection_14098_11">Writing data</a>
--   <a href="paging-data.md" id="RightRailLinkListSection_14098_12">Paging data</a>
--   <a href="batching-queries.md" id="RightRailLinkListSection_14098_13">Batching queries for performance</a>
--   <a href="subscribing-to-events.md" id="RightRailLinkListSection_14098_14">Subscribing to events</a>
--   <a href="tracking-data-items.md" id="RightRailLinkListSection_14098_15">Tracking data items</a>
--   <a href="version-stamps.md" id="RightRailLinkListSection_14098_16">Version stamps on data items</a>
--   <a href="read-only-data.md" id="RightRailLinkListSection_14098_17">Using read-only data</a>
-
+The HealthVault .Net SDK provides classes for reading and writing data. For querying and writing data, use the [HealthRecordAccessor](/healthvault/sdks/dotnet/microsoft.health.healthrecordaccessor.yml) class. For advanced querying, use the [HealthRecordSearcher](/healthvault/sdks/dotnet/microsoft.health.healthrecordsearcher.yml) class.

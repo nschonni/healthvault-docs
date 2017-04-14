@@ -25,19 +25,7 @@ Microsoft prioritizes regions where we plan to directly market HealthVault. If y
 
 **Access restrictions**. If you choose to technically block download or signup to your application based on user location, you are responsible for deciding on and implementing an appropriate method. Microsoft is not responsible for restricting user access to applications.
 
-<span id="singleColInThreeColLayout"></span>
-
-### Integrating with HealthVault
-
-Go-live process
-
--   <a href="go-live.md" id="RightRailLinkListSection_13992_14">Go-live guide</a>
--   <a href="updates.md" id="RightRailLinkListSection_13992_15">Updating your application</a>
--   <a href="configurations.md" id="RightRailLinkListSection_13992_16">Instance configurations</a>
--   <a href="brand-materials.md" id="RightRailLinkListSection_13992_17">Brand materials</a>
--   <a href="territories.md" id="RightRailLinkListSection_13992_18">Territories</a>
-
-See also
+#### See also
 
 -   <a href="http://microsoft.com/exporting" id="RightRailLinkListSection_13992_19">microsoft.com/exporting</a>
 

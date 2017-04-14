@@ -9,7 +9,7 @@ A HealthVault-integrated application is permitted to call the production service
 -   The developer configures an application entry in the [Application Configuration Center (ACC)](https://config.healthvault-ppe.com).
 -   The developer builds and tests the application against the PPE (pre-production) environment (<https://www.healthvault-ppe.com>).
 -   The developer refers to documentation on this site and the [Developer Tools Portal](https://developer.healthvault.com) to build the application.
--   The developer initiates the <a href="go-live.md" id="Introduction_14442_17">go-live process</a> to move the configuration entry to production.
+-   The developer initiates the <a href="/healthvault/publishing/go-live.md" id="Introduction_14442_17">go-live process</a> to move the configuration entry to production.
 
 Development tools
 -----------------
@@ -28,22 +28,19 @@ The go-live process is series of steps to validate and approve an application. T
 
 Learn more with the <a href="go-live.md" id="Introduction_14442_20">go-live guide</a>.
 
-Next, read about <a href="technical-overview---permissions.md" id="Introduction_14442_16">application permissions</a>.
+Next, read about <a href="technical-overview-permissions.md" id="Introduction_14442_16">application permissions</a>.
 
 <span id="singleColInThreeColLayout"></span>
 
 ### Technical Overview
 
 -   <a href="technical-overview.md" id="RightRailLinkListSection_14442_10">1. Terminology</a>
--   <a href="technical-overview---applications.md" id="RightRailLinkListSection_14442_11">2. Applications</a>
--   <a href="technical-overview---permissions.md" id="RightRailLinkListSection_14442_12">3. Permissions</a>
--   <a href="technical-overview---connectivity.md" id="RightRailLinkListSection_14442_13">4. Connectivity</a>
--   <a href="technical-overview---exchanging-data.md" id="RightRailLinkListSection_14442_14">5. Exchanging data</a>
+-   <a href="technical-overview-applications.md" id="RightRailLinkListSection_14442_11">2. Applications</a>
+-   <a href="technical-overview-permissions.md" id="RightRailLinkListSection_14442_12">3. Permissions</a>
+-   <a href="technical-overview-connectivity.md" id="RightRailLinkListSection_14442_13">4. Connectivity</a>
+-   <a href="technical-overview-exchanging-data.md" id="RightRailLinkListSection_14442_14">5. Exchanging data</a>
 
 See also
 
 -   <a href="https://config.healthvault-ppe.com" id="RightRailLinkListSection_14442_9">Application Configuration Center</a>
 -   <a href="https://developer.healthvault.com" id="RightRailLinkListSection_14442_18">Developer tools portal</a>
--   <a href="go-live.md" id="RightRailLinkListSection_14442_15">Go-live guide</a>
--   <a href="configurations.md" id="RightRailLinkListSection_14442_19">Instance configurations</a>
-

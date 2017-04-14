@@ -83,17 +83,3 @@ If an attempt to deliver a notification fails, the notification will be placed b
 HealthVault Eventing enables endpoint authentication using symmetric hashing
 
 The key version id, subscription id, and HMAC of the notification payload form the key elements of the endpoint authentication. The notification handler can determines which subscription was notified based on the key version id that was passed. The expected key can be determined based on the key version id that was sent to the handler. This allows keys to be updated to new versions while not breaking the handling using the old keys. The noticaion handler should calculate an HMAC of the xml notification text and compared it to the one passed in the header. If the hmac does not match the notification should be ignored and discarded as it did not originate from the HealthVault service. The notification handler should return a status of '200 OK' so that the HealthVault platform knows that the delivery was successful. 
-
-### Integrating with HealthVault
-
-Reading and writing data
-
--   <a href="querying-data.md" id="RightRailLinkListSection_13989_7">Querying data</a>
--   <a href="writing-data.md" id="RightRailLinkListSection_13989_8">Writing data</a>
--   <a href="paging-data.md" id="RightRailLinkListSection_13989_9">Paging data</a>
--   <a href="batching-queries.md" id="RightRailLinkListSection_13989_10">Batching queries for performance</a>
--   <a href="subscribing-to-events.md" id="RightRailLinkListSection_13989_11">Subscribing to events</a>
--   <a href="tracking-data-items.md" id="RightRailLinkListSection_13989_12">Tracking data items</a>
--   <a href="version-stamps.md" id="RightRailLinkListSection_13989_13">Version stamps on data items</a>
--   <a href="read-only-data.md" id="RightRailLinkListSection_13989_14">Using read-only data</a>
-

@@ -14,7 +14,7 @@ This model is designed for user-facing websites. The website can redirect a pers
 4.  The application stores the information sent back
 5.  The application connects to the health record
 
-See  <a href="web-connectivity.md" id="PageContent_13983_3">web connectivity</a>.
+See  <a href="/healthvault/concepts/connectivity/web-connectivity.md" id="PageContent_13983_3">web connectivity</a>.
 
 Patient Connect
 ---------------
@@ -27,7 +27,7 @@ This model provides a way to perform offline authorizations. The application cre
 4.  The user enters the pickup code and authorizes the application.
 5.  The application learns about the authorization through polling.
 
-See  <a href="patient-connect.md" id="PageContent_13983_7">Patient Connect</a>.
+See  <a href="/healthvault/concepts/connectivity/patient-connect.md" id="PageContent_13983_7">Patient Connect</a>.
 
 Drop-Off Pick-Up (DOPU)
 -----------------------
@@ -39,7 +39,7 @@ This model allows an application to send data without establishing a long-term a
 3.  The user visits the HealthVault website.
 4.  The user enters the secret answer and pickup code.
 
-See  <a href="dopu.md" id="PageContent_13983_8">Drop-Off and pick-Up (DOPU)</a>
+See  <a href="/healthvault/concepts/connectivity/drop-off-pick-up.md" id="PageContent_13983_8">Drop-Off and pick-Up (DOPU)</a>
 
 Mobile
 ------
@@ -52,7 +52,7 @@ This model is designed for native software running on tablets, phones and other 
 4.  The user authorizes the application.
 5.  The application detects and saves the authorization information.
 
-See  <a href="mobile-devices.md" id="PageContent_13983_5">Mobile development</a>
+See  <a href="/healthvault/concepts/connectivity/mobile-devices.md" id="PageContent_13983_5">Mobile development</a>
 
 Direct Messaging (U.S. only)
 ----------------------------
@@ -66,7 +66,7 @@ This protocol enable secure communications between providers and patients.
 5.  The application sends the message through a secure gateway.
 6.  HealthVault verifies the digital signature and delivers the message.
 
-See  <a href="direct-messaging.md" id="PageContent_14106_7">Direct Messaging</a> 
+See  <a href="/healthvault/concepts/connectivity/direct-messaging.md" id="PageContent_14106_7">Direct Messaging</a> 
 
 HealthVault provides support for the protocols for Direct messaging within the U.S.
 
@@ -75,23 +75,14 @@ Putting it together
 
 HealthVault supports multiple connection methods for different types of application scenarios.
 
-Next, learn about <a href="technical-overview---exchanging-data.md" id="Introduction_14106_22">reading and writing data</a>.
+Next, learn about <a href="technical-overview-exchanging-data.md" id="Introduction_14106_22">reading and writing data</a>.
 
 <span id="singleColInThreeColLayout"></span>
 
 #### Technical overview
 
 -   <a href="technical-overview.md" id="RightRailLinkListSection_14106_8">1. Terminology</a>
--   <a href="technical-overview---applications.md" id="RightRailLinkListSection_14106_23">2. Applications</a>
--   <a href="technical-overview---permissions.md" id="RightRailLinkListSection_14106_12">3. Permissions</a>
--   <a href="technical-overview---connectivity.md" id="RightRailLinkListSection_14106_9">4. Connectivity</a>
--   <a href="technical-overview---exchanging-data.md" id="RightRailLinkListSection_14106_13">5. Exchanging data</a>
-
-Connection Methods
-
--   <a href="web-connectivity.md" id="RightRailLinkListSection_14106_14">Web</a>
--   <a href="patient-connect.md" id="RightRailLinkListSection_14106_15">Patient Connect</a>
--   <a href="dopu.md" id="RightRailLinkListSection_14106_16">Drop-off and Pick-up (DOPU)</a>
--   <a href="mobile-devices.md" id="RightRailLinkListSection_14106_17">Mobile (SODA)</a>
--   <a href="direct-messaging.md" id="RightRailLinkListSection_14106_18">Direct Messaging</a>
-
+-   <a href="technical-overview-applications.md" id="RightRailLinkListSection_14106_23">2. Applications</a>
+-   <a href="technical-overview-permissions.md" id="RightRailLinkListSection_14106_12">3. Permissions</a>
+-   <a href="technical-overview-connectivity.md" id="RightRailLinkListSection_14106_9">4. Connectivity</a>
+-   <a href="technical-overview-exchanging-data.md" id="RightRailLinkListSection_14106_13">5. Exchanging data</a>
