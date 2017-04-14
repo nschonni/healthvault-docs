@@ -115,4 +115,4 @@ HealthVault supports connectivity with a variety of smart health devices. Device
 
 Check out the HealthVault Device Directory at <https://account.healthvault.com/Directory?target=Devices>.
 
-For information about how to make a device compatible with HealthVault, see <a href="device-overview.md" id="PageContent_13982_2">overview of devices.</a>
+For information about how to make a device compatible with HealthVault, see <a href="/healthvault/concepts/device-driver-kit/device-overview.md" id="PageContent_13982_2">overview of devices.</a>

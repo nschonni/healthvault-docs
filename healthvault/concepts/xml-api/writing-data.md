@@ -38,7 +38,7 @@ The following request XML illustrates a **PutThings** call that creates a new we
 ```
 ### The request
 
-In the **PutThings** request, the info section must contain one or more thing instances. When creating new instances, the thing-id element must not be present in the XML. The type-id field must indicate the type of data that exists in the data-xml section. The thing-state, flags, eff-date, created, and updated sections are all ignored. If you have streamed data associated with the thing, then the blob-payload section must be present. If the thing needs a digital signature, then the signature-info section must be present. For more information, see <a href="thing-type-schema.md" id="PageContent_14101_3">Thing Type Schema</a>.
+In the **PutThings** request, the info section must contain one or more thing instances. When creating new instances, the thing-id element must not be present in the XML. The type-id field must indicate the type of data that exists in the data-xml section. The thing-state, flags, eff-date, created, and updated sections are all ignored. If you have streamed data associated with the thing, then the blob-payload section must be present. If the thing needs a digital signature, then the signature-info section must be present. For more information, see <a href="/healthvault/concepts/data/thing-types.md" id="PageContent_14101_3">Thing Type Schema</a>.
 
 ### The response
 

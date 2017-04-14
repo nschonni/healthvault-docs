@@ -4,7 +4,7 @@ Technical overview: exchanging data
 Reading and writing data
 ------------------------
 
-HealthVault provides an XML-based web service API with two methods for reading and writing data: GetThings and PutThings. The GetThings method is used to execute queries and return stored data. The PutThings method is used to create and update data.  For more information, see <a href="querying-data.md" id="PageContent_13983_9">querying data</a> and <a href="writing-data.md" id="PageContent_13983_10">writing data</a>.
+HealthVault provides an XML-based web service API with two methods for reading and writing data: GetThings and PutThings. The GetThings method is used to execute queries and return stored data. The PutThings method is used to create and update data.  For more information, see <a href="/healthvault/concepts/xml-api/querying-data.md" id="PageContent_13983_9">querying data</a> and <a href="/healthvault/concepts/xml-api/writing-data.md" id="PageContent_13983_10">writing data</a>.
 
 In the .NET SDK this functionality can be found in the following classes:
 

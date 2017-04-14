@@ -299,7 +299,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="/healthvault/apis/v1.0-preview.swagger.json">Reference</a>
+                                                    <a href="/healthvault/apis/v1.0-preview">Reference</a>
                                                 </h3>
                                             </div>
                                         </div>

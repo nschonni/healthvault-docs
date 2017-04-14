@@ -135,7 +135,7 @@ Package data
 
 The data in a DOPU package is an encrypted list of HealthVault items. It is encapsulated in the [Password Protected Package](http://developer.healthvault.com/pages/types/type.aspx?id=c9287326-bb43-4194-858c-8b60768f000f) type, which consists of metadata about the encryption algorithm and an inline blob that is the encrypted data itself.
 
-The unencrypted data should be a sequence of thing XMLs of any HealthVault data type. Items can also contain inline or streamed blobs, but items with streamed blobs cannot be <a href="digital-signatures.md" id="PageContent_14092_5">digitally signed</a> inside a DOPU package.
+The unencrypted data should be a sequence of thing XMLs of any HealthVault data type. Items can also contain inline or streamed blobs, but items with streamed blobs cannot be <a href="/healthvault/concepts/data/digital-signatures.md" id="PageContent_14092_5">digitally signed</a> inside a DOPU package.
 
 For example:
 

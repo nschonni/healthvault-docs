@@ -170,7 +170,7 @@ There are two approaches that can be used for relating items where some of the i
 Reconciliation
 --------------
 
-Reconciliation is the process by which clinical documents such as Continuity of Care Record (CCR) and Continuity of Care Document (CCD) documents in HealthVault can be used to create HealthVault items based on the data they contain. For more information, see [Using CCR Data in HealthVault](using-ccr-data-in-healthvault.md).
+Reconciliation is the process by which clinical documents such as Continuity of Care Record (CCR) and Continuity of Care Document (CCD) documents in HealthVault can be used to create HealthVault items based on the data they contain. For more information, see [Using CCR Data in HealthVault](ccr-data.md).
 
 By default, the individual items reconciled from a clinical document are not read-only. To specify that the reconciled items should be read-only, set the read-only flag on the clinical document thing when creating it in HealthVault. All items reconciled from the document will be read-only.
 

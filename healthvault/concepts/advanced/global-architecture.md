@@ -81,7 +81,7 @@ HealthVault makes it easy to configure an application to be multi-instance or si
 
 ### The allow instance bounce (aib) parameter
 
-In addition to the server-side configuration for supported instances, the [Shell Redirect Interface](shell-redirect-interface.md) supports an **aib** (allow instance bounce) parameter, which specifies whether a user can be redirected between instances during a Shell redirect request. If the value is **true**, the user can be redirected between instances during a Shell target action. If the value is **false**, the user cannot be redirected between instances during the Shell target action. The default value is true.
+In addition to the server-side configuration for supported instances, the [Shell Redirect Interface](/healthvault/concepts/connectivity/shell-redirect-interface.md) supports an **aib** (allow instance bounce) parameter, which specifies whether a user can be redirected between instances during a Shell redirect request. If the value is **true**, the user can be redirected between instances during a Shell target action. If the value is **false**, the user cannot be redirected between instances during the Shell target action. The default value is true.
 
 For single-instance apps that connect to a single instance, the **aib** parameter is not relevant. For multi-instance applications, the value of the **aib** parameter must be **true** when redirecting the user to a Shell target. Additionally, as discussed above, the server-side configuration set by the HealthVault go-live team must reflect multiple instances.
 

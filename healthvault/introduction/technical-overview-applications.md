@@ -26,9 +26,9 @@ The go-live process is series of steps to validate and approve an application. T
 -   The developer schedules a go-live review during which the application is demonstrated.
 -   HealthVault enables the application to call the production service APIs.
 
-Learn more with the <a href="go-live.md" id="Introduction_14442_20">go-live guide</a>.
+Learn more with the <a href="/healthvault/publishing/go-live.md" id="Introduction_14442_20">go-live guide</a>.
 
-Next, read about <a href="technical-overview-permissions.md" id="Introduction_14442_16">application permissions</a>.
+Next, read about <a href="/healthvault/inroduction/technical-overview-permissions.md" id="Introduction_14442_16">application permissions</a>.
 
 <span id="singleColInThreeColLayout"></span>
 
