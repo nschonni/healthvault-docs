@@ -16,7 +16,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                         <a href="#introduction">Introduction</a>
                         <ul id="introduction" class="cardsC">
                             <li>
-                                <a href="/healthvault/introduction/why-healthvault?branch=microsoft/develop">
+                                <a href="/healthvault/introduction/why-healthvault">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -35,7 +35,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                 </a>
                             </li>
                             <li>
-                                <a href="/healthvault/introduction/technical-overview?branch=microsoft/develop">
+                                <a href="/healthvault/introduction/technical-overview">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -54,7 +54,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                 </a>
                             </li>
                             <li>
-                                <a href="/healthvault/introduction/interoperability?branch=microsoft/develop">
+                                <a href="/healthvault/introduction/interoperability">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -73,7 +73,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                 </a>
                             </li>
                             <li>
-                                <a href="/healthvault/introduction/hipaa-and-hitech?branch=microsoft/develop">
+                                <a href="/healthvault/introduction/hipaa-and-hitech">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -97,7 +97,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                         <a href="#scenarios">Scenarios</a>
                         <ul id="scenarios" class="cardsC">
                             <li>
-                                <a href="/healthvault/scenarios/action-plans?branch=microsoft/develop">
+                                <a href="/healthvault/scenarios/action-plans">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -116,7 +116,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                 </a>
                             </li>
                             <li>
-                                <a href="/healthvault/scenarios/meaningful-use?branch=microsoft/develop"><div class="cardSize">
+                                <a href="/healthvault/scenarios/meaningful-use"><div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter">
@@ -134,7 +134,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                 </a>
                             </li>
                             <li>
-                                <a href="/healthvault/scenarios/emergency-preparedness?branch=microsoft/develop">
+                                <a href="/healthvault/scenarios/emergency-preparedness">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -158,7 +158,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                         <a href="#publishing">Publishing</a>
                         <ul id="publishing" class="cardsC">
                             <li>
-                                <a href="/healthvault/publishing/become-a-solution-provider?branch=microsoft/develop">
+                                <a href="/healthvault/publishing/become-a-solution-provider">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -177,7 +177,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                 </a>
                             </li>
                             <li>
-                                <a href="/healthvault/publishing/brand-materials?branch=microsoft/develop">
+                                <a href="/healthvault/publishing/brand-materials">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -196,7 +196,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                 </a>
                             </li>
                             <li>
-                                <a href="/healthvault/publishing/go-live?branch=microsoft/develop">
+                                <a href="/healthvault/publishing/go-live">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -215,7 +215,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                 </a>
                             </li>
                             <li>
-                                <a href="/healthvault/publishing/updates?branch=microsoft/develop">
+                                <a href="/healthvault/publishing/updates">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -234,7 +234,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                 </a>
                             </li>
                             <li>
-                                <a href="/healthvault/publishing/territories?branch=microsoft/develop">
+                                <a href="/healthvault/publishing/territories">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -253,7 +253,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                 </a>
                             </li>
                             <li>
-                                <a href="/healthvault/publishing/nhs?branch=microsoft/develop"><div class="cardSize">
+                                <a href="/healthvault/publishing/nhs"><div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter">
@@ -320,7 +320,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                     <a href="https:/www.nuget.org/packages/HealthVault.net">Get the .NET SDK</a>
                                                 </h3>
                                                 <p>
-                                                    <a href="/healthvault/sdks/dotnet/microsoft.health?branch=microsoft/develop">API reference</a>
+                                                    <a href="/healthvault/sdks/dotnet/microsoft.health">API reference</a>
                                                 </p>
                                                 <p>
                                                     <a href="https:/www.github.com/microsoft/healthvault-samples/">Get samples</a>
@@ -444,7 +444,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                             <div class="cardText">
                                                 <h3><a href="https:/config.healthvault-ppe.com/">Application Configuration Center</a></h3>
                                                 <p>
-                                                    <a href="/healthvault/tools/acc/acc-tool?branch=microsoft/develop">Reference</a>
+                                                    <a href="/healthvault/tools/acc/acc-tool">Reference</a>
                                                 </p>
                                             </div>
                                         </div>
