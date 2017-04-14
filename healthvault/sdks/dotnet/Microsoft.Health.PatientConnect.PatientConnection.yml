@@ -1,0 +1,792 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.PatientConnect.PatientConnection
+  commentId: T:Microsoft.Health.PatientConnect.PatientConnection
+  id: PatientConnection
+  parent: Microsoft.Health.PatientConnect
+  children:
+  - Microsoft.Health.PatientConnect.PatientConnection.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.Uri,System.String)
+  - Microsoft.Health.PatientConnect.PatientConnection.DeletePending(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String)
+  - Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)
+  - Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection,System.DateTime)
+  - Microsoft.Health.PatientConnect.PatientConnection.UpdateApplicationPatientId(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: PatientConnection
+  nameWithType: PatientConnection
+  fullName: Microsoft.Health.PatientConnect.PatientConnection
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/PatientConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: PatientConnection
+    path: ../Microsoft.Health/PatientConnect/PatientConnection.cs
+    startLine: 32
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.PatientConnect
+  summary: "\nMethods for accessing the patient connection APIs of HealthVault.\n"
+  remarks: "\nSome HealthVault applications maintain some of their own data storage but need a way to\nlink their account/person identifier to a HealthVault identifier. The application can do\nthis by calling <xref href=\"Microsoft.Health.PatientConnect.PatientConnection.Create(Microsoft.Health.Web.OfflineWebApplicationConnection%2cSystem.String%2cSystem.String%2cSystem.String%2cSystem.Uri%2cSystem.String)\" data-throw-if-not-resolved=\"false\"></xref> and passing the application's \nidentifier and some information that is specific to the user. The user can then go to \nHealthVault Shell and validate the connection with their appropriate health record. The\napplication can then query for all validated connections (usually on a daily basis) by\ncalling <xref href=\"Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)\" data-throw-if-not-resolved=\"false\"></xref>\nor <xref href=\"Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection%2cSystem.DateTime)\" data-throw-if-not-resolved=\"false\"></xref> \nwhich returns instances of <xref href=\"Microsoft.Health.PatientConnect.ValidatedPatientConnection\" data-throw-if-not-resolved=\"false\"></xref>.\n<br /><br />\nValidated connect requests are removed by HealthVault after 90 days. It is advised \nthat applications call <xref href=\"Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)\" data-throw-if-not-resolved=\"false\"></xref>\nor <xref href=\"Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection%2cSystem.DateTime)\" data-throw-if-not-resolved=\"false\"></xref> \ndaily or weekly to ensure that all validated connect requests are retrieved.\n"
+  example: []
+  syntax:
+    content: public static class PatientConnection
+    content.vb: Public Module PatientConnection
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Microsoft.Health.PatientConnect.PatientConnection.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.Uri,System.String)
+  commentId: M:Microsoft.Health.PatientConnect.PatientConnection.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.Uri,System.String)
+  id: Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.Uri,System.String)
+  parent: Microsoft.Health.PatientConnect.PatientConnection
+  langs:
+  - csharp
+  - vb
+  name: Create(OfflineWebApplicationConnection, String, String, String, Uri, String)
+  nameWithType: PatientConnection.Create(OfflineWebApplicationConnection, String, String, String, Uri, String)
+  fullName: Microsoft.Health.PatientConnect.PatientConnection.Create(Microsoft.Health.Web.OfflineWebApplicationConnection, System.String, System.String, System.String, System.Uri, System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/PatientConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Create
+    path: ../Microsoft.Health/PatientConnect/PatientConnection.cs
+    startLine: 90
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.PatientConnect
+  summary: "\nAsks HealthVault to create a pending patient connection for the application specified\nby the connection with the specified user specific parameters.\n"
+  example: []
+  syntax:
+    content: public static string Create(OfflineWebApplicationConnection connection, string friendlyName, string securityQuestion, string securityAnswer, Uri callbackUrl, string applicationPatientId)
+    content.vb: Public Shared Function Create(connection As OfflineWebApplicationConnection, friendlyName As String, securityQuestion As String, securityAnswer As String, callbackUrl As Uri, applicationPatientId As String) As String
+    parameters:
+    - id: connection
+      type: Microsoft.Health.Web.OfflineWebApplicationConnection
+      description: "\nThe application connection to HealthVault. The application ID in the connection is used\nwhen making the patient connection.\n"
+    - id: friendlyName
+      type: System.String
+      description: "\nA friendly name for the patient connection which will be shown to the user when they\ngo to HealthVault Shell to validate the connection.\n"
+    - id: securityQuestion
+      type: System.String
+      description: "\nA question (usually provided by the patient) to which the patient must provide the \nanswer when they go to validate the connection in the HealthVault Shell.\n"
+    - id: securityAnswer
+      type: System.String
+      description: "\nThe answer to the <span class=\"paramref\">securityQuestion</span> which the patient must use\nwhen validating the connection in HealthVault Shell. The answer is case-insensitive but\notherwise must match exactly. In most cases it is recommended that this is a single \nword to prevent entry problems when validating the connection.\n"
+    - id: callbackUrl
+      type: System.Uri
+      description: "\nNot yet implemented. May be null.\n"
+    - id: applicationPatientId
+      type: System.String
+      description: "\nThe application specific identifier for the user. This identifier is used to uniquely\nidentify the user in the application data storage whereas the HealthVault person ID is\nused to identify the person in HealthVault.\n"
+    return:
+      type: System.String
+      description: "\nA token that the application must give to the patient to use when validating the\nconnection request.\n"
+  overload: Microsoft.Health.PatientConnect.PatientConnection.Create*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nIf <span class=\"paramref\">connection</span> is <strong>null</strong>.\n"
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">friendlyName</span>, <span class=\"paramref\">securityQuestion</span>,\n<span class=\"paramref\">securityAnswer</span>, or <span class=\"paramref\">applicationPatientId</span> is\n<strong>null</strong> or empty.\n"
+  - type: Microsoft.Health.HealthServiceException
+    commentId: T:Microsoft.Health.HealthServiceException
+    description: "\nIf an error occurs when contacting HealthVault.\n"
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.PatientConnect.PatientConnection.DeletePending(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String)
+  commentId: M:Microsoft.Health.PatientConnect.PatientConnection.DeletePending(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String)
+  id: DeletePending(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String)
+  parent: Microsoft.Health.PatientConnect.PatientConnection
+  langs:
+  - csharp
+  - vb
+  name: DeletePending(OfflineWebApplicationConnection, String)
+  nameWithType: PatientConnection.DeletePending(OfflineWebApplicationConnection, String)
+  fullName: Microsoft.Health.PatientConnect.PatientConnection.DeletePending(Microsoft.Health.Web.OfflineWebApplicationConnection, System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/PatientConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: DeletePending
+    path: ../Microsoft.Health/PatientConnect/PatientConnection.cs
+    startLine: 133
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.PatientConnect
+  summary: "\nDeletes a request for a connection that has been made by the calling application but\nhas not been validated by the user.\n"
+  example: []
+  syntax:
+    content: public static void DeletePending(OfflineWebApplicationConnection connection, string applicationPatientId)
+    content.vb: Public Shared Sub DeletePending(connection As OfflineWebApplicationConnection, applicationPatientId As String)
+    parameters:
+    - id: connection
+      type: Microsoft.Health.Web.OfflineWebApplicationConnection
+      description: "\nThe connection to HealthVault to use for this operation. \n"
+    - id: applicationPatientId
+      type: System.String
+      description: "\nThe application's identifier for the user which was used to create the connection \nrequest.\n"
+  overload: Microsoft.Health.PatientConnect.PatientConnection.DeletePending*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nIf <span class=\"paramref\">connection</span> is <strong>null</strong>.\n"
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">applicationPatientId</span> is <strong>null</strong> or empty.\n"
+  - type: Microsoft.Health.HealthServiceException
+    commentId: T:Microsoft.Health.HealthServiceException
+    description: "\nIf an error occurs when contacting HealthVault.\n"
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.PatientConnect.PatientConnection.UpdateApplicationPatientId(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String)
+  commentId: M:Microsoft.Health.PatientConnect.PatientConnection.UpdateApplicationPatientId(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String)
+  id: UpdateApplicationPatientId(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String)
+  parent: Microsoft.Health.PatientConnect.PatientConnection
+  langs:
+  - csharp
+  - vb
+  name: UpdateApplicationPatientId(OfflineWebApplicationConnection, String, String)
+  nameWithType: PatientConnection.UpdateApplicationPatientId(OfflineWebApplicationConnection, String, String)
+  fullName: Microsoft.Health.PatientConnect.PatientConnection.UpdateApplicationPatientId(Microsoft.Health.Web.OfflineWebApplicationConnection, System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/PatientConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: UpdateApplicationPatientId
+    path: ../Microsoft.Health/PatientConnect/PatientConnection.cs
+    startLine: 171
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.PatientConnect
+  summary: "\nUpdates an existing pending patient connection with a new application patient identifier.\n"
+  example: []
+  syntax:
+    content: public static void UpdateApplicationPatientId(OfflineWebApplicationConnection connection, string oldApplicationPatientId, string newApplicationPatientId)
+    content.vb: Public Shared Sub UpdateApplicationPatientId(connection As OfflineWebApplicationConnection, oldApplicationPatientId As String, newApplicationPatientId As String)
+    parameters:
+    - id: connection
+      type: Microsoft.Health.Web.OfflineWebApplicationConnection
+      description: "\nThe HealthVault connection to use for the operation.\n"
+    - id: oldApplicationPatientId
+      type: System.String
+      description: "\nThe application patient identifier that was used to make the initial connection request.\n"
+    - id: newApplicationPatientId
+      type: System.String
+      description: "\nThe new application patient identifier.\n"
+  overload: Microsoft.Health.PatientConnect.PatientConnection.UpdateApplicationPatientId*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nIf <span class=\"paramref\">connection</span> is <strong>null</strong>.\n"
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nIf <span class=\"paramref\">oldApplicationPatientId</span> or <span class=\"paramref\">newApplicationPatientId</span>\nis <strong>null</strong> or empty.\n"
+  - type: Microsoft.Health.HealthServiceException
+    commentId: T:Microsoft.Health.HealthServiceException
+    description: "\nIf an error occurs when contacting HealthVault.\n"
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)
+  commentId: M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)
+  id: GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)
+  parent: Microsoft.Health.PatientConnect.PatientConnection
+  langs:
+  - csharp
+  - vb
+  name: GetValidatedConnections(OfflineWebApplicationConnection)
+  nameWithType: PatientConnection.GetValidatedConnections(OfflineWebApplicationConnection)
+  fullName: Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/PatientConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetValidatedConnections
+    path: ../Microsoft.Health/PatientConnect/PatientConnection.cs
+    startLine: 205
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.PatientConnect
+  summary: "\nGets the connections for the application that people have accepted.\n"
+  remarks: "\nValidated connect requests are removed by HealthVault after 90 days. It is advised \nthat applications call <xref href=\"Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)\" data-throw-if-not-resolved=\"false\"></xref>\nor <xref href=\"Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection%2cSystem.DateTime)\" data-throw-if-not-resolved=\"false\"></xref> \ndaily or weekly to ensure that all validated connect requests are retrieved.\n"
+  example: []
+  syntax:
+    content: public static Collection<ValidatedPatientConnection> GetValidatedConnections(OfflineWebApplicationConnection connection)
+    content.vb: Public Shared Function GetValidatedConnections(connection As OfflineWebApplicationConnection) As Collection(Of ValidatedPatientConnection)
+    parameters:
+    - id: connection
+      type: Microsoft.Health.Web.OfflineWebApplicationConnection
+      description: "\nThe application's connection to HealthVault.\n"
+    return:
+      type: System.Collections.ObjectModel.Collection{Microsoft.Health.PatientConnect.ValidatedPatientConnection}
+      description: "\nA collection of the connections that people have accepted.\n"
+  overload: Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nIf <span class=\"paramref\">connection</span> is <strong>null</strong>.\n"
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection,System.DateTime)
+  commentId: M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection,System.DateTime)
+  id: GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection,System.DateTime)
+  parent: Microsoft.Health.PatientConnect.PatientConnection
+  langs:
+  - csharp
+  - vb
+  name: GetValidatedConnections(OfflineWebApplicationConnection, DateTime)
+  nameWithType: PatientConnection.GetValidatedConnections(OfflineWebApplicationConnection, DateTime)
+  fullName: Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection, System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/PatientConnect/PatientConnection.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetValidatedConnections
+    path: ../Microsoft.Health/PatientConnect/PatientConnection.cs
+    startLine: 240
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health.PatientConnect
+  summary: "\nGets the connections for the application that people have accepted since the specified\ndate.\n"
+  remarks: "\nValidated connect requests are removed by HealthVault after 90 days. It is advised \nthat applications call <xref href=\"Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)\" data-throw-if-not-resolved=\"false\"></xref>\nor <xref href=\"Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection%2cSystem.DateTime)\" data-throw-if-not-resolved=\"false\"></xref> \ndaily or weekly to ensure that all validated connect requests are retrieved.\n"
+  example: []
+  syntax:
+    content: public static Collection<ValidatedPatientConnection> GetValidatedConnections(OfflineWebApplicationConnection connection, DateTime validatedSince)
+    content.vb: Public Shared Function GetValidatedConnections(connection As OfflineWebApplicationConnection, validatedSince As Date) As Collection(Of ValidatedPatientConnection)
+    parameters:
+    - id: connection
+      type: Microsoft.Health.Web.OfflineWebApplicationConnection
+      description: "\nThe application's connection to HealthVault.\n"
+    - id: validatedSince
+      type: System.DateTime
+      description: "\nConnections that have been validated since this date will be returned. The date passed\nshould be in UTC time.\n"
+    return:
+      type: System.Collections.ObjectModel.Collection{Microsoft.Health.PatientConnect.ValidatedPatientConnection}
+      description: "\nA collection of the connections that people have accepted.\n"
+  overload: Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nIf <span class=\"paramref\">connection</span> is <strong>null</strong>.\n"
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: Microsoft.Health.PatientConnect.PatientConnection.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.Uri,System.String)
+  commentId: M:Microsoft.Health.PatientConnect.PatientConnection.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.Uri,System.String)
+- uid: Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)
+  commentId: M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)
+- uid: Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection,System.DateTime)
+  commentId: M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection,System.DateTime)
+- uid: Microsoft.Health.PatientConnect.ValidatedPatientConnection
+  commentId: T:Microsoft.Health.PatientConnect.ValidatedPatientConnection
+  isExternal: false
+  name: ValidatedPatientConnection
+  nameWithType: ValidatedPatientConnection
+  fullName: Microsoft.Health.PatientConnect.ValidatedPatientConnection
+- uid: Microsoft.Health.PatientConnect
+  commentId: N:Microsoft.Health.PatientConnect
+  isExternal: false
+  name: Microsoft.Health.PatientConnect
+  nameWithType: Microsoft.Health.PatientConnect
+  fullName: Microsoft.Health.PatientConnect
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.PatientConnect.PatientConnection.Create*
+  commentId: Overload:Microsoft.Health.PatientConnect.PatientConnection.Create
+  isExternal: false
+  name: Create
+  nameWithType: PatientConnection.Create
+  fullName: Microsoft.Health.PatientConnect.PatientConnection.Create
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: Microsoft.Health.HealthServiceException
+  commentId: T:Microsoft.Health.HealthServiceException
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthServiceException
+  nameWithType: HealthServiceException
+  fullName: Microsoft.Health.HealthServiceException
+- uid: Microsoft.Health.Web.OfflineWebApplicationConnection
+  commentId: T:Microsoft.Health.Web.OfflineWebApplicationConnection
+  parent: Microsoft.Health.Web
+  isExternal: false
+  name: OfflineWebApplicationConnection
+  nameWithType: OfflineWebApplicationConnection
+  fullName: Microsoft.Health.Web.OfflineWebApplicationConnection
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: Microsoft.Health
+  commentId: N:Microsoft.Health
+  isExternal: false
+  name: Microsoft.Health
+  nameWithType: Microsoft.Health
+  fullName: Microsoft.Health
+- uid: Microsoft.Health.Web
+  commentId: N:Microsoft.Health.Web
+  isExternal: false
+  name: Microsoft.Health.Web
+  nameWithType: Microsoft.Health.Web
+  fullName: Microsoft.Health.Web
+- uid: Microsoft.Health.PatientConnect.PatientConnection.DeletePending*
+  commentId: Overload:Microsoft.Health.PatientConnect.PatientConnection.DeletePending
+  isExternal: false
+  name: DeletePending
+  nameWithType: PatientConnection.DeletePending
+  fullName: Microsoft.Health.PatientConnect.PatientConnection.DeletePending
+- uid: Microsoft.Health.PatientConnect.PatientConnection.UpdateApplicationPatientId*
+  commentId: Overload:Microsoft.Health.PatientConnect.PatientConnection.UpdateApplicationPatientId
+  isExternal: false
+  name: UpdateApplicationPatientId
+  nameWithType: PatientConnection.UpdateApplicationPatientId
+  fullName: Microsoft.Health.PatientConnect.PatientConnection.UpdateApplicationPatientId
+- uid: Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections*
+  commentId: Overload:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections
+  isExternal: false
+  name: GetValidatedConnections
+  nameWithType: PatientConnection.GetValidatedConnections
+  fullName: Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections
+- uid: System.Collections.ObjectModel.Collection{Microsoft.Health.PatientConnect.ValidatedPatientConnection}
+  commentId: T:System.Collections.ObjectModel.Collection{Microsoft.Health.PatientConnect.ValidatedPatientConnection}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<ValidatedPatientConnection>
+  nameWithType: Collection<ValidatedPatientConnection>
+  fullName: System.Collections.ObjectModel.Collection<Microsoft.Health.PatientConnect.ValidatedPatientConnection>
+  nameWithType.vb: Collection(Of ValidatedPatientConnection)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of Microsoft.Health.PatientConnect.ValidatedPatientConnection)
+  name.vb: Collection(Of ValidatedPatientConnection)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.PatientConnect.ValidatedPatientConnection
+    name: ValidatedPatientConnection
+    nameWithType: ValidatedPatientConnection
+    fullName: Microsoft.Health.PatientConnect.ValidatedPatientConnection
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.PatientConnect.ValidatedPatientConnection
+    name: ValidatedPatientConnection
+    nameWithType: ValidatedPatientConnection
+    fullName: Microsoft.Health.PatientConnect.ValidatedPatientConnection
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1
+  commentId: T:System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<T>
+  nameWithType: Collection<T>
+  fullName: System.Collections.ObjectModel.Collection<T>
+  nameWithType.vb: Collection(Of T)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T)
+  name.vb: Collection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: false
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime

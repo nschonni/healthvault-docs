@@ -1,0 +1,2442 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.InvertedIndex.MatchCollector
+  commentId: T:Microsoft.Health.InvertedIndex.MatchCollector
+  id: MatchCollector
+  parent: Microsoft.Health.InvertedIndex
+  children:
+  - Microsoft.Health.InvertedIndex.MatchCollector.#ctor(Microsoft.Health.InvertedIndex.RecordIDEnumerator,System.Int32)
+  - Microsoft.Health.InvertedIndex.MatchCollector.#ctor(System.Int32)
+  - Microsoft.Health.InvertedIndex.MatchCollector.Add(Microsoft.Health.InvertedIndex.RecordIDEnumerator)
+  - Microsoft.Health.InvertedIndex.MatchCollector.Dedupe
+  - Microsoft.Health.InvertedIndex.MatchCollector.GetRecords
+  - Microsoft.Health.InvertedIndex.MatchCollector.Sort
+  langs:
+  - csharp
+  - vb
+  name: MatchCollector
+  nameWithType: MatchCollector
+  fullName: Microsoft.Health.InvertedIndex.MatchCollector
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MatchCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: MatchCollector
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/MatchCollector.cs
+    startLine: 15
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: 'public class MatchCollector : PriorityQueue<Match<float>>, IEnumerable<Match<float>>, IEnumerable'
+    content.vb: >-
+      Public Class MatchCollector
+          Inherits PriorityQueue(Of Match(Of Single))
+          Implements IEnumerable(Of Match(Of Single)), IEnumerable
+  inheritance:
+  - System.Object
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  implements:
+  - System.Collections.Generic.IEnumerable{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  - System.Collections.IEnumerable
+  inheritedMembers:
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.m_items
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.m_count
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Count
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Item(System.Int32)
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Top
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Clear
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Add(Microsoft.Health.InvertedIndex.Match{System.Single})
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Add(System.Collections.Generic.IEnumerable{Microsoft.Health.InvertedIndex.Match{System.Single}})
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Enqueue(Microsoft.Health.InvertedIndex.Match{System.Single})
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Dequeue
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.DequeueAll
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.UpHeap(System.Int32)
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.DownHeap
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.DownHeap(System.Int32)
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.GetEnumerator
+  - Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.System#Collections#IEnumerable#GetEnumerator
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - Microsoft.Health.InvertedIndex.MatchCollector.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  - System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.InvertedIndex.MatchCollector.#ctor(System.Int32)
+  commentId: M:Microsoft.Health.InvertedIndex.MatchCollector.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: Microsoft.Health.InvertedIndex.MatchCollector
+  langs:
+  - csharp
+  - vb
+  name: MatchCollector(Int32)
+  nameWithType: MatchCollector.MatchCollector(Int32)
+  fullName: Microsoft.Health.InvertedIndex.MatchCollector.MatchCollector(System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MatchCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/MatchCollector.cs
+    startLine: 27
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public MatchCollector(int maxResults)
+    content.vb: Public Sub New(maxResults As Integer)
+    parameters:
+    - id: maxResults
+      type: System.Int32
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MatchCollector.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.InvertedIndex.MatchCollector.#ctor(Microsoft.Health.InvertedIndex.RecordIDEnumerator,System.Int32)
+  commentId: M:Microsoft.Health.InvertedIndex.MatchCollector.#ctor(Microsoft.Health.InvertedIndex.RecordIDEnumerator,System.Int32)
+  id: '#ctor(Microsoft.Health.InvertedIndex.RecordIDEnumerator,System.Int32)'
+  parent: Microsoft.Health.InvertedIndex.MatchCollector
+  langs:
+  - csharp
+  - vb
+  name: MatchCollector(RecordIDEnumerator, Int32)
+  nameWithType: MatchCollector.MatchCollector(RecordIDEnumerator, Int32)
+  fullName: Microsoft.Health.InvertedIndex.MatchCollector.MatchCollector(Microsoft.Health.InvertedIndex.RecordIDEnumerator, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MatchCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/MatchCollector.cs
+    startLine: 39
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\nThe selector iteratively produces results. Push those onto the MatchCollector, \nwhich is a priority queue and will retain only the top matches.\n"
+  example: []
+  syntax:
+    content: public MatchCollector(RecordIDEnumerator selector, int maxResults)
+    content.vb: Public Sub New(selector As RecordIDEnumerator, maxResults As Integer)
+    parameters:
+    - id: selector
+      type: Microsoft.Health.InvertedIndex.RecordIDEnumerator
+      description: ''
+    - id: maxResults
+      type: System.Int32
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MatchCollector.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.InvertedIndex.MatchCollector.Add(Microsoft.Health.InvertedIndex.RecordIDEnumerator)
+  commentId: M:Microsoft.Health.InvertedIndex.MatchCollector.Add(Microsoft.Health.InvertedIndex.RecordIDEnumerator)
+  id: Add(Microsoft.Health.InvertedIndex.RecordIDEnumerator)
+  parent: Microsoft.Health.InvertedIndex.MatchCollector
+  langs:
+  - csharp
+  - vb
+  name: Add(RecordIDEnumerator)
+  nameWithType: MatchCollector.Add(RecordIDEnumerator)
+  fullName: Microsoft.Health.InvertedIndex.MatchCollector.Add(Microsoft.Health.InvertedIndex.RecordIDEnumerator)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MatchCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Add
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/MatchCollector.cs
+    startLine: 55
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public void Add(RecordIDEnumerator selector)
+    content.vb: Public Sub Add(selector As RecordIDEnumerator)
+    parameters:
+    - id: selector
+      type: Microsoft.Health.InvertedIndex.RecordIDEnumerator
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MatchCollector.Add*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.InvertedIndex.MatchCollector.Sort
+  commentId: M:Microsoft.Health.InvertedIndex.MatchCollector.Sort
+  id: Sort
+  parent: Microsoft.Health.InvertedIndex.MatchCollector
+  langs:
+  - csharp
+  - vb
+  name: Sort()
+  nameWithType: MatchCollector.Sort()
+  fullName: Microsoft.Health.InvertedIndex.MatchCollector.Sort()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MatchCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Sort
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/MatchCollector.cs
+    startLine: 81
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\nSort in relevancy order. This does a Heap Sort (since we do have a Heap based priority queue)\n"
+  example: []
+  syntax:
+    content: public void Sort()
+    content.vb: Public Sub Sort
+  overload: Microsoft.Health.InvertedIndex.MatchCollector.Sort*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.InvertedIndex.MatchCollector.Dedupe
+  commentId: M:Microsoft.Health.InvertedIndex.MatchCollector.Dedupe
+  id: Dedupe
+  parent: Microsoft.Health.InvertedIndex.MatchCollector
+  langs:
+  - csharp
+  - vb
+  name: Dedupe()
+  nameWithType: MatchCollector.Dedupe()
+  fullName: Microsoft.Health.InvertedIndex.MatchCollector.Dedupe()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MatchCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Dedupe
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/MatchCollector.cs
+    startLine: 99
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public void Dedupe()
+    content.vb: Public Sub Dedupe
+  overload: Microsoft.Health.InvertedIndex.MatchCollector.Dedupe*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.InvertedIndex.MatchCollector.GetRecords
+  commentId: M:Microsoft.Health.InvertedIndex.MatchCollector.GetRecords
+  id: GetRecords
+  parent: Microsoft.Health.InvertedIndex.MatchCollector
+  langs:
+  - csharp
+  - vb
+  name: GetRecords()
+  nameWithType: MatchCollector.GetRecords()
+  fullName: Microsoft.Health.InvertedIndex.MatchCollector.GetRecords()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health.Utility/search/InvertedIndex/MatchCollector.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: GetRecords
+    path: ../Microsoft.Health.Utility/search/InvertedIndex/MatchCollector.cs
+    startLine: 142
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.InvertedIndex
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public IEnumerable<uint> GetRecords()
+    content.vb: Public Function GetRecords As IEnumerable(Of UInteger)
+    return:
+      type: System.Collections.Generic.IEnumerable{System.UInt32}
+      description: ''
+  overload: Microsoft.Health.InvertedIndex.MatchCollector.GetRecords*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Microsoft.Health.InvertedIndex
+  commentId: N:Microsoft.Health.InvertedIndex
+  isExternal: false
+  name: Microsoft.Health.InvertedIndex
+  nameWithType: Microsoft.Health.InvertedIndex
+  fullName: Microsoft.Health.InvertedIndex
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  commentId: T:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  parent: Microsoft.Health.InvertedIndex
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1
+  name: PriorityQueue<Match<Single>>
+  nameWithType: PriorityQueue<Match<Single>>
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>
+  nameWithType.vb: PriorityQueue(Of Match(Of Single))
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single))
+  name.vb: PriorityQueue(Of Match(Of Single))
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1
+    name: PriorityQueue
+    nameWithType: PriorityQueue
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.InvertedIndex.Match`1
+    name: Match
+    nameWithType: Match
+    fullName: Microsoft.Health.InvertedIndex.Match
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1
+    name: PriorityQueue
+    nameWithType: PriorityQueue
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.InvertedIndex.Match`1
+    name: Match
+    nameWithType: Match
+    fullName: Microsoft.Health.InvertedIndex.Match
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  commentId: T:System.Collections.Generic.IEnumerable{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<Match<Single>>
+  nameWithType: IEnumerable<Match<Single>>
+  fullName: System.Collections.Generic.IEnumerable<Microsoft.Health.InvertedIndex.Match<System.Single>>
+  nameWithType.vb: IEnumerable(Of Match(Of Single))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Microsoft.Health.InvertedIndex.Match(Of System.Single))
+  name.vb: IEnumerable(Of Match(Of Single))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.InvertedIndex.Match`1
+    name: Match
+    nameWithType: Match
+    fullName: Microsoft.Health.InvertedIndex.Match
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.InvertedIndex.Match`1
+    name: Match
+    nameWithType: Match
+    fullName: Microsoft.Health.InvertedIndex.Match
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.m_items
+  commentId: F:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.m_items
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.m_items
+  name: m_items
+  nameWithType: PriorityQueue<Match<Single>>.m_items
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.m_items
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).m_items
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).m_items
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.m_count
+  commentId: F:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.m_count
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.m_count
+  name: m_count
+  nameWithType: PriorityQueue<Match<Single>>.m_count
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.m_count
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).m_count
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).m_count
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Count
+  commentId: P:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Count
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.Count
+  name: Count
+  nameWithType: PriorityQueue<Match<Single>>.Count
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.Count
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).Count
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).Count
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Item(System.Int32)
+  commentId: P:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Item(System.Int32)
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.Item(System.Int32)
+  name: Item[Int32]
+  nameWithType: PriorityQueue<Match<Single>>.Item[Int32]
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.Item[System.Int32]
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).Item(Int32)
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).Item(System.Int32)
+  name.vb: Item(Int32)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Item(System.Int32)
+    name: Item
+    nameWithType: PriorityQueue<Match<Single>>.Item
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.Item
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Item(System.Int32)
+    name: Item
+    nameWithType: PriorityQueue(Of Match(Of Single)).Item
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).Item
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Top
+  commentId: P:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Top
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.Top
+  name: Top
+  nameWithType: PriorityQueue<Match<Single>>.Top
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.Top
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).Top
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).Top
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Clear
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Clear
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.Clear
+  name: Clear()
+  nameWithType: PriorityQueue<Match<Single>>.Clear()
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.Clear()
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).Clear()
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).Clear()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Clear
+    name: Clear
+    nameWithType: PriorityQueue<Match<Single>>.Clear
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.Clear
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Clear
+    name: Clear
+    nameWithType: PriorityQueue(Of Match(Of Single)).Clear
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).Clear
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Add(Microsoft.Health.InvertedIndex.Match{System.Single})
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Add(Microsoft.Health.InvertedIndex.Match{System.Single})
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.Add(`0)
+  name: Add(Match<Single>)
+  nameWithType: PriorityQueue<Match<Single>>.Add(Match<Single>)
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.Add(Microsoft.Health.InvertedIndex.Match<System.Single>)
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).Add(Match(Of Single))
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).Add(Microsoft.Health.InvertedIndex.Match(Of System.Single))
+  name.vb: Add(Match(Of Single))
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Add(`0)
+    name: Add
+    nameWithType: PriorityQueue<Match<Single>>.Add
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.InvertedIndex.Match`1
+    name: Match
+    nameWithType: Match
+    fullName: Microsoft.Health.InvertedIndex.Match
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Add(`0)
+    name: Add
+    nameWithType: PriorityQueue(Of Match(Of Single)).Add
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.InvertedIndex.Match`1
+    name: Match
+    nameWithType: Match
+    fullName: Microsoft.Health.InvertedIndex.Match
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Add(System.Collections.Generic.IEnumerable{Microsoft.Health.InvertedIndex.Match{System.Single}})
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Add(System.Collections.Generic.IEnumerable{Microsoft.Health.InvertedIndex.Match{System.Single}})
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.Add(System.Collections.Generic.IEnumerable{`0})
+  name: Add(IEnumerable<Match<Single>>)
+  nameWithType: PriorityQueue<Match<Single>>.Add(IEnumerable<Match<Single>>)
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.Add(System.Collections.Generic.IEnumerable<Microsoft.Health.InvertedIndex.Match<System.Single>>)
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).Add(IEnumerable(Of Match(Of Single)))
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).Add(System.Collections.Generic.IEnumerable(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)))
+  name.vb: Add(IEnumerable(Of Match(Of Single)))
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Add(System.Collections.Generic.IEnumerable{`0})
+    name: Add
+    nameWithType: PriorityQueue<Match<Single>>.Add
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.InvertedIndex.Match`1
+    name: Match
+    nameWithType: Match
+    fullName: Microsoft.Health.InvertedIndex.Match
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Add(System.Collections.Generic.IEnumerable{`0})
+    name: Add
+    nameWithType: PriorityQueue(Of Match(Of Single)).Add
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.InvertedIndex.Match`1
+    name: Match
+    nameWithType: Match
+    fullName: Microsoft.Health.InvertedIndex.Match
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Enqueue(Microsoft.Health.InvertedIndex.Match{System.Single})
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Enqueue(Microsoft.Health.InvertedIndex.Match{System.Single})
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.Enqueue(`0)
+  name: Enqueue(Match<Single>)
+  nameWithType: PriorityQueue<Match<Single>>.Enqueue(Match<Single>)
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.Enqueue(Microsoft.Health.InvertedIndex.Match<System.Single>)
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).Enqueue(Match(Of Single))
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).Enqueue(Microsoft.Health.InvertedIndex.Match(Of System.Single))
+  name.vb: Enqueue(Match(Of Single))
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Enqueue(`0)
+    name: Enqueue
+    nameWithType: PriorityQueue<Match<Single>>.Enqueue
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.Enqueue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.InvertedIndex.Match`1
+    name: Match
+    nameWithType: Match
+    fullName: Microsoft.Health.InvertedIndex.Match
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Enqueue(`0)
+    name: Enqueue
+    nameWithType: PriorityQueue(Of Match(Of Single)).Enqueue
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).Enqueue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Health.InvertedIndex.Match`1
+    name: Match
+    nameWithType: Match
+    fullName: Microsoft.Health.InvertedIndex.Match
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Dequeue
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.Dequeue
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.Dequeue
+  name: Dequeue()
+  nameWithType: PriorityQueue<Match<Single>>.Dequeue()
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.Dequeue()
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).Dequeue()
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).Dequeue()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Dequeue
+    name: Dequeue
+    nameWithType: PriorityQueue<Match<Single>>.Dequeue
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.Dequeue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Dequeue
+    name: Dequeue
+    nameWithType: PriorityQueue(Of Match(Of Single)).Dequeue
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).Dequeue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.DequeueAll
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.DequeueAll
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.DequeueAll
+  name: DequeueAll()
+  nameWithType: PriorityQueue<Match<Single>>.DequeueAll()
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.DequeueAll()
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).DequeueAll()
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).DequeueAll()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.DequeueAll
+    name: DequeueAll
+    nameWithType: PriorityQueue<Match<Single>>.DequeueAll
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.DequeueAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.DequeueAll
+    name: DequeueAll
+    nameWithType: PriorityQueue(Of Match(Of Single)).DequeueAll
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).DequeueAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.UpHeap(System.Int32)
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.UpHeap(System.Int32)
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.UpHeap(System.Int32)
+  name: UpHeap(Int32)
+  nameWithType: PriorityQueue<Match<Single>>.UpHeap(Int32)
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.UpHeap(System.Int32)
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).UpHeap(Int32)
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).UpHeap(System.Int32)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.UpHeap(System.Int32)
+    name: UpHeap
+    nameWithType: PriorityQueue<Match<Single>>.UpHeap
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.UpHeap
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.UpHeap(System.Int32)
+    name: UpHeap
+    nameWithType: PriorityQueue(Of Match(Of Single)).UpHeap
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).UpHeap
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.DownHeap
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.DownHeap
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.DownHeap
+  name: DownHeap()
+  nameWithType: PriorityQueue<Match<Single>>.DownHeap()
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.DownHeap()
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).DownHeap()
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).DownHeap()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.DownHeap
+    name: DownHeap
+    nameWithType: PriorityQueue<Match<Single>>.DownHeap
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.DownHeap
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.DownHeap
+    name: DownHeap
+    nameWithType: PriorityQueue(Of Match(Of Single)).DownHeap
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).DownHeap
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.DownHeap(System.Int32)
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.DownHeap(System.Int32)
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.DownHeap(System.Int32)
+  name: DownHeap(Int32)
+  nameWithType: PriorityQueue<Match<Single>>.DownHeap(Int32)
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.DownHeap(System.Int32)
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).DownHeap(Int32)
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).DownHeap(System.Int32)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.DownHeap(System.Int32)
+    name: DownHeap
+    nameWithType: PriorityQueue<Match<Single>>.DownHeap
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.DownHeap
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.DownHeap(System.Int32)
+    name: DownHeap
+    nameWithType: PriorityQueue(Of Match(Of Single)).DownHeap
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).DownHeap
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.GetEnumerator
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.GetEnumerator
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: PriorityQueue<Match<Single>>.GetEnumerator()
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.GetEnumerator()
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).GetEnumerator()
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).GetEnumerator()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: PriorityQueue<Match<Single>>.GetEnumerator
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.GetEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: PriorityQueue(Of Match(Of Single)).GetEnumerator
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).GetEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}.System#Collections#IEnumerable#GetEnumerator
+  parent: Microsoft.Health.InvertedIndex.PriorityQueue{Microsoft.Health.InvertedIndex.Match{System.Single}}
+  definition: Microsoft.Health.InvertedIndex.PriorityQueue`1.System#Collections#IEnumerable#GetEnumerator
+  name: IEnumerable.GetEnumerator()
+  nameWithType: PriorityQueue<Match<Single>>.IEnumerable.GetEnumerator()
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.System.Collections.IEnumerable.GetEnumerator()
+  nameWithType.vb: PriorityQueue(Of Match(Of Single)).System.Collections.IEnumerable.GetEnumerator()
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).System.Collections.IEnumerable.GetEnumerator()
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.System#Collections#IEnumerable#GetEnumerator
+    name: IEnumerable.GetEnumerator
+    nameWithType: PriorityQueue<Match<Single>>.IEnumerable.GetEnumerator
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<Microsoft.Health.InvertedIndex.Match<System.Single>>.System.Collections.IEnumerable.GetEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.System#Collections#IEnumerable#GetEnumerator
+    name: System.Collections.IEnumerable.GetEnumerator
+    nameWithType: PriorityQueue(Of Match(Of Single)).System.Collections.IEnumerable.GetEnumerator
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of Microsoft.Health.InvertedIndex.Match(Of System.Single)).System.Collections.IEnumerable.GetEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  name: SetProperty(String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object())
+  name.vb: SetProperty(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  name: InvokeMethod(String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object())
+  name.vb: InvokeMethod(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  parent: Microsoft.Health.Utility.InvariantString
+  definition: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  name: ToStringInvariant()
+  nameWithType: InvariantString.ToStringInvariant()
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.MatchCollector.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  parent: Microsoft.Health.Utility.TypeHelper
+  definition: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  name: ValueOrDbNull<MatchCollector>()
+  nameWithType: TypeHelper.ValueOrDbNull<MatchCollector>()
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.InvertedIndex.MatchCollector>()
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of MatchCollector)()
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.InvertedIndex.MatchCollector)()
+  name.vb: ValueOrDbNull(Of MatchCollector)()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull<MatchCollector>
+    nameWithType: TypeHelper.ValueOrDbNull<MatchCollector>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.InvertedIndex.MatchCollector>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull(Of MatchCollector)
+    nameWithType: TypeHelper.ValueOrDbNull(Of MatchCollector)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.InvertedIndex.MatchCollector)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  parent: Microsoft.Health.Utility.WCXmlHelper
+  definition: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  name: ToXml()
+  nameWithType: WCXmlHelper.ToXml()
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1
+  commentId: T:Microsoft.Health.InvertedIndex.PriorityQueue`1
+  isExternal: false
+  name: PriorityQueue<T>
+  nameWithType: PriorityQueue<T>
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>
+  nameWithType.vb: PriorityQueue(Of T)
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T)
+  name.vb: PriorityQueue(Of T)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1
+    name: PriorityQueue
+    nameWithType: PriorityQueue
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1
+    name: PriorityQueue
+    nameWithType: PriorityQueue
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: false
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.m_items
+  commentId: F:Microsoft.Health.InvertedIndex.PriorityQueue`1.m_items
+  isExternal: false
+  name: m_items
+  nameWithType: PriorityQueue<T>.m_items
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.m_items
+  nameWithType.vb: PriorityQueue(Of T).m_items
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).m_items
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.m_count
+  commentId: F:Microsoft.Health.InvertedIndex.PriorityQueue`1.m_count
+  isExternal: false
+  name: m_count
+  nameWithType: PriorityQueue<T>.m_count
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.m_count
+  nameWithType.vb: PriorityQueue(Of T).m_count
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).m_count
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Count
+  commentId: P:Microsoft.Health.InvertedIndex.PriorityQueue`1.Count
+  isExternal: false
+  name: Count
+  nameWithType: PriorityQueue<T>.Count
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.Count
+  nameWithType.vb: PriorityQueue(Of T).Count
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).Count
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Item(System.Int32)
+  commentId: P:Microsoft.Health.InvertedIndex.PriorityQueue`1.Item(System.Int32)
+  isExternal: true
+  name: Item[Int32]
+  nameWithType: PriorityQueue<T>.Item[Int32]
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.Item[System.Int32]
+  nameWithType.vb: PriorityQueue(Of T).Item(Int32)
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).Item(System.Int32)
+  name.vb: Item(Int32)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Item(System.Int32)
+    name: Item
+    nameWithType: PriorityQueue<T>.Item
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.Item
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Item(System.Int32)
+    name: Item
+    nameWithType: PriorityQueue(Of T).Item
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).Item
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Top
+  commentId: P:Microsoft.Health.InvertedIndex.PriorityQueue`1.Top
+  isExternal: false
+  name: Top
+  nameWithType: PriorityQueue<T>.Top
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.Top
+  nameWithType.vb: PriorityQueue(Of T).Top
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).Top
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Clear
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue`1.Clear
+  isExternal: false
+  name: Clear()
+  nameWithType: PriorityQueue<T>.Clear()
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.Clear()
+  nameWithType.vb: PriorityQueue(Of T).Clear()
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).Clear()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Clear
+    name: Clear
+    nameWithType: PriorityQueue<T>.Clear
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.Clear
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Clear
+    name: Clear
+    nameWithType: PriorityQueue(Of T).Clear
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).Clear
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Add(`0)
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue`1.Add(`0)
+  isExternal: false
+  name: Add(T)
+  nameWithType: PriorityQueue<T>.Add(T)
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.Add(T)
+  nameWithType.vb: PriorityQueue(Of T).Add(T)
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).Add(T)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Add(`0)
+    name: Add
+    nameWithType: PriorityQueue<T>.Add
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Add(`0)
+    name: Add
+    nameWithType: PriorityQueue(Of T).Add
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Add(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue`1.Add(System.Collections.Generic.IEnumerable{`0})
+  isExternal: true
+  name: Add(IEnumerable<T>)
+  nameWithType: PriorityQueue<T>.Add(IEnumerable<T>)
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.Add(System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: PriorityQueue(Of T).Add(IEnumerable(Of T))
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).Add(System.Collections.Generic.IEnumerable(Of T))
+  name.vb: Add(IEnumerable(Of T))
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Add(System.Collections.Generic.IEnumerable{`0})
+    name: Add
+    nameWithType: PriorityQueue<T>.Add
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Add(System.Collections.Generic.IEnumerable{`0})
+    name: Add
+    nameWithType: PriorityQueue(Of T).Add
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Enqueue(`0)
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue`1.Enqueue(`0)
+  isExternal: false
+  name: Enqueue(T)
+  nameWithType: PriorityQueue<T>.Enqueue(T)
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.Enqueue(T)
+  nameWithType.vb: PriorityQueue(Of T).Enqueue(T)
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).Enqueue(T)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Enqueue(`0)
+    name: Enqueue
+    nameWithType: PriorityQueue<T>.Enqueue
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.Enqueue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Enqueue(`0)
+    name: Enqueue
+    nameWithType: PriorityQueue(Of T).Enqueue
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).Enqueue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Dequeue
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue`1.Dequeue
+  isExternal: false
+  name: Dequeue()
+  nameWithType: PriorityQueue<T>.Dequeue()
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.Dequeue()
+  nameWithType.vb: PriorityQueue(Of T).Dequeue()
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).Dequeue()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Dequeue
+    name: Dequeue
+    nameWithType: PriorityQueue<T>.Dequeue
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.Dequeue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.Dequeue
+    name: Dequeue
+    nameWithType: PriorityQueue(Of T).Dequeue
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).Dequeue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.DequeueAll
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue`1.DequeueAll
+  isExternal: false
+  name: DequeueAll()
+  nameWithType: PriorityQueue<T>.DequeueAll()
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.DequeueAll()
+  nameWithType.vb: PriorityQueue(Of T).DequeueAll()
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).DequeueAll()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.DequeueAll
+    name: DequeueAll
+    nameWithType: PriorityQueue<T>.DequeueAll
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.DequeueAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.DequeueAll
+    name: DequeueAll
+    nameWithType: PriorityQueue(Of T).DequeueAll
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).DequeueAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.UpHeap(System.Int32)
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue`1.UpHeap(System.Int32)
+  isExternal: true
+  name: UpHeap(Int32)
+  nameWithType: PriorityQueue<T>.UpHeap(Int32)
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.UpHeap(System.Int32)
+  nameWithType.vb: PriorityQueue(Of T).UpHeap(Int32)
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).UpHeap(System.Int32)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.UpHeap(System.Int32)
+    name: UpHeap
+    nameWithType: PriorityQueue<T>.UpHeap
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.UpHeap
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.UpHeap(System.Int32)
+    name: UpHeap
+    nameWithType: PriorityQueue(Of T).UpHeap
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).UpHeap
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.DownHeap
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue`1.DownHeap
+  isExternal: false
+  name: DownHeap()
+  nameWithType: PriorityQueue<T>.DownHeap()
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.DownHeap()
+  nameWithType.vb: PriorityQueue(Of T).DownHeap()
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).DownHeap()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.DownHeap
+    name: DownHeap
+    nameWithType: PriorityQueue<T>.DownHeap
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.DownHeap
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.DownHeap
+    name: DownHeap
+    nameWithType: PriorityQueue(Of T).DownHeap
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).DownHeap
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.DownHeap(System.Int32)
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue`1.DownHeap(System.Int32)
+  isExternal: true
+  name: DownHeap(Int32)
+  nameWithType: PriorityQueue<T>.DownHeap(Int32)
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.DownHeap(System.Int32)
+  nameWithType.vb: PriorityQueue(Of T).DownHeap(Int32)
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).DownHeap(System.Int32)
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.DownHeap(System.Int32)
+    name: DownHeap
+    nameWithType: PriorityQueue<T>.DownHeap
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.DownHeap
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.DownHeap(System.Int32)
+    name: DownHeap
+    nameWithType: PriorityQueue(Of T).DownHeap
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).DownHeap
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.GetEnumerator
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue`1.GetEnumerator
+  isExternal: false
+  name: GetEnumerator()
+  nameWithType: PriorityQueue<T>.GetEnumerator()
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.GetEnumerator()
+  nameWithType.vb: PriorityQueue(Of T).GetEnumerator()
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: PriorityQueue<T>.GetEnumerator
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.GetEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: PriorityQueue(Of T).GetEnumerator
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).GetEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:Microsoft.Health.InvertedIndex.PriorityQueue`1.System#Collections#IEnumerable#GetEnumerator
+  isExternal: false
+  name: IEnumerable.GetEnumerator()
+  nameWithType: PriorityQueue<T>.IEnumerable.GetEnumerator()
+  fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.System.Collections.IEnumerable.GetEnumerator()
+  nameWithType.vb: PriorityQueue(Of T).System.Collections.IEnumerable.GetEnumerator()
+  fullName.vb: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).System.Collections.IEnumerable.GetEnumerator()
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.System#Collections#IEnumerable#GetEnumerator
+    name: IEnumerable.GetEnumerator
+    nameWithType: PriorityQueue<T>.IEnumerable.GetEnumerator
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue<T>.System.Collections.IEnumerable.GetEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.InvertedIndex.PriorityQueue`1.System#Collections#IEnumerable#GetEnumerator
+    name: System.Collections.IEnumerable.GetEnumerator
+    nameWithType: PriorityQueue(Of T).System.Collections.IEnumerable.GetEnumerator
+    fullName: Microsoft.Health.InvertedIndex.PriorityQueue(Of T).System.Collections.IEnumerable.GetEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: SetProperty(Object, String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object())
+  name.vb: SetProperty(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions
+  commentId: T:Microsoft.Health.Utility.IDispatchExtensions
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: IDispatchExtensions
+  nameWithType: IDispatchExtensions
+  fullName: Microsoft.Health.Utility.IDispatchExtensions
+- uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: InvokeMethod(Object, String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object())
+  name.vb: InvokeMethod(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  isExternal: true
+  name: ToStringInvariant(Object)
+  nameWithType: InvariantString.ToStringInvariant(Object)
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString
+  commentId: T:Microsoft.Health.Utility.InvariantString
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: InvariantString
+  nameWithType: InvariantString
+  fullName: Microsoft.Health.Utility.InvariantString
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  isExternal: false
+  name: ValueOrDbNull<T>(T)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(T)
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(T)
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(T)
+  name.vb: ValueOrDbNull(Of T)(T)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull<T>
+    nameWithType: TypeHelper.ValueOrDbNull<T>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull(Of T)
+    nameWithType: TypeHelper.ValueOrDbNull(Of T)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+- uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  isExternal: true
+  name: ToXml(Object)
+  nameWithType: WCXmlHelper.ToXml(Object)
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.WCXmlHelper
+  commentId: T:Microsoft.Health.Utility.WCXmlHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: WCXmlHelper
+  nameWithType: WCXmlHelper
+  fullName: Microsoft.Health.Utility.WCXmlHelper
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: Microsoft.Health.InvertedIndex.MatchCollector.#ctor*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MatchCollector.#ctor
+  isExternal: false
+  name: MatchCollector
+  nameWithType: MatchCollector.MatchCollector
+  fullName: Microsoft.Health.InvertedIndex.MatchCollector.MatchCollector
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Microsoft.Health.InvertedIndex.RecordIDEnumerator
+  commentId: T:Microsoft.Health.InvertedIndex.RecordIDEnumerator
+  parent: Microsoft.Health.InvertedIndex
+  isExternal: false
+  name: RecordIDEnumerator
+  nameWithType: RecordIDEnumerator
+  fullName: Microsoft.Health.InvertedIndex.RecordIDEnumerator
+- uid: Microsoft.Health.InvertedIndex.MatchCollector.Add*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MatchCollector.Add
+  isExternal: false
+  name: Add
+  nameWithType: MatchCollector.Add
+  fullName: Microsoft.Health.InvertedIndex.MatchCollector.Add
+- uid: Microsoft.Health.InvertedIndex.MatchCollector.Sort*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MatchCollector.Sort
+  isExternal: false
+  name: Sort
+  nameWithType: MatchCollector.Sort
+  fullName: Microsoft.Health.InvertedIndex.MatchCollector.Sort
+- uid: Microsoft.Health.InvertedIndex.MatchCollector.Dedupe*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MatchCollector.Dedupe
+  isExternal: false
+  name: Dedupe
+  nameWithType: MatchCollector.Dedupe
+  fullName: Microsoft.Health.InvertedIndex.MatchCollector.Dedupe
+- uid: Microsoft.Health.InvertedIndex.MatchCollector.GetRecords*
+  commentId: Overload:Microsoft.Health.InvertedIndex.MatchCollector.GetRecords
+  isExternal: false
+  name: GetRecords
+  nameWithType: MatchCollector.GetRecords
+  fullName: Microsoft.Health.InvertedIndex.MatchCollector.GetRecords
+- uid: System.Collections.Generic.IEnumerable{System.UInt32}
+  commentId: T:System.Collections.Generic.IEnumerable{System.UInt32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<UInt32>
+  nameWithType: IEnumerable<UInt32>
+  fullName: System.Collections.Generic.IEnumerable<System.UInt32>
+  nameWithType.vb: IEnumerable(Of UInt32)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.UInt32)
+  name.vb: IEnumerable(Of UInt32)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

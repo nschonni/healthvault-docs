@@ -1,0 +1,1518 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.HealthRecordExporter
+  commentId: T:Microsoft.Health.HealthRecordExporter
+  id: HealthRecordExporter
+  parent: Microsoft.Health
+  children:
+  - Microsoft.Health.HealthRecordExporter.#ctor(Microsoft.Health.HealthRecordAccessor)
+  - Microsoft.Health.HealthRecordExporter.#ctor(Microsoft.Health.HealthRecordAccessor,System.String)
+  - Microsoft.Health.HealthRecordExporter.#ctor(Microsoft.Health.HealthRecordAccessor,System.Xml.Xsl.XslCompiledTransform)
+  - Microsoft.Health.HealthRecordExporter.ClientFilters
+  - Microsoft.Health.HealthRecordExporter.ExportItems
+  - Microsoft.Health.HealthRecordExporter.Filters
+  - Microsoft.Health.HealthRecordExporter.Record
+  - Microsoft.Health.HealthRecordExporter.Transform
+  - Microsoft.Health.HealthRecordExporter.TransformArgumentList
+  - Microsoft.Health.HealthRecordExporter.TransformItemXml(System.String)
+  langs:
+  - csharp
+  - vb
+  name: HealthRecordExporter
+  nameWithType: HealthRecordExporter
+  fullName: Microsoft.Health.HealthRecordExporter
+  type: Class
+  source:
+    remote:
+      path: Microsoft.Health/HealthRecordExporter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: HealthRecordExporter
+    path: ../Microsoft.Health/HealthRecordExporter.cs
+    startLine: 25
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nExports HealthVault record items.\n"
+  remarks: "\nThis class will return results in HealthVault XML format. Derived classes should override...\n"
+  example: []
+  syntax:
+    content: public class HealthRecordExporter
+    content.vb: Public Class HealthRecordExporter
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - Microsoft.Health.HealthRecordExporter.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  - System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Microsoft.Health.HealthRecordExporter.#ctor(Microsoft.Health.HealthRecordAccessor)
+  commentId: M:Microsoft.Health.HealthRecordExporter.#ctor(Microsoft.Health.HealthRecordAccessor)
+  id: '#ctor(Microsoft.Health.HealthRecordAccessor)'
+  parent: Microsoft.Health.HealthRecordExporter
+  langs:
+  - csharp
+  - vb
+  name: HealthRecordExporter(HealthRecordAccessor)
+  nameWithType: HealthRecordExporter.HealthRecordExporter(HealthRecordAccessor)
+  fullName: Microsoft.Health.HealthRecordExporter.HealthRecordExporter(Microsoft.Health.HealthRecordAccessor)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/HealthRecordExporter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health/HealthRecordExporter.cs
+    startLine: 40
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nConstructs an instance of a HealthRecordExporter for the specified\nhealth record.\n"
+  example: []
+  syntax:
+    content: public HealthRecordExporter(HealthRecordAccessor record)
+    content.vb: Public Sub New(record As HealthRecordAccessor)
+    parameters:
+    - id: record
+      type: Microsoft.Health.HealthRecordAccessor
+      description: "\nThe health record to export data from.\n"
+  overload: Microsoft.Health.HealthRecordExporter.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">record</span> parameter is <strong>null</strong>.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthRecordExporter.#ctor(Microsoft.Health.HealthRecordAccessor,System.Xml.Xsl.XslCompiledTransform)
+  commentId: M:Microsoft.Health.HealthRecordExporter.#ctor(Microsoft.Health.HealthRecordAccessor,System.Xml.Xsl.XslCompiledTransform)
+  id: '#ctor(Microsoft.Health.HealthRecordAccessor,System.Xml.Xsl.XslCompiledTransform)'
+  parent: Microsoft.Health.HealthRecordExporter
+  langs:
+  - csharp
+  - vb
+  name: HealthRecordExporter(HealthRecordAccessor, XslCompiledTransform)
+  nameWithType: HealthRecordExporter.HealthRecordExporter(HealthRecordAccessor, XslCompiledTransform)
+  fullName: Microsoft.Health.HealthRecordExporter.HealthRecordExporter(Microsoft.Health.HealthRecordAccessor, System.Xml.Xsl.XslCompiledTransform)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/HealthRecordExporter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health/HealthRecordExporter.cs
+    startLine: 64
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nConstructs an instance of a HealthRecordExporter for the specified\nhealth record and the specified transform.\n"
+  example: []
+  syntax:
+    content: public HealthRecordExporter(HealthRecordAccessor record, XslCompiledTransform transform)
+    content.vb: Public Sub New(record As HealthRecordAccessor, transform As XslCompiledTransform)
+    parameters:
+    - id: record
+      type: Microsoft.Health.HealthRecordAccessor
+      description: "\nThe health record to export data from.\n"
+    - id: transform
+      type: System.Xml.Xsl.XslCompiledTransform
+      description: "\nThe transform used to convert HealthVault XML to the destination format.\n"
+  overload: Microsoft.Health.HealthRecordExporter.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">record</span> parameter is <strong>null</strong>.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthRecordExporter.#ctor(Microsoft.Health.HealthRecordAccessor,System.String)
+  commentId: M:Microsoft.Health.HealthRecordExporter.#ctor(Microsoft.Health.HealthRecordAccessor,System.String)
+  id: '#ctor(Microsoft.Health.HealthRecordAccessor,System.String)'
+  parent: Microsoft.Health.HealthRecordExporter
+  langs:
+  - csharp
+  - vb
+  name: HealthRecordExporter(HealthRecordAccessor, String)
+  nameWithType: HealthRecordExporter.HealthRecordExporter(HealthRecordAccessor, String)
+  fullName: Microsoft.Health.HealthRecordExporter.HealthRecordExporter(Microsoft.Health.HealthRecordAccessor, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Microsoft.Health/HealthRecordExporter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: .ctor
+    path: ../Microsoft.Health/HealthRecordExporter.cs
+    startLine: 105
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nConstructs an instance of a HealthRecordExporter for the specified\nhealth record and the specified transform tag.\n"
+  remarks: "\nNote, this constructor makes a call to HealthVault to retrieve the specified\ndata transform. The web request may cause a variety of WebExceptions to be thrown.\n"
+  example: []
+  syntax:
+    content: public HealthRecordExporter(HealthRecordAccessor record, string transformTag)
+    content.vb: Public Sub New(record As HealthRecordAccessor, transformTag As String)
+    parameters:
+    - id: record
+      type: Microsoft.Health.HealthRecordAccessor
+      description: "\nThe health record to export data from.\n"
+    - id: transformTag
+      type: System.String
+      description: "\nThe name of the transform to be retrieved from HealthVault to convert \nthe HealthVault XML to the destination format. For example, \"toccr\" will\nconvert the data to the Continuity of Care Record XML format.\n"
+  overload: Microsoft.Health.HealthRecordExporter.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: "\nThe <span class=\"paramref\">record</span> parameter is <strong>null</strong>.\n"
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: "\nThe <span class=\"paramref\">transformTag</span> parameter is <strong>null</strong> or empty.\n"
+  - type: System.Net.WebException
+    commentId: T:System.Net.WebException
+    description: "\nIf the transform with the specified <span class=\"paramref\">transformTag</span>\ncould not be found.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthRecordExporter.Record
+  commentId: P:Microsoft.Health.HealthRecordExporter.Record
+  id: Record
+  parent: Microsoft.Health.HealthRecordExporter
+  langs:
+  - csharp
+  - vb
+  name: Record
+  nameWithType: HealthRecordExporter.Record
+  fullName: Microsoft.Health.HealthRecordExporter.Record
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthRecordExporter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Record
+    path: ../Microsoft.Health/HealthRecordExporter.cs
+    startLine: 139
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the health record that is being searched for health record items.\n"
+  remarks: "\nThe authenticated person must have \n<xref href=\"Microsoft.Health.HealthRecordItemPermissions.Read\" data-throw-if-not-resolved=\"false\"></xref> access rights to the\nhealth record to get results from the query.\n"
+  example: []
+  syntax:
+    content: public HealthRecordAccessor Record { get; }
+    content.vb: Public ReadOnly Property Record As HealthRecordAccessor
+    parameters: []
+    return:
+      type: Microsoft.Health.HealthRecordAccessor
+      description: "\nA <xref href=\"Microsoft.Health.HealthRecordAccessor\" data-throw-if-not-resolved=\"false\"></xref> representing the record.\n"
+  overload: Microsoft.Health.HealthRecordExporter.Record*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.HealthRecordExporter.Filters
+  commentId: P:Microsoft.Health.HealthRecordExporter.Filters
+  id: Filters
+  parent: Microsoft.Health.HealthRecordExporter
+  langs:
+  - csharp
+  - vb
+  name: Filters
+  nameWithType: HealthRecordExporter.Filters
+  fullName: Microsoft.Health.HealthRecordExporter.Filters
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthRecordExporter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Filters
+    path: ../Microsoft.Health/HealthRecordExporter.cs
+    startLine: 154
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nGets the filters associated with the search.\n"
+  remarks: "\nTo add a search filter, call the Add method of the\nreturned collection.\n"
+  example: []
+  syntax:
+    content: public Collection<HealthRecordFilter> Filters { get; }
+    content.vb: Public ReadOnly Property Filters As Collection(Of HealthRecordFilter)
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{Microsoft.Health.HealthRecordFilter}
+  overload: Microsoft.Health.HealthRecordExporter.Filters*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.HealthRecordExporter.Transform
+  commentId: P:Microsoft.Health.HealthRecordExporter.Transform
+  id: Transform
+  parent: Microsoft.Health.HealthRecordExporter
+  langs:
+  - csharp
+  - vb
+  name: Transform
+  nameWithType: HealthRecordExporter.Transform
+  fullName: Microsoft.Health.HealthRecordExporter.Transform
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthRecordExporter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Transform
+    path: ../Microsoft.Health/HealthRecordExporter.cs
+    startLine: 164
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public XslCompiledTransform Transform { get; set; }
+    content.vb: Public Property Transform As XslCompiledTransform
+    parameters: []
+    return:
+      type: System.Xml.Xsl.XslCompiledTransform
+  overload: Microsoft.Health.HealthRecordExporter.Transform*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthRecordExporter.TransformArgumentList
+  commentId: P:Microsoft.Health.HealthRecordExporter.TransformArgumentList
+  id: TransformArgumentList
+  parent: Microsoft.Health.HealthRecordExporter
+  langs:
+  - csharp
+  - vb
+  name: TransformArgumentList
+  nameWithType: HealthRecordExporter.TransformArgumentList
+  fullName: Microsoft.Health.HealthRecordExporter.TransformArgumentList
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthRecordExporter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: TransformArgumentList
+    path: ../Microsoft.Health/HealthRecordExporter.cs
+    startLine: 174
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public XsltArgumentList TransformArgumentList { get; }
+    content.vb: Public ReadOnly Property TransformArgumentList As XsltArgumentList
+    parameters: []
+    return:
+      type: System.Xml.Xsl.XsltArgumentList
+  overload: Microsoft.Health.HealthRecordExporter.TransformArgumentList*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Microsoft.Health.HealthRecordExporter.ExportItems
+  commentId: M:Microsoft.Health.HealthRecordExporter.ExportItems
+  id: ExportItems
+  parent: Microsoft.Health.HealthRecordExporter
+  langs:
+  - csharp
+  - vb
+  name: ExportItems()
+  nameWithType: HealthRecordExporter.ExportItems()
+  fullName: Microsoft.Health.HealthRecordExporter.ExportItems()
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/HealthRecordExporter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ExportItems
+    path: ../Microsoft.Health/HealthRecordExporter.cs
+    startLine: 204
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\n"
+  remarks: "\nThis method accesses the HealthVault service across the network.\nIf the filters specified do not reduce the amount of data being retrieved from the\nrecord, this method could take a significant amount of time as data gets paged into\nmemory from HealthVault.\n\nNote: There may be data in items that HealthVault does not include when converting \nto the CCR or CCD formats.\n"
+  example: []
+  syntax:
+    content: public string ExportItems()
+    content.vb: Public Function ExportItems As String
+    return:
+      type: System.String
+      description: "\n"
+  overload: Microsoft.Health.HealthRecordExporter.ExportItems*
+  exceptions:
+  - type: Microsoft.Health.HealthServiceException
+    commentId: T:Microsoft.Health.HealthServiceException
+    description: "\nThe response from the server was anything but \n<xref href=\"Microsoft.Health.HealthServiceStatusCode.Ok\" data-throw-if-not-resolved=\"false\"></xref>.\n-or-\n<xref href=\"Microsoft.Health.HealthRecordSearcher.Filters\" data-throw-if-not-resolved=\"false\"></xref> is empty\nor contains invalid filters.\n"
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Microsoft.Health.HealthRecordExporter.TransformItemXml(System.String)
+  commentId: M:Microsoft.Health.HealthRecordExporter.TransformItemXml(System.String)
+  id: TransformItemXml(System.String)
+  parent: Microsoft.Health.HealthRecordExporter
+  langs:
+  - csharp
+  - vb
+  name: TransformItemXml(String)
+  nameWithType: HealthRecordExporter.TransformItemXml(String)
+  fullName: Microsoft.Health.HealthRecordExporter.TransformItemXml(System.String)
+  type: Method
+  source:
+    remote:
+      path: Microsoft.Health/HealthRecordExporter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: TransformItemXml
+    path: ../Microsoft.Health/HealthRecordExporter.cs
+    startLine: 274
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected virtual string TransformItemXml(string healthRecordItemsXml)
+    content.vb: Protected Overridable Function TransformItemXml(healthRecordItemsXml As String) As String
+    parameters:
+    - id: healthRecordItemsXml
+      type: System.String
+      description: ''
+    return:
+      type: System.String
+      description: ''
+  overload: Microsoft.Health.HealthRecordExporter.TransformItemXml*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: Microsoft.Health.HealthRecordExporter.ClientFilters
+  commentId: P:Microsoft.Health.HealthRecordExporter.ClientFilters
+  id: ClientFilters
+  parent: Microsoft.Health.HealthRecordExporter
+  langs:
+  - csharp
+  - vb
+  name: ClientFilters
+  nameWithType: HealthRecordExporter.ClientFilters
+  fullName: Microsoft.Health.HealthRecordExporter.ClientFilters
+  type: Property
+  source:
+    remote:
+      path: Microsoft.Health/HealthRecordExporter.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ClientFilters
+    path: ../Microsoft.Health/HealthRecordExporter.cs
+    startLine: 382
+  assemblies:
+  - Microsoft.Health
+  namespace: Microsoft.Health
+  summary: "\nClient side filtering of the results of the HealthVault search for items.\n"
+  remarks: "\nIf more than one handler is added to the filter, the item will only be deemed to\npass the filter if all handlers return true.\n"
+  example: []
+  syntax:
+    content: public Collection<HealthRecordClientFilterHandler> ClientFilters { get; }
+    content.vb: Public ReadOnly Property ClientFilters As Collection(Of HealthRecordClientFilterHandler)
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{Microsoft.Health.HealthRecordClientFilterHandler}
+  overload: Microsoft.Health.HealthRecordExporter.ClientFilters*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: Microsoft.Health
+  commentId: N:Microsoft.Health
+  isExternal: false
+  name: Microsoft.Health
+  nameWithType: Microsoft.Health
+  fullName: Microsoft.Health
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  name: SetProperty(String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object())
+  name.vb: SetProperty(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  name: InvokeMethod(String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object())
+  name.vb: InvokeMethod(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  parent: Microsoft.Health.Utility.InvariantString
+  definition: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  name: ToStringInvariant()
+  nameWithType: InvariantString.ToStringInvariant()
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.HealthRecordExporter.Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  parent: Microsoft.Health.Utility.TypeHelper
+  definition: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  name: ValueOrDbNull<HealthRecordExporter>()
+  nameWithType: TypeHelper.ValueOrDbNull<HealthRecordExporter>()
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.HealthRecordExporter>()
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of HealthRecordExporter)()
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.HealthRecordExporter)()
+  name.vb: ValueOrDbNull(Of HealthRecordExporter)()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull<HealthRecordExporter>
+    nameWithType: TypeHelper.ValueOrDbNull<HealthRecordExporter>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<Microsoft.Health.HealthRecordExporter>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1
+    name: ValueOrDbNull(Of HealthRecordExporter)
+    nameWithType: TypeHelper.ValueOrDbNull(Of HealthRecordExporter)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of Microsoft.Health.HealthRecordExporter)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  parent: Microsoft.Health.Utility.WCXmlHelper
+  definition: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  name: ToXml()
+  nameWithType: WCXmlHelper.ToXml()
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: SetProperty(Object, String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object())
+  name.vb: SetProperty(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions
+  commentId: T:Microsoft.Health.Utility.IDispatchExtensions
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: IDispatchExtensions
+  nameWithType: IDispatchExtensions
+  fullName: Microsoft.Health.Utility.IDispatchExtensions
+- uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: InvokeMethod(Object, String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object())
+  name.vb: InvokeMethod(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  isExternal: true
+  name: ToStringInvariant(Object)
+  nameWithType: InvariantString.ToStringInvariant(Object)
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString
+  commentId: T:Microsoft.Health.Utility.InvariantString
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: InvariantString
+  nameWithType: InvariantString
+  fullName: Microsoft.Health.Utility.InvariantString
+- uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+  isExternal: false
+  name: ValueOrDbNull<T>(T)
+  nameWithType: TypeHelper.ValueOrDbNull<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>(T)
+  nameWithType.vb: TypeHelper.ValueOrDbNull(Of T)(T)
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)(T)
+  name.vb: ValueOrDbNull(Of T)(T)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull<T>
+    nameWithType: TypeHelper.ValueOrDbNull<T>
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull``1(``0)
+    name: ValueOrDbNull(Of T)
+    nameWithType: TypeHelper.ValueOrDbNull(Of T)
+    fullName: Microsoft.Health.Utility.TypeHelper.ValueOrDbNull(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+- uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  isExternal: true
+  name: ToXml(Object)
+  nameWithType: WCXmlHelper.ToXml(Object)
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.WCXmlHelper
+  commentId: T:Microsoft.Health.Utility.WCXmlHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: WCXmlHelper
+  nameWithType: WCXmlHelper
+  fullName: Microsoft.Health.Utility.WCXmlHelper
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: Microsoft.Health.HealthRecordExporter.#ctor*
+  commentId: Overload:Microsoft.Health.HealthRecordExporter.#ctor
+  isExternal: false
+  name: HealthRecordExporter
+  nameWithType: HealthRecordExporter.HealthRecordExporter
+  fullName: Microsoft.Health.HealthRecordExporter.HealthRecordExporter
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+- uid: Microsoft.Health.HealthRecordAccessor
+  commentId: T:Microsoft.Health.HealthRecordAccessor
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthRecordAccessor
+  nameWithType: HealthRecordAccessor
+  fullName: Microsoft.Health.HealthRecordAccessor
+- uid: System.Xml.Xsl.XslCompiledTransform
+  commentId: T:System.Xml.Xsl.XslCompiledTransform
+  parent: System.Xml.Xsl
+  isExternal: true
+  name: XslCompiledTransform
+  nameWithType: XslCompiledTransform
+  fullName: System.Xml.Xsl.XslCompiledTransform
+- uid: System.Xml.Xsl
+  commentId: N:System.Xml.Xsl
+  isExternal: false
+  name: System.Xml.Xsl
+  nameWithType: System.Xml.Xsl
+  fullName: System.Xml.Xsl
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: System.Net.WebException
+  commentId: T:System.Net.WebException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Microsoft.Health.HealthRecordItemPermissions.Read
+  commentId: F:Microsoft.Health.HealthRecordItemPermissions.Read
+- uid: Microsoft.Health.HealthRecordExporter.Record*
+  commentId: Overload:Microsoft.Health.HealthRecordExporter.Record
+  isExternal: false
+  name: Record
+  nameWithType: HealthRecordExporter.Record
+  fullName: Microsoft.Health.HealthRecordExporter.Record
+- uid: Microsoft.Health.HealthRecordExporter.Filters*
+  commentId: Overload:Microsoft.Health.HealthRecordExporter.Filters
+  isExternal: false
+  name: Filters
+  nameWithType: HealthRecordExporter.Filters
+  fullName: Microsoft.Health.HealthRecordExporter.Filters
+- uid: System.Collections.ObjectModel.Collection{Microsoft.Health.HealthRecordFilter}
+  commentId: T:System.Collections.ObjectModel.Collection{Microsoft.Health.HealthRecordFilter}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<HealthRecordFilter>
+  nameWithType: Collection<HealthRecordFilter>
+  fullName: System.Collections.ObjectModel.Collection<Microsoft.Health.HealthRecordFilter>
+  nameWithType.vb: Collection(Of HealthRecordFilter)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of Microsoft.Health.HealthRecordFilter)
+  name.vb: Collection(Of HealthRecordFilter)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.HealthRecordFilter
+    name: HealthRecordFilter
+    nameWithType: HealthRecordFilter
+    fullName: Microsoft.Health.HealthRecordFilter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.HealthRecordFilter
+    name: HealthRecordFilter
+    nameWithType: HealthRecordFilter
+    fullName: Microsoft.Health.HealthRecordFilter
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1
+  commentId: T:System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<T>
+  nameWithType: Collection<T>
+  fullName: System.Collections.ObjectModel.Collection<T>
+  nameWithType.vb: Collection(Of T)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T)
+  name.vb: Collection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: false
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+- uid: Microsoft.Health.HealthRecordExporter.Transform*
+  commentId: Overload:Microsoft.Health.HealthRecordExporter.Transform
+  isExternal: false
+  name: Transform
+  nameWithType: HealthRecordExporter.Transform
+  fullName: Microsoft.Health.HealthRecordExporter.Transform
+- uid: Microsoft.Health.HealthRecordExporter.TransformArgumentList*
+  commentId: Overload:Microsoft.Health.HealthRecordExporter.TransformArgumentList
+  isExternal: false
+  name: TransformArgumentList
+  nameWithType: HealthRecordExporter.TransformArgumentList
+  fullName: Microsoft.Health.HealthRecordExporter.TransformArgumentList
+- uid: System.Xml.Xsl.XsltArgumentList
+  commentId: T:System.Xml.Xsl.XsltArgumentList
+  parent: System.Xml.Xsl
+  isExternal: true
+  name: XsltArgumentList
+  nameWithType: XsltArgumentList
+  fullName: System.Xml.Xsl.XsltArgumentList
+- uid: Microsoft.Health.HealthServiceStatusCode.Ok
+  commentId: F:Microsoft.Health.HealthServiceStatusCode.Ok
+- uid: Microsoft.Health.HealthRecordSearcher.Filters
+  commentId: P:Microsoft.Health.HealthRecordSearcher.Filters
+- uid: Microsoft.Health.HealthRecordExporter.ExportItems*
+  commentId: Overload:Microsoft.Health.HealthRecordExporter.ExportItems
+  isExternal: false
+  name: ExportItems
+  nameWithType: HealthRecordExporter.ExportItems
+  fullName: Microsoft.Health.HealthRecordExporter.ExportItems
+- uid: Microsoft.Health.HealthServiceException
+  commentId: T:Microsoft.Health.HealthServiceException
+  parent: Microsoft.Health
+  isExternal: false
+  name: HealthServiceException
+  nameWithType: HealthServiceException
+  fullName: Microsoft.Health.HealthServiceException
+- uid: Microsoft.Health.HealthRecordExporter.TransformItemXml*
+  commentId: Overload:Microsoft.Health.HealthRecordExporter.TransformItemXml
+  isExternal: false
+  name: TransformItemXml
+  nameWithType: HealthRecordExporter.TransformItemXml
+  fullName: Microsoft.Health.HealthRecordExporter.TransformItemXml
+- uid: Microsoft.Health.HealthRecordExporter.ClientFilters*
+  commentId: Overload:Microsoft.Health.HealthRecordExporter.ClientFilters
+  isExternal: false
+  name: ClientFilters
+  nameWithType: HealthRecordExporter.ClientFilters
+  fullName: Microsoft.Health.HealthRecordExporter.ClientFilters
+- uid: System.Collections.ObjectModel.Collection{Microsoft.Health.HealthRecordClientFilterHandler}
+  commentId: T:System.Collections.ObjectModel.Collection{Microsoft.Health.HealthRecordClientFilterHandler}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<HealthRecordClientFilterHandler>
+  nameWithType: Collection<HealthRecordClientFilterHandler>
+  fullName: System.Collections.ObjectModel.Collection<Microsoft.Health.HealthRecordClientFilterHandler>
+  nameWithType.vb: Collection(Of HealthRecordClientFilterHandler)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of Microsoft.Health.HealthRecordClientFilterHandler)
+  name.vb: Collection(Of HealthRecordClientFilterHandler)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Health.HealthRecordClientFilterHandler
+    name: HealthRecordClientFilterHandler
+    nameWithType: HealthRecordClientFilterHandler
+    fullName: Microsoft.Health.HealthRecordClientFilterHandler
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Health.HealthRecordClientFilterHandler
+    name: HealthRecordClientFilterHandler
+    nameWithType: HealthRecordClientFilterHandler
+    fullName: Microsoft.Health.HealthRecordClientFilterHandler
+  - name: )
+    nameWithType: )
+    fullName: )

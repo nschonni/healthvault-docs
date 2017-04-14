@@ -1,0 +1,1115 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat
+  commentId: T:Microsoft.Health.Utility.Diagnostics.EventCat
+  id: EventCat
+  parent: Microsoft.Health.Utility.Diagnostics
+  children:
+  - Microsoft.Health.Utility.Diagnostics.EventCat.BlobStore
+  - Microsoft.Health.Utility.Diagnostics.EventCat.CacheReload
+  - Microsoft.Health.Utility.Diagnostics.EventCat.Crypto
+  - Microsoft.Health.Utility.Diagnostics.EventCat.DebugTrace
+  - Microsoft.Health.Utility.Diagnostics.EventCat.Dict
+  - Microsoft.Health.Utility.Diagnostics.EventCat.Emailer
+  - Microsoft.Health.Utility.Diagnostics.EventCat.ErrFatal
+  - Microsoft.Health.Utility.Diagnostics.EventCat.ErrUnexpected
+  - Microsoft.Health.Utility.Diagnostics.EventCat.Info
+  - Microsoft.Health.Utility.Diagnostics.EventCat.None
+  - Microsoft.Health.Utility.Diagnostics.EventCat.Req
+  - Microsoft.Health.Utility.Diagnostics.EventCat.ShellUI
+  - Microsoft.Health.Utility.Diagnostics.EventCat.Sql
+  - Microsoft.Health.Utility.Diagnostics.EventCat.Stack
+  - Microsoft.Health.Utility.Diagnostics.EventCat.Warning
+  langs:
+  - csharp
+  - vb
+  name: EventCat
+  nameWithType: EventCat
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat
+  type: Enum
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: EventCat
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 14
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nCategories of errors. Note the first nibble is the errorlevel.\n"
+  example: []
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum EventCat : ushort
+    content.vb: >-
+      <Flags>
+
+      Public Enum EventCat As UShort
+  extensionMethods:
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  - System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - Microsoft.Health.Utility.Diagnostics.EventCat.Microsoft.Health.Utility.TypeHelper.DefaultAsNullable``1
+  - System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.None
+  commentId: F:Microsoft.Health.Utility.Diagnostics.EventCat.None
+  id: None
+  parent: Microsoft.Health.Utility.Diagnostics.EventCat
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: EventCat.None
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat.None
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: None
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 22
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nLevel 0 events are never logged.\n"
+  example: []
+  syntax:
+    content: None = 0
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.EventCat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.ErrFatal
+  commentId: F:Microsoft.Health.Utility.Diagnostics.EventCat.ErrFatal
+  id: ErrFatal
+  parent: Microsoft.Health.Utility.Diagnostics.EventCat
+  langs:
+  - csharp
+  - vb
+  name: ErrFatal
+  nameWithType: EventCat.ErrFatal
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat.ErrFatal
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ErrFatal
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 32
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nUsed for exceptions, which may be expected to come from the code within the try/catch block, \nbut indicate a serious issue with the code, network connectivity, or other condition \nwhich will prevent feature from servicing it's callers. \nIt should not be used for errors that occur based on input from the caller. \nGood examples are SqlException, WebException, etc. \nBad examples are ArgumentException, FormatException, XmlException, etc.\n"
+  example: []
+  syntax:
+    content: ErrFatal = 1
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.EventCat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.ErrUnexpected
+  commentId: F:Microsoft.Health.Utility.Diagnostics.EventCat.ErrUnexpected
+  id: ErrUnexpected
+  parent: Microsoft.Health.Utility.Diagnostics.EventCat
+  langs:
+  - csharp
+  - vb
+  name: ErrUnexpected
+  nameWithType: EventCat.ErrUnexpected
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat.ErrUnexpected
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ErrUnexpected
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 43
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nUsed only within top-level exception handlers for each thread. This is only intended \nfor those cases where the exception being caught was not expected to come from the \ncode being called within the try/catch block. \nExamples are OutOfMemoryException, StackOverflowException, Win32Exception, etc. \nExceptions that should not be logged with this category are SqlException, XmlException, \nor any other exception for which there is clear documentation that the code within \nthe try/catch block may throw it.\n"
+  example: []
+  syntax:
+    content: ErrUnexpected = 2
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.EventCat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.Warning
+  commentId: F:Microsoft.Health.Utility.Diagnostics.EventCat.Warning
+  id: Warning
+  parent: Microsoft.Health.Utility.Diagnostics.EventCat
+  langs:
+  - csharp
+  - vb
+  name: Warning
+  nameWithType: EventCat.Warning
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat.Warning
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Warning
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 53
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nUsed under conditions you would expect to succeed but failed. \nFor example, not finding a vocabulary entry for a platform error message for the \nrequested culture. Even user input may result in a EventCat.Warning. For example, \ncalls to create child applications are being made by non-master applications. \nThis category should not be used for platform code issues, network connectivity, or \nother conditions which may prevent HealthVault from servicing callers.\n"
+  example: []
+  syntax:
+    content: Warning = 4
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.EventCat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.Info
+  commentId: F:Microsoft.Health.Utility.Diagnostics.EventCat.Info
+  id: Info
+  parent: Microsoft.Health.Utility.Diagnostics.EventCat
+  langs:
+  - csharp
+  - vb
+  name: Info
+  nameWithType: EventCat.Info
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat.Info
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Info
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 61
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nUsed for expected events. This may be used when caller data causes an error. Though \nit should only be used in those conditions to follow usage trends that may be \ntroublesome for partners and which we may want to make easier in the future. \nFor example, incoming hash of the request does not match the HealthVault calculated hash.\n"
+  example: []
+  syntax:
+    content: Info = 8
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.EventCat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.Stack
+  commentId: F:Microsoft.Health.Utility.Diagnostics.EventCat.Stack
+  id: Stack
+  parent: Microsoft.Health.Utility.Diagnostics.EventCat
+  langs:
+  - csharp
+  - vb
+  name: Stack
+  nameWithType: EventCat.Stack
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat.Stack
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Stack
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 66
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nDisplay stack traces on errors.\n"
+  example: []
+  syntax:
+    content: Stack = 16
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.EventCat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.DebugTrace
+  commentId: F:Microsoft.Health.Utility.Diagnostics.EventCat.DebugTrace
+  id: DebugTrace
+  parent: Microsoft.Health.Utility.Diagnostics.EventCat
+  langs:
+  - csharp
+  - vb
+  name: DebugTrace
+  nameWithType: EventCat.DebugTrace
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat.DebugTrace
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: DebugTrace
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 71
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nEnable debug trace.\n"
+  example: []
+  syntax:
+    content: DebugTrace = 32
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.EventCat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.Sql
+  commentId: F:Microsoft.Health.Utility.Diagnostics.EventCat.Sql
+  id: Sql
+  parent: Microsoft.Health.Utility.Diagnostics.EventCat
+  langs:
+  - csharp
+  - vb
+  name: Sql
+  nameWithType: EventCat.Sql
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat.Sql
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Sql
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 76
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nSQL Errors\n"
+  example: []
+  syntax:
+    content: Sql = 256
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.EventCat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.Crypto
+  commentId: F:Microsoft.Health.Utility.Diagnostics.EventCat.Crypto
+  id: Crypto
+  parent: Microsoft.Health.Utility.Diagnostics.EventCat
+  langs:
+  - csharp
+  - vb
+  name: Crypto
+  nameWithType: EventCat.Crypto
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat.Crypto
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Crypto
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 81
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nCrypto errors\n"
+  example: []
+  syntax:
+    content: Crypto = 512
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.EventCat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.BlobStore
+  commentId: F:Microsoft.Health.Utility.Diagnostics.EventCat.BlobStore
+  id: BlobStore
+  parent: Microsoft.Health.Utility.Diagnostics.EventCat
+  langs:
+  - csharp
+  - vb
+  name: BlobStore
+  nameWithType: EventCat.BlobStore
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat.BlobStore
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: BlobStore
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 86
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nBlobstore errors\n"
+  example: []
+  syntax:
+    content: BlobStore = 1024
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.EventCat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.Emailer
+  commentId: F:Microsoft.Health.Utility.Diagnostics.EventCat.Emailer
+  id: Emailer
+  parent: Microsoft.Health.Utility.Diagnostics.EventCat
+  langs:
+  - csharp
+  - vb
+  name: Emailer
+  nameWithType: EventCat.Emailer
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat.Emailer
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Emailer
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 91
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nEmailer errors\n"
+  example: []
+  syntax:
+    content: Emailer = 2048
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.EventCat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.Req
+  commentId: F:Microsoft.Health.Utility.Diagnostics.EventCat.Req
+  id: Req
+  parent: Microsoft.Health.Utility.Diagnostics.EventCat
+  langs:
+  - csharp
+  - vb
+  name: Req
+  nameWithType: EventCat.Req
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat.Req
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Req
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 96
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nReq errors\n"
+  example: []
+  syntax:
+    content: Req = 4096
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.EventCat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.Dict
+  commentId: F:Microsoft.Health.Utility.Diagnostics.EventCat.Dict
+  id: Dict
+  parent: Microsoft.Health.Utility.Diagnostics.EventCat
+  langs:
+  - csharp
+  - vb
+  name: Dict
+  nameWithType: EventCat.Dict
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat.Dict
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: Dict
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 101
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nDict errors\n"
+  example: []
+  syntax:
+    content: Dict = 8192
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.EventCat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.CacheReload
+  commentId: F:Microsoft.Health.Utility.Diagnostics.EventCat.CacheReload
+  id: CacheReload
+  parent: Microsoft.Health.Utility.Diagnostics.EventCat
+  langs:
+  - csharp
+  - vb
+  name: CacheReload
+  nameWithType: EventCat.CacheReload
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat.CacheReload
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: CacheReload
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 109
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: An entry in the cache has been reloaded
+  remarks: "\nNote, it is important that this flag contains the Info flag so\nthat we mark the event going to the event log with the proper\nseverity.\n"
+  example: []
+  syntax:
+    content: CacheReload = 16392
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.EventCat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.ShellUI
+  commentId: F:Microsoft.Health.Utility.Diagnostics.EventCat.ShellUI
+  id: ShellUI
+  parent: Microsoft.Health.Utility.Diagnostics.EventCat
+  langs:
+  - csharp
+  - vb
+  name: ShellUI
+  nameWithType: EventCat.ShellUI
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat.ShellUI
+  type: Field
+  source:
+    remote:
+      path: Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+      branch: personal/justhu/docfx
+      repo: https://microsofthealth.visualstudio.com/DefaultCollection/Health/_git/healthvault-sdk
+    id: ShellUI
+    path: ../Microsoft.Health.Utility/Diagnostics/Trace/EventCat.cs
+    startLine: 114
+  assemblies:
+  - Microsoft.Health.Utility
+  namespace: Microsoft.Health.Utility.Diagnostics
+  summary: "\nShell UI tracking.\n"
+  example: []
+  syntax:
+    content: ShellUI = 32776
+    return:
+      type: Microsoft.Health.Utility.Diagnostics.EventCat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: Microsoft.Health.Utility.Diagnostics
+  commentId: N:Microsoft.Health.Utility.Diagnostics
+  isExternal: false
+  name: Microsoft.Health.Utility.Diagnostics
+  nameWithType: Microsoft.Health.Utility.Diagnostics
+  fullName: Microsoft.Health.Utility.Diagnostics
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  name: SetProperty(String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String, System.Object())
+  name.vb: SetProperty(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  parent: Microsoft.Health.Utility.IDispatchExtensions
+  definition: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  name: InvokeMethod(String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String, System.Object())
+  name.vb: InvokeMethod(String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  parent: Microsoft.Health.Utility.InvariantString
+  definition: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  name: ToStringInvariant()
+  nameWithType: InvariantString.ToStringInvariant()
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat.Microsoft.Health.Utility.TypeHelper.DefaultAsNullable``1
+  commentId: M:Microsoft.Health.Utility.TypeHelper.DefaultAsNullable``1(``0)
+  parent: Microsoft.Health.Utility.TypeHelper
+  definition: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable``1(``0)
+  name: DefaultAsNullable<EventCat>()
+  nameWithType: TypeHelper.DefaultAsNullable<EventCat>()
+  fullName: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable<Microsoft.Health.Utility.Diagnostics.EventCat>()
+  nameWithType.vb: TypeHelper.DefaultAsNullable(Of EventCat)()
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable(Of Microsoft.Health.Utility.Diagnostics.EventCat)()
+  name.vb: DefaultAsNullable(Of EventCat)()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable``1
+    name: DefaultAsNullable<EventCat>
+    nameWithType: TypeHelper.DefaultAsNullable<EventCat>
+    fullName: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable<Microsoft.Health.Utility.Diagnostics.EventCat>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable``1
+    name: DefaultAsNullable(Of EventCat)
+    nameWithType: TypeHelper.DefaultAsNullable(Of EventCat)
+    fullName: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable(Of Microsoft.Health.Utility.Diagnostics.EventCat)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Microsoft.Health.Utility.WCXmlHelper.ToXml
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  parent: Microsoft.Health.Utility.WCXmlHelper
+  definition: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  name: ToXml()
+  nameWithType: WCXmlHelper.ToXml()
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml()
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: SetProperty(Object, String, Object[])
+  nameWithType: IDispatchExtensions.SetProperty(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.SetProperty(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object, System.String, System.Object())
+  name.vb: SetProperty(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.SetProperty(System.Object,System.String,System.Object[])
+    name: SetProperty
+    nameWithType: IDispatchExtensions.SetProperty
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.SetProperty
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.IDispatchExtensions
+  commentId: T:Microsoft.Health.Utility.IDispatchExtensions
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: IDispatchExtensions
+  nameWithType: IDispatchExtensions
+  fullName: Microsoft.Health.Utility.IDispatchExtensions
+- uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  commentId: M:Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+  isExternal: true
+  name: InvokeMethod(Object, String, Object[])
+  nameWithType: IDispatchExtensions.InvokeMethod(Object, String, Object[])
+  fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object[])
+  nameWithType.vb: IDispatchExtensions.InvokeMethod(Object, String, Object())
+  fullName.vb: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object, System.String, System.Object())
+  name.vb: InvokeMethod(Object, String, Object())
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod(System.Object,System.String,System.Object[])
+    name: InvokeMethod
+    nameWithType: IDispatchExtensions.InvokeMethod
+    fullName: Microsoft.Health.Utility.IDispatchExtensions.InvokeMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  commentId: M:Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  isExternal: true
+  name: ToStringInvariant(Object)
+  nameWithType: InvariantString.ToStringInvariant(Object)
+  fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.InvariantString.ToStringInvariant(System.Object)
+    name: ToStringInvariant
+    nameWithType: InvariantString.ToStringInvariant
+    fullName: Microsoft.Health.Utility.InvariantString.ToStringInvariant
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.InvariantString
+  commentId: T:Microsoft.Health.Utility.InvariantString
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: InvariantString
+  nameWithType: InvariantString
+  fullName: Microsoft.Health.Utility.InvariantString
+- uid: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable``1(``0)
+  commentId: M:Microsoft.Health.Utility.TypeHelper.DefaultAsNullable``1(``0)
+  isExternal: false
+  name: DefaultAsNullable<T>(T)
+  nameWithType: TypeHelper.DefaultAsNullable<T>(T)
+  fullName: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable<T>(T)
+  nameWithType.vb: TypeHelper.DefaultAsNullable(Of T)(T)
+  fullName.vb: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable(Of T)(T)
+  name.vb: DefaultAsNullable(Of T)(T)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable``1(``0)
+    name: DefaultAsNullable<T>
+    nameWithType: TypeHelper.DefaultAsNullable<T>
+    fullName: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable``1(``0)
+    name: DefaultAsNullable(Of T)
+    nameWithType: TypeHelper.DefaultAsNullable(Of T)
+    fullName: Microsoft.Health.Utility.TypeHelper.DefaultAsNullable(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.TypeHelper
+  commentId: T:Microsoft.Health.Utility.TypeHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: TypeHelper
+  nameWithType: TypeHelper
+  fullName: Microsoft.Health.Utility.TypeHelper
+- uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  commentId: M:Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  isExternal: true
+  name: ToXml(Object)
+  nameWithType: WCXmlHelper.ToXml(Object)
+  fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+  spec.csharp:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Health.Utility.WCXmlHelper.ToXml(System.Object)
+    name: ToXml
+    nameWithType: WCXmlHelper.ToXml
+    fullName: Microsoft.Health.Utility.WCXmlHelper.ToXml
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Health.Utility.WCXmlHelper
+  commentId: T:Microsoft.Health.Utility.WCXmlHelper
+  parent: Microsoft.Health.Utility
+  isExternal: false
+  name: WCXmlHelper
+  nameWithType: WCXmlHelper
+  fullName: Microsoft.Health.Utility.WCXmlHelper
+- uid: Microsoft.Health.Utility
+  commentId: N:Microsoft.Health.Utility
+  isExternal: false
+  name: Microsoft.Health.Utility
+  nameWithType: Microsoft.Health.Utility
+  fullName: Microsoft.Health.Utility
+- uid: Microsoft.Health.Utility.Diagnostics.EventCat
+  commentId: T:Microsoft.Health.Utility.Diagnostics.EventCat
+  parent: Microsoft.Health.Utility.Diagnostics
+  isExternal: false
+  name: EventCat
+  nameWithType: EventCat
+  fullName: Microsoft.Health.Utility.Diagnostics.EventCat
