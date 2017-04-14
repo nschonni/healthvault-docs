@@ -1,4 +1,3 @@
-
 # Publishing
 ## [Become a Solution Provider](become-a-solution-provider.md)
 ## [Brand Materials](brand-materials.md)

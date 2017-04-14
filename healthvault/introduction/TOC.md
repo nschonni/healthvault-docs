@@ -1,4 +1,3 @@
-
 # [Introduction](introduction.md)
 ## [Why HealthVault](why-healthvault.md)
 ## [Technical Overview](technical-overview.md)
