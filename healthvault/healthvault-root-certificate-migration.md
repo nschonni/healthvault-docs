@@ -20,5 +20,3 @@ Error Messages
 
 <span style="FONT-SIZE: 9pt; FONT-FAMILY: 'Segoe UI',sans-serif; COLOR: #333333">An operation failed because the following certificate has validation errors:\\n\\nSubjectName: CN=accesscontrol.windows.net\\nIssuer Name: CN=MSIT Machine Auth CA 2,DC=redmond, DC=corp, DC=microsoft, DC=com\\nThumbprint:XXXXXXB2583B8E4AA74E4E6C07A0A419B1XXXXXX\\n\\nErrors:\\n\\n The root of the certificate chain is not a trusted root authority.</span>
 
-<a href="device-overview.md" id="PageContent_13982_2"><br />
-</a>

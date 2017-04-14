@@ -1,8 +1,4 @@
-This documentation is archived and is not being maintained.
 
-**HealthVault**
-
-<span></span>
 This sample uses the HealthVault .NET SDK to illustrate working with HealthVault Event Notification Service.
 
 The sample demonstrates how to use the subscription manager api calls to create, modify, and delete subscriptions. It also provides a sample implementation of a subscription notification handler that processes incoming notifications.
@@ -17,6 +13,6 @@ The sample demonstrates how to use the subscription manager api calls to create,
 <span id="seeAlsoToggle"></span>
 #### Other Resources
 
-<span>[HealthVault Event Notification Service](healthvault-eventing.md) </span>
+<span>[HealthVault Event Notification Service](/healthvault/concepts/xml-api/healthvault-eventing.md) </span>
 
 <span>Show:</span> Inherited Protected

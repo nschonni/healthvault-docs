@@ -36,7 +36,7 @@ An outline of using HealthVault for the supported MU2 criteria is as follows:
 Connectivity models for Meaningful Use integration
 --------------------------------------------------
 
-Product developers integrating with HealthVault to retrieve Meaningful Use reports must choose a connectivity model to send CCDAs to HealthVault users. A summary of the options is provided next. It's recommended that product developers new to HealthVault learn about the HealthVault connectivity models before continuing. For more information see <a href="connectivity.md" id="PageContent_14102_10">Establishing connectivity with HealthVault users</a>.
+Product developers integrating with HealthVault to retrieve Meaningful Use reports must choose a connectivity model to send CCDAs to HealthVault users. A summary of the options is provided next. It's recommended that product developers new to HealthVault learn about the HealthVault connectivity models before continuing. For more information see <a href="/healthvault/concepts/connectivity/connectivity.md" id="PageContent_14102_10">Establishing connectivity with HealthVault users</a>.
 
 ### Drop-off pick-up (DOPU) and MU2
 
@@ -62,7 +62,7 @@ See [HealthVault Meaningful Use Reporting Sample](http://code.msdn.microsoft.com
 
 HealthVault supports the Direct Messaging protocols and gives each HealthVault user a Direct messaging inbox and address to send and receive messages. Products with Direct Messaging capabilities can use this as a model for sending CCDAs to patients for the purposes of Meaningful Use VDT criteria.
 
-See <a href="direct-messaging.md" id="PageContent_14102_2">Direct Messaging</a> for more information on setting up Direct messaging with HealthVault and sending health information to patients.
+See <a href="/healthvault/concepts/connectivity/direct-messaging.md" id="PageContent_14102_2">Direct Messaging</a> for more information on setting up Direct messaging with HealthVault and sending health information to patients.
 
 There are two integration methods for sending Direct messages with CCDA attachments to patients.
 
@@ -75,7 +75,7 @@ Applications that use Direct Messaging integration to send CCDAs to HealthVault 
 Deployment models
 -----------------
 
-Developers deploying their solutions to multiple customer sites might consider the HealthVault [master-child](master-and-child-applications.md) model for deploying their applications.
+Developers deploying their solutions to multiple customer sites might consider the HealthVault [master-child](/healthvault/concepts/advanced/master-and-child-applications.md) model for deploying their applications.
 
 ­Key CCDA fields for Meaningful Use integration
 -----------------------------------------------
@@ -203,11 +203,12 @@ HealthRecordItem ccda = new HealthRecordItem(
      ext.ExtensionData.CreateNavigator().InnerXml = stringBuilder.ToString(); 
      ccda.CommonData.Extensions.Add(ext);
 ```
-See <a href="extending-data-types.md" id="PageContent_14102_3">Extending data types</a> for more information on specifying thing extensions.
 
-In the HealthVault .NET SDK, the [HealthRecordItemExtension](https://msdn.microsoft.com/en-us/library/microsoft.health.healthrecorditemextension.aspx) class is used to specify extensions.
+See <a href="/healthvault/concepts/data/extending-data-types.md" id="PageContent_14102_3">Extending data types</a> for more information on specifying thing extensions.
 
-The [HealthVault Meaningful Use Reporting Sample](http://code.msdn.microsoft.com/HealthVault-Meaningful-Use-c88846f8) also demonstrates overriding the patient ID and event date in .NET.
+In the HealthVault .NET SDK, the [HealthRecordItemExtension](/healthvault/sdks/dotnet/microsoft.health.healthrecorditemextension.aspx) class is used to specify extensions.
+
+The [HealthVault Meaningful Use Reporting Sample](https://github.com/Microsoft/healthvault-samples/tree/master/dotNET/HealthVault%20Meaningful%20Use%20Reporting) also demonstrates overriding the patient ID and event date in .NET.
 
 ### Direct Message Headers
 
@@ -347,9 +348,6 @@ IEnumerable<PatientActivity> resultActivities = appConnection.GetMeaningfulUseVD
 ```
 Refer to <span class="nolink">GetMeaningfulUseVDTReport</span> in the .NET SDK.
 
-### Integrating with HealthVault
-
-See also
-
+### See also
 -   <a href="https://www.healthvault.com/us/en/Meaningful-Use" id="RightRailLinkListSection_14102_9">HealthVault MU2 certification</a>
 

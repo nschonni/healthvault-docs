@@ -52,7 +52,7 @@ These query string parameters are sent along with the request:
 
 -   **targetDetails** includes additional information and is used only in special situations (explained later in this document).
 
--   **instanceID** uniquely identifies the instance in which the shell target was completed. For a list of existing instances, see <a href="configurations.md" id="PageContent_14089_4">instance configurations</a>. For more information, see  <a href="global-architecture.md" id="PageContent_14089_5">global architecture</a>.
+-   **instanceID** uniquely identifies the instance in which the shell target was completed. For a list of existing instances, see <a href="/healthvault/concepts/advanced/configurations.md" id="PageContent_14089_4">instance configurations</a>. For more information, see  <a href="/healthvault/concepts/advanced/global-architecture.md" id="PageContent_14089_5">global architecture</a>.
 
 When developers are working on an application, the ActionURL may not work because all the developers use a shared application metadata record in the HealthVault development environment (PPE) but need the Shell to redirect to their personal development machines. To deal with this situation, the Shell development environments accept a *redirect* parameter; if this parameter is present, the Shell uses it to return to the application instead of using the ActionURL.
 
@@ -113,7 +113,9 @@ An example request URL with redirected response:
 <tr class="even">
 <td><p>ismra (optional)</p></td>
 <td><p>True or False</p></td>
-<td><p>Default is False. If this value is True, it is an indication that this application wants to be treated as an <a href="multi-record-applications.md" id="PageContent_14089_6">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
+
+<td><p>Default is False. If this value is True, it is an indication that this application wants to be treated as an <a href="/healthvault/concepts/authorization/multi-record-applications.md" id="PageContent_14089_6">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
+
 </tr>
 <tr class="odd">
 <td><p>extrecordid (optional)</p></td>
@@ -269,7 +271,7 @@ An example request URL:
 <td><p>ismra (optional)</p></td>
 <td><p>True or False</p></td>
 <td><p>Default is False.</p>
-<p>If this value is true, it is an indication that this application wants to be treated as an  <a href="multi-record-applications.md" id="PageContent_14089_8">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
+<p>If this value is true, it is an indication that this application wants to be treated as an  <a href="/healthvault/concepts/authorization/multi-record-applications.md" id="PageContent_14089_8">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
 </tr>
 <tr class="odd">
 <td><p>trm (optional)</p></td>
@@ -352,7 +354,7 @@ An example request URL:
 <td><p>ismra (optional)</p></td>
 <td><p>True or False</p></td>
 <td><p>Default is False.</p>
-<p>If this value is True, it is an indication that this application wants to be treated as an <a href="multi-record-applications.md" id="PageContent_14089_10">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
+<p>If this value is True, it is an indication that this application wants to be treated as an <a href="/healthvault/concepts/authorization/multi-record-applications.md" id="PageContent_14089_10">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
 </tr>
 <tr class="odd">
 <td><p>onopt# (optional)</p></td>
@@ -462,7 +464,7 @@ An example request URL:
 <td><p>ismra (optional)</p></td>
 <td><p>True or False</p></td>
 <td><p>Default is False.</p>
-<p>True to have the Shell treat the application as an <a href="multi-record-applications.md" id="PageContent_14089_11">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
+<p>True to have the Shell treat the application as an <a href="/healthvault/concepts/authorization/multi-record-applications.md" id="PageContent_14089_11">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
 </tr>
 <tr class="odd">
 <td><p>onopt# (optional)</p></td>
@@ -613,7 +615,7 @@ An example request URL:
 </tbody>
 </table>
 
-More information about DOPU packages can be found in the article <a href="dopu.md" id="PageContent_14089_12">HealthVault drop-off and pick-up (DOPU)</a>.
+More information about DOPU packages can be found in the article <a href="/healthvault/concepts/connectivity/drop-off-pick-up.md" id="PageContent_14089_12">HealthVault drop-off and pick-up (DOPU)</a>.
 
 ### RECONCILE
 

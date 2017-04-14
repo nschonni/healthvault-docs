@@ -23,18 +23,18 @@ A tool you can use to grant certificate usage rights to the NetworkService accou
 
 The HealthVault Service Specification published under the Microsoft Community Promise.
 
-<a href="brand-materials.md" id="StructuredSectionGroup_14012_28">Branding materials</a>
+<a href="/healthvault/publishing/brand-materials.md" id="StructuredSectionGroup_14012_28">Branding materials</a>
 
 Guidance and assets for appropriately using the HealthVault brand.
 
 <a href="https://apps.healthvault-ppe.com/messagecenter/certs/certs.zip" id="StructuredSectionGroup_14012_32">PPE trust anchor</a>
 
-The HealthVault PPE trust anchor for <a href="direct-messaging.md" id="StructuredSectionGroup_14012_33">Direct Messaging</a> implementations.
+The HealthVault PPE trust anchor for <a href="/healthvault/concepts/connectivity/direct-messaging.md" id="StructuredSectionGroup_14012_33">Direct Messaging</a> implementations.
 
 Go-live process
 ---------------
 
-Please see <a href="go-live.md" id="StructuredSectionGroup_14012_29">go-live process</a> for information on these documents.
+Please see <a href="/healthvault/publishing/go-live.md" id="StructuredSectionGroup_14012_29">go-live process</a> for information on these documents.
 
 <a href="http://download.microsoft.com/download/7/4/E/74EA8944-199C-4F56-B3BB-8105869425BC/HealthVault%20Application%20Information%20Template.docx" id="StructuredSectionGroup_14012_30">Application information template</a>
 
@@ -44,4 +44,3 @@ You must submit a completed copy of this document with your go-live request.  T
 
 You must submit a completed copy of this document with your go-live request. This document is used to demonstrate the user experience and workflows of your application.
 
-<span id="singleColInThreeColLayout"></span>

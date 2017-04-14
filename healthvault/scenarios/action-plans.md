@@ -55,19 +55,19 @@ To access a patient’s record, the patient must provide consent to a registered
     4.  Create a new certificate and upload. See instructions to [generate a self-signed certificate](#_Certificates).
     5.  Accept the developer terms and conditions and click “Create application”.
     6.  Make a note of the Application id.
-        <img src="images/IC866205.png" title="Creating Fabrikam Health Solutions" alt="Creating Fabrikam Health Solutions" id="HVActionPlans_fig01" /> 
+        <img src="/healthvault/images/IC866205.png" title="Creating Fabrikam Health Solutions" alt="Creating Fabrikam Health Solutions" id="HVActionPlans_fig01" /> 
 
         Figure 1: Creating Fabrikam Health Solutions
 
 4.  To invite users to participate in your health program, you need to update your app’s supported Methods.
     1.  After creating your app, you will see confirmation that your app has been created. Click the application id to view and modify the app details.
 
-        <img src="images/IC866206.png" title="Confirmation of app creation" alt="Confirmation of app creation" id="HVActionPlans_fig02" /> 
+        <img src="/healthvault/images/IC866206.png" title="Confirmation of app creation" alt="Confirmation of app creation" id="HVActionPlans_fig02" /> 
         Alternatively, you can also click the application id from the home screen.
-        <img src="images/IC866207.png" title="Application id on the home screen" alt="Application id on the home screen" id="HVActionPlans_fig03" /> 
+        <img src="/healthvault/images/IC866207.png" title="Application id on the home screen" alt="Application id on the home screen" id="HVActionPlans_fig03" /> 
 
     2.  On the app details screen, select the “Methods” tab, check the “Application requires access to REST APIs” and “Application requires access to onboarding APIs” options, and click “Save”.
-        <img src="images/IC867985.png" title="Configuring app to send email" alt="Configuring app to send email" id="img1" /> 
+        <img src="/healthvault/images/IC867985.png" title="Configuring app to send email" alt="Configuring app to send email" id="img1" /> 
 
 #### Adding authorization rules
 
@@ -87,7 +87,7 @@ Your application will request permission to access these data types when users j
 -   Weight
 -   Contact
 
-### <img src="images/IC866202.png" title="Selecting data types" alt="Selecting data types" id="HVActionPlans_fig05" /> 
+### <img src="/healthvault/images/IC866202.png" title="Selecting data types" alt="Selecting data types" id="HVActionPlans_fig05" /> 
 
 ### Add your ApplicationID to the sample
 
@@ -145,7 +145,7 @@ Please refer to the HealthVaultProviderManagementPortal sample for code which de
 
 The diagram below provides a high-level overview of the structure of an Action Plan. An ActionPlan is comprised of one or more Objectives. An Objective is comprised of one or more Tasks.
 
-<img src="images/IC866028.png" title="Action plan hierarchy" alt="Action plan hierarchy" id="HVActionPlans_fig06" /> 
+<img src="/healthvault/images/IC866028.png" title="Action plan hierarchy" alt="Action plan hierarchy" id="HVActionPlans_fig06" /> 
 
 Appendix
 --------
@@ -186,7 +186,7 @@ Appendix
 
 3.  These commands will install the private key on your machine and write the public key to the specified certificate file. You will find the signed certificate in the Downloads folder for the currently logged in user.
 
-For more information, please refer to: [https://msdn.microsoft.com/en-us/healthvault/dn781357](creating-key-pairs.md)
+For more information, please refer to: [https://msdn.microsoft.com/en-us/healthvault/dn781357](/healthvault/concepts/authorization/creating-key-pairs.md)
 
 ### (Optional) Installing a test certificate on other machines
 

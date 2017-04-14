@@ -299,7 +299,8 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="/healthvault/apis/v1.0-preview.swagger.json">Reference</a>
+                                                    <a href="/healthvault/apis/v1.0-preview">Reference</a>
+
                                                 </h3>
                                             </div>
                                         </div>
@@ -317,13 +318,14 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="https:/www.nuget.org/packages/HealthVault.net">Get the .NET SDK</a>
+                                                    <a href="https://www.nuget.org/packages/HealthVault.net">Get the .NET SDK</a>
+
                                                 </h3>
                                                 <p>
                                                     <a href="/healthvault/sdks/dotnet/microsoft.health">API reference</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https:/www.github.com/microsoft/healthvault-samples/">Get samples</a>
+                                                    <a href="https://www.github.com/microsoft/healthvault-samples/">Get samples</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -341,10 +343,11 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="https:/www.github.com/microsoft/hvmobile_vnext">Get the iOS SDK</a>
+                                                    <a href="https://www.github.com/microsoft/hvmobile_vnext">Get the iOS SDK</a>
                                                 </h3>
                                                 <p>
-                                                    <a href="https:/github.com/Microsoft/HVMobile_VNext/tree/master/Samples">Get samples</a>
+                                                    <a href="https://github.com/Microsoft/HVMobile_VNext/tree/master/Samples">Get samples</a>
+
                                                 </p>
                                             </div>
                                         </div>
@@ -380,7 +383,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="https:/code.google.com/archive/p/pyhealthvault/">Get the Python SDK</a>
+                                                    <a href="https://code.google.com/archive/p/pyhealthvault/">Get the Python SDK</a>
                                                 </h3>
                                             </div>
                                         </div>
@@ -398,7 +401,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="http:/healthvaultrubylib.codeplex.com/">Get the Ruby SDK</a>
+                                                    <a href="http://healthvaultrubylib.codeplex.com/">Get the Ruby SDK</a>
                                                 </h3>
                                             </div>
                                         </div>
@@ -422,10 +425,10 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                             <div class="cardText">
                                                 <h3>PowerShell</h3>
                                                 <p>
-                                                    <a href="https:/github.com/Microsoft/healthvault-samples/tree/master/powershell">HealthVault tools for PowerShell</a>
+                                                    <a href="https://github.com/Microsoft/healthvault-samples/tree/master/powershell">HealthVault tools for PowerShell</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https:/github.com/PowerShell/PowerShell/blob/master/docs/installation/">Download PowerShell</a>
+                                                    <a href="https://github.com/PowerShell/PowerShell/blob/master/docs/installation/">Download PowerShell</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -442,7 +445,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3><a href="https:/config.healthvault-ppe.com/">Application Configuration Center</a></h3>
+                                                <h3><a href="https://config.healthvault-ppe.com/">Application Configuration Center</a></h3>
                                                 <p>
                                                     <a href="/healthvault/tools/acc/acc-tool">Reference</a>
                                                 </p>

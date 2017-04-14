@@ -8,7 +8,7 @@ The following table lists the HealthVault .NET SDK releases that are compatible 
 
 | File version       | Release date | Release label      | Assembly version | See also                                                                                          |
 |--------------------|--------------|--------------------|------------------|---------------------------------------------------------------------------------------------------|
-| **1.16.1044.9827** | 2014 March   | Platform1401R1     | 2.1.0.0          | <a href="sdk-read-me.md" id="PageContent_13995_2">Notes</a>                                       |
+| **1.16.1044.9827** | 2014 March   | Platform1401R1     | 2.1.0.0          |                                       |
 | **1.14.1007.9010** | 2013 June    | Platform1306R2     | 2.1.0.0          |                                                                                                   |
 | **1.12.1000.8525** | 2013 Jan     | Platform1212       | 2.0.0.0          |                                                                                                   |
 | **1.11.1071.8312** | 2012 Nov     | Platform1206 QFE 3 | 2.0.0.0          |                                                                                                   |
@@ -42,6 +42,5 @@ HealthVault .NET SDK assemblies include:
 See also
 
 -   <a href="https://msdn.microsoft.com/en-us/healthvault/dn798744" id="RightRailLinkListSection_13995_8">SDK Downloads</a>
--   <a href="sdk-read-me.md" id="RightRailLinkListSection_13995_9">SDK Read Me</a>
 -   <a href="https://msdn.microsoft.com/library/dn806326" id="RightRailLinkListSection_13995_10">SDK Reference Documentation</a>
 

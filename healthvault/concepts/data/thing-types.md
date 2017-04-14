@@ -65,7 +65,9 @@ Each thing instance is identified using two GUIDs and an optional string identif
 <tbody>
 <tr class="odd">
 <td><p><strong>thing-id</strong> element</p></td>
-<td><p>A GUID that identifies all versions of the thing instance. It is provisioned by HealthVault at the time the thing instance is created by a <strong>PutThings</strong> request. For more information about the <strong>PutThings</strong> request, see <a href="writing-data.md" id="PageContent_14093_2">writing data</a>.</p>
+
+<td><p>A GUID that identifies all versions of the thing instance. It is provisioned by HealthVault at the time the thing instance is created by a <strong>PutThings</strong> request. For more information about the <strong>PutThings</strong> request, see <a href="/healthvault/concepts/xml-api/writing-data.md" id="PageContent_14093_2">writing data</a>.</p>
+
 <p>The thing ID can be used when querying for specific thing instances or when updating the thing.</p></td>
 </tr>
 <tr class="even">
