@@ -1,5 +1,14 @@
-Establishing connectivity with HealthVault users
-================================================
+---
+title: Connectivity
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Overview of available connectivity options for HealthVault
+---
+
+# Overview of HealthVault connectivity methods
 
 HealthVault provides a number of integration options for connecting applications. This article provides an overview of the options along with information to help developers select the appropriate option for their application.
 
@@ -23,7 +32,7 @@ HealthVault provides a number of integration options for connecting applications
 </ul></td>
 </tr>
 <tr class="even">
-<td><p>DOPU</p></td>
+<td><p>Drop-off/Pick-up (DOPU)</p></td>
 <td><ul>
 <li><p>Provides a simple method for sending data to HealthVault users.</p></li>
 <li><p>Typically requires an in-person encounter.</p></li>

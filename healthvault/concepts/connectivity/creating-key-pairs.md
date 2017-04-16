@@ -5,9 +5,10 @@ ms.author: justhu
 ms.date: 04/12/2017
 ms.topic: article
 ms.prod: healthvault
+description: Walkthrough of how to create a certificate for HealthVault
 ---
 
-# Creating a public/private key pair for HealthVault
+# Creating a certificate (public/private key pair) for HealthVault
 
 A HealthVault application uses a private key to encrypt the first handshake message that it sends to the platform service.  HealthVault then uses a public key to verify the sender.  The public key must be registered with HealthVault through the [Application Configuration Center](https://config.healthvault-ppe.com).  The private key is securely stored by the application and is never shared with HealthVault.
 
@@ -19,15 +20,6 @@ Theft of the private key will allow an unauthorized agent to impersonate your ap
 -   Store it somewhere safe.
 -   Do not include it in any e-mail messages.
 -   Limit access to the key to only those people who must have access.
-
-Deleting an old key
--------------------
-
--   Open the Certificates MMC console for the local machine store. For information about opening the Certificates MMC console, see [How to: View Certificates with the MMC Snap-in](https://msdn.microsoft.com/library/ms788967).
--   Open the Personal folder, and then open the Cetificates subfolder.
--   Right-click the old certificate and select **Delete**.
-
-Old certificates are not cleanly deleted if a process currently has them open. You may need to shut off any web server instances that are currently running.
 
 Creating the key pair
 ---------------------
@@ -95,6 +87,16 @@ To install the PFX:
 3.  Use WinHttpCertCfg to grant the NetworkService account the permission it needs to utilize this private key:
 
     `WinHttpCertCfg.exe -g -a NetworkService -c Local_Machine\My -s "WildcatApp-<AppId>"`
+
+Deleting an old key
+-------------------
+
+-   Open the Certificates MMC console for the local machine store. For information about opening the Certificates MMC console, see [How to: View Certificates with the MMC Snap-in](https://msdn.microsoft.com/library/ms788967).
+-   Open the Personal folder, and then open the Cetificates subfolder.
+-   Right-click the old certificate and select **Delete**.
+
+Old certificates are not cleanly deleted if a process currently has them open. You may need to shut off any web server instances that are currently running.
+
 
 ### See also
 - [How to view certificates with MMC](https://msdn.microsoft.com/en-us/library/ms788967)

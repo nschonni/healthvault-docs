@@ -1,10 +1,19 @@
-Mobile devices (SODA)
+---
+title: Mobile apps
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: HealthVault has a special authentication method for mobile apps called SODA. Learn about how to use this in your apps. 
+---
+
+Building mobile apps for HealthVault using SODA Authentication
 =====================
 
 When creating applications for devices, such as mobile phones, tablets, or PCs, there are two ways to establish connectivity with HealthVault:
 
 -   Use the Software on Device Authentication (SODA) approach to establish a direct connection between each instance of your application and HealthVault.
-
 -   Connect each instance of your application to your own web service, which in turn would have an offline connection to HealthVault.
 
 The advantage of using the SODA approach is that each instance of your application can establish a unique strong identity with HealthVault and doesn't need to use public-key infrastructure (PKI) to authenticate. It is therefore the only way to directly connect a mobile application to HealthVault. Compare this with the web application approach, in which there is only a single application identity, and strong identity is established using PKI with a private key installed on the web servers.

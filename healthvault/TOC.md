@@ -35,8 +35,7 @@
 ### [Patient Connect](/healthvault/concepts/connectivity/patient-connect.md)
 ### [Drop-off/Pick-up](/healthvault/concepts/connectivity/drop-off-pick-up.md)
 ### [Direct Messaging](/healthvault/concepts/connectivity/direct-messaging.md)
-### [Mobile Apps](/healthvault/concepts/connectivity/mobile-devices.md)
-### [SODA Apps](/healthvault/concepts/connectivity/soda-walkthrough.md)
+### [Mobile apps using SODA](/healthvault/concepts/connectivity/mobile-devices.md)
 ### [Troubleshooting Connectivity Issues](/healthvault/concepts/connectivity/connection-troubleshooting.md)
 ### [Creating a Certificate](/healthvault/concepts/connectivity/creating-key-pairs.md)
 

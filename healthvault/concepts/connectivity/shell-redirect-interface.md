@@ -1,4 +1,14 @@
-Shell redirect interface
+---
+title: Shell redirect interface
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about how the HealthVault redirection interface works for authentication during user login. 
+---
+
+HealthVault authentication redirect flow
 ========================
 
 This article focuses on what application developers need to know about the interfaces between Web applications and the Shell, which are core parts of the HealthVault API.

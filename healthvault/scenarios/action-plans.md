@@ -1,7 +1,7 @@
 ---
 title: Remote monitoring
-author: jhutchings1
-ms.author: justhu
+author: rouellam
+ms.author: roumen
 ms.date: 04/12/2017
 ms.topic: article
 ms.prod: healthvault

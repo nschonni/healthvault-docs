@@ -1,3 +1,14 @@
+---
+title: Patient Connect
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Walkthrough of how to create a certificate for HealthVault
+---
+
+
 Patient Connect
 ===============
 

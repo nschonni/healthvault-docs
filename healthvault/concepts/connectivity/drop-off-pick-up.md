@@ -1,4 +1,15 @@
-Drop-off pick-up (DOPU)
+---
+title: Drop-off/pick-up (DOPU)
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Use drop-off/pick-up to send health data to users without building your own patient front-end
+---
+
+
+Learn how to use drop-off/pick-up
 =======================
 
 Drop-off and pick-up (DOPU) is a way for an application to send health data to a user without requiring a patient-facing user interface. It's a good choice for applications that don't have a user interface and want a one-time push of data to users. For an ongoing relationship with users, see [Patient Connect](/healthvault/concepts/connectivity/patient-connect.md).
