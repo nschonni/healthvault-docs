@@ -1,5 +1,16 @@
-Troubleshooting connection problems
+---
+title: Troubleshooting connectivity issues
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: If your HealthVault app won't connect during development, check these things first. 
+---
+
+Can't connect to HealthVault? 
 ===================================
+Getting connected to HealthVault can be a little tricky. Please try these troubleshooting steps if you're having trouble. 
 
 ### Condition
 
@@ -26,7 +37,7 @@ Client is getting one of the following error messages with a WebException (these
     <add key="ShellUrl" value="https://account.healthvault.com/" />
     <add key="HealthServiceUrl" value="https://platform.healthvault.com/Platform/" />
     ```
-
+    
     If you are getting the “For security reasons DTD is prohibited in this XML document” error, the most likely cause is an incorrect HealthServiceUrl. This error occurs when the response to an SDK request is HTML.
 
 2.  Gather proxy server configuration (if any):

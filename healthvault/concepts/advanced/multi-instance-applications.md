@@ -1,5 +1,14 @@
-Multi-instance applications
-===========================
+---
+title: Multi-instance applications
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Overview of how a single app can switch between global instances based upon the user's configuration. 
+---
+
+# What are multi-instance HealthVault apps? 
 
 The HealthVault global architecture is comprised of a number of instances distributed around the world each serving a broad population of users. This document provides an overview of building applications that connect to multiple instances within the HealthVault global architecture.
 

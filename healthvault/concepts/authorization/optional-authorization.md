@@ -1,5 +1,14 @@
-Optional authorization
-======================
+---
+title: Optional authorizations
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: HealthVault apps may leverage optional rules for things which users do not need to consent to. 
+---
+
+# Understanding optional data type authorizations
 
 When an application is provisioned at [Application Configuration Center](https://config.healthvault-ppe.com), data access is defined as application authorization rule. There is a flag called "Is optional?" per each rule. If the flag is set, the rule is "optional". Otherwise, it is "required". For "required" rules, users have to either approve all or reject to use the application. But for "optional" rules, they can approve or reject individually.
 

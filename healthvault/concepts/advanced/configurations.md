@@ -1,4 +1,14 @@
-HealthVault instance configurations
+---
+title: Global instances
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: HealthVault offers instances in the US and EU in order to maximize performance for customers. 
+---
+
+HealthVault Global Instances
 ===================================
 
 US HealthVault instance
