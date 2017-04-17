@@ -31,7 +31,7 @@ HealthVault’s <a href="https://go.microsoft.com/fwlink/?linkid=839407" id="Pag
 
 **Warning:** Do not store personal information on the HealthVault pre-production environment. These sites are for application development and testing only. You may not distribute or sell connectivity to this site, or any of its content. You are responsible for all activity under your account. Make sure you understand the developer [privacy statement](https://config.healthvault-ppe.com/PrivacyStatement.aspx) and [terms of use](https://config.healthvault-ppe.com/ServiceAgreement.aspx). For a HealthVault account, go to the public [HealthVault](https://www.healthvault.com/) site.
 
-Once you are done with the above, you can proceed to [configuring your app using ACC](https://msdn.microsoft.com/en-us/healthvault/mt778893.aspx)
+Once you are done with the above, you can proceed to [configuring your app using ACC](/healthvault/getting-started/configuring-new-app-acc.md)
 
 For more information
 --------------------

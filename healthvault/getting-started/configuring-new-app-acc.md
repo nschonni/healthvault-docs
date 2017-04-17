@@ -11,7 +11,7 @@ description: Learn how to configure a new app using ACC
 Configuring a new app using ACC
 ===============================
 
-Please refer to [Getting started with remote monitoring](https://msdn.microsoft.com/en-us/healthvault/mt778893.aspx) before starting.
+Please refer to [Getting started](/healthvault/getting-started/getting-started.md) before starting.
 
 ### Registering your HealthVault app
 
@@ -27,7 +27,7 @@ To access a patient’s record, the patient must provide consent to a registered
     1.  The Application id will be generated for you.
     2.  Enter the application name that users will see when they interact or give consent to your application. For example, we have created one called “Fabrikam Health Solutions”.
     3.  Select “Web” for the application type.
-    4.  Create a new certificate and upload. See instructions to [generate a self-signed certificate](#_Certificates).
+    4.  Create a new certificate and upload. See instructions to [generate a self-signed certificate](/healthvault/concepts/connectivity/creating-key-pairs.md).
     5.  Accept the developer terms and conditions and click “Create application”.
     6.  Make a note of the Application id.
         <img src="/healthvault/images/IC866205.png" title="Creating Fabrikam Health Solutions" alt="Creating Fabrikam Health Solutions" id="HVActionPlans_fig01" /> 
