@@ -10,9 +10,12 @@
 ## [Interoperability](/healthvault/introduction/interoperability.md)
 ## [HIPAA and HITECH](/healthvault/introduction/hipaa-and-hitech.md)
 ## [Ecosystem](/healthvault/introduction/ecosystem.md)
-
+# [Getting Started](/healthvault/getting-started/)
+## [Configure in ACC](/healthvault/getting-started/configuring-new-app-acc.md)
+## [Update app configuration](/healthvault/getting-started/update-app-configurations.md)
+## [Invite Patients](/healthvault/getting-started/invite-patients.md)
 # Scenarios
-## [Action Plans](/healthvault/scenarios/action-plans.md)
+## [Remote monitoring](/healthvault/scenarios/remote-monitoring.md)
 ## [Meaningful Use](/healthvault/scenarios/meaningful-use.md)
 ## [Emergency Preparedness](/healthvault/scenarios/emergency-preparedness.md)
 

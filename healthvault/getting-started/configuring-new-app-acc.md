@@ -11,11 +11,11 @@ description: Learn how to configure a new app using ACC
 Configuring a new app using ACC
 ===============================
 
-Please refer to [Getting started](/healthvault/getting-started/getting-started.md) before starting.
+Please refer to [Getting started](/healthvault/getting-started/getting-started.md) before continuing.
 
 ### Registering your HealthVault app
 
-To access a patient’s record, the patient must provide consent to a registered HealthVault app.
+To access a patient’s record, the patient must provide consent to a registered HealthVault app. The example below is tailored for use with the [HealthVaultProviderManagementPortal](https://github.com/Microsoft/healthvault-samples/tree/master/dotNET/HealthVaultProviderManagementPortal), but the process is similar for other apps. To learn more about using the Application Configuration Center, please see [Application Configuration Center tool](/healthvault/tools/acc/acc-tool.md).
 
 1.  Navigate to the [HealthVault Application Config Center (ACC)](https://go.microsoft.com/fwlink/?linkid=838954) on a desktop browser.
 2.  Login with your Microsoft Account.
@@ -68,58 +68,11 @@ Your application will request permission to access these data types when users j
 
 ### <img src="/healthvault/images/IC867995.png" title="Selecting data types" alt="Selecting data types" id="HVActionPlans_fig05" /> 
 
-### Add your ApplicationID to the sample
-
-The HealthVaultProviderManagementPortal sample includes a PowerShell script you can use to update the project with the ApplicationID you just created using the Application Configuration Center. You should have already cloned the project from [GitHub](https://go.microsoft.com/fwlink/?linkid=839405). If you have, then open a PowerShell console, navigate to the folder you chose for your local repository, then navigate to dotNET/HealthVaultProviderManagementPortal and run the following command, specifying your ApplicationID below.
-
-```powershell
-.\\Update-WebConfig.ps1 -ApplicationId" 00000000-0000-0000-0000-000000000000"
-```
-
-### Generate and send invitations to remote patients
-
-Your application will need to invite users to participate in your program. Please refer to the HealthVaultProviderManagementPortal sample for code which demonstrates this scenario.
-
-At a high level, the process to generate and send invitation codes is:
-
-1.  Create an offline web application connection.
-2.  Authenticate the connection. This uses the certificate you registered earlier to establish trust.
-3.  Generate an invitation code using the [Onboarding REST API](https://developer.healthvault.com/Api).
-4.  Send the invitation code to your participant using email or another mechanism.
-
-Once users receive their invitation, they will be invited to download the HealthVault Insights app, sign-up/sign-in to HealthVault and consent to Fabrikam Health solutions to complete joining the program. On completion, Fabrikam will have access to user’s consented data.
-
-### Get authorized users
-
-To get the list of users who have authorized your app to have access to their health record, follow the flow outlined below. Note that the GetAuthorizedPeople method called below may be called with the “authorizations-created-since” parameter to limit responses to only users who have authorized the app recently. Please refer to the HealthVaultProviderManagementPortal sample for code which demonstrates this scenario.
-
-1.  Create an offline web application connection
-2.  Authenticate the connection. This uses the certificate you registered earlier to establish trust.
-3.  Call the connection’s GetAuthorizedPeople method to obtain all the users who have authorized their records with your app.
-
-### Accessing authorized user data
-
-Once your app has been authorized to access a user’s data, your app can retrieve it on demand. Please refer to the HealthVaultProviderManagementPortal sample for code which demonstrates this scenario for retrieving user data offline.
-
-For more information, see the [GetThings documentation](https://developer.healthvault.com/Methods/Overview?Name=GetThings&Version=3) and "Related articles" linked from that page.
-
-#### ***Creating or updating data***
-
-In this scenario, Fabrikam’s doctors need to create records for a user’s latest height and weight values. Please refer to the HealthVaultProviderManagementPortal sample for code which demonstrates this scenario.
-
-For more information, see the [PutThings documentation](https://developer.healthvault.com/Methods/Overview?Name=PutThings&Version=2) and "Related articles" linked from that page.
-
-#### ***Deleting data***
-
-In this scenario, Fabrikam’s doctors want to remove value that they have placed into a user’s health record. Microsoft recommends that this technique is only used to remove erroneous records.
-
-For more information, see the [RemoveThings documentation](https://developer.healthvault.com/Methods/Overview?Name=RemoveThings&Version=1) and “Related articles” linked from that page.
+When you have completed the steps above, learn more about how to [update your app's configuration to connect to HealthVault](/healthvault/getting-started/update-configuration.md). 
 
 For more information
 --------------------
 
--   [HealthVault Overview](https://www.healthvault.com/us/en)
--   [HealthVault technical overview](https://go.microsoft.com/fwlink/?linkid=839408)
--   [HealthVault REST API Reference](https://go.microsoft.com/fwlink/?linkid=839407)
--   [HealthVault SDKs](https://go.microsoft.com/fwlink/?linkid=839410)
+- [Application Configuration Center tool](/healthvault/tools/acc/acc-tool.md)
+- [Connectivity](/healthvault/concepts/connectivity.md)
 

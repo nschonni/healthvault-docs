@@ -294,25 +294,6 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage">
-                                                    <img src="/media/logos/logo_rest.svg" alt="" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>
-                                                    <a href="/healthvault/apis/v1.0-preview">Reference</a>
-
-                                                </h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
                                                     <img src="/media/logos/logo_net.svg" alt="" />
                                                 </div>
                                             </div>
@@ -327,6 +308,44 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                 <p>
                                                     <a href="https://www.github.com/microsoft/healthvault-samples/">Get samples</a>
                                                 </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage">
+                                                    <img src="/media/logos/logo_netstandard.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>
+                                                    <a href="https://www.nuget.org/packages/Microsoft.HealthVault.Client">Get the Client SDK</a>
+                                                </h3>
+                                                <p><a href="https://www.nuget.org/packages/Microsoft.HealthVault.Web">Get the Web SDK</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage">
+                                                    <img src="/media/logos/logo_rest.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>
+                                                    <a href="/healthvault/apis/v1.0-preview">Reference</a>
+
+                                                </h3>
                                             </div>
                                         </div>
                                     </div>
