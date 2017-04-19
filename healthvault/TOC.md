@@ -14,6 +14,7 @@
 ## [Configure in ACC](/healthvault/getting-started/configuring-new-app-acc.md)
 ## [Update app configuration](/healthvault/getting-started/update-app-configurations.md)
 ## [Invite Patients](/healthvault/getting-started/invite-patients.md)
+
 # Scenarios
 ## [Remote monitoring](/healthvault/scenarios/remote-monitoring.md)
 ## [Meaningful Use](/healthvault/scenarios/meaningful-use.md)
@@ -71,6 +72,7 @@
 #### [CCR Vocabularies](/healthvault/concepts/data/ccr-vocabularies.md)
 ### [Medical Imaging](/healthvault/concepts/data/medical-imaging.md)
 #### [Medical Imaging Sample Application](/healthvault/concepts/data/medical-imaging-sample-application.md)
+
 ## [XML API](/healthvault/concepts/xml-api/)
 ### [Querying Data](/healthvault/concepts/xml-api/querying-data.md)
 ### [Writing Data](/healthvault/concepts/xml-api/writing-data.md)
@@ -82,6 +84,7 @@
 ### [HealthVault eventing](/healthvault/concepts/xml-api/healthvault-eventing.md)
 ### [Status Codes](/healthvault/concepts/xml-api/status-codes.md)
 ### [Request-Response Tracing](/healthvault/concepts/xml-api/request-response-tracing.md)
+
 ## [Advanced](/healthvault/concepts/advanced/)
 ###[Alternate user identifiers](/healthvault/concepts/advanced/alternate-user-identifiers.md)
 ###[Global architecture](/healthvault/concepts/advanced/global-architecture.md)
