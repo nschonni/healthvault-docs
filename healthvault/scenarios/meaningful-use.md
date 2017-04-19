@@ -36,7 +36,7 @@ An outline of using HealthVault for the supported MU2 criteria is as follows:
 Connectivity models for Meaningful Use integration
 --------------------------------------------------
 
-Product developers integrating with HealthVault to retrieve Meaningful Use reports must choose a connectivity model to send CCDAs to HealthVault users. A summary of the options is provided next. It's recommended that product developers new to HealthVault learn about the HealthVault connectivity models before continuing. For more information see <a href="/healthvault/concepts/connectivity/connectivity.md" id="PageContent_14102_10">Establishing connectivity with HealthVault users</a>.
+Product developers integrating with HealthVault to retrieve Meaningful Use reports must choose a connectivity model to send CCDAs to HealthVault users. A summary of the options is provided next. It's recommended that product developers new to HealthVault learn about the HealthVault connectivity models before continuing. For more information see <a href="/healthvault/concepts/connectivity/" id="PageContent_14102_10">Establishing connectivity with HealthVault users</a>.
 
 ### Drop-off pick-up (DOPU) and MU2
 

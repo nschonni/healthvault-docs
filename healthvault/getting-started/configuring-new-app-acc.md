@@ -15,7 +15,7 @@ Please refer to [Getting started](/healthvault/getting-started/getting-started.m
 
 ### Registering your HealthVault app
 
-To access a patient’s record, the patient must provide consent to a registered HealthVault app. The example below is tailored for use with the [HealthVaultProviderManagementPortal](https://github.com/Microsoft/healthvault-samples/tree/master/dotNET/HealthVaultProviderManagementPortal), but the process is similar for other apps. To learn more about using the Application Configuration Center, please see [Application Configuration Center tool](/healthvault/tools/acc/acc-tool.md).
+To access a patient’s record, the patient must provide consent to a registered HealthVault app. The example below is tailored for use with the [HealthVaultProviderManagementPortal](https://github.com/Microsoft/healthvault-samples/tree/master/dotNET/HealthVaultProviderManagementPortal), but the process is similar for other apps. To learn more about using the Application Configuration Center, please see [Application Configuration Center tool](/healthvault/tools/acc/).
 
 1.  Navigate to the [HealthVault Application Config Center (ACC)](https://go.microsoft.com/fwlink/?linkid=838954) on a desktop browser.
 2.  Login with your Microsoft Account.
@@ -68,11 +68,11 @@ Your application will request permission to access these data types when users j
 
 ### <img src="/healthvault/images/IC867995.png" title="Selecting data types" alt="Selecting data types" id="HVActionPlans_fig05" /> 
 
-When you have completed the steps above, learn more about how to [update your app's configuration to connect to HealthVault](/healthvault/getting-started/update-configuration.md). 
+When you have completed the steps above, learn more about how to [update your app's configuration to connect to HealthVault](/healthvault/getting-started/update-app-configurations.md). 
 
 For more information
 --------------------
 
-- [Application Configuration Center tool](/healthvault/tools/acc/acc-tool.md)
-- [Connectivity](/healthvault/concepts/connectivity.md)
+- [Application Configuration Center tool](/healthvault/tools/acc/)
+- [Connectivity](/healthvault/concepts/connectivity/)
 

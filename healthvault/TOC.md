@@ -29,7 +29,7 @@
 
 
 # Concepts
-## [Connectivity](/healthvault/concepts/connectivity/connectivity.md)
+## [Connectivity](/healthvault/concepts/connectivity/)
 ### [Web Connectivity](/healthvault/concepts/connectivity/web-connectivity.md)
 #### [Action Url](/healthvault/concepts/connectivity/action-url.md)
 #### [Code Security Requirements](/healthvault/concepts/connectivity/code-security-requirements.md)
@@ -42,16 +42,17 @@
 ### [Troubleshooting Connectivity Issues](/healthvault/concepts/connectivity/connection-troubleshooting.md)
 ### [Creating a Certificate](/healthvault/concepts/connectivity/creating-key-pairs.md)
 
-## [Authentication and Authorization](/healthvault/concepts/authorization/authentication-and-authorization.md)
+## [Authentication and Authorization](/healthvault/concepts/authorization/)
 ###[Authorization Changes](/healthvault/concepts/authorization/authorization-changes.md)
 ###[Multi-record applications](/healthvault/concepts/authorization/multi-record-applications.md)
 ###[Offline access](/healthvault/concepts/authorization/offline-access.md)
 ###[Optional authorizations](/healthvault/concepts/authorization/optional-authorization.md)
 
-## Data
+## [Data](/healthvault/concepts/data/)
 ### [Thing Type Schema](/healthvault/concepts/data/thing-type-schema.md)
 ### [Downloading Type Schemas](/healthvault/concepts/data/downloading-type-schemas.md)
 ### [Thing Type Versioning](/healthvault/concepts/data/thing-type-versioning.md)
+### [Version Stamps](/healthvault/concepts/data/version-stamps.md)
 ### [Common Data Types](/healthvault/concepts/data/common-data-types.md)
 #### [Weights and Measurements](/healthvault/concepts/data/weights-and-measurements.md)
 ### [Extending Data Types](/healthvault/concepts/data/extending-data-types.md)
@@ -70,19 +71,18 @@
 #### [CCR Vocabularies](/healthvault/concepts/data/ccr-vocabularies.md)
 ### [Medical Imaging](/healthvault/concepts/data/medical-imaging.md)
 #### [Medical Imaging Sample Application](/healthvault/concepts/data/medical-imaging-sample-application.md)
-## XML API
+## [XML API](/healthvault/concepts/xml-api/)
 ### [Querying Data](/healthvault/concepts/xml-api/querying-data.md)
 ### [Writing Data](/healthvault/concepts/xml-api/writing-data.md)
 ### [Paging Data](/healthvault/concepts/xml-api/paging-data.md)
 ### [Batching Queries](/healthvault/concepts/xml-api/batching-queries.md)
 ### [Subscribing To Events](/healthvault/concepts/xml-api/subscribing-to-events.md)
 ### [Tracking Data Items](/healthvault/concepts/xml-api/tracking-data-items.md)
-### [Version Stamps](/healthvault/concepts/xml-api/version-stamps.md)
 ### [Method and Data Type Schemas](/healthvault/concepts/xml-api/method-and-data-type-schemas.md)
 ### [HealthVault eventing](/healthvault/concepts/xml-api/healthvault-eventing.md)
 ### [Status Codes](/healthvault/concepts/xml-api/status-codes.md)
 ### [Request-Response Tracing](/healthvault/concepts/xml-api/request-response-tracing.md)
-## Advanced
+## [Advanced](/healthvault/concepts/advanced/)
 ###[Alternate user identifiers](/healthvault/concepts/advanced/alternate-user-identifiers.md)
 ###[Global architecture](/healthvault/concepts/advanced/global-architecture.md)
 ###[Global instances](/healthvault/concepts/advanced/configurations.md)
@@ -94,7 +94,7 @@
 ### [Device Code 10 Errors](/healthvault/concepts/device-driver-kit/device-code-10-errors.md)
 
 ## Tools
-### [Application Configuration Center](/healthvault/tools/acc/acc-tool.md)
+### [Application Configuration Center](/healthvault/tools/acc/)
 #### [ACC Admins Tab](/healthvault/tools/acc/acc-admins-tab.md)
 #### [ACC Create or Edit a Device Directory Page](/healthvault/tools/acc/acc-create-or-edit-a-device-directory-page.md)
 #### [ACC Create or Edit an Application Directory Page](/healthvault/tools/acc/acc-create-or-edit-an-application-directory-page.md)
