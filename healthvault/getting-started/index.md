@@ -1,7 +1,7 @@
 ---
 title: Getting started 
-author: rouellam, jhutchings1
-ms.author: roumen, justhu
+author: rouellam
+ms.author: roumen
 ms.date: 04/17/2017
 ms.topic: article
 ms.prod: healthvault

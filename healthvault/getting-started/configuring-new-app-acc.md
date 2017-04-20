@@ -11,9 +11,9 @@ description: Learn how to configure a new app using ACC
 Configuring a new app using ACC
 ===============================
 
-Please refer to [Getting started](/healthvault/getting-started/getting-started.md) before continuing.
+Please refer to [Getting started](/healthvault/getting-started/getting-started) before continuing.
 
-### Registering your HealthVault app
+## Registering your HealthVault app
 
 To access a patient’s record, the patient must provide consent to a registered HealthVault app. The example below is tailored for use with the [HealthVaultProviderManagementPortal](https://github.com/Microsoft/healthvault-samples/tree/master/dotNET/HealthVaultProviderManagementPortal), but the process is similar for other apps. To learn more about using the Application Configuration Center, please see [Application Configuration Center tool](/healthvault/tools/acc/).
 
@@ -46,7 +46,7 @@ To access a patient’s record, the patient must provide consent to a registered
 
 5. To have your organization information available to APIs, visit the Organization tab in ACC to add your organization information such as organization name which can then be referenced in .
 
-#### Adding authorization rules
+## Adding authorization rules
 
 Before your app can access user data, it will need offline access to specific [HealthVault data types](https://developer.healthvault.com/DataTypes). Make sure to include request for authorization to **Plan, Task and Task tracking entry** and any other data types which are related to your plans. If you need to use goals, also include the **Health Goal** entry.
 
@@ -66,7 +66,7 @@ Your application will request permission to access these data types when users j
 -   Task tracking entry
 -   Weight
 
-### <img src="/healthvault/images/IC867995.png" title="Selecting data types" alt="Selecting data types" id="HVActionPlans_fig05" /> 
+ <img src="/healthvault/images/IC867995.png" title="Selecting data types" alt="Selecting data types" id="HVActionPlans_fig05" /> 
 
 When you have completed the steps above, learn more about how to [update your app's configuration to connect to HealthVault](/healthvault/getting-started/update-app-configurations.md). 
 

@@ -5,7 +5,7 @@ The transforms that convert CCR data into HealthVault types are not simple mappi
 
 The logic behind the transforms is described in detail in [HealthVault CCR Input Mappings](ccr-input-mappings.md). In order to improve the readability of those descriptions, some sections of the transform logic are described as procedure or function calls. This document provides pseudocode descriptions of those calls.
 
-### IsConcept(text, concept)
+### <a id="IsConcept"/>IsConcept(text, concept)
 
 ```pseudocode
 If(Vocabulary[concept].ImportText.Contains(text)) 
@@ -20,19 +20,19 @@ Else
 return  IsConcept(ccrtype/type/text, concept)
 ```
 
-### Concat(args\[\], separator)
+### <a id="Concat"/>Concat(args\[\], separator)
 
 ```pseudocode
 return args[0] + (for (i = 1 to args.Length - 1) { if exists(args[i]) (separator + args[i]) } )
 ```
 
-### ResolveActor(actorid)
+### <a id="ResolveActor"/>ResolveActor(actorid)
 
 ```pseudocode
 return /ContinuityOfCareRecord/Actors/Actor[./ActorObjectID = actorid]
 ```
 
-### ResolveActorInRole(actorrefs, role)
+### <a id="ResolveActorInRole"/>ResolveActorInRole(actorrefs, role)
 
 ```pseudocode
 $ActorRef = actorrefs[IsConcept(./ActorRole, role)] 
@@ -45,7 +45,7 @@ return /ContinuityOfCareRecord/Actors/Actor[./ActorObjectID = $ActorRef/ActorID]
 return /ContinuityOfCareRecord/Body/node()[./CCRDataObjectID = linkRef/LinkID]
 ```
 
-### ResolveComment(id)
+### <a id="ResolveComment"/>ResolveComment(id)
 
 ```pseudocode
 return /ContinuityOfCareRecord/Comments/Comment[./CommentObjectID = id]/Description/Text
@@ -63,14 +63,14 @@ return /ContinuityOfCareRecord/Comments/Comment[  IsConcept(./Type/Text, concept
 return /ContinuityOfCareRecord/References/Reference[./ReferenceObjectID = id]
 ```
 
-### FindActorInSource(sources, role)
+### <a id="FindActorInSource"/>FindActorInSource(sources, role)
 
 ```pseudocode
 $Source = sources[  IsConcept(./ActorRole, role)] 
 return /ContinuityOfCareRecord/Actors/Actor[./ActorObjectID = $Source/ActorID] 
 ```
 
-### ActorToString(ccractorref)
+### <a id="ActorToString"/>ActorToString(ccractorref)
 
 ```pseudocode
 $Actor =  ResolveActor(ccractorref/ActorID) 
@@ -116,7 +116,7 @@ return  Concat(node/Line1, node/Line2, node/City, node/State, node/PostalCode, n
 return  Concat(./node/Value, ./node/Type/Text)
 ```
 
-### PersonNameTypeToString(node)
+### <a id="PersonNameTypeToString"/>PersonNameTypeToString(node)
 
 ```pseudocode
 return  Concat(node/Title, node/Given, node/Middle, node/Family, node/Suffix, " ")
@@ -128,7 +128,7 @@ return  Concat(node/Title, node/Given, node/Middle, node/Family, node/Suffix, " 
 return  Concat(node/Description/text,  ActorToStringDetailed(node/Actor), "\n")
 ```
 
-### ReferenceTypeToString(node)
+### <a id="ReferenceTypeToString"/>ReferenceTypeToString(node)
 
 ```pseudocode
 $String = node/Description/Text 
@@ -137,7 +137,7 @@ ForEach(node/Locations/Location)
 return $String  
 ```
 
-### SourceTypeToString(node)
+### <a id="SourceTypeToString"/>SourceTypeToString(node)
 
 ```pseudocode
 If(node/Description/Text = "Unknown") 
@@ -156,7 +156,7 @@ If (count(node/DateTime)= 1) and If Not Exists (node/DateTime[1]/Type))
     return node/DateTime[1]
 ```
 
-### GetDateTime(node, concept)
+### <a id="GetDateTime"/>GetDateTime(node, concept)
 
 ```pseudocode
 $DateTime = node/DateTime[IsConcept(./Type/Text, concept)][1]

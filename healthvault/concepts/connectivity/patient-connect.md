@@ -8,7 +8,6 @@ ms.prod: healthvault
 description: Walkthrough of how to create a certificate for HealthVault
 ---
 
-
 Patient Connect
 ===============
 
