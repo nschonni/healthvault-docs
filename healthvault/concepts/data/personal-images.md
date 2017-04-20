@@ -1,4 +1,14 @@
-Personal images
+---
+title: Personal images
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn how to get the user's profile image from their HealthVault record
+---
+
+Get the user's personal image
 ===============
 
 The PersonalImage type encapsulates the picture that represents the person of a health record. PersonalImage is a singleton type, which means that there can be only one of them. But there might be none of them, so code needs to handle this case as well:
@@ -37,10 +47,4 @@ using (Stream imageStream = System.IO.File.OpenRead(imageFileName))
     }
 }
 ```
-
-### Integrating with HealthVault
-
-See also
-
--   <a href="medical-imaging.md" id="RightRailLinkListSection_14062_7">Medical imaging</a>
 

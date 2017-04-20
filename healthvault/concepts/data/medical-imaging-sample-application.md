@@ -1,3 +1,14 @@
+---
+title: HealthVault Medical Imaging Sample Application
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Overview of the HealthVault Medical Imaging Sample Application
+---
+
+
 # HealthVault Medical Imaging Sample Application
 
 The [Medical Image Sample Application on CodePlex](http://healthvaultimaging.codeplex.com/) uses the HealthVault .NET SDK to illustrate working with the medical image study (MIS) data type and the HealthVault streaming interface.

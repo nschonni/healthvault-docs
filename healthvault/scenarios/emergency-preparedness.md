@@ -1,7 +1,18 @@
-Emergency preparedness
+---
+title: Emergency preparedness
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about how HealthVault can help you with emergency preparedness scenarios. 
+---
+
+
+Use HealthVault's emergency preparedness scenario
 ======================
 
-HealthVault has introduced a number of features centered around emergency preparedness scenarios.
+HealthVault has a number of features centered around emergency preparedness scenarios.
 
 Emergency prep signup flow
 --------------------------

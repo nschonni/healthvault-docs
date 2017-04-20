@@ -1,3 +1,14 @@
+---
+title: Common data types
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Overview of common HealthVault data types like display-value, codable-value, and date time values
+---
+
+
 Common data types
 =================
 

@@ -1,4 +1,15 @@
-Writing data
+---
+title: Writing data
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn how to use PutThings to add data to HealthVault
+---
+
+
+Writing data to HealthVault
 ============
 
 To write data to HealthVault, use the **PutThings** request. The call must specify a single record identifier in the request header and all operations are performed against that record. There is no mechanism for performing write operations on multiple records in the same request.

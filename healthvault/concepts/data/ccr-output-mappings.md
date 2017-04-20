@@ -1,4 +1,14 @@
-CCR Output Mappings
+---
+title: Continuity of Care Record Output Mappings
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Overview of how HealthVault maps HealthVault data into Continuity of Care Records. 
+---
+
+Continuity of Care Record Output Mappings
 ===================
 
 The transforms that convert HealthVault types into CCR data are not simple mappings of one data value onto another. The mappings are context sensitive and depend on both the presence and value of individual properties of the HealthVault type.

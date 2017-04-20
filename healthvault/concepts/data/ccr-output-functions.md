@@ -1,4 +1,15 @@
-CCR Output Functions
+---
+title: Continuity of Care Record Output Functions
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Overview of how HealthVault produces Continuity of Care Records from HealthVault data. 
+---
+
+
+Continuity of Care Record Output Functions
 ====================
 
 The transforms that convert HealthVault types into CCR data are not simple mappings of one data value onto another. The mappings are context sensitive and depend on both the presence and value of individual properties of the HealthVault type.

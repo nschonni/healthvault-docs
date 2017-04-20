@@ -1,4 +1,14 @@
-Meaningful Use
+---
+title: Meaningful Use 
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: HealthVault supports Meaningful Use Stage 2 (2014 Edition). Learn how to use HealthVault to achieve MU2 objectives. 
+---
+
+Satisfy Meaningful Use 2 Objectives
 ==============
 
 This document provides an overview of the HealthVault capabilities to support Meaningful Use Stage 2 (2014 Edition) objectives.
@@ -56,7 +66,7 @@ The record-authorization based approach allows reading data from HealthVault rec
 
 The primary models used to establish a record authorization for the purposes of Meaningful Use, are through a website and using the Patient Connect model.
 
-See [HealthVault Meaningful Use Reporting Sample](http://code.msdn.microsoft.com/HealthVault-Meaningful-Use-c88846f8) for a code sample demonstrating the process.
+See [HealthVault Meaningful Use Reporting Sample](https://github.com/Microsoft/healthvault-samples/tree/master/dotNET/HealthVault%20Meaningful%20Use%20Reporting) for a code sample demonstrating the process.
 
 ### Direct Messaging
 

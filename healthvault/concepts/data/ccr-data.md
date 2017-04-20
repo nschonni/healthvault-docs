@@ -1,4 +1,14 @@
-Using CCR Data in HealthVault
+---
+title: Continuity of Care Record Data
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Overview of HealthVault support for Continuity of Care Record (CCR) and Continuity of Care Documents (CCD)
+---
+
+Using Continuity of Care Data in HealthVault
 =============================
 
 The documents listed below describe the data transforms that are used to convert a CCR to individual HealthVault items, or HealthVault items into a CCR document. The input transforms are used by the HealthVault during the reconcile process. The reconcile process is a process by which the items from a CCR document are added to HealthVault record. The output transforms are used by the HealthVault Shell to create a CCR document from the content in the HealthVault record.

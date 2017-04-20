@@ -1,4 +1,14 @@
-Querying data
+---
+title: Querying data
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn how to get data from HealthVault's XML API by issuing GetThings queries
+---
+
+Learn how to get data from HealthVault's XML API
 =============
 
 Retrieving data from HealthVault is done through the **GetThings** request. The **GetThings** request performs operations very similar to an SQL select statement:

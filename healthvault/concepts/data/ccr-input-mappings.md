@@ -1,3 +1,14 @@
+---
+title: Continuity of Care Record Input Mappings
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Overview of how HealthVault converts Continuity of Care Records into HealthVault data. 
+---
+
+
 CCR Input Mappings
 ==================
 

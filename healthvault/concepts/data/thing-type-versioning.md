@@ -1,3 +1,13 @@
+---
+title: Thing type versioning
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about how HealthVault versions the thing type schemas
+---
+
 Thing type versioning
 =====================
 
@@ -20,7 +30,7 @@ Most applications should define authorizations rules for a single version of a t
 
 Applications may also subvert their type contract by specifying the **type-format-version** parameter of the **GetThings** method request. This parameter tells HealthVault to always format the output of the type in the specified version.
 
-How type versioning works—an example
+How type versioning works: an example
 ------------------------------------
 
 As an example, the original blood pressure type does not have a field for body position, to tell whether the person was sitting, standing, or lying down when the measurement was taken. Assume a new version of the blood pressure type is introduced that includes body position. The blood pressure type is identified by two identifiers: the thing type identifier and the version type identifier. When a new version is introduced, a new version type identifier is allocated but the same type identifier is used.

@@ -1,3 +1,13 @@
+---
+title: Thing type schema
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about how HealthVault's thing types are defined
+---
+
 Thing Type Schema
 =================
 

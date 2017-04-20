@@ -1,3 +1,14 @@
+---
+title: Track data items
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn how HealthVault encodes changed dates, and how to get previous revisions of a user's record
+---
+
+
 Tracking data items
 ===================
 

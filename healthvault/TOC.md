@@ -93,7 +93,6 @@
 ###[Multi-instance applications](/healthvault/concepts/advanced/multi-instance-applications.md)
 ## [Device Driver Kit](/healthvault/concepts/device-driver-kit/device-overview.md)
 ### [Device WPD Overview](/healthvault/concepts/device-driver-kit/device-wpd-overview.md)
-### [Device Non-PnP](/healthvault/concepts/device-driver-kit/device-non-pnp.md)
 ### [Device Code 10 Errors](/healthvault/concepts/device-driver-kit/device-code-10-errors.md)
 
 ## Tools

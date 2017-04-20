@@ -1,4 +1,14 @@
-Paging data
+---
+title: Paging data
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn how to use the HealthVault XML API to page through large data sets
+---
+
+How to use GetThings to page data
 ===========
 
 Paging data allows your application to manage performance by requesting a set number of full **GetThings** results per query and retrieving item identifiers for the rest of the results in order to show that data on successive pages.
