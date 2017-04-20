@@ -4,7 +4,7 @@ Technical overview: exchanging data
 Reading and writing data
 ------------------------
 
-HealthVault provides an XML-based web service API with two methods for reading and writing data: GetThings and PutThings. The GetThings method is used to execute queries and return stored data. The PutThings method is used to create and update data.  For more information, see <a href="/healthvault/concepts/xml-api/querying-data.md" id="PageContent_13983_9">querying data</a> and <a href="/healthvault/concepts/xml-api/writing-data.md" id="PageContent_13983_10">writing data</a>.
+HealthVault provides an XML-based web service API with two methods for reading and writing data: GetThings and PutThings. The GetThings method is used to execute queries and return stored data. The PutThings method is used to create and update data.  For more information, see <a href="/healthvault/concepts/xml-api/querying-data" id="PageContent_13983_9">querying data</a> and <a href="/healthvault/concepts/xml-api/writing-data" id="PageContent_13983_10">writing data</a>.
 
 In the .NET SDK this functionality can be found in the following classes:
 
@@ -22,14 +22,14 @@ The service API provides a method called GetUpdatedRecordsForApplication. This m
 Eventing
 --------
 
-Alternately, an application can use receive notifications of changes through the eventing API. See <a href="/healthvault/concepts/connectivity/subscribing-to-events.md" id="PageContent_13983_11">eventing</a> for more information about an event-driven approach to detecting changes.
+Alternately, an application can use receive notifications of changes through the eventing API. See <a href="/healthvault/concepts/connectivity/subscribing-to-events" id="PageContent_13983_11">eventing</a> for more information about an event-driven approach to detecting changes.
 
 <span id="singleColInThreeColLayout"></span>
 
 #### Technical overview
 
--   <a href="technical-overview.md" id="RightRailLinkListSection_14123_7">1. Terminology</a>
--   <a href="technical-overview-applications.md" id="RightRailLinkListSection_14123_18">2. Applications</a>
--   <a href="technical-overview-permissions.md" id="RightRailLinkListSection_14123_8">3. Permissions</a>
--   <a href="technical-overview-connectivity.md" id="RightRailLinkListSection_14123_9">4. Connectivity</a>
--   <a href="technical-overview-exchanging-data.md" id="RightRailLinkListSection_14123_10">5. Exchanging data</a>
+-   <a href="technical-overview" id="RightRailLinkListSection_14123_7">1. Terminology</a>
+-   <a href="technical-overview-applications" id="RightRailLinkListSection_14123_18">2. Applications</a>
+-   <a href="technical-overview-permissions" id="RightRailLinkListSection_14123_8">3. Permissions</a>
+-   <a href="technical-overview-connectivity" id="RightRailLinkListSection_14123_9">4. Connectivity</a>
+-   <a href="technical-overview-exchanging-data" id="RightRailLinkListSection_14123_10">5. Exchanging data</a>

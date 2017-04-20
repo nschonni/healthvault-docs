@@ -14,8 +14,8 @@ For solution providers
 
 HealthVault makes it easy for a broad ecosystem of device and application providers to build innovative health and wellness solutions with privacy- and security-enhanced online-service features. Our goal is to foster the growth of a health application ecosystem that supports better care and better outcomes for more people.
 
--   [Why create HealthVault-enabled applications?](/healthvault/introduction/why-healthvault.md)
--   [Overview of devices](/healthvault/concepts/device-driver-kit/device-overview.md)
+-   [Why create HealthVault-enabled applications?](/healthvault/introduction/why-healthvault)
+-   [Overview of devices](/healthvault/concepts/device-driver-kit/device-overview)
 
 For individuals
 ---------------

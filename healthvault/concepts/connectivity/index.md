@@ -92,7 +92,7 @@ The following summarizes the process of establishing a record authorization from
 
 <img src="https://i-msdn.sec.s-msft.com/dynimg/IC698759.png" title="Web Summary" alt="Web Summary" id="Web Summary" />
 
-See [web connectivity](/healthvault/concepts/connectivity/web-connectivity.md) for more information and code samples.
+See [web connectivity](/healthvault/concepts/connectivity/web-connectivity) for more information and code samples.
 
 ### Patient Connect
 
@@ -111,13 +111,13 @@ The following describes the end-to-end workflow.
 The following summarizes the Patient Connect workflow.
 
 <img src="https://i-msdn.sec.s-msft.com/dynimg/IC698760.png" title="Patient Connect Summary" alt="Patient Connect Summary" id="Patient Connect Summary" />
-See [Establishing authorization with a user using Patient Connect](/healthvault/concepts/connectivity/patient-connect.md) for more information and code samples.
+See [Establishing authorization with a user using Patient Connect](/healthvault/concepts/connectivity/patient-connect) for more information and code samples.
 
 ### Software on Device Authentication (SODA)
 
 The SODA model allows native applications that run on mobile and other client devices to establish authorization with HealthVault records.
 
-See [HealthVault on mobile devices](/healthvault/concepts/connectivity/mobile-devices.md) for more information and code samples.
+See [HealthVault on mobile devices](/healthvault/concepts/connectivity/mobile-devices) for more information and code samples.
 
 Drop-off/Pick-up
 ----
@@ -138,9 +138,9 @@ The following summarizes the DOPU workflow.
 
 <img src="https://i-msdn.sec.s-msft.com/dynimg/IC698761.png" title="DOPUSummary" alt="DOPUSummary" id="DOPU Summary" />
 
-See [drop-off and pick-up (DOPU)](/healthvault/concepts/connectivity/drop-off-pick-up.md) for more information and code samples.
+See [drop-off and pick-up (DOPU)](/healthvault/concepts/connectivity/drop-off-pick-up) for more information and code samples.
 
 Direct Messaging
 ----------------
 
-HealthVault provides Direct Messaging addresses for every HealthVault user. Organizations that support Direct Messaging protocols can use this capability to exchange messages with HealthVault users. This includes the ability to send clinical document attachments that are integrated into the user’s record. For more information see [Direct Messaging](/healthvault/concepts/connectivity/direct-messaging.md).
+HealthVault provides Direct Messaging addresses for every HealthVault user. Organizations that support Direct Messaging protocols can use this capability to exchange messages with HealthVault users. This includes the ability to send clinical document attachments that are integrated into the user’s record. For more information see [Direct Messaging](/healthvault/concepts/connectivity/direct-messaging).

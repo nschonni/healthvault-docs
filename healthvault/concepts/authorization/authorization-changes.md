@@ -40,7 +40,7 @@ Online Single Record Applications (SRA) don't need to check for sufficient autho
 
 ## Multi-Record Applications (MRA)
 
-HealthVault handles [multi-record applications](/healthvault/concepts/authorization/multi-record-applications.md) slightly differently. HealthVault returns an authentication token if the user has fully authorized any record for the application. You should inspect the record’s authorization status, as described below, before accessing the record.
+HealthVault handles [multi-record applications](/healthvault/concepts/authorization/multi-record-applications) slightly differently. HealthVault returns an authentication token if the user has fully authorized any record for the application. You should inspect the record’s authorization status, as described below, before accessing the record.
 
 ## Offline applications and applications with optional rules
 
@@ -89,6 +89,6 @@ HealthVault returns the authorization status in response to **GetPersonInfo** an
 Requesting authorization to optional rules
 ------------------------------------------
 
-When creating an authorization rule, you assign a unique name to each rule. When requesting a user to authorize a rule, pass the rule’s unique name and your application ID in the query string to the APPAUTH target of the [shell redirect interface](/healthvault/concepts/authorization/shell-redirect-interface.md).
+When creating an authorization rule, you assign a unique name to each rule. When requesting a user to authorize a rule, pass the rule’s unique name and your application ID in the query string to the APPAUTH target of the [shell redirect interface](/healthvault/concepts/authorization/shell-redirect-interface).
 
-For more information, see [optional authorization](/healthvault/concepts/authorization/optional-authorization.md).
+For more information, see [optional authorization](/healthvault/concepts/authorization/optional-authorization).

@@ -12,7 +12,7 @@ description: Learn how to build an app using HealthVault that targets region-spe
 
 HealthVault is a global service comprised of multiple nodes, each called a HealthVault instance. A single HealthVault instance is made up of a HealthVault Platform service, a HealthVault Shell, and stores the people, records and thing data for the users mapped to the instance.
 
-If you are new to HealthVault, the [Technical Overview](/healthvault/introduction/technical-overview.md) provides an introduction to the core HealthVault concepts you should understand before reading further.
+If you are new to HealthVault, the [Technical Overview](/healthvault/introduction/technical-overview) provides an introduction to the core HealthVault concepts you should understand before reading further.
 
 HealthVault instances
 ---------------------
@@ -46,7 +46,7 @@ When a new user signs-up for HealthVault, and selects:
 
 -   Any other country HealthVault supports, the account is created in the EU instance.
 
-    For the list of countries HealthVault does not support, see [HealthVault territories](/healthvault/publishing/territories.md).
+    For the list of countries HealthVault does not support, see [HealthVault territories](/healthvault/publishing/territories).
 
 The user can start the sign-up process in any instance, but will be redirected to the instance determined by the rules above for account creation. For example, if the user starts in the EU instance and selects US as the account country, the user will be redirected to the US instance where the account will be created.
 
@@ -77,15 +77,15 @@ Application developers can choose to support all instances of HealthVault or onl
 
 **Single-instance applications** are those that connect to a single HealthVault instance only.
 
-HealthVault makes it easy to configure an application to be multi-instance or single-instance. During the [HealthVault go-live process](/healthvault/publishing/go-live.md), the application administrator is asked to specify the instances that the app should support and the HealthVault go-live team will configure the application to support these instances.
+HealthVault makes it easy to configure an application to be multi-instance or single-instance. During the [HealthVault go-live process](/healthvault/publishing/go-live), the application administrator is asked to specify the instances that the app should support and the HealthVault go-live team will configure the application to support these instances.
 
 ### The allow instance bounce (aib) parameter
 
-In addition to the server-side configuration for supported instances, the [Shell Redirect Interface](/healthvault/concepts/connectivity/shell-redirect-interface.md) supports an **aib** (allow instance bounce) parameter, which specifies whether a user can be redirected between instances during a Shell redirect request. If the value is **true**, the user can be redirected between instances during a Shell target action. If the value is **false**, the user cannot be redirected between instances during the Shell target action. The default value is true.
+In addition to the server-side configuration for supported instances, the [Shell Redirect Interface](/healthvault/concepts/connectivity/shell-redirect-interface) supports an **aib** (allow instance bounce) parameter, which specifies whether a user can be redirected between instances during a Shell redirect request. If the value is **true**, the user can be redirected between instances during a Shell target action. If the value is **false**, the user cannot be redirected between instances during the Shell target action. The default value is true.
 
 For single-instance apps that connect to a single instance, the **aib** parameter is not relevant. For multi-instance applications, the value of the **aib** parameter must be **true** when redirecting the user to a Shell target. Additionally, as discussed above, the server-side configuration set by the HealthVault go-live team must reflect multiple instances.
 
-For information on creating and configuring multi-instance apps, see [multi-instance applications](/healthvault/concepts/advanced/multi-instance-applications.md).
+For information on creating and configuring multi-instance apps, see [multi-instance applications](/healthvault/concepts/advanced/multi-instance-applications).
 
 ### Choosing a default instance
 
@@ -108,9 +108,9 @@ Applications that establish authorization through the web and access records in 
 
 #### Master-Child applications
 
-A single-instance web child app is provisioned in an instance by using HealthVault app provisioning APIs like the [AddApplication](https://developer.healthvault.com/Methods/RequestSchema?Name=AddApplication&Version=2) and [UpdateApplication](https://developer.healthvault.com/Methods/RequestSchema?Name=UpdateApplication&Version=2) requests (or by using one of the SDK utilities like the .NET [Provisioner](https://msdn.microsoft.com/en-us/library/microsoft.health.applicationprovisioning.provisioner.aspx) class). A multi-instance web child app is similarly provisioned, but must be done so in each instance the child app supports. For more information about multi-instance applications, see [master and child applications](/healthvault/concepts/advanced/master-and-child-applications.md).
+A single-instance web child app is provisioned in an instance by using HealthVault app provisioning APIs like the [AddApplication](https://developer.healthvault.com/Methods/RequestSchema?Name=AddApplication&Version=2) and [UpdateApplication](https://developer.healthvault.com/Methods/RequestSchema?Name=UpdateApplication&Version=2) requests (or by using one of the SDK utilities like the .NET [Provisioner](https://msdn.microsoft.com/en-us/library/microsoft.health.applicationprovisioning.provisioner.aspx) class). A multi-instance web child app is similarly provisioned, but must be done so in each instance the child app supports. For more information about multi-instance applications, see [master and child applications](/healthvault/concepts/advanced/master-and-child-applications).
 
-In order for the child app to be provisioned in each instance, the master app must also exist in each instance. In PPE, developers can do this on their own, by following the instruction in [multi-instance applications](/healthvault/concepts/advanced/multi-instance-applications.md). For production, during the go-live process, the app administrator specifies the instances the master app supports, and the HealthVault go-live team enables the master application in these production instances. Once completed, the child app can be provisioned in each supported instance by using the HealthVault APIs.
+In order for the child app to be provisioned in each instance, the master app must also exist in each instance. In PPE, developers can do this on their own, by following the instruction in [multi-instance applications](/healthvault/concepts/advanced/multi-instance-applications). For production, during the go-live process, the app administrator specifies the instances the master app supports, and the HealthVault go-live team enables the master application in these production instances. Once completed, the child app can be provisioned in each supported instance by using the HealthVault APIs.
 
 ### Mobile (SODA) applications
 
@@ -118,9 +118,9 @@ Mobile or SODA applications that run on devices and mobile platforms access data
 
 ### DOPU and Patient Connect applications
 
-[HealthVault drop-off and pick-up (DOPU)](/healhvault/concepts/connectivity/drop-off-pick-up.md) workflows typically involve an in-person encounter. After the in-person encounter, the application drops off the data in an instance and notifies the user, normally through e-mail, that a package is waiting in HealthVault for the user to pick-up. The notification includes a link to the HealthVault instance where the package is stored. Applications that send data to users using the DOPU mechanism must determine the destination HealthVault instance for a package at the time they create the package. It’s not possible for a DOPU package stored in one instance to be picked-up by a user with an account in a different instance.
+[HealthVault drop-off and pick-up (DOPU)](/healhvault/concepts/connectivity/drop-off-pick-up) workflows typically involve an in-person encounter. After the in-person encounter, the application drops off the data in an instance and notifies the user, normally through e-mail, that a package is waiting in HealthVault for the user to pick-up. The notification includes a link to the HealthVault instance where the package is stored. Applications that send data to users using the DOPU mechanism must determine the destination HealthVault instance for a package at the time they create the package. It’s not possible for a DOPU package stored in one instance to be picked-up by a user with an account in a different instance.
 
-Applications that use the [Patient Connect](/healthvault/concepts/connectivity/patient-connect.md) model to establish authorization with users also typically involve an in-person encounter and a notification to the user with a link to a specific HealthVault instance where a connect request is waiting for the user to pick-up. Similar to DOPU packages, with Patient Connect, the application must determine the destination instance for the connect request at the time the request is created. It is not possible for a Patient Connect request to be stored in one instance and to be picked-up by a user with an account in a different instance.
+Applications that use the [Patient Connect](/healthvault/concepts/connectivity/patient-connect) model to establish authorization with users also typically involve an in-person encounter and a notification to the user with a link to a specific HealthVault instance where a connect request is waiting for the user to pick-up. Similar to DOPU packages, with Patient Connect, the application must determine the destination instance for the connect request at the time the request is created. It is not possible for a Patient Connect request to be stored in one instance and to be picked-up by a user with an account in a different instance.
 
 DOPU and Patient Connect applications can choose the destination instance for packages and connect requests based on the target population of the application and the user's country. For example, a US-based hospital that largely serves a region-specific population of the US will likely choose to drop-off packages and connect requests in the US instance only.
 
@@ -136,7 +136,7 @@ HealthVault allows records to be shared between people who have accounts in the 
 Eventing
 --------
 
-Multi-instance applications that leverage [eventing](/healthvault/concepts/xml-api/subscribing-to-events.md) to receive notifications must subscribe to the desired events in each instance the application supports. It's not possible to create event subscriptions in one instance only and receive event notifications from a different instance. The app uses the same process for creating subscriptions in all instances it supports.
+Multi-instance applications that leverage [eventing](/healthvault/concepts/xml-api/subscribing-to-events) to receive notifications must subscribe to the desired events in each instance the application supports. It's not possible to create event subscriptions in one instance only and receive event notifications from a different instance. The app uses the same process for creating subscriptions in all instances it supports.
 
 HealthVault SDKs and samples for the global architecture
 --------------------------------------------------------

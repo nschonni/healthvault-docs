@@ -39,7 +39,7 @@ HealthVault supports localizing the application description which is shown durin
 * **Large logo** Logo for the app. 
 * **Privacy statement** Localized privacy statement describing what your application will do with the user's data. 
 * **Terms of use** Localized terms of use for your application. 
-* **Patient Connect Success Message** Localized message to be displayed when the user completes authorization of [Patient Connect](/healthvault/patient-connect.md). 
+* **Patient Connect Success Message** Localized message to be displayed when the user completes authorization of [Patient Connect](/healthvault/patient-connect). 
 
 ### Online rules
 * **Why string for a rule**: Localized description of why the application is requesting certain data types. 

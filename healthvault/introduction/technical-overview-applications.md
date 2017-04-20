@@ -9,7 +9,7 @@ A HealthVault-integrated application is permitted to call the production service
 -   The developer configures an application entry in the [Application Configuration Center (ACC)](https://config.healthvault-ppe.com).
 -   The developer builds and tests the application against the PPE (pre-production) environment (<https://www.healthvault-ppe.com>).
 -   The developer refers to documentation on this site and the [Developer Tools Portal](https://developer.healthvault.com) to build the application.
--   The developer initiates the <a href="/healthvault/publishing/go-live.md" id="Introduction_14442_17">go-live process</a> to move the configuration entry to production.
+-   The developer initiates the <a href="/healthvault/publishing/go-live" id="Introduction_14442_17">go-live process</a> to move the configuration entry to production.
 
 Development tools
 -----------------
@@ -26,19 +26,19 @@ The go-live process is series of steps to validate and approve an application. T
 -   The developer schedules a go-live review during which the application is demonstrated.
 -   HealthVault enables the application to call the production service APIs.
 
-Learn more with the <a href="/healthvault/publishing/go-live.md" id="Introduction_14442_20">go-live guide</a>.
+Learn more with the <a href="/healthvault/publishing/go-live" id="Introduction_14442_20">go-live guide</a>.
 
-Next, read about <a href="/healthvault/inroduction/technical-overview-permissions.md" id="Introduction_14442_16">application permissions</a>.
+Next, read about <a href="/healthvault/inroduction/technical-overview-permissions" id="Introduction_14442_16">application permissions</a>.
 
 <span id="singleColInThreeColLayout"></span>
 
 ### Technical Overview
 
--   <a href="technical-overview.md" id="RightRailLinkListSection_14442_10">1. Terminology</a>
--   <a href="technical-overview-applications.md" id="RightRailLinkListSection_14442_11">2. Applications</a>
--   <a href="technical-overview-permissions.md" id="RightRailLinkListSection_14442_12">3. Permissions</a>
--   <a href="technical-overview-connectivity.md" id="RightRailLinkListSection_14442_13">4. Connectivity</a>
--   <a href="technical-overview-exchanging-data.md" id="RightRailLinkListSection_14442_14">5. Exchanging data</a>
+-   <a href="technical-overview" id="RightRailLinkListSection_14442_10">1. Terminology</a>
+-   <a href="technical-overview-applications" id="RightRailLinkListSection_14442_11">2. Applications</a>
+-   <a href="technical-overview-permissions" id="RightRailLinkListSection_14442_12">3. Permissions</a>
+-   <a href="technical-overview-connectivity" id="RightRailLinkListSection_14442_13">4. Connectivity</a>
+-   <a href="technical-overview-exchanging-data" id="RightRailLinkListSection_14442_14">5. Exchanging data</a>
 
 See also
 

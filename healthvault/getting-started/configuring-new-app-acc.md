@@ -27,7 +27,7 @@ To access a patient’s record, the patient must provide consent to a registered
     1.  The Application id will be generated for you.
     2.  Enter the application name that users will see when they interact or give consent to your application. For example, we have created one called “Fabrikam Health Solutions”.
     3.  Select “Web” for the application type.
-    4.  Create a new certificate and upload. See instructions to [generate a self-signed certificate](/healthvault/concepts/connectivity/creating-key-pairs.md).
+    4.  Create a new certificate and upload. See instructions to [generate a self-signed certificate](/healthvault/concepts/connectivity/creating-key-pairs).
     5.  Accept the developer terms and conditions and click “Create application”.
     6.  Make a note of the Application id.
         <img src="/healthvault/images/IC866205.png" title="Creating Fabrikam Health Solutions" alt="Creating Fabrikam Health Solutions" id="HVActionPlans_fig01" /> 
@@ -68,7 +68,7 @@ Your application will request permission to access these data types when users j
 
  <img src="/healthvault/images/IC867995.png" title="Selecting data types" alt="Selecting data types" id="HVActionPlans_fig05" /> 
 
-When you have completed the steps above, learn more about how to [update your app's configuration to connect to HealthVault](/healthvault/getting-started/update-app-configurations.md). 
+When you have completed the steps above, learn more about how to [update your app's configuration to connect to HealthVault](/healthvault/getting-started/update-app-configurations). 
 
 For more information
 --------------------

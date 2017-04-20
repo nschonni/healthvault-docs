@@ -72,7 +72,7 @@ See [HealthVault Meaningful Use Reporting Sample](https://github.com/Microsoft/h
 
 HealthVault supports the Direct Messaging protocols and gives each HealthVault user a Direct messaging inbox and address to send and receive messages. Products with Direct Messaging capabilities can use this as a model for sending CCDAs to patients for the purposes of Meaningful Use VDT criteria.
 
-See <a href="/healthvault/concepts/connectivity/direct-messaging.md" id="PageContent_14102_2">Direct Messaging</a> for more information on setting up Direct messaging with HealthVault and sending health information to patients.
+See <a href="/healthvault/concepts/connectivity/direct-messaging" id="PageContent_14102_2">Direct Messaging</a> for more information on setting up Direct messaging with HealthVault and sending health information to patients.
 
 There are two integration methods for sending Direct messages with CCDA attachments to patients.
 
@@ -85,7 +85,7 @@ Applications that use Direct Messaging integration to send CCDAs to HealthVault 
 Deployment models
 -----------------
 
-Developers deploying their solutions to multiple customer sites might consider the HealthVault [master-child](/healthvault/concepts/advanced/master-and-child-applications.md) model for deploying their applications.
+Developers deploying their solutions to multiple customer sites might consider the HealthVault [master-child](/healthvault/concepts/advanced/master-and-child-applications) model for deploying their applications.
 
 ­Key CCDA fields for Meaningful Use integration
 -----------------------------------------------
@@ -214,7 +214,7 @@ HealthRecordItem ccda = new HealthRecordItem(
      ccda.CommonData.Extensions.Add(ext);
 ```
 
-See <a href="/healthvault/concepts/data/extending-data-types.md" id="PageContent_14102_3">Extending data types</a> for more information on specifying thing extensions.
+See <a href="/healthvault/concepts/data/extending-data-types" id="PageContent_14102_3">Extending data types</a> for more information on specifying thing extensions.
 
 In the HealthVault .NET SDK, the [HealthRecordItemExtension](/healthvault/sdks/dotnet/microsoft.health.healthrecorditemextension.aspx) class is used to specify extensions.
 

@@ -15,17 +15,17 @@ If you’re new to the HealthVault platform, please first review the [technical 
 
 Getting started with HealthVault is Easy. This guide will walk you through the process. 
 1. Download our samples from [GitHub](https://go.microsoft.com/fwlink/?linkid=839405)
-2. [Configure your app in the Application Configuration Center](/healthvault/getting-started/configuring-new-app-acc.md)
-3. [Configure your app](/healthvault/getting-started/update-app-configurations.md)
+2. [Configure your app in the Application Configuration Center](/healthvault/getting-started/configuring-new-app-acc)
+3. [Configure your app](/healthvault/getting-started/update-app-configurations)
 4. Build and run the app using Visual Studio
-5. (optional) [Invite patients to join your app](/healthvault/getting-started/invite-patients.md)
+5. (optional) [Invite patients to join your app](/healthvault/getting-started/invite-patients)
 
 > [!NOTE]
 > In order to use remote monitoring scenarios, users must register their account in the HealthVault Insights app in order to receive remote monitoring scenarios. HealthVault Insights is currently only available to users in the United States and the United Kingdom.
 
 The easiest way to get started with remote monitoring is to clone the HealthVaultProviderManagementPortal sample from [GitHub](https://go.microsoft.com/fwlink/?linkid=839405). This sample automatically acquires the HealthVault .NET SDK via Nuget to interface with HealthVault for authentication, and then illustrates 1) how a provider can onboard a patient, and 2) how an app can create and send an Action Plan to that user 3) how a provider can set goals for a patient. Action Plans and goals leverage a new RESTful API, which is detailed in the [HealthVault reference](https://go.microsoft.com/fwlink/?linkid=839407).
 
-Once you are done with the above, you can proceed to [configuring your app using ACC](/healthvault/getting-started/configuring-new-app-acc.md)
+Once you are done with the above, you can proceed to [configuring your app using ACC](/healthvault/getting-started/configuring-new-app-acc)
 
 For more information
 --------------------

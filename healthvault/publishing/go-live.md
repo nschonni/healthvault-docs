@@ -3,7 +3,7 @@ Go-live guide
 
 It’s easy to get started with HealthVault. There is no charge during the first year of use, up to 250,000 user accounts. Please [contact our business team](https://www.healthvault.com/en-us/contact-us) for pricing details thereafter. We have plans designed to meet the needs of organizations of all sizes.
 
-The Go-Live process typically takes two to four weeks depending upon how closely you have followed the instructions and guidelines below. However, the go-live process can take significantly less time when the HealthVault application and all documentation is ready. If you already have a live application that is integrated with the HealthVault production environment and you are planning to ship an update, please review the guide [Updating a HealthVault-integrated application](/healthvault/publishing/updates.md).
+The Go-Live process typically takes two to four weeks depending upon how closely you have followed the instructions and guidelines below. However, the go-live process can take significantly less time when the HealthVault application and all documentation is ready. If you already have a live application that is integrated with the HealthVault production environment and you are planning to ship an update, please review the guide [Updating a HealthVault-integrated application](/healthvault/publishing/updates).
 
 1.  ### **Microsoft HealthVault Solution Provider Agreement**
 
@@ -25,7 +25,7 @@ The Go-Live process typically takes two to four weeks depending upon how closely
 
     -   #### **Branding**
 
-        Microsoft will conduct a visual review of all HealthVault branding included in your application. Please refer to [HealthVault brand materials](/healthvault/publishing/brand-materials.md) for the latest assets and guidelines on using the HealthVault brand.
+        Microsoft will conduct a visual review of all HealthVault branding included in your application. Please refer to [HealthVault brand materials](/healthvault/publishing/brand-materials) for the latest assets and guidelines on using the HealthVault brand.
 
         Please fill out the Application Data Sheet and Application Walkthrough documents and return them to the [HealthVault team](mailto:hvgolive@microsoft.com):
 

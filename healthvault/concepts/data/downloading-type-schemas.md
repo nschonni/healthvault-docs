@@ -11,7 +11,7 @@ description: Overview of how to download HealthVault type schemas
 Downloading HealthVault item type XSD schemas
 ========================
 
-You can access the schemas for the HealthVault types through the [Method and Data Type Schemas](/healthvault/concepts/xml-api/method-and-data-type-schemas.md). If you want to look at all the schemas together in a tool, you can access the schemas programmatically. The schema for a data type is built on some lower-level schemas (or types, if you wish):
+You can access the schemas for the HealthVault types through the [Method and Data Type Schemas](/healthvault/concepts/xml-api/method-and-data-type-schemas). If you want to look at all the schemas together in a tool, you can access the schemas programmatically. The schema for a data type is built on some lower-level schemas (or types, if you wish):
 
 -   base.xsd
 -   [dates.xsd](https://platform.healthvault-ppe.com/platform/xsd/dates.xsd)

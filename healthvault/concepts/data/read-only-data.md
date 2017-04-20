@@ -23,7 +23,7 @@ HealthVault has long supported immutable data types like CCDs and CCRs. Read-onl
 Creating read-only data
 -----------------------
 
-Creating data in HealthVault is done via a **PutThings** request. To specify that an item should be read-only, set the read-only flag. A flag is a numeric value on a thing that describes its attributes. The read-only flag has a decimal value of 16. For more information about flags, see the Flags section of the [thing type schema](/healthvault/concepts/data/thing-types.md).
+Creating data in HealthVault is done via a **PutThings** request. To specify that an item should be read-only, set the read-only flag. A flag is a numeric value on a thing that describes its attributes. The read-only flag has a decimal value of 16. For more information about flags, see the Flags section of the [thing type schema](/healthvault/concepts/data/thing-types).
 
 ```xml
 <info>
@@ -53,7 +53,7 @@ Creating data in HealthVault is done via a **PutThings** request. To specify tha
    </thing>
  </info>
  ```
-A thing can be marked read-only when it is created in HealthVault for the first time. An existing item that is not read-only cannot be updated to be read-only. Attempting to do this will result in a **CannotSetReadOnlyFlag** (161) error. For more information about error codes, see [status codes](/healthvault/concepts/xml-api/status-codes.md).
+A thing can be marked read-only when it is created in HealthVault for the first time. An existing item that is not read-only cannot be updated to be read-only. Attempting to do this will result in a **CannotSetReadOnlyFlag** (161) error. For more information about error codes, see [status codes](/healthvault/concepts/xml-api/status-codes).
 
 Updating read-only data
 -----------------------
@@ -64,7 +64,7 @@ Once an item has been stored in HealthVault as read-only, it cannot be updated a
 
 -   The **updated-end-date** field
 
-Attempts to update any other fields on a read-only thing will result in one of the following errors. For more information about error codes, see [status codes](/healthvault/concepts/xml-api/status-codes.md).
+Attempts to update any other fields on a read-only thing will result in one of the following errors. For more information about error codes, see [status codes](/healthvault/concepts/xml-api/status-codes).
 
 <table>
 <colgroup>
@@ -132,12 +132,12 @@ Most HealthVault data types support read-only instances, though there are a few 
 
 -   Personal Image
 
-An attempt to specify the read-only flag for a type that does not support it will result in a **CannotCreateReadOnlyThing** (155) error. For more information about error codes, see [status codes](/healthvault/concepts/xml-api/status-codes.md).
+An attempt to specify the read-only flag for a type that does not support it will result in a **CannotCreateReadOnlyThing** (155) error. For more information about error codes, see [status codes](/healthvault/concepts/xml-api/status-codes).
 
 Updated end date handling
 -------------------------
 
-When data is read-only, applications may still want to provide a way for a user to update the end date status of an item. To support this, all HealthVault data types now include an **updated-end-date** field that is always writable, even if the item is read-only. This is useful for example for a **Medication** thing instance when the user wants to indicate they are no longer taking the medication, or for a **Condition** thing instance when the user wants to indicate they no longer have the condition. The **updated-end-date** field is the recommended place to store end date information on all data types. For more information, see  <a href="active-and-inactive-status.md" id="PageContent_14096_6">HealthVault item status</a><span style="FONT-SIZE: 0.75em; LINE-HEIGHT: 1.5">.</span>
+When data is read-only, applications may still want to provide a way for a user to update the end date status of an item. To support this, all HealthVault data types now include an **updated-end-date** field that is always writable, even if the item is read-only. This is useful for example for a **Medication** thing instance when the user wants to indicate they are no longer taking the medication, or for a **Condition** thing instance when the user wants to indicate they no longer have the condition. The **updated-end-date** field is the recommended place to store end date information on all data types. For more information, see  <a href="active-and-inactive-status" id="PageContent_14096_6">HealthVault item status</a><span style="FONT-SIZE: 0.75em; LINE-HEIGHT: 1.5">.</span>
 
 Related items
 -------------
@@ -180,7 +180,7 @@ There are two approaches that can be used for relating items where some of the i
 Reconciliation
 --------------
 
-Reconciliation is the process by which clinical documents such as Continuity of Care Record (CCR) and Continuity of Care Document (CCD) documents in HealthVault can be used to create HealthVault items based on the data they contain. For more information, see [Using CCR Data in HealthVault](ccr-data.md).
+Reconciliation is the process by which clinical documents such as Continuity of Care Record (CCR) and Continuity of Care Document (CCD) documents in HealthVault can be used to create HealthVault items based on the data they contain. For more information, see [Using CCR Data in HealthVault](ccr-data).
 
 By default, the individual items reconciled from a clinical document are not read-only. To specify that the reconciled items should be read-only, set the read-only flag on the clinical document thing when creating it in HealthVault. All items reconciled from the document will be read-only.
 

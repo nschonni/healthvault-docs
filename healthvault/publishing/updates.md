@@ -1,7 +1,7 @@
 Updating a HealthVault-integrated application
 =============================================
 
-This guide describes the process of updating an application that has already been deployed using the <a href="go-live.md" id="PageContent_13986_2">go-live guide</a>.
+This guide describes the process of updating an application that has already been deployed using the <a href="go-live" id="PageContent_13986_2">go-live guide</a>.
 
 ### Update steps
 
@@ -16,7 +16,7 @@ This guide describes the process of updating an application that has already bee
 
 ### Microsoft HealthVault Solution Provider Agreement
 
-There is therefore no need to reconnect with the [HealthVault Business Development](mailto:hvbd@microsoft.com) team unless you wish to discuss additional partnership ideas or if you want to add <a href="/healthvault/concepts/advanced/master-and-child-applications.md" id="Introduction_13986_23">master-child</a> access to your application configuration (a special addendum to the agreement is needed in order to use the master-child API).
+There is therefore no need to reconnect with the [HealthVault Business Development](mailto:hvbd@microsoft.com) team unless you wish to discuss additional partnership ideas or if you want to add <a href="/healthvault/concepts/advanced/master-and-child-applications" id="Introduction_13986_23">master-child</a> access to your application configuration (a special addendum to the agreement is needed in order to use the master-child API).
 
 ### Application discoverability
 
