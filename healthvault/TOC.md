@@ -111,7 +111,7 @@
 # Reference
 ## .NET
 ### [HealthVault .NET SDK reference](/healthvault/sdks/dotnet/toc.yml)
-## [REST API](/healthvault/apis/toc.yml)
+## [REST API](/healthvault/apis/v1.0-preview)
 
 
 
