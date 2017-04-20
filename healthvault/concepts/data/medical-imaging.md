@@ -1,3 +1,13 @@
+---
+title: Medical Imaging
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn how to store or retrieve medical images like DICOM images from HealthVault
+---
+
 Medical imaging on HealthVault
 ==============================
 
@@ -37,12 +47,78 @@ As described above, the medical image study type includes one or more images, ea
 
 Prior to the introduction of streamed blobs, the base type allowed for unstructured data to be associated with an item in HealthVault, but only one such "inline blob" could be associated with an item and there was a restrictive limit on the size. The introduction of multiple streamed blobs necessitated a new version of the base thing type. The following XML fragments highlight the key differences between the old and new versions.
 
-Thing (old version):
+#### Thing (old version):
 
-`<thing>  <thing-id />  <type-id/>  <data-xml>    <!-- Contains XML that adheres to the schema for a         specific data type, as indicated by type-id. -->  </data-xml>  <data-other>    <!-- Contains unstructured string data, possibly encoded         This is informally referred to as an "inline blob". -->  </data-other>  <Signature>    <!-- Digital dignature of the Thing instance         References http://www.w3.org/2000/09/xmldsig#namespace. -->  </Signature></thing>`
-Thing (new version)
+```xml
+<thing>
+  <thing-id />
+  <type-id/>
+  <data-xml>
+    <!-- Contains XML that adheres to the schema for a
+         specific data type, as indicated by type-id. -->
+  </data-xml>
+  <data-other>
+    <!-- Contains unstructured string data, possibly encoded
+         This is informally referred to as an "inline blob". -->
+  </data-other>
+  <Signature>
+    <!-- Digital dignature of the Thing instance
+         References http://www.w3.org/2000/09/xmldsig#namespace. -->
+  </Signature>
+</thing>
+```
+#### Thing (new version)
 
-`<thing>  <thing-id />  <type-id/>  <data-xml>    <!-- Contains XML that adheres to the schema for a         specific data type, as indicated by type-id. -->  </data-xml>  <blob-payload>    <!-- The blob payload contains references to one or more         named blobs that were previously and independently         streamed into HealthVault. -->    <blob>      <blob-info>        <name/>        <content-type/>        <hash-info>          <!-- Hash info for the blob used for digital signatures (optional). -->        </hash-info>      </blob-info>      <content-length />      <!-- Blob is either "inline" or streamed" -->      <base64data>        <!-- The base64 encoded bytes of an inline blob -->      </base64data>      <blob-ref-url>        <!-- The URL referencing a streamed blob -->      </blob-ref-url>    </blob>  </blob-payload>  <signature-info>    <sig-data>      <hv-signature-method />      <blob-signature-info>        <!-- One item per blob -->        <item>          <blob-info>            <!-- Matches the blob-info element for one of the blobs above. -->          </blob-info>        </item>      </blob-signature-info>    </sig-data>    <Signature>      <!-- Digital dignature of the Thing instance, including blobs.           References the http://www.w3.org/2000/09/xmldsig#namespace. -->    </Signature>  </signature-info></thing>`
+```xml
+<thing>
+  <thing-id />
+  <type-id/>
+  <data-xml>
+    <!-- Contains XML that adheres to the schema for a
+         specific data type, as indicated by type-id. -->
+  </data-xml>
+  <blob-payload>
+    <!-- The blob payload contains references to one or more
+         named blobs that were previously and independently
+         streamed into HealthVault. -->
+    <blob>
+      <blob-info>
+        <name/>
+        <content-type/>
+        <hash-info>
+          <!-- Hash info for the blob used for digital signatures (optional). -->
+        </hash-info>
+      </blob-info>
+      <content-length />
+      <!-- Blob is either "inline" or streamed" -->
+      <base64data>
+        <!-- The base64 encoded bytes of an inline blob -->
+      </base64data>
+      <blob-ref-url>
+        <!-- The URL referencing a streamed blob -->
+      </blob-ref-url>
+    </blob>
+  </blob-payload>
+  <signature-info>
+    <sig-data>
+      <hv-signature-method />
+      <blob-signature-info>
+        <!-- One item per blob -->
+        <item>
+          <blob-info>
+            <!-- Matches the blob-info element for one of the blobs above. -->
+          </blob-info>
+        </item>
+      </blob-signature-info>
+    </sig-data>
+    <Signature>
+      <!-- Digital dignature of the Thing instance, including blobs.
+           References the http://www.w3.org/2000/09/xmldsig#namespace. -->
+    </Signature>
+  </signature-info>
+</thing>
+```
+
 The HealthVault SDK: streamed blobs and imaging data
 ----------------------------------------------------
 

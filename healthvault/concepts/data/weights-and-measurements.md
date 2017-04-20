@@ -1,3 +1,13 @@
+---
+title: Measurement types
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about how HealthVault deals with measurements like weights. 
+---
+
 Weights, Measurements and Display Values
 ========================================
 
@@ -9,7 +19,7 @@ As an example, look at the Weight type, which represents a person's weight. When
 
 Floating-point numbers aren't exact, so in certain cases, two-way conversion may be lossy.
 
-For example, a user might enter24.81 miles and then have the program display 24.80999999 miles.
+For example, a user might enter 24.81 miles and then have the program display 24.80999999 miles.
 
 The HealthVault API deals with this situation by adding the concept of a "Display Value." When we want to store a value that is 24.81 miles, we store that exact text in a DisplayValue instance, and the converted value in meters. Applications that need to display the value use the DisplayType version, and those that need to do calculations use the value in meters.
 

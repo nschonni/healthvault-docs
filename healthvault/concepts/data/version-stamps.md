@@ -1,3 +1,13 @@
+---
+title: Version staps on data items
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about how versions on HealthVault items are stored
+---
+
 Version stamps on data items
 ============================
 

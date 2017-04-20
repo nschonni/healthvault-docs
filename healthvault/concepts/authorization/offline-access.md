@@ -1,7 +1,16 @@
-Offline access
-==============
+---
+title: Offline record access
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Clinicians often expect access to patients' records offline in order to assist with remote monitoring scenarios. This page describes how an app developer can implement offline record access. 
+---
 
-The difference between online and offline access is that while in the online scenario, the user is prompted to sign in every time. In the offline scenario, the user is prompted to sign in once, and the application is then permitted to access the user’s data without a future sign-in.
+# Understanding offline record access 
+
+The difference between online and offline access is that while in the online scenario, the user is prompted to sign in every time. In the offline scenario, the user is prompted to sign in once, and the application is then permitted to access the user’s data without a future sign-in. Offline data access is popular for providing clinicians with a view of the their patients' health data. 
 
 The HealthVault platform supports the online scenario because it offers customers slightly more privacy control over access to their sensitive health information. The platform supports the offline case because it can enable scenarios with more effective and richer customer value, such as performing synchronization between HealthVault and some other data store, batch-processing scenarios, etc.
 

@@ -1,4 +1,14 @@
-HealthVault CCR Vocabularies
+---
+title: Continuity of Care Record Vocabularies
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Overview of HealthVault supported vocabularies for Continuity of Care Records
+---
+
+HealthVault Continuity of Care Record Vocabularies
 ============================
 
 The following tables describe the data labels that are recognized by the transforms that convert CCR data into HealthVault types and back.

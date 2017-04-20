@@ -1,4 +1,14 @@
-ASP.NET code security permissions
+---
+title: ASP.NET code security permissions
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about how to configure code access security policies for HealthVault web apps. 
+---
+
+Configure ASP.NET sites with security permissions for HealthVault
 =================================
 
 The HealthVault SDK assemblies require certain Code Access Security permissions in order to work properly in an ASP.NET application. In medium trust or partial trust configurations, the code permissions granted to an ASP.NET application are determined by a Code Access Security (CAS) policy file on the Web server.

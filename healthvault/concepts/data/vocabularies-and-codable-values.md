@@ -1,4 +1,14 @@
-Vocabularies and CodableValue
+---
+title: Vocabularies and CodableValues
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn more about how HealthVault uses vocabularies in order to store semantically meaningful values. 
+---
+
+Use Vocabularies and Codable Values in HealthVault
 =============================
 
 The [Vocabulary](/healthvault/sdks/dotnet/microsoft.health.vocabulary.yml) and [CodableValue](/healthvault/sdks/dotnet/microsoft.health.itemtypes.codablevalue.yml) types are designed to solve two issues:

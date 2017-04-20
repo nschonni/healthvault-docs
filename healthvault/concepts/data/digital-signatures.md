@@ -1,4 +1,15 @@
-Digital signatures
+---
+title: Digital signatures
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn how to sign a HealthVault Thing so users can tell if it's been tampered with.
+---
+
+
+Use digital signatures to provide additional integrity protection
 ==================
 
 Digital signatures provide a way to verify the source of a data item. The HealthRecordItem.TypeSpecificData XML is signed using the authentication features of the System.Security.Cryptography.Xml.SignedXml class.

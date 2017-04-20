@@ -1,9 +1,20 @@
-Writing data
+---
+title: Writing data
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn how to use PutThings to add data to HealthVault
+---
+
+
+Writing data to HealthVault
 ============
 
 To write data to HealthVault, use the **PutThings** request. The call must specify a single record identifier in the request header and all operations are performed against that record. There is no mechanism for performing write operations on multiple records in the same request.
 
-Data in the request takes the form of thing XML, as discussed in the [thing type schema](/healthvault/concepts/data/thing-types.md) documentation. The size of the XML request is limited by the configuration value **maxUncompressedSizeBytes**. However, streamed blobs are not considered part of the XML request size. 
+Data in the request takes the form of thing XML, as discussed in the [thing type schema](/healthvault/concepts/data/thing-types) documentation. The size of the XML request is limited by the configuration value **maxUncompressedSizeBytes**. However, streamed blobs are not considered part of the XML request size. 
 
 When data is written to the record, valid writes will fail if the size of the data being added to the record makes the record size exceed the user’s quota. Even deletes may cause the quota to be exceeded due to the audits that are added to track changes to the record.
 
@@ -38,7 +49,7 @@ The following request XML illustrates a **PutThings** call that creates a new we
 ```
 ### The request
 
-In the **PutThings** request, the info section must contain one or more thing instances. When creating new instances, the thing-id element must not be present in the XML. The type-id field must indicate the type of data that exists in the data-xml section. The thing-state, flags, eff-date, created, and updated sections are all ignored. If you have streamed data associated with the thing, then the blob-payload section must be present. If the thing needs a digital signature, then the signature-info section must be present. For more information, see <a href="/healthvault/concepts/data/thing-types.md" id="PageContent_14101_3">Thing Type Schema</a>.
+In the **PutThings** request, the info section must contain one or more thing instances. When creating new instances, the thing-id element must not be present in the XML. The type-id field must indicate the type of data that exists in the data-xml section. The thing-state, flags, eff-date, created, and updated sections are all ignored. If you have streamed data associated with the thing, then the blob-payload section must be present. If the thing needs a digital signature, then the signature-info section must be present. For more information, see <a href="/healthvault/concepts/data/thing-types" id="PageContent_14101_3">Thing Type Schema</a>.
 
 ### The response
 

@@ -99,7 +99,7 @@ Providers can create and deliver customized chronic care or wellness plans for t
 The Action Plans framework enables healthcare providers to quickly create and send digitized care plans to their patients. Providers can access patient data for remote monitoring in between follow-up visits.
 These APIs work directly with the HealthVault service and HealthVault Insights app to drive ongoing patient engagement.
 
-App developers can find information about creating action plans [here](/healthvault/scenarios/action-plans.md).
+App developers can find information about creating action plans [here](/healthvault/scenarios/action-plans).
 
 Device connectivity
 -------------------
@@ -115,4 +115,4 @@ HealthVault supports connectivity with a variety of smart health devices. Device
 
 Check out the HealthVault Device Directory at <https://account.healthvault.com/Directory?target=Devices>.
 
-For information about how to make a device compatible with HealthVault, see <a href="/healthvault/concepts/device-driver-kit/device-overview.md" id="PageContent_13982_2">overview of devices.</a>
+For information about how to make a device compatible with HealthVault, see <a href="/healthvault/concepts/device-driver-kit/device-overview" id="PageContent_13982_2">overview of devices.</a>

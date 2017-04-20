@@ -5,10 +5,10 @@ ms.author: justhu
 ms.date: 04/12/2017
 ms.topic: article
 ms.prod: healthvault
-description: HealthVault uses a standard web authentication flow
+description: Learn about how HealthVault's authentication and authorization model works for web and desktop (SODA) apps. 
 ---
 
-# Authentication and authorization model
+# HealthVault authentication and authorization model
 
 HealthVault uses a standard web based authentication flow regardless of what type of application this is. Authorization is controlled by the permissions you have configured for your app in the [Application Configuration Center](http://config.healthvault-ppe.com).
 

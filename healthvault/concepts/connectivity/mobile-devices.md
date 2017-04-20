@@ -1,10 +1,19 @@
-Mobile devices (SODA)
+---
+title: Mobile apps
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: HealthVault has a special authentication method for mobile apps called SODA. Learn about how to use this in your apps. 
+---
+
+Building mobile apps for HealthVault using SODA Authentication
 =====================
 
 When creating applications for devices, such as mobile phones, tablets, or PCs, there are two ways to establish connectivity with HealthVault:
 
 -   Use the Software on Device Authentication (SODA) approach to establish a direct connection between each instance of your application and HealthVault.
-
 -   Connect each instance of your application to your own web service, which in turn would have an offline connection to HealthVault.
 
 The advantage of using the SODA approach is that each instance of your application can establish a unique strong identity with HealthVault and doesn't need to use public-key infrastructure (PKI) to authenticate. It is therefore the only way to directly connect a mobile application to HealthVault. Compare this with the web application approach, in which there is only a single application identity, and strong identity is established using PKI with a private key installed on the web servers.
@@ -13,7 +22,7 @@ Additionally, users need to authorize the mobile application by signing into Hea
 
 The SODA approach is specifically tailored for writing HealthVault-enabled applications for mobile devices such as the iPhone, Android, and Windows Phone, as well as tablets and PCs. In addition to the HealthVault .NET SDK there are open-source libraries for [iOS](https://github.com/microsoft/hvmobile_vnext), and [Java](http://www.github.com/microsoft/healthvault-java-sdk).
 
-Websites that wish to connect to mobile users exclusively through a device's web browser (for example, the application is not installed on the device) should not use the SODA approach. For more information, see [web connectivity](/healthvault/concepts/connectivity/web-connectivity.md).
+Websites that wish to connect to mobile users exclusively through a device's web browser (for example, the application is not installed on the device) should not use the SODA approach. For more information, see [web connectivity](/healthvault/concepts/connectivity/web-connectivity).
 
 Establishing a connection on a mobile device
 --------------------------------------------
@@ -22,13 +31,13 @@ Following is a typical connection workflow for a HealthVault mobile application:
 
 1.  User launches application for the first time.
 
-2.  Application obtains a new <span class="parameter">application identifier</span>, <span class="parameter">shared secret</span>, and <span class="parameter">app creation token</span> by calling the HealthVault web service and passing in the <span class="parameter">master application identifier</span>, as described below in [Creating a HealthVault mobile master application](/healthvault/concepts/advanced/master-and-child-applications.md) (See the **NewApplicationCreationInfo** request in the [Method browser](http://go.microsoft.com/?linkid=9810881).)
+2.  Application obtains a new <span class="parameter">application identifier</span>, <span class="parameter">shared secret</span>, and <span class="parameter">app creation token</span> by calling the HealthVault web service and passing in the <span class="parameter">master application identifier</span>, as described below in [Creating a HealthVault mobile master application](/healthvault/concepts/advanced/master-and-child-applications) (See the **NewApplicationCreationInfo** request in the [Method browser](http://go.microsoft.com/?linkid=9810881).)
 
-3.  Application directs user to HealthVault Shell for authentication and authorization, passing along the app creation token. (See the CREATEAPPLICATION target in the Shell targets section of <a href="shell-redirect-interface.md" id="PageContent_14090_3">Shell Redirect Interface</a>.
+3.  Application directs user to HealthVault Shell for authentication and authorization, passing along the app creation token. (See the CREATEAPPLICATION target in the Shell targets section of <a href="shell-redirect-interface" id="PageContent_14090_3">Shell Redirect Interface</a>.
 
 4.  The user signs in to HealthVault Shell and grants the application access to the user's records.
 
-5.  The HealthVault Shell redirects the user back to the application, indicating success or failure, as described below, and returns an identifier for the instance in which the user granted access. For more information about instance IDs see [global architecture](/healthvault/concepts/advanced/global-architecture.md).
+5.  The HealthVault Shell redirects the user back to the application, indicating success or failure, as described below, and returns an identifier for the instance in which the user granted access. For more information about instance IDs see [global architecture](/healthvault/concepts/advanced/global-architecture).
 
 6.  Application stores the new application identifier and shared secret, and the instance ID or URLs of the instance where the user authorized the application.
 
@@ -40,7 +49,7 @@ Following is a typical connection workflow for a HealthVault mobile application:
 
 As with any HealthVault application, applications using the SODA approach should be able to handle responses from the HealthVault web service indicating that "the authenticated session token has expired" (error code 65). In such events, the application will need to obtain a new authenticated session token by calling the **CreateAuthenticatedSessionToken** method.
 
-During the lifetime of the application, it may lose access to a record. This may happen for a number of reasons, such as the user deciding to disconnect their record from the application, or the record or account being deleted. In such events, the application will receive an "access denied"" error (error code 11) when attempting to call a method that accesses the record. When calling **GetAuthorizedPeople**, it won't receive the user or record. In such cases, the application can re-initiate the application authorization flow by directing the user to the Shell (see the APPAUTH target in <a href="shell-redirect-interface.md" id="PageContent_14090_5">Shell Redirection Interface</a>)
+During the lifetime of the application, it may lose access to a record. This may happen for a number of reasons, such as the user deciding to disconnect their record from the application, or the record or account being deleted. In such events, the application will receive an "access denied"" error (error code 11) when attempting to call a method that accesses the record. When calling **GetAuthorizedPeople**, it won't receive the user or record. In such cases, the application can re-initiate the application authorization flow by directing the user to the Shell (see the APPAUTH target in <a href="shell-redirect-interface" id="PageContent_14090_5">Shell Redirection Interface</a>)
 
 Creating a HealthVault mobile master application
 ------------------------------------------------
@@ -51,7 +60,7 @@ To create a master application, create an application via the HealthVault [Appli
 
 All installed instances of your HealthVault mobile application will inherit their attributes from your master application. These attributes include name, description, logo, action URL, and authorization rules. The master application's authorization rules must be offline, since that is the type of connectivity your SODA application will use.
 
-For SODA applications, action URL is optional. If an action URL is specified, when the application directs the user to Shell, after the task is completed (successfully or not) they will be directed back to the application's configured action URL, with appropriate target and actionqs query string parameters. If an action URL is not configured, the user will be directed to the URL <span class="literalValue">https:// <span class="parameter">ShellURL</span>/application/complete</span> with similar query string parameters. For imformation about all redirect targets, see <a href="shell-redirect-interface.md" id="PageContent_14090_6">Shell Redirect Interface</a>.
+For SODA applications, action URL is optional. If an action URL is specified, when the application directs the user to Shell, after the task is completed (successfully or not) they will be directed back to the application's configured action URL, with appropriate target and actionqs query string parameters. If an action URL is not configured, the user will be directed to the URL <span class="literalValue">https:// <span class="parameter">ShellURL</span>/application/complete</span> with similar query string parameters. For imformation about all redirect targets, see <a href="shell-redirect-interface" id="PageContent_14090_6">Shell Redirect Interface</a>.
 
 Interactions with Shell on mobile devices
 -----------------------------------------
@@ -66,7 +75,7 @@ Similar to web applications, applications running on mobile devices may direct u
 
 -   **CREATERECORD** to authenticate and allow user to create a new record and authorize it to application.
 
-When the Shell redirect task has completed, the user is redirected back to the application's action URL or <span class="parameter">ShellURL</span>/application/complete, a page indicating that they have completed the task, if an action URL is not configured. A mobile application can take advantage of this redirect to resume its flow when the user's task in Shell is complete. It can parse the target parameter of the query string of the URL to formulate the appropriate flow to follow. See the Shell targets section of the <a href="shell-redirect-interface.md" id="PageContent_14090_7">Shell Redirect Interface</a> for a list of return targets and their meanings.
+When the Shell redirect task has completed, the user is redirected back to the application's action URL or <span class="parameter">ShellURL</span>/application/complete, a page indicating that they have completed the task, if an action URL is not configured. A mobile application can take advantage of this redirect to resume its flow when the user's task in Shell is complete. It can parse the target parameter of the query string of the URL to formulate the appropriate flow to follow. See the Shell targets section of the <a href="shell-redirect-interface" id="PageContent_14090_7">Shell Redirect Interface</a> for a list of return targets and their meanings.
 
 In some platforms, applications are able to embed an Internet browser within the experience of the application itself. In such applications, the entire flow between the application and Shell can be kept within the application itself, while monitoring the location of the browser as an indication of whether the user has completed the requested task in Shell.
 

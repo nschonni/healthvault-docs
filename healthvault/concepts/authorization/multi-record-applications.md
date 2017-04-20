@@ -1,3 +1,13 @@
+---
+title: Multi-record applications
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: HealthVault allows users to configure multiple records on a single account. Often, the additional records represent data for children or elders who do not manage their own logins. 
+---
+
 Multi-record applications
 =========================
 

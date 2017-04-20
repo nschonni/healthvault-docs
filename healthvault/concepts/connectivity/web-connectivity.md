@@ -1,3 +1,14 @@
+---
+title: Web connectivity
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Overview of HealthVault's web connectivity method
+---
+
+
 HealthVault web connectivity
 ============================
 
@@ -34,7 +45,7 @@ An example response URL:
 
 <span class="command">https:// <span class="parameter">applicationActionURL</span>?target=AppAuthSuccess&wctoken= <span class="parameter">auth\_token</span>&instanceId=1</span>
 
-You can choose either Get or Post for receiving the auth token, using the optional **trm** parameter of the AUTH target (default is Get). Once you have the auth token, call the HealthVault [WebApplicationUtilities.GetPersonInfo](https://msdn.microsoft.com/en-us/library/microsoft.health.web.webapplicationutilities.getpersoninfo.aspx) method and pass back the auth token to get the [PersonInfo](https://msdn.microsoft.com/en-us/library/microsoft.health.personinfo.aspx) object, which will contain the PersonID and their RecordIDs that are authorized to the application.
+You can choose either Get or Post for receiving the auth token, using the optional **trm** parameter of the AUTH target (default is Get). Once you have the auth token, call the HealthVault [WebApplicationUtilities.GetPersonInfo](/healthvault/sdks/dotnet/microsoft.health.web.webapplicationutilities.getpersoninfo.yml) method and pass back the auth token to get the [PersonInfo](/healthvault/sdks/dotnet/microsoft.health.personinfo.yml) object, which will contain the PersonID and their RecordIDs that are authorized to the application.
 
 The following diagram depicts the auth process.
 
@@ -62,7 +73,7 @@ The process works like this:
 
     <span class="command">https:// <span class="parameter">applicationActionURL</span>?actionqs= <span class="parameter">AppUserId</span>&instanceID=1</span>
 
-    For more information about instance IDs see [HealthVault global architecture](/healthvault/concepts/advanced/global-architecture.md).
+    For more information about instance IDs see [HealthVault global architecture](/healthvault/concepts/advanced/global-architecture).
 
 Authorizing application access to the user's records
 ----------------------------------------------------
@@ -79,7 +90,7 @@ Use the APPAUTH target to direct a user to HealthVault Shell to:
 
 -   change option selections if your application has one or more optional authorization rules
 
-For more information, see the APPAUTH redirect target of the <a href="shell-redirect-interface.md" id="PageContent_14079_4">Shell Redirect Interface</a>.
+For more information, see the APPAUTH redirect target of the <a href="shell-redirect-interface" id="PageContent_14079_4">Shell Redirect Interface</a>.
 
 Application-initiated account and record creation
 -------------------------------------------------

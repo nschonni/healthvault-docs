@@ -1,3 +1,13 @@
+---
+title: Device driver: Code 10 error
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn why WPD devices sometimes show "This device cannot start (code 10)". 
+---
+
 Code 10 errors with WPD drivers
 ===============================
 

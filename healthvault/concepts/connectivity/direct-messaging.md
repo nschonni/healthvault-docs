@@ -1,4 +1,15 @@
-Direct Messaging
+---
+title: Direct Messaging
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Use the Direct Messaging protocol to exchange data between an Electronic Health Record and HealthVault. 
+---
+
+
+Using the Direct Messaging protocol with HealthVault
 ================
 
 The Direct Project defines an industry standard messaging protocol based on S/MIME. HealthVault provides Direct Messaging addresses for every HealthVault user. Organizations that support Direct Messaging protocols can use this capability to exchange messages with HealthVault users. This includes the ability to send clinical document attachments that are integrated into the user’s record. This article describes how solutions that use the Direct Messaging protocols can connect with HealthVault.

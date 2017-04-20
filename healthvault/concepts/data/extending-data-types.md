@@ -1,4 +1,14 @@
-Extending data types
+---
+title: Extending data types
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn how to store additional data in a HealthVault data type
+---
+
+Extend a HealthVault data type
 ====================
 
 When building your application, you may find that you need to store additional information with an existing data type. For example, if you are using the Height data type, but you want to keep track of whether people were sleeping immediately before height was measured because the spine compresses during the day. The question is whether to:

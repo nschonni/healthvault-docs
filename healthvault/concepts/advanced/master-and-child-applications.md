@@ -1,4 +1,14 @@
-Master and child applications
+---
+title: Master and child applications
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Master and child applications are frequently used by systems integrators to build apps for their customers which are based upon a master applicationID that they own. 
+---
+
+Understanding when and how to use master and child applications
 =============================
 
 When to use master and child application IDs

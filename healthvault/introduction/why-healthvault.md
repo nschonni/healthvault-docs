@@ -32,7 +32,7 @@ A growing number of HealthVault-enabled health and fitness devices are helping m
 Solution Provider Resources
 ---------------------------
 
--   <a href="/healthvault/introduction/ecosystem.md" id="PageContent_14068_2">Ecosystem overview</a> 
--   <a href="/healthvault/introduction/technical-overview.md" id="PageContent_14068_6">Technical overview</a>  
--   <a href="hipaa-and-hitech.md" id="PageContent_14068_5">HIPAA and HITECH</a> 
+-   <a href="/healthvault/introduction/ecosystem" id="PageContent_14068_2">Ecosystem overview</a> 
+-   <a href="/healthvault/introduction/technical-overview" id="PageContent_14068_6">Technical overview</a>  
+-   <a href="hipaa-and-hitech" id="PageContent_14068_5">HIPAA and HITECH</a> 
 

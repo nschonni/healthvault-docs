@@ -97,7 +97,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                         <a href="#scenarios">Scenarios</a>
                         <ul id="scenarios" class="cardsC">
                             <li>
-                                <a href="/healthvault/scenarios/action-plans">
+                                <a href="/healthvault/scenarios/remote-monitoring">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -107,7 +107,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Action Plans</h3>
+                                                    <h3>Remote monitoring</h3>
                                                     <p>Use Action Plans Framework to enable remote monitoring of patients</p>
                                                 </div>
                                             </div>
@@ -294,25 +294,6 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage">
-                                                    <img src="/media/logos/logo_rest.svg" alt="" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>
-                                                    <a href="/healthvault/apis/v1.0-preview">Reference</a>
-
-                                                </h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
                                                     <img src="/media/logos/logo_net.svg" alt="" />
                                                 </div>
                                             </div>
@@ -338,6 +319,45 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage">
+                                                    <img src="/media/logos/logo_netstandard.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>
+                                                    <a href="https://www.nuget.org/packages/Microsoft.HealthVault.Client">Get the Client SDK</a>
+                                                </h3>
+                                                <p><a href="https://www.nuget.org/packages/Microsoft.HealthVault.Web">Get the Web SDK</a></p>
+                                                <p><a href="https://github.com/Microsoft/healthvault-samples/tree/master/dotNETStandard">Get samples</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage">
+                                                    <img src="/media/logos/logo_rest.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>
+                                                    <a href="/healthvault/apis/v1.0-preview">Reference</a>
+
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage">
                                                     <img src="/media/logos/logo_ios.svg" alt="" />
                                                 </div>
                                             </div>
@@ -347,7 +367,6 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                 </h3>
                                                 <p>
                                                     <a href="https://github.com/Microsoft/HVMobile_VNext/tree/master/Samples">Get samples</a>
-
                                                 </p>
                                             </div>
                                         </div>
@@ -367,6 +386,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                 <h3>
                                                     <a href="https://www.github.com/microsoft/healthvault-java-sdk">Get the Java SDK</a>
                                                 </h3>
+                                                <p><a href="https://github.com/Microsoft/healthvault-samples/tree/master/java">Get samples</a></p>
                                             </div>
                                         </div>
                                     </div>

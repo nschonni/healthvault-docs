@@ -1,4 +1,14 @@
-Querying data
+---
+title: Querying data
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn how to get data from HealthVault's XML API by issuing GetThings queries
+---
+
+Learn how to get data from HealthVault's XML API
 =============
 
 Retrieving data from HealthVault is done through the **GetThings** request. The **GetThings** request performs operations very similar to an SQL select statement:
@@ -127,7 +137,7 @@ Optional header sections are:
 </tr>
 <tr class="even">
 <td><p>Digital signatures</p></td>
-<td><p>Digital signature information including the key and cryptographic hash, which can be used to verify that the contents of the thing haven't been changed since the data was signed. Retrieve this section only if you want to validate the cryptographic hash or the signature. For more information, see [digital signatures](/healthvault/concepts/data/digital-signatures.md).</p></td>
+<td><p>Digital signature information including the key and cryptographic hash, which can be used to verify that the contents of the thing haven't been changed since the data was signed. Retrieve this section only if you want to validate the cryptographic hash or the signature. For more information, see [digital signatures](/healthvault/concepts/data/digital-signatures).</p></td>
 </tr>
 <tr class="odd">
 <td><p>Tags</p></td>
@@ -185,7 +195,7 @@ The blob format determines how those blobs are returned. Options include:
 <td><p>Streamed</p></td>
 <td><p>This is the preferred method for retrieving blobs. The streaming mechanism doesn’t have the same size limitations that retrieving blobs inline does.</p>
 <p>Metadata sufficient for retrieving the blob via an <span class="code">HTTP GET</span> is returned. The metadata includes a URL directly to the blob, as well as the content encoding of that blob (if any).</p>
-<p>For more information on retrieving blobs through streaming, see the [blobs section](/healthvault/concepts/data/thing-types.md) section of the thing type page.</p></td>
+<p>For more information on retrieving blobs through streaming, see the [blobs section](/healthvault/concepts/data/thing-types) section of the thing type page.</p></td>
 </tr>
 </tbody>
 </table>

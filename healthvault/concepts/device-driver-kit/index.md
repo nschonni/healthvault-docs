@@ -1,3 +1,13 @@
+---
+title: HealthVault device drivers
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn how to build HealthVault-compatible devices
+---
+
 Building HealthVault-compatible devices
 =======================================
 
@@ -10,7 +20,7 @@ Microsoft HealthVault is a personal health platform that lets consumers gather, 
 
 There are many different types of HealthVault enabled devices today some of which are fitness watches, pulse oximeters, blood pressure devices, peak flow meters, weight/body composition scales, and pedometers. The HealthVault team encourages the addition of new device types and different varieties of the current device types.
 
-<a href="/healthvault/introduction/ecosystem.md" id="PageContent_14026_2">Learn how your device may fit into the HealthVault ecosystem</a> 
+<a href="/healthvault/introduction/ecosystem" id="PageContent_14026_2">Learn how your device may fit into the HealthVault ecosystem</a> 
 
 How to connect your device to HealthVault
 -----------------------------------------

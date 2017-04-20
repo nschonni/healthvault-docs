@@ -1,3 +1,14 @@
+---
+title: Eventing
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about how HealthVault's event subscription model works. 
+---
+
+
 Subscribing to events
 =====================
 
@@ -7,7 +18,10 @@ This article provides an overview of the HealthVault Event and the application c
 
 **Disclaimer**
 
-HealthVault Eventing utilizes an asynchronous queuing and processing infrastructure to handle events and send notifications. It is only intended to provide delayed notification of events as an alternative to applications regularly polling the HealthVault platform for changes. **HealthVault Eventing is not intended to provide real-time notifications and data in HealthVault should not be used for time-sensitive monitoring or diagnosis.**
+HealthVault Eventing utilizes an asynchronous queuing and processing infrastructure to handle events and send notifications. It is only intended to provide delayed notification of events as an alternative to applications regularly polling the HealthVault platform for changes. 
+
+> [!NOTE]
+> HealthVault Eventing is not intended to provide real-time notifications and data in HealthVault should not be used for time-sensitive monitoring or diagnosis.
 
 -   The time elapsed between an event occurring and a notification being sent is variable and nondeterministic. There is no guarantee of temporal proximity of an event and the subsequent event notification.
 -   There is the possibility of delay between the effective date/time (e.g. when a blood glucose reading was taken using a blood glucometer) and the event date/time (i.e. when the change was reflected in HealthVault).

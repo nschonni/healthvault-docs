@@ -1,4 +1,14 @@
-Request-response tracing
+---
+title: Request/response tracing
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn how to debug issues with HealthVault applications by using request/response tracing. 
+---
+
+Debug HealthVault with request/response tracing
 ========================
 
 The following may be useful for low-level debugging of the traffic between your application and the HealthVault servers.

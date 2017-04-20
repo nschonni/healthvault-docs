@@ -1,4 +1,14 @@
-Shell redirect interface
+---
+title: Shell redirect interface
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about how the HealthVault redirection interface works for authentication during user login. 
+---
+
+HealthVault authentication redirect flow
 ========================
 
 This article focuses on what application developers need to know about the interfaces between Web applications and the Shell, which are core parts of the HealthVault API.
@@ -20,11 +30,11 @@ To use Shell functionality, the application should construct the redirect URL wi
 
     -   **extrecordid** is optional and used only for targets that act on a particular record (for example, SHARERECORD). If present, it should be the record identifier for the record that the application wants the Shell to work against.
 
-    -   **lcid** or **culture** is used to specify the display language for the destination target. The lcid parameter must be a valid Locale ID (decimal, such as 1033, not hex). The culture parameter must be a valid ISO format (such as en-US). The language must be supported on that instance of HealthVault. For more information about supported languages, see [instance configurations](/healthvault/concepts/advanced/configurations.md).
+    -   **lcid** or **culture** is used to specify the display language for the destination target. The lcid parameter must be a valid Locale ID (decimal, such as 1033, not hex). The culture parameter must be a valid ISO format (such as en-US). The language must be supported on that instance of HealthVault. For more information about supported languages, see [instance configurations](/healthvault/concepts/advanced/configurations).
 
     -   **target-specific parameters** may be required by some of the redirect targets. These parameters are documented with each redirect target below.
 
-    -   **aib** (allow instance bounce) indicates whether the user can be redirected to another instance on this request. For more information, see [global architecture](/healthvault/concepts/advanced/global-architecture.md).
+    -   **aib** (allow instance bounce) indicates whether the user can be redirected to another instance on this request. For more information, see [global architecture](/healthvault/concepts/advanced/global-architecture).
 
 An application can use Shell functionality by creating a proper redirect URL. Construct the redirect URL with target query parameters: https:// <span class="parameter">ShellUrl</span>/redirect.aspx?target= <span class="parameter">TARGET</span>&targetqs= <span class="parameter">TARGETQS</span>.
 
@@ -52,7 +62,7 @@ These query string parameters are sent along with the request:
 
 -   **targetDetails** includes additional information and is used only in special situations (explained later in this document).
 
--   **instanceID** uniquely identifies the instance in which the shell target was completed. For a list of existing instances, see <a href="/healthvault/concepts/advanced/configurations.md" id="PageContent_14089_4">instance configurations</a>. For more information, see  <a href="/healthvault/concepts/advanced/global-architecture.md" id="PageContent_14089_5">global architecture</a>.
+-   **instanceID** uniquely identifies the instance in which the shell target was completed. For a list of existing instances, see <a href="/healthvault/concepts/advanced/configurations" id="PageContent_14089_4">instance configurations</a>. For more information, see  <a href="/healthvault/concepts/advanced/global-architecture" id="PageContent_14089_5">global architecture</a>.
 
 When developers are working on an application, the ActionURL may not work because all the developers use a shared application metadata record in the HealthVault development environment (PPE) but need the Shell to redirect to their personal development machines. To deal with this situation, the Shell development environments accept a *redirect* parameter; if this parameter is present, the Shell uses it to return to the application instead of using the ActionURL.
 
@@ -114,7 +124,7 @@ An example request URL with redirected response:
 <td><p>ismra (optional)</p></td>
 <td><p>True or False</p></td>
 
-<td><p>Default is False. If this value is True, it is an indication that this application wants to be treated as an <a href="/healthvault/concepts/authorization/multi-record-applications.md" id="PageContent_14089_6">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
+<td><p>Default is False. If this value is True, it is an indication that this application wants to be treated as an <a href="/healthvault/concepts/authorization/multi-record-applications" id="PageContent_14089_6">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
 
 </tr>
 <tr class="odd">
@@ -271,7 +281,7 @@ An example request URL:
 <td><p>ismra (optional)</p></td>
 <td><p>True or False</p></td>
 <td><p>Default is False.</p>
-<p>If this value is true, it is an indication that this application wants to be treated as an  <a href="/healthvault/concepts/authorization/multi-record-applications.md" id="PageContent_14089_8">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
+<p>If this value is true, it is an indication that this application wants to be treated as an  <a href="/healthvault/concepts/authorization/multi-record-applications" id="PageContent_14089_8">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
 </tr>
 <tr class="odd">
 <td><p>trm (optional)</p></td>
@@ -321,7 +331,7 @@ An example request URL:
 </tbody>
 </table>
 
-For more information about Patient Connect, see <a href="patient-connect.md" id="PageContent_14089_9">Establishing a connection with a user using Patient Connect</a>.
+For more information about Patient Connect, see <a href="patient-connect" id="PageContent_14089_9">Establishing a connection with a user using Patient Connect</a>.
 
 ### CREATEACCOUNT
 
@@ -354,7 +364,7 @@ An example request URL:
 <td><p>ismra (optional)</p></td>
 <td><p>True or False</p></td>
 <td><p>Default is False.</p>
-<p>If this value is True, it is an indication that this application wants to be treated as an <a href="/healthvault/concepts/authorization/multi-record-applications.md" id="PageContent_14089_10">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
+<p>If this value is True, it is an indication that this application wants to be treated as an <a href="/healthvault/concepts/authorization/multi-record-applications" id="PageContent_14089_10">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
 </tr>
 <tr class="odd">
 <td><p>onopt# (optional)</p></td>
@@ -464,7 +474,7 @@ An example request URL:
 <td><p>ismra (optional)</p></td>
 <td><p>True or False</p></td>
 <td><p>Default is False.</p>
-<p>True to have the Shell treat the application as an <a href="/healthvault/concepts/authorization/multi-record-applications.md" id="PageContent_14089_11">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
+<p>True to have the Shell treat the application as an <a href="/healthvault/concepts/authorization/multi-record-applications" id="PageContent_14089_11">MRA</a>. The user will be allowed to authorize multiple records at once.</p></td>
 </tr>
 <tr class="odd">
 <td><p>onopt# (optional)</p></td>
@@ -615,7 +625,7 @@ An example request URL:
 </tbody>
 </table>
 
-More information about DOPU packages can be found in the article <a href="/healthvault/concepts/connectivity/drop-off-pick-up.md" id="PageContent_14089_12">HealthVault drop-off and pick-up (DOPU)</a>.
+More information about DOPU packages can be found in the article <a href="/healthvault/concepts/connectivity/drop-off-pick-up" id="PageContent_14089_12">HealthVault drop-off and pick-up (DOPU)</a>.
 
 ### RECONCILE
 

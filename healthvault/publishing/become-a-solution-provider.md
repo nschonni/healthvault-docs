@@ -69,13 +69,13 @@ Since HealthVault is controlled by the user, sending information to a HealthVaul
 
 HealthVault is governed by strict privacy policy that can be found [here](https://account.healthvault.com/help.aspx?topicid=PrivacyPolicy&culture=en-US).
 
-See <a href="/healthvault/introduction/hipaa-and-hitech.md" id="PageContent_14117_2">Microsoft HealthVault, HIPAA and HITECH</a> for information about HealthVault and HIPAA.
+See <a href="/healthvault/introduction/hipaa-and-hitech" id="PageContent_14117_2">Microsoft HealthVault, HIPAA and HITECH</a> for information about HealthVault and HIPAA.
 
 See [Microsoft HealthVault and Data Protection Requirements](http://download.microsoft.com/download/7/4/E/74EA8944-199C-4F56-B3BB-8105869425BC/HealthVault%20and%20Data%20Protection.pdf) for information about HealthVault and the European Data Protection regulations.
 
 ### Is HealthVault available outside of the United States?
 
-Yes! HealthVault is now available nearly worldwide and is adding new languages often. To explore opportunities for a specific country or region, you can explore HealthVault’s <a href="/healthvault/publishing/territories.md" id="PageContent_14117_3">territory information</a> or inquire [here](https://www.healthvault.com/inquiry/business) and our International Business Development Team will be notified of your request.
+Yes! HealthVault is now available nearly worldwide and is adding new languages often. To explore opportunities for a specific country or region, you can explore HealthVault’s <a href="/healthvault/publishing/territories" id="PageContent_14117_3">territory information</a> or inquire [here](https://www.healthvault.com/inquiry/business) and our International Business Development Team will be notified of your request.
 
 ### What Marketing support does HealthVault offer?
 
@@ -134,10 +134,10 @@ Once you have completed and executed a solution provider agreement and associate
 
 This entire Go-Live process typically takes two to four weeks, depending upon how closely you have followed the instructions and guidelines below. Note that the HealthVault Go-Live team cannot schedule a review meeting until we have received the Application Information data sheet and the Walkthrough document. Also, the application cannot be HealthVault-enabled without meeting the requirements.
 
-The details of the HealthVault Go-Live process are posted  <a href="/healthvault/publishing/go-live.md" id="PageContent_14117_5">here</a> and consists of a few key components:
+The details of the HealthVault Go-Live process are posted  <a href="/healthvault/publishing/go-live" id="PageContent_14117_5">here</a> and consists of a few key components:
 
 1.  **Application Configuration Review** - Use the Application Configuration Center to be sure you have all details added to your configuration
-2.  **HealthVault Integration and Branding Review** - Schedule a review with the HealthVault team on your integration and use of HealthVault branding. Ensure your application follows the <a href="/healthvault/publishing/brand-materials.md" id="PageContent_14117_6">HealthVault brand guidelines</a>.
+2.  **HealthVault Integration and Branding Review** - Schedule a review with the HealthVault team on your integration and use of HealthVault branding. Ensure your application follows the <a href="/healthvault/publishing/brand-materials" id="PageContent_14117_6">HealthVault brand guidelines</a>.
 3.  **Customer Support Integration** - Provide application support contact information so that Microsoft Customer Support can refer your customers to the right place
 4.  **Application Discoverability** - List your solution in the healthvault.com application directory
 

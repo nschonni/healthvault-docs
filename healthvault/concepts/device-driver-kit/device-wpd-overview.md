@@ -1,3 +1,13 @@
+---
+title: Using WPD for health devices
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn how to use Windows Portable Devices driver model in order to interact with your healthcare devices. 
+---
+
 HealthVault Devices and WPD Technology
 ======================================
 

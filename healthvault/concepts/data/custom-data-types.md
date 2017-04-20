@@ -1,6 +1,16 @@
-Custom data types
-=================
+---
+title: Custom data types
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Overview of how to create a custom HealthVault data type
+---
 
+
+Creating custom data types in HealthVault
+=================
 You may find that there isn’t a built-in data type that stores what you need. The .NET SDK provides a way for you to create your own custom type.
 
 Creating the class

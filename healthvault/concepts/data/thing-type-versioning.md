@@ -1,3 +1,13 @@
+---
+title: Thing type versioning
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about how HealthVault versions the thing type schemas
+---
+
 Thing type versioning
 =====================
 
@@ -8,7 +18,7 @@ Versioning
 
 When applications are developed, they have an explicit understanding of a specific XML schema defined for a type. This <span class="parameter">type contract</span> is defined through the base authorization rules for the application.
 
-Whenever an application requests data for a versioned type, HealthVault transforms the data of that type in the record to the schema for the type defined by the application's type contract. This ensures that HealthVault always returns data in the format that matches the application's authorization rule for that data type, even when other versions of the type exist. In some cases, HealthVault might remove data fields that are not part of the schema the app expects. In other cases, HealthVault might restructure the data to fit the schema. The **flags** element in the common section indicates whether the data has been up-versioned or down-versioned. For more information about the flags element, see the Flags section of [thing type schema](/healthvault/concepts/data/thing-types.md).
+Whenever an application requests data for a versioned type, HealthVault transforms the data of that type in the record to the schema for the type defined by the application's type contract. This ensures that HealthVault always returns data in the format that matches the application's authorization rule for that data type, even when other versions of the type exist. In some cases, HealthVault might remove data fields that are not part of the schema the app expects. In other cases, HealthVault might restructure the data to fit the schema. The **flags** element in the common section indicates whether the data has been up-versioned or down-versioned. For more information about the flags element, see the Flags section of [thing type schema](/healthvault/concepts/data/thing-types).
 
 For writing or updating existing data:
 
@@ -20,7 +30,7 @@ Most applications should define authorizations rules for a single version of a t
 
 Applications may also subvert their type contract by specifying the **type-format-version** parameter of the **GetThings** method request. This parameter tells HealthVault to always format the output of the type in the specified version.
 
-How type versioning works—an example
+How type versioning works: an example
 ------------------------------------
 
 As an example, the original blood pressure type does not have a field for body position, to tell whether the person was sitting, standing, or lying down when the measurement was taken. Assume a new version of the blood pressure type is introduced that includes body position. The blood pressure type is identified by two identifiers: the thing type identifier and the version type identifier. When a new version is introduced, a new version type identifier is allocated but the same type identifier is used.

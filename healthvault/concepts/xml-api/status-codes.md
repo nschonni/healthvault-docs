@@ -1,4 +1,14 @@
-Status and error codes
+---
+title: Status and error codes
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about HealthVault XML API status and error codes
+---
+
+XML API status and error codes
 ======================
 
 The following status and error codes may be returned by the HealthVault platform service.
