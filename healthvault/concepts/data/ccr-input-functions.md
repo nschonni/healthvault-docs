@@ -49,7 +49,7 @@ $ActorRef = actorrefs[IsConcept(./ActorRole, role)]
 return /ContinuityOfCareRecord/Actors/Actor[./ActorObjectID = $ActorRef/ActorID] 
 ```
 
-### ResolveLink(linkRef)
+### <a id="ResolveLink"/>ResolveLink(linkRef)
 
 ```pseudocode
 return /ContinuityOfCareRecord/Body/node()[./CCRDataObjectID = linkRef/LinkID]
