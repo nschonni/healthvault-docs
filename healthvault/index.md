@@ -467,7 +467,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                             <div class="cardText">
                                                 <h3><a href="https://config.healthvault-ppe.com/">Application Configuration Center</a></h3>
                                                 <p>
-                                                    <a href="/healthvault/tools/acc/acc-tool">Reference</a>
+                                                    <a href="/healthvault/tools/acc">Reference</a>
                                                 </p>
                                             </div>
                                         </div>
