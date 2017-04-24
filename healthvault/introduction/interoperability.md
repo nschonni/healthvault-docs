@@ -1,3 +1,13 @@
+---
+title: Interoperability
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about how HealthVault offers interoperability with other services
+---
+
 Data Interoperability and the HealthVault platform
 ==================================================
 
@@ -8,6 +18,10 @@ Microsoft HealthVault is a platform designed to put people in control of their h
 ### Promoting interoperability
 
 Developers and solution providers are making strategic choices to deliver innovative healthcare and wellness solutions on the HealthVault platform. Developing on any platform is a commitment in the form of time, people, and code, and we want our developers and solution providers to know that developing on the HealthVault platform is a smart choice: a choice that affords them the flexibility to develop using the languages and frameworks they know best. Microsoft is committed to enabling interoperability—connecting people, data, and diverse systems to enable customers to own their data and to enable vendors to build innovative solutions that work in a multi-vendor environment. Interoperability of healthcare information systems is a significant challenge, but one that we’ve identified as a top priority.
+
+Learn more about HealthVault's interoperability with industry standards here: 
+* [Continuity of Care Records](/healthvault/concepts/data/ccr-data)
+* [Direct Messaging](/healthvault/concepts/connectivity/direct-messaging)
 
 ### HealthVault XML interfaces and the Microsoft Community Promise
 

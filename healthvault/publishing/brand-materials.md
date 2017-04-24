@@ -1,3 +1,13 @@
+---
+title: Branding materials
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Get guidance for how to properly use the HealthVault brand in your apps and services. 
+---
+
 Microsoft HealthVault brand materials
 =====================================
 

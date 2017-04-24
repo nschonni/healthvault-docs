@@ -1,3 +1,13 @@
+---
+title: Why HealthVault?
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about key advantages of leveraging HealthVault for your connected healthcare applications. 
+---
+
 Why create HealthVault-enabled applications?
 ============================================
 

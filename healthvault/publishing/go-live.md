@@ -1,3 +1,13 @@
+---
+title: Go live
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Understand the process for publishing your app in the HealthVault production environment. You must complete this process before you can use your app with real customers. 
+---
+
 Go-live guide
 =============
 

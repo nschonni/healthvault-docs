@@ -1,3 +1,13 @@
+---
+title: HIPAA and HITECH
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about how HealthVault can may your company meet HIPAA or HITECH requirements. 
+---
+
 Microsoft HealthVault, HIPAA and HITECH
 =======================================
 

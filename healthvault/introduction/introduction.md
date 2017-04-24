@@ -1,3 +1,13 @@
+---
+title: Introduction
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: High level overview of the HealthVault platform for developers and business decision makers. 
+---
+
 HealthVault: a platform for connected health information and innovation
 =======================================================================
 
