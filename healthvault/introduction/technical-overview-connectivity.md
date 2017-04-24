@@ -1,5 +1,5 @@
 ---
-title: Overview: connectivity 
+title: Overview | connectivity 
 author: jhutchings1
 ms.author: justhu
 ms.date: 04/12/2017

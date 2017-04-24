@@ -1,5 +1,5 @@
 ---
-title: Application Configuration Center:  Admins Tab
+title: Application Configuration Center | Admins Tab
 author: jhutchings1
 ms.author: justhu
 ms.date: 04/12/2017

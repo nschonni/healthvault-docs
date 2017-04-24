@@ -1,5 +1,5 @@
 ---
-title: Application Configuration Center:  Organization Tab
+title: Application Configuration Center | Organization Tab
 author: rouellam
 ms.author: roumen
 ms.date: 04/17/2017

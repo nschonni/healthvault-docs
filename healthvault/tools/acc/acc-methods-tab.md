@@ -1,5 +1,5 @@
 ---
-title: Application Configuration Center:  Methods
+title: Application Configuration Center | Methods
 author: jhutchings1
 ms.author: justhu
 ms.date: 04/12/2017

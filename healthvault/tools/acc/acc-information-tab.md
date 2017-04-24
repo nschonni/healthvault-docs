@@ -1,8 +1,14 @@
-This documentation is archived and is not being maintained.
+---
+title: Application Configuration Center | Information tab
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about the HealthVault Application Configuration Center's (ACC) information tab. 
+---
 
-**HealthVault**
-
-<span></span>
+# Information tab
 To access the <span class="label">Information</span> tab, click the <span class="label">Application ID</span> link on the home page. On the information tab you can configure general information for your Application ID. This includes the information about your application’s name, description, reason to authorize your application, and so on.
 
 <span id="Content"></span>

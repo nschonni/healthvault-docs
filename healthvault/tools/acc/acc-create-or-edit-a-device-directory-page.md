@@ -1,5 +1,5 @@
 ---
-title: Application Configuration Center:  Device directory
+title: Application Configuration Center | Device directory
 author: jhutchings1
 ms.author: justhu
 ms.date: 04/12/2017

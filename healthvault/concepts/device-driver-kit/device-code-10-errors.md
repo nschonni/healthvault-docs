@@ -1,5 +1,5 @@
 ---
-title: Device driver: Code 10 error
+title: Device driver | Code 10 error
 author: jhutchings1
 ms.author: justhu
 ms.date: 04/12/2017

@@ -1,5 +1,5 @@
 ---
-title: Overview: Permissions and authentication
+title: Overview | Permissions and authentication
 author: jhutchings1
 ms.author: justhu
 ms.date: 04/12/2017

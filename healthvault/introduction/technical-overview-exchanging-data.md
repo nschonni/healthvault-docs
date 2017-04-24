@@ -1,5 +1,5 @@
 ---
-title: Overview: Data exchange
+title: Overview | Data exchange
 author: jhutchings1
 ms.author: justhu
 ms.date: 04/12/2017
