@@ -1,3 +1,13 @@
+---
+title: Overview: Data exchange
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Get a brief overview of how HealthVault's data protocols work. 
+---
+
 Technical overview: exchanging data
 ===================================
 
@@ -10,6 +20,9 @@ In the .NET SDK this functionality can be found in the following classes:
 
 -   [Microsoft.Health.HealthRecordAccessor](/healthvault/sdks/dotnet/microsoft.health.healthrecordaccessor.yml) class for reading and writing data.
 -   [Microsoft.Health.HealthRecordSearcher](/healthvault/sdks/dotnet/microsoft.health.healthrecordsearcher.yml) class for more advanced data querying capabilities.
+
+HealthVault also offers a REST API for certain scenarios. More information about the HealthVault REST API is available here: 
+- [HealthVault REST API](/healthvault/apis/v1.0-preview)
 
 Polling for changes
 -------------------

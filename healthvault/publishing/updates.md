@@ -1,3 +1,13 @@
+---
+title: Update your apps
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn about how to update an application which has been published for HealthVault's production environment. 
+---
+
 Updating a HealthVault-integrated application
 =============================================
 

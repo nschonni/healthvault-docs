@@ -1,3 +1,13 @@
+---
+title: Ecosystem
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Learn more about the ecosystem of apps and devices on HealthVault
+---
+
 Microsoft HealthVault ecosystem overview
 ========================================
 

@@ -1,3 +1,13 @@
+---
+title: Overview: connectivity 
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Get a quick overview of how apps and services can connect to HealthVault. 
+---
+
 Technical overview: connectivity
 ================================
 

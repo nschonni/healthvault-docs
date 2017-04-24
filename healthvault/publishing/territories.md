@@ -1,7 +1,17 @@
+---
+title: Supported territories
+author: jhutchings1
+ms.author: justhu
+ms.date: 04/12/2017
+ms.topic: article
+ms.prod: healthvault
+description: Due to various regulatory requirements, HealthVault may not be available in your territory. Find out where you may market HealthVault on this page. 
+---
+
 HealthVault territories
 =======================
 
-**As of February 2017**
+**As of April 2017**
 
 This Territory is based on the current HealthVault platform and Microsoft operation, and subject to change as detailed in your agreement for HealthVault Connectivity.  **It does not reflect any opinion about regulations that apply to Applications in any country. You must independently verify regulations that apply to you and your Application before entering any new market.**
 
