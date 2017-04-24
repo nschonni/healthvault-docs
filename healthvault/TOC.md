@@ -108,11 +108,4 @@
 #### [ACC Online and Offline Rules Tab](/healthvault/tools/acc/acc-online-and-offline-rules-tab)
 #### [ACC Public Certs Tab](/healthvault/tools/acc/acc-public-certs-tab)
 
-# Reference
-## .NET
-### [HealthVault .NET SDK reference](/healthvault/sdks/dotnet/toc)
-## [REST API](/healthvault/apis/v1.0-preview)
-## [HealthVault Java SDK](/healthvault/sdks/java/toc)
-
-
 
