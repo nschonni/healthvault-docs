@@ -1,5 +1,5 @@
 ---
-title: Application Configuration Center:  Public certificates
+title: Application Configuration Center | Public certificates
 author: jhutchings1
 ms.author: justhu
 ms.date: 04/12/2017
