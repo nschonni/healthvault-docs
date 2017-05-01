@@ -1,0 +1,202 @@
+<Type Name="BloodGlucoseMeasurement" FullName="Microsoft.HealthVault.ItemTypes.BloodGlucoseMeasurement">
+  <TypeSignature Language="C#" Value="public class BloodGlucoseMeasurement : Microsoft.HealthVault.ItemTypes.Measurement&lt;double&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BloodGlucoseMeasurement extends Microsoft.HealthVault.ItemTypes.Measurement`1&lt;float64&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.ItemTypes.BloodGlucoseMeasurement" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.HealthVault.ItemTypes.Measurement&lt;System.Double&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="MeasurementType">System.Double</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+             Represents a blood glucose measurement.
+             </summary>
+    <remarks>
+             In HealthVault, blood glucose readings have values and display values.
+             All values are stored in a base unit of mmol/L. An application can
+             take a blood glucose value using any scale the application chooses and
+             can store the user-entered value as the display value, but the blood
+             glucose value must be converted to mmol/L to be stored in HealthVault.
+             </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BloodGlucoseMeasurement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.BloodGlucoseMeasurement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.BloodGlucoseMeasurement" />
+             class with empty values.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BloodGlucoseMeasurement (double millimolesPerLiter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 millimolesPerLiter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.BloodGlucoseMeasurement.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="millimolesPerLiter" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="millimolesPerLiter">
+             The blood glucose measurement in millimoles per liter.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.BloodGlucoseMeasurement" />
+             class with the specified value in millimoles per liter (mmol/L).
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BloodGlucoseMeasurement (double millimolesPerLiter, Microsoft.HealthVault.ItemTypes.DisplayValue displayValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 millimolesPerLiter, class Microsoft.HealthVault.ItemTypes.DisplayValue displayValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.BloodGlucoseMeasurement.#ctor(System.Double,Microsoft.HealthVault.ItemTypes.DisplayValue)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="millimolesPerLiter" Type="System.Double" />
+        <Parameter Name="displayValue" Type="Microsoft.HealthVault.ItemTypes.DisplayValue" />
+      </Parameters>
+      <Docs>
+        <param name="millimolesPerLiter">
+             The blood glucose measurement in millimoles per liter (mmol/L).
+             </param>
+        <param name="displayValue">
+             The display value of the blood glucose measurement. This should
+             contain the exact measurement as entered by the user, even if it
+             uses some other unit of measure besides mmol/L. The display value
+             <see cref="P:Microsoft.HealthVault.ItemTypes.DisplayValue.Units" /> and
+             <see cref="P:Microsoft.HealthVault.ItemTypes.DisplayValue.UnitsCode" />
+             represents the unit of measure for the user-entered value.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.BloodGlucoseMeasurement" />
+             class with the specified value in millimoles per liter (mmol/L)
+             and display value.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertMeasurementValue">
+      <MemberSignature Language="C#" Value="protected override void AssertMeasurementValue (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AssertMeasurementValue(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.BloodGlucoseMeasurement.AssertMeasurementValue(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+             The blood glucose measurement.
+             </param>
+        <summary>
+             Verifies the value is a legal blood glucose measurement in
+             millimoles per liter (mmol/L).
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+             The <paramref name="value" /> parameter is less than or equal to zero.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValueString">
+      <MemberSignature Language="C#" Value="protected override string GetValueString (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetValueString(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.BloodGlucoseMeasurement.GetValueString(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>
+             Gets a string representation of the blood glucose in the base units.
+             </summary>
+        <returns>
+             The blood glucose as a string in the base units.
+             </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseValueXml">
+      <MemberSignature Language="C#" Value="protected override void ParseValueXml (System.Xml.XPath.XPathNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ParseValueXml(class System.Xml.XPath.XPathNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.BloodGlucoseMeasurement.ParseValueXml(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="navigator">
+             The XML node representing the blood glucose.
+             </param>
+        <summary>
+             Populates the data for the blood glucose from the XML.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteValueXml">
+      <MemberSignature Language="C#" Value="protected override void WriteValueXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WriteValueXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.BloodGlucoseMeasurement.WriteValueXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+             The XmlWriter to write the blood glucose to.
+             </param>
+        <summary>
+             Writes the blood glucose to the specified XML writer.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

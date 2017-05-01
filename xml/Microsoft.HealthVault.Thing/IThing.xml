@@ -1,0 +1,95 @@
+<Type Name="IThing" FullName="Microsoft.HealthVault.Thing.IThing">
+  <TypeSignature Language="C#" Value="public interface IThing" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IThing" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.Thing.IThing" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>
+            The base HealthVault thing type
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.Thing.ThingKey Key { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.Thing.ThingKey Key" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.IThing.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.Thing.ThingKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the key of the thing.
+             </summary>
+        <value>
+             A globally unique identifier for the item issued when the item is
+             created and a globally unique version stamp updated every time
+             the item is changed.
+             </value>
+        <remarks>
+             This is the only property that
+             is guaranteed to be available regardless of how
+             <see cref="P:Microsoft.HealthVault.Thing.ThingBase.Sections" /> is set.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public Guid TypeId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid TypeId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.IThing.TypeId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the type identifier for the thing type.
+             </summary>
+        <value>
+             A globally unique identifier for the type of the item.
+             </value>
+        <remarks>
+             The types available can be queried using <see cref="M:Microsoft.HealthVault.Thing.ItemTypeManager.GetHealthRecordItemTypeDefinitionAsync(System.Guid,Microsoft.HealthVault.Connection.IConnectionInternal)" />.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteItemXml">
+      <MemberSignature Language="C#" Value="public bool WriteItemXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool WriteItemXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.IThing.WriteItemXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+             The XML writer into which the contact information should be
+             written.
+             </param>
+        <summary>
+             Writes the XML representation of the information into
+             the specified XML writer.
+             </summary>
+        <returns>A bool indicating if an update is required.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

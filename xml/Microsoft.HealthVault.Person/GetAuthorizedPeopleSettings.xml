@@ -1,0 +1,129 @@
+<Type Name="GetAuthorizedPeopleSettings" FullName="Microsoft.HealthVault.Person.GetAuthorizedPeopleSettings">
+  <TypeSignature Language="C#" Value="public class GetAuthorizedPeopleSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GetAuthorizedPeopleSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.Person.GetAuthorizedPeopleSettings" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+             The settings for retrieving a set of <see cref="T:Microsoft.HealthVault.Person.PersonInfo" /> objects through
+             <see cref="M:Microsoft.HealthVault.Clients.IPlatformClient.GetAuthorizedPeople(Microsoft.HealthVault.Person.GetAuthorizedPeopleSettings)" /></summary>
+    <remarks>
+             These settings allow specifying the behavior of data retrieval from the HealthVault
+             service through
+             <see cref="M:Microsoft.HealthVault.Clients.IPlatformClient.GetAuthorizedPeople(Microsoft.HealthVault.Person.GetAuthorizedPeopleSettings)" />.
+             </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GetAuthorizedPeopleSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Person.GetAuthorizedPeopleSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthorizationsCreatedSince">
+      <MemberSignature Language="C#" Value="public DateTime AuthorizationsCreatedSince { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime AuthorizationsCreatedSince" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Person.GetAuthorizedPeopleSettings.AuthorizationsCreatedSince" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Get or sets the DateTime in UTC that will be used to filter authorized people
+             from the returned list according to the date that the person was authorized for the application.
+             Calls to <see cref="M:Microsoft.HealthVault.Clients.IPlatformClient.GetAuthorizedPeople(Microsoft.HealthVault.Person.GetAuthorizedPeopleSettings)" />
+             will only return people whose authorization was created after the given date and time.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             The default value is DateTime.MinValue.
+             <br /><br />
+             The application is responsible for converting from local time to UTC.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BatchSize">
+      <MemberSignature Language="C#" Value="public int BatchSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BatchSize" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Person.GetAuthorizedPeopleSettings.BatchSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the number of <see cref="T:Microsoft.HealthVault.Person.PersonInfo" /> objects to retrieve when a network
+             call is made to the HealthVault service to retrieve the next batch.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             The maximum batch size is limited by the HealthVault platform.
+             <br /><br />
+             Specify 0 to set the batch size to the service configuration value
+             'defaultPersonInfosPerRetrieval'.
+             <br /><br />
+             The default value is 0.
+             </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+             An attempt was made to set the batch size to a negative number.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartingPersonId">
+      <MemberSignature Language="C#" Value="public Guid StartingPersonId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid StartingPersonId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Person.GetAuthorizedPeopleSettings.StartingPersonId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the person id that determines the starting point for the
+             <see cref="T:Microsoft.HealthVault.Person.PersonInfo" /> object iterator.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             The <see cref="T:Microsoft.HealthVault.Person.PersonInfo" /> iterator returned by
+             <see cref="M:Microsoft.HealthVault.Clients.IPlatformClient.GetAuthorizedPeople(Microsoft.HealthVault.Person.GetAuthorizedPeopleSettings)" />
+             will begin with the first authorized person <em>after</em> the person whose ID is
+             specified by <b>StartingPersonId</b>.
+             <br /><br />
+             To begin with the first available authorized person, set this value to <see cref="F:System.Guid.Empty" />.
+             The default value is <see cref="F:System.Guid.Empty" />.
+             <br /><br />
+             In case of a <see cref="T:Microsoft.HealthVault.Exceptions.HealthServiceException" /> while iterating through the results,
+             the last successfully retrieved person id can be specified for this value and used
+             to retrieve a new iterator with
+             <see cref="M:Microsoft.HealthVault.Clients.IPlatformClient.GetAuthorizedPeople(Microsoft.HealthVault.Person.GetAuthorizedPeopleSettings)" />.
+             The new iterator will begin with the authorized person that follows the last successfully retrieved PersonInfo.
+             </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
