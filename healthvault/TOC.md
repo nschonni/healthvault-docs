@@ -107,5 +107,3 @@
 #### [ACC Misc Tab](/healthvault/tools/acc/acc-misc-tab)
 #### [ACC Online and Offline Rules Tab](/healthvault/tools/acc/acc-online-and-offline-rules-tab)
 #### [ACC Public Certs Tab](/healthvault/tools/acc/acc-public-certs-tab)
-
-
