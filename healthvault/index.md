@@ -386,7 +386,6 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                 <h3>
                                                     <a href="https://www.github.com/microsoft/healthvault-java-sdk">Get the Java SDK</a>
                                                 </h3>
-                                                <p><a href="/healthvault/sdks/java/com.microsoft.hsg.android">Reference</a>
                                                 <p><a href="https://github.com/Microsoft/healthvault-samples/tree/master/java">Get samples</a></p>
                                             </div>
                                         </div>
