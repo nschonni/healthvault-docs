@@ -48,10 +48,11 @@ To access a patient’s record, the patient must provide consent to a registered
 
 ## Adding authorization rules
 
-Before your app can access user data, it will need offline access to specific [HealthVault data types](https://developer.healthvault.com/DataTypes). Make sure to include request for authorization to **Plan, Task and Task tracking entry** and any other data types which are related to your plans. If you need to use goals, also include the **Health Goal** entry.
+Before your app can access user data, it will need offline access to specific [HealthVault data types](https://developer.healthvault.com/DataTypes). Make sure to include request for authorization to **Action Plan (deprecated), Plan, Task and Task tracking entry** and any other data types which are related to your plans. If you need to use goals, also include the **Health Goal** entry.
 
 Your application will request permission to access these data types when users join the program. In our example, Fabrikam has requested users joining their program to give consent for the following data types:
 
+-   Action Plan (deprecated)
 -   Appointment
 -   Basic demographic information
 -   Body composition
