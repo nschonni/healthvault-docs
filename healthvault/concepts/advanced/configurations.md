@@ -26,7 +26,7 @@ US HealthVault instance
 |----|----|----|
 | Shell PPE URL | <https://account.healthvault-ppe.com/> | Used by developers to create HealthVault accounts for developing and testing applications in US PPE. | 
 | Platform PPE URL | <https://platform.healthvault-ppe.com/platform> | The HealthVault platform service URL for US PPE. |
-| Platform PPE IP Range | 65.55.202.96/27 | The IP range for US HealthVault platform PPE. | 
+| Platform PPE IP Range | 157.55.174.247 | The IP range for US HealthVault platform PPE. | 
 | REST URL | <https://data.ppe.microsofthealth.net> | The URL for the HealthVault REST API in US PPE. | 
 | REST IP | 157.55.174.228 | The IP address for the US | 
 | Application Configuration Center (ACC) | <https://config.healthvault-ppe.com/> | The ACC URL for creating and managing apps in all instances | 
@@ -52,9 +52,9 @@ EU HealthVault instance
 | Configuration          | Value  | Description  |
 |----|----|----|
 | Shell PPE URL        | <https://account.healthvault-ppe.co.uk/>                | Used by developers to create HealthVault accounts for developing and testing applications in EU PPE. |
-| Shell PPE IP         | 157.55.232.235      | The IP address for the EU HealthVault platform PPE.              |
+| Shell PPE IP         | 13.81.7.26      | The IP address for the EU HealthVault platform PPE.              |
 | Platform PPE URL     | <https://platform.healthvault-ppe.co.uk/platform>       | The HealthVault platform service URL for EU PPE.                 |
-| Platform PPE IP      | 157.55.232.236      | The IP address for the EU HealthVault platform PPE.              |
+| Platform PPE IP      | 13.73.155.34      | The IP address for the EU HealthVault platform PPE.              |
 | REST URL | <https://data.ppe.microsofthealth.co.uk> | The URL for the HealthVault REST API in EU PPE.
 | REST IP |157.55.232.240| The IP address for the EU 
 | Application Configuration Center (ACC) | [https://config.healthvault-ppe.com](https://config.healthvault-ppe.com/) | The ACC URL for creating and managing apps in all HealthVault instances.           |
