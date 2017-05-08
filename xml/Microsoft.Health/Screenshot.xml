@@ -4,7 +4,7 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Screenshot" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.Directory</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -15,7 +15,10 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Defines the information for a HealthVault screenshot item used in <see cref="T:Microsoft.Health.ApplicationDirectoryItem" />
+            or <see cref="T:Microsoft.Health.DeviceDirectoryItem" />.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -25,11 +28,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Screenshot.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Screenshot" /> class with default parameters.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -39,15 +44,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Screenshot.AlternativeText" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.CultureSpecificStringDictionary</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a dictionary of language specifiers and localized alternative text to display for the screenshot
+            most likely in the html img tag.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The key is the language-country string such as "en-US", and the value is the localized versions of the string.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Caption">
@@ -56,15 +66,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Screenshot.Caption" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.CultureSpecificStringDictionary</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a dictionary of language specifiers and localized caption to display for the screenshot.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The key is the language-country string such as "en-US", and the value is the localized versions of the string.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetSchema">
@@ -73,15 +87,18 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Screenshot.GetSchema" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Get the schema as per IXmlSerializable requirement.
+            Always returns null.
+            </summary>
+        <returns>null</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -91,15 +108,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Screenshot.Image" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.CultureSpecificByteArrayDictionary</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the image byte array of screenshot.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The key is the language-country string such as "en-US", and the value is the localized versions of the image.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ImageContentType">
@@ -108,13 +129,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Screenshot.ImageContentType" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the image type such as image/jpeg, image/gif, etc.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -125,7 +148,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Screenshot.ReadXml(System.Xml.XmlReader)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -134,9 +157,18 @@
         <Parameter Name="reader" Type="System.Xml.XmlReader" />
       </Parameters>
       <Docs>
-        <param name="reader">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="reader">
+            The XmlReader stream from which the object is deserialized.
+            </param>
+        <summary>
+            Generates an object from its XML representation.
+            </summary>
+        <remarks>
+            The ReadXml method must reconstitute your object using the information that was written by the WriteXml method
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the argument <paramref name="reader" /> was <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Sequence">
@@ -145,13 +177,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Screenshot.Sequence" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the sequence of screenshot.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -162,7 +196,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Screenshot.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -171,9 +205,17 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="writer">The XmlWriter stream to which the object is serialized. 
+            </param>
+        <summary>
+            Converts an object into its XML representation.
+            </summary>
+        <remarks>
+            Write sufficient information to the XmlWriter stream to allow the ReadXml method to reconstitute the object.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the argument <paramref name="writer" /> was <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

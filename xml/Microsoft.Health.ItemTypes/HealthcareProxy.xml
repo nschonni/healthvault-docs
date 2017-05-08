@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.HealthcareProxy" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a health record item type that encapsulates a healthcare proxy.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +23,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthcareProxy.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.HealthcareProxy" /> class with default 
+            values.
+            </summary>
+        <remarks>
+            The item isn't added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,15 +44,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthcareProxy.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="when" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
       </Parameters>
       <Docs>
-        <param name="when">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="when">
+            The date/time for the healthcare proxy.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.HealthcareProxy" /> class 
+            with the specified date and time.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="when" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Alternate">
@@ -52,15 +69,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HealthcareProxy.Alternate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.PersonItem</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the alternate contact information.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.PersonItem" /> representing the information.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the alternate contact information
+            should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Content">
@@ -69,15 +93,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HealthcareProxy.Content" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the content of what is being proxied.
+            </summary>
+        <value>
+            A string representing the content.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the content should not be 
+            stored.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -86,7 +120,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthcareProxy.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -95,9 +129,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the healthcare proxy data from.
+            </param>
+        <summary>
+            Populates this healthcare proxy instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            a healthcare proxy node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="PrimaryWitness">
@@ -106,15 +148,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HealthcareProxy.PrimaryWitness" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.PersonItem</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the primary witness contact information.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.PersonItem" /> representing the information.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the primary witness contact information
+            should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Proxy">
@@ -123,15 +172,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HealthcareProxy.Proxy" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.PersonItem</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the proxy contact information.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.PersonItem" /> representing the information.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the proxy contact information
+            should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="SecondaryWitness">
@@ -140,15 +196,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HealthcareProxy.SecondaryWitness" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.PersonItem</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the secondary witness contact information.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.PersonItem" /> representing the information.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the secondary witness contact information
+            should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -157,15 +220,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthcareProxy.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the healthcare proxy item.
+            </summary>
+        <returns>
+            A string representation of the healthcare proxy item.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -175,13 +242,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.HealthcareProxy.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -191,15 +263,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HealthcareProxy.When" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the date/time for the medical equipment.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing 
+            the date. The default value is the current year, month, and day.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -208,7 +288,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthcareProxy.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -217,9 +297,19 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the healthcare proxy data to.
+            </param>
+        <summary>
+            Writes the healthcare proxy data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.HealthcareProxy.When" /> property has not been set.
+            </exception>
       </Docs>
     </Member>
   </Members>

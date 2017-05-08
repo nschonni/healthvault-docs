@@ -4,14 +4,17 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthServiceException" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Exception</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents the base class for all HealthVault exceptions 
+            thrown by the SDK.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +24,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceException.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.HealthServiceException" /> 
+            class with default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,14 +41,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceException.#ctor(System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="message" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="message">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="message">
+            A string representing the error message.
+            </param>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.HealthServiceException" /> 
+            class having the specified error message.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -52,17 +63,27 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
         <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
       </Parameters>
       <Docs>
-        <param name="info">To be added.</param>
-        <param name="context">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="info">
+            Serialized information about this exception.
+            </param>
+        <param name="context">
+            The source and destination of the serialized information.
+            </param>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.HealthServiceException" /> 
+            class with the specified serialization information.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="info" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -71,16 +92,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceException.#ctor(System.String,System.Exception)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="message" Type="System.String" />
         <Parameter Name="innerException" Type="System.Exception" />
       </Parameters>
       <Docs>
-        <param name="message">To be added.</param>
-        <param name="innerException">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="message">
+            A string representing the error message.
+            </param>
+        <param name="innerException">
+            The inner exception.
+            </param>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.HealthServiceException" /> 
+            class having the specified error message and inner exception.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -90,15 +118,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceException.Error" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthServiceResponseError</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the information about an error that occurred while processing
+            the request.  
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.HealthServiceResponseError" /> object representing the
+            error information.
+            </value>
+        <remarks>
+            This value can be <b>null</b> for those exceptions that 
+            occurred in the SDK rather than in HealthVault.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ErrorCode">
@@ -107,13 +144,16 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceException.ErrorCode" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthServiceStatusCode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the status code returned by HealthVault to indicate the type
+            of error that causes this exception.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -124,15 +164,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceException.ErrorCodeId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the identifier of the status code in the HealthVault response.
+            </summary>
+        <value>
+            An integer representing the identifier.
+            </value>
+        <remarks>
+            This property is useful when the SDK is out of sync with the 
+            HealthVault status code set. The actual integer value of the 
+            status code can be looked up for further investigation.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetObjectData">
@@ -141,7 +189,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -156,10 +204,19 @@
         <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
       </Parameters>
       <Docs>
-        <param name="info">To be added.</param>
-        <param name="context">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="info">
+            Serialized information about this exception.
+            </param>
+        <param name="context">
+            The source and destination of the serialized information.
+            </param>
+        <summary>
+            Serializes the exception.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="info" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Response">
@@ -168,13 +225,16 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceException.Response" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthServiceResponseData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Contains the response information from the HealthVault service after
+            processing a request.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -185,15 +245,21 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceException.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Retrieves the string representing the 
+            <see cref="T:Microsoft.Health.HealthServiceException" /> object.
+            </summary>
+        <returns> 
+            A string representing the contents of the 
+            <see cref="T:Microsoft.Health.HealthServiceException" /> object.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

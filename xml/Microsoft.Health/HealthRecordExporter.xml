@@ -4,15 +4,19 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthRecordExporter" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Exports HealthVault record items.
+            </summary>
+    <remarks>
+            This class will return results in HealthVault XML format. Derived classes should override...
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,15 +25,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordExporter.#ctor(Microsoft.Health.HealthRecordAccessor)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="record" Type="Microsoft.Health.HealthRecordAccessor" />
       </Parameters>
       <Docs>
-        <param name="record">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="record">
+            The health record to export data from.
+            </param>
+        <summary>
+            Constructs an instance of a HealthRecordExporter for the specified
+            health record.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="record" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -38,17 +50,39 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordExporter.#ctor(Microsoft.Health.HealthRecordAccessor,System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="record" Type="Microsoft.Health.HealthRecordAccessor" />
         <Parameter Name="transformTag" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="record">To be added.</param>
-        <param name="transformTag">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="record">
+            The health record to export data from.
+            </param>
+        <param name="transformTag">
+            The name of the transform to be retrieved from HealthVault to convert 
+            the HealthVault XML to the destination format. For example, "toccr" will
+            convert the data to the Continuity of Care Record XML format.
+            </param>
+        <summary>
+            Constructs an instance of a HealthRecordExporter for the specified
+            health record and the specified transform tag.
+            </summary>
+        <remarks>
+            Note, this constructor makes a call to HealthVault to retrieve the specified
+            data transform. The web request may cause a variety of WebExceptions to be thrown.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="record" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="transformTag" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.Net.WebException">
+            If the transform with the specified <paramref name="transformTag" />
+            could not be found.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -57,17 +91,27 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordExporter.#ctor(Microsoft.Health.HealthRecordAccessor,System.Xml.Xsl.XslCompiledTransform)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="record" Type="Microsoft.Health.HealthRecordAccessor" />
         <Parameter Name="transform" Type="System.Xml.Xsl.XslCompiledTransform" />
       </Parameters>
       <Docs>
-        <param name="record">To be added.</param>
-        <param name="transform">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="record">
+            The health record to export data from.
+            </param>
+        <param name="transform">
+            The transform used to convert HealthVault XML to the destination format.
+            </param>
+        <summary>
+            Constructs an instance of a HealthRecordExporter for the specified
+            health record and the specified transform.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="record" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ClientFilters">
@@ -76,15 +120,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordExporter.ClientFilters" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.HealthRecordClientFilterHandler&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Client side filtering of the results of the HealthVault search for items.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If more than one handler is added to the filter, the item will only be deemed to
+            pass the filter if all handlers return true.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ExportItems">
@@ -93,16 +142,31 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordExporter.ExportItems" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary />
+        <returns />
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            If the filters specified do not reduce the amount of data being retrieved from the
+            record, this method could take a significant amount of time as data gets paged into
+            memory from HealthVault.
+            
+            Note: There may be data in items that HealthVault does not include when converting 
+            to the CCR or CCD formats.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The response from the server was anything but 
+            <see cref="F:Microsoft.Health.HealthServiceStatusCode.Ok" />.
+            -or-
+            <see cref="P:Microsoft.Health.HealthRecordSearcher.Filters" /> is empty
+            or contains invalid filters.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Filters">
@@ -111,15 +175,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordExporter.Filters" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.HealthRecordFilter&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the filters associated with the search.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            To add a search filter, call the Add method of the
+            returned collection.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Record">
@@ -128,15 +197,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordExporter.Record" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthRecordAccessor</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the health record that is being searched for health record items.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.HealthRecordAccessor" /> representing the record.
+            </value>
+        <remarks>
+            The authenticated person must have 
+            <see cref="F:Microsoft.Health.HealthRecordItemPermissions.Read" /> access rights to the
+            health record to get results from the query.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Transform">
@@ -145,13 +222,13 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordExporter.Transform" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Xsl.XslCompiledTransform</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary />
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -162,13 +239,13 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordExporter.TransformArgumentList" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Xsl.XsltArgumentList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary />
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -179,7 +256,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordExporter.TransformItemXml(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -188,9 +265,10 @@
         <Parameter Name="healthRecordItemsXml" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="healthRecordItemsXml">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="healthRecordItemsXml">
+        </param>
+        <summary />
+        <returns />
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

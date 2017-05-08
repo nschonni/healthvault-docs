@@ -4,15 +4,20 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformApplication" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Provides low-level access to the HealthVault message operations.
+            </summary>
+    <remarks>
+      <see cref="T:Microsoft.Health.HealthVaultPlatform" /> uses this class to perform operations. Set 
+            HealthVaultPlatformApplication.Current to a derived class to intercept all message calls.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,7 +26,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformApplication.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -35,15 +40,20 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformApplication.DisableMock" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Removes mocking of calls to this class.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            There is no mock registered for this class.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="EnableMock">
@@ -52,7 +62,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformApplication.EnableMock(Microsoft.Health.PlatformPrimitives.HealthVaultPlatformApplication)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -61,9 +71,17 @@
         <Parameter Name="mock" Type="Microsoft.Health.PlatformPrimitives.HealthVaultPlatformApplication" />
       </Parameters>
       <Docs>
-        <param name="mock">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="mock">The mocking class.</param>
+        <summary>
+            Enables mocking of calls to this class.
+            </summary>
+        <remarks>
+            The calling class should pass in a class that derives from this
+            class and overrides the calls to be mocked. 
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            There is already a mock registered for this class.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetApplicationInfo">
@@ -72,7 +90,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformApplication.GetApplicationInfo(Microsoft.Health.HealthServiceConnection,System.Boolean)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ApplicationInfo</ReturnType>
@@ -82,11 +100,33 @@
         <Parameter Name="allLanguages" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="allLanguages">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="connection">The connection to use to perform the operation. This connection
+             must be application level. </param>
+        <param name="allLanguages">
+             A boolean value indicating whether the localized values all languages should be 
+             returned, just one language. This affects all properties which can have multiple 
+             localized values, including <see cref="P:Microsoft.Health.ApplicationInfo.CultureSpecificNames" />, 
+             <see cref="P:Microsoft.Health.ApplicationInfo.CultureSpecificDescriptions" />,
+             <see cref="P:Microsoft.Health.ApplicationInfo.CultureSpecificAuthorizationReasons" />, 
+             <see cref="P:Microsoft.Health.ApplicationInfo.LargeLogo" />,
+             <see cref="P:Microsoft.Health.ApplicationInfo.SmallLogo" />,
+             <see cref="P:Microsoft.Health.ApplicationInfo.PrivacyStatement" />,
+             <see cref="P:Microsoft.Health.ApplicationInfo.TermsOfUse" />,
+             and <see cref="P:Microsoft.Health.ApplicationInfo.DtcSuccessMessage" /></param>
+        <summary>
+             Gets the application configuration information for the calling application.
+             </summary>
+        <returns>
+             An ApplicationInfo object for the calling application.
+             </returns>
+        <remarks>
+             This method always calls the HealthVault service to get the latest 
+             information. It returns installation configuration about the calling 
+             application.
+             </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+             The HealthVault service returned an error.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="GetAuthorizedPeople">
@@ -95,7 +135,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformApplication.GetAuthorizedPeople(Microsoft.Health.ApplicationConnection,Microsoft.Health.GetAuthorizedPeopleSettings)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -110,11 +150,32 @@
         <Parameter Name="settings" Type="Microsoft.Health.GetAuthorizedPeopleSettings" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="settings">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="connection">The connection to use to perform the operation. This connection
+             must be application-level. </param>
+        <param name="settings">
+             The <see cref="T:Microsoft.Health.GetAuthorizedPeopleSettings" /> object used to configure the 
+             IEnumerable iterator returned by this method.
+             </param>
+        <summary>
+             Gets information about people authorized for an application.
+             </summary>
+        <returns>
+             An IEnumerable iterator of <see cref="T:Microsoft.Health.PersonInfo" /> objects representing 
+             people authorized for the application.
+             </returns>
+        <remarks>
+             The returned IEnumerable iterator will access the HealthVault service 
+             across the network. See <see cref="T:Microsoft.Health.GetAuthorizedPeopleSettings" /> for applicable 
+             settings.
+             </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+             The HealthVault service returned an error. The retrieval can be retried from the 
+             current position by calling this method again and using the last successfully 
+             retrieved person Id for <see cref="P:Microsoft.Health.GetAuthorizedPeopleSettings.StartingPersonId" />.        
+             </exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="settings" /> is null.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="GetUpdatedRecordInfoForApplication">
@@ -123,7 +184,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformApplication.GetUpdatedRecordInfoForApplication(Microsoft.Health.HealthServiceConnection,System.Nullable{System.DateTime})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Health.HealthRecordUpdateInfo&gt;</ReturnType>
@@ -133,10 +194,19 @@
         <Parameter Name="updatedDate" Type="System.Nullable&lt;System.DateTime&gt;" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="updatedDate">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="connection">The connection to use to perform the operation. This connection
+             must be application level. </param>
+        <param name="updatedDate">
+             Date that is used to filter health record IDs according to whether or not they have
+             been updated since the specified date.
+             </param>
+        <summary>
+             Gets a list of <see cref="T:Microsoft.Health.HealthRecordUpdateInfo" /> objects for the current application, 
+             that optionally have been updated since a specified date.
+             </summary>
+        <returns>
+             List of <see cref="T:Microsoft.Health.HealthRecordUpdateInfo" /> objects filtered by any specified input parameters.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -146,7 +216,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformApplication.GetUpdatedRecordsForApplication(Microsoft.Health.HealthServiceConnection,System.Nullable{System.DateTime})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;System.Guid&gt;</ReturnType>
@@ -156,10 +226,19 @@
         <Parameter Name="updatedDate" Type="System.Nullable&lt;System.DateTime&gt;" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="updatedDate">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="connection">The connection to use to perform the operation. This connection
+             must be application level. </param>
+        <param name="updatedDate">
+             Date that is used to filter health record IDs according to whether or not they have
+             been updated since the specified date.
+             </param>
+        <summary>
+             Gets a list of health record IDs for the current application, 
+             that optionally have been updated since a specified date.
+             </summary>
+        <returns>
+             List of health record IDs filtered by any specified input parameters.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -169,7 +248,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformApplication.NewSignupCode(Microsoft.Health.HealthServiceConnection)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -178,9 +257,15 @@
         <Parameter Name="connection" Type="Microsoft.Health.HealthServiceConnection" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="connection">The connection to use to perform the operation. This connection
+             must be application level. </param>
+        <summary>
+             Generates a new signup code that should be passed to HealthVault Shell in order
+             to create a new user account.
+             </summary>
+        <returns>
+             A signup code that can be used to create an account.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

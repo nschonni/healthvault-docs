@@ -4,15 +4,22 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.FamilyHistoryCondition" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+             The condition of a relative.
+             </summary>
+    <remarks>
+             The family history condition item stores a condition that 
+             a relative of the record owner has. Relating this item to a family
+             history person item will provide a comprehensive family medical history 
+             record. 
+             </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +28,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.FamilyHistoryCondition.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.FamilyHistoryCondition" /> 
+            class with default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,15 +45,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.FamilyHistoryCondition.#ctor(Microsoft.Health.ItemTypes.ConditionEntry)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="relativeCondition" Type="Microsoft.Health.ItemTypes.ConditionEntry" />
       </Parameters>
       <Docs>
-        <param name="relativeCondition">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="relativeCondition">
+            Relative condition is the condition of a relative. 
+            </param>
+        <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.FamilyHistoryCondition" /> 
+            class with condition.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="relativeCondition" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -52,7 +70,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.FamilyHistoryCondition.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -61,9 +79,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+             The XML to get the family history condition data from.
+             </param>
+        <summary>
+             Populates this <see cref="T:Microsoft.Health.ItemTypes.FamilyHistoryCondition" /> instance from the data in the XML. 
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+             If the first node in <paramref name="typeSpecificXml" /> is not
+             a family history condition node.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="RelativeCondition">
@@ -72,15 +98,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.FamilyHistoryCondition.RelativeCondition" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ConditionEntry</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets a condition.  
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> of relative condition is <b>null</b> on set.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -89,15 +120,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.FamilyHistoryCondition.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+             Gets a string representation of the family history condition item.
+             </summary>
+        <returns>
+             A string representation of the family history condition item.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -107,13 +142,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.FamilyHistoryCondition.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -123,7 +160,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.FamilyHistoryCondition.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -132,9 +169,19 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the concern data to.
+            </param>
+        <summary>
+            Writes the family history condition data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.FamilyHistoryCondition.RelativeCondition" /> is <b> null </b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.InsightAttribution" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents Insight attribution information.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.InsightAttribution.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Constructs a new instance of the <see cref="T:Microsoft.Health.ItemTypes.InsightAttribution" /> class with 
+            default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,14 +40,17 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.InsightAttribution.#ctor(System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">
+        </param>
+        <summary>
+            Constructs a new instance of the <see cref="T:Microsoft.Health.ItemTypes.InsightAttribution" /> with the specified name
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -52,13 +60,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.InsightAttribution.AttributionRequired" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets attribution required boolean value.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -69,15 +79,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.InsightAttribution.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets attribution name.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="value" /> is null or contains only whitespace.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -86,7 +101,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.InsightAttribution.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -95,9 +110,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator"> 
+            The XML node representing the insight attribution type.
+            </param>
+        <summary> 
+            Populates the data for insight attribution from the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -106,15 +128,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.InsightAttribution.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of insight attribution.
+            </summary>
+        <returns>
+            A string representing the insight attribution type.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -124,7 +150,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.InsightAttribution.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -134,10 +160,22 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the outer element for the insight attribution type.
+            </param>
+        <param name="writer"> 
+            The XmlWriter to write the insight attribution type to.
+            </param>
+        <summary> 
+            Writes the insight attribution data to the specified XML writer.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

@@ -4,14 +4,17 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.DurationValue" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a health record item type that encapsulates a duration of 
+            time with a starting and optional ending date.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +24,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DurationValue.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.DurationValue" /> class with default 
+            values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,15 +41,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DurationValue.#ctor(Microsoft.Health.ItemTypes.ApproximateDateTime)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="startDate" Type="Microsoft.Health.ItemTypes.ApproximateDateTime" />
       </Parameters>
       <Docs>
-        <param name="startDate">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="startDate">
+            The starting date/time of the duration value.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.DurationValue" /> class with 
+            the specified starting date.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="startDate" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -52,17 +66,28 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DurationValue.#ctor(Microsoft.Health.ItemTypes.ApproximateDateTime,Microsoft.Health.ItemTypes.ApproximateDateTime)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="startDate" Type="Microsoft.Health.ItemTypes.ApproximateDateTime" />
         <Parameter Name="endDate" Type="Microsoft.Health.ItemTypes.ApproximateDateTime" />
       </Parameters>
       <Docs>
-        <param name="startDate">To be added.</param>
-        <param name="endDate">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="startDate">
+            The start date/time of the duration value.
+            </param>
+        <param name="endDate">
+            The end date/time of the duration value.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.DurationValue" /> class with 
+            the specified starting and ending date.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="startDate" /> or <paramref name="endDate" /> 
+            parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="EndDate">
@@ -71,15 +96,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DurationValue.EndDate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the approximate date of the end of the duration.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDateTime" /> representing the end of the duration.
+            </value>
+        <remarks>
+            An approximate date must have a year and can also have the month, 
+            day, or both.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -88,7 +120,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DurationValue.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -97,9 +129,17 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator">
+            The XML containing the duration information.
+            </param>
+        <summary>
+            Populates this Person instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="navigator" /> is not
+            a person node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="StartDate">
@@ -108,15 +148,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DurationValue.StartDate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the approximate date of the start of the duration.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDateTime" /> representing the start of the duration.
+            </value>
+        <remarks>
+            An approximate date must have a year and can also have the month, 
+            day, or both.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -125,15 +172,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DurationValue.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the duration value.
+            </summary>
+        <returns>
+            A string representation of the duration value.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -143,7 +194,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DurationValue.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -153,10 +204,25 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the outer element for the duration value.
+            </param>
+        <param name="writer">
+            The XmlWriter to write the duration value to.
+            </param>
+        <summary>
+            Writes the duration value to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.DurationValue.StartDate" /> property has not been set.
+            </exception>
       </Docs>
     </Member>
   </Members>

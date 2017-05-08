@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Pregnancy" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Record of a pregnancy.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +23,18 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Pregnancy.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Pregnancy" /> class with default values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ConceptionMethod">
@@ -35,15 +43,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Pregnancy.ConceptionMethod" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the method of conception.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the conception method is not known the value should be set to <b>null</b>.
+            The preferred vocabulary for this value is "conception-methods". 
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Delivery">
@@ -52,15 +65,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Pregnancy.Delivery" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.Delivery&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a collection of the details of the resolution of each fetus.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If there is no delivery information the collection should be empty.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="DueDate">
@@ -69,15 +86,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Pregnancy.DueDate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDate</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets the approximate due date.
+             </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+             If there is no due date the value should be set to <b>null</b>.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="FetusCount">
@@ -86,15 +107,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Pregnancy.FetusCount" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the number of fetuses.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the fetus count is not known the value should be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="GestationalAge">
@@ -103,15 +128,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Pregnancy.GestationalAge" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the number of weeks of pregnancy at the time of delivery.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the gestational age is not known the value should be set to <b>null</b>.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="value" /> is less than or equal to zero.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="LastMenstrualPeriod">
@@ -120,15 +152,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Pregnancy.LastMenstrualPeriod" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDate</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the first day of the last menstrual cycle.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the last menstrual period is not known the value should be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -137,7 +173,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Pregnancy.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -146,9 +182,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the pregnancy data from.
+            </param>
+        <summary>
+            Information related to a pregnancy.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            If the first node in <paramref name="typeSpecificXml" /> is not
+            a pregnancy node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -157,15 +201,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Pregnancy.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the pregnancy item.
+            </summary>
+        <returns>
+            A string representation of the pregnancy item.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -175,13 +223,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.Pregnancy.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -191,7 +244,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Pregnancy.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -200,9 +253,16 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the pregnancy data to.
+            </param>
+        <summary>
+            Writes the pregnancy data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

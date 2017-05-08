@@ -4,15 +4,21 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.TaskTrackingEntry" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents a single occasion on which the user performed a task, was supposed to perform a
+            task, or completed a task by performing all required occurrences.
+            </summary>
+    <remarks>
+            Applications should not interact with this data type directly.
+            Instead, they should use the ActionPlan methods in the HealthVault REST APIs.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +27,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.TaskTrackingEntry.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.TaskTrackingEntry" /> class with default values
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,7 +43,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.TaskTrackingEntry.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime,Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingType,Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingStatus,Microsoft.Health.ItemTypes.HealthServiceDateTime,Microsoft.Health.ItemTypes.HealthServiceDateTime)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="trackingTime" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
@@ -50,7 +58,9 @@
         <param name="trackingStatus">To be added.</param>
         <param name="completionStartTime">To be added.</param>
         <param name="completionEndTime">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.TaskTrackingEntry" /> class
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -60,15 +70,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.TaskTrackingEntry.CompletionEndTime" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            When the completion window ended.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="CompletionStartTime">
@@ -77,15 +92,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.TaskTrackingEntry.CompletionStartTime" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            When the completion window began.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="OccurrenceEndTime">
@@ -94,15 +114,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.TaskTrackingEntry.OccurrenceEndTime" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            When the occurrence window ended.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            This field should be null if the tracking status is Completion or OutOfWindow.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="OccurrenceStartTime">
@@ -111,15 +135,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.TaskTrackingEntry.OccurrenceStartTime" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            When the occurrence window began.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            This field should be null if the tracking status is Completion or OutOfWindow.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -128,7 +156,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.TaskTrackingEntry.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -138,7 +166,9 @@
       </Parameters>
       <Docs>
         <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.TaskTrackingEntry" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -148,15 +178,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.TaskTrackingEntry.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+             Gets a string representation of the insight.
+             </summary>
+        <returns>
+             A string representing the insight.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -166,13 +200,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.TaskTrackingEntry.TrackingStatus" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingStatus</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The task adherence or completion status.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -183,15 +219,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.TaskTrackingEntry.TrackingTime" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            When the entry was recorded.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="TrackingType">
@@ -200,13 +241,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.TaskTrackingEntry.TrackingType" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The method by which the tracking entry was triggered.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -217,13 +260,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.TaskTrackingEntry.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -233,7 +281,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.TaskTrackingEntry.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -243,7 +291,9 @@
       </Parameters>
       <Docs>
         <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>
+            Writes the item data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

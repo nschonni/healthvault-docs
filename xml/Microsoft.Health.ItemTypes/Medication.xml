@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Medication" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a medication health record item.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +23,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Medication.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Medication" /> class with default 
+            values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,15 +44,22 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Medication.#ctor(Microsoft.Health.ItemTypes.CodableValue)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="Microsoft.Health.ItemTypes.CodableValue" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">
+            The name of the medication.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Medication" /> class with the specified name.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="name" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="DateDiscontinued">
@@ -52,15 +68,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Medication.DateDiscontinued" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the date on which the medication was discontinued.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="DateStarted">
@@ -69,15 +89,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Medication.DateStarted" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the date on which the person started taken the medication.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Dose">
@@ -86,15 +110,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Medication.Dose" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.GeneralMeasurement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the dose of the medication.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>.
+            Examples: 1 tablet, 50 ml.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Frequency">
@@ -103,15 +132,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Medication.Frequency" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.GeneralMeasurement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets how often the medication is taken.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>.
+            Examples: 1 tablet per day, 2 every 6 hours, as needed.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="GenericName">
@@ -120,15 +154,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Medication.GenericName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the generic name of the medication.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Indication">
@@ -137,15 +175,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Medication.Indication" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the indication for the medication.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -154,15 +196,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Medication.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the medication name and clinical code.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="value" /> is <b>null</b> on set.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -171,7 +218,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Medication.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -180,9 +227,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the medication data from.
+            </param>
+        <summary>
+            Populates this medication instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            If the first node in <paramref name="typeSpecificXml" /> is not
+            a medication node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Prescribed">
@@ -191,15 +246,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Medication.Prescribed" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the source of the prescription.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            A medication that is prescribed by a physician should code "prescribed"
+            into this element. 
+            If the value is not known, it will be set to <b>null</b>.
+            The preferred vocabulary for prescribed is "medication-prescribed".
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Prescription">
@@ -208,15 +270,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Medication.Prescription" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.Prescription</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the prescription for the medication.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Route">
@@ -225,15 +291,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Medication.Route" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the route by which the medication is administered.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>.
+            The preferred vocabulary for route is "medication-routes".
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Strength">
@@ -242,15 +313,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Medication.Strength" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.GeneralMeasurement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the strength of the medication.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>.
+            Examples: 500 mg, 10 mg/ml.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -259,15 +335,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Medication.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the medication.
+            </summary>
+        <returns>
+            A string representation of the medication.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -277,13 +357,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.Medication.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The unique identifier for the item type.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -293,7 +375,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Medication.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -302,9 +384,19 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the medication data to.
+            </param>
+        <summary>
+            Writes the medication data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.Medication.Name" /> property has not been set.
+            </exception>
       </Docs>
     </Member>
   </Members>

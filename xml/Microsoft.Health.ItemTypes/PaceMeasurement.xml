@@ -4,7 +4,7 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.PaceMeasurement" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.Measurement&lt;System.Double&gt;</BaseTypeName>
@@ -14,8 +14,17 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents a pace measurement and display.
+            </summary>
+    <remarks>
+            In HealthVault, pace measurements have values and display values. 
+            All values are stored in a base unit of seconds per 100 meters. 
+            An application can take a pace value using any scale the application 
+            chooses and can store the user-entered value as the display value, 
+            but the pace value must be converted to seconds per 100 meters to be 
+            stored in HealthVault.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -24,11 +33,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PaceMeasurement.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.PaceMeasurement" /> 
+            class with empty values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -38,14 +50,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PaceMeasurement.#ctor(System.Double)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="secondsPerHundredMeters" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="secondsPerHundredMeters">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="secondsPerHundredMeters">
+            The pace in seconds per 100 meters.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.PaceMeasurement" /> 
+            class with the specified value in seconds per 100 meters.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -55,16 +72,29 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PaceMeasurement.#ctor(System.Double,Microsoft.Health.ItemTypes.DisplayValue)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="secondsPerHundredMeters" Type="System.Double" />
         <Parameter Name="displayValue" Type="Microsoft.Health.ItemTypes.DisplayValue" />
       </Parameters>
       <Docs>
-        <param name="secondsPerHundredMeters">To be added.</param>
-        <param name="displayValue">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="secondsPerHundredMeters">
+            The pace in seconds per 100 meters.
+            </param>
+        <param name="displayValue">
+            The display value of the pace. This should contain the
+            exact pace as entered by the user even if it uses some
+            other unit of measure besides seconds per 100 meters. The display value
+            <see cref="P:Microsoft.Health.ItemTypes.DisplayValue.Units" /> and 
+            <see cref="P:Microsoft.Health.ItemTypes.DisplayValue.UnitsCode" /> 
+            represents the unit of measure for the user-entered value.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.PaceMeasurement" /> 
+            class with the specified value in seconds per 100 meters and 
+            optional display value.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -74,7 +104,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PaceMeasurement.AssertMeasurementValue(System.Double)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -83,9 +113,16 @@
         <Parameter Name="value" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="value">
+            The pace measurement.
+            </param>
+        <summary>
+            Verifies that the value is a legal pace value.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is less than or equal to zero.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetValueString">
@@ -94,7 +131,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PaceMeasurement.GetValueString(System.Double)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -104,8 +141,12 @@
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the pace in the base units.
+            </summary>
+        <returns>
+            The pace as a string in the base units.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -115,7 +156,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PaceMeasurement.ParseValueXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -124,8 +165,12 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator"> 
+            The XML node representing the pace.
+            </param>
+        <summary> 
+            Populates the data for the pace from the XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -135,7 +180,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PaceMeasurement.WriteValueXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -144,8 +189,12 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer"> 
+            The XmlWriter to write the pace to.
+            </param>
+        <summary> 
+            Writes the pace to the specified XML writer.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

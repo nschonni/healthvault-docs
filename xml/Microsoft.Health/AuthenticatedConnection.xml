@@ -4,15 +4,33 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.AuthenticatedConnection" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ApplicationConnection</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents an authenticated interface to the HealthVault service. Most
+            operations performed against the service require authentication.
+            </summary>
+    <remarks>
+            You must connect to the HealthVault service to access its
+            web methods. This class does not maintain
+            an open connection to the service, but uses XML over HTTP to 
+            make requests and receive responses from the service. The connection
+            only maintains the data necessary for the request.
+            <br /><br />
+            An authenticated connection takes the user name and password, 
+            authenticates them against the HealthVault service, and then stores an 
+            authentication token which is then passed to the service on each 
+            subsequent request. An authenticated connection is required for 
+            accessing a person's health record. 
+            <br /><br />
+            For operations that do not require user or application authentication, 
+            use the <see cref="T:Microsoft.Health.AnonymousConnection" /> class.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,15 +39,30 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.#ctor(Microsoft.Health.Authentication.Credential)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="credential" Type="Microsoft.Health.Authentication.Credential" />
       </Parameters>
       <Docs>
-        <param name="credential">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="credential">
+            The credential of the user to authenticate for access to HealthVault.
+            </param>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.AuthenticatedConnection" />
+            class with the specified credential.
+            </summary>
+        <remarks>
+            The base class, <see cref="T:Microsoft.Health.ApplicationConnection" />, obtains an 
+            application identifier and a service URL from the configuration file.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="credential" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.InvalidConfigurationException">
+            The web or application configuration file does not contain 
+            configuration entries for "ApplicationID" or "HealthServiceUrl".
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -38,17 +71,31 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.#ctor(Microsoft.Health.HealthServiceInstance,Microsoft.Health.Authentication.Credential)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
         <Parameter Name="credential" Type="Microsoft.Health.Authentication.Credential" />
       </Parameters>
       <Docs>
-        <param name="serviceInstance">To be added.</param>
-        <param name="credential">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <param name="credential">
+            The credential of the user to authenticate for access to HealthVault.
+            </param>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.AuthenticatedConnection" />
+            class with the specified HealthVault web-service instance
+            and credential.
+            </summary>
+        <remarks>
+            If <paramref name="serviceInstance" /> is <b>null</b>, the URL for the configured
+            default HealthVault web-service instance is used.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="credential" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -57,17 +104,28 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.#ctor(System.Guid,Microsoft.Health.Authentication.Credential)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="callingApplicationId" Type="System.Guid" />
         <Parameter Name="credential" Type="Microsoft.Health.Authentication.Credential" />
       </Parameters>
       <Docs>
-        <param name="callingApplicationId">To be added.</param>
-        <param name="credential">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="callingApplicationId">
+            The HealthVault application identifier.
+            </param>
+        <param name="credential">
+            The credential of the user to authenticate for access to HealthVault.
+            </param>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.AuthenticatedConnection" />
+            class with the specified application identifier, and 
+            credential.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="credential" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -76,7 +134,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.#ctor(System.Guid,Microsoft.Health.HealthServiceInstance,Microsoft.Health.Authentication.Credential)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="callingApplicationId" Type="System.Guid" />
@@ -84,11 +142,27 @@
         <Parameter Name="credential" Type="Microsoft.Health.Authentication.Credential" />
       </Parameters>
       <Docs>
-        <param name="callingApplicationId">To be added.</param>
-        <param name="serviceInstance">To be added.</param>
-        <param name="credential">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="callingApplicationId">
+            The HealthVault application identifier.
+            </param>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <param name="credential">
+            The credential of the user to authenticate for access to HealthVault.
+            </param>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.AuthenticatedConnection" />
+            class with the specified application identifier, HealthVault web-service instance,
+            and credential.
+            </summary>
+        <remarks>
+            If <paramref name="serviceInstance" /> is <b>null</b>, the URL for the configured
+            default HealthVault web-service instance is used.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="credential" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -97,7 +171,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.#ctor(System.Guid,System.String,Microsoft.Health.Authentication.Credential)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="callingApplicationId" Type="System.Guid" />
@@ -105,11 +179,25 @@
         <Parameter Name="credential" Type="Microsoft.Health.Authentication.Credential" />
       </Parameters>
       <Docs>
-        <param name="callingApplicationId">To be added.</param>
-        <param name="healthServiceUrl">To be added.</param>
-        <param name="credential">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="callingApplicationId">
+            The HealthVault application identifier.
+            </param>
+        <param name="healthServiceUrl">
+            A string representing the URL of the HealthVault web service.
+            </param>
+        <param name="credential">
+            The credential of the user to authenticate for access to HealthVault.
+            </param>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.AuthenticatedConnection" />
+            class with the specified application identifier, a string 
+            representing the URL, and credential.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="healthServiceUrl" /> or 
+            <paramref name="credential" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -118,7 +206,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.#ctor(System.Guid,System.Uri,Microsoft.Health.Authentication.Credential)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="callingApplicationId" Type="System.Guid" />
@@ -126,11 +214,25 @@
         <Parameter Name="credential" Type="Microsoft.Health.Authentication.Credential" />
       </Parameters>
       <Docs>
-        <param name="callingApplicationId">To be added.</param>
-        <param name="healthServiceUrl">To be added.</param>
-        <param name="credential">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="callingApplicationId">
+            The HealthVault application identifier.
+            </param>
+        <param name="healthServiceUrl">
+            The URL of the HealthVault web service.
+            </param>
+        <param name="credential">
+            The credential of the user to authenticate for access to HealthVault.
+            </param>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.AuthenticatedConnection" />
+            class with the specified application identifier, URL, and 
+            credential.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="healthServiceUrl" /> or 
+            <paramref name="credential" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Authenticate">
@@ -139,15 +241,35 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.Authenticate" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Logs on to the HealthVault service using the username and password.
+            </summary>
+        <remarks>
+            It is not necessary to explicitly call this method before calling
+            any of the methods that access the service. Those methods will 
+            call this method if the user has not already been authenticated. 
+            This method is provided as a convenience to allow for separate 
+            error handling for authorization errors.
+            </remarks>
+        <exception cref="T:System.Security.SecurityException">
+            The caller does not have permission to connect to the requested
+            URI or a URI to which the request is redirected.
+            </exception>
+        <exception cref="T:System.UriFormatException">
+            The authorization URL specified to the constructor is not a 
+            valid URI.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The authorization was not returned in the response from the 
+            server.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetAllApplicationSettings">
@@ -156,15 +278,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.GetAllApplicationSettings" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ApplicationSettings</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets the application settings for the current application and person.
+            </summary>
+        <returns>
+            A complete set of application settings including the XML, selected record ID, etc.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -174,16 +300,24 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.GetApplicationSettings" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XPath.IXPathNavigable</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the application settings for the current application and
+            person.
+            </summary>
+        <returns>
+            The application settings XML.
+            </returns>
+        <remarks>
+            This might be <b>null</b> if no application settings have been 
+            stored for the application or user.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Impersonate">
@@ -192,7 +326,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.Impersonate(System.Guid)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -201,9 +335,33 @@
         <Parameter Name="targetPersonId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="targetPersonId">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="targetPersonId">
+            The unique identifier for the person to impersonate.
+            </param>
+        <summary>
+            Sets the identifier for the person being impersonated.
+            </summary>
+        <remarks>
+            Impersonation occurs when the authenticated person wants to make
+            a request to the HealthVault service on behalf of another person. This
+            should not occur in most applications.
+            <br /><br />
+            The authenticated person must have the rights to call the requested
+            method for the person being impersonated. If that right exists, all
+            security processing occurs using the impersonated person's 
+            identity. If the right does not exist, the caller receives an
+            <see cref="T:Microsoft.Health.HealthServiceAccessDeniedException" /> upon the first 
+            invocation of a method that accesses the HealthVault service.
+            <br /><br />
+            To start impersonating, call the <see cref="M:Microsoft.Health.AuthenticatedConnection.Impersonate(System.Guid)" /> method.
+            To stop impersonating, call the <see cref="M:Microsoft.Health.AuthenticatedConnection.StopImpersonating" />
+            method.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="targetPersonId" /> parameter is Guid.Empty.
+            </exception>
+        <altmember cref="M:Microsoft.Health.AuthenticatedConnection.StopImpersonating" />
+        <altmember cref="P:Microsoft.Health.AuthenticatedConnection.IsImpersonating" />
       </Docs>
     </Member>
     <Member MemberName="IsImpersonating">
@@ -212,15 +370,39 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.AuthenticatedConnection.IsImpersonating" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+             Gets the value which states whether or not the current connection
+             is impersonating a different user than who is authenticated.
+             </summary>
+        <value>
+          <b>true</b> if <see cref="M:Microsoft.Health.AuthenticatedConnection.Impersonate(System.Guid)" /> has been called with a 
+             valid target person identifier and <see cref="M:Microsoft.Health.AuthenticatedConnection.StopImpersonating" /> 
+             has not been called; otherwise, <b>false</b>.
+             </value>
+        <remarks>
+             Impersonation occurs when the authenticated person wants to make
+             a request to the HealthVault service on behalf of another person. This
+             should not occur in most applications.
+             <br /><br />
+             The authenticated person must have the rights to call the requested
+             method for the person being impersonated. If that right exists, all
+             security processing occurs using the impersonated person's 
+             identity. If the right does not exist, the caller receives a
+             <see cref="T:Microsoft.Health.HealthServiceAccessDeniedException" /> upon the first 
+             invocation of a method that accesses the HealthVault service.
+             <br /><br />
+             To start impersonating, call the <see cref="M:Microsoft.Health.AuthenticatedConnection.Impersonate(System.Guid)" /> method.
+             To stop impersonating, call the <see cref="M:Microsoft.Health.AuthenticatedConnection.StopImpersonating" />
+             method.
+             </remarks>
+        <altmember cref="M:Microsoft.Health.AuthenticatedConnection.Impersonate(System.Guid)" />
+        <altmember cref="M:Microsoft.Health.AuthenticatedConnection.StopImpersonating" />
       </Docs>
     </Member>
     <Member MemberName="LogOn">
@@ -229,7 +411,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.LogOn(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.AuthenticatedConnection</ReturnType>
@@ -238,10 +420,27 @@
         <Parameter Name="liveIdTicket" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="liveIdTicket">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="liveIdTicket">
+            A Live ID ticket that was retrieved using the Live ID client APIs (IDCRL).
+            </param>
+        <summary>
+            Uses the specified Live ID ticket to authenticate the user with HealthVault.
+            </summary>
+        <returns>
+            An <see cref="T:Microsoft.Health.AuthenticatedConnection" /> to HealthVault for the user specified in the
+            <paramref name="liveIdTicket" />.
+            </returns>
+        <remarks>
+            The calling ApplicationId, HealthServiceUrl, and ShellUrl are retrieved from the
+            app.config file for the application.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="liveIdTicket" /> or is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If verification of the passport ticket fails or there is a failure
+            in finding a HealthVault account for the specified <paramref name="liveIdTicket" />.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="LogOn">
@@ -250,7 +449,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.LogOn(System.String,System.Boolean)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.AuthenticatedConnection</ReturnType>
@@ -260,11 +459,32 @@
         <Parameter Name="isMra" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="liveIdTicket">To be added.</param>
-        <param name="isMra">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="liveIdTicket">
+            A Live ID ticket that was retrieved using the Live ID client APIs (IDCRL).
+            </param>
+        <param name="isMra">
+            True if the application is a multi-record application, or false otherwise. Multi-record
+            applications can work with many user records at one time and does not rely on the
+            selected record when performing operations.
+            </param>
+        <summary>
+            Uses the specified Live ID ticket to authenticate the user with HealthVault.
+            </summary>
+        <returns>
+            An <see cref="T:Microsoft.Health.AuthenticatedConnection" /> to HealthVault for the user specified in the
+            <paramref name="liveIdTicket" />.
+            </returns>
+        <remarks>
+            The calling ApplicationId, HealthServiceUrl, and ShellUrl are retrieved from the
+            app.config file for the application.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="liveIdTicket" /> or is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If verification of the passport ticket fails or there is a failure
+            in finding a HealthVault account for the specified <paramref name="liveIdTicket" />.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="LogOn">
@@ -273,7 +493,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.LogOn(System.String,System.Boolean,System.Threading.ManualResetEvent)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.AuthenticatedConnection</ReturnType>
@@ -284,12 +504,44 @@
         <Parameter Name="cancelTrigger" Type="System.Threading.ManualResetEvent" />
       </Parameters>
       <Docs>
-        <param name="liveIdTicket">To be added.</param>
-        <param name="isMra">To be added.</param>
-        <param name="cancelTrigger">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="liveIdTicket">
+            A Live ID ticket that was retrieved using the IDCRL.
+            </param>
+        <param name="isMra">
+            True if the application is a multi-record application, or false otherwise. Multi-record
+            applications can work with many user records at one time and does not rely on the
+            selected record when performing operations.
+            </param>
+        <param name="cancelTrigger">
+            If the event gets triggered the log on request will be cancelled resulting in an
+            <see cref="T:Microsoft.Health.HealthServiceRequestCancelledException" />.
+            </param>
+        <summary>
+            Uses the specified Live ID ticket to authenticate the user with HealthVault.
+            </summary>
+        <returns>
+            An <see cref="T:Microsoft.Health.AuthenticatedConnection" /> to HealthVault for the user specified in the
+            <paramref name="liveIdTicket" />.
+            </returns>
+        <remarks>
+            The calling ApplicationId, HealthServiceUrl, and ShellUrl are retrieved from the
+            app.config file for the application.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="liveIdTicket" /> or is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.Net.WebException">
+            If the request to the HealthVault Shell to verify the <paramref name="liveIdTicket" />
+            fails.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceAccessDeniedException">
+            If the user specified in the <paramref name="liveIdTicket" /> could not be authenticated
+            to HealthVault.
+            </exception>
+        <exception cref="T:Microsoft.Health.InvalidConfigurationException">
+            If either the application identifier, platform URL or the shell URL is
+            missing from the configuration.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="LogOn">
@@ -298,7 +550,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.LogOn(System.String,System.Boolean,System.Threading.ManualResetEvent,System.Guid,System.Uri,System.Uri)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.AuthenticatedConnection</ReturnType>
@@ -312,15 +564,52 @@
         <Parameter Name="healthServiceUrl" Type="System.Uri" />
       </Parameters>
       <Docs>
-        <param name="liveIdTicket">To be added.</param>
-        <param name="isMra">To be added.</param>
-        <param name="cancelTrigger">To be added.</param>
-        <param name="applicationId">To be added.</param>
-        <param name="shellUrl">To be added.</param>
-        <param name="healthServiceUrl">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="liveIdTicket">
+            A Live ID ticket that was retrieved using the IDCRL.
+            </param>
+        <param name="isMra">
+            True if the application is a multi-record application, or false otherwise. Multi-record
+            applications can work with many user records at one time and does not rely on the
+            selected record when performing operations.
+            </param>
+        <param name="cancelTrigger">
+            If the event gets triggered the log on request will be cancelled resulting in an
+            <see cref="T:Microsoft.Health.HealthServiceRequestCancelledException" />.
+            </param>
+        <param name="applicationId">
+            The unique HealthVault application identifier that the user is being logged into.
+            </param>
+        <param name="shellUrl">
+            The HealthVault Shell redirector URL. This is used to to verify the Live ID ticket before 
+            authenticating the user to HealthVault.
+            </param>
+        <param name="healthServiceUrl">
+            The URL of the HealthVault service. Note, this must include the web service handler, 
+            "wildcat.ashx".
+            </param>
+        <summary>
+            Uses the specified Live ID ticket to authenticate the user with HealthVault.
+            </summary>
+        <returns>
+            An <see cref="T:Microsoft.Health.AuthenticatedConnection" /> to HealthVault for the user specified in the
+            <paramref name="liveIdTicket" />.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="liveIdTicket" /> or is <b>null</b> or empty, or
+            <paramref name="applicationId" /> is <see cref="F:System.Guid.Empty" />.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="shellUrl" /> or <paramref name="healthServiceUrl" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:System.Net.WebException">
+            If the request to the HealthVault Shell to verify the <paramref name="liveIdTicket" />
+            fails.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceAccessDeniedException">
+            If the user specified in the <paramref name="liveIdTicket" /> could not be authenticated
+            to HealthVault.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="LogOn">
@@ -329,7 +618,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.LogOn(System.String,System.Boolean,System.Boolean,System.Threading.ManualResetEvent,System.Guid,System.Uri,System.Uri)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.AuthenticatedConnection</ReturnType>
@@ -344,16 +633,57 @@
         <Parameter Name="healthServiceUrl" Type="System.Uri" />
       </Parameters>
       <Docs>
-        <param name="liveIdTicket">To be added.</param>
-        <param name="isMra">To be added.</param>
-        <param name="isPersistent">To be added.</param>
-        <param name="cancelTrigger">To be added.</param>
-        <param name="applicationId">To be added.</param>
-        <param name="shellUrl">To be added.</param>
-        <param name="healthServiceUrl">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="liveIdTicket">
+            A Live ID ticket that was retrieved using the IDCRL.
+            </param>
+        <param name="isMra">
+            True if the application is a multi-record application, or false otherwise. Multi-record
+            applications can work with many user records at one time and does not rely on the
+            selected record when performing operations.
+            </param>
+        <param name="isPersistent">
+            True if creating a persistent token, or false otherwise.  Persistent connections
+            remain valid for the duration specified in the application's configuration within
+            HealthVault.  Typically, persistent tokens are valid for up to one year.
+            </param>
+        <param name="cancelTrigger">
+            If the event gets triggered the log on request will be cancelled resulting in an
+            <see cref="T:Microsoft.Health.HealthServiceRequestCancelledException" />.
+            </param>
+        <param name="applicationId">
+            The unique HealthVault application identifier that the user is being logged into.
+            </param>
+        <param name="shellUrl">
+            The HealthVault Shell redirector URL. This is used to to verify the Live ID ticket before 
+            authenticating the user to HealthVault.
+            </param>
+        <param name="healthServiceUrl">
+            The URL of the HealthVault service. Note, this must include the web service handler, 
+            "wildcat.ashx".
+            </param>
+        <summary>
+            Uses the specified Live ID ticket to authenticate the user with HealthVault.
+            </summary>
+        <returns>
+            An <see cref="T:Microsoft.Health.AuthenticatedConnection" /> to HealthVault for the user specified in the
+            <paramref name="liveIdTicket" />.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="liveIdTicket" /> or is <b>null</b> or empty, or
+            <paramref name="applicationId" /> is <see cref="F:System.Guid.Empty" />.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="shellUrl" /> or <paramref name="healthServiceUrl" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:System.Net.WebException">
+            If the request to the HealthVault Shell to verify the <paramref name="liveIdTicket" />
+            fails.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceAccessDeniedException">
+            If the user specified in the <paramref name="liveIdTicket" /> could not be authenticated
+            to HealthVault.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="SetApplicationSettings">
@@ -362,7 +692,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.SetApplicationSettings(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -371,9 +701,17 @@
         <Parameter Name="applicationSettings" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="applicationSettings">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="applicationSettings">
+            The application settings XML.
+            </param>
+        <summary>
+            Sets the application settings for the current application and
+            person.
+            </summary>
+        <remarks>
+            This might be <b>null</b> if no application settings have been stored
+            for the application or user.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="StopImpersonating">
@@ -382,15 +720,41 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthenticatedConnection.StopImpersonating" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Unsets the target person identifier for all requests.
+            </summary>
+        <remarks>
+            All future requests will act as the authenticated person.
+            <br /><br />
+            Note, to change the person that is being impersonated,
+            StopImpersonating does not have to be called. 
+            <see cref="M:Microsoft.Health.AuthenticatedConnection.Impersonate(System.Guid)" /> can be called directly with a
+            new target person identifier.
+            <br /><br />
+            Impersonation occurs when the authenticated person wants to make
+            a request to the HealthVault service on behalf of another person. This
+            should not occur in most applications.
+            <br /><br />
+            The authenticated person must have the rights to call the requested
+            method for the person being impersonated. If that right exists, all
+            security processing occurs using the impersonated person's 
+            identity. If the right does not exist, the caller receives a
+            <see cref="T:Microsoft.Health.HealthServiceAccessDeniedException" /> upon the first 
+            invocation of a method that accesses the HealthVault service.
+            <br /><br />
+            To start impersonating, call the <see cref="M:Microsoft.Health.AuthenticatedConnection.Impersonate(System.Guid)" /> method.
+            To stop impersonating, call the <see cref="M:Microsoft.Health.AuthenticatedConnection.StopImpersonating" />
+            method.
+            </remarks>
+        <altmember cref="M:Microsoft.Health.AuthenticatedConnection.Impersonate(System.Guid)" />
+        <altmember cref="P:Microsoft.Health.AuthenticatedConnection.IsImpersonating" />
       </Docs>
     </Member>
   </Members>

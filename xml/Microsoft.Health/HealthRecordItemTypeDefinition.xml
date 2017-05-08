@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthRecordItemTypeDefinition" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Describes the schema and structure of a health record item type.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemTypeDefinition.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.HealthRecordItemTypeDefinition" /> class for use in testing.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,14 +39,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemTypeDefinition.AllowReadOnly" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets a value indicating whether the Thing Type allows read-only
+            instances.
+            </summary>
+        <value>
+          <b>true</b> if the Thing Type allows read-only instances; otherwise <b>false</b></value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -52,14 +60,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemTypeDefinition.ColumnDefinitions" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.ItemTypeDataColumn&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the column definitions when dealing with the type as a
+            single type table.
+            </summary>
+        <value>
+            A read-only collection containing the defintions.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -69,7 +82,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemTypeDefinition.CreateFromXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthRecordItemTypeDefinition</ReturnType>
@@ -78,9 +91,18 @@
         <Parameter Name="typeNavigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="typeNavigator">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="typeNavigator">
+            XML navigator containing the information needed to construct the instance. This XML
+            must adhere to the schema for a ThingType as defined by response-getthingtype.xsd.
+            </param>
+        <summary>
+            Constructs an instance of <see cref="T:Microsoft.Health.HealthRecordItemTypeDefinition" /> from the specified
+            XML.
+            </summary>
+        <returns>
+            An instance of <see cref="T:Microsoft.Health.HealthRecordItemTypeDefinition" /> constructed from the 
+            specified XML.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -90,14 +112,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemTypeDefinition.EffectiveDateXPath" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the XPath to the effective date element in the <see cref="P:Microsoft.Health.HealthRecordItem.TypeSpecificData" />.
+            </summary>
+        <value>
+            The String representation of the XPath.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -107,7 +133,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemTypeDefinition.GetTransform(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Xsl.XslCompiledTransform</ReturnType>
@@ -116,10 +142,25 @@
         <Parameter Name="transformName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="transformName">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="transformName">
+            The name of the transform to get.
+            </param>
+        <summary>
+            Gets a compiled version of the specified transform.
+            </summary>
+        <returns>
+            A compiled version of the specified transform.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.Collections.Generic.KeyNotFoundException">
+            If <paramref name="transformName" /> is not found as a transform for the item type.
+            </exception>
+        <exception cref="T:System.Xml.XmlException">
+            There is a load or parse error in the specified transform.
+            </exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">
+            The specified style sheet contains an error.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="IsCreatable">
@@ -128,14 +169,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemTypeDefinition.IsCreatable" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets a value indicating whether instances of the type are creatable.
+            </summary>
+        <value>
+          <b>true</b> if the instances are creatable; otherwise, <b>false</b>.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -145,14 +190,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemTypeDefinition.IsImmutable" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets a value indicating whether instances of the type are immutable.
+            </summary>
+        <value>
+          <b>true</b> if the instances are immutable; otherwise, <b>false</b>.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -162,7 +211,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemTypeDefinition.IsItemXmlSchemaValid(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -171,10 +220,25 @@
         <Parameter Name="typeSpecificXml" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="typeSpecificXml">
+            The type specific portion of the XML for a health record item. It does not include
+            the header information like type-id, thing-id, etc.
+            </param>
+        <summary>
+            Validates the type specific XML is valid based on item type definition schema.
+            </summary>
+        <returns>
+            True if <paramref name="typeSpecificXml" /> is schema valid according to
+            this type definition.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="typeSpecificXml" /> is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.Xml.Schema.XmlSchemaException">
+            If <paramref name="typeSpecificXml" /> is not valid according to
+            this type definition.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="IsSingletonType">
@@ -183,14 +247,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemTypeDefinition.IsSingletonType" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets a value indicating whether only a single instance of the type 
+            can exist for each health record.
+            </summary>
+        <value>
+          <b>true</b> if only a single instance of the type can exist for each
+            health record; otherwise, <b>false</b>.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -200,14 +270,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemTypeDefinition.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the type name.
+            </summary>
+        <value>
+            A string representing the type name.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -217,14 +291,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemTypeDefinition.SupportedTransformNames" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the HealthVault transform names supported by the type.
+            </summary>
+        <value>
+            A read-only collection containing the transforms.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -234,7 +312,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemTypeDefinition.TransformItem(System.String,Microsoft.Health.HealthRecordItem)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -244,11 +322,28 @@
         <Parameter Name="item" Type="Microsoft.Health.HealthRecordItem" />
       </Parameters>
       <Docs>
-        <param name="transformName">To be added.</param>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="transformName">
+            The name of the transform to use. Supported transforms for the type can be found in the
+            <see cref="P:Microsoft.Health.HealthRecordItemTypeDefinition.SupportedTransformNames" /> collection.
+            </param>
+        <param name="item">
+            The health record item to be transformed.
+            </param>
+        <summary>
+            Transforms the XML of the specified health record item using the specified transform.
+            </summary>
+        <returns>
+            A string containing the results of the transform.
+            </returns>
+        <remarks>
+            If the transform has been used before a cached instance of the compiled transform will
+            be used. Compiled transforms are not thread safe. It is up to the caller to ensure
+            that multiple threads do not attempt to use the same transform at the same time.
+            </remarks>
+        <exception cref="T:System.Collections.Generic.KeyNotFoundException">
+            If <paramref name="transformName" /> could not be found in the <see cref="P:Microsoft.Health.HealthRecordItemTypeDefinition.TransformSource" />
+            collection.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="TransformSource">
@@ -257,15 +352,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemTypeDefinition.TransformSource" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the HealthVault transforms supported by the type.
+            </summary>
+        <value>
+            A dictionary containing each of the transforms supported by the type. The key is the
+            transform name and the value is the source of the transform.
+            </value>
+        <remarks>
+            The transform can be run by calling one of the <see cref="M:Microsoft.Health.HealthRecordItemTypeDefinition.TransformItem(System.String,Microsoft.Health.HealthRecordItem)" /> overloads.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="TypeId">
@@ -274,14 +376,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemTypeDefinition.TypeId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the type unique identifier.
+            </summary>
+        <value>
+            A GUID representing the type identifier.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -291,13 +397,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemTypeDefinition.TypeSchema" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the schema definition of the type.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -308,14 +416,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemTypeDefinition.UpdatedEndDateXPath" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the XPath to the updated end date element in the <see cref="P:Microsoft.Health.HealthRecordItem.TypeSpecificData" />.
+            </summary>
+        <value>
+            The String representation of the XPath.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -325,13 +437,16 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemTypeDefinition.ValidationSchemaSet" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Schema.XmlSchemaSet</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the XmlSchemaSet that can be used to validate an XML fragment of
+            this health record item type.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -342,13 +457,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemTypeDefinition.Versions" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.HealthRecordItemTypeVersionInfo&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets a collection of the version information for the type.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -359,14 +476,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemTypeDefinition.XmlSchemaDefinition" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the XML schema definition.
+            </summary>
+        <value>
+            A string representing the definition.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

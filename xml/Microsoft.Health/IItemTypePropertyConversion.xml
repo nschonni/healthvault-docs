@@ -4,12 +4,19 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.IItemTypePropertyConversion" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Converts units for a numeric value of a <see cref="T:Microsoft.Health.HealthRecordItemTypeProperty" />.
+            </summary>
+    <remarks>
+            When a thing type has multiple versions that store the same data with different units,
+            a conversion between units may be required to ensure that values are ordered correctly
+            across versions. The <see cref="T:Microsoft.Health.HealthRecordItemTypeProperty" /> can define a conversion
+            formula to perform this conversion.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName="Convert">
@@ -18,7 +25,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.IItemTypePropertyConversion.Convert(System.Double)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Double</ReturnType>
@@ -27,9 +34,17 @@
         <Parameter Name="value" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="value">
+            The value to be converted.
+            </param>
+        <summary>
+            Converts a value to different units. The conversion formula is determined by the
+            implementation of the <see cref="T:Microsoft.Health.IItemTypePropertyConversion" /> object and the
+            parameters with which it was constructed.
+            </summary>
+        <returns>
+            The converted value.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

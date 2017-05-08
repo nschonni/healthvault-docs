@@ -4,15 +4,21 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthRecordItemSignature" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents a digital signature of the HealthRecordItem. 
+            </summary>
+    <remarks>
+            A digital signature contains key information, which may be an X509 certificate,
+            and a cryptographic hash. These may be used to verify the identity of the signer
+            and the contents of the HealthRecordItem.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +27,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemSignature.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.HealthRecordItemSignature" /> class 
+            using default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,15 +44,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemSignature.AlgorithmName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a string identifying the signature algorithm for this signature.         
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            This value is currently <see cref="F:Microsoft.Health.HealthRecordItemSignature.RsaSha1W3cAlgorithmName" />.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="BlobSignatureItems">
@@ -52,13 +65,16 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemSignature.BlobSignatureItems" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.BlobSignatureItem&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> objects describing 
+            the blobs that are part of this signature.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -69,13 +85,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemSignature.CertType" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.CertificateType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The type of the certificate used to sign the signature.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -86,7 +104,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemSignature.GetCertificate``1" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>T</ReturnType>
@@ -101,9 +119,14 @@
       <Parameters />
       <Docs>
         <typeparam name="T">To be added.</typeparam>
-        <summary>To be added.</summary>
+        <summary>
+            Get's the X509Certificate2 used for the signature.
+            </summary>
         <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>
+            This method is deprecated. Please use <see cref="P:Microsoft.Health.HealthRecordItemSignature.X509Certificate2" /> to 
+            access the signing certificate information.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Method">
@@ -112,13 +135,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemSignature.Method" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthRecordItemSignatureMethod</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the HealthVault signature method for this signature.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -129,13 +154,16 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.HealthRecordItemSignature.RsaSha1W3cAlgorithmName" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Represents the signature algorithm defined by:
+            "http://www.w3.org/2000/09/xmldsig#rsa-sha1".
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -145,13 +173,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemSignature.X509Certificate2" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Get's the X509Certificate2 used for the signature.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

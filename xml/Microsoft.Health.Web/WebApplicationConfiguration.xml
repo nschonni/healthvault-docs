@@ -4,14 +4,17 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Web.WebApplicationConfiguration" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.Web</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary> 
+            Contains the application configuration as retrieved from 
+            web.config or as constants.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,7 +24,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationConfiguration.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -35,13 +38,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.ActionUrlRedirectOverride" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Non-production action url redirect override.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -52,15 +57,30 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.AllowedRedirectSites" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the list of allowed redirect sites.
+            </summary>
+        <value>
+            A comma-separated list of allowed url redirection sites.
+            </value>
+        <remarks>
+            Applications that use the <see cref="T:Microsoft.Health.Web.HealthServiceActionPage" />
+            can configure a list of allowed redirect sites. 
+            
+            When a HealthVault shell redirect happens to a 
+            <see cref="T:Microsoft.Health.Web.HealthServiceActionPage" />, it will be allowed if the actionqs parameter
+            is a relative URL or a URL that points to the site the application is running on. 
+            All other sites will note be allowed.
+            To allow another site, the web.config should contain a key of
+            WCPage_AllowedRedirectSites that has the site as part of a comma-
+            separated list.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="AppId">
@@ -69,13 +89,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.AppId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Application id, from web config.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -85,13 +107,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.CookieDomain" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Cookie domain, from web config.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -101,13 +125,16 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.CookieName" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The name of the cookie for use by applications and the base
+            HealthServicePage to store authentication information.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,7 +144,7 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.CookiePath" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -125,6 +152,9 @@
       <Docs>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <Summary>
+            Cookie path, from web config.
+            </Summary>
       </Docs>
     </Member>
     <Member MemberName="CookieTimeoutMinutes">
@@ -133,13 +163,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.CookieTimeoutMinutes" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Cookie timeout in minutes, from web config.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -149,13 +181,16 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.DataGridItemsPerPage" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the configured number of items that should be shown for a
+            <see cref="T:Microsoft.Health.Web.HealthRecordItemDataGrid" /> page.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -166,7 +201,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationConfiguration.GetActionUrl(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -175,10 +210,23 @@
         <Parameter Name="action" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="action">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="action">
+            The action to get the URL for.
+            </param>
+        <summary>
+            Gets the URL for the specified application action.
+            </summary>
+        <returns>
+            The URL the application configured for the specified action.
+            </returns>
+        <remarks>
+            Applications that use the <see cref="T:Microsoft.Health.Web.HealthServiceActionPage" />
+            can configure URLs for each action in the web.config file. They
+            should have a key prefix of "WCPage_Action" with the action name
+            appended. For example, for a the EULA action page, the 
+            web.config should contain a key of WCPage_ActionEula with a 
+            value containing the URL of the EULA page.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="HealthServiceHandlerUrl">
@@ -187,13 +235,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.HealthServiceHandlerUrl" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            HealthVault handler url, derived from web config.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -204,13 +254,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.HealthServiceRootUrl" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            HealthVault root url, from web config.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -221,13 +273,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.HealthServiceUrl" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            HealthVault url, from web config.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -238,13 +292,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.IsMra" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            If true, the application is a multi-record application.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -254,13 +310,16 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.IsSignupCodeRequired" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Indicates whether a signup code is required for a user to create
+            a HealthVault account.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -270,13 +329,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.LogOnRequired" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary> 
+            Constant to indicate logon required
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -286,14 +347,25 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.MaxCookieTimeoutMinutes" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            The maximum cookie timeout in minutes, from web config.
+            </summary>
+        <remarks>
+            The cookie timeout is defaulted in the web config but the 
+            application configuration in HealthVault can allow for persistent
+            tokens which require a longer cookie life. The cookie will take
+            on the life of the token when the page receives a "tokenTtl" 
+            query string parameter when receiving the authentication token.
+            The MaxCookieTimeoutMinutes limits the cookie timeout to a 
+            maximum value even when the CookieTimeoutMinutes or the token TTL
+            from the applications configuration is larger.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="NoLogOnRequired">
@@ -302,13 +374,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.NoLogOnRequired" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary> 
+            Constant to indicate logon not required 
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -318,13 +392,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.ShellAuthenticationUrl" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Shell auth page location including the application id.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -335,13 +411,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.ShellRedirectorUrl" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Shell redirector url, derived from web config.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -352,13 +430,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.ShellUrl" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Shell url, from web config.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -369,13 +449,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.UseAspSession" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Use the asp session rather than a cookie, from web config.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -385,13 +467,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.UseSslForSecurity" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Whether to secure the connection with SSL, from web config.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

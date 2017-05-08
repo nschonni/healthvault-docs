@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Web.Mvc.PersonInfoManager" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.Web.Mvc</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Manages the authentication of users to HealtVault and the <see cref="P:Microsoft.Health.Web.Mvc.PersonInfoManager.PersonInfo" /> object.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,14 +23,17 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.Mvc.PersonInfoManager.#ctor(System.Web.HttpContextBase)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="context" Type="System.Web.HttpContextBase" />
       </Parameters>
       <Docs>
-        <param name="context">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="context">The current context</param>
+        <summary>
+            Constructs an instance of the <see cref="T:Microsoft.Health.Web.Mvc.PersonInfoManager" /> class using the 
+            default <see cref="T:Microsoft.Health.Web.HealthWebApplicationConfiguration" /> settings.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -38,7 +43,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.Mvc.PersonInfoManager.#ctor(System.Web.HttpContextBase,System.String,System.Boolean)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="context" Type="System.Web.HttpContextBase" />
@@ -46,10 +51,13 @@
         <Parameter Name="useSession" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="context">To be added.</param>
-        <param name="cookieName">To be added.</param>
-        <param name="useSession">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="context">The current context</param>
+        <param name="cookieName">The name of the cookie used to store authenticationf info</param>
+        <param name="useSession">Whether to use ASP.NET session state</param>
+        <summary>
+            Constructs an instance of the <see cref="T:Microsoft.Health.Web.Mvc.PersonInfoManager" /> class using specific
+            settings
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -59,15 +67,17 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.Mvc.PersonInfoManager.Clear" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Clears the <see cref="P:Microsoft.Health.Web.Mvc.PersonInfoManager.PersonInfo" /> object from cookies, session state, and context.
+            </summary>
+        <remarks>This will effectively sign the user out of your website.</remarks>
       </Docs>
     </Member>
     <Member MemberName="PersonInfo">
@@ -76,13 +86,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.Mvc.PersonInfoManager.PersonInfo" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The <see cref="P:Microsoft.Health.Web.Mvc.PersonInfoManager.PersonInfo" /> object representing currently authenticated HealthVault person
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -93,14 +105,16 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.Mvc.PersonInfoManager.Refresh" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Attempts to reload the <see cref="P:Microsoft.Health.Web.Mvc.PersonInfoManager.PersonInfo" /> object from the HealthVault service.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -110,7 +124,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.Mvc.PersonInfoManager.Save(Microsoft.Health.PersonInfo)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -119,8 +133,10 @@
         <Parameter Name="personInfo" Type="Microsoft.Health.PersonInfo" />
       </Parameters>
       <Docs>
-        <param name="personInfo">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="personInfo">The <see cref="P:Microsoft.Health.Web.Mvc.PersonInfoManager.PersonInfo" /> object to persist</param>
+        <summary>
+            Persists the <see cref="P:Microsoft.Health.Web.Mvc.PersonInfoManager.PersonInfo" /> object to cookies or session state.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

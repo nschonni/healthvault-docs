@@ -4,15 +4,19 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Certificate.ApplicationCertificate" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Generates a new HealthVault application certificate.
+            </summary>
+    <remarks>
+            This certificate is typically used by HealthVaultClientApplication.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName="Certificate">
@@ -21,13 +25,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Certificate.ApplicationCertificate.Certificate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the certificate.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -38,7 +44,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Certificate.ApplicationCertificate.CreateCertificate(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -53,9 +59,15 @@
       </Parameters>
       <Docs>
         <param name="certificateName">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>
+            Generate an X509 certificate that works with the HealthVault SDK using the
+            specified name.
+            </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="certificateName" /> is <b>null</b>, empty, or all whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="CreateCertificate">
@@ -64,7 +76,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Certificate.ApplicationCertificate.CreateCertificate(System.String,System.Security.Cryptography.X509Certificates.StoreLocation)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -81,9 +93,15 @@
       <Docs>
         <param name="certificateName">To be added.</param>
         <param name="storeLocation">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>
+            Generate an X509 certificate that works with the HealthVault SDK using the
+            specified name.
+            </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="certificateName" /> is <b>null</b>, empty, or all whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="CreateCertificate">
@@ -92,7 +110,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Certificate.ApplicationCertificate.CreateCertificate(System.Guid,System.Boolean,System.Boolean,System.Security.Cryptography.X509Certificates.StoreLocation)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -109,13 +127,31 @@
         <Parameter Name="storeLocation" Type="System.Security.Cryptography.X509Certificates.StoreLocation" />
       </Parameters>
       <Docs>
-        <param name="applicationId">To be added.</param>
-        <param name="alwaysCreate">To be added.</param>
-        <param name="persist">To be added.</param>
-        <param name="storeLocation">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="applicationId">
+            The unique identifier of the application to create the certificate for.
+            </param>
+        <param name="alwaysCreate">
+            If true, a new certificate will be created even if it already exists in
+            the specified certificate store.
+            </param>
+        <param name="persist">
+            If true, the certificate is persisted in the specified certificate store, otherwise
+            the key container is deleted.
+            </param>
+        <param name="storeLocation">
+            The store location to fetch or create the certificate in.
+            </param>
+        <summary>
+            Generate or fetch a persisted certificate in the specified certificate store.
+            </summary>
+        <returns>
+            An ApplicationCertificate instance containing the certificate for the 
+            specified application.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="applicationId" /> is Guid.Empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="CreateCertificate">
@@ -124,7 +160,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Certificate.ApplicationCertificate.CreateCertificate(System.String,System.Boolean,System.Boolean,System.Security.Cryptography.X509Certificates.StoreLocation)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -141,12 +177,27 @@
         <Parameter Name="storeLocation" Type="System.Security.Cryptography.X509Certificates.StoreLocation" />
       </Parameters>
       <Docs>
-        <param name="certificateName">To be added.</param>
-        <param name="alwaysCreate">To be added.</param>
-        <param name="persist">To be added.</param>
-        <param name="storeLocation">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="certificateName">
+            The name to use when creating the certificate.
+            </param>
+        <param name="alwaysCreate">
+            If true a new certificate will be created even if it already exists in
+            the specified certificate store.
+            </param>
+        <param name="persist">
+            If true, the certificate is persisted in the specified certificate store, otherwise
+            the key container is deleted.
+            </param>
+        <param name="storeLocation">
+            The store location to fetch or create the certificate in.
+            </param>
+        <summary>
+            Generate or fetch a persisted certificate in the specified certificate store.
+            </summary>
+        <returns>
+            An ApplicationCertificate instance containing the certificate for the 
+            specified application.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -156,7 +207,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Certificate.ApplicationCertificate.CreatePersistedCertificate(System.Guid)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -170,10 +221,20 @@
         <Parameter Name="applicationId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="applicationId">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="applicationId">
+            The unique identifier of the application to create the certificate for.
+            </param>
+        <summary>
+            Generate or fetch a persisted certificate in the specified certificate store.
+            </summary>
+        <returns>
+            An ApplicationCertificate instance containing the certificate for the 
+            specified application.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="applicationId" /> is Guid.Empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="CreatePersistedCertificate">
@@ -182,7 +243,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Certificate.ApplicationCertificate.CreatePersistedCertificate(System.Guid,System.Security.Cryptography.X509Certificates.StoreLocation)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -197,11 +258,23 @@
         <Parameter Name="storeLocation" Type="System.Security.Cryptography.X509Certificates.StoreLocation" />
       </Parameters>
       <Docs>
-        <param name="applicationId">To be added.</param>
-        <param name="storeLocation">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="applicationId">
+            The unique identifier of the application to create the certificate for.
+            </param>
+        <param name="storeLocation">
+            The store location to fetch or create the certificate in.
+            </param>
+        <summary>
+            Generate or fetch a persisted certificate in the specified certificate store.
+            </summary>
+        <returns>
+            An ApplicationCertificate instance containing the certificate for the 
+            specified application.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="applicationId" /> is Guid.Empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="DeleteCertificate">
@@ -210,7 +283,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Certificate.ApplicationCertificate.DeleteCertificate(System.Guid)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -224,8 +297,14 @@
         <Parameter Name="applicationId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="applicationId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="applicationId">
+            The unique identifier of the application for which to remove the certificate from the current
+            user store.
+            </param>
+        <summary>
+            Removes the certificate for the specified application identifier
+            from the certificate store and deletes the key container.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -235,7 +314,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Certificate.ApplicationCertificate.DeleteCertificate(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -249,8 +328,13 @@
         <Parameter Name="certificateName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="certificateName">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="certificateName">
+            The name of the certificate to delete.
+            </param>
+        <summary>
+            Removes the certificate with the specified certificate name
+            from the certificate store and deletes the key container.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -260,7 +344,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Certificate.ApplicationCertificate.DeleteCertificate(System.Guid,System.Security.Cryptography.X509Certificates.StoreLocation)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -275,9 +359,17 @@
         <Parameter Name="storeLocation" Type="System.Security.Cryptography.X509Certificates.StoreLocation" />
       </Parameters>
       <Docs>
-        <param name="applicationId">To be added.</param>
-        <param name="storeLocation">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="applicationId">
+            The unique identifier of the application for which to remove the certificate from the 
+            specified store.
+            </param>
+        <param name="storeLocation">
+            The certificate store from which to remove the certificate.
+            </param>
+        <summary>
+            Removes the certificate for the specified application identifier
+            from the certificate store and deletes the key container.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -287,7 +379,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Certificate.ApplicationCertificate.DeleteCertificate(System.String,System.Security.Cryptography.X509Certificates.StoreLocation)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -302,9 +394,16 @@
         <Parameter Name="storeLocation" Type="System.Security.Cryptography.X509Certificates.StoreLocation" />
       </Parameters>
       <Docs>
-        <param name="certificateName">To be added.</param>
-        <param name="storeLocation">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="certificateName">
+            The name of the certificate to delete.
+            </param>
+        <param name="storeLocation">
+            The certificate store from which to remove the certificate.
+            </param>
+        <summary>
+            Removes the certificate with the specified certificate name
+            from the certificate store and deletes the key container.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -314,7 +413,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Certificate.ApplicationCertificate.DeleteKeyContainer(System.Guid)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -328,8 +427,13 @@
         <Parameter Name="applicationId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="applicationId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="applicationId">
+            The unique identifier for the HealthVault application which was used in creating
+            the key container.
+            </param>
+        <summary>
+            Removes the key container for the specified application identifier.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -339,7 +443,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Certificate.ApplicationCertificate.DeleteKeyContainer(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -353,9 +457,17 @@
         <Parameter Name="certificateName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="certificateName">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="certificateName">
+            The certificate name which was used in creating
+            the key container.
+            </param>
+        <summary>
+            Removes the key container for the specified certificate name.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="certificateName" /> is <b>null</b>, empty, or all whitespace.
+            </exception>
       </Docs>
     </Member>
   </Members>

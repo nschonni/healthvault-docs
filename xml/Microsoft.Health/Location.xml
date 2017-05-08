@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Location" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            A location defined by country and state/province ISO 3166 codes.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,16 +23,22 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Location.#ctor(System.String,System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="country" Type="System.String" />
         <Parameter Name="stateProvince" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="country">To be added.</param>
-        <param name="stateProvince">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="country">
+            An ISO 3166-1 two-letter country code.
+            </param>
+        <param name="stateProvince">
+            An ISO 3166-2 state/province code without the country prefix.
+            </param>
+        <summary>
+            Constructs a location instance with the specified country and state/province codes.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -40,15 +48,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Location.Country" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the country code.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            An ISO 3166-1 two letter country code.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -57,7 +69,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Location.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -66,8 +78,13 @@
         <Parameter Name="location" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="location">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="location">
+            XML of the location to be parsed.
+            </param>
+        <summary>
+            Parses the location XML and populates the instance properties from
+            the results.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -77,15 +94,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Location.StateProvince" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the state/province code.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            An ISO 3166-2 state/province code without the country prefix.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -94,15 +115,18 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Location.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the location.
+            </summary>
+        <returns>
+          <cref name="Country" />-<cref name="StateProvince" /></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -112,7 +136,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Location.WriteXml(System.Xml.XmlWriter,System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -122,9 +146,15 @@
         <Parameter Name="elementName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <param name="elementName">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the location xml to.
+            </param>
+        <param name="elementName">
+            The name of the containing element to use when writing the location. Typically "location".
+            </param>
+        <summary>
+            Writes the location to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

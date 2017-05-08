@@ -4,15 +4,20 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.SnpData" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.Csv.OtherItemDataCsv</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            The <see cref="T:Microsoft.Health.ItemTypes.SnpData" /> class is used to store and retrieve SNP result data.
+            </summary>
+    <remarks>
+            SNP data are stored in a dictionary. It handles converting from a SNP result 
+            format to the comma-separated format.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +26,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.SnpData.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.SnpData" /> class. 
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,7 +42,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.SnpData.#ctor(System.String,System.String,System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="data" Type="System.String" />
@@ -43,10 +50,21 @@
         <Parameter Name="contentType" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="data">To be added.</param>
-        <param name="contentEncoding">To be added.</param>
-        <param name="contentType">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="data">
+            The data to store in the other data section of the health record
+            item.
+            </param>
+        <param name="contentEncoding">
+            The type of encoding that was done on the data. Usually this will
+            be "base64" but other encodings are acceptable.
+            </param>
+        <param name="contentType">
+            The MIME-content type of the data.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.SnpData" /> class 
+            with the specified data, encoding, and content type.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -56,14 +74,16 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.SnpData.RefreshSnpItems" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Reloads SNP items from other data section of the health record item.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,15 +93,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.SnpData.SnpItems" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,Microsoft.Health.ItemTypes.SnpItem&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the SNP data as a dictionary of SNP items.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            SNP items in a dictionary can be easily accessed by the reference SNP Id. 
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -90,7 +114,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.SnpData.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -99,9 +123,16 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the SNP item data.
+            </param>
+        <summary>
+            Writes the SNP Items to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.SnpData.SnpItems" /> has not been set. 
+            </exception>
       </Docs>
     </Member>
   </Members>

@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.MshItemBase" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a health record item type that encapsulates an action plan record
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,16 +23,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.MshItemBase.#ctor(Microsoft.Health.ItemTypes.IMshItem,System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="wrappedInstance" Type="Microsoft.Health.ItemTypes.IMshItem" />
         <Parameter Name="typeId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="wrappedInstance">To be added.</param>
-        <param name="typeId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="wrappedInstance">Wrapped instance</param>
+        <param name="typeId">Unique type id</param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.MshItemBase" /> class
+            specifying wrapped object.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -40,7 +45,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.MshItemBase.#ctor(System.Guid,System.String,System.String,System.Guid,System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="typeId" Type="System.Guid" />
@@ -50,12 +55,15 @@
         <Parameter Name="versionStamp" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="typeId">To be added.</param>
-        <param name="wrappedTypeName">To be added.</param>
-        <param name="base64EncodedJson">To be added.</param>
-        <param name="thingId">To be added.</param>
-        <param name="versionStamp">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeId">Unique type id</param>
+        <param name="wrappedTypeName">Wrapped type name</param>
+        <param name="base64EncodedJson">Base64-encoded JSON</param>
+        <param name="thingId">Thing id</param>
+        <param name="versionStamp">Thing versionstamp</param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.MshItemBase" /> class
+            specifying wrapped object.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -65,13 +73,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.MshItemBase.Headers" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the header information associated with this item.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -82,7 +92,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.MshItemBase.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -91,8 +101,12 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the Message data from.
+            </param>
+        <summary>
+            Populates the <see cref="T:Microsoft.Health.ItemTypes.Message" /> instance from the data in the specified XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -102,13 +116,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.MshItemBase.RootElementName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            override root element name within thing xml 
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -119,15 +135,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.MshItemBase.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+             Gets a string representation of the msh item.
+             </summary>
+        <returns>
+             A string representing the msh item.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -137,13 +157,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.MshItemBase.WrappedInstanceJson" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Wrapped instance in base64 encoded json format
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -154,13 +176,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.MshItemBase.WrappedTypeName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Full type name of wrapped object.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -171,7 +195,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.MshItemBase.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -180,8 +204,13 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            xml writer
+            </param>
+        <summary>
+            Writes the XML representation of the Message into
+            the specified XML writer.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -4,15 +4,20 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Contraindication" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents a health record item type that encapsulates a contraindication.
+            </summary>
+    <remarks>
+            A contraindication consists of the substances (such as foods or drugs) that interacts badly
+            with a specific condition or drugs a patient is already taking.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,12 +26,18 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Contraindication.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Contraindication" /> class with default values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,17 +46,27 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Contraindication.#ctor(Microsoft.Health.ItemTypes.CodableValue,Microsoft.Health.ItemTypes.CodableValue)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="substance" Type="Microsoft.Health.ItemTypes.CodableValue" />
         <Parameter Name="status" Type="Microsoft.Health.ItemTypes.CodableValue" />
       </Parameters>
       <Docs>
-        <param name="substance">To be added.</param>
-        <param name="status">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="substance">
+            The substance that is contraindicated.
+            </param>
+        <param name="status">
+            The status of the contraindication. Usually 'Active' or 'inactive'.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Contraindication" /> class with the 
+            specified substance and status.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="substance" /> or <paramref name="status" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="DocumentedDate">
@@ -54,15 +75,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Contraindication.DocumentedDate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the date the contraindication was documented.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the documented date is unknown the value will be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Documenter">
@@ -71,15 +96,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Contraindication.Documenter" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.PersonItem</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the documenter of the contraindication.
+            </summary>
+        <value>
+            For example, a contraindication against leafy green
+            vegetables might have as a source the blood thinner Warfarin, which would be coded here
+            using an appropriate medication vocabulary.
+            </value>
+        <remarks>
+            This is the person that documented the issue (physician, pharmacist, etc.)
+            If the documenter is unknown the value will be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -88,7 +122,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Contraindication.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -97,9 +131,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the contraindication data from.
+            </param>
+        <summary>
+            Populates this contraindication instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            a contraindication node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Source">
@@ -108,15 +150,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Contraindication.Source" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the source of the contraindication.
+            </summary>
+        <value>
+            For example, a contraindication against leafy green
+            vegetables might have as a source the blood thinner Warfarin, which would be coded here
+            using an appropriate medication vocabulary.
+            </value>
+        <remarks>
+            If the source is unknown the value will be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Status">
@@ -125,15 +175,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Contraindication.Status" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the status of the contraindication.
+            </summary>
+        <value>
+            The status of the contraindication is usually 'active' or 'inactive'.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Substance">
@@ -142,15 +199,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Contraindication.Substance" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the substance of the contraindication.
+            </summary>
+        <value>
+            A codable value indicating the substance that is contraindicated.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -159,15 +223,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Contraindication.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the contraindication item.
+            </summary>
+        <returns>
+            A string representation of the contraindication item.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -177,13 +245,16 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.Contraindication.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>A GUID.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -193,7 +264,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Contraindication.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -202,9 +273,19 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the contraindication data to.
+            </param>
+        <summary>
+            Writes the contraindication data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.Contraindication.Substance" /> or <see cref="P:Microsoft.Health.ItemTypes.Contraindication.Status" /> property has not been set.
+            </exception>
       </Docs>
     </Member>
   </Members>

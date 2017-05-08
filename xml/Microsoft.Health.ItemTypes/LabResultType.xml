@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.LabResultType" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a clinical value within lab result.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.LabResultType.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Constructs a new instance of the <see cref="T:Microsoft.Health.ItemTypes.LabResultType" /> class with 
+            default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,14 +40,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabResultType.Flags" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.CodableValue&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets a collection of the flags associated with the lab result type.
+            </summary>
+        <value>
+            The flags for the lab result type are generally values like "normal", "critical", "high",
+            "low", etc. which are defined by the "lab-result-flag" HealthVault vocabulary.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -52,7 +62,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.LabResultType.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -61,9 +71,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator"> 
+            The XML node representing the lab result type.
+            </param>
+        <summary> 
+            Populates the data for the lab result type from the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ReferenceRange">
@@ -72,14 +89,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabResultType.ReferenceRange" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.DoubleRange</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the reference range for the lab result type.
+            </summary>
+        <value>
+            The "normal" range of values for this lab result type or <b>null</b> if the reference
+            range is not available.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,15 +111,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabResultType.TextValue" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or set the text representation of the value.
+            </summary>
+        <value>
+            A string representation of the <see cref="P:Microsoft.Health.ItemTypes.LabResultType.Value" /> or <b>null</b> if the text value is
+            not available.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -106,15 +136,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.LabResultType.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the lab result type.
+            </summary>
+        <returns>
+            A string representing the lab result type.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -124,14 +158,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabResultType.ToxicRange" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.DoubleRange</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the toxic range for the lab result type.
+            </summary>
+        <value>
+            The toxic range of values for this lab result type or <b>null</b> if the toxic
+            range is not available.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,15 +180,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabResultType.Unit" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the unit of measure for the <see cref="P:Microsoft.Health.ItemTypes.LabResultType.Value" />.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The unit of measure may defined by the HealthVault dictionary or the 
+            <see cref="P:Microsoft.Health.ItemTypes.CodableValue.Text" /> property may be set to any unit of measure.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Value">
@@ -158,14 +202,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabResultType.Value" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the value for the lab result.
+            </summary>
+        <value>
+            A <see cref="T:System.Double" /> representing the value of the lab result, or <b>null</b> if
+            no lab result is available.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -175,7 +224,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.LabResultType.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -185,10 +234,22 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the outer element for the lab result type.
+            </param>
+        <param name="writer"> 
+            The XmlWriter to write the lab result type to.
+            </param>
+        <summary> 
+            Writes the lab result type data to the specified XML writer.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

@@ -4,15 +4,20 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Authentication.CryptoHash" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Encapsulates a cryptographic hash primitive and provides additional 
+            functionality to communicate the hash state via XML.
+            </summary>
+    <remarks>
+            CryptoHash is for internal use only and is subject to change.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,12 +26,18 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Authentication.CryptoHash.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Authentication.CryptoHash" /> class with 
+            default values.
+            </summary>
+        <remarks>
+            The default hash algorithm specified by <see cref="T:Microsoft.Health.Authentication.CryptoConfiguration" /> 
+            determines which hash primitive to use.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,15 +46,26 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Authentication.CryptoHash.#ctor(System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="algorithmName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="algorithmName">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="algorithmName">
+            The well-known algorithm name for the hash primitive.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Authentication.CryptoHash" /> class with 
+            the specified hash algorithm name.
+            </summary>
+        <remarks>
+            The caller must use <see cref="M:Microsoft.Health.Authentication.CryptoHash.WriteInfoXml(System.Xml.XmlWriter)" /> to generate XML 
+            representing the final digest and <see cref="P:Microsoft.Health.Authentication.CryptoHash.AlgorithmName" />.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="algorithmName" /> parameter is not supported.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="AlgorithmName">
@@ -52,15 +74,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Authentication.CryptoHash.AlgorithmName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the hash algorithm that instantiates the hash primitive.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:Microsoft.Health.Authentication.CryptoHash.AlgorithmName" /> is set to <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="DigestAlgorithmName">
@@ -69,15 +96,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Authentication.CryptoHash.DigestAlgorithmName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the digest algorithm name.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Child classes must specify the name of the digest
+            algorithm they implement.
+            This method is only called internally and is subject to change.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Finalize">
@@ -86,16 +119,24 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Authentication.CryptoHash.Finalize" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.Authentication.CryptoHashFinalized</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Constructs the representation of the finalized hash state.
+            </summary>
+        <returns>
+            A <see cref="T:Microsoft.Health.Authentication.CryptoHashFinalized" /> object representing the 
+            finalized state of the hash object is returned.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:Microsoft.Health.Authentication.CryptoHash.IsFinalized" /> is <b>true</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="HashAlgorithm">
@@ -104,15 +145,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Authentication.CryptoHash.HashAlgorithm" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.HashAlgorithm</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets an instance of the specified hash algorithm.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:Microsoft.Health.Authentication.CryptoHash.HashAlgorithm" /> is set to <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="IsFinalized">
@@ -121,15 +167,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Authentication.CryptoHash.IsFinalized" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets a flag indicating whether the hash is already finalized.
+            </summary>
+        <value>
+          <b>true</b> if the hash is already finalized; otherwise, <b>false</b>.
+            </value>
+        <remarks>
+            To reuse the <see cref="T:Microsoft.Health.Authentication.CryptoHash" /> instance, call Reset().
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="StartElementName">
@@ -138,14 +190,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Authentication.CryptoHash.StartElementName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets the name of the start element for the serialized info XML.
+            </summary>
+        <value>
+            A string representing the XML element name of the
+            section that contains the content written with 
+            <see cref="M:Microsoft.Health.Authentication.CryptoHash.WriteInfoXml(System.Xml.XmlWriter)" />.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -155,7 +213,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Authentication.CryptoHash.WriteInfoXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -164,9 +222,19 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="writer">
+            The XML writer receiving the data.
+            </param>
+        <summary>
+            Writes the XML to use when authenticating with the HealthVault 
+            service.
+            </summary>
+        <remarks>
+            This method is only called internally and is subject to change.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>. 
+            </exception>
       </Docs>
     </Member>
   </Members>

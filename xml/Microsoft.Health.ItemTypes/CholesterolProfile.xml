@@ -4,14 +4,17 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.CholesterolProfile" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a health record item type that encapsulates a person's 
+            cholesterol profile (Lipid profile) at a single point in time.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +24,18 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CholesterolProfile.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.CholesterolProfile" /> class with default values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> 
+            method is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,15 +44,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CholesterolProfile.#ctor(Microsoft.Health.ItemTypes.HealthServiceDate)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="when" Type="Microsoft.Health.ItemTypes.HealthServiceDate" />
       </Parameters>
       <Docs>
-        <param name="when">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="when">
+            The date when the cholesterol profile was take.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.CholesterolProfile" /> class 
+            with the specified date.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="when" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="HDL">
@@ -52,14 +69,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CholesterolProfile.HDL" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the person's high density lipoprotein in mg/dL.
+            </summary>
+        <value>
+            The value of the person's HDL measurement or <b>null</b> if unknown.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -69,14 +90,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CholesterolProfile.LDL" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the person's low density lipoprotein in mg/dL.
+            </summary>
+        <value>
+            The value of the person's LDL measurement or <b>null</b> if unknown.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -86,7 +111,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CholesterolProfile.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -95,9 +120,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the cholesterol profile data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.CholesterolProfile" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            a cholesterol-profile node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -106,15 +139,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CholesterolProfile.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the cholesterol profile.
+            </summary>
+        <returns>
+            A string representing the cholesterol profile.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -124,14 +161,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CholesterolProfile.TotalCholesterol" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the person's total cholesterol in mg/dL.
+            </summary>
+        <value>
+            The value of the person's total cholesterol measurement or <b>null</b> if unknown.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,14 +182,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CholesterolProfile.Triglyceride" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the person's triglyceride in mg/dL.
+            </summary>
+        <value>
+            The value of the person's triglyceride measurement or <b>null</b> if unknown.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -158,13 +203,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.CholesterolProfile.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -174,15 +224,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CholesterolProfile.When" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDate</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the date when the cholesterol profile was taken.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> representing the date. 
+            The default value is the current year, month, and day.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -191,7 +249,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CholesterolProfile.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -200,9 +258,16 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the cholesterol profile data to.
+            </param>
+        <summary>
+            Writes the cholesterol profile data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

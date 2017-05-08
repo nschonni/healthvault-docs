@@ -4,14 +4,17 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Condition" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a health record item type that encapsulates a single 
+            condition, issue, or problem.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +24,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Condition.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Condition" /> class with 
+            default values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,15 +45,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Condition.#ctor(Microsoft.Health.ItemTypes.CodableValue)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="Microsoft.Health.ItemTypes.CodableValue" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">
+            The name of the condition.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Condition" /> class with the 
+            specified name.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="name" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -52,15 +70,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Condition.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the name of the condition.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b> on set.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="OnsetDate">
@@ -69,15 +92,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Condition.OnsetDate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the approximate date of the first occurrence of the
+            condition.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDateTime" /> representing the 
+            date of the first occurrence.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the onset date should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -86,7 +117,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Condition.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -95,9 +126,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the condition data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.Condition" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            a condition node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Status">
@@ -106,15 +145,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Condition.Status" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the status of the condition.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> representing the status.
+            </value>
+        <remarks>
+            Examples of the status include values such as acute or chronic.
+            <br /><br />
+            Set the value to <b>null</b> if the status should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="StopDate">
@@ -123,15 +170,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Condition.StopDate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the approximate date the condition resolved.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDateTime" /> representing the date.
+            </value>
+        <remarks>
+            For multiple acute episodes, this is the last date the condition
+            resolved.
+            <br /><br />
+            Set the value to <b>null</b> if the stop date should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="StopReason">
@@ -140,15 +196,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Condition.StopReason" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets how the condition was resolved.
+            </summary>
+        <value>
+            A string representing the condition resolution.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the reason should not be stored.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -157,15 +222,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Condition.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the condition item.
+            </summary>
+        <returns>
+            A string representation of the condition item.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -175,13 +244,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.Condition.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -191,7 +265,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Condition.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -200,9 +274,19 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the condition data to.
+            </param>
+        <summary>
+            Writes the condition data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.Condition.Name" /> is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
   </Members>

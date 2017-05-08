@@ -4,15 +4,27 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.ApplicationSpecific" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents a health record item type that encapsulates application 
+            specific data.
+            </summary>
+    <remarks>
+            Application specific data can only ever be read or updared by the application
+            that created.
+            
+            This type is not all that interesting by itself but used as a base class
+            it helps developers implement their own application specific type class
+            to handle instances by registering the class using the
+            <see cref="M:Microsoft.Health.ItemTypeManager.RegisterApplicationSpecificHandler(System.Guid,System.String,System.Type)" />
+            method.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,12 +33,18 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ApplicationSpecific" /> class with default values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,7 +53,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor(System.Guid,System.String,System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="applicationId" Type="System.Guid" />
@@ -43,11 +61,28 @@
         <Parameter Name="description" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="applicationId">To be added.</param>
-        <param name="subtypeTag">To be added.</param>
-        <param name="description">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="applicationId">
+            The unique application identifier.
+            </param>
+        <param name="subtypeTag">
+            A string identifying a unique schema for the application specific
+            type. The string format is completely arbitrary and is used by
+            the application to identify the health record item application specific
+            data as a specific subtype.
+            </param>
+        <param name="description">
+            A descriptive display text for this item.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ApplicationSpecific" /> class with the 
+            specified application ID, subtype tag, and description.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="applicationId" /> is <see cref="F:System.Guid.Empty" />,
+            or if <paramref name="subtypeTag" /> or <paramref name="description" /> is
+            <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -56,7 +91,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApplicationSpecific.#ctor(System.String,System.String,System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="applicationId" Type="System.String" />
@@ -64,11 +99,27 @@
         <Parameter Name="description" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="applicationId">To be added.</param>
-        <param name="subtypeTag">To be added.</param>
-        <param name="description">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="applicationId">
+            The unique application identifier.
+            </param>
+        <param name="subtypeTag">
+            A string identifying a unique schema for the application specific
+            type. The string format is completely arbitrary and is used by
+            the application to identify the health record item application specific
+            data as a specific subtype.
+            </param>
+        <param name="description">
+            A descriptive display text for this item.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ApplicationSpecific" /> class with the 
+            specified application ID, subtype tag, and description.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="applicationId" />, <paramref name="subtypeTag" />, or 
+            <paramref name="description" /> is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ApplicationId">
@@ -77,15 +128,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the unique application identifier for which this application
+            specific information pertains.
+            </summary>
+        <value>
+            The application identifier should be in the form of a <see cref="T:System.Guid" />.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ApplicationSpecificXml">
@@ -94,15 +153,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecificXml" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Xml.XPath.IXPathNavigable&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a collection of the application specific XML.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            To change the application specific XML for the item, add or remove
+            items in the collection.
+            Derived classes can ignore this member.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Description">
@@ -111,15 +176,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ApplicationSpecific.Description" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the description of the item for display purposes.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> is <b>null</b>, empty, or contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseApplicationSpecificXml">
@@ -128,7 +198,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApplicationSpecific.ParseApplicationSpecificXml(System.Collections.Generic.IList{System.Xml.XPath.IXPathNavigable})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -137,9 +207,23 @@
         <Parameter Name="applicationSpecific" Type="System.Collections.Generic.IList&lt;System.Xml.XPath.IXPathNavigable&gt;" />
       </Parameters>
       <Docs>
-        <param name="applicationSpecific">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="applicationSpecific">
+            An <see cref="T:System.Xml.XPath.XPathNavigator" /> focused on the "app-specific" 
+            element in the item XML.
+            </param>
+        <summary>
+            Parses the parts of the application specific item type that is specific
+            to each application.
+            </summary>
+        <remarks>
+            The base elements that all application specific items contain are parsed by
+            the base class. The derived class overrides this method to parse all 
+            application specific portions of the XML. The base class implementation
+            places the application specific elements in the <see cref="P:Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecificXml" /> 
+            property and then passes that collection to this method so that derived classes
+            can further process those elements.  The base class implementation does nothing
+            to process these elements.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -148,7 +232,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApplicationSpecific.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -157,9 +241,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the application specific data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.ApplicationSpecific" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            an app-specific node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="SubtypeTag">
@@ -168,15 +260,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ApplicationSpecific.SubtypeTag" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets a tag that uniquely identifies the schema for the application specific
+            data.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> is <b>null</b>, empty, or contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -185,15 +283,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApplicationSpecific.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the application specific item.
+            </summary>
+        <returns>
+            A string representation of the application specific item.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -203,13 +305,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.ApplicationSpecific.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -219,14 +326,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ApplicationSpecific.When" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the date/time when the application specific item was created.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing 
+            the date. The default value is the current year, month, and day.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -236,7 +348,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApplicationSpecific.WriteApplicationSpecificXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -245,9 +357,18 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="writer">
+            The XML writer to write the application specific XML to.
+            </param>
+        <summary>
+            Writes the application specific XML to the specified writer.
+            </summary>
+        <remarks>
+            The XML for the base elements that all application specific items contain is written by  
+            the base class. The derived class overrides this method to write all 
+            application specific portions of the XML. The base class implementation
+            writes the XML in the <see cref="P:Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationSpecificXml" /> property.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -256,7 +377,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApplicationSpecific.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -265,9 +386,20 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the application specific data to.
+            </param>
+        <summary>
+            Writes the application specific data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.ApplicationSpecific.ApplicationId" />,
+            <see cref="P:Microsoft.Health.ItemTypes.ApplicationSpecific.SubtypeTag" />, or <see cref="P:Microsoft.Health.ItemTypes.ApplicationSpecific.Description" /> is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
   </Members>

@@ -4,15 +4,26 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.AuthorizationRule" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            This class defines an authorization rule in the HealthVault service.
+            </summary>
+    <remarks>
+            Authorization rules are applied to authorized records to state what
+            permissions the person or group being authorized has on the data in
+            that record. See the HealthVault Developer's Guide for more information
+            on how authorization works in HealthVault.
+            
+            This rule does not necessarily represent a rule that is present
+            on the server. It can be used to generate the necessary XML when 
+            using the Shell pages to authorize records.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,15 +32,24 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthorizationRule.#ctor(Microsoft.Health.HealthRecordItemPermissions)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="permissions" Type="Microsoft.Health.HealthRecordItemPermissions" />
       </Parameters>
       <Docs>
-        <param name="permissions">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="permissions">
+            The permissions granted.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.AuthorizationRule" /> class
+            with the specified permissions.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="permissions" /> parameter is 
+            <see cref="F:Microsoft.Health.HealthRecordItemPermissions.None" />.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -38,7 +58,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthorizationRule.#ctor(Microsoft.Health.HealthRecordItemPermissions,System.Collections.Generic.IList{Microsoft.Health.AuthorizationSetDefinition},System.Collections.Generic.IList{Microsoft.Health.AuthorizationSetDefinition})" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="permissions" Type="Microsoft.Health.HealthRecordItemPermissions" />
@@ -46,11 +66,26 @@
         <Parameter Name="exceptionSets" Type="System.Collections.Generic.IList&lt;Microsoft.Health.AuthorizationSetDefinition&gt;" />
       </Parameters>
       <Docs>
-        <param name="permissions">To be added.</param>
-        <param name="targetSets">To be added.</param>
-        <param name="exceptionSets">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="permissions">
+            The permissions granted. 
+            </param>
+        <param name="targetSets">
+            The set or sets of health record items to which this rule applies.
+            </param>
+        <param name="exceptionSets">
+            The set or sets of health record items to which this rule does not 
+            apply even if contained in a set defined by 
+            <paramref name="targetSets" />.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.AuthorizationRule" /> class 
+            with the specified permissions, target and exception sets.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="permissions" /> parameter is 
+            <see cref="F:Microsoft.Health.HealthRecordItemPermissions.None" />.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -59,7 +94,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthorizationRule.#ctor(System.String,System.String,Microsoft.Health.HealthRecordItemPermissions,System.Collections.Generic.IList{Microsoft.Health.AuthorizationSetDefinition},System.Collections.Generic.IList{Microsoft.Health.AuthorizationSetDefinition},System.Boolean,Microsoft.Health.AuthorizationRuleDisplayFlags)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
@@ -71,15 +106,39 @@
         <Parameter Name="displayFlags" Type="Microsoft.Health.AuthorizationRuleDisplayFlags" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <param name="reason">To be added.</param>
-        <param name="permissions">To be added.</param>
-        <param name="targetSets">To be added.</param>
-        <param name="exceptionSets">To be added.</param>
-        <param name="isOptional">To be added.</param>
-        <param name="displayFlags">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">
+             The name uniquely identifying this rule in a set
+             </param>
+        <param name="reason">
+             The reason why an application wants this access
+             </param>
+        <param name="permissions">
+             The permissions granted. 
+             </param>
+        <param name="targetSets">
+             The set or sets of health record items to which this rule applies.
+             </param>
+        <param name="exceptionSets">
+             The set or sets of health record items to which this rule does not 
+             apply even if contained in a set defined by 
+             <paramref name="targetSets" />.
+             </param>
+        <param name="isOptional">
+             Flag indicating whether or not this rule is optional
+             </param>
+        <param name="displayFlags">
+             Flags controlling how to display this rule
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.AuthorizationRule" /> class 
+             with the specified name, reason, permissions, target, exception sets,
+             optional and display flags.
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="permissions" /> parameter is 
+             <see cref="F:Microsoft.Health.HealthRecordItemPermissions.None" />.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="CreateFromXml">
@@ -88,7 +147,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthorizationRule.CreateFromXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.AuthorizationRule&gt;</ReturnType>
@@ -97,10 +156,21 @@
         <Parameter Name="authNav" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="authNav">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="authNav">
+            The XML containing the auth rules information.
+            </param>
+        <summary>
+            Creates an instance of an AuthorizationRule object using
+            the specified XML.
+            </summary>
+        <returns>
+            A Collection of AuthorizationRule objects parsed out from 
+            the XML.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="authNav" /> is null.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="CultureSpecificReasons">
@@ -109,15 +179,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.AuthorizationRule.CultureSpecificReasons" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.CultureSpecificStringDictionary</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a dictionary of language specifiers and reasons.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+             Each entry is a localized version of the same reason.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="DisplayFlags">
@@ -126,13 +200,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.AuthorizationRule.DisplayFlags" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.AuthorizationRuleDisplayFlags</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets flags controlling display behavior of rules.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -143,14 +219,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.AuthorizationRule.ExceptionSets" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.AuthorizationSetDefinition&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets the sets of health record items that are excluded by this 
+            rule even if they are part of the <see cref="P:Microsoft.Health.AuthorizationRule.TargetSets" />.
+            </summary>
+        <value>
+            A read-only collection of type <see cref="T:Microsoft.Health.AuthorizationSetDefinition" />
+            representing the items.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -160,7 +242,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthorizationRule.GetBase64EncodedRulesXml(System.Collections.Generic.IList{Microsoft.Health.AuthorizationRule})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -169,10 +251,27 @@
         <Parameter Name="rules" Type="System.Collections.Generic.IList&lt;Microsoft.Health.AuthorizationRule&gt;" />
       </Parameters>
       <Docs>
-        <param name="rules">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="rules">
+            The authorization rules to be included in the authorization XML.
+            </param>
+        <summary>
+            Gets the base-64 encoding of the authorization XML for the 
+            specified rules.
+            </summary>
+        <returns>
+            A string containing the base-64 encoding of the XML representation 
+            of the specified authorization rules.
+            </returns>
+        <remarks>
+            The base-64 encoding of the authorization rules can be used when
+            calling the Shell web pages to authorize records, register an
+            application, or set permissions on a record for a person or group.
+            The base-64 encoding of the authorization rules is passed as a 
+            value in the appropriate query string argument to the web page.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="rules" /> parameter is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetRulesXml">
@@ -181,7 +280,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthorizationRule.GetRulesXml(System.Collections.Generic.IList{Microsoft.Health.AuthorizationRule})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -190,10 +289,20 @@
         <Parameter Name="rules" Type="System.Collections.Generic.IList&lt;Microsoft.Health.AuthorizationRule&gt;" />
       </Parameters>
       <Docs>
-        <param name="rules">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="rules">
+            The authorization rules to be included in the authorization XML.
+            </param>
+        <summary>
+            Retrieves the authorization XML for the specified rules.
+            </summary>
+        <returns>
+            A string containing the XML representation of the specified
+            authorization rules.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="rules" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetXml">
@@ -202,15 +311,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthorizationRule.GetXml" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets the XML representation of the rule.
+            </summary>
+        <returns>
+            A string containing XML representing the rule.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -220,15 +333,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.AuthorizationRule.IsOptional" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a value indicating whether the authorization rule is optional
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Optional rules are not required for application authorization.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -237,13 +354,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.AuthorizationRule.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the name uniquely identifying the rule within the rule set.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -254,14 +373,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.AuthorizationRule.Permissions" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthRecordItemPermissions</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets the permissions that the rule grants.
+            </summary>
+        <value>
+            An instance of <see cref="T:Microsoft.Health.HealthRecordItemPermissions" />.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -271,13 +394,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.AuthorizationRule.Reason" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the reason the application wants the access represented by this rule.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -288,14 +413,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.AuthorizationRule.TargetSets" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.AuthorizationSetDefinition&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets the sets of health record items to which this rule 
+            grants permission.
+            </summary>
+        <value>
+            A read-only collection of type <see cref="T:Microsoft.Health.AuthorizationSetDefinition" />
+            representing the items.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -305,15 +436,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.AuthorizationRule.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets the XML representation of the <see cref="T:Microsoft.Health.AuthorizationRule" />.
+            </summary>
+        <returns>
+            The XML representation of the <see cref="T:Microsoft.Health.AuthorizationRule" />.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

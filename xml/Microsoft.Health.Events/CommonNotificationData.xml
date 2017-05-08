@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Events.CommonNotificationData" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents data that is common across all event notification.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.CommonNotificationData.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates an empty instance of the CommonNotificationData class. 
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,15 +39,21 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.CommonNotificationData.#ctor(System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="subscriptionId" Type="System.Guid" />
       </Parameters>
       <Docs>
         <param name="subscriptionId">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>
+            Creates an instance of the CommonNotificationData class and sets
+            the unique identifier for the subscription.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="subscriptionId" /> is equal to Guid.Empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -52,7 +62,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.CommonNotificationData.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -61,9 +71,17 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator">The XPathNavigator.</param>
+        <summary>
+            Populate the CommonNotificationData instance from XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="navigator" /> parameter does not contain a common node or a subscription-id node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="SubscriptionId">
@@ -72,13 +90,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Events.CommonNotificationData.SubscriptionId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the unique identifier for the subscription.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

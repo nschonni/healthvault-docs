@@ -4,15 +4,20 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Events.NotificationChannel" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            The base class for all notification channel types.
+            </summary>
+    <remarks>
+            A notification channel defines how event notifications are delivered.
+            to the application.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName="Deserialize">
@@ -21,7 +26,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.NotificationChannel.Deserialize(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.Events.NotificationChannel</ReturnType>
@@ -30,10 +35,18 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="navigator">The navigator to read the information from. </param>
+        <summary>
+            Creates a notification channel from the XML representation.
+            </summary>
+        <returns>The notification channel.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.InvalidOperationException">
+            The notification channel defined in the XML is not recognized.
+            </exception>
       </Docs>
     </Member>
   </Members>

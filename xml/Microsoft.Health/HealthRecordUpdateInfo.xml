@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthRecordUpdateInfo" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Encapsulates information about an updated record and the person associated with that record.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordUpdateInfo.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Create a new instance of the <see cref="T:Microsoft.Health.HealthRecordUpdateInfo" /> class for testing purposes. 
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,13 +39,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordUpdateInfo.LastUpdateDate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the timestamp when an addition, deletion or update occured to the 
+            <see cref="T:Microsoft.Health.HealthRecordItem" />s in the <see cref="T:Microsoft.Health.HealthRecordAccessor" /></summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -52,15 +58,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordUpdateInfo.LatestOperationSequenceNumber" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the record's latest operation sequence number.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The record's operation sequence number is used when sync'ing data from a 
+            record. Anytime an operation is performed against a health record item HealthVault
+            stamps it with the next increment of the operation sequence number for the record.
+            For example, the first item added to the record would be stamped with the sequence
+            number 1, the next operation would stamp the thing with 2, etc. Applications can
+            determine all operations that have occurred since a known point by calling 
+            GetRecordOperations and passing the sequence number of the known point.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="PersonId">
@@ -69,13 +85,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordUpdateInfo.PersonId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the person ID of the updated record.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -86,13 +104,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordUpdateInfo.RecordId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the ID of the <see cref="T:Microsoft.Health.HealthRecordAccessor" /> updated.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

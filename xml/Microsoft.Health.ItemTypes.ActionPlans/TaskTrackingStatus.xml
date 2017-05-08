@@ -4,13 +4,15 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingStatus" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Enum</BaseTypeName>
   </Base>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            The task adherence or completion status represented by this tracking entry.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -20,13 +22,20 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingStatus.Completion" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingStatus</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The user completed a task by performing all required occurrences.
+            </summary>
+        <remarks>
+            For example, if the task is to exercise for thirty minutes three times a week, then
+            when the user completes all three exercise sessions a <see cref="T:Microsoft.Health.ItemTypes.TaskTrackingEntry" />
+            with status Completion will be logged.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="NonOccurrence">
@@ -35,13 +44,20 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingStatus.NonOccurrence" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingStatus</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The user failed to perform the task.
+            </summary>
+        <remarks>
+            For example, if the user forgot to take their medication or didn't exercise, the
+            application can optionally record this as a <see cref="T:Microsoft.Health.ItemTypes.TaskTrackingEntry" /> with
+            status NonOccurrence.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Occurrence">
@@ -50,13 +66,20 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingStatus.Occurrence" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingStatus</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The user performed a task at the required time.
+            </summary>
+        <remarks>
+            For example, if the task is to exercise for thirty minutes three times a week, then
+            every time the user completes a thirty-minute exercise session a <see cref="T:Microsoft.Health.ItemTypes.TaskTrackingEntry" />
+            with status Occurrence will be logged.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="OutOfWindow">
@@ -65,13 +88,21 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingStatus.OutOfWindow" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingStatus</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The user performed a task, but not at the required time, so it doesn't count toward
+            task completion.
+            </summary>
+        <remarks>
+            For example, if the task is to take medication at 10:00 plus/minus fifteen minutes, and
+            the user takes medication at 12:00, a <see cref="T:Microsoft.Health.ItemTypes.TaskTrackingEntry" /> with status
+            OutOfWindow will be logged.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Unknown">
@@ -80,13 +111,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingStatus.Unknown" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingStatus</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Value is not known.
+            </summary>
+        <remarks>
+            This is not a supported value and should not be used to set a property value.
+            </remarks>
       </Docs>
     </Member>
   </Members>

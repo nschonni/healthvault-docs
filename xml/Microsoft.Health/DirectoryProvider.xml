@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.DirectoryProvider" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.Directory</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Static factory to retrieve application and device directory from HealthVault.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,13 +23,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.DirectoryProvider.AppDirUrl" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Application directory path
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -37,13 +41,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.DirectoryProvider.DeviceDirUrl" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Device directory path
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -53,7 +59,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.Nullable{System.DateTime}@)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Health.ApplicationDirectoryItem&gt;</ReturnType>
@@ -64,12 +70,39 @@
         <Parameter Name="responseLastModified" Type="System.Nullable&lt;System.DateTime&gt;&amp;" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="options">To be added.</param>
-        <param name="responseLastModified">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="connection">
+          <see cref="T:Microsoft.Health.HealthServiceConnection" /> to call HealthVault.
+            </param>
+        <param name="options">
+          <see cref="T:Microsoft.Health.DirectoryDataOptions" /> defines what set of data in <see cref="T:Microsoft.Health.ApplicationDirectoryItem" />(s) to retrieve.
+            The calling application can request all languages for the response return values.
+            </param>
+        <param name="responseLastModified">
+            Returns the response's last modified datetime
+            </param>
+        <summary>
+            Gets the list of application directory items from HealthVault.
+            </summary>
+        <returns>
+          <para>
+            A collection of application directory items with localized element values available for 
+            the best match language or all languages as specified by
+            the <see cref="T:Microsoft.Health.DirectoryDataOptions" />.  In case of a language match, HealthVault service tries to 
+            find caller's current language identifier by first trying to match
+            entire language specifier in the request (e.g. es-US), then just the language base (e.g. es), 
+            and as last resort, defaults to base language in HealthVault (e.g. en).    
+            </para>
+        </returns>
+        <remarks>
+          <para>
+            This method always calls HealthVault service to get the latest 
+            information. To improve performance and latency, it is recommended that the calling applications cache
+            the return values, and only call this method to update their cache.
+            </para>
+          <para>
+            This method currently requires ApplicationConnection or AuthenticatedConnection.
+            </para>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetApplicationDirectoryCollection">
@@ -78,7 +111,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.DirectoryProvider.GetApplicationDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.DateTime,System.Nullable{System.DateTime}@)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Health.ApplicationDirectoryItem&gt;</ReturnType>
@@ -90,13 +123,42 @@
         <Parameter Name="responseLastModified" Type="System.Nullable&lt;System.DateTime&gt;&amp;" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="options">To be added.</param>
-        <param name="lastClientRefreshDate">To be added.</param>
-        <param name="responseLastModified">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="connection">
+          <see cref="T:Microsoft.Health.HealthServiceConnection" /> to call HealthVault.
+            </param>
+        <param name="options">
+          <see cref="T:Microsoft.Health.DirectoryDataOptions" /> defines what set of data in <see cref="T:Microsoft.Health.ApplicationDirectoryItem" />(s) to retrieve.
+            The calling application can request all languages for the response return values.
+            </param>
+        <param name="lastClientRefreshDate">
+            A <see cref="T:System.DateTime" /> instance that specifies the time of the last refresh made by the client.
+            </param>
+        <param name="responseLastModified">
+            Returns the response's last modified datetime
+            </param>
+        <summary>
+            Gets the entire list of application directory items only if any items have been changed since the
+            specified last client refresh date.
+            </summary>
+        <returns>
+          <para>
+            A collection of application directory items with localized element values available for 
+            the best match language or all languages as specified by
+            the <see cref="T:Microsoft.Health.DirectoryDataOptions" />.  In case of a language match, HealthVault service tries to 
+            find caller's current language identifier by first trying to match
+            entire language specifier in the request (e.g. es-US), then just the language base (e.g. es), 
+            and as last resort, defaults to base language in HealthVault (e.g. en).    
+            </para>
+        </returns>
+        <remarks>
+          <para>
+            To improve performance and latency, it is recommended that the calling applications cache
+            the return values, and only call this method to update their cache.
+            </para>
+          <para>
+            This method currently requires ApplicationConnection or AuthenticatedConnection.
+            </para>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetDeviceDirectoryCollection">
@@ -105,7 +167,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.Nullable{System.DateTime}@)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Health.DeviceDirectoryItem&gt;</ReturnType>
@@ -116,12 +178,39 @@
         <Parameter Name="responseLastModified" Type="System.Nullable&lt;System.DateTime&gt;&amp;" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="options">To be added.</param>
-        <param name="responseLastModified">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="connection">
+          <see cref="T:Microsoft.Health.HealthServiceConnection" /> to call HealthVault.
+            </param>
+        <param name="options">
+          <see cref="T:Microsoft.Health.DirectoryDataOptions" /> defines what set of data in <see cref="T:Microsoft.Health.DeviceDirectoryItem" />(s) to retrieve.
+            The calling application can request all languages for the response return values.
+            </param>
+        <param name="responseLastModified">
+            Returns the response's last modified datetime
+            </param>
+        <summary>
+            Gets the list of device directory items from HealthVault.
+            </summary>
+        <returns>
+          <para>
+            A collection of device directory items with localized element values available for 
+            the best match language or all languages as specified by
+            the <see cref="T:Microsoft.Health.DirectoryDataOptions" />.  In case of a language match, HealthVault service tries to 
+            find caller's current language identifier by first trying to match
+            entire language specifier in the request (e.g. es-US), then just the language base (e.g. es), 
+            and as last resort, defaults to base language in HealthVault (e.g. en).    
+            </para>
+        </returns>
+        <remarks>
+          <para>
+            This method always calls HealthVault service to get the latest 
+            information. To improve performance and latency, it is recommended that the calling applications cache
+            the return values, and only call this method to update their cache.
+            </para>
+          <para>
+            This method currently requires ApplicationConnection or AuthenticatedConnection.
+            </para>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetDeviceDirectoryCollection">
@@ -130,7 +219,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.DirectoryProvider.GetDeviceDirectoryCollection(Microsoft.Health.HealthServiceConnection,Microsoft.Health.DirectoryDataOptions,System.DateTime,System.Nullable{System.DateTime}@)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Health.DeviceDirectoryItem&gt;</ReturnType>
@@ -142,13 +231,42 @@
         <Parameter Name="responseLastModified" Type="System.Nullable&lt;System.DateTime&gt;&amp;" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="options">To be added.</param>
-        <param name="lastClientRefreshDate">To be added.</param>
-        <param name="responseLastModified">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="connection">
+          <see cref="T:Microsoft.Health.HealthServiceConnection" /> to call HealthVault.
+            </param>
+        <param name="options">
+          <see cref="T:Microsoft.Health.DirectoryDataOptions" /> defines what set of data in <see cref="T:Microsoft.Health.DeviceDirectoryItem" />(s) to retrieve.
+            The calling application can request all languages for the response return values.
+            </param>
+        <param name="lastClientRefreshDate">
+            A <see cref="T:System.DateTime" /> instance that specifies the time of the last refresh made by the client.
+            </param>
+        <param name="responseLastModified">
+            Returns the response's last modified datetime
+            </param>
+        <summary>
+            Gets the entire list of device directory items only if any items have been changed since the
+            specified last client refresh date.
+            </summary>
+        <returns>
+          <para>
+            A collection of device directory items with localized element values available for 
+            the best match language or all languages as specified by
+            the <see cref="T:Microsoft.Health.DirectoryDataOptions" />.  In case of a language match, HealthVault service tries to 
+            find caller's current language identifier by first trying to match
+            entire language specifier in the request (e.g. es-US), then just the language base (e.g. es), 
+            and as last resort, defaults to base language in HealthVault (e.g. en).    
+            </para>
+        </returns>
+        <remarks>
+          <para>
+            To improve performance and latency, it is recommended that the calling applications cache
+            the return values, and only call this method to update their cache.
+            </para>
+          <para>
+            This method currently requires ApplicationConnection or AuthenticatedConnection.
+            </para>
+        </remarks>
       </Docs>
     </Member>
   </Members>

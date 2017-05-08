@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.ActionPlans.PlanObjective" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents an objective to be achieved by following the plan.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ActionPlans.PlanObjective.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new <see cref="T:Microsoft.Health.ItemTypes.ActionPlans.PlanObjective" />.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,7 +39,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ActionPlans.PlanObjective.#ctor(System.Guid,System.String,System.String,Microsoft.Health.ItemTypes.ActionPlans.PlanObjectiveState)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="id" Type="System.Guid" />
@@ -48,7 +52,9 @@
         <param name="name">To be added.</param>
         <param name="description">To be added.</param>
         <param name="state">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new <see cref="T:Microsoft.Health.ItemTypes.ActionPlans.PlanObjective" />.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -58,15 +64,26 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ActionPlans.PlanObjective.Description" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The objective description.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Applications typically display this string and would pass in a value
+            in the user's display language.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter is empty or whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Id">
@@ -75,13 +92,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ActionPlans.PlanObjective.Id" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The objective identifier.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -92,15 +111,26 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ActionPlans.PlanObjective.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The objective name.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Applications typically display this string and would pass in a value
+            in the user's display language.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter is empty or whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Outcomes">
@@ -109,13 +139,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ActionPlans.PlanObjective.Outcomes" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.List&lt;Microsoft.Health.ItemTypes.ActionPlans.PlanOutcome&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The outcomes used to quantify progress toward the objective.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -126,7 +158,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ActionPlans.PlanObjective.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -136,7 +168,9 @@
       </Parameters>
       <Docs>
         <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.ActionPlans.PlanObjective" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -146,15 +180,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ActionPlans.PlanObjective.State" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ActionPlans.PlanObjectiveState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The objective state.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter has value Unknown.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -163,14 +202,16 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ActionPlans.PlanObjective.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Get a string representation of the object.
+            </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -181,7 +222,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ActionPlans.PlanObjective.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -193,7 +234,9 @@
       <Docs>
         <param name="nodeName">To be added.</param>
         <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>
+            Writes the item data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

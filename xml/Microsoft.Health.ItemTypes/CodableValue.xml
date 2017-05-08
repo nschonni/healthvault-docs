@@ -4,7 +4,7 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.CodableValue" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
@@ -21,7 +21,10 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents the value and code of an entry in the HealthVault vocabulary
+            store.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -31,11 +34,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Constructs a CodableValue with empty values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -45,15 +50,22 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.#ctor(System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="text" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="text">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="text">
+            The text value of the codable value.
+            </param>
+        <summary>
+            Constructs a CodableValue with an initial value for the Text.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="text" /> parameter is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -62,17 +74,27 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.#ctor(System.String,Microsoft.Health.ItemTypes.CodedValue)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="text" Type="System.String" />
         <Parameter Name="code" Type="Microsoft.Health.ItemTypes.CodedValue" />
       </Parameters>
       <Docs>
-        <param name="text">To be added.</param>
-        <param name="code">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="text">
+            The text value of the codable value.
+            </param>
+        <param name="code">
+            The code representation of the text value.
+            </param>
+        <summary>
+            Constructs a CodableValue with an initial value for the Text
+            and the specified code.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="text" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -81,17 +103,27 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.#ctor(System.String,Microsoft.Health.VocabularyItem)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="text" Type="System.String" />
         <Parameter Name="item" Type="Microsoft.Health.VocabularyItem" />
       </Parameters>
       <Docs>
-        <param name="text">To be added.</param>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="text">
+            The text value of the codable value.
+            </param>
+        <param name="item">
+            The <see cref="T:Microsoft.Health.VocabularyItem" />. 
+            </param>
+        <summary>
+            Constructs a CodableValue based on display value and
+            a <see cref="T:Microsoft.Health.VocabularyItem" />. 
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="text" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -100,7 +132,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.#ctor(System.String,System.String,Microsoft.Health.VocabularyKey)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="text" Type="System.String" />
@@ -108,11 +140,24 @@
         <Parameter Name="key" Type="Microsoft.Health.VocabularyKey" />
       </Parameters>
       <Docs>
-        <param name="text">To be added.</param>
-        <param name="code">To be added.</param>
-        <param name="key">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="text">
+            The text value of the codable value.
+            </param>
+        <param name="code">
+            The code representation of the text value.
+            </param>
+        <param name="key">
+            key for identifying a Vocabulary in the HealthLexicon.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> class 
+            with the specified text, code value, and vocabulary key.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="text" /> or <paramref name="code" /> or <paramref name="key" />
+            parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -121,7 +166,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.#ctor(System.String,System.String,System.String,System.String,System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="text" Type="System.String" />
@@ -131,13 +176,30 @@
         <Parameter Name="version" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="text">To be added.</param>
-        <param name="code">To be added.</param>
-        <param name="vocabularyName">To be added.</param>
-        <param name="family">To be added.</param>
-        <param name="version">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="text">
+            The text value of the codable value.
+            </param>
+        <param name="code">
+            The code representation of the text value.
+            </param>
+        <param name="vocabularyName">
+            The name of the vocabulary the code belongs to.
+            </param>
+        <param name="family">
+            The family of vocabulary terms that the code belongs to.
+            </param>
+        <param name="version">
+            The version of the vocabulary the code belongs to.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> class 
+            with the specified text, code value, vocabulary name, family, and version.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="text" /> or <paramref name="code" /> or 
+            <paramref name="vocabularyName" /> parameter is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Add">
@@ -146,7 +208,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.Add(Microsoft.Health.ItemTypes.CodedValue)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -155,8 +217,12 @@
         <Parameter Name="item" Type="Microsoft.Health.ItemTypes.CodedValue" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="item">
+            The code item to add.
+            </param>
+        <summary>
+            Adds an item to the code list. 
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -166,7 +232,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.Add(Microsoft.Health.VocabularyItem)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -175,8 +241,13 @@
         <Parameter Name="item" Type="Microsoft.Health.VocabularyItem" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="item">
+            The <see cref="T:Microsoft.Health.VocabularyItem" /> to use. 
+            </param>
+        <summary>
+            Encodes a <see cref="T:Microsoft.Health.VocabularyItem" /> as a CodedValue and
+            adds it to the list of coded values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -186,14 +257,16 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.Clear" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Removes all items from the code item list
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -203,7 +276,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.Contains(Microsoft.Health.ItemTypes.CodedValue)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -212,9 +285,16 @@
         <Parameter Name="item" Type="Microsoft.Health.ItemTypes.CodedValue" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="item">
+            The code item to search for in the list.
+            </param>
+        <summary>
+            Gets a value indicating whether the code item list contains a 
+            specific code.
+            </summary>
+        <returns>
+          <b>true</b> if the item is in the collection; otherwise, <b>false</b>.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -224,7 +304,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.CopyTo(Microsoft.Health.ItemTypes.CodedValue[],System.Int32)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -234,10 +314,31 @@
         <Parameter Name="arrayIndex" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="array">To be added.</param>
-        <param name="arrayIndex">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="array">
+            The array to copy the elements to.
+            </param>
+        <param name="arrayIndex">
+            The array location at which to begin copying.
+            </param>
+        <summary>
+            Copies the elements of the code item list to an array, starting at 
+            a particular array index.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="arrayIndex" /> parameter is less than 0.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="array" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="array" /> parameter is multidimensional, 
+            or the <paramref name="arrayIndex" /> value is equal to or greater 
+            than the length of the array, or the number of elements in the 
+            source collection is greater than the available space from <paramref name="arrayIndex" /> 
+            to the end of the destination array, or a type cannot be cast 
+            automatically to the type of the destination array.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Count">
@@ -246,13 +347,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CodableValue.Count" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the number of code items
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -263,15 +366,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.GetEnumerator" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IEnumerator&lt;Microsoft.Health.ItemTypes.CodedValue&gt;</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+        <returns>
+            An enumerator.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -281,7 +388,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.IndexOf(Microsoft.Health.ItemTypes.CodedValue)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -290,9 +397,15 @@
         <Parameter Name="item" Type="Microsoft.Health.ItemTypes.CodedValue" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="item">
+            The <see cref="T:Microsoft.Health.ItemTypes.CodedValue" /> to find the index of.
+            </param>
+        <summary>
+            Determines the index of a specific item
+            </summary>
+        <returns>
+            The index of item if found in the list; otherwise, -1.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -302,7 +415,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.Insert(System.Int32,Microsoft.Health.ItemTypes.CodedValue)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -312,10 +425,19 @@
         <Parameter Name="item" Type="Microsoft.Health.ItemTypes.CodedValue" />
       </Parameters>
       <Docs>
-        <param name="index">To be added.</param>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="index">
+            The zero-based index at which item should be inserted.
+            </param>
+        <param name="item">
+            The object to insert.
+            </param>
+        <summary>
+            Inserts an code item at the specified index.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="index" /> parameter is out of range.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="IsReadOnly">
@@ -324,14 +446,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CodableValue.IsReadOnly" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets a value indicating whether the code item list is read-only.
+            </summary>
+        <value>
+          <b>true</b> if the list is read-only; otherwise, <b>false</b>.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -341,7 +467,7 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CodableValue.Item(System.Int32)" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodedValue</ReturnType>
@@ -350,10 +476,19 @@
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="index">To be added.</param>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <param name="index">
+            The zero-based index of the element to get or set
+            </param>
+        <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+        <value>
+            The code item at the specified index.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="index" /> parameter is out of range.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -362,7 +497,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -371,9 +506,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator"> 
+            The XML node representing the vocabulary entry.
+            </param>
+        <summary> 
+            Populates the data for the vocabulary entry from the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Remove">
@@ -382,7 +524,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.Remove(Microsoft.Health.ItemTypes.CodedValue)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -391,9 +533,16 @@
         <Parameter Name="item" Type="Microsoft.Health.ItemTypes.CodedValue" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="item">
+            The <see cref="T:Microsoft.Health.ItemTypes.CodedValue" /> object to remove.
+            </param>
+        <summary>
+            Removes the first occurrence of this code item from the code item
+            list.
+            </summary>
+        <returns>
+          <b>true</b> if removal succeeded; otherwise, <b>false</b>.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -403,7 +552,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.RemoveAt(System.Int32)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -412,9 +561,16 @@
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="index">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="index">
+            The zero-based index of the item to remove.
+            </param>
+        <summary>
+            Removes a code item at the specified index.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="index" /> parameter is out of range.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
@@ -423,15 +579,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.System#Collections#IEnumerable#GetEnumerator" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.IEnumerator</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Returns an enumerator that iterates through the code list.
+            </summary>
+        <returns>
+            An enumerator.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -441,15 +601,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CodableValue.Text" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the value of the codable value.
+            </summary>
+        <value>
+            A string representing the value.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter is <b>null</b>, empty, or contains only
+            whitespace when setting.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -458,15 +626,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets the string representation of a codable value.
+            </summary>
+        <returns>
+            A string representing the value.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -476,7 +648,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CodableValue.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -486,10 +658,26 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the outer element for the vocabulary entry.
+            </param>
+        <param name="writer"> 
+            The XmlWriter to write the vocabulary entry to.
+            </param>
+        <summary> 
+            Writes the vocabulary entry to the specified XML writer.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.CodableValue.Text" />, <see cref="P:Microsoft.Health.ItemTypes.CodedValue.Value" />, or
+            <see cref="P:Microsoft.Health.ItemTypes.CodedValue.Family" /> parameter is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
   </Members>

@@ -4,14 +4,17 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Person" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a health record item type that encapsulates non-identifying 
+            information about a person.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +24,18 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Person.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Person" /> class with default values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,15 +44,24 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Person.#ctor(Microsoft.Health.ItemTypes.Name)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="Microsoft.Health.ItemTypes.Name" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">
+            The name of the person.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Person" /> class with the 
+            specified name.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="name" /> parameter 
+            is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -52,17 +70,29 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Person.#ctor(Microsoft.Health.ItemTypes.Name,Microsoft.Health.ItemTypes.CodableValue)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="Microsoft.Health.ItemTypes.Name" />
         <Parameter Name="personType" Type="Microsoft.Health.ItemTypes.CodableValue" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <param name="personType">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">
+            The name of the person.
+            </param>
+        <param name="personType">
+            The type of the person, such as emergency contact, provider, and 
+            so on.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Person" /> class with the 
+            specified name and type.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="name" /> or <paramref name="personType" /> 
+            parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ContactInformation">
@@ -71,15 +101,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Person.ContactInformation" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ContactInfo</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the contact information.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.ContactInfo" /> representing the information.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the contact information should not be
+            stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -88,15 +125,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Person.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.Name</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the person's name.
+            </summary>
+        <value>
+            A <see cref="P:Microsoft.Health.ItemTypes.Person.Name" /> value.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b> during set.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Organization">
@@ -105,15 +149,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Person.Organization" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the organization the person belongs to.
+            </summary>
+        <value>
+            A string representing the organization.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the organization should not be stored.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -122,7 +175,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Person.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -131,9 +184,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the person data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.Person" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            a person node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="PersonId">
@@ -142,15 +203,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Person.PersonId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the ID number for the person in the organization.
+            </summary>
+        <value>
+            A string representing the ID number.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the ID should not be stored.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="PersonType">
@@ -159,14 +229,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Person.PersonType" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the type of person, such as provider, emergency contact, 
+            and so on.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> representing the person type.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -176,15 +251,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Person.ProfessionalTraining" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the professional training for the provider.
+            </summary>
+        <value>
+            A string representing the training.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -193,15 +275,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Person.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the person item.
+            </summary>
+        <returns>
+            A string representation of the person item.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -211,13 +297,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.Person.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -227,7 +318,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Person.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -236,8 +327,12 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the person data to.
+            </param>
+        <summary>
+            Writes the person data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

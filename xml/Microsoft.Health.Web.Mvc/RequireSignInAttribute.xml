@@ -4,7 +4,7 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Web.Mvc.RequireSignInAttribute" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.Web.Mvc</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Web.Mvc.AuthorizeAttribute</BaseTypeName>
@@ -20,7 +20,10 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Indicates that this action or controller requires that the user be signed in to HealthVault.
+            An unauthorized user will be redirected to HealthVault Shell to sign in.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -30,7 +33,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.Mvc.RequireSignInAttribute.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -44,7 +47,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.Mvc.RequireSignInAttribute.HandleUnauthorizedRequest(System.Web.Mvc.AuthorizationContext)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -53,8 +56,10 @@
         <Parameter Name="filterContext" Type="System.Web.Mvc.AuthorizationContext" />
       </Parameters>
       <Docs>
-        <param name="filterContext">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="filterContext">The authorization context</param>
+        <summary>
+            Redirects unauthorized users to sign in
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,13 +69,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.Mvc.RequireSignInAttribute.Mra" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets whether to sign in as MRA or SRA.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -81,7 +88,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.Mvc.RequireSignInAttribute.OnException(System.Web.Mvc.ExceptionContext)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -90,9 +97,15 @@
         <Parameter Name="filterContext" Type="System.Web.Mvc.ExceptionContext" />
       </Parameters>
       <Docs>
-        <param name="filterContext">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="filterContext">The exception context</param>
+        <summary>
+            Handles exceptions from HealthVault
+            </summary>
+        <remarks>
+            If a user is already signed in, but their session expires, this application may not
+            realize this until the HealthVault service throws an exception. This handles those cases
+            by redirecting the user to HealthVault Shell to re-sign in.
+            </remarks>
       </Docs>
     </Member>
   </Members>

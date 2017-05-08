@@ -4,15 +4,20 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Directive" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+             Represents a health record item type that encapsulates an advance directive.
+             </summary>
+    <remarks>
+             An advance directive is a legal document that provides directions for future
+             health care decisions in case the patient becomes incapacitated.
+             </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,12 +26,18 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Directive.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Directive" /> class with default values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,17 +46,28 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Directive.#ctor(Microsoft.Health.ItemTypes.ApproximateDateTime,Microsoft.Health.ItemTypes.ApproximateDateTime)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="startDate" Type="Microsoft.Health.ItemTypes.ApproximateDateTime" />
         <Parameter Name="stopDate" Type="Microsoft.Health.ItemTypes.ApproximateDateTime" />
       </Parameters>
       <Docs>
-        <param name="startDate">To be added.</param>
-        <param name="stopDate">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="startDate">
+            The date the directive takes effect.
+            </param>
+        <param name="stopDate">
+            The date the directive stops being effective.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Directive" /> class 
+            specifying the mandatory values.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="startDate" /> parameter or <paramref name="stopDate" />
+            is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="AdditionalInstructions">
@@ -54,15 +76,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.AdditionalInstructions" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets additional directive instructions.
+            </summary>
+        <value>
+            A string representing the instructions.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the manufacturer should not be stored.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="AttendingNurse">
@@ -71,14 +102,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.AttendingNurse" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.PersonItem</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the attending nurse endorsement details.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.PersonItem" /> instance representing the nurse 
+            endorsement details.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,15 +124,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.AttendingNurseEndorsement" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the date and time for the attending nurse endorsement details.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing the date and time.
+            </value>
+        <remarks>
+            The value defaults to the current year, month, and day.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="AttendingPhysician">
@@ -105,13 +147,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.AttendingPhysician" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.PersonItem</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the attending physician endorsement details.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -122,15 +166,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.AttendingPhysicianEndorsement" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the date and time for the attending physician 
+            endorsement details.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing the date and time.
+            </value>
+        <remarks>
+            The value defaults to the current year, month, and day.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Description">
@@ -139,15 +190,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.Description" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the description of the directive.
+            </summary>
+        <value>
+            A string representing the directive description.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter is <b>null</b>, empty, or contains only
+            whitespace when set.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="DiscontinuationDate">
@@ -156,14 +215,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.DiscontinuationDate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the date/time when clinical support was discontinued.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDateTime" /> instance representing the date and time.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,15 +236,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.DiscontinuationNurse" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.PersonItem</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the attending nurse discontinuation details.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.PersonItem" /> instance representing the details.
+            </value>
+        <remarks>
+            This type provides discontinuation details including name, identity, 
+            and signature date and time of the attending nurse.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="DiscontinuationNurseEndorsement">
@@ -190,15 +260,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.DiscontinuationNurseEndorsement" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the date and time for the attending nurse 
+            discontinuation endorsement.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing the date and time.
+            </value>
+        <remarks>
+            The value defaults to the current year, month, and day.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="DiscontinuationPhysician">
@@ -207,15 +284,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.DiscontinuationPhysician" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.PersonItem</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the attending physician discontinuation details.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.PersonItem" /> instance representing the details.
+            </value>
+        <remarks>
+            This type provides discontinuation details including name, identity, 
+            and signature date and time of the attending physician.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="DiscontinuationPhysicianEndorsement">
@@ -224,15 +308,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.DiscontinuationPhysicianEndorsement" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the date and time for the attending physician 
+            discontinuation endorsement.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing the 
+            date and time.
+            </value>
+        <remarks>
+            The value defaults to the current year, month, and day.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ExpirationDate">
@@ -241,15 +333,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.ExpirationDate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the date and time when the patient expired.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing the date and time.
+            </value>
+        <remarks>
+            The value defaults to the current year, month, and day.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="FullResuscitation">
@@ -258,14 +356,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.FullResuscitation" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets a value indicating the resuscitation status.
+            </summary>
+        <value>
+          <b>true</b> for full resuscitation; otherwise, <b>false</b>.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -275,7 +377,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Directive.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -284,9 +386,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the directive data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.Directive" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node of the <paramref name="typeSpecificXml" /> 
+            parameter is not a directive node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ProhibitedInterventions">
@@ -295,14 +405,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.ProhibitedInterventions" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the list of prohibited interventions in this directive.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the list.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -312,15 +426,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.StartDate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the approximate date of the directive is effective.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDateTime" /> instance representing the 
+            effective date of the directive.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="StopDate">
@@ -329,15 +451,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Directive.StopDate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the approximate date the directive is no longer to
+            be considered.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDateTime" /> instance representing the 
+            stop date of the directive. 
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -346,15 +477,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Directive.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the directive item.
+            </summary>
+        <returns>
+            A string representation of the directive item.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -364,13 +499,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.Directive.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -380,7 +517,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Directive.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -389,9 +526,19 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the directive data to.
+            </param>
+        <summary>
+            Writes the directive data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.Directive.StartDate" /> or <see cref="P:Microsoft.Health.ItemTypes.Directive.StopDate" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

@@ -4,15 +4,23 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.OtherItemData" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents data, typically binary data, that extends the XML of the 
+            health record item.
+            </summary>
+    <remarks>
+            Other data for a health record item is usually auxiliary to the 
+            health record item. This data might either be large or not 
+            easily or efficiently stored as XML. Examples include 
+            binary data such as images, videos, or binary files.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +29,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.OtherItemData.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.OtherItemData" /> class 
+            using default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,7 +46,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.OtherItemData.#ctor(System.String,System.String,System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="data" Type="System.String" />
@@ -43,10 +54,21 @@
         <Parameter Name="contentType" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="data">To be added.</param>
-        <param name="contentEncoding">To be added.</param>
-        <param name="contentType">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="data">
+            The data to store in the other data section of the health record
+            item.
+            </param>
+        <param name="contentEncoding">
+            The type of encoding that was done on the data. Usually this will
+            be "base64" but other encodings are acceptable.
+            </param>
+        <param name="contentType">
+            The MIME-content type of the data.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.OtherItemData" /> class 
+            with the specified data, encoding, and content type.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -56,15 +78,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.OtherItemData.ContentEncoding" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the content encoding of other data for the health
+            record item.
+            </summary>
+        <value>
+            A string representing the encoding.
+            </value>
+        <remarks>
+            In most cases, this should be set to base64, but other 
+            encodings are acceptable, such as XML.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ContentType">
@@ -73,14 +103,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.OtherItemData.ContentType" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the MIME content type of other data for the health
+            record item.
+            </summary>
+        <value>
+            A string representing the content type.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -90,15 +125,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.OtherItemData.Data" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the data.
+            </summary>
+        <value>
+            A string representing the data.
+            </value>
+        <remarks>
+            Binary data can be base64 encoded to be stored as a string.
+            <br /><br />
+            The <see cref="P:Microsoft.Health.OtherItemData.ContentType" /> and <see cref="P:Microsoft.Health.OtherItemData.ContentEncoding" />
+            properties should be set to appropriate values for the data.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -107,7 +151,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.OtherItemData.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -116,8 +160,12 @@
         <Parameter Name="otherDataNavigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="otherDataNavigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="otherDataNavigator">
+             The <see cref="T:System.Xml.XPath.XPathNavigator" /> to read the data from.
+             </param>
+        <summary>
+             Populate the <see cref="T:Microsoft.Health.OtherItemData" /> instance from the supplied <see cref="T:System.Xml.XPath.XPathNavigator" />.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -127,7 +175,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.OtherItemData.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -136,9 +184,15 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="writer">
+             The XmlWriter to write the data to.
+             </param>
+        <summary>
+             Writes the other data section to the passed-in XmlWriter.
+             </summary>
+        <remarks>
+             Classes that override this method must call the base method to do the actual conversion. 
+             </remarks>
       </Docs>
     </Member>
   </Members>

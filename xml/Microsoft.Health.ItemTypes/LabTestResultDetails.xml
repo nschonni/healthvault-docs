@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.LabTestResultDetails" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            A single laboratory test.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.LabTestResultDetails.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.LabTestResultDetails" /> 
+            class with default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,15 +40,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabTestResultDetails.ClinicalCode" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the clinical code for the lab tests.  
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            It should be set to <b>null</b> if it is unknown.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="CollectionMethod">
@@ -52,15 +61,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabTestResultDetails.CollectionMethod" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the collection method for the laboratory test.  
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            It should be set to <b>null</b> if it is unknown.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -69,15 +82,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabTestResultDetails.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets name of the laboratory test.  
+             </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+             It should be set to <b>null</b> or empty if it is unknown.
+             </remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="value" /> contains only whitespace.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="Note">
@@ -86,15 +106,32 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabTestResultDetails.Note" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets a note that augments the laboratory result.  
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks> 
+            There are two scenarios in which a note is typically added:
+            A note may provide additional information about interpreting 
+            the result beyond what is stored in the ranges associated with 
+            the value. 
+            Or, a note may be use to provide the textual result of a lab test
+            that does not have a measured value.
+            
+            Formatting:
+            Notes may come from systems that require a line-based approach to textual display. To support
+            this, applications should render the spaces and newlines in the note, and use a fixed-width font. 
+            The form transform for the lab test results type shows one way to do this.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -103,7 +140,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.LabTestResultDetails.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -112,9 +149,17 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator">
+            The XML to get the lab test result type data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.LabTestResultDetails" /> instance from the data in the XML. 
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the first node in <paramref name="navigator" /> is not
+            a lab test result type node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Status">
@@ -123,15 +168,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabTestResultDetails.Status" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the status of the laboratory results.  
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks> 
+            Examples of status include complete and pending. It should be 
+            set to <b>null</b> if it is unknown. 
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Substance">
@@ -140,15 +190,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabTestResultDetails.Substance" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets substance that is tested.  
+             </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+             It should be set to <b>null</b> if it is unknown.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -157,15 +211,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.LabTestResultDetails.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+             Gets a string representation of the lab test result type item.
+             </summary>
+        <returns>
+             A string representation of the lab test result type item.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -175,15 +233,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabTestResultDetails.Value" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.LabTestResultValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the clinical value within a laboratory result. 
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The type of value is defined within a laboratory result, which includes 
+            value, unit, reference and toxic range. It should be set to <b>null</b> 
+            if it is unknown.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="When">
@@ -192,15 +256,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabTestResultDetails.When" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets date and the time of the laboratory test.  
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            They should be set to <b>null</b> if they are unknown. 
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -209,7 +277,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.LabTestResultDetails.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -219,10 +287,22 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the node to write XML output.
+            </param>
+        <param name="writer">
+            The XmlWriter to write the lab test result type data to.
+            </param>
+        <summary>
+            Writes the lab test result type data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="nodeName" /> is <b> null </b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b> null </b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

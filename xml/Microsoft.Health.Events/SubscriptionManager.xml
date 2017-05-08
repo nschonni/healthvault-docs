@@ -4,15 +4,31 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Events.SubscriptionManager" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            The SubscriptionManager class is used to manage an application's eventing subscriptions.
+            </summary>
+    <remarks>
+            A subscription allows an application to receive a notification when a specific event happens 
+            on the HealthVault platform. For example, an application may wish to be notified when any BloodGlucose
+            items are added to the records it is authorized to see. 
+            
+            Subscriptions are described by the <see cref="T:Microsoft.Health.Events.Subscription" /> class and classes that are derived from it. 
+            
+            The Subscription class itself contains the <see cref="T:Microsoft.Health.Events.CommonSubscriptionData" /> class, storing
+            the notification channel (which defines how the information
+            is communicated to the application) and a unique id for the subscription.
+            
+            The derived class denotes the type of event that the subscription describes (for example, the
+            <see cref="T:Microsoft.Health.Events.HealthRecordItemChangedSubscription" /> class subscribes to item changes in a record) and any specific
+            information that is required for the subscription.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,14 +37,16 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.SubscriptionManager.#ctor(Microsoft.Health.ApplicationConnection)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="connection">The application connection.</param>
+        <summary>
+            Create an instance of the SubscriptionManager class based a connection.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -38,13 +56,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Events.SubscriptionManager.ApplicationConnection" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ApplicationConnection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The connection of the application. 
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -55,16 +75,21 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.SubscriptionManager.GetSubscriptions" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Health.Events.Subscription&gt;</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Retrieve a list of all the subscriptions for this application.
+            </summary>
+        <returns>A list of subscriptions.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Subscribe">
@@ -73,7 +98,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.SubscriptionManager.Subscribe(Microsoft.Health.Events.Subscription)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -82,9 +107,24 @@
         <Parameter Name="subscription" Type="Microsoft.Health.Events.Subscription" />
       </Parameters>
       <Docs>
-        <param name="subscription">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="subscription">The subscription to register.</param>
+        <summary>
+            Register a subscription with the HealthVault platform.
+            </summary>
+        <remarks>
+            After the subscription is registered the <see cref="P:Microsoft.Health.Events.CommonSubscriptionData.Id" />
+            property will be set to the unique identifier of the subscription.
+            Applications may want to save this identifier to modify the subscription later. 
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="subscription" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.InvalidOperationException">
+            The <see cref="P:Microsoft.Health.Events.CommonSubscriptionData.Id" /> property is not <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Unsubscribe">
@@ -93,7 +133,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.SubscriptionManager.Unsubscribe(Microsoft.Health.Events.Subscription)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -102,9 +142,20 @@
         <Parameter Name="subscription" Type="Microsoft.Health.Events.Subscription" />
       </Parameters>
       <Docs>
-        <param name="subscription">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="subscription">The subscription to unsubscribe.</param>
+        <summary>
+            Unregister the subscription from the HealthVault platform.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="subscription" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.InvalidOperationException">
+            The <see cref="P:Microsoft.Health.Events.CommonSubscriptionData.Id" /> property is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Unsubscribe">
@@ -113,7 +164,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.SubscriptionManager.Unsubscribe(System.Guid)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -122,9 +173,14 @@
         <Parameter Name="subscriptionId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="subscriptionId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="subscriptionId">The unique id of the subscription.</param>
+        <summary>
+            Unregister a subscription from the HealthVault platform.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="UpdateSubscription">
@@ -133,7 +189,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.SubscriptionManager.UpdateSubscription(Microsoft.Health.Events.Subscription)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -142,9 +198,20 @@
         <Parameter Name="subscription" Type="Microsoft.Health.Events.Subscription" />
       </Parameters>
       <Docs>
-        <param name="subscription">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="subscription">The subscription</param>
+        <summary>
+            Update an existing subscription.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="subscription" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.InvalidOperationException">
+            The <see cref="P:Microsoft.Health.Events.CommonSubscriptionData.Id" /> property is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
       </Docs>
     </Member>
   </Members>

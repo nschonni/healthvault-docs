@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Goal" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a goal.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Goal.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Goal" /> class with default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,14 +39,20 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Goal.#ctor(Microsoft.Health.ItemTypes.ApproximateDateTime)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="targetDate" Type="Microsoft.Health.ItemTypes.ApproximateDateTime" />
       </Parameters>
       <Docs>
-        <param name="targetDate">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="targetDate">
+            The approximate date which is the target completion date
+            for the goal.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Goal" /> class with the specified 
+            target date.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -52,15 +62,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Goal.CompletionDate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the date the goal was achieved.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDateTime" /> representing the date.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if this property should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -69,7 +85,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Goal.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -78,9 +94,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator">
+            The XML containing the goal information.
+            </param>
+        <summary>
+            Populates the data from the specified XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Status">
@@ -89,15 +112,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Goal.Status" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;Microsoft.Health.ItemTypes.GoalStatus&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the status of the goal.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.GoalStatus" /> value.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if this property should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="TargetDate">
@@ -106,15 +135,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Goal.TargetDate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the date for achieving the goal.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDateTime" /> representing the date.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if this property should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -123,7 +158,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Goal.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -133,10 +168,24 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the outer node for the goal.
+            </param>
+        <param name="writer">
+            The XML writer into which the goal should be 
+            written.
+            </param>
+        <summary>
+            Writes the XML representation of the goal into
+            the specified XML writer.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

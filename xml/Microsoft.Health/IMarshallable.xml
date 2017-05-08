@@ -4,11 +4,14 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.IMarshallable" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Defines the HealthVault interface used to perform versioned 
+            serialization of objects.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -18,7 +21,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.IMarshallable.Marshal(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -27,8 +30,12 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter that receives the object data.
+            </param>
+        <summary>
+            Serializes the object.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -38,7 +45,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.IMarshallable.Unmarshal(System.Xml.XmlReader)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -47,9 +54,18 @@
         <Parameter Name="reader" Type="System.Xml.XmlReader" />
       </Parameters>
       <Docs>
-        <param name="reader">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="reader">
+            The XmlReader from which to deserialize the 
+            object data from.
+            </param>
+        <summary>
+            Deserializes the object.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:Microsoft.Health.IncompatibleVersionException">
+            The serialized data version cannot be deserialized due to version 
+            incompatibilities.
+            </exception>
       </Docs>
     </Member>
   </Members>

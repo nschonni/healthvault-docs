@@ -4,14 +4,17 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.VocabularyItemDataConverter" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents the converter class that converts values 
+            between different vocabulary items.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,7 +24,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.VocabularyItemDataConverter.ConvertToBaseUnits(Microsoft.Health.VocabularyItem,System.Double)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Double</ReturnType>
@@ -31,11 +34,33 @@
         <Parameter Name="value" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="vocabularyItem">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="vocabularyItem">The vocabulary item of the data 
+             value to convert to base units.</param>
+        <param name="value">The data value to convert to base units.
+             </param>
+        <summary>
+             Converts a value from the source vocabulary item units to 
+             the base units of the vocabulary. 
+             </summary>
+        <returns>The converted data value in the base units for the  
+             vocabulary.
+             </returns>
+        <remarks>
+             This method does not check the sign of the value. The caller
+             is responsible for ensuring the input data value make sense for
+             the input vocabulary item.
+             </remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="vocabularyItem" /> parameter is <b>null</b>. 
+             </exception>
+        <exception cref="T:System.NotSupportedException">
+             The <paramref name="vocabularyItem" /> parameter does not 
+             support conversions to base units.
+             </exception>
+        <exception cref="T:Microsoft.Health.ConversionFailureException">
+             An unknown or unsupported conversion is encountered or
+             an error occurs during the conversion to base units. 
+             </exception>
       </Docs>
     </Member>
   </Members>

@@ -4,15 +4,19 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Old.AerobicSession" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes.Old</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents a health record item type that encapsulates an aerobic session.
+            </summary>
+    <remarks>
+            Note: Please use the new exercise type instead of this type.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,12 +25,18 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.AerobicSession.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.AerobicSession" /> class with default values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> 
+            method is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,15 +45,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.AerobicSession.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="when" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
       </Parameters>
       <Docs>
-        <param name="when">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="when">
+            The date/time when the aerobic session occurred.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.AerobicSession" /> class with 
+            the specified date and time.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="when" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -52,17 +70,28 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.AerobicSession.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime,Microsoft.Health.ItemTypes.AerobicData)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="when" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
         <Parameter Name="session" Type="Microsoft.Health.ItemTypes.AerobicData" />
       </Parameters>
       <Docs>
-        <param name="when">To be added.</param>
-        <param name="session">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="when">
+            The date/time when the aerobic session occurred.
+            </param>
+        <param name="session">
+            The summary information about the aerobic session.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.AerobicSession" /> class with 
+            the specified date and time and summary.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="when" /> or <paramref name="session" /> parameter 
+            is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="LapSessions">
@@ -71,14 +100,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.AerobicSession.LapSessions" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.Old.LapSession&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets the lap summary data for the session.
+            </summary>
+        <value>
+            A collection of items representing summary data for a lap in
+            the session.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,7 +122,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.AerobicSession.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -97,9 +131,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the aerobic session data from.
+            </param>
+        <summary>
+            Populates this AerobicSession instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            an aerobic-session node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Session">
@@ -108,15 +150,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.AerobicSession.Session" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.AerobicData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the aerobic session data.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.AerobicData" /> instance containing the summary 
+            information for the session.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="SessionSamples">
@@ -125,14 +175,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.AerobicSession.SessionSamples" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.Old.AerobicSessionSamples</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the session samples.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples" /> instance.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -142,15 +196,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.AerobicSession.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the aerobic session item.
+            </summary>
+        <returns>
+            A string representation of the aerobic session item.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -160,13 +218,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.Old.AerobicSession.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The unique identifier for the item type.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -176,15 +236,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.AerobicSession.When" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the date/time when the aerobic session occurred.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance. 
+            The value defaults to the current year, month, and day.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -193,7 +261,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.AerobicSession.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -202,9 +270,16 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the aerobic session data to.
+            </param>
+        <summary>
+            Writes the aerobic session data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

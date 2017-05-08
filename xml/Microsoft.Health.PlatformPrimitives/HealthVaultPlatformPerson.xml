@@ -4,15 +4,20 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformPerson" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Provides low-level access to the HealthVault message operations.
+            </summary>
+    <remarks>
+      <see cref="T:Microsoft.Health.HealthVaultPlatform" /> uses this class to perform operations. Set 
+            HealthVaultPlatformPerson.Current to a derived class to intercept all message calls.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,7 +26,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformPerson.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -35,15 +40,20 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformPerson.DisableMock" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Removes mocking of calls to this class.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            There is no mock registered for this class.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="EnableMock">
@@ -52,7 +62,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformPerson.EnableMock(Microsoft.Health.PlatformPrimitives.HealthVaultPlatformPerson)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -61,9 +71,17 @@
         <Parameter Name="mock" Type="Microsoft.Health.PlatformPrimitives.HealthVaultPlatformPerson" />
       </Parameters>
       <Docs>
-        <param name="mock">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="mock">The mocking class.</param>
+        <summary>
+            Enables mocking of calls to this class.
+            </summary>
+        <remarks>
+            The calling class should pass in a class that derives from this
+            class and overrides the calls to be mocked. 
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            There is already a mock registered for this class.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetApplicationSettings">
@@ -72,7 +90,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformPerson.GetApplicationSettings(Microsoft.Health.HealthServiceConnection)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ApplicationSettings</ReturnType>
@@ -81,9 +99,15 @@
         <Parameter Name="connection" Type="Microsoft.Health.HealthServiceConnection" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="connection">The connection to use to perform the operation. This connection
+             must be authenticated. </param>
+        <summary>
+             Gets the application settings for the current application and
+             person.
+             </summary>
+        <returns>
+             The complete set application settings including the XML settings, selected record ID, etc.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -93,7 +117,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformPerson.GetAuthorizedRecords(Microsoft.Health.ApplicationConnection,System.Collections.Generic.IList{System.Guid})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.HealthRecordInfo&gt;</ReturnType>
@@ -103,11 +127,24 @@
         <Parameter Name="recordIds" Type="System.Collections.Generic.IList&lt;System.Guid&gt;" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="recordIds">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="connection">The connection to use to perform the operation. This connection
+             must be authenticated. </param>
+        <param name="recordIds">
+             The unique identifiers for the records to retrieve.
+             </param>
+        <summary>
+             Gets the <see cref="T:Microsoft.Health.HealthRecordInfo" /> for the records identified
+             by the specified <paramref name="recordIds" />.
+             </summary>
+        <returns>
+             A collection of the records matching the specified record 
+             identifiers and authorized for the authenticated person.
+             </returns>
+        <remarks>
+             This method is useful in cases where the application is storing
+             record identifiers and needs access to the functionality provided
+             by the object model.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetPersonInfo">
@@ -116,7 +153,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformPerson.GetPersonInfo(Microsoft.Health.ApplicationConnection)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
@@ -125,10 +162,23 @@
         <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="connection">The connection to use to perform the operation. This connection
+            must be authenticated. </param>
+        <summary>
+            Gets the information about the person specified.
+            </summary>
+        <returns>
+            Information about the person's HealthVault account.
+            </returns>
+        <remarks>
+            This method always calls the HealthVault service to get the latest 
+            information. It is recommended that the calling application cache 
+            the return value and only call this method again if it needs to 
+            refresh the cache.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="SetApplicationSettings">
@@ -137,7 +187,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformPerson.SetApplicationSettings(Microsoft.Health.HealthServiceConnection,System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -147,10 +197,19 @@
         <Parameter Name="requestParameters" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="requestParameters">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="connection">The connection to use to perform the operation. This connection
+             must be authenticated. </param>
+        <param name="requestParameters">
+             The request parameters.
+             </param>
+        <summary>
+             Sets the application settings for the current application and
+             person.
+             </summary>
+        <remarks>
+             This may be <b>null</b> if no application settings have been 
+             stored for the application or user.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="SetApplicationSettings">
@@ -159,7 +218,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformPerson.SetApplicationSettings(Microsoft.Health.HealthServiceConnection,System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -169,10 +228,19 @@
         <Parameter Name="applicationSettings" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="applicationSettings">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="connection">The connection to use to perform the operation. This connection
+             must be authenticated. </param>
+        <param name="applicationSettings">
+             The application settings XML.
+             </param>
+        <summary>
+             Sets the application settings for the current application and
+             person.
+             </summary>
+        <remarks>
+             This may be <b>null</b> if no application settings have been 
+             stored for the application or user.
+             </remarks>
       </Docs>
     </Member>
   </Members>

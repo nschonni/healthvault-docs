@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Old.TestResultRangeV1" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes.Old</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+             A test result range defines the minimum and the maximum of a specific test result value.
+             </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +23,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.TestResultRange" /> 
+            class with default values.
+            </summary>
+        <remarks>
+            Each test result can contain multiple ranges that are useful 
+            to interpret the result value. Examples include reference range 
+            and therapeutic range.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,17 +44,27 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.#ctor(Microsoft.Health.ItemTypes.CodableValue,Microsoft.Health.ItemTypes.DoubleRange)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="type" Type="Microsoft.Health.ItemTypes.CodableValue" />
         <Parameter Name="range" Type="Microsoft.Health.ItemTypes.DoubleRange" />
       </Parameters>
       <Docs>
-        <param name="type">To be added.</param>
-        <param name="range">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="type"> 
+            Type is the type of a test result.
+            </param>
+        <param name="range"> 
+            Range is values of minimum and maximum of a test result.
+            </param>
+        <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.TestResultRange" /> 
+            class with mandatory parameters.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="range" /> or <paramref name="type" /> is <b> null </b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -54,7 +73,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -63,9 +82,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator">
+             The XML to get the test result range data from.
+             </param>
+        <summary>
+             Populates this <see cref="T:Microsoft.Health.ItemTypes.TestResultRange" /> instance from the data in the XML. 
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The first node in <paramref name="navigator" /> is <b>null</b>.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="Range">
@@ -74,15 +100,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.Range" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.DoubleRange</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the range of the test result.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If value is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="RangeType">
@@ -91,15 +122,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.RangeType" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the type of the range.  
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If value is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -108,15 +144,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+             Gets a string representation of the test result range item.
+             </summary>
+        <returns>
+             A string representation of the test result range item.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -126,7 +166,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -136,10 +176,25 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+             The name of the node to write XML.
+             </param>
+        <param name="writer">
+             The XmlWriter to write the test result range data to.
+             </param>
+        <summary>
+             Writes the test result range data to the specified XmlWriter.
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="nodeName" /> is <b> null </b> or empty.
+             </exception>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="writer" /> is <b> null </b>.
+             </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+             If <see cref="T:System.Type"> or </see><see cref="P:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.Range" /> is <b> null </b>.
+             </exception>
       </Docs>
     </Member>
   </Members>

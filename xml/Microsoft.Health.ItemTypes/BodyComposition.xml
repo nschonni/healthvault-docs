@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.BodyComposition" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Information about the body composition of the record owner. 
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +23,17 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BodyComposition.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates an instance of information about the body composition of the record owner
+            with default values.
+            </summary>
+        <remarks>
+            Examples: % body fat, lean muscle mass.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,7 +42,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BodyComposition.#ctor(Microsoft.Health.ItemTypes.ApproximateDateTime,Microsoft.Health.ItemTypes.CodableValue,Microsoft.Health.ItemTypes.BodyCompositionValue)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="when" Type="Microsoft.Health.ItemTypes.ApproximateDateTime" />
@@ -43,11 +50,26 @@
         <Parameter Name="compositionValue" Type="Microsoft.Health.ItemTypes.BodyCompositionValue" />
       </Parameters>
       <Docs>
-        <param name="when">To be added.</param>
-        <param name="measurementName">To be added.</param>
-        <param name="compositionValue">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="when"> 
+            The date and time of the measurement. 
+            </param>
+        <param name="measurementName">
+            The name of the measurement.
+            </param>
+        <param name="compositionValue"> 
+            The value of the measurement. 
+            </param>
+        <summary>
+            Creates an instance of information about the body composition of the record owner
+            with specified time, measurement name, and value.
+            </summary>
+        <remarks>
+            Examples: % body fat, lean muscle mass.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="when" />, <paramref name="measurementName" /> or 
+            <paramref name="compositionValue" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="MeasurementMethod">
@@ -56,15 +78,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BodyComposition.MeasurementMethod" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the technique used to obtain the measurement.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the technique used 
+            to obtain the measurement. 
+            </value>
+        <remarks>
+            Examples: Bioelectrical impedance, DXA, Skinfold (calipers). If the measurement method 
+            is missing, the value should be set to <b>null</b>. The preferred vocabulary is
+            "body-composition-measurement-methods".
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="MeasurementName">
@@ -73,15 +104,26 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BodyComposition.MeasurementName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the name of this measurement.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the name
+            of this measurement.
+            </value>
+        <remarks>
+            Examples: Body fat, lean muscle. The preferred vocabulary is 
+            "body-composition-measurement-names".
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -90,7 +132,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BodyComposition.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -99,9 +141,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the body composition data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.BodyComposition" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            If the first node in <paramref name="typeSpecificXml" /> is not
+            a "body-composition" node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Site">
@@ -110,15 +160,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BodyComposition.Site" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the body part that is the subject of the measurement.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the site 
+            </value>
+        <remarks>
+            Examples: Left arm, head, torso. If the site is absent, the measurement is for 
+            the whole body. The preferred vocabulary is "body-composition-sites".
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -127,15 +184,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BodyComposition.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets the representation of a body composition instance.
+            </summary>
+        <returns>
+            A string representation of the body composition item.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -145,13 +206,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.BodyComposition.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -161,15 +224,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BodyComposition.Value" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.BodyCompositionValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the value of this measurement.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.BodyCompositionValue" /> instance representing the value of 
+            this measurement.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="When">
@@ -178,15 +249,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BodyComposition.When" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the date and time of this measurement.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing the date 
+            and time.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -195,7 +274,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BodyComposition.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -204,9 +283,20 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the body composition data to. 
+            </param>
+        <summary>
+            Writes the body composition data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.BodyComposition.When" />, <see cref="P:Microsoft.Health.ItemTypes.BodyComposition.MeasurementName" /> or <see cref="P:Microsoft.Health.ItemTypes.BodyComposition.Value" />
+            is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

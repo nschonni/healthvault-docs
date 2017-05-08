@@ -4,14 +4,17 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.BasicV2" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents information about a health record that is not considered personally
+            identifiable.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +24,18 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BasicV2.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.BasicV2" /> class with default values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="BirthYear">
@@ -35,15 +44,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BasicV2.BirthYear" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the birth year of the person.
+            </summary>
+        <value>
+            An integer representing the year.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the birth year should not be stored.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is less than 1000 or greater than
+            3000 when setting the value.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="City">
@@ -52,15 +71,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BasicV2.City" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the city of residence.
+            </summary>
+        <value>
+            A string representing the city.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Country">
@@ -69,15 +95,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BasicV2.Country" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the country of residence.
+            </summary>
+        <value>
+            A codable value representing the country. 
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the country should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="FirstDayOfWeek">
@@ -86,15 +118,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BasicV2.FirstDayOfWeek" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.DayOfWeek&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the preferred first day of the week.
+            </summary>
+        <value>
+            A <see cref="T:System.DayOfWeek" /> instance representing the day.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the first day of the week 
+            should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Gender">
@@ -103,15 +142,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BasicV2.Gender" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;Microsoft.Health.ItemTypes.Gender&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the gender of the person.
+            </summary>
+        <value>
+            The person's gender.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the gender should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Languages">
@@ -120,14 +165,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BasicV2.Languages" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Health.ItemTypes.Language&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets the language(s) the person speaks.
+            </summary>
+        <value>
+            A list of the languages.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -137,7 +186,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BasicV2.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -146,9 +195,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the basic data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.BasicV2" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            a basic node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="PostalCode">
@@ -157,15 +214,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BasicV2.PostalCode" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the postal code of the country of residence.
+            </summary>
+        <value>
+            A string representing the postal code.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="StateOrProvince">
@@ -174,15 +238,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BasicV2.StateOrProvince" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the state or province of residence.
+            </summary>
+        <value>
+            A string representing the state or province.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the state
+            should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -191,15 +262,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BasicV2.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the basic item.
+            </summary>
+        <returns>
+            A string representation of the basic item.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -209,13 +284,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.BasicV2.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -225,7 +305,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BasicV2.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -234,9 +314,16 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the basic data to.
+            </param>
+        <summary>
+            Writes the basic data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

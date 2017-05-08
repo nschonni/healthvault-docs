@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthRecordItemKey" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Uniquely identifies a health record item in the system.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,15 +23,25 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemKey.#ctor(System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="id" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="id">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="id">
+            A globally unique identifier for the <see cref="T:Microsoft.Health.HealthRecordItem" />
+            in the system.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.HealthRecordItemKey" />
+            class with the specified globally unique ID for the 
+            <see cref="T:Microsoft.Health.HealthRecordItem" />.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="id" /> is Guid.Empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -38,17 +50,31 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemKey.#ctor(System.Guid,System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="id" Type="System.Guid" />
         <Parameter Name="versionStamp" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="id">To be added.</param>
-        <param name="versionStamp">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="id">
+            A globally unique identifier for the <see cref="T:Microsoft.Health.HealthRecordItem" />
+            in the system.
+            </param>
+        <param name="versionStamp">
+            A globally unique identifier for the version of the <see cref="T:Microsoft.Health.HealthRecordItem" />
+            in the system.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.HealthRecordItemKey" />
+            class with the specified globally unique ID for the 
+            <see cref="T:Microsoft.Health.HealthRecordItem" /> and globally unique version stamp.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="id" /> or <paramref name="versionStamp" /> 
+            parameter is Guid.Empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Equals">
@@ -57,7 +83,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemKey.Equals(System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -66,9 +92,16 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="obj">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="obj">
+            The <see cref="T:Microsoft.Health.HealthRecordItemKey" /> to compare against this.
+            </param>
+        <summary>
+            Compares one <see cref="T:Microsoft.Health.HealthRecordItemKey" /> to another.
+            </summary>
+        <returns>
+          <b>true</b> if both the health record item keys have
+            the same ID and version stamp; otherwise, <b>false</b>.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -78,15 +111,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemKey.GetHashCode" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets the hashcode value for the object.
+            </summary>
+        <returns>
+          <see cref="P:Microsoft.Health.HealthRecordItemKey.VersionStamp" />.GetHashCode().
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,14 +133,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemKey.Id" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+             Gets the unique identifier of the <see cref="T:Microsoft.Health.HealthRecordItem" />.
+             </summary>
+        <value>
+             A globally unique identifier for the <see cref="T:Microsoft.Health.HealthRecordItem" />, 
+             issued when the item is created.
+             </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -113,15 +155,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemKey.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the key.
+            </summary>
+        <returns>
+          <see cref="P:Microsoft.Health.HealthRecordItemKey.VersionStamp" />.ToString().
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -131,15 +177,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemKey.VersionStamp" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+             Gets the unique version stamp of the <see cref="T:Microsoft.Health.HealthRecordItem" />.
+             </summary>
+        <value>
+             A globally unique identifier that represents the version of the
+             <see cref="T:Microsoft.Health.HealthRecordItem" />. A new version stamp is issued each 
+             time the item is changed.
+            </value>
+        <remarks>
+             The version stamp of the current version of a <see cref="T:Microsoft.Health.HealthRecordItem" />
+             is always equal to the <see cref="P:Microsoft.Health.HealthRecordItemKey.Id" /> of that item.
+            </remarks>
       </Docs>
     </Member>
   </Members>

@@ -4,7 +4,7 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
@@ -21,8 +21,15 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary> 
+            Represents a date and time.
+            </summary>
+    <remarks>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> is different from a <see cref="T:System.DateTime" />
+            in that the time is optional and it can be determined if it was 
+            specified. Also, the time zone is optional and is not interpreted in
+            any way by HealthVault.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -31,11 +38,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> class 
+            with the date set to the current date and the time not set.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -45,15 +55,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.#ctor(Microsoft.Health.ItemTypes.HealthServiceDate)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="date" Type="Microsoft.Health.ItemTypes.HealthServiceDate" />
       </Parameters>
       <Docs>
-        <param name="date">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="date">
+            The date.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> class 
+            with the specified date.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="date" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -62,15 +80,22 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.#ctor(System.DateTime)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="dateTime" Type="System.DateTime" />
       </Parameters>
       <Docs>
-        <param name="dateTime">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="dateTime">
+            The date and time used to construct the HealthVault date and time.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> 
+            class from the specified DateTime instance.
+            </summary>
+        <remarks>
+            The time zone is ignored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -79,17 +104,27 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.#ctor(Microsoft.Health.ItemTypes.HealthServiceDate,Microsoft.Health.ItemTypes.ApproximateTime)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="date" Type="Microsoft.Health.ItemTypes.HealthServiceDate" />
         <Parameter Name="time" Type="Microsoft.Health.ItemTypes.ApproximateTime" />
       </Parameters>
       <Docs>
-        <param name="date">To be added.</param>
-        <param name="time">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="date">
+            The date.
+            </param>
+        <param name="time">
+            The approximate time.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> 
+            class with the specified date and time.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="date" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -98,7 +133,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.#ctor(Microsoft.Health.ItemTypes.HealthServiceDate,Microsoft.Health.ItemTypes.ApproximateTime,Microsoft.Health.ItemTypes.CodableValue)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="date" Type="Microsoft.Health.ItemTypes.HealthServiceDate" />
@@ -106,11 +141,23 @@
         <Parameter Name="timeZone" Type="Microsoft.Health.ItemTypes.CodableValue" />
       </Parameters>
       <Docs>
-        <param name="date">To be added.</param>
-        <param name="time">To be added.</param>
-        <param name="timeZone">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="date">
+            The date.
+            </param>
+        <param name="time">
+            The approximate time.
+            </param>
+        <param name="timeZone">
+            The optional time zone for the <paramref name="time" />.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> 
+            class with the specified date, time, and time zone.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="date" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="CompareTo">
@@ -119,7 +166,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.CompareTo(Microsoft.Health.ItemTypes.HealthServiceDateTime)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -128,9 +175,21 @@
         <Parameter Name="other" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
       </Parameters>
       <Docs>
-        <param name="other">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="other">
+            The date to be compared.
+            </param>
+        <summary>
+            Compares the specified object to this <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> 
+            object.
+            </summary>
+        <returns>
+            A 32-bit signed integer that indicates the relative order of the 
+            objects being compared. If the result is less than zero, the 
+            instance is less than <paramref name="other" />. If the result is zero
+            the instance is equal to <paramref name="other" />. If the result is
+            greater than zero, the instance is greater than 
+            <paramref name="other" />.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,7 +199,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.CompareTo(System.DateTime)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -149,9 +208,20 @@
         <Parameter Name="other" Type="System.DateTime" />
       </Parameters>
       <Docs>
-        <param name="other">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="other">
+            The date to be compared.
+            </param>
+        <summary>
+            Compares the specified object to this HealthServiceDateTime object.
+            </summary>
+        <returns>
+            A 32-bit signed integer that indicates the relative order of the 
+            objects being compared. If the result is less than zero, the 
+            instance is less than <paramref name="other" />. If the result is zero
+            the instance is equal to <paramref name="other" />. If the result is
+            greater than zero, the instance is greater than 
+            <paramref name="other" />.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -161,7 +231,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.CompareTo(System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -170,10 +240,26 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="obj">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="obj">
+            The object to be compared.
+            </param>
+        <summary>
+            Compares the specified object to this <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> 
+            object.
+            </summary>
+        <returns>
+            A 32-bit signed integer that indicates the relative order of the 
+            objects being compared. If the result is less than zero, the 
+            instance is less than <paramref name="obj" />. If the result is zero
+            the instance is equal to <paramref name="obj" />. If the result is
+            greater than zero, the instance is greater than 
+            <paramref name="obj" />.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="obj" /> parameter is not a <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" />
+            or <see cref="T:System.DateTime" /> object.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Date">
@@ -182,15 +268,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HealthServiceDateTime.Date" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDate</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the date.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Defaults to the current year, month, and day.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b> on set.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Equals">
@@ -199,7 +292,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.Equals(System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -208,10 +301,23 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="obj">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="obj">
+            The object to be compared.
+            </param>
+        <summary>
+            Gets a value indicating whether the specified object is equal to this object.
+            </summary>
+        <returns>
+          <b>true</b> if the <paramref name="obj" /> is a 
+            <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> object and the year, month, and
+            day exactly match the year, month, and day of this object; otherwise,
+            <b>false</b>.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="obj" /> parameter is not a <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" />
+            object.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetHashCode">
@@ -220,15 +326,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.GetHashCode" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            See the base class documentation.
+            </summary>
+        <returns>
+            See the base class documentation.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -238,7 +348,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.op_Equality(Microsoft.Health.ItemTypes.HealthServiceDateTime,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -248,11 +358,26 @@
         <Parameter Name="secondInstance" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="date">To be added.</param>
-        <param name="secondInstance">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="date">
+            The date object to be compared.
+            </param>
+        <param name="secondInstance">
+            The second object to be compared.
+            </param>
+        <summary>
+            Gets a value indicating whether the specified object is equal to the specified
+            date.
+            </summary>
+        <returns>
+          <b>true</b> if the year, month, and day of the <paramref name="date" /> 
+            exactly match the year, month, and day of <paramref name="secondInstance" />; 
+            otherwise, <b>false</b>.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="secondInstance" /> parameter is not a 
+            <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> object.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="op_Explicit">
@@ -261,7 +386,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.op_Explicit(Microsoft.Health.ItemTypes.HealthServiceDateTime)~System.DateTime" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>
@@ -270,9 +395,16 @@
         <Parameter Name="wcDateTime" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
       </Parameters>
       <Docs>
-        <param name="wcDateTime">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="wcDateTime">
+            The <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance to cast.
+            </param>
+        <summary>
+            Casts the <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance to a System.DateTime object.
+            </summary>
+        <returns>
+            A DateTime instance with the appropriate fields populated by the
+            <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> values.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -282,7 +414,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.op_GreaterThan(Microsoft.Health.ItemTypes.HealthServiceDateTime,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -292,11 +424,25 @@
         <Parameter Name="secondInstance" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="date">To be added.</param>
-        <param name="secondInstance">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="date">
+            The date object to be compared.
+            </param>
+        <param name="secondInstance">
+            The second object to be compared.
+            </param>
+        <summary>
+            Gets a value indicating whether the specified date is greater than 
+            the specified object.
+            </summary>
+        <returns>
+          <b>true</b> if the year, month, and day of the <paramref name="date" /> 
+            is greater than the year, month, and day of <paramref name="secondInstance" />; 
+            otherwise, <b>false</b>.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="secondInstance" /> parameter is not a <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> object.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="op_Inequality">
@@ -305,7 +451,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.op_Inequality(Microsoft.Health.ItemTypes.HealthServiceDateTime,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -315,11 +461,26 @@
         <Parameter Name="secondInstance" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="date">To be added.</param>
-        <param name="secondInstance">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="date">
+            The date object to be compared.
+            </param>
+        <param name="secondInstance">
+            The second object to be compared.
+            </param>
+        <summary>
+            Gets a value indicating whether the specified object is not equal to the specified
+            date.
+            </summary>
+        <returns>
+          <b>false</b> if the year, month, and day of the <paramref name="date" /> 
+            exactly match the year, month, and day of <paramref name="secondInstance" />; 
+            otherwise, <b>true</b>.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="secondInstance" /> parameter is not a 
+            <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> object.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="op_LessThan">
@@ -328,7 +489,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.op_LessThan(Microsoft.Health.ItemTypes.HealthServiceDateTime,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -338,11 +499,25 @@
         <Parameter Name="secondInstance" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="date">To be added.</param>
-        <param name="secondInstance">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="date">
+            The date object to be compared.
+            </param>
+        <param name="secondInstance">
+            The second object to be compared.
+            </param>
+        <summary>
+            Gets a value indicating whether the specified date is less than the specified
+            object.
+            </summary>
+        <returns>
+          <b>true</b> if the year, month, and day of the <paramref name="date" /> 
+            is less than the year, month, and day of <paramref name="secondInstance" />; 
+            otherwise, <b>false</b>.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="secondInstance" /> parameter is not a <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> object.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -351,7 +526,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -360,8 +535,12 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator"> 
+            The XML node representing the date and time.
+            </param>
+        <summary> 
+            Populates the data for the date and time from the XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -371,15 +550,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HealthServiceDateTime.Time" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the time.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateTime" /> instance representing the time.
+            </value>
+        <remarks>
+            If the time isn't known it can be set to <b>null</b>. This value defaults
+            to an absent time. The reference is valid but the time will not be
+            stored unless the hour and minute are set.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="TimeZone">
@@ -388,15 +575,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HealthServiceDateTime.TimeZone" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the time zone.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the time zone.
+            </value>
+        <remarks>
+            If the time zone is unknown, it can be set to <b>null</b>. This value defaults
+            to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToDateTime">
@@ -405,15 +599,20 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.ToDateTime" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Converts the <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance to a System.DateTime object.
+            </summary>
+        <returns>
+            A DateTime instance with the appropriate fields populated by the
+            <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> values.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -423,16 +622,22 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the date and time as a string.
+            </summary>
+        <returns>
+            The date and time represented as a string.
+            </returns>
+        <remarks>
+            This method is not yet culture aware.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -441,7 +646,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthServiceDateTime.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -451,10 +656,22 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the outer element for the date and time.
+            </param>
+        <param name="writer"> 
+            The XmlWriter to write the date and time to.
+            </param>
+        <summary> 
+            Writes the date and time to the specified XML writer.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

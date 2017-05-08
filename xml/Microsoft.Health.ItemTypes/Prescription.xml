@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Prescription" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Information related to a medication prescription.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Prescription.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Prescription" /> class with default 
+            values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,15 +40,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Prescription.#ctor(Microsoft.Health.ItemTypes.PersonItem)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="prescribedBy" Type="Microsoft.Health.ItemTypes.PersonItem" />
       </Parameters>
       <Docs>
-        <param name="prescribedBy">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="prescribedBy">
+            The person that prescribed the medication.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Prescription" /> class 
+            with the specified prescriber.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="person" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="AmountPrescribed">
@@ -52,15 +65,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Prescription.AmountPrescribed" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.GeneralMeasurement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the amount of medication prescribed.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="DatePrescribed">
@@ -69,15 +86,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Prescription.DatePrescribed" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the date the medication was prescribed.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="DaysSupply">
@@ -86,15 +107,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Prescription.DaysSupply" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the number of days supply of medication.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Instructions">
@@ -103,15 +128,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Prescription.Instructions" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the medication instructions.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -120,7 +149,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Prescription.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -129,9 +158,17 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator">
+            The XML containing the prescription information.
+            </param>
+        <summary>
+            Populates this Prescription instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            a prescription node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="PrescribedBy">
@@ -140,15 +177,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Prescription.PrescribedBy" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.PersonItem</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the person that prescribed the medication.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.Person" /> instance.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b> during set.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="PrescriptionExpiration">
@@ -157,15 +201,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Prescription.PrescriptionExpiration" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDate</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the date the prescription expires.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Refills">
@@ -174,15 +222,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Prescription.Refills" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the number of refills of the medication.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Substitution">
@@ -191,15 +243,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Prescription.Substitution" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets whether a substitution is permitted.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Example: Dispense as written, substitution allowed.
+            If the value is not known, it will be set to <b>null</b>.
+            The preferred vocabulary for substitution is "medication-substitution".
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -208,15 +266,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Prescription.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the prescription item.
+            </summary>
+        <returns>
+            A string representation of the prescription item.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -226,7 +288,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Prescription.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -236,10 +298,25 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the outer element for the prescription data.
+            </param>
+        <param name="writer">
+            The XmlWriter to write the prescription data to.
+            </param>
+        <summary>
+            Writes the prescription data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.Prescription.PrescribedBy" /> property has not been set.
+            </exception>
       </Docs>
     </Member>
   </Members>

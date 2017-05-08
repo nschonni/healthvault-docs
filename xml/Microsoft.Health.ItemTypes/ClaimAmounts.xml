@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.ClaimAmounts" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            The financial information related to a claim on an explanation of benefits.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +23,18 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ClaimAmounts.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ClaimAmounts" /> class with default values.
+             </summary>
+        <remarks>
+             This item is not added to the health record until the
+             <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method
+             is called
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,7 +43,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ClaimAmounts.#ctor(System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="chargedAmount" Type="System.Decimal" />
@@ -50,18 +58,44 @@
         <Parameter Name="patientResponsibility" Type="System.Decimal" />
       </Parameters>
       <Docs>
-        <param name="chargedAmount">To be added.</param>
-        <param name="negotiatedAmount">To be added.</param>
-        <param name="coPayment">To be added.</param>
-        <param name="deductible">To be added.</param>
-        <param name="amountNotCovered">To be added.</param>
-        <param name="eligibleForBenefits">To be added.</param>
-        <param name="coinsurance">To be added.</param>
-        <param name="miscellaneousAdjustments">To be added.</param>
-        <param name="benefitsPaid">To be added.</param>
-        <param name="patientResponsibility">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="chargedAmount">
+             The amount charged.
+             </param>
+        <param name="negotiatedAmount">
+             The amount negotiated between the provider and the payer.
+             </param>
+        <param name="coPayment">
+             The copayment amount.
+             </param>
+        <param name="deductible">
+             The deductible amount.
+             </param>
+        <param name="amountNotCovered">
+             Amount for services not covered by the plan.
+             </param>
+        <param name="eligibleForBenefits">
+             The amount that is eligible for benefits.
+             </param>
+        <param name="coinsurance">
+             The amount paid by the person.
+             </param>
+        <param name="miscellaneousAdjustments">
+             Adjustments that may affect the amount paid on the claim.
+             </param>
+        <param name="benefitsPaid">
+             The amount paid by the payer.
+             </param>
+        <param name="patientResponsibility">
+             The total amount paid by the patient.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ClaimAmounts" /> class specifying mandatory values.
+             </summary>
+        <remarks>
+             This item is not added to the health record until the
+             <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method
+             is called
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="AmountNotCovered">
@@ -70,13 +104,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ClaimAmounts.AmountNotCovered" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Decimal</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets the amount for services not covered by the plan.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -87,13 +123,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ClaimAmounts.BenefitsPaid" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Decimal</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets the amount paid by the payer.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -104,13 +142,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ClaimAmounts.ChargedAmount" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Decimal</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets the amount charged.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -121,13 +161,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ClaimAmounts.Coinsurance" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Decimal</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets the amount paid by the person.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -138,13 +180,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ClaimAmounts.CoPayment" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Decimal</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets the copayment amount.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -155,13 +199,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ClaimAmounts.Deductible" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Decimal</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets the deductible amount.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -172,13 +218,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ClaimAmounts.EligibleForBenefits" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Decimal</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets the amount that is eligible for benefits.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -189,13 +237,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ClaimAmounts.MiscellaneousAdjustments" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Decimal</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets the adjustments that may affect the amount paid on the claim.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -206,13 +256,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ClaimAmounts.NegotiatedAmount" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Decimal</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets the amount negotiated between the provider and the payer.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -223,7 +275,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ClaimAmounts.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -232,9 +284,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator">
+             The XML to get the ClaimAmounts data from.
+             </param>
+        <summary>
+             Populates this <see cref="T:Microsoft.Health.ItemTypes.ClaimAmounts" /> instance from the data in the specified XML.
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="navigator" /> parameter is <b>null</b>.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="PatientResponsibility">
@@ -243,13 +302,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ClaimAmounts.PatientResponsibility" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Decimal</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets the total amount paid by the patient.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -260,15 +321,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ClaimAmounts.PercentageCovered" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets the percentage of the eligable amount that is covered by the payer.
+             </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+             The value will be set to null if unknown.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -277,15 +342,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ClaimAmounts.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+             Gets a string representation of the ClaimAmounts.
+             </summary>
+        <returns>
+             A string representation of the ClaimAmounts.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -295,7 +364,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ClaimAmounts.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -305,10 +374,24 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+             The name of the outer node for the ClaimAmounts.
+             </param>
+        <param name="writer">
+             The XML writer into which the ClaimAmounts should be
+             written.
+             </param>
+        <summary>
+             Writes the XML representation of the ClaimAmounts into
+             the specified XML writer.
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+             </exception>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="writer" /> parameter is <b>null</b>.
+             </exception>
       </Docs>
     </Member>
   </Members>
