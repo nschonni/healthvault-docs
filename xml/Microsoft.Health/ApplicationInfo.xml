@@ -1,0 +1,835 @@
+<Type Name="ApplicationInfo" FullName="Microsoft.Health.ApplicationInfo">
+  <TypeSignature Language="C#" Value="public class ApplicationInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ApplicationInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ApplicationInfo" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Defines the configuration for a HealthVault application.
+            </summary>
+    <remarks>To be added.</remarks>
+    <meta name="MSHAttr" content="CommunityContent:1" />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ApplicationInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Constructs an <see cref="T:Microsoft.Health.ApplicationInfo" /> instance with default values.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationInfo (string name, System.Collections.Generic.IList&lt;byte[]&gt; publicKeys);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Collections.Generic.IList`1&lt;unsigned int8[]&gt; publicKeys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ApplicationInfo.#ctor(System.String,System.Collections.Generic.IList{System.Byte[]})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="publicKeys" Type="System.Collections.Generic.IList&lt;System.Byte[]&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="name">
+            The name of the application.
+            </param>
+        <param name="publicKeys">
+            The public key(s) used to uniquely and positively identify the application to the
+            HealthVault service. The application signs it's first request to HealthVault using it's
+            application private which matches the public key being passed here. When HealthVault
+            receives that request it validates the signature using the public key.
+            </param>
+        <summary>
+            Constructs an <see cref="T:Microsoft.Health.ApplicationInfo" /> instance with the specified application
+            name and public keys.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="publicKeys" /> is <b>null</b> or empty.
+            If <paramref name="name" /> is <b>null</b> or empty.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionUrl">
+      <MemberSignature Language="C#" Value="public Uri ActionUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ActionUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.ActionUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the action URL for the application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The action URL is the single point of re-entry to the application from the HealthVault
+            Shell. The implementation of the action URL must use the query string parameters to 
+            determine what the correct page is to show the user. See 
+            Microsoft.Health.Web.HealthServiceActionPage for more information.
+            
+            On updating an application configuration the action URL will only 
+            be updated if the value is not null.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationAttributes">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;string&gt; ApplicationAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;string&gt; ApplicationAttributes" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.ApplicationAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the application attributes.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            See <see cref="F:Microsoft.Health.ApplicationInfo.ExpectedApplicationAttributes" /> for a list of expected values.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthorizationReason">
+      <MemberSignature Language="C#" Value="public string AuthorizationReason { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AuthorizationReason" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.AuthorizationReason" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the reason the application requires the base online and offline 
+            authorization rules it is requesting.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The authorization reason is shown to the user when they are authorizing the application
+            to use their health record.
+            
+            On updating an application configuration the authorization reason will only 
+            be updated if the value is not null.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallableMethods">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;Microsoft.Health.HealthVaultMethods&gt; CallableMethods { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;valuetype Microsoft.Health.HealthVaultMethods&gt; CallableMethods" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.CallableMethods" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.HealthVaultMethods&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a collection of the HealthVault methods the application can call.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            On updating an application configuration the callable methods will only 
+            be updated if the collection is not empty.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildVocabularyAuthorizationsCeiling">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;Microsoft.Health.VocabularyAuthorization&gt; ChildVocabularyAuthorizationsCeiling { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class Microsoft.Health.VocabularyAuthorization&gt; ChildVocabularyAuthorizationsCeiling" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.ChildVocabularyAuthorizationsCeiling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.VocabularyAuthorization&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a collection of authorizations to HealthVault vocabularies. This represents the
+            maximum authorization set that the application can grant to its child applications.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientServiceToken">
+      <MemberSignature Language="C#" Value="public Nullable&lt;Guid&gt; ClientServiceToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Guid&gt; ClientServiceToken" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.ClientServiceToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Guid&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the client service token.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The client service token is used by browser scripts to access HealthVault client services
+            such as the vocabulary search service. The value of the client service token is set in 
+            the application configuration center. 
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigurationOptions">
+      <MemberSignature Language="C#" Value="public Nullable&lt;Microsoft.Health.ApplicationOptions&gt; ConfigurationOptions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Microsoft.Health.ApplicationOptions&gt; ConfigurationOptions" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.ConfigurationOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;Microsoft.Health.ApplicationOptions&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets various configuration options that applications can use.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The configuration options tell HealthVault of any special behaviors that it should
+            allow or enforce for this application. See <see cref="T:Microsoft.Health.ApplicationOptions" /> for more 
+            information.
+            
+            On updating an application configuration the configuration options will only 
+            be updated if the value is not null.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureSpecificAuthorizationReasons">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.CultureSpecificStringDictionary CultureSpecificAuthorizationReasons { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.CultureSpecificStringDictionary CultureSpecificAuthorizationReasons" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.CultureSpecificAuthorizationReasons" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.CultureSpecificStringDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+                Dictionary of language specifiers and localized authorization reasons of the 
+                application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureSpecificDescriptions">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.CultureSpecificStringDictionary CultureSpecificDescriptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.CultureSpecificStringDictionary CultureSpecificDescriptions" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.CultureSpecificDescriptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.CultureSpecificStringDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+                 Dictionary of language specifiers and localized descriptions of the application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureSpecificNames">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.CultureSpecificStringDictionary CultureSpecificNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.CultureSpecificStringDictionary CultureSpecificNames" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.CultureSpecificNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.CultureSpecificStringDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+                 Gets a dictionary of language specifiers and localized names of the application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets a description of the application which is shown to the user when
+            authorizing the application to their record.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            On updating an application configuration the description will only 
+            be updated if the value is not null.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DomainName">
+      <MemberSignature Language="C#" Value="public string DomainName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DomainName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.DomainName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the domain name for the application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The domain name is used when the application calls 
+            ApplicationConnection.SendInsecureMessageFromApplication along with the
+            specified mailbox as the sending party. For example, if the domain name of the application
+            is "microsoft.com" and the mailbox is "example", then the user will get an email from
+            "example@microsoft.com".
+            
+            On updating an application configuration the domain name will only 
+            be updated if the value is not null.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DtcSuccessMessage">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ApplicationBinaryConfiguration DtcSuccessMessage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ApplicationBinaryConfiguration DtcSuccessMessage" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.DtcSuccessMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ApplicationBinaryConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the application's Direct To Clinical success message.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            On updating an application configuration the dtc success message will only 
+            be updated if the value is not null.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpectedApplicationAttributes">
+      <MemberSignature Language="C#" Value="public static string[] ExpectedApplicationAttributes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static string[] ExpectedApplicationAttributes" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.ApplicationInfo.ExpectedApplicationAttributes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The list of strings that are currently have meaning in
+            <see cref="P:Microsoft.Health.ApplicationInfo.ApplicationAttributes" />.
+            </summary>
+        <remarks>
+            More expected values may be added at any time.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public Guid Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid Id" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the application id.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            On retrieving an application this value will be set to the application id.
+            When creating or updating an application, this value is ignored.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LargeLogo">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ApplicationBinaryConfiguration LargeLogo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ApplicationBinaryConfiguration LargeLogo" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.LargeLogo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ApplicationBinaryConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the large logo for the application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The large logo is shown at various times to the user when interacting with the
+            HealthVault Shell. The large logo must be 120x60 pixels or smaller, and is limited 
+            to 160kb in size.
+            
+            On updating an application configuration the large logo will only 
+            be updated if the value is not null.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeaningfulUseSources">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;string&gt; MeaningfulUseSources { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;string&gt; MeaningfulUseSources" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.MeaningfulUseSources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the list of Meaningful Use sources associated with this application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            Gets the list of Meaningful Use sources associated with this application.
+            For partners that contribute CCDA documents to HealthVault using Direct Messaging and wish to retrieve Meaningful Use reports,
+            HealthVault allows associating the Direct Messaging domain of the sender to an application ID that will retrieve the corresponding
+            Meaningful Use reports. The MeaningfulUseSources field specifies these Direct Messaging domains as a list of semi-colon delimited strings.
+            Developers can associate Direct Messaging domains with an application ID, using the HealthVault Application Configuration Center.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the name of the application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            On updating an application configuration the name will only be updated if it
+            is not null.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OfflineBaseAuthorizations">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;Microsoft.Health.AuthorizationRule&gt; OfflineBaseAuthorizations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class Microsoft.Health.AuthorizationRule&gt; OfflineBaseAuthorizations" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.OfflineBaseAuthorizations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.AuthorizationRule&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a collection of the offline base authorization rules for the application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The offline base authorization rules represent the set of data that the application
+            can access when a user is not logged on.
+            
+            On updating an application configuration the offline base authorization rules will only 
+            be updated if the collection is not empty.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnlineBaseAuthorizations">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;Microsoft.Health.AuthorizationRule&gt; OnlineBaseAuthorizations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class Microsoft.Health.AuthorizationRule&gt; OnlineBaseAuthorizations" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.OnlineBaseAuthorizations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.AuthorizationRule&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a collection of the online base authorization rules for the application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The online base authorization rules represent the set of data that the application
+            can access when a user is logged on.
+            
+            On updating an application configuration the online base authorization rules will only 
+            be updated if the collection is not empty.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Organizations">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;Microsoft.Health.OrganizationInfo&gt; Organizations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class Microsoft.Health.OrganizationInfo&gt; Organizations" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.Organizations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.OrganizationInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the list of organizations supported by the application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistentTokenTtlInSeconds">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; PersistentTokenTtlInSeconds { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; PersistentTokenTtlInSeconds" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.PersistentTokenTtlInSeconds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the length of time a user token will persist if they choose the "Keep me
+            logged in on this computer" checkbox during HealthVault login.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This value is only used if <see cref="F:Microsoft.Health.ApplicationOptions.PersistentTokensAllowed" /> is
+            specified in the <see cref="P:Microsoft.Health.ApplicationInfo.ConfigurationOptions" />.
+            
+            On updating an application configuration the persistent token ttl will only 
+            be updated if the value is not null.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is less than or equal to zero.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PrivacyStatement">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ApplicationBinaryConfiguration PrivacyStatement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ApplicationBinaryConfiguration PrivacyStatement" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.PrivacyStatement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ApplicationBinaryConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the application's privacy statement.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            A link is provided from the HealthVault Shell to the application's privacy statement.
+            
+            On updating an application configuration the privacy statement will only 
+            be updated if the value is not null.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PublicKeys">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;byte[]&gt; PublicKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;unsigned int8[]&gt; PublicKeys" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.PublicKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Byte[]&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a collection of the public keys for the application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The public key(s) are used to uniquely and positively identify the application to the
+            HealthVault service. The application signs its first request to HealthVault using its
+            application private which matches the public key being passed here. When HealthVault
+            receives that request it validates the signature using the public key.
+            
+            On updating an application configuration the public key(s) will only be updated if the
+            collection is not empty.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SmallLogo">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ApplicationBinaryConfiguration SmallLogo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ApplicationBinaryConfiguration SmallLogo" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.SmallLogo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ApplicationBinaryConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the small logo for the application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The small logo is shown at various times to the user when interacting with the
+            HealthVault Shell. The small logo is limited to 40kb in size.
+            
+            On updating an application configuration the small logo will only 
+            be updated if the value is not null.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportAllHealthVaultInstances">
+      <MemberSignature Language="C#" Value="public bool SupportAllHealthVaultInstances { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportAllHealthVaultInstances" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.SupportAllHealthVaultInstances" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets whether the application supports all HealthVault instances.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            If set to true, the value of <see cref="P:SupportedHealthVaultInstances" /> is ignored.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportedHealthVaultInstances">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;string&gt; SupportedHealthVaultInstances { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;string&gt; SupportedHealthVaultInstances" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.SupportedHealthVaultInstances" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the instance identifiers for the HealthVault instances the application supports.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            Use the <see cref="T:Microsoft.Health.ServiceInfo" /> class to get instance information using these 
+            instance identifiers.
+            
+            When updating a child application, if the supported instances is left blank, only the
+            instance being connected to will be configured as the supported instances.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportedRecordLocations">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.LocationCollection SupportedRecordLocations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.LocationCollection SupportedRecordLocations" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.SupportedRecordLocations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.LocationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a collection of the record locations supported by this application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TermsOfUse">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ApplicationBinaryConfiguration TermsOfUse { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ApplicationBinaryConfiguration TermsOfUse" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.TermsOfUse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ApplicationBinaryConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the application's terms of use.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            A link is provided from the HealthVault Shell to the application's terms of use.
+            
+            On updating an application configuration the terms of use will only 
+            be updated if the value is not null.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public void Update (Microsoft.Health.ApplicationConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Update(class Microsoft.Health.ApplicationConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ApplicationInfo.Update(Microsoft.Health.ApplicationConnection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use to call HealthVault.
+            </param>
+        <summary>
+            Updates the application's configuration in HealthVault.
+            </summary>
+        <remarks>
+            This method makes a remote call to the HealthVault service.
+            The calling application in the <paramref name="connection" /> must be the same as
+            the application specified by this ApplicationInfo instance or its master application.
+            Note, this update will replace all configuration elements for the application. It is 
+            advised that <see cref="M:Microsoft.Health.ApplicationProvisioning.Provisioner.GetApplication(Microsoft.Health.Web.OfflineWebApplicationConnection,System.Guid)" /> is 
+            called to retrieve the existing application configuration before changing values and 
+            calling Update.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="connection" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:System.InvalidOperationException">
+            If <see cref="P:Microsoft.Health.ApplicationInfo.Id" /> is <see cref="F:System.Guid.Empty" />.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidIPPrefixes">
+      <MemberSignature Language="C#" Value="public string ValidIPPrefixes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValidIPPrefixes" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.ValidIPPrefixes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the IP address masks from which the application can
+            call HealthVault.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            A comma separated list of IP address masks from which the
+            application can call HealthVault.
+            HealthVault provides some added security to applications by supporting
+            calls that come from valid IP addresses of the application. IP addresses
+            can be specified using a specific IP address and 32 bit mask like
+            192.168.0.1/32 or by specifying a subnet and mask like 192.168.0.0/16.
+            You can have more than one IP address or mask by comma separating them.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VocabularyAuthorizations">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;Microsoft.Health.VocabularyAuthorization&gt; VocabularyAuthorizations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class Microsoft.Health.VocabularyAuthorization&gt; VocabularyAuthorizations" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationInfo.VocabularyAuthorizations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.VocabularyAuthorization&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a collection of authorizations to HealthVault vocabularies, that the application
+             has access to.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

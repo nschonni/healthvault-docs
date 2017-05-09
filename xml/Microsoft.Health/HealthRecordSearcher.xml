@@ -1,0 +1,289 @@
+<Type Name="HealthRecordSearcher" FullName="Microsoft.Health.HealthRecordSearcher">
+  <TypeSignature Language="C#" Value="public class HealthRecordSearcher" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HealthRecordSearcher extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthRecordSearcher" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Searches for health record items in HealthVault records.
+            </summary>
+    <remarks>
+            This class wraps up the logic for constructing a "GetThings" query
+            against the HealthVault service.  It generates the necessary XML to 
+            call the "GetThings" and retrieve health record items that match the specified
+            criteria.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthRecordSearcher (Microsoft.Health.HealthRecordAccessor record);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.HealthRecordAccessor record) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordSearcher.#ctor(Microsoft.Health.HealthRecordAccessor)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="record" Type="Microsoft.Health.HealthRecordAccessor" />
+      </Parameters>
+      <Docs>
+        <param name="record">To be added.</param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.HealthRecordSearcher" /> 
+            class with the default parameters.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="record" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Filters">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;Microsoft.Health.HealthRecordFilter&gt; Filters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class Microsoft.Health.HealthRecordFilter&gt; Filters" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordSearcher.Filters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.HealthRecordFilter&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the filters associated with the search.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            To add a search filter, call the Add method of the
+            returned collection.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingItems">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.HealthRecordItemCollection&gt; GetMatchingItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class Microsoft.Health.HealthRecordItemCollection&gt; GetMatchingItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordSearcher.GetMatchingItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.HealthRecordItemCollection&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets the health record items that match the filters as specified by 
+            the properties of this class.
+            </summary>
+        <returns>
+            A collection of health record items that match the applied filters.
+            </returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The response from the server was anything but 
+            <see cref="F:Microsoft.Health.HealthServiceStatusCode.Ok" />.
+            -or-
+            <see cref="P:Microsoft.Health.HealthRecordSearcher.Filters" /> is empty
+            or contains invalid filters.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingItemsRaw">
+      <MemberSignature Language="C#" Value="public System.Xml.XPath.XPathNavigator GetMatchingItemsRaw ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XPath.XPathNavigator GetMatchingItemsRaw() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordSearcher.GetMatchingItemsRaw" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.XPathNavigator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets the health record items that match the filters as specified by 
+            the properties of this class.
+            </summary>
+        <returns>
+            An XPathNavigator representing the raw results of the search.
+            </returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            <br /><br />
+            This method is typically used when the calling application wants to
+            handle the raw health record item XML directly instead of using the 
+            object model.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingItemsReader">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlReader GetMatchingItemsReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlReader GetMatchingItemsReader() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordSearcher.GetMatchingItemsReader" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets the health record items that match the filters as specified by 
+            the properties of this class.
+            </summary>
+        <returns>
+            An XmlReader representing the raw results of the search.
+            </returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            <br /><br />
+            This method is typically used when the calling application wants to
+            handle the raw health record item XML directly instead of using the 
+            object model.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSingleItem">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.HealthRecordItem GetSingleItem (Guid itemId, Microsoft.Health.HealthRecordItemSections sections);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Health.HealthRecordItem GetSingleItem(valuetype System.Guid itemId, valuetype Microsoft.Health.HealthRecordItemSections sections) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordSearcher.GetSingleItem(System.Guid,Microsoft.Health.HealthRecordItemSections)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthRecordItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemId" Type="System.Guid" />
+        <Parameter Name="sections" Type="Microsoft.Health.HealthRecordItemSections" />
+      </Parameters>
+      <Docs>
+        <param name="itemId">
+            The unique identifier for the health record item.
+            </param>
+        <param name="sections">
+            The data sections of the health record item that should be retrieved.
+            </param>
+        <summary>
+            Gets a single health record item from the associated record by 
+            using the item identifier.
+            </summary>
+        <returns>
+            An instance of a <see cref="T:Microsoft.Health.HealthRecordItem" /> 
+            representing the health record item with the specified identifier.
+            </returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            <br /><br />
+            All filters are cleared and replaced with a single filter
+            for the specified item.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The server returned something other than a code of 
+            HealthServiceStatusCode.OK, or the result count did not equal one (1).
+            -or-
+            <see cref="P:Microsoft.Health.HealthRecordSearcher.Filters" /> is empty
+            or contains invalid filters.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTransformedItems">
+      <MemberSignature Language="C#" Value="public string GetTransformedItems (string transform);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetTransformedItems(string transform) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordSearcher.GetTransformedItems(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transform" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="transform">
+            A URL to a transform to run on the resulting XML. This can be
+            a fully-qualified URL or the name of one of the standard XSLs
+            provided by the HealthVault system.
+            </param>
+        <summary>
+            Gets the health record items specified by the 
+            <see cref="P:Microsoft.Health.HealthRecordSearcher.Filters" /> and runs them through the specified 
+            transform.
+            </summary>
+        <returns>
+            The string resulting from performing the specified transform on
+            the XML representation of the items.
+            </returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            <br /><br />
+            Any call to HealthVault may specify a transform to be run on the
+            response XML. The transform can be specified as a XSL fragment or
+            a well-known transform tag provided by the HealthVault service. If a
+            XSL fragment is specified, it gets compiled and cached on the server.
+            <br /><br />
+            A final-xsl is useful when you want to convert the result from XML to
+            HTML so that you can display the result directly in a web page.
+            You may also use it to generate other data formats like CCR, CCD, CSV,
+            RSS, etc.
+            <br /><br />
+            Transform fragments cannot contain embedded script. The following set
+            of parameters are passed to all final-xsl transforms:<br /><ul><li>currentDateTimeUtc - the date and time just before the transform 
+                started executing</li><li>requestingApplicationName - the name of the application that
+                made the request to HealthVault.</li><li>countryCode - the ISO 3166 country code from the request.</li><li>languageCode - the ISO 639-1 language code from the request.</li><li>personName - the name of the person making the request.</li><li>recordName - if the request identified a HealthVault record to 
+                be used, this parameter contains the name of that record.</li></ul></remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:Microsoft.Health.HealthRecordView.Sections" /> does not
+            contain the XML section in the view.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            There is a failure retrieving the items.
+            -or-
+            No filters have been specified.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Record">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.HealthRecordAccessor Record { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.HealthRecordAccessor Record" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordSearcher.Record" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthRecordAccessor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the health record that is being searched for health record items.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.HealthRecordAccessor" /> representing the record.
+            </value>
+        <remarks>
+            The authenticated person must have 
+            <see cref="F:Microsoft.Health.HealthRecordItemPermissions.Read" /> access rights to the
+            health record to get results from the query.
+            </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

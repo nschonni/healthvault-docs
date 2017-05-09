@@ -1,0 +1,249 @@
+<Type Name="Organization" FullName="Microsoft.Health.ItemTypes.Organization">
+  <TypeSignature Language="C#" Value="public class Organization : Microsoft.Health.ItemTypes.HealthRecordItemData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Organization extends Microsoft.Health.ItemTypes.HealthRecordItemData" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Organization" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            An organization entity.
+            </summary>
+    <remarks>
+            An entity such as a hospital, a pharmacy,  or a doctor's office. 
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Organization ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Organization.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            It creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Organization" /> 
+            class with default values.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Organization (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Organization.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">
+            The name of the organization is mandatory. 
+            </param>
+        <summary>
+            Create a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Organization" />
+            class with specific values.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="name" /> is <b>null</b> or empty.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contact">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.ContactInfo Contact { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.ContactInfo Contact" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Organization.Contact" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.ContactInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the contact information of the organization.
+            </summary>
+        <value>To be added.</value>
+        <remarks> 
+            It should be set to <b>null</b> if it is unknown. 
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Organization.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the name of the organization.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="Name" /> is <b>null</b>, empty, or contains only whitespace.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="public override void ParseXml (System.Xml.XPath.XPathNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ParseXml(class System.Xml.XPath.XPathNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Organization.ParseXml(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="navigator">
+            The XML containing the organization information.
+            </param>
+        <summary>
+            Populates the organization information from the 
+            specified XML.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.UriFormatException">
+            If <paramref name="Website" /> is empty. 
+            -or-
+            The scheme specified in <paramref name="Website" /> is invalid.
+            -or-
+            <paramref name="Website" /> contains too many slashes.
+            -or-
+            The host name specified in <paramref name="Website" /> is invalid.
+            -or-
+            The file name specified in <paramref name="Website" /> is invalid.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Organization.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets a string representation of the organization information. 
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.CodableValue Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.CodableValue Type" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Organization.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the type of the organization.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            It should be set to <b>null</b> if it is unknown. 
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Website">
+      <MemberSignature Language="C#" Value="public Uri Website { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Website" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Organization.Website" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the website URL of the organization.
+            </summary>
+        <value>
+            The URL for the organization website. 
+            </value>
+        <remarks>
+            It should be set to <b>null</b> if it is unknown. 
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (string nodeName, System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(string nodeName, class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Organization.WriteXml(System.String,System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodeName" Type="System.String" />
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="nodeName">
+            The name of the outer node for the organization information.
+            </param>
+        <param name="writer">
+            The XML writer into which the organization information should be 
+            written.
+            </param>
+        <summary>
+            Writes the organization data to the specified XmlWriter.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.Organization.Name" /> is <b>null</b>. 
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

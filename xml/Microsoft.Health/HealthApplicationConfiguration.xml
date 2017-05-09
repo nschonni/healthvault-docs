@@ -1,0 +1,989 @@
+<Type Name="HealthApplicationConfiguration" FullName="Microsoft.Health.HealthApplicationConfiguration">
+  <TypeSignature Language="C#" Value="public class HealthApplicationConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HealthApplicationConfiguration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthApplicationConfiguration" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Gives access to the configuration file for the application and
+            exposes some of the settings directly.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthApplicationConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthApplicationConfiguration.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationCertificate">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Cryptography.X509Certificates.X509Certificate2 ApplicationCertificate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate2 ApplicationCertificate" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.ApplicationCertificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a certificate containing the application's private key.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "SignatureCertStoreLocation", "AppCertSubject",
+            "ApplicationCertificateFilename", and "ApplicationCertificatePassword" configuration
+            values.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationId">
+      <MemberSignature Language="C#" Value="public virtual Guid ApplicationId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ApplicationId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.ApplicationId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the application's unique identifier.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "ApplicationId" configuration
+            value.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BlobStreamUrl">
+      <MemberSignature Language="C#" Value="public virtual Uri BlobStreamUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri BlobStreamUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.BlobStreamUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the URL to/from which BLOBs get streamed, for
+            the configured default instance of the HealthVault web-service.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "HealthVaultUrl" configuration
+            value with the path modified to the appropriate handler.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionLeaseTimeout">
+      <MemberSignature Language="C#" Value="public virtual int ConnectionLeaseTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ConnectionLeaseTimeout" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.ConnectionLeaseTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the amount of time, in milliseconds, that the application's connection can 
+            remain open before the HealthVault framework closes the connection.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The default value is 5 minutes.
+            <p>
+            This setting only applies when using HTTP Persistent Connections
+            <see cref="P:Microsoft.Health.HealthApplicationConfiguration.ConnectionUseHttpKeepAlive" />.  
+            </p><p>
+            Using this property ensures that active connections do not remain open
+            indefinitely, even if actively used. This property is intended
+            when connections should be dropped and reestablished periodically, such
+            as load balancing scenarios.
+            </p><p>
+            Setting the property to -1 indicates connections should stay open idefinitely.
+            </p><p>
+            This property corresponds to the "ConnectionLeaseTimeout" configuration value.
+            </p></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionMaxIdleTime">
+      <MemberSignature Language="C#" Value="public virtual int ConnectionMaxIdleTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ConnectionMaxIdleTime" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.ConnectionMaxIdleTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the amount of time, in milliseconds, that the application's connection can 
+            remain idle before the HealthVault framework closes the connection.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This default value is 110 seconds of inactivity.
+            <p>
+            This setting only applies when using HTTP Persistent Connections
+            <see cref="P:Microsoft.Health.HealthApplicationConfiguration.ConnectionUseHttpKeepAlive" />.  
+            </p><p>
+            Setting this property to -1 indicates the connection should never
+            time out.
+            </p><p>
+            This property corresponds to the "ConnectionMaxIdleTime" configuration value.
+            </p></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionUseHttpKeepAlive">
+      <MemberSignature Language="C#" Value="public virtual bool ConnectionUseHttpKeepAlive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ConnectionUseHttpKeepAlive" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.ConnectionUseHttpKeepAlive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a value that indicates whether the application uses Http 1.1 persistent
+            connections to HealthVault.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            True to use persistent connections; otherwise false. The default is true.
+            <p>
+            This property corresponds to the "ConnectionUseHttpKeepAlive" configuration value.
+            </p></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.HealthApplicationConfiguration Current { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.Health.HealthApplicationConfiguration Current" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthApplicationConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the current configuration object for the app-domain.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultDefaultRequestTimeout">
+      <MemberSignature Language="C#" Value="protected const int DefaultDefaultRequestTimeout = 30;" />
+      <MemberSignature Language="ILAsm" Value=".field family static literal int32 DefaultDefaultRequestTimeout = (30)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.HealthApplicationConfiguration.DefaultDefaultRequestTimeout" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>30</MemberValue>
+      <Docs>
+        <summary>
+            The default request time out value.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultDefaultRequestTimeToLive">
+      <MemberSignature Language="C#" Value="protected const int DefaultDefaultRequestTimeToLive = 1800;" />
+      <MemberSignature Language="ILAsm" Value=".field family static literal int32 DefaultDefaultRequestTimeToLive = (1800)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.HealthApplicationConfiguration.DefaultDefaultRequestTimeToLive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>1800</MemberValue>
+      <Docs>
+        <summary>
+            The default request time to live value.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultHashAlgorithmName">
+      <MemberSignature Language="C#" Value="protected const string DefaultHashAlgorithmName;" />
+      <MemberSignature Language="ILAsm" Value=".field family static literal string DefaultHashAlgorithmName" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.HealthApplicationConfiguration.DefaultHashAlgorithmName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The default hash algorithm name.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultHmacAlgorithmName">
+      <MemberSignature Language="C#" Value="protected const string DefaultHmacAlgorithmName;" />
+      <MemberSignature Language="ILAsm" Value=".field family static literal string DefaultHmacAlgorithmName" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.HealthApplicationConfiguration.DefaultHmacAlgorithmName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The default HMAC algorithm name.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultRequestCompressionThreshold">
+      <MemberSignature Language="C#" Value="protected const int DefaultRequestCompressionThreshold = 1;" />
+      <MemberSignature Language="ILAsm" Value=".field family static literal int32 DefaultRequestCompressionThreshold = (1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.HealthApplicationConfiguration.DefaultRequestCompressionThreshold" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>1</MemberValue>
+      <Docs>
+        <summary>
+            Default size for compression threshold
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultRequestTimeout">
+      <MemberSignature Language="C#" Value="public virtual int DefaultRequestTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DefaultRequestTimeout" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.DefaultRequestTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the request timeout in seconds.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This value is used to set the <see cref="P:System.Net.HttpWebRequest.Timeout" /> property 
+            when making the request to HealthVault. The timeout is the number of seconds that a 
+            request will wait for a response from HealtVault. If the method response is not
+            returned within the time-out period the request will throw a <see cref="T:System.Net.WebException" />
+            with the <see cref="P:System.Net.WebException.Status">Status</see> property set to
+            <see cref="F:System.Net.WebExceptionStatus.Timeout" />.
+            This property corresponds to the "defaultRequestTimeout" configuration
+            value. The value defaults to 30 seconds.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultRequestTimeToLive">
+      <MemberSignature Language="C#" Value="public virtual int DefaultRequestTimeToLive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DefaultRequestTimeToLive" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.DefaultRequestTimeToLive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the request time to live in seconds.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property defines the "msg-ttl" in the HealthVault request header XML. It determines
+            how long the same XML can be used before HealthVault determines the request invalid.
+            This property corresponds to the "defaultRequestTimeToLive" configuration
+            value. The value defaults to 1800 seconds.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultRetryOnInternal500Count">
+      <MemberSignature Language="C#" Value="protected const int DefaultRetryOnInternal500Count = 2;" />
+      <MemberSignature Language="ILAsm" Value=".field family static literal int32 DefaultRetryOnInternal500Count = (2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.HealthApplicationConfiguration.DefaultRetryOnInternal500Count" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>2</MemberValue>
+      <Docs>
+        <summary>
+            The default number of internal retries.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultRetryOnInternal500SleepSeconds">
+      <MemberSignature Language="C#" Value="protected const int DefaultRetryOnInternal500SleepSeconds = 1;" />
+      <MemberSignature Language="ILAsm" Value=".field family static literal int32 DefaultRetryOnInternal500SleepSeconds = (1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.HealthApplicationConfiguration.DefaultRetryOnInternal500SleepSeconds" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>1</MemberValue>
+      <Docs>
+        <summary>
+            Default sleep duration in seconds.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSignatureAlgorithmName">
+      <MemberSignature Language="C#" Value="protected const string DefaultSignatureAlgorithmName;" />
+      <MemberSignature Language="ILAsm" Value=".field family static literal string DefaultSignatureAlgorithmName" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.HealthApplicationConfiguration.DefaultSignatureAlgorithmName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The default signature algorithm name.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSignatureHashAlgorithmName">
+      <MemberSignature Language="C#" Value="protected const string DefaultSignatureHashAlgorithmName;" />
+      <MemberSignature Language="ILAsm" Value=".field family static literal string DefaultSignatureHashAlgorithmName" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.HealthApplicationConfiguration.DefaultSignatureHashAlgorithmName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The default signature hash algorithm name.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSymmetricAlgorithmName">
+      <MemberSignature Language="C#" Value="protected const string DefaultSymmetricAlgorithmName;" />
+      <MemberSignature Language="ILAsm" Value=".field family static literal string DefaultSymmetricAlgorithmName" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.HealthApplicationConfiguration.DefaultSymmetricAlgorithmName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The default symmetric algorithm name.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConfigurationString">
+      <MemberSignature Language="C#" Value="protected virtual string GetConfigurationString (string configurationKey);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetConfigurationString(string configurationKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthApplicationConfiguration.GetConfigurationString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configurationKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configurationKey">Key to look up the configuration item.</param>
+        <summary>
+            Gets the string configuration value given the key
+            </summary>
+        <returns>String value of the configuration item, should return null if key not found.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HashAlgorithmName">
+      <MemberSignature Language="C#" Value="public virtual string HashAlgorithmName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HashAlgorithmName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.HashAlgorithmName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the name of the hashing algorithm to use when communicating with HealthVault.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "HashAlgorithmName" configuration
+            value. The value defaults to "SHA256".
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HealthClientServiceUrl">
+      <MemberSignature Language="C#" Value="public virtual Uri HealthClientServiceUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri HealthClientServiceUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.HealthClientServiceUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the HealthVault client service URL for
+            the configured default instance of the HealthVault web-service,
+            from the application or web configuration file.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "HealthVaultUrl" configuration
+            value with the path modified to the appropriate handler.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HealthVaultMethodUrl">
+      <MemberSignature Language="C#" Value="public Uri HealthVaultMethodUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri HealthVaultMethodUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.HealthVaultMethodUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the HealthVault method request URL for
+            the configured default instance of the HealthVault web-service.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "HealthServiceUrl" configuration
+            value.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HealthVaultShellUrl">
+      <MemberSignature Language="C#" Value="public virtual Uri HealthVaultShellUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri HealthVaultShellUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.HealthVaultShellUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the HealthVault Shell URL for
+            the configured default instance of the HealthVault web-service.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "ShellUrl" configuration
+            value.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HealthVaultTypeSchemaUrl">
+      <MemberSignature Language="C#" Value="public Uri HealthVaultTypeSchemaUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri HealthVaultTypeSchemaUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.HealthVaultTypeSchemaUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the HealthVault type schema root URL for
+            the configured default instance of the HealthVault web-service.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "HealthServiceUrl" configuration
+            value.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HealthVaultUrl">
+      <MemberSignature Language="C#" Value="public virtual Uri HealthVaultUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri HealthVaultUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.HealthVaultUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the root URL for a default instance of the
+            HealthVault web-service.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "HealthServiceUrl" configuration
+            value with "wildcat.ashx" removed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HmacAlgorithmName">
+      <MemberSignature Language="C#" Value="public virtual string HmacAlgorithmName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HmacAlgorithmName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.HmacAlgorithmName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the name of the algorithm used to ensure communication with HealthVault
+            isn't tampered with.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "HmacAlgorithmName" configuration
+            value. The value defaults to "HMACSHA256".
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InlineBlobHashBlockSize">
+      <MemberSignature Language="C#" Value="public virtual int InlineBlobHashBlockSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 InlineBlobHashBlockSize" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.InlineBlobHashBlockSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the size in bytes of the block used to hash inlined BLOB data.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "defaultInlineBlobHashBlockSize" configuration
+            value. The value defaults to 2MB.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MultiInstanceAware">
+      <MemberSignature Language="C#" Value="public virtual bool MultiInstanceAware { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MultiInstanceAware" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.MultiInstanceAware" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the value which indicates whether the application is able to handle connecting to multiple
+            instances of the HealthVault web-service. 
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This setting defaults to <b>true</b> and can be set in an application
+            configuration file, using the "MultiInstanceAware" setting key.
+            <p>
+            Applications in HealthVault can be configured to support more than one instance of the HealthVault web-service.
+            In such a case, and when the MultiInstanceAware configuration is set to <b>true</b>, all redirects generated
+            through the HealthVault .NET API will have a flag set indicating that the application is able to deal with
+            HealthVault accounts that may reside in other HealthVault instances.  In such a case, HealthVault Shell can
+            redirect back with an account associated with any one of the instances of the HealthVault web-service which
+            the application has chosen to support.  The application may then need to be able to handle connecting to the
+            appropriate instance of the HealthVault web-service for each account.
+            </p><p>
+            For more information see the <a href="http://go.microsoft.com/?linkid=9830913">Global HealthVault Architecture</a> article.
+            </p></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestCompressionMethod">
+      <MemberSignature Language="C#" Value="public virtual string RequestCompressionMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestCompressionMethod" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.RequestCompressionMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the method used to compress requests.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "requestCompressionMethod" configuration
+            value. The value defaults is to not compress requests.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestCompressionThreshold">
+      <MemberSignature Language="C#" Value="public virtual int RequestCompressionThreshold { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RequestCompressionThreshold" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.RequestCompressionThreshold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the size in kilobytes above which requests will be compressed.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "requestCompressionThreshold" configuration
+            value. The value defaults to 1KB.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseCompressionMethods">
+      <MemberSignature Language="C#" Value="public virtual string ResponseCompressionMethods { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResponseCompressionMethods" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.ResponseCompressionMethods" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the application's supported compression methods that can be sent back 
+            from HealtVault during a method response.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "responseCompressionMethods" configuration
+            value. The value defaults to not compress responses.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RestHealthVaultUrl">
+      <MemberSignature Language="C#" Value="public virtual Uri RestHealthVaultUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri RestHealthVaultUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.RestHealthVaultUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the root URL for a default instance of the
+            Rest HealthVault service
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "RestHealthServiceUrl" configuration.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RetryOnInternal500Count">
+      <MemberSignature Language="C#" Value="public virtual int RetryOnInternal500Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RetryOnInternal500Count" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.RetryOnInternal500Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the number of retries the .NET APIs will make when getting an internal
+            error response (error 500) from HealthVault.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "RequestRetryOnInternal500" configuration
+            value. The value defaults to 2.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RetryOnInternal500SleepSeconds">
+      <MemberSignature Language="C#" Value="public virtual int RetryOnInternal500SleepSeconds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RetryOnInternal500SleepSeconds" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.RetryOnInternal500SleepSeconds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the sleep duration in seconds between retries due to HealthVault returning
+            an internal error (error 500).
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "RequestRetryOnInternal500SleepSeconds" configuration
+            value. The value defaults to 1 second.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceInfoDefaultCacheTtl">
+      <MemberSignature Language="C#" Value="public TimeSpan ServiceInfoDefaultCacheTtl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ServiceInfoDefaultCacheTtl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.ServiceInfoDefaultCacheTtl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the value which specifies the period of time before the <see cref="P:ServiceInfo.Current" /> built-in cache is considered expired.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+          <p>
+            Default value is <b>24 hours</b>.  This property corresponds to the "ServiceInfoDefaultCacheTtlMilliseconds" configuration value.
+            </p>
+          <p>
+            The next request for the object after the cache is expired will result in a call to the HealthVault web-service
+            to obtain an up-to-date copy of the service information.
+            </p>
+          <p>
+            An application can override the entire caching and service info retrieval behavior
+            by passing its own implementation of <see cref="T:Microsoft.Health.IServiceInfoProvider" /> to
+            <see cref="M:Microsoft.Health.ServiceInfo.SetSingletonProvider(Microsoft.Health.IServiceInfoProvider)" />.  In such
+            a case this configuration is no longer applicable.
+            </p>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignatureAlgorithmName">
+      <MemberSignature Language="C#" Value="public virtual string SignatureAlgorithmName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignatureAlgorithmName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.SignatureAlgorithmName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the name of the signature algorithm.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "SignatureAlgorithmName" configuration
+            value. The value defaults to "RSA-SHA1".
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignatureHashAlgorithmName">
+      <MemberSignature Language="C#" Value="public virtual string SignatureHashAlgorithmName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignatureHashAlgorithmName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.SignatureHashAlgorithmName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the name of the signature hash algorithm.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "SignatureHashAlgorithmName" configuration
+            value. The value defaults to "SHA1".
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportedTypeVersions">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IList&lt;Guid&gt; SupportedTypeVersions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;valuetype System.Guid&gt; SupportedTypeVersions" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.SupportedTypeVersions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Guid&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the type version identifiers of types supported by this application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            Although most applications don't need this configuration setting, if an application
+            calls <see cref="M:Microsoft.Health.HealthRecordAccessor.GetItem(System.Guid)" /> or makes any query to HealthVault
+            that doesn't specify the type identifier in the filter, this configuration setting
+            will tell HealthVault the format of the type to reply with. For example, if a web 
+            application has two servers and makes a call to GetItem for EncounterV1 and the 
+            application authorization is set to the EncounterV1 format then the application will
+            get EncounterV1 instances back even if the record contains Encounter v2 instances. Now
+            the application wants to upgrade to Encounter v2 without having application down-time.
+            In order to do this, one of the application servers must be updated to Encounter v2 while
+            the other still works with EncounterV1. If we were to rely solely on application
+            authorization one of the servers would be broken during the upgrade. However, by using
+            this configuration value to specify what type version the server supports (rather than
+            the application), then both servers can continue to work while the application is
+            upgraded.
+            </remarks>
+        <exception cref="T:Microsoft.Health.InvalidConfigurationException">
+            If the configuration contains the name of a type that is not registered as a type handler
+            in <see cref="T:Microsoft.Health.ItemTypeManager" />.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SymmetricAlgorithmName">
+      <MemberSignature Language="C#" Value="public virtual string SymmetricAlgorithmName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SymmetricAlgorithmName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.SymmetricAlgorithmName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the name of the symmetric algorithm.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property corresponds to the "SymmetricAlgorithmName" configuration
+            value. The value defaults to "AES256".
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseLegacyTypeVersionSupport">
+      <MemberSignature Language="C#" Value="public virtual bool UseLegacyTypeVersionSupport { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseLegacyTypeVersionSupport" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthApplicationConfiguration.UseLegacyTypeVersionSupport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a value indicating whether or not legacy type versioning support should be used.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            Type versions support was initially determined by an applications base authorizations
+            and/or the <see cref="P:Microsoft.Health.HealthRecordView.TypeVersionFormat" />. Some of these behaviors
+            were unexpected which led to changes to automatically put the <see cref="P:Microsoft.Health.HealthRecordFilter.TypeIds" />
+            and <see cref="P:Microsoft.Health.HealthApplicationConfiguration.SupportedTypeVersions" /> into the
+            <see cref="P:Microsoft.Health.HealthRecordView.TypeVersionFormat" /> automatically for developers. This 
+            exhibits the expected behavior for most applications. However, in some rare cases 
+            applications may need to revert back to the original behavior. When this property
+            returns true the original behavior will be observed. If false, the new behavior will
+            be observed. This property defaults to false and can be changed in the web.config file
+            "UseLegacyTypeVersionSupport" setting.
+            </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

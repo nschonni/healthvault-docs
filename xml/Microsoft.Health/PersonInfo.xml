@@ -1,0 +1,587 @@
+<Type Name="PersonInfo" FullName="Microsoft.Health.PersonInfo">
+  <TypeSignature Language="C#" Value="public class PersonInfo : Microsoft.Health.IMarshallable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PersonInfo extends System.Object implements class Microsoft.Health.IMarshallable" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.PersonInfo" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Health.IMarshallable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>
+            Provides information about a person's HealthVault account.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PersonInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PersonInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Constructs an new instance of the <see cref="T:Microsoft.Health.PersonInfo" /> class for testing purposes.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationConnection">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ApplicationConnection ApplicationConnection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ApplicationConnection ApplicationConnection" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PersonInfo.ApplicationConnection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ApplicationConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a reference to the HealthVault connection instance that was used to create this
+            <see cref="T:Microsoft.Health.PersonInfo" />.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationSettings">
+      <MemberSignature Language="C#" Value="public System.Xml.XPath.IXPathNavigable ApplicationSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XPath.IXPathNavigable ApplicationSettings" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PersonInfo.ApplicationSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.IXPathNavigable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the application settings for the current application and
+            person.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This can be <b>null</b> if no application settings have been stored
+            for the application or user.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationSettingsChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler ApplicationSettingsChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ApplicationSettingsChanged" />
+      <MemberSignature Language="DocId" Value="E:Microsoft.Health.PersonInfo.ApplicationSettingsChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Occurs when <see cref="M:Microsoft.Health.PersonInfo.SetApplicationSettings(System.Xml.XPath.IXPathNavigable)" /> changes the application settings in
+            HealthVault.
+            </summary>
+        <remarks>
+            This event is not triggered if another instance of the PersonInfo gets updated or
+            if the value changes in HealthVault.
+            The sender is the PersonInfo instance that was updated.
+            The event args are empty.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationSettingsDocument">
+      <MemberSignature Language="C#" Value="protected System.Xml.XmlDocument ApplicationSettingsDocument { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlDocument ApplicationSettingsDocument" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PersonInfo.ApplicationSettingsDocument" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDocument</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the underlying application settings document.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property should only be used for testing. 
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthorizedRecords">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;Guid,Microsoft.Health.HealthRecordInfo&gt; AuthorizedRecords { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;valuetype System.Guid, class Microsoft.Health.HealthRecordInfo&gt; AuthorizedRecords" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PersonInfo.AuthorizedRecords" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.Guid,Microsoft.Health.HealthRecordInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the authorized record for the person.
+            </summary>
+        <value>
+            The records that the person is authorized to access.
+            </value>
+        <remarks>
+            A person can access their own health record, 
+            health records that they have created for other people, or 
+            health records that other people have shared with them. The
+            contents of this collection will be all the health records, 
+            including those that have been deleted or suspended. A person can
+            interact only with active records.
+            <br /><br />
+            Shortcuts are provided to get access to the person's own
+            health record using <see cref="M:Microsoft.Health.PersonInfo.GetSelfRecord" /> and specific records
+            using <see cref="M:Microsoft.Health.ApplicationConnection.GetAuthorizedRecords(System.Collections.Generic.IList{System.Guid})" /> by
+            ID.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Connection">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.AuthenticatedConnection Connection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.AuthenticatedConnection Connection" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PersonInfo.Connection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.AuthenticatedConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a reference to the HealthVault service that
+            created this <see cref="T:Microsoft.Health.PersonInfo" /> or null if the connection used was an
+            <see cref="T:Microsoft.Health.Web.OfflineWebApplicationConnection" />.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This may return null if the <see cref="T:Microsoft.Health.PersonInfo" /> was retrieved using an
+            <see cref="T:Microsoft.Health.ApplicationConnection" />.
+            It is preferred that <see cref="P:Microsoft.Health.PersonInfo.ApplicationConnection" /> is used instead.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromXml">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.PersonInfo CreateFromXml (Microsoft.Health.ApplicationConnection connection, System.Xml.XPath.XPathNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.PersonInfo CreateFromXml(class Microsoft.Health.ApplicationConnection connection, class System.Xml.XPath.XPathNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PersonInfo.CreateFromXml(Microsoft.Health.ApplicationConnection,System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            An <see cref="P:Microsoft.Health.PersonInfo.ApplicationConnection" /> for the current user. The 
+            connection can be optionally supplied, but it is overwritten if 
+            the connection information is in the XML.
+            </param>
+        <param name="navigator">
+            The XML containing the person information.
+            </param>
+        <summary>
+            Creates a new instance of the PersonInfo class using
+            the specified XML.
+            </summary>
+        <returns>
+            A new instance of <see cref="T:Microsoft.Health.PersonInfo" /> populated with the
+            person information.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b> or 
+            <paramref name="connection" /> is <b>null</b> and the XML does not 
+            contain the connection information.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFromAlternateId">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.PersonInfo GetFromAlternateId (Microsoft.Health.ApplicationConnection connection, string alternateId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.PersonInfo GetFromAlternateId(class Microsoft.Health.ApplicationConnection connection, string alternateId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PersonInfo.GetFromAlternateId(Microsoft.Health.ApplicationConnection,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="alternateId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connection">The application connection to use.</param>
+        <param name="alternateId">The alternateId to look up.</param>
+        <summary>
+             Look up the person and record that were
+             previously associated with this alternate id.
+             </summary>
+        <returns>
+             A new instance of <see cref="T:Microsoft.Health.PersonInfo" /> containing information
+             about the associated person and record.
+             </returns>
+        <returns>A <see cref="T:Microsoft.Health.PersonInfo" /> with information 
+             about the person and record.</returns>
+        <remarks>
+             To obtain the record info only, use <see cref="M:Microsoft.Health.HealthRecordInfo.GetFromAlternateId(Microsoft.Health.ApplicationConnection,System.String)" />.
+             </remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The connection, alternateId parameters are null.
+             </exception>
+        <exception cref="T:System.ArgumentException">
+             The alternateId parameter is empty, all whitespace, or more than 255 characters in length.
+             </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+             The HealthVault service returned an error. 
+             If the alternate Id is not associated with a person and record id, the ErrorCode property
+             will be set to AlternateIdNotFound.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSelfRecord">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.HealthRecordInfo GetSelfRecord ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Health.HealthRecordInfo GetSelfRecord() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PersonInfo.GetSelfRecord" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthRecordInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets the <see cref="T:Microsoft.Health.HealthRecordInfo" /> for the first health record 
+            that has a relationship of <see cref="F:Microsoft.Health.RelationshipType.Self" /> with the 
+            person.
+            </summary>
+        <returns>
+            The first <see cref="T:Microsoft.Health.HealthRecordInfo" /> having the 
+            <see cref="F:Microsoft.Health.RelationshipType.Self" /> relationship with the person.
+            </returns>
+        <remarks>
+            Since a person may have more than one or no 
+            <see cref="F:Microsoft.Health.RelationshipType.Self" /> records, this method returns an 
+            error if the person does not have a self record, but it returns 
+            the first self record if they have multiple records. There is no 
+            guarantee that the first record will always be the same one.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The person does not have an authorized record with the 
+            <see cref="F:Microsoft.Health.RelationshipType.Self" /> relationship that is in the
+            Active state with the authorization expiration
+            date anytime in the future.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXml">
+      <MemberSignature Language="C#" Value="public string GetXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PersonInfo.GetXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets the XML representation of the <see cref="T:Microsoft.Health.PersonInfo" />.
+            </summary>
+        <returns>
+            A XML string containing the person information.
+            </returns>
+        <remarks>
+            This method can be used to get a serialized version of the 
+            <see cref="T:Microsoft.Health.PersonInfo" />.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.Location Location { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.Location Location" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PersonInfo.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.Location</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the location of the user account.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Marshal">
+      <MemberSignature Language="C#" Value="public void Marshal (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Marshal(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PersonInfo.Marshal(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+            The XMLWriter receiving the XML.
+            </param>
+        <summary>
+            Writes the person information into the specified writer as XML.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PersonInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the person's name.
+            </summary>
+        <value>
+            The person's full name as it was entered into HealthVault.
+            </value>
+        <remarks>
+            The person's full name can  be changed only by going to the 
+            HealthVault Shell.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersonId">
+      <MemberSignature Language="C#" Value="public Guid PersonId { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid PersonId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PersonInfo.PersonId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the HealthVault unique identifier for the person.
+            </summary>
+        <value>
+            A GUID that is assigned to the account when it was created.
+            </value>
+        <remarks />
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredCulture">
+      <MemberSignature Language="C#" Value="public string PreferredCulture { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredCulture" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PersonInfo.PreferredCulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the user's preferred culture.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The preferred culture should be used when formatting date/time, numbers, collating, etc.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredUICulture">
+      <MemberSignature Language="C#" Value="public string PreferredUICulture { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredUICulture" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PersonInfo.PreferredUICulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the user's preferred UI culture.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The preferred UI culture should be used when retrieving text from resources for display
+            to the user.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedRecord">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.HealthRecordInfo SelectedRecord { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.HealthRecordInfo SelectedRecord" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PersonInfo.SelectedRecord" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthRecordInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the record the person has chosen to use as the default 
+            record for the current application.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.HealthRecordInfo" /> representing the record the person has
+            chosen to use as the default record for the current application.
+            </value>
+        <remarks>
+            Note that this property is only applicable to single-record
+            applications (SRAs). <br />
+            A value of <b>null</b> indicates that no record has been selected or that
+            the person does not have sufficient rights to the record to use
+            it with the current application.
+            <br />
+            Setting the selected record through will only change the 
+            selected record for this instance. Other instances of the 
+            <see cref="T:Microsoft.Health.PersonInfo" /> for the same person will have the original 
+            selected record. The user can set their selected record through the 
+            HealthVault Shell.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedRecordChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler SelectedRecordChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SelectedRecordChanged" />
+      <MemberSignature Language="DocId" Value="E:Microsoft.Health.PersonInfo.SelectedRecordChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Occurs when the <see cref="P:Microsoft.Health.PersonInfo.SelectedRecord" /> setter is called.
+            </summary>
+        <remarks>
+            This event is not triggered if another instance of the PersonInfo gets updated or
+            if the value changes in HealthVault.
+            The sender is the PersonInfo instance that was updated.
+            The event args are empty.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetApplicationSettings">
+      <MemberSignature Language="C#" Value="public void SetApplicationSettings (System.Xml.XPath.IXPathNavigable applicationSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetApplicationSettings(class System.Xml.XPath.IXPathNavigable applicationSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PersonInfo.SetApplicationSettings(System.Xml.XPath.IXPathNavigable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="applicationSettings" Type="System.Xml.XPath.IXPathNavigable" />
+      </Parameters>
+      <Docs>
+        <param name="applicationSettings">
+            The application specific settings for this person.
+            </param>
+        <summary>
+            Sets the application settings in the web service for this person.
+            </summary>
+        <remarks>
+            This method makes a network call to the web service.
+            <br /><br />
+            The XML provided by <paramref name="applicationSettings" /> must
+            have the outer node "&lt;app-settings&gt;" or the request will
+            fail.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            An error is returned from the server when making the request.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Unmarshal">
+      <MemberSignature Language="C#" Value="public void Unmarshal (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Unmarshal(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PersonInfo.Unmarshal(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">
+            The reader to get the data for the class instance
+            from.
+            </param>
+        <summary>
+            Populates the data of the class from the XML in
+            the specified reader.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="reader" /> is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

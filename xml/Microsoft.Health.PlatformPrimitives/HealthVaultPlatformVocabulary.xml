@@ -1,0 +1,273 @@
+<Type Name="HealthVaultPlatformVocabulary" FullName="Microsoft.Health.PlatformPrimitives.HealthVaultPlatformVocabulary">
+  <TypeSignature Language="C#" Value="public class HealthVaultPlatformVocabulary" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HealthVaultPlatformVocabulary extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformVocabulary" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Provides low-level access to the HealthVault vocabulary operations.
+            </summary>
+    <remarks>
+      <see cref="T:Microsoft.Health.HealthVaultPlatform" /> uses this class to perform operations. Set 
+            HealthVaultPlatformVocabulary.Current to a derived class to intercept all message calls.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthVaultPlatformVocabulary ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformVocabulary.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableMock">
+      <MemberSignature Language="C#" Value="public static void DisableMock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DisableMock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformVocabulary.DisableMock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Removes mocking of calls to this class.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            There is no mock registered for this class.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableMock">
+      <MemberSignature Language="C#" Value="public static void EnableMock (Microsoft.Health.PlatformPrimitives.HealthVaultPlatformVocabulary mock);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnableMock(class Microsoft.Health.PlatformPrimitives.HealthVaultPlatformVocabulary mock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformVocabulary.EnableMock(Microsoft.Health.PlatformPrimitives.HealthVaultPlatformVocabulary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mock" Type="Microsoft.Health.PlatformPrimitives.HealthVaultPlatformVocabulary" />
+      </Parameters>
+      <Docs>
+        <param name="mock">The mocking class.</param>
+        <summary>
+            Enables mocking of calls to this class.
+            </summary>
+        <remarks>
+            The calling class should pass in a class that derives from this
+            class and overrides the calls to be mocked. 
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            There is already a mock registered for this class.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVocabulary">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.Vocabulary&gt; GetVocabulary (Microsoft.Health.HealthServiceConnection connection, System.Collections.Generic.IList&lt;Microsoft.Health.VocabularyKey&gt; vocabularyKeys, bool cultureIsFixed);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class Microsoft.Health.Vocabulary&gt; GetVocabulary(class Microsoft.Health.HealthServiceConnection connection, class System.Collections.Generic.IList`1&lt;class Microsoft.Health.VocabularyKey&gt; vocabularyKeys, bool cultureIsFixed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformVocabulary.GetVocabulary(Microsoft.Health.HealthServiceConnection,System.Collections.Generic.IList{Microsoft.Health.VocabularyKey},System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.Vocabulary&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.HealthServiceConnection" />
+        <Parameter Name="vocabularyKeys" Type="System.Collections.Generic.IList&lt;Microsoft.Health.VocabularyKey&gt;" />
+        <Parameter Name="cultureIsFixed" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use for this operation. The connection
+            must have application capability. 
+            </param>
+        <param name="vocabularyKeys">
+            A list of keys identifying the requested vocabularies.
+            </param>
+        <param name="cultureIsFixed">
+            HealthVault looks for the vocabulary items for the culture info
+            specified using <see cref="P:Microsoft.Health.HealthServiceConnection.Culture" />.
+            If <paramref name="cultureIsFixed" /> is set to <b>false</b> and if 
+            items are not found for the specified culture, items for the 
+            default fallback culture are returned. If 
+            <paramref name="cultureIsFixed" /> is set to <b>true</b>, 
+            fallback will not occur, and if items are not found for the 
+            specified culture, empty strings are returned.
+            </param>
+        <summary>
+            Retrieves lists of vocabulary items for the specified 
+            vocabularies and culture.
+            </summary>
+        <returns>
+            The specified vocabularies and their items, or empty strings.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="vocabularyKeys" /> list is empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="vocabularyKeys" /> list is <b>null</b> 
+            or contains a <b>null</b> entry.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            There is an error in the server request.
+            <br></br>
+            -Or- 
+            <br></br>
+            One of the requested vocabularies is not found on the server.
+            <br></br>
+            -Or- 
+            <br></br>
+            One of the requested vocabularies does not contain representations 
+            for its items for the specified culture when 
+            <paramref name="cultureIsFixed" /> is <b>true</b>.
+            <br></br>
+            -Or- 
+            <br></br>
+            There is an error loading the vocabulary.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVocabularyKeys">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.VocabularyKey&gt; GetVocabularyKeys (Microsoft.Health.HealthServiceConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class Microsoft.Health.VocabularyKey&gt; GetVocabularyKeys(class Microsoft.Health.HealthServiceConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformVocabulary.GetVocabularyKeys(Microsoft.Health.HealthServiceConnection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.VocabularyKey&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.HealthServiceConnection" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use for this operation. The connection
+            must have application capability. 
+            </param>
+        <summary>
+            Retrieves a collection of key information for identifying and 
+            describing the vocabularies in the system.
+            </summary>
+        <returns>
+            A collection of keys identifying the vocabularies in the system.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SearchVocabulary">
+      <MemberSignature Language="C#" Value="public virtual void SearchVocabulary (Microsoft.Health.HealthServiceConnection connection, Microsoft.Health.VocabularyKey vocabularyKey, string searchValue, Microsoft.Health.VocabularySearchType searchType, Nullable&lt;int&gt; maxResults, out Microsoft.Health.VocabularyItemCollection matchingVocabulary, out System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.VocabularyKey&gt; matchingKeys);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SearchVocabulary(class Microsoft.Health.HealthServiceConnection connection, class Microsoft.Health.VocabularyKey vocabularyKey, string searchValue, valuetype Microsoft.Health.VocabularySearchType searchType, valuetype System.Nullable`1&lt;int32&gt; maxResults, class Microsoft.Health.VocabularyItemCollection matchingVocabulary, class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class Microsoft.Health.VocabularyKey&gt; matchingKeys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformVocabulary.SearchVocabulary(Microsoft.Health.HealthServiceConnection,Microsoft.Health.VocabularyKey,System.String,Microsoft.Health.VocabularySearchType,System.Nullable{System.Int32},Microsoft.Health.VocabularyItemCollection@,System.Collections.ObjectModel.ReadOnlyCollection{Microsoft.Health.VocabularyKey}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.HealthServiceConnection" />
+        <Parameter Name="vocabularyKey" Type="Microsoft.Health.VocabularyKey" />
+        <Parameter Name="searchValue" Type="System.String" />
+        <Parameter Name="searchType" Type="Microsoft.Health.VocabularySearchType" />
+        <Parameter Name="maxResults" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="matchingVocabulary" Type="Microsoft.Health.VocabularyItemCollection&amp;" RefType="out" />
+        <Parameter Name="matchingKeys" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.VocabularyKey&gt;&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use for this operation. The connection
+            must have application capability. 
+            </param>
+        <param name="vocabularyKey">
+            The <see cref="T:Microsoft.Health.VocabularyKey" /> defining the vocabulary to search. If the 
+            family is not specified, the default HealthVault vocabulary family is used. 
+            If the version is not specified, the most current version of the vocabulary 
+            is used.
+            </param>
+        <param name="searchValue">
+            The search string to use.
+            </param>
+        <param name="searchType">
+            The type of search to perform.
+            </param>
+        <param name="maxResults">
+            The maximum number of results to return. If null, all matching results 
+            are returned, up to a maximum number defined by the service config 
+            value with key maxResultsPerVocabularyRetrieval.
+            </param>
+        <param name="matchingVocabulary">
+            A <see cref="T:Microsoft.Health.VocabularyItemCollection" /> populated with entries matching 
+            the search criteria.
+            </param>
+        <param name="matchingKeys">
+            A <b>ReadOnlyCollection</b> of <see cref="T:Microsoft.Health.VocabularyKey" /> with entries
+            matching the search criteria.
+            </param>
+        <summary>
+            Searches a specific vocabulary and retrieves the matching vocabulary items.
+            </summary>
+        <remarks>
+            This method does text search matching of display text and abbreviation text
+            for the culture defined by the <see cref="P:Microsoft.Health.HealthServiceConnection.Culture" />. 
+            The <paramref name="searchValue" /> is a string of characters in the specified 
+            culture. 
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="vocabularyKey" /> is <b>null</b>.
+            <br></br>
+            -Or-
+            <br></br>
+            If <paramref name="searchValue" /> is <b>null</b> or empty or greater 
+            than <b>255</b> characters.
+            <br></br>
+            -Or-
+            <br></br>
+            if <paramref name="searchType" /> is not a known 
+            <see cref="T:Microsoft.Health.VocabularySearchType" /> value.        
+            <br></br>
+            -Or-
+            <br></br>
+            when <paramref name="maxResults" /> is defined but has a value less than 1.        
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            There is an error in the server request.         
+            <br></br>
+            -Or-        
+            <br></br>
+            The requested vocabulary is not found on the server.
+            <br></br>
+            -Or- 
+            The requested search culture is not supported. 
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

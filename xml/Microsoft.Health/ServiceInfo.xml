@@ -1,0 +1,414 @@
+<Type Name="ServiceInfo" FullName="Microsoft.Health.ServiceInfo">
+  <TypeSignature Language="C#" Value="public class ServiceInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ServiceInfo" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Provides information about the HealthVault service to which you are 
+            connected.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ServiceInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ServiceInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Create a new instance of the <see cref="T:Microsoft.Health.ServiceInfo" /> class for testing purposes.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assemblies">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.HealthServiceAssemblyInfo&gt; Assemblies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class Microsoft.Health.HealthServiceAssemblyInfo&gt; Assemblies" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ServiceInfo.Assemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("No longer supported - remove references to this property.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.HealthServiceAssemblyInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the latest information about the assemblies that represent 
+            the HealthVault SDK.
+            </summary>
+        <value>
+            A read-only collection of information about the .NET assemblies
+            that can be used as helpers for accessing the HealthVault service.
+            </value>
+        <remarks>
+            This property is no longer supported and will always return an empty 
+            collection.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigurationValues">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;string,string&gt; ConfigurationValues { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;string, string&gt; ConfigurationValues" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ServiceInfo.ConfigurationValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the public configuration values for the HealthVault service.
+            </summary>
+        <value>
+            The dictionary returned uses the configuration value name as the key. All entries are
+            public configuration values that the HealthVault service exposes as information to 
+            HealthVault applications. Values can be used to throttle health record item queries, etc.
+            </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.ServiceInfo Create (System.Xml.XPath.XPathNavigator serviceInfoXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.ServiceInfo Create(class System.Xml.XPath.XPathNavigator serviceInfoXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ServiceInfo.Create(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ServiceInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceInfoXml" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="serviceInfoXml">
+            The XML representation of the ServiceInfo object.
+            </param>
+        <summary>
+            Creates a ServiceInfo instance out of the service definition XML.
+            </summary>
+        <returns>
+            A ServiceInfo instance based on the specified service definition XML.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.ServiceInfo Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.Health.ServiceInfo Current" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ServiceInfo.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ServiceInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the HealthVault service information.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+          <p>
+            By default, retrieval of <see cref="T:Microsoft.Health.ServiceInfo" /> through this singleton property is thread-safe. It is obtained from the
+            configured default HealthVault web-service instance (<see cref="P:Microsoft.Health.HealthApplicationConfiguration.HealthVaultUrl" />) on the
+            first get, and cached for a configured period of time (<see cref="P:Microsoft.Health.HealthApplicationConfiguration.ServiceInfoDefaultCacheTtl" />).
+            The next get after this cache has expired will result in calling the HealthVault web-service to check for updates to the service
+            information, and retrieving the updated service information when there is an update.
+            </p>
+          <p>
+            If you want to control the retrieval behavior of <see cref="T:Microsoft.Health.ServiceInfo" /> objects through this singleton,
+            use the <see cref="M:Microsoft.Health.ServiceInfo.SetSingletonProvider(Microsoft.Health.IServiceInfoProvider)" /> method to set your own implementation of the provider.
+            </p>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentInstance">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.HealthServiceInstance CurrentInstance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.HealthServiceInstance CurrentInstance" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ServiceInfo.CurrentInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthServiceInstance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a reference to the information for the HealthVault instance
+            that was used to get this ServiceInfo instance.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXml">
+      <MemberSignature Language="C#" Value="public string GetXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ServiceInfo.GetXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets an XML representation of the ServiceInfo object.
+            </summary>
+        <returns>
+            An XML string representing the ServiceInfo object.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HealthServiceShellInfo">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.HealthServiceShellInfo HealthServiceShellInfo { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.HealthServiceShellInfo HealthServiceShellInfo" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ServiceInfo.HealthServiceShellInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthServiceShellInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the latest information about the HealthVault Shell.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HealthServiceUrl">
+      <MemberSignature Language="C#" Value="public Uri HealthServiceUrl { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri HealthServiceUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ServiceInfo.HealthServiceUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the HealthVault URL.
+            </summary>
+        <value>
+            A Uri representing a URL to the HealthVault service.
+            </value>
+        <remarks>
+            This is the URL to the wildcat.ashx which is used to call the
+            HealthVault XML methods.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludedSchemaUrls">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;Uri&gt; IncludedSchemaUrls { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Uri&gt; IncludedSchemaUrls" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ServiceInfo.IncludedSchemaUrls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Uri&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the URLs of the common schemas that are included in the
+            method XSDs.
+            </summary>
+        <value>
+            A read-only collection containing the URLs of the schemas that
+            are included in the <see cref="P:Microsoft.Health.ServiceInfo.Methods" /> request and response
+            schemas.
+            </value>
+        <remarks>
+            Many of the <see cref="P:Microsoft.Health.ServiceInfo.Methods" /> contain types that are common
+            across different method requests and responses. These types are
+            defined in the included schema URLs so that they can be referenced
+            by each of the methods as needed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastUpdated">
+      <MemberSignature Language="C#" Value="public DateTime LastUpdated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastUpdated" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ServiceInfo.LastUpdated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the timestamp of when the service definition was last modified on Platform.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            Because a call to Platform may be handled by any of several servers,
+            all of which refresh at slightly different times, this timestamp will vary
+            among several values across requests.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeaningfulUseInfo">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.HealthServiceMeaningfulUseInfo MeaningfulUseInfo { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.HealthServiceMeaningfulUseInfo MeaningfulUseInfo" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ServiceInfo.MeaningfulUseInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthServiceMeaningfulUseInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets configuration information for Meaningful Use features.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Methods">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.HealthServiceMethodInfo&gt; Methods { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class Microsoft.Health.HealthServiceMethodInfo&gt; Methods" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ServiceInfo.Methods" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.HealthServiceMethodInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets information about the methods that the HealthVault service
+            exposes.
+            </summary>
+        <value>
+            A read-only collection of the HealthVault method definitions.
+            </value>
+        <remarks>
+            A HealthVault method is a named service point provided by the HealthVault
+            service that answers HTTP requests that contain XML adhering to 
+            the HealthVault request schema. The elements of this collection
+            define the method name, and request and response schemas for the 
+            method.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceInstances">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;string,Microsoft.Health.HealthServiceInstance&gt; ServiceInstances { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;string, class Microsoft.Health.HealthServiceInstance&gt; ServiceInstances" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ServiceInfo.ServiceInstances" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,Microsoft.Health.HealthServiceInstance&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the set of available HealthVault instances.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            In order to work seamlessly across the globe, HealthVault
+            is deployed in multiple data centers around the world. Each
+            of these deployments contains a complete instance of all
+            HealthVault services, including both the HealthVault Shell
+            and platform, and stores health record data primarily for
+            users from a particular region or constituent population.
+            Although an instance can never access personal health data
+            stored in another instance, it knows that the other instances
+            exist. When an application or end user needs a user's health
+            record data, they can make a call to any instance to learn
+            of the instance in which that user's data is stored.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSingletonProvider">
+      <MemberSignature Language="C#" Value="public static void SetSingletonProvider (Microsoft.Health.IServiceInfoProvider defaultProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetSingletonProvider(class Microsoft.Health.IServiceInfoProvider defaultProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ServiceInfo.SetSingletonProvider(Microsoft.Health.IServiceInfoProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="defaultProvider" Type="Microsoft.Health.IServiceInfoProvider" />
+      </Parameters>
+      <Docs>
+        <param name="defaultProvider">
+            The service info provider to be used for the <see cref="P:CurrentInfo" /> singleton.
+            </param>
+        <summary>
+            Sets the provider to be used for the <see cref="P:CurrentInfo" /> singleton.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public string Version { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Version" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ServiceInfo.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the version of the HealthVault service.
+            </summary>
+        <value>
+            A string indicating the version of the HealthVault Service.
+            </value>
+        <remarks>
+            This value is generally in the format of a 
+            <see cref="T:System.Version" />, but can be changed by the
+            HealthVault service provider.
+            </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

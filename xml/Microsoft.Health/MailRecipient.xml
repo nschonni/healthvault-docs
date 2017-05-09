@@ -1,0 +1,164 @@
+<Type Name="MailRecipient" FullName="Microsoft.Health.MailRecipient">
+  <TypeSignature Language="C#" Value="public class MailRecipient" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MailRecipient extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.MailRecipient" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Represents an email address that can be used when calling
+            SendInsecureMessageFromApplication.
+            </summary>
+    <remarks>
+            The <see cref="T:Microsoft.Health.MailRecipient" /> class contains the email address and 
+            the display name of the person to whom the mail is being sent. It 
+            provides the methods to get the XML representation that adheres to the 
+            schema for the SendInsecureMessageFromApplication method.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MailRecipient (string emailAddress, string displayName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string emailAddress, string displayName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.MailRecipient.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="emailAddress" Type="System.String" />
+        <Parameter Name="displayName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="emailAddress">
+            The email address of the person who is to receive the email.
+            </param>
+        <param name="displayName">
+            The display name of the person who is to receive the email.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.MailRecipient" /> class 
+            with the specified email address and display name.
+            </summary>
+        <remarks />
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="emailAddress" /> or 
+            <paramref name="displayName" /> parameter is <b>null</b> or empty.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public string DisplayName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.MailRecipient.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the display name of the person to which the email 
+            will be sent.
+            </summary>
+        <value>
+            The display name of the person to which the message will be sent.
+            This gets displayed in the To field of the message.
+            </value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The value is <b>null</b> or empty.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EmailAddress">
+      <MemberSignature Language="C#" Value="public string EmailAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EmailAddress" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.MailRecipient.EmailAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the email address of the person who receives the email.
+            </summary>
+        <value>
+            A string representing the email address who receives the email.
+            </value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The value is <b>null</b> or empty.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.MailRecipient.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets the XML representation of the email recipient as a string.
+            </summary>
+        <returns>
+            A string containing the XML representation of the email recipient.
+            </returns>
+        <remarks>
+            The XML written by this method adheres to the schema for the
+            SendInsecureMessageFromApplication method.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.MailRecipient.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+            The XML writer that receives the XML representation of the email
+            recipient.
+            </param>
+        <summary>
+            Writes the XML representation of the email recipient into the
+            specified XML writer.
+            </summary>
+        <remarks>
+            The XML written by this method adheres to the schema for the
+            SendInsecureMessageFromApplication method.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

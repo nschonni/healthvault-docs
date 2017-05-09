@@ -1,0 +1,201 @@
+<Type Name="TemperatureMeasurement" FullName="Microsoft.HealthVault.ItemTypes.TemperatureMeasurement">
+  <TypeSignature Language="C#" Value="public class TemperatureMeasurement : Microsoft.HealthVault.ItemTypes.Measurement&lt;double&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TemperatureMeasurement extends Microsoft.HealthVault.ItemTypes.Measurement`1&lt;float64&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.ItemTypes.TemperatureMeasurement" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.65.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.HealthVault.ItemTypes.Measurement&lt;System.Double&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="MeasurementType">System.Double</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+             Represents a temperature measurement and display.
+             </summary>
+    <remarks>
+             In HealthVault, temperature measurements have values and display values.
+             All values are stored in a base unit of degrees Celsius (C).
+             An application can take a pace value using any scale the application
+             chooses and can store the user-entered value as the display value,
+             but the temperature value must be converted to degrees Celsius to be stored in
+             HealthVault.
+             </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemperatureMeasurement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.TemperatureMeasurement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.TemperatureMeasurement" />
+             class with empty values.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemperatureMeasurement (double celsius);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 celsius) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.TemperatureMeasurement.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="celsius" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="celsius">
+             The temperature in degrees Celsius.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.TemperatureMeasurement" />
+             class with the specified value in degrees Celsius.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemperatureMeasurement (double celsius, Microsoft.HealthVault.ItemTypes.DisplayValue displayValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 celsius, class Microsoft.HealthVault.ItemTypes.DisplayValue displayValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.TemperatureMeasurement.#ctor(System.Double,Microsoft.HealthVault.ItemTypes.DisplayValue)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="celsius" Type="System.Double" />
+        <Parameter Name="displayValue" Type="Microsoft.HealthVault.ItemTypes.DisplayValue" />
+      </Parameters>
+      <Docs>
+        <param name="celsius">
+             The temperature in degrees Celsius.
+             </param>
+        <param name="displayValue">
+             The display value of the temperature. This should contain the
+             exact temperature as entered by the user even if it uses some
+             other unit of measure besides degrees Celsius. The display value
+             <see cref="P:Microsoft.HealthVault.ItemTypes.DisplayValue.Units" /> and
+             <see cref="P:Microsoft.HealthVault.ItemTypes.DisplayValue.UnitsCode" />
+             represents the unit of measure for the user-entered value.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.TemperatureMeasurement" />
+             class with the specified value in degrees Celsius and optional display value.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertMeasurementValue">
+      <MemberSignature Language="C#" Value="protected override void AssertMeasurementValue (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AssertMeasurementValue(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.TemperatureMeasurement.AssertMeasurementValue(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+             The temperature measurement.
+             </param>
+        <summary>
+             Verifies that the value is a legal temperature value.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+             The <paramref name="value" /> parameter is less than or equal to zero.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValueString">
+      <MemberSignature Language="C#" Value="protected override string GetValueString (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetValueString(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.TemperatureMeasurement.GetValueString(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>
+             Gets a string representation of the temperature in the base units.
+             </summary>
+        <returns>
+             The temperature as a string in the base units.
+             </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseValueXml">
+      <MemberSignature Language="C#" Value="protected override void ParseValueXml (System.Xml.XPath.XPathNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ParseValueXml(class System.Xml.XPath.XPathNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.TemperatureMeasurement.ParseValueXml(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="navigator">
+             The XML node representing the temperature.
+             </param>
+        <summary>
+             Populates the data for the temperature from the XML.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteValueXml">
+      <MemberSignature Language="C#" Value="protected override void WriteValueXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WriteValueXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.TemperatureMeasurement.WriteValueXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+             The XmlWriter to write the temperature to.
+             </param>
+        <summary>
+             Writes the temperature to the specified XML writer.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,246 @@
+<Type Name="HealthVaultPlatformMessage" FullName="Microsoft.Health.PlatformPrimitives.HealthVaultPlatformMessage">
+  <TypeSignature Language="C#" Value="public class HealthVaultPlatformMessage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HealthVaultPlatformMessage extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformMessage" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Provides low-level access to the HealthVault message operations.
+            </summary>
+    <remarks>
+      <see cref="T:Microsoft.Health.HealthVaultPlatform" /> uses this class to perform operations. Set 
+            HealthVaultPlatformMessage.Current to a derived class to intercept all message calls.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthVaultPlatformMessage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformMessage.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableMock">
+      <MemberSignature Language="C#" Value="public static void DisableMock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DisableMock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformMessage.DisableMock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Removes mocking of calls to this class.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            There is no mock registered for this class.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableMock">
+      <MemberSignature Language="C#" Value="public static void EnableMock (Microsoft.Health.PlatformPrimitives.HealthVaultPlatformMessage mock);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnableMock(class Microsoft.Health.PlatformPrimitives.HealthVaultPlatformMessage mock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformMessage.EnableMock(Microsoft.Health.PlatformPrimitives.HealthVaultPlatformMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mock" Type="Microsoft.Health.PlatformPrimitives.HealthVaultPlatformMessage" />
+      </Parameters>
+      <Docs>
+        <param name="mock">The mocking class.</param>
+        <summary>
+            Enables mocking of calls to this class.
+            </summary>
+        <remarks>
+            The calling class should pass in a class that derives from this
+            class and overrides the calls to be mocked. 
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            There is already a mock registered for this class.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendInsecureMessage">
+      <MemberSignature Language="C#" Value="public virtual void SendInsecureMessage (Microsoft.Health.HealthServiceConnection connection, System.Collections.Generic.IList&lt;Microsoft.Health.MailRecipient&gt; mailRecipient, System.Collections.Generic.IList&lt;Guid&gt; personIds, Nullable&lt;Guid&gt; recordId, bool addressMustBeValidated, string subject, string textBody, string htmlBody);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SendInsecureMessage(class Microsoft.Health.HealthServiceConnection connection, class System.Collections.Generic.IList`1&lt;class Microsoft.Health.MailRecipient&gt; mailRecipient, class System.Collections.Generic.IList`1&lt;valuetype System.Guid&gt; personIds, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; recordId, bool addressMustBeValidated, string subject, string textBody, string htmlBody) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformMessage.SendInsecureMessage(Microsoft.Health.HealthServiceConnection,System.Collections.Generic.IList{Microsoft.Health.MailRecipient},System.Collections.Generic.IList{System.Guid},System.Nullable{System.Guid},System.Boolean,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.HealthServiceConnection" />
+        <Parameter Name="mailRecipient" Type="System.Collections.Generic.IList&lt;Microsoft.Health.MailRecipient&gt;" />
+        <Parameter Name="personIds" Type="System.Collections.Generic.IList&lt;System.Guid&gt;" />
+        <Parameter Name="recordId" Type="System.Nullable&lt;System.Guid&gt;" />
+        <Parameter Name="addressMustBeValidated" Type="System.Boolean" />
+        <Parameter Name="subject" Type="System.String" />
+        <Parameter Name="textBody" Type="System.String" />
+        <Parameter Name="htmlBody" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use for this operation. The connection must
+            have application capabilities.
+            </param>
+        <param name="mailRecipient">
+            The addresses and display names of the people to send the 
+            message to.
+            </param>
+        <param name="personIds">
+            The unique identifiers of the people to which the message should be
+            sent.
+            </param>
+        <param name="recordId">
+            The unique identifier of the health record for which the 
+            custodians should be sent the message.
+            </param>
+        <param name="addressMustBeValidated">
+          <b>true</b> if HealthVault ensures that the person has validated 
+            their message address before sending the mail; <b>false</b> if the 
+            message will be sent even if the person's address has not been 
+            validated.
+            </param>
+        <param name="subject">
+            The subject of the message.
+            </param>
+        <param name="textBody">
+            The text body of the message.
+            </param>
+        <param name="htmlBody">
+            The HTML body of the message.
+            </param>
+        <summary>
+            Sends an insecure message to the specified message recipients.
+            </summary>
+        <remarks>
+            If both the <paramref name="textBody" /> and 
+            <paramref name="htmlBody" /> of the message is specified then a
+            multi-part message will be sent so that the html body will be used
+            and fallback to text if not supported by the client.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="mailRecipient" /> property is <b>null</b> or empty, 
+            or the <paramref name="subject" /> parameter is <b>null</b> or empty, or 
+            the <paramref name="textBody" /> and <paramref name="htmlBody" /> 
+            parameters are both <b>null</b> or empty.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The server returned a failure when making the request.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendInsecureMessageFromApplication">
+      <MemberSignature Language="C#" Value="public virtual void SendInsecureMessageFromApplication (Microsoft.Health.HealthServiceConnection connection, System.Collections.Generic.IList&lt;Microsoft.Health.MailRecipient&gt; mailRecipient, System.Collections.Generic.IList&lt;Guid&gt; personIds, Nullable&lt;Guid&gt; recordId, bool addressMustBeValidated, string senderMailboxName, string senderDisplayName, string subject, string textBody, string htmlBody);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SendInsecureMessageFromApplication(class Microsoft.Health.HealthServiceConnection connection, class System.Collections.Generic.IList`1&lt;class Microsoft.Health.MailRecipient&gt; mailRecipient, class System.Collections.Generic.IList`1&lt;valuetype System.Guid&gt; personIds, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; recordId, bool addressMustBeValidated, string senderMailboxName, string senderDisplayName, string subject, string textBody, string htmlBody) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformMessage.SendInsecureMessageFromApplication(Microsoft.Health.HealthServiceConnection,System.Collections.Generic.IList{Microsoft.Health.MailRecipient},System.Collections.Generic.IList{System.Guid},System.Nullable{System.Guid},System.Boolean,System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.HealthServiceConnection" />
+        <Parameter Name="mailRecipient" Type="System.Collections.Generic.IList&lt;Microsoft.Health.MailRecipient&gt;" />
+        <Parameter Name="personIds" Type="System.Collections.Generic.IList&lt;System.Guid&gt;" />
+        <Parameter Name="recordId" Type="System.Nullable&lt;System.Guid&gt;" />
+        <Parameter Name="addressMustBeValidated" Type="System.Boolean" />
+        <Parameter Name="senderMailboxName" Type="System.String" />
+        <Parameter Name="senderDisplayName" Type="System.String" />
+        <Parameter Name="subject" Type="System.String" />
+        <Parameter Name="textBody" Type="System.String" />
+        <Parameter Name="htmlBody" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use for this operation. The connection must
+            have application capabilities.
+            </param>
+        <param name="mailRecipient">
+            The addresses and display names of the people to send the 
+            message to.
+            </param>
+        <param name="personIds">
+            The unique identifiers of the people to which the message should be
+            sent.
+            </param>
+        <param name="recordId">
+            The unique identifier of the health record for which the 
+            custodians should be sent the message.
+            </param>
+        <param name="addressMustBeValidated">
+          <b>true</b> if HealthVault ensures that the person has validated 
+            their message address before sending the mail; <b>false</b> if the 
+            message will be sent even if the person's address has not been 
+            validated.
+            </param>
+        <param name="senderMailboxName">
+            An application specified mailbox name that's sending the message.
+            The mailbox name is appended to the application's domain name to 
+            form the From email address of the message. This parameter should
+            only contain the characters before the @ symbol of the email 
+            address.
+            </param>
+        <param name="senderDisplayName">
+            The message sender's display name.
+            </param>
+        <param name="subject">
+            The subject of the message.
+            </param>
+        <param name="textBody">
+            The text body of the message.
+            </param>
+        <param name="htmlBody">
+            The HTML body of the message.
+            </param>
+        <summary>
+            Sends an insecure message to the specified message recipients.
+            </summary>
+        <remarks>
+            If both the <paramref name="textBody" /> and 
+            <paramref name="htmlBody" /> of the message is specified then a
+            multi-part message will be sent so that the html body will be used
+            and fallback to text if not supported by the client.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="mailRecipient" /> property is <b>null</b> or empty, 
+            or the <paramref name="subject" /> parameter is <b>null</b> or empty, or 
+            the <paramref name="textBody" /> and <paramref name="htmlBody" /> 
+            parameters are both <b>null</b> or empty.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The server returned a failure when making the request.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

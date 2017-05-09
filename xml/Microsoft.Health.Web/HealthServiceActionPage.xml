@@ -1,0 +1,876 @@
+<Type Name="HealthServiceActionPage" FullName="Microsoft.Health.Web.HealthServiceActionPage">
+  <TypeSignature Language="C#" Value="public class HealthServiceActionPage : Microsoft.Health.Web.HealthServicePage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HealthServiceActionPage extends Microsoft.Health.Web.HealthServicePage" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.Web.HealthServiceActionPage" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.Web</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.Web.HealthServicePage</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary> 
+            A redirector page to be used as the "action" page for Microsoft
+            HealthVault applications.
+            </summary>
+    <remarks>
+            All HealthVault applications are required to expose a set
+            of URLs for information and functionality that they expose.
+            For instance, all applications must expose a Service Agreement, 
+            privacy statement, a home page, help, etc.<br /><br />
+            This page acts as a simple redirector for these action pages such 
+            that the application can easily configure these action pages through
+            their web.config file.<br /><br />
+            To use this page, create an action.aspx file at the URL that was 
+            specified for the "action URL" when your application was registered.
+            That action.aspx file should point to this class for it's 
+            implementation. In your web.config file, add entries for each of the
+            action URLs that your application supports using WCPage_Action as the
+            prefix for the key. For example, for the Service Agreement action URL 
+            create a setting in the web.config with key 
+            WCPage_ActionServiceAgreement and value containing the URL to your 
+            application Service Agreement.<br /><br />
+            The page should also contain some text stating that the application
+            doesn't support the particular action in case the redirect doesn't
+            occur. The action that is being requested can be found in the
+            <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.Action" /> property and the action query string can be found 
+            the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" /> property.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthServiceActionPage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public string Action { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Action" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthServiceActionPage.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the action that was specified in the query string.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The currently supported actions are:
+            <ul><li>Home</li><li>ServiceAgreement</li><li>Help</li><li>AppAuthSuccess</li><li>AppAuthFailure</li><li>AppAuthReject</li><li>AppAuthInvalidRecord</li><li>CreateRecordFailure</li><li>CreateRecordCanceled</li><li>ReconcileComplete</li><li>ReconcileFailure</li><li>ReconcileCanceled</li><li>SelectedRecordChanged</li><li>SignOut</li><li>ShareRecordSuccess</li><li>ShareRecordFailed</li><li>Privacy</li></ul></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionQueryString">
+      <MemberSignature Language="C#" Value="public string ActionQueryString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ActionQueryString" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the "actionqs" query string parameter that was specified on the request.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTargetLocation">
+      <MemberSignature Language="C#" Value="protected virtual string GetTargetLocation (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetTargetLocation(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            The action identifier used to tell the application which
+            action page should be shown.
+            </param>
+        <param name="actionQueryString">
+            The query string parameters that should be passed to the
+            target action URL.
+            </param>
+        <summary>
+            Gets the URL of the location and the query string for the
+            specified action.
+            </summary>
+        <returns>
+            The full URL including query string of the action page to
+            redirect to.
+            </returns>
+        <remarks>
+            The default implementation reads the action URL from the
+            web.config file using the key "WCPage_Action" + 
+            <paramref name="action" />.<br /><br />
+            The currently supported actions are:
+            <ul><li>Home</li><li>ServiceAgreement</li><li>Help</li><li>AppAuthSuccess</li><li>AppAuthFailure</li><li>AppAuthReject</li><li>AppAuthInvalidRecord</li><li>CreateRecordFailure</li><li>CreateRecordCanceled</li><li>ReconcileComplete</li><li>ReconcileFailure</li><li>ReconcileCanceled</li><li>SelectedRecordChanged</li><li>SignOut</li><li>ShareRecordSuccess</li><li>ShareRecordFailed</li><li>Privacy</li></ul></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogOnRequired">
+      <MemberSignature Language="C#" Value="protected override bool LogOnRequired { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LogOnRequired" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthServiceActionPage.LogOnRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The action page does not require log on.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionApplicationAuthorizationFailed">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionApplicationAuthorizationFailed (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionApplicationAuthorizationFailed(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionApplicationAuthorizationFailed(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            Should always be "APPAUTHFAILURE".
+            </param>
+        <param name="actionQueryString">
+            The value of the "actionqs" query string parameter.
+            </param>
+        <summary>
+            Redirects to the application's authorization page using the 
+            WCPage_ActionAppAuthFailure configuration value in the web.config.
+            </summary>
+        <remarks>
+            The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+            redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+            To change this behavior the 
+            application can override this method and provide a different implementation.
+            <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+            if needed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionApplicationAuthorizationInvalidRecord">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionApplicationAuthorizationInvalidRecord (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionApplicationAuthorizationInvalidRecord(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionApplicationAuthorizationInvalidRecord(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            Should always be "APPAUTHINVALIDRECORD".
+            </param>
+        <param name="actionQueryString">
+            The value of the "actionqs" query string parameter.
+            </param>
+        <summary>
+            Redirects to the application's authorization page using the 
+            WCPage_ActionAppAuthInvalidRecord configuration value in the web.config.
+            </summary>
+        <remarks>
+            The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+            redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+            To change this behavior the 
+            application can override this method and provide a different implementation.
+            <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+            if needed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionApplicationAuthorizationRejected">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionApplicationAuthorizationRejected (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionApplicationAuthorizationRejected(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionApplicationAuthorizationRejected(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            Should always be "APPAUTHREJECT".
+            </param>
+        <param name="actionQueryString">
+            The value of the "actionqs" query string parameter.
+            </param>
+        <summary>
+            Redirects to the application's authorization page using the 
+            WCPage_ActionAppAuthReject configuration value in the web.config.
+            </summary>
+        <remarks>
+            The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+            redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+            To change this behavior the 
+            application can override this method and provide a different implementation.
+            <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+            if needed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionApplicationAuthorizationSuccessful">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionApplicationAuthorizationSuccessful (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionApplicationAuthorizationSuccessful(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionApplicationAuthorizationSuccessful(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            Should always be "APPAUTHSUCCESS".
+            </param>
+        <param name="actionQueryString">
+            The value of the "actionqs" query string parameter.
+            </param>
+        <summary>
+            Redirects to the application's authorization page using the 
+            WCPage_ActionAppAuthSuccess configuration value in the web.config.
+            </summary>
+        <remarks>
+            The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+            redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+            To change this behavior the 
+            application can override this method and provide a different implementation.
+            <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+            if needed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionCreateRecordCanceled">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionCreateRecordCanceled (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionCreateRecordCanceled(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionCreateRecordCanceled(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            Should always be "CREATERECORDCANCELED".
+            </param>
+        <param name="actionQueryString">
+            The value of the "actionqs" query string parameter.
+            </param>
+        <summary>
+            Redirects to the application's record management page using the 
+            WCPage_ActionCreateRecordCanceled configuration value in the web.config.
+            </summary>
+        <remarks>
+            The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+            redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+            To change this behavior the 
+            application can override this method and provide a different implementation.
+            <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+            if needed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionCreateRecordFailure">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionCreateRecordFailure (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionCreateRecordFailure(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionCreateRecordFailure(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            Should always be "CREATERECORDFAILURE".
+            </param>
+        <param name="actionQueryString">
+            The value of the "actionqs" query string parameter.
+            </param>
+        <summary>
+            Redirects to the application's record management page using the 
+            WCPage_ActionCreateRecordFailure configuration value in the web.config.
+            </summary>
+        <remarks>
+            The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+            redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+            To change this behavior the 
+            application can override this method and provide a different implementation.
+            <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+            if needed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionHelp">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionHelp (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionHelp(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionHelp(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            Should always be "HELP".
+            </param>
+        <param name="actionQueryString">
+            The value of the "actionqs" query string parameter.
+            </param>
+        <summary>
+            Redirects to the application's help page using the 
+            WCPage_ActionHelp configuration value in the web.config.
+            </summary>
+        <remarks>
+            The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+            redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+            To change this behavior the 
+            application can override this method and provide a different implementation.
+            <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+            if needed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionHome">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionHome (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionHome(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionHome(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            Should always be "HOME".
+            </param>
+        <param name="actionQueryString">
+            The value of the "actionqs" query string parameter.
+            </param>
+        <summary>
+            Redirects to the application's home page using the WCPage_ActionHome configuration
+            value in the web.config.
+            </summary>
+        <remarks>
+            The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+            redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+            To change this behavior the 
+            application can override this method and provide a different implementation.
+            <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+            if needed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionPrivacy">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionPrivacy (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionPrivacy(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionPrivacy(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            Should always be "PRIVACY".
+            </param>
+        <param name="actionQueryString">
+            The value of the "actionqs" query string parameter.
+            </param>
+        <summary>
+            Redirects to the application's privacy page using the 
+            WCPage_ActionPrivacy configuration value in the web.config.
+            </summary>
+        <remarks>
+            The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+            redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+            To change this behavior the 
+            application can override this method and provide a different implementation.
+            <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+            if needed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionReconcileCanceled">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionReconcileCanceled (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionReconcileCanceled(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionReconcileCanceled(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+             Should always be "RECONCILECANCELED".
+             </param>
+        <param name="actionQueryString">
+             The value of the "actionqs" query string parameter.
+             </param>
+        <summary>
+             Redirects to the application's clinical document page using the 
+             WCPage_ActionReconcileCanceled configuration value in the web.config.
+             </summary>
+        <remarks>
+             The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+             redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+             To change this behavior the 
+             application can override this method and provide a different implementation.
+             <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+             if needed.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionReconcileComplete">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionReconcileComplete (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionReconcileComplete(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionReconcileComplete(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+             Should always be "RECONCILECOMPLETE".
+             </param>
+        <param name="actionQueryString">
+             The value of the "actionqs" query string parameter.
+             </param>
+        <summary>
+             Redirects to the application's clinical document page using the 
+             WCPage_ActionReconcileSuccess configuration value in the web.config.
+             </summary>
+        <remarks>
+             The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+             redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+             To change this behavior the 
+             application can override this method and provide a different implementation.
+             <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+             if needed.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionReconcileFailure">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionReconcileFailure (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionReconcileFailure(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionReconcileFailure(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+             Should always be "RECONCILEFAILURE".
+             </param>
+        <param name="actionQueryString">
+             The value of the "actionqs" query string parameter.
+             </param>
+        <summary>
+             Redirects to the application's clinical document page using the 
+             WCPage_ActionReconcileFailure configuration value in the web.config.
+             </summary>
+        <remarks>
+             The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+             redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+             To change this behavior the 
+             application can override this method and provide a different implementation.
+             <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+             if needed.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionReconcileSuccess">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionReconcileSuccess (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionReconcileSuccess(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionReconcileSuccess(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">To be added.</param>
+        <param name="actionQueryString">To be added.</param>
+        <summary>
+             Redirects to the application's clinical document page using the 
+             WCPage_ActionReconcileSuccess configuration value in the web.config.
+             </summary>
+        <remarks>
+             Deprecated.  This handler is no longer used.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionSelectedRecordChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionSelectedRecordChanged (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionSelectedRecordChanged(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionSelectedRecordChanged(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            Should always be "SELECTEDRECORDCHANGED".
+            </param>
+        <param name="actionQueryString">
+            The value of the "actionqs" query string parameter.
+            </param>
+        <summary>
+            Redirects to the application's record management page using the 
+            WCPage_ActionSelectedRecordChanged configuration value in the web.config.
+            </summary>
+        <remarks>
+            The default implementation of this method refreshes the user's cookie by calling
+            <see cref="M:Microsoft.Health.Web.HealthServicePage.RefreshAndPersist" /> and then calls 
+            <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to redirect to the URL defined by the web.config file 
+            or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />. To change this behavior the 
+            application can override this method and provide a different implementation.
+            <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+            if needed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionServiceAgreement">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionServiceAgreement (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionServiceAgreement(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionServiceAgreement(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            Should always be "SERVICEAGREEMENT".
+            </param>
+        <param name="actionQueryString">
+            The value of the "actionqs" query string parameter.
+            </param>
+        <summary>
+            Redirects to the application's service agreement page using the 
+            WCPage_ActionServiceAgreement configuration value in the web.config.
+            </summary>
+        <remarks>
+            The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+            redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+            To change this behavior the 
+            application can override this method and provide a different implementation.
+            <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+            if needed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionShareRecordFailed">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionShareRecordFailed (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionShareRecordFailed(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionShareRecordFailed(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            Should always be "SHARERECORDFAILED".
+            </param>
+        <param name="actionQueryString">
+            The value of the "actionqs" query string parameter.
+            </param>
+        <summary>
+            Redirects to the application's record management page using the 
+            WCPage_ActionShareRecordFailed configuration value in the web.config.
+            </summary>
+        <remarks>
+            The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+            redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+            To change this behavior the 
+            application can override this method and provide a different implementation.
+            <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+            if needed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionShareRecordSucceeded">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionShareRecordSucceeded (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionShareRecordSucceeded(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionShareRecordSucceeded(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            Should always be "SHARERECORDSUCCESS".
+            </param>
+        <param name="actionQueryString">
+            The value of the "actionqs" query string parameter.
+            </param>
+        <summary>
+            Redirects to the application's record management page using the 
+            WCPage_ActionShareRecordSuccess configuration value in the web.config.
+            </summary>
+        <remarks>
+            The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+            redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+            To change this behavior the 
+            application can override this method and provide a different implementation.
+            <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+            if needed.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionSignOut">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionSignOut (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionSignOut(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionSignOut(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+             Should always be "SIGNOUT".
+             </param>
+        <param name="actionQueryString">
+             The value of the "actionqs" query string parameter.
+             </param>
+        <summary>
+             Redirects to the application's signout page using the 
+             WCPage_ActionSignOut configuration value in the web.config.
+             </summary>
+        <remarks>
+             The default implementation of this method calls <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" /> to 
+             redirect to the URL defined by the web.config file or the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />.
+             To change this behavior the 
+             application can override this method and provide a different implementation.
+             <see cref="M:Microsoft.Health.Web.HealthServiceActionPage.GetTargetLocation(System.String,System.String)" /> can be called to get the URL from the web.config file
+             if needed.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActionUnknown">
+      <MemberSignature Language="C#" Value="protected virtual void OnActionUnknown (string action, string actionQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActionUnknown(string action, string actionQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.OnActionUnknown(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="actionQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            The action that is being redirected to.
+            </param>
+        <param name="actionQueryString">
+            The action query string parameters to pass on to the action page.
+            </param>
+        <summary>
+            Redirects to the specified action page if specified in the web.config file.
+            </summary>
+        <remarks>
+            If the target action specified to the action page is not one of the recognized actions
+            it can still be handled by the application by specifying a URL to redirect to in the
+            web.config file. If the web.config file doesn't have a redirect URL for the action and
+            the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" /> contains only a URL, the user's browser will be 
+            directed to that URL instead. The key should be WCPage_Action with the action name 
+            appended. For example, WCPage_ActionAppAuthSuccess can be used to specify a URL for 
+            the AppAuthSuccess action.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Page_Load">
+      <MemberSignature Language="C#" Value="protected void Page_Load (object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void Page_Load(object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthServiceActionPage.Page_Load(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">
+            The sender of the message.
+            </param>
+        <param name="e">
+            The arguments of the message.
+            </param>
+        <summary>
+            Reads the target from the query string calls the appropriate virtual method to 
+            perform the action.
+            </summary>
+        <remarks>
+            In most cases the action performed is to redirect the user's browser to a URL defined
+            by the web.config file or if that isn't defined and the <see cref="P:Microsoft.Health.Web.HealthServiceActionPage.ActionQueryString" />
+            is a URL to that URL instead.
+            </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

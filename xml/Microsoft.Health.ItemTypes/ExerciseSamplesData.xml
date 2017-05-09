@@ -1,0 +1,175 @@
+<Type Name="ExerciseSamplesData" FullName="Microsoft.Health.ItemTypes.ExerciseSamplesData">
+  <TypeSignature Language="C#" Value="public class ExerciseSamplesData : Microsoft.Health.ItemTypes.Csv.OtherItemDataCsv" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExerciseSamplesData extends Microsoft.Health.ItemTypes.Csv.OtherItemDataCsv" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.ExerciseSamplesData" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.ItemTypes.Csv.OtherItemDataCsv</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            The ExerciseSamplesData class is used to store and retrieve samples data for the 
+            <see cref="T:Microsoft.Health.ItemTypes.ExerciseSamples" /> class. It handles converting from a sample data format to the
+            comma-separated format.
+            </summary>
+    <remarks>
+            Data is represented as either an array of samples with a single value (such as heart rate), or an array
+            of samples with two values (such as a GPS position). The <see cref="P:Microsoft.Health.ItemTypes.ExerciseSamplesData.SingleValuedSamples" /> or <see cref="P:Microsoft.Health.ItemTypes.ExerciseSamplesData.TwoValuedSamples" /> properties
+            should be used as appropriate based on the stored data type. 
+            
+            The underlying format allows the sampling interval to be changed in the middle of a sample set. This class
+            will detect sampling intervals that have changed, and insert appropriate escape values into the resulting data.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExerciseSamplesData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ExerciseSamplesData.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ExerciseSamplesData" /> class. 
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExerciseSamplesData (string data, string contentEncoding, string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string data, string contentEncoding, string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ExerciseSamplesData.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="data" Type="System.String" />
+        <Parameter Name="contentEncoding" Type="System.String" />
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="data">
+            The data to store in the other data section of the health record
+            item.
+            </param>
+        <param name="contentEncoding">
+            The type of encoding that was done on the data. Usually this will
+            be "base64" but other encodings are acceptable.
+            </param>
+        <param name="contentType">
+            The MIME-content type of the data.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ExerciseSamplesData" /> class 
+            with the specified data, encoding, and content type.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SamplingInterval">
+      <MemberSignature Language="C#" Value="public double SamplingInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SamplingInterval" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExerciseSamplesData.SamplingInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the initial sampling interval for the set of samples. 
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The sampling interval may change between two samples.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            If the sampling interval is less than or equal to zero.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SingleValuedSamples">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.ExerciseSampleOneValue&gt; SingleValuedSamples { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class Microsoft.Health.ItemTypes.ExerciseSampleOneValue&gt; SingleValuedSamples" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExerciseSamplesData.SingleValuedSamples" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.ExerciseSampleOneValue&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the sample data as a collection of single values.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The majority of sample types contain only a single value per sample. This property
+            is used to access samples for those sample types. 
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TwoValuedSamples">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.ExerciseSampleTwoValue&gt; TwoValuedSamples { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class Microsoft.Health.ItemTypes.ExerciseSampleTwoValue&gt; TwoValuedSamples" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExerciseSamplesData.TwoValuedSamples" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.ExerciseSampleTwoValue&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the sample data as a collection of two-valued samples.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            Some samples types (such as GPS location) consist not of a single value but of two separate values
+            This property is used to access samples for those sample types. 
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ExerciseSamplesData.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+            The XmlWriter to write the height data to.
+            </param>
+        <summary>
+            Writes the exercise samples to the specified XmlWriter.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            If both the <see cref="P:Microsoft.Health.ItemTypes.ExerciseSamplesData.SingleValuedSamples" /> and <see cref="P:Microsoft.Health.ItemTypes.ExerciseSamplesData.TwoValuedSamples" /> properties have data in them
+            or
+            if neither the <see cref="P:Microsoft.Health.ItemTypes.ExerciseSamplesData.SingleValuedSamples" /> nor <see cref="P:Microsoft.Health.ItemTypes.ExerciseSamplesData.TwoValuedSamples" /> properties have data in them.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

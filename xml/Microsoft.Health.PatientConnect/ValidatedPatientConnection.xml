@@ -1,0 +1,146 @@
+<Type Name="ValidatedPatientConnection" FullName="Microsoft.Health.PatientConnect.ValidatedPatientConnection">
+  <TypeSignature Language="C#" Value="public class ValidatedPatientConnection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ValidatedPatientConnection extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.PatientConnect.ValidatedPatientConnection" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Information about a validated patient connection.
+            </summary>
+    <remarks>
+            Some HealthVault applications maintain some of their own data storage but need a way to
+            link their account/person identifier to a HealthVault identifier. The application can do
+            this by calling <see cref="M:Microsoft.Health.PatientConnect.PatientConnection.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.Uri,System.String)" /> and passing the application's 
+            identifier and some information that is specific to the user. The user can then go to 
+            HealthVault Shell and validate the connection with their appropriate health record. The
+            application can then query for all validated connections (usually on a daily basis) by
+            calling <see cref="M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)" />
+            or <see cref="M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection,System.DateTime)" /> 
+            which returns instances of <see cref="T:Microsoft.Health.PatientConnect.ValidatedPatientConnection" />.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ValidatedPatientConnection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PatientConnect.ValidatedPatientConnection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Constructs a <see cref="T:Microsoft.Health.PatientConnect.ValidatedPatientConnection" /> with default values.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationId">
+      <MemberSignature Language="C#" Value="public Guid ApplicationId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ApplicationId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PatientConnect.ValidatedPatientConnection.ApplicationId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the application identifier for which the patient validated their connection.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationPatientId">
+      <MemberSignature Language="C#" Value="public string ApplicationPatientId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationPatientId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PatientConnect.ValidatedPatientConnection.ApplicationPatientId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the application specific identifier that the application uses to connect the
+            application data with the person's HealthVault record.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This identifier was provided by the application when the original connection request
+            was made.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationSpecificRecordId">
+      <MemberSignature Language="C#" Value="public string ApplicationSpecificRecordId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationSpecificRecordId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PatientConnect.ValidatedPatientConnection.ApplicationSpecificRecordId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the Application specific record id. 
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersonId">
+      <MemberSignature Language="C#" Value="public Guid PersonId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid PersonId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PatientConnect.ValidatedPatientConnection.PersonId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the person identifier for the patient that has validated their connection.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecordId">
+      <MemberSignature Language="C#" Value="public Guid RecordId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid RecordId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.PatientConnect.ValidatedPatientConnection.RecordId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the record identifier that the patient chose when validating their connection.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

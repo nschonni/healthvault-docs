@@ -1,0 +1,414 @@
+<Type Name="File" FullName="Microsoft.HealthVault.ItemTypes.File">
+  <TypeSignature Language="C#" Value="public class File : Microsoft.HealthVault.Thing.ThingBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit File extends Microsoft.HealthVault.Thing.ThingBase" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.ItemTypes.File" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.65.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.HealthVault.Thing.ThingBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+             Represents information about a file.
+             </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public File ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.File.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.File" /> class with default
+             values.
+             </summary>
+        <remarks>
+             The item is not added to the health record until the <see cref="M:Microsoft.HealthVault.Clients.IThingClient.CreateNewThingsAsync``1(System.Guid,System.Collections.Generic.ICollection{``0})" /> method is called.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public File (string name, long size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, int64 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.File.#ctor(System.String,System.Int64)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="size" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="name">
+             The name of the file.
+             </param>
+        <param name="size">
+             The file size in bytes.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.File" /> class with the
+             specified name and size.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="name" /> parameter is <b>null</b> or empty.
+             </exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+             The <paramref name="size" /> parameter is negative or zero.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Content">
+      <MemberSignature Language="C#" Value="public byte[] Content { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Content" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.File.Content" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the content of the file item.
+             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream ContentStream { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream ContentStream" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.File.ContentStream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets a stream to read the file contents.
+             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.ItemTypes.CodableValue ContentType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.ItemTypes.CodableValue ContentType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.File.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the type of content contained in the file.
+             </summary>
+        <value>
+             A <see cref="T:Microsoft.HealthVault.ItemTypes.CodableValue" /> representing the file content type.
+             </value>
+        <remarks>
+             Set the value to <b>null</b> if the content type should not be stored.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromFilePath">
+      <MemberSignature Language="C#" Value="public static Microsoft.HealthVault.ItemTypes.File CreateFromFilePath (string path, Microsoft.HealthVault.ItemTypes.CodableValue contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.HealthVault.ItemTypes.File CreateFromFilePath(string path, class Microsoft.HealthVault.ItemTypes.CodableValue contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.File.CreateFromFilePath(System.String,Microsoft.HealthVault.ItemTypes.CodableValue)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.ItemTypes.File</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="contentType" Type="Microsoft.HealthVault.ItemTypes.CodableValue" />
+      </Parameters>
+      <Docs>
+        <param name="path">
+             The path of the file to associate with this <see cref="T:Microsoft.HealthVault.ItemTypes.File" /> instance.
+             </param>
+        <param name="contentType">
+             The content type of the file. This is usually something like "image/jpg", "application/csv",
+             or other mime type.
+             </param>
+        <summary>
+             Creates a <see cref="T:Microsoft.HealthVault.ItemTypes.File" /> item instance using the specified file path and content
+             type.
+             </summary>
+        <returns>
+             A new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.File" /> thing with data populated from the
+             specified file path.
+             </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="path" /> is <b>null</b> or empty.
+             </exception>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="contentType" /> is <b>null</b>.
+             </exception>
+        <exception cref="T:System.IO.PathTooLongException">
+             The specified path, file name, or both exceed the system-defined maximum length.
+             For example, on Windows-based platforms, paths must be less than 248 characters,
+             and file names must be less than 260 characters.
+             </exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+             The specified path is invalid (for example, it is on an unmapped drive).
+             </exception>
+        <exception cref="T:System.IO.IOException">
+             An I/O error occurred while opening the file.
+             </exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="path" /> specified a file that is read-only.
+             -or-
+             This operation is not supported on the current platform.
+             -or-
+             path specified a directory.
+             -or-
+             The caller does not have the required permission.
+             </exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+             The file specified in <paramref name="path" /> was not found.
+             </exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" /> is in an invalid format.
+             </exception>
+        <exception cref="T:System.Security.SecurityException">
+             The caller does not have the required permission.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.File.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the name of the file including the extension if
+             available.
+             </summary>
+        <value>
+             A string representing the file name.
+             </value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="value" /> parameter is <b>null</b> or empty on set.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="protected override void ParseXml (System.Xml.XPath.IXPathNavigable typeSpecificXml);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ParseXml(class System.Xml.XPath.IXPathNavigable typeSpecificXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.File.ParseXml(System.Xml.XPath.IXPathNavigable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
+      </Parameters>
+      <Docs>
+        <param name="typeSpecificXml">
+             The XML to get the file data from.
+             </param>
+        <summary>
+             Populates this <see cref="T:Microsoft.HealthVault.ItemTypes.File" /> instance from the data in the XML.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+             The first node in <paramref name="typeSpecificXml" /> is not
+             a file node.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetContent">
+      <MemberSignature Language="C#" Value="public void SetContent (string path, Microsoft.HealthVault.ItemTypes.CodableValue contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetContent(string path, class Microsoft.HealthVault.ItemTypes.CodableValue contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.File.SetContent(System.String,Microsoft.HealthVault.ItemTypes.CodableValue)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="contentType" Type="Microsoft.HealthVault.ItemTypes.CodableValue" />
+      </Parameters>
+      <Docs>
+        <param name="path">
+             The path of the file to associate with this <see cref="T:Microsoft.HealthVault.ItemTypes.File" /> instance.
+             </param>
+        <param name="contentType">
+             The content type of the file.
+             </param>
+        <summary>
+             Sets the content of the file instance using the specified file.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="path" /> is <b>null</b> or empty.
+             </exception>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="contentType" /> is <b>null</b>.
+             </exception>
+        <exception cref="T:System.IO.PathTooLongException">
+             The specified path, file name, or both exceed the system-defined maximum length.
+             For example, on Windows-based platforms, paths must be less than 248 characters,
+             and file names must be less than 260 characters.
+             </exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+             The specified path is invalid (for example, it is on an unmapped drive).
+             </exception>
+        <exception cref="T:System.IO.IOException">
+             An I/O error occurred while opening the file.
+             </exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="path" /> specified a file that is read-only.
+             -or-
+             This operation is not supported on the current platform.
+             -or-
+             path specified a directory.
+             -or-
+             The caller does not have the required permission.
+             </exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+             The file specified in <paramref name="path" /> was not found.
+             </exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" /> is in an invalid format.
+             </exception>
+        <exception cref="T:System.Security.SecurityException">
+             The caller does not have the required permission.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public long Size { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Size" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.File.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the file size.
+             </summary>
+        <value>
+             An integer representing the file size.
+             </value>
+        <remarks>
+             This property must be set before the item is created or updated.
+             </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+             The <paramref name="value" /> parameter is less than or equal to zero.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.File.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+             Gets a string representation of the file item.
+             </summary>
+        <returns>
+             A string representation of the file item.
+             </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public static readonly Guid TypeId;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid TypeId" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.HealthVault.ItemTypes.File.TypeId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Retrieves the unique identifier for the item type.
+             </summary>
+        <returns>
+             A GUID.
+             </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.File.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+             The XmlWriter to write the file data to.
+             </param>
+        <summary>
+             Writes the file data to the specified XmlWriter.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="writer" /> is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

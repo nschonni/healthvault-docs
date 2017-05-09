@@ -1,0 +1,480 @@
+<Type Name="AsthmaInhaler" FullName="Microsoft.HealthVault.ItemTypes.AsthmaInhaler">
+  <TypeSignature Language="C#" Value="public class AsthmaInhaler : Microsoft.HealthVault.Thing.ThingBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AsthmaInhaler extends Microsoft.HealthVault.Thing.ThingBase" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.ItemTypes.AsthmaInhaler" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.65.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.HealthVault.Thing.ThingBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+             Represents a thing that encapsulates an asthma inhaler.
+             </summary>
+    <remarks>
+             This class can represent any inhaler unit used to treat asthma. The
+             inhaler may or may not have a device component to it. Each new canister
+             should be represented by a new <see cref="T:Microsoft.HealthVault.ItemTypes.AsthmaInhaler" /> instance, even
+             if there is a containing device that is reusable. Changes in regimen
+             (minimum/maximum doses per day) should also cause a new health record
+             item to be created.
+             </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AsthmaInhaler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.AsthmaInhaler" /> class with
+             default values.
+             </summary>
+        <remarks>
+             The item is not added to the health record until the <see cref="M:Microsoft.HealthVault.Clients.IThingClient.CreateNewThingsAsync``1(System.Guid,System.Collections.Generic.ICollection{``0})" /> method is called.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AsthmaInhaler (Microsoft.HealthVault.ItemTypes.ApproximateDateTime startDate, Microsoft.HealthVault.ItemTypes.CodableValue drug);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.HealthVault.ItemTypes.ApproximateDateTime startDate, class Microsoft.HealthVault.ItemTypes.CodableValue drug) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.#ctor(Microsoft.HealthVault.ItemTypes.ApproximateDateTime,Microsoft.HealthVault.ItemTypes.CodableValue)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="startDate" Type="Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+        <Parameter Name="drug" Type="Microsoft.HealthVault.ItemTypes.CodableValue" />
+      </Parameters>
+      <Docs>
+        <param name="startDate">
+             The approximate date and time when the inhaler use began.
+             </param>
+        <param name="drug">
+             The name of the drug being used in the inhaler.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.AsthmaInhaler" /> class
+             specifying the mandatory values.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="drug" /> parameter is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Alerts">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;Microsoft.HealthVault.ItemTypes.Alert&gt; Alerts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class Microsoft.HealthVault.ItemTypes.Alert&gt; Alerts" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.Alerts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.HealthVault.ItemTypes.Alert&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets a collection of alerts for the inhaler.
+             </summary>
+        <value>
+             A collection of alerts.
+             </value>
+        <remarks>
+             To add an alert, pass the Add method of the returned collection
+             an instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.Alert" /> class.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanAlert">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; CanAlert { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; CanAlert" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.CanAlert" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets a value indicating whether the inhaler can show alerts.
+             </summary>
+        <value>
+          <b>true</b> if the inhaler can show alerts; otherwise, <b>false</b>.
+             If <b>null</b>, it is unknown whether the inhaler
+             can show alerts.
+             </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeviceId">
+      <MemberSignature Language="C#" Value="public string DeviceId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DeviceId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.DeviceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the identifier for the device.
+             </summary>
+        <value>
+             A string representing the identifier.
+             </value>
+        <remarks>
+             Set the value to <b>null</b> if the device identifier should not be
+             stored.
+             </remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="value" /> contains only whitespace.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Drug">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.ItemTypes.CodableValue Drug { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.ItemTypes.CodableValue Drug" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.Drug" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the drug being used in the inhaler.
+             </summary>
+        <value>
+             A <see cref="T:Microsoft.HealthVault.ItemTypes.CodableValue" /> instance representing the drug.
+             </value>
+        <remarks>
+             The name of the drug in the canister.
+             </remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="value" /> is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpirationDate">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.ItemTypes.ApproximateDateTime ExpirationDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.ItemTypes.ApproximateDateTime ExpirationDate" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.ExpirationDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.ItemTypes.ApproximateDateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the date and time when the canister has clinically
+             expired.
+             </summary>
+        <value>
+             An <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" /> instance representing the date
+             and time.
+             </value>
+        <remarks>
+             The value defaults to the current year, month, and day.
+             <br /><br />
+             Set the value to <b>null</b> if the expiration date should not be stored.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialDoses">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; InitialDoses { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; InitialDoses" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.InitialDoses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the number of doses in the unit at the time of
+             item creation.
+             </summary>
+        <value>
+             An integer representing the number of doses.
+             </value>
+        <remarks>
+             The number of doses in the unit may not correspond to the number
+             of doses the canister started with, since the expectation is that
+             a change in regimen will cause a new item to be created as well.
+             <br /><br />
+             Set the value to <b>null</b> if the initial doses should not be stored.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumDailyDoses">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; MaximumDailyDoses { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; MaximumDailyDoses" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.MaximumDailyDoses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the maximum number of doses that should be taken
+             each day.
+             </summary>
+        <value>
+             An integer representing the maximum number of doses.
+             </value>
+        <remarks>
+             Set the value to <b>null</b> if the maximum doses should not be stored.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumDailyDoses">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; MinimumDailyDoses { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; MinimumDailyDoses" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.MinimumDailyDoses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the minimum number of doses that should be taken
+             each day.
+             </summary>
+        <value>
+             An integer representing the minimum number of doses.
+             </value>
+        <remarks>
+             Set the value to <b>null</b> if the minimum doses should not be stored.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="protected override void ParseXml (System.Xml.XPath.IXPathNavigable typeSpecificXml);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ParseXml(class System.Xml.XPath.IXPathNavigable typeSpecificXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.ParseXml(System.Xml.XPath.IXPathNavigable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
+      </Parameters>
+      <Docs>
+        <param name="typeSpecificXml">
+             The XML to get the asthma inhaler data from.
+             </param>
+        <summary>
+             Populates this <see cref="T:Microsoft.HealthVault.ItemTypes.AsthmaInhaler" /> instance from the data in the XML.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+             The first node in the <paramref name="typeSpecificXml" />
+             parameter is not an asthma-inhaler node.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Purpose">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.InhalerPurpose Purpose { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Health.ItemTypes.InhalerPurpose Purpose" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.Purpose" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.InhalerPurpose</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the count of doses for each inhaler use.
+             </summary>
+        <value>
+             An <see cref="T:Microsoft.Health.ItemTypes.InhalerPurpose" /> instance representing the count.
+             </value>
+        <remarks>
+             Set the value to <see cref="F:Microsoft.Health.ItemTypes.InhalerPurpose.None" /> if the purpose should
+             not be stored.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartDate">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.ItemTypes.ApproximateDateTime StartDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.ItemTypes.ApproximateDateTime StartDate" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.StartDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.ItemTypes.ApproximateDateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the date and time when the inhaler use began.
+             </summary>
+        <value>
+             An <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" /> instance representing the date
+             and time.
+             </value>
+        <remarks>
+             The value defaults to the current year, month, and day.
+             </remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="value" /> is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StopDate">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.ItemTypes.ApproximateDateTime StopDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.ItemTypes.ApproximateDateTime StopDate" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.StopDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.ItemTypes.ApproximateDateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the date and time when the inhaler was retired.
+             </summary>
+        <value>
+             An <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" /> instance representing the date
+             and time.
+             </value>
+        <remarks>
+             The value defaults to the current year, month, and day.
+             <br /><br />
+             Set the value to <b>null</b> if the stop date should not be stored or
+             is still in use.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Strength">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.ItemTypes.CodableValue Strength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.ItemTypes.CodableValue Strength" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.Strength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the textual description of the drug strength
+             (e.g., '44 mcg / puff').
+             </summary>
+        <value>
+             A <see cref="T:Microsoft.HealthVault.ItemTypes.CodableValue" /> instance representing the description.
+             </value>
+        <remarks>
+             Set the value to <b>null</b> if the strength should not be stored.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+             Gets a string representation of the asthma inhaler item.
+             </summary>
+        <returns>
+             A string representation of the asthma inhaler item.
+             </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public static readonly Guid TypeId;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid TypeId" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.TypeId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Retrieves the unique identifier for the item type.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+             The XmlWriter to write the asthma inhaler data to.
+             </param>
+        <summary>
+             Writes the asthma inhaler data to the specified XmlWriter.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="writer" /> is <b>null</b>.
+             </exception>
+        <exception cref="T:Microsoft.HealthVault.Exceptions.ThingSerializationException">
+             If <see cref="P:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.StartDate" /> is <b>null</b>, or
+             <see cref="P:Microsoft.HealthVault.ItemTypes.AsthmaInhaler.Drug" /> is <b>null</b> or empty.
+             </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

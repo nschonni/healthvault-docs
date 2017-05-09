@@ -1,0 +1,273 @@
+<Type Name="ThingExtension" FullName="Microsoft.HealthVault.Thing.ThingExtension">
+  <TypeSignature Language="C#" Value="public class ThingExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ThingExtension extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.Thing.ThingExtension" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.65.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+             Represents an extension to a thing.
+             </summary>
+    <remarks>
+             Applications can augment the HealthVault defined data for a
+             thing type with application or vendor specific data by
+             implementing item extensions.
+             <br /><br />
+             Applications that implement a thing extension should
+             derive from this class and register their extension by calling
+             <see cref="M:Microsoft.HealthVault.Thing.ItemTypeManager.RegisterExtensionHandler(System.String,System.Type)" />.
+             Whenever the HealthVault SDK reads an extension with the specified
+             extension source an instance of the derived ThingExtension will be
+             created and it's <see cref="M:Microsoft.HealthVault.Thing.ThingExtension.ParseXml(System.Xml.XPath.IXPathNavigable)" />
+             method will be called to populate the data of the class from the
+             web-service XML.
+             Common portions of the item extension data will be parsed by the base
+             class and exposed as properties.
+             </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ThingExtension ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.ThingExtension.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+             Constructor used when creating an instance for XML deserialization.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ThingExtension (string source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.ThingExtension.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source">
+             The source identifier for the extension. This is used to uniquely
+             identify the extension data.
+             </param>
+        <summary>
+             Constructs a thing extension for the specified source.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="source" /> is null or empty.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtensionData">
+      <MemberSignature Language="C#" Value="public System.Xml.XPath.IXPathNavigable ExtensionData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XPath.IXPathNavigable ExtensionData" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingExtension.ExtensionData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.IXPathNavigable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the extension data for the extension.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             To modify the extension attributes use the other properties of this
+             class. To modify the extension data manipulate the returned
+             XML document unless a derived type is available, in which case
+             you should use the properties and method of the derived type to
+             manipulate the data.
+             <br /><br /></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Logo">
+      <MemberSignature Language="C#" Value="public Uri Logo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Logo" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingExtension.Logo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the URL to a logo for display use with the extension.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             The logo is optional and will be ignored if set to null.
+             <br /><br />
+             In some applications a generic view of the thing will be
+             shown. If a logo is provided on an extension those applications
+             can embed the logo in the user interface to show the user that
+             there is additional data. It can also be used along with the
+             <see cref="P:Microsoft.HealthVault.Thing.ThingExtension.Transform" /> to provide a link to the extension data.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="protected virtual void ParseXml (System.Xml.XPath.IXPathNavigable extensionData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ParseXml(class System.Xml.XPath.IXPathNavigable extensionData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.ThingExtension.ParseXml(System.Xml.XPath.IXPathNavigable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extensionData" Type="System.Xml.XPath.IXPathNavigable" />
+      </Parameters>
+      <Docs>
+        <param name="extensionData">
+             The XML to retrieve the extension data from. Note, this may be
+             an <see cref="T:System.Xml.Linq.XDocument" />.
+             </param>
+        <summary>
+             Populates the extension data from the specified XML.
+             </summary>
+        <remarks>
+             Derived classes should override this method to parse the extension
+             XML and populate class members with the data. The common extension
+             attributes are handled by the base class before this method is
+             called.
+             <br /><br />
+             The default implementation of this method does nothing.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public string Source { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Source" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingExtension.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the extension source identifier.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             The source is used to identify the extension. To register a class
+             as a handler for a specific extension source see
+             <see cref="M:Microsoft.HealthVault.Thing.ItemTypeManager.RegisterExtensionHandler(System.String,System.Type)" />.
+             </remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="value" /> is null or empty.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public Uri Transform { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Transform" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingExtension.Transform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the URL to an XSL transform which can transform the
+             XML of the extension into HTML suitable for display in a small
+             form or popup.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             The transform is optional and will be ignored if set to null.
+             <br /><br />
+             In some applications a generic view of the thing will be
+             shown. In such applications the extension data can be rendered as
+             HTML using the specified transform. Applications should consider the
+             security implications of running external transforms within the application
+             context.
+             HealthVault Shell does not render extensions using this transform.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public string Version { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Version" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingExtension.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the version of the extension.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             The version is optional and will be ignored if set to null.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="protected virtual void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.ThingExtension.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+             The XML writer to write the data portion of the extension to.
+             </param>
+        <summary>
+             Writes the data portion of the extension to the specified XML
+             writer.
+             </summary>
+        <remarks>
+             Derived classes should override this method to add extension
+             specific data to the extension XML for the item. Note, the base
+             class handles writing the extension node and it's attributes to
+             the writer. The derived class implementation should only write
+             the inner nodes of the extension.
+             <br /><br />
+             The base implementation writes the contents of the
+             <see cref="P:Microsoft.HealthVault.Thing.ThingExtension.ExtensionData" /> to the writer and should not be called
+             by the derived class.
+             </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

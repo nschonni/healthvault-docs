@@ -1,0 +1,185 @@
+<Type Name="HealthServiceException" FullName="Microsoft.HealthVault.Exceptions.HealthServiceException">
+  <TypeSignature Language="C#" Value="public class HealthServiceException : Microsoft.HealthVault.Exceptions.HealthVaultException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit HealthServiceException extends Microsoft.HealthVault.Exceptions.HealthVaultException" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.Exceptions.HealthServiceException" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.65.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.HealthVault.Exceptions.HealthVaultException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+             Represents the base class for all HealthVault exceptions
+             thrown by the SDK.
+             </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthServiceException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Exceptions.HealthServiceException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">
+             A string representing the error message.
+             </param>
+        <summary>
+             Creates an instance of the <see cref="T:Microsoft.HealthVault.Exceptions.HealthServiceException" />
+             class having the specified error message.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthServiceException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Exceptions.HealthServiceException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">
+             A string representing the error message.
+             </param>
+        <param name="innerException">
+             The inner exception.
+             </param>
+        <summary>
+             Creates an instance of the <see cref="T:Microsoft.HealthVault.Exceptions.HealthServiceException" />
+             class having the specified error message and inner exception.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Error">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.Transport.HealthServiceResponseError Error { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.Transport.HealthServiceResponseError Error" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Exceptions.HealthServiceException.Error" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.Transport.HealthServiceResponseError</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the information about an error that occurred while processing
+             the request.
+             </summary>
+        <value>
+             A <see cref="T:Microsoft.HealthVault.Transport.HealthServiceResponseError" /> object representing the
+             error information.
+             </value>
+        <remarks>
+             This value can be <b>null</b> for those exceptions that
+             occurred in the SDK rather than in HealthVault.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorCode">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.Transport.HealthServiceStatusCode ErrorCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.HealthVault.Transport.HealthServiceStatusCode ErrorCode" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Exceptions.HealthServiceException.ErrorCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.Transport.HealthServiceStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the status code returned by HealthVault to indicate the type
+             of error that causes this exception.
+             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorCodeId">
+      <MemberSignature Language="C#" Value="public int ErrorCodeId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ErrorCodeId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Exceptions.HealthServiceException.ErrorCodeId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the identifier of the status code in the HealthVault response.
+             </summary>
+        <value>
+             An integer representing the identifier.
+             </value>
+        <remarks>
+             This property is useful when the SDK is out of sync with the
+             HealthVault status code set. The actual integer value of the
+             status code can be looked up for further investigation.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Response">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.Transport.HealthServiceResponseData Response { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.Transport.HealthServiceResponseData Response" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Exceptions.HealthServiceException.Response" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.Transport.HealthServiceResponseData</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Contains the response information from the HealthVault service after
+            processing a request.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Exceptions.HealthServiceException.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+             Retrieves the string representing the
+             <see cref="T:Microsoft.HealthVault.Exceptions.HealthServiceException" /> object.
+             </summary>
+        <returns>
+             A string representing the contents of the
+             <see cref="T:Microsoft.HealthVault.Exceptions.HealthServiceException" /> object.
+             </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

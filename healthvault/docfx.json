@@ -3,14 +3,18 @@
     "content": [
       {
         "files": [
-          "**/*.md"
+          "**/*.md",
+          "**/*.swagger.json",
+          "**/*.yml"
         ],
         "exclude": [
           "**/obj/**",
           "**/includes/**",
           "README.md",
           "LICENSE",
-          "LICENSE-CODE"
+          "LICENSE-CODE",
+          "api/overwrites/**",
+          "sdks/java/**"
         ]
       }
     ],
@@ -18,7 +22,9 @@
       {
         "files": [
           "**/*.png",
-          "**/*.jpg"
+          "**/*.jpg",
+          "**/*.svg",
+          "**/*.xsd"
         ],
         "exclude": [
           "**/obj/**",
@@ -26,10 +32,23 @@
         ]
       }
     ],
-    "overwrite": [],
+    "overwrite": [
+      {
+        "files": [
+          "**/*-overwrite.md"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
+        ]
+      }
+    ],
     "externalReference": [],
-    "globalMetadata": {},
-    "fileMetadata": {},
+    "globalMetadata": {
+      "titleSuffix": "HealthVault Development",
+      "uhfHeaderId": "MSDocsHeader-HealthVault",
+      "ms.prod": "healthvault"
+    },
     "template": [],
     "dest": "healthvault"
   }

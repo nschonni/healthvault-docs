@@ -1,0 +1,185 @@
+<Type Name="AnonymousConnection" FullName="Microsoft.Health.AnonymousConnection">
+  <TypeSignature Language="C#" Value="public class AnonymousConnection : Microsoft.Health.HealthServiceConnection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AnonymousConnection extends Microsoft.Health.HealthServiceConnection" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.AnonymousConnection" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.HealthServiceConnection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Represents a connection for an application to the HealthVault service
+            for operations that require neither user authentication nor 
+            application identifier verification. 
+            </summary>
+    <remarks>
+            You must connect to the HealthVault service to access its
+            web methods. This class does not maintain
+            an open connection to the service, but uses XML over HTTP to 
+            make requests and receive responses from the service. The connection
+            only maintains the data necessary for the request.
+            <br /><br />
+            Use an anonymous connection to access HealthVault methods that
+            require only a valid application identifier, such as 
+            <see cref="M:Microsoft.Health.HealthServiceConnection.GetServiceDefinition" />.
+            <br /><br />
+            For operations that require authentication, use the 
+            <see cref="T:Microsoft.Health.AuthenticatedConnection" /> class and its derived classes. 
+            For operations that require more specific functionality, such as 
+            querying a vocabulary list, use the <see cref="T:Microsoft.Health.ApplicationConnection" />
+            class and its derived classes.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnonymousConnection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.AnonymousConnection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.AnonymousConnection" /> class
+            for the configured application ID and the configured default HealthVault
+            web-service instance.
+            </summary>
+        <remarks>
+            The default constructor takes values from the application or web 
+            configuration file.
+            </remarks>
+        <exception cref="T:Microsoft.Health.InvalidConfigurationException">
+            If the web or application configuration file does not contain 
+            configuration entries for "ApplicationID" or "HealthServiceUrl".
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnonymousConnection (Microsoft.Health.HealthServiceInstance serviceInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.HealthServiceInstance serviceInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.AnonymousConnection.#ctor(Microsoft.Health.HealthServiceInstance)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
+      </Parameters>
+      <Docs>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.AnonymousConnection" /> class 
+            for the application for the specified HealthVault web-service instance.
+            </summary>
+        <remarks>
+            If <paramref name="serviceInstance" /> is <b>null</b>, the URL for the configured
+            default HealthVault web-service instance is used.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnonymousConnection (Guid callingApplicationId, Microsoft.Health.HealthServiceInstance serviceInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid callingApplicationId, class Microsoft.Health.HealthServiceInstance serviceInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.AnonymousConnection.#ctor(System.Guid,Microsoft.Health.HealthServiceInstance)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callingApplicationId" Type="System.Guid" />
+        <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
+      </Parameters>
+      <Docs>
+        <param name="callingApplicationId">
+            The GUID of the HealthVault application.
+            </param>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.AnonymousConnection" /> class 
+            for the application having the specified globally unique 
+            identifier (GUID) and HealthVault web-service instance.
+            </summary>
+        <remarks>
+            If <paramref name="serviceInstance" /> is <b>null</b>, the URL for the configured
+            default HealthVault web-service instance is used.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnonymousConnection (Guid callingApplicationId, string healthServiceUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid callingApplicationId, string healthServiceUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.AnonymousConnection.#ctor(System.Guid,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callingApplicationId" Type="System.Guid" />
+        <Parameter Name="healthServiceUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="callingApplicationId">
+            The GUID of the HealthVault application.
+            </param>
+        <param name="healthServiceUrl">
+            A string representing the URL of the HealthVault application.
+            </param>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.AnonymousConnection" /> class 
+            for the application having the specified globally unique 
+            identifier (GUID) and string representing the HealthVault service 
+            uniform resource locator (URL).
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="healthServiceUrl" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.UriFormatException">
+            The <paramref name="healthServiceUrl" /> string is not formatted 
+            properly.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnonymousConnection (Guid callingApplicationId, Uri healthServiceUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid callingApplicationId, class System.Uri healthServiceUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.AnonymousConnection.#ctor(System.Guid,System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callingApplicationId" Type="System.Guid" />
+        <Parameter Name="healthServiceUrl" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="callingApplicationId">
+            The GUID of the HealthVault application.
+            </param>
+        <param name="healthServiceUrl">
+            The URL of the HealthVault web service.
+            </param>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.AnonymousConnection" /> class 
+            for the application having the specified globally unique 
+            identifier (GUID) and HealthVault service uniform resource
+            locator (URL).
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="healthServiceUrl" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

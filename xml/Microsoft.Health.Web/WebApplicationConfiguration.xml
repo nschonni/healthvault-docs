@@ -1,0 +1,483 @@
+<Type Name="WebApplicationConfiguration" FullName="Microsoft.Health.Web.WebApplicationConfiguration">
+  <TypeSignature Language="C#" Value="public sealed class WebApplicationConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebApplicationConfiguration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.Web.WebApplicationConfiguration" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.Web</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary> 
+            Contains the application configuration as retrieved from 
+            web.config or as constants.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebApplicationConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationConfiguration.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionUrlRedirectOverride">
+      <MemberSignature Language="C#" Value="public static string ActionUrlRedirectOverride { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ActionUrlRedirectOverride" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.ActionUrlRedirectOverride" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Non-production action url redirect override.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowedRedirectSites">
+      <MemberSignature Language="C#" Value="public static string AllowedRedirectSites { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string AllowedRedirectSites" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.AllowedRedirectSites" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the list of allowed redirect sites.
+            </summary>
+        <value>
+            A comma-separated list of allowed url redirection sites.
+            </value>
+        <remarks>
+            Applications that use the <see cref="T:Microsoft.Health.Web.HealthServiceActionPage" />
+            can configure a list of allowed redirect sites. 
+            
+            When a HealthVault shell redirect happens to a 
+            <see cref="T:Microsoft.Health.Web.HealthServiceActionPage" />, it will be allowed if the actionqs parameter
+            is a relative URL or a URL that points to the site the application is running on. 
+            All other sites will note be allowed.
+            To allow another site, the web.config should contain a key of
+            WCPage_AllowedRedirectSites that has the site as part of a comma-
+            separated list.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppId">
+      <MemberSignature Language="C#" Value="public static readonly Guid AppId;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid AppId" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.AppId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Application id, from web config.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieDomain">
+      <MemberSignature Language="C#" Value="public static readonly string CookieDomain;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string CookieDomain" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.CookieDomain" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Cookie domain, from web config.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieName">
+      <MemberSignature Language="C#" Value="public static readonly string CookieName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string CookieName" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.CookieName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The name of the cookie for use by applications and the base
+            HealthServicePage to store authentication information.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookiePath">
+      <MemberSignature Language="C#" Value="public static readonly string CookiePath;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string CookiePath" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.CookiePath" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+        <Summary>
+            Cookie path, from web config.
+            </Summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieTimeoutMinutes">
+      <MemberSignature Language="C#" Value="public static readonly int CookieTimeoutMinutes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly int32 CookieTimeoutMinutes" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.CookieTimeoutMinutes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Cookie timeout in minutes, from web config.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataGridItemsPerPage">
+      <MemberSignature Language="C#" Value="public static int DataGridItemsPerPage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 DataGridItemsPerPage" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.DataGridItemsPerPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the configured number of items that should be shown for a
+            <see cref="T:Microsoft.Health.Web.HealthRecordItemDataGrid" /> page.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetActionUrl">
+      <MemberSignature Language="C#" Value="public static string GetActionUrl (string action);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetActionUrl(string action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationConfiguration.GetActionUrl(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">
+            The action to get the URL for.
+            </param>
+        <summary>
+            Gets the URL for the specified application action.
+            </summary>
+        <returns>
+            The URL the application configured for the specified action.
+            </returns>
+        <remarks>
+            Applications that use the <see cref="T:Microsoft.Health.Web.HealthServiceActionPage" />
+            can configure URLs for each action in the web.config file. They
+            should have a key prefix of "WCPage_Action" with the action name
+            appended. For example, for a the EULA action page, the 
+            web.config should contain a key of WCPage_ActionEula with a 
+            value containing the URL of the EULA page.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HealthServiceHandlerUrl">
+      <MemberSignature Language="C#" Value="public static Uri HealthServiceHandlerUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Uri HealthServiceHandlerUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.HealthServiceHandlerUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            HealthVault handler url, derived from web config.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HealthServiceRootUrl">
+      <MemberSignature Language="C#" Value="public static Uri HealthServiceRootUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Uri HealthServiceRootUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.HealthServiceRootUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            HealthVault root url, from web config.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HealthServiceUrl">
+      <MemberSignature Language="C#" Value="public static Uri HealthServiceUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Uri HealthServiceUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.HealthServiceUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            HealthVault url, from web config.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMra">
+      <MemberSignature Language="C#" Value="public static readonly bool IsMra;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly bool IsMra" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.IsMra" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            If true, the application is a multi-record application.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSignupCodeRequired">
+      <MemberSignature Language="C#" Value="public static readonly bool IsSignupCodeRequired;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly bool IsSignupCodeRequired" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.IsSignupCodeRequired" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Indicates whether a signup code is required for a user to create
+            a HealthVault account.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogOnRequired">
+      <MemberSignature Language="C#" Value="public const bool LogOnRequired;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal bool LogOnRequired" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.LogOnRequired" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> 
+            Constant to indicate logon required
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxCookieTimeoutMinutes">
+      <MemberSignature Language="C#" Value="public static readonly int MaxCookieTimeoutMinutes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly int32 MaxCookieTimeoutMinutes" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.MaxCookieTimeoutMinutes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The maximum cookie timeout in minutes, from web config.
+            </summary>
+        <remarks>
+            The cookie timeout is defaulted in the web config but the 
+            application configuration in HealthVault can allow for persistent
+            tokens which require a longer cookie life. The cookie will take
+            on the life of the token when the page receives a "tokenTtl" 
+            query string parameter when receiving the authentication token.
+            The MaxCookieTimeoutMinutes limits the cookie timeout to a 
+            maximum value even when the CookieTimeoutMinutes or the token TTL
+            from the applications configuration is larger.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoLogOnRequired">
+      <MemberSignature Language="C#" Value="public const bool NoLogOnRequired;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal bool NoLogOnRequired" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.NoLogOnRequired" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> 
+            Constant to indicate logon not required 
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShellAuthenticationUrl">
+      <MemberSignature Language="C#" Value="public static Uri ShellAuthenticationUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Uri ShellAuthenticationUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.ShellAuthenticationUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Shell auth page location including the application id.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShellRedirectorUrl">
+      <MemberSignature Language="C#" Value="public static Uri ShellRedirectorUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Uri ShellRedirectorUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.ShellRedirectorUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Shell redirector url, derived from web config.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShellUrl">
+      <MemberSignature Language="C#" Value="public static Uri ShellUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Uri ShellUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationConfiguration.ShellUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Shell url, from web config.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseAspSession">
+      <MemberSignature Language="C#" Value="public static readonly bool UseAspSession;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly bool UseAspSession" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.UseAspSession" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Use the asp session rather than a cookie, from web config.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseSslForSecurity">
+      <MemberSignature Language="C#" Value="public static readonly bool UseSslForSecurity;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly bool UseSslForSecurity" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.Web.WebApplicationConfiguration.UseSslForSecurity" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Whether to secure the connection with SSL, from web config.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,303 @@
+<Type Name="ExerciseSegment" FullName="Microsoft.Health.ItemTypes.ExerciseSegment">
+  <TypeSignature Language="C#" Value="public class ExerciseSegment : Microsoft.Health.ItemTypes.HealthRecordItemData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExerciseSegment extends Microsoft.Health.ItemTypes.HealthRecordItemData" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.ExerciseSegment" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Information pertaining to a portion of the overall exercise.
+            </summary>
+    <remarks>
+            This is typically used to store information about separate laps in a race or individual events within
+            a triathlon.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExerciseSegment ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ExerciseSegment.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ExerciseSegment" /> class 
+            with default values.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExerciseSegment (Microsoft.Health.ItemTypes.CodableValue activity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.ItemTypes.CodableValue activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ExerciseSegment.#ctor(Microsoft.Health.ItemTypes.CodableValue)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activity" Type="Microsoft.Health.ItemTypes.CodableValue" />
+      </Parameters>
+      <Docs>
+        <param name="activity">The type of activity for this segment.</param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ExerciseSegment" /> class 
+            with the specified values.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="activity" /> is <b>null</b>. 
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Activity">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.CodableValue Activity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.CodableValue Activity" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExerciseSegment.Activity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the type of activity for this segment of the exercise.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            Examples: Running, hiking, walking, golfing, dancing.
+            The preferred vocabulary for route is "exercise-activities".
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="Activity" /> is <b>null</b>. 
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Details">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,Microsoft.Health.ItemTypes.ExerciseDetail&gt; Details { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, class Microsoft.Health.ItemTypes.ExerciseDetail&gt; Details" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExerciseSegment.Details" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,Microsoft.Health.ItemTypes.ExerciseDetail&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets additional information about the segment.
+            </summary>
+        <value>
+            A dictionary of <see cref="T:Microsoft.Health.ItemTypes.ExerciseDetail" /> items.
+            </value>
+        <remarks>
+            Details is a dictionary of the items, where the key is the 
+            string name of the item.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Distance">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.Length Distance { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.Length Distance" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExerciseSegment.Distance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.Length</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the distance covered in the segment.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.Length" /> value representing the distance.
+            </value>
+        <remarks>
+            Distances are stored in meters. The application 
+            must convert the distance entered by the user
+            into meters and should also store the distance
+            and units entered by the user in the display-value
+            so that it can be displayed to the user in their
+            preferred unit of measure when viewing the data.
+            
+            Set the value to <b>null</b> if there is no distance.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Duration">
+      <MemberSignature Language="C#" Value="public Nullable&lt;double&gt; Duration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;float64&gt; Duration" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExerciseSegment.Duration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the duration of the segment in minutes.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            Set the value to <b>null</b> if there is no duration.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is negative or zero when set.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public Nullable&lt;double&gt; Offset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;float64&gt; Offset" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExerciseSegment.Offset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the offset in minutes of the segment from the start of exercise.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            Set the value to <b>null</b> if there is no offset.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is negative or zero when set.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="public override void ParseXml (System.Xml.XPath.XPathNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ParseXml(class System.Xml.XPath.XPathNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ExerciseSegment.ParseXml(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="navigator"> 
+            The XML node representing the lap.
+            </param>
+        <summary> 
+            Populates the data for the lap from the XML.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExerciseSegment.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets a descriptive title for this segment.
+            </summary>
+        <value>
+            String. 
+            </value>
+        <remarks>
+            Examples: Lap 1, bicycle leg, first half.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ExerciseSegment.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+             Gets a string representation of the ExerciseSegment item.
+             </summary>
+        <returns>
+             A string representation of the ExerciseSegment item.
+             </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (string nodeName, System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(string nodeName, class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ExerciseSegment.WriteXml(System.String,System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodeName" Type="System.String" />
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="nodeName">
+            The name of the outer element for the lap.
+            </param>
+        <param name="writer"> 
+            The XmlWriter to write the lap data to.
+            </param>
+        <summary> 
+            Writes the lap to the specified XML writer.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The Activity property is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

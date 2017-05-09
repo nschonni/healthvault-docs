@@ -1,0 +1,829 @@
+<Type Name="ThingBase" FullName="Microsoft.HealthVault.Thing.ThingBase">
+  <TypeSignature Language="C#" Value="public class ThingBase : Microsoft.HealthVault.Thing.IThing" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ThingBase extends System.Object implements class Microsoft.HealthVault.Thing.IThing" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.Thing.ThingBase" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.65.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.HealthVault.Thing.IThing</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>
+             Represents a thing.
+             </summary>
+    <remarks>
+             A thing is a single piece of data in a health record
+             that is accessible through the HealthVault service. Examples of health
+             record items include a blood pressure measurement, an exercise session,
+             or an insurance claim.
+             <br /><br />
+             things are typed and have XML data that adheres to the
+             schema for the type.
+             </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ThingBase (Guid typeId);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid typeId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.ThingBase.#ctor(System.Guid)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="typeId">
+             The unique identifier of the type of which the item is an instance.
+             </param>
+        <summary>
+             Derived classes must call this method when their default
+             constructor is called.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ThingBase (Guid typeId, System.Xml.XPath.IXPathNavigable typeSpecificData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid typeId, class System.Xml.XPath.IXPathNavigable typeSpecificData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.ThingBase.#ctor(System.Guid,System.Xml.XPath.IXPathNavigable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeId" Type="System.Guid" />
+        <Parameter Name="typeSpecificData" Type="System.Xml.XPath.IXPathNavigable" />
+      </Parameters>
+      <Docs>
+        <param name="typeId">
+             The unique identifier for the item type.
+             </param>
+        <param name="typeSpecificData">
+             The type-specific data XML for the item.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.Thing.ThingBase" /> class
+             with the specified type identifier and type-specific data.
+             </summary>
+        <remarks>
+             This constructor is reserved for when there are no derived
+             classes for the item type being created. In most situations, use the
+             derived type constructor.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonData">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.Thing.CommonItemData CommonData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.Thing.CommonItemData CommonData" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.CommonData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.Thing.CommonItemData</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the common data for the <see cref="T:Microsoft.HealthVault.Thing.ThingBase" />.
+             </summary>
+        <value>
+             An instance of <see cref="T:Microsoft.HealthVault.Thing.CommonItemData" /> for the
+             <see cref="T:Microsoft.HealthVault.Thing.ThingBase" />.
+             </value>
+        <remarks>
+             The common data includes notes, source, and extensions.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Created">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.Thing.HealthServiceAudit Created { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.Thing.HealthServiceAudit Created" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.Created" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.Thing.HealthServiceAudit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the audit information associated with the creation of
+             this thing.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             It is the responsibility of the application to convert the audit time
+             to local time if necessary.
+             <br /><br />
+             This data value is only available when the
+             <see cref="P:Microsoft.HealthVault.Thing.ThingBase.Sections" /> show the
+             <see cref="F:Microsoft.HealthVault.Thing.ThingSections.Audits" /> bit
+             set.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public static Microsoft.HealthVault.Thing.ThingBase Deserialize (string itemXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.HealthVault.Thing.ThingBase Deserialize(string itemXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.ThingBase.Deserialize(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.Thing.ThingBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="itemXml">To be added.</param>
+        <summary>
+             Create a <see cref="T:Microsoft.HealthVault.Thing.ThingBase" /> instance from the item XML.
+             </summary>
+        <returns>
+             A instance of the <see cref="T:Microsoft.HealthVault.Thing.ThingBase" /> class.
+             </returns>
+        <remarks>
+             This method is identical to calling <see cref="M:Microsoft.HealthVault.Thing.ItemTypeManager.DeserializeItem(System.String)" />.
+            
+             The item XML should come from a previous call to <see cref="M:Microsoft.HealthVault.Thing.ThingBase.Serialize" />.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EffectiveDate">
+      <MemberSignature Language="C#" Value="public DateTime EffectiveDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime EffectiveDate" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.EffectiveDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the date and time that the thing data was taken.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             This might not be the same time that the data was entered
+             into the system.
+             <br /><br />
+             This data value is only available when the
+             <see cref="P:Microsoft.HealthVault.Thing.ThingBase.Sections" /> show the
+             <see cref="F:Microsoft.HealthVault.Thing.ThingSections.Core" /> bit
+             set.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EffectivePermissions">
+      <MemberSignature Language="C#" Value="public Nullable&lt;Microsoft.HealthVault.Thing.ThingPermissions&gt; EffectivePermissions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Microsoft.HealthVault.Thing.ThingPermissions&gt; EffectivePermissions" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.EffectivePermissions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;Microsoft.HealthVault.Thing.ThingPermissions&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the effective permissions on the item granted to the person
+             retrieving the <see cref="T:Microsoft.HealthVault.Thing.ThingBase" />.
+             </summary>
+        <value>
+             If the permissions are unknown, the value is <b>null</b>; otherwise
+             the appropriate permissions are returned.
+             </value>
+        <remarks>
+             This data value is only available when the
+             <see cref="P:Microsoft.HealthVault.Thing.ThingBase.Sections" /> show the
+             <see cref="F:Microsoft.HealthVault.Thing.ThingSections.EffectivePermissions" />
+             bit set.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flags">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.Thing.ThingFlags Flags { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.HealthVault.Thing.ThingFlags Flags" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.Flags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.Thing.ThingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the <see cref="T:Microsoft.HealthVault.Thing.ThingBase" /> flags.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+          <see cref="P:Microsoft.HealthVault.Thing.ThingBase.Sections" /> show the
+             <see cref="F:Microsoft.HealthVault.Thing.ThingSections.Core" /> bit
+             set.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemXml">
+      <MemberSignature Language="C#" Value="public string GetItemXml (string elementName = &quot;thing&quot;);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetItemXml(string elementName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.ThingBase.GetItemXml(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">
+             The element that will wrap the thing's contents.
+             </param>
+        <summary>
+             Gets the XML representation of the thing.
+             </summary>
+        <returns>
+             A string containing the XML representation of the item wrapped by the specified
+             <paramref name="elementName" />.
+             </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="elementName" /> is <b>null</b> or empty.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemXml">
+      <MemberSignature Language="C#" Value="public string GetItemXml (Microsoft.HealthVault.Thing.ThingSections sections, string elementName = &quot;thing&quot;);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetItemXml(valuetype Microsoft.HealthVault.Thing.ThingSections sections, string elementName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.ThingBase.GetItemXml(Microsoft.HealthVault.Thing.ThingSections,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sections" Type="Microsoft.HealthVault.Thing.ThingSections" />
+        <Parameter Name="elementName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sections">
+             The sections of the item to write to the XML.
+             </param>
+        <param name="elementName">
+             The element that will wrap the thing's contents.
+             </param>
+        <summary>
+             Gets the XML representation of the thing.
+             </summary>
+        <returns>
+             A string containing the XML representation of the item wrapped by the specified
+             <paramref name="elementName" />.
+             </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="elementName" /> is <b>null</b> or empty.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSizeInBytes">
+      <MemberSignature Language="C#" Value="public int GetSizeInBytes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetSizeInBytes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.ThingBase.GetSizeInBytes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+             Gets the size of the thing which will be added to the quota used in the
+             person's health record.
+             </summary>
+        <returns>
+             The size in bytes of the thing.
+             </returns>
+        <remarks>
+             This size may be used to determine if there is sufficient room left in the person's health
+             record. It is recommended that this be used only for large items that may cause the
+             person to exceed their quota. This measurement is an approximation. The HealthVault
+             service may evaluate the item to have slightly more or fewer bytes depending on how the
+             white space is transformed between the client and server. The person's health record
+             quota usage may also change on the HealthVault service due to data being added by other
+             applications.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDownVersioned">
+      <MemberSignature Language="C#" Value="public bool IsDownVersioned { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDownVersioned" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.IsDownVersioned" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the value indicating if the <see cref="T:Microsoft.HealthVault.Thing.ThingBase" /> is down-versioned.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             If this value is true then an attempt to update the <see cref="T:Microsoft.HealthVault.Thing.ThingBase" />
+             will fail.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsImmutable">
+      <MemberSignature Language="C#" Value="public bool IsImmutable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsImmutable" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.IsImmutable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets a value indicating whether the <see cref="T:Microsoft.HealthVault.Thing.ThingBase" />
+             is immutable.
+             </summary>
+        <value>
+          <b>true</b> if the <see cref="T:Microsoft.HealthVault.Thing.ThingBase" /> is immutable; otherwise,
+             <b>false</b>.
+             </value>
+        <remarks>
+             This data value is only available when the
+             <see cref="P:Microsoft.HealthVault.Thing.ThingBase.Sections" /> show the
+             <see cref="F:Microsoft.HealthVault.Thing.ThingSections.EffectivePermissions" />
+             bit set. Returns true if either ThingBase Type is immutable or ThingBase instance is read-only.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPersonal">
+      <MemberSignature Language="C#" Value="public bool IsPersonal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPersonal" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.IsPersonal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the value indicating if the <see cref="T:Microsoft.HealthVault.Thing.ThingBase" /> is private.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             Private items are accessible only by custodians.
+             <see cref="P:Microsoft.HealthVault.Thing.ThingBase.Sections" /> show the
+             <see cref="F:Microsoft.HealthVault.Thing.ThingSections.Core" /> bit
+             set.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a value indicating whether <see cref="T:Microsoft.HealthVault.Thing.ThingBase" /> is read-only.
+            </summary>
+        <value>
+          <b>true</b> if the <see cref="T:Microsoft.HealthVault.Thing.ThingBase" /> is read-only; otherwise,
+            <b>false</b>.
+            </value>
+        <remarks>
+            Returns true if either ThingBase Type is immutable or ThingBase instance is read-only
+            but sets only the instance immutability.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            Cannot change read-only flag to false if it is already true.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUpVersioned">
+      <MemberSignature Language="C#" Value="public bool IsUpVersioned { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUpVersioned" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.IsUpVersioned" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the value indicating if the <see cref="T:Microsoft.HealthVault.Thing.ThingBase" /> is up-versioned.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             If this value is true then an application should get explicit permission to update the
+             instance from the user. This will cause the stored instance to be converted to the
+             type version which may cause data loss in some cases.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.Thing.ThingKey Key { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.Thing.ThingKey Key" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.Thing.ThingKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the key of the thing.
+             </summary>
+        <value>
+             A globally unique identifier for the item issued when the item is
+             created and a globally unique version stamp updated every time
+             the item is changed.
+             </value>
+        <remarks>
+             This is the only property that
+             is guaranteed to be available regardless of how
+             <see cref="P:Microsoft.HealthVault.Thing.ThingBase.Sections" /> is set.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastUpdated">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.Thing.HealthServiceAudit LastUpdated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.Thing.HealthServiceAudit LastUpdated" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.LastUpdated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.Thing.HealthServiceAudit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the audit information associated with the last update of
+             this thing.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             It is the responsibility of the application to convert the audit time
+             to local time if necessary.
+             <br /><br />
+             This data value is only available when the
+             <see cref="P:Microsoft.HealthVault.Thing.ThingBase.Sections" /> show the
+             <see cref="F:Microsoft.HealthVault.Thing.ThingSections.Audits" /> bit
+             set.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="protected virtual void ParseXml (System.Xml.XPath.IXPathNavigable typeSpecificXml);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ParseXml(class System.Xml.XPath.IXPathNavigable typeSpecificXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.ThingBase.ParseXml(System.Xml.XPath.IXPathNavigable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
+      </Parameters>
+      <Docs>
+        <param name="typeSpecificXml">
+             The type-specific data XML for the item.
+             </param>
+        <summary>
+             Parses the type-specific XML data for the item.
+             </summary>
+        <remarks>
+             Derived classes should override this method and populate their
+             members with the data from the XML.
+             <br /><br />
+             The default implementation does nothing.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sections">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.Thing.ThingSections Sections { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.HealthVault.Thing.ThingSections Sections" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.Sections" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.Thing.ThingSections</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the data sections that this ThingBase represents.
+             </summary>
+        <value>
+             An instance of <see cref="T:Microsoft.HealthVault.Thing.ThingSections" />.
+             </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public string Serialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string Serialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.ThingBase.Serialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+             Gets the XML representation of the item for serialization.
+             </summary>
+        <returns>
+             A string containing the XML representation of the item.
+             </returns>
+        <remarks>
+             There are two ways to obtain an XML representation of the item.
+             GetItemXml() returns only the XML for the type-specific information of the item.
+             Serialize() returns the full XML.
+            
+             Use GetItemXml() if you want to save the XML representation to pass to the HealthVault platform for a
+             new or update operation.
+             Use Serialize if you want to serialize and deserialize the item and have the deserialized item be
+             identical to the serialized one.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.Thing.ThingState State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.HealthVault.Thing.ThingState State" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.Thing.ThingState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the state of the <see cref="T:Microsoft.HealthVault.Thing.ThingBase" />.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+          <see cref="P:Microsoft.HealthVault.Thing.ThingBase.Sections" /> show the
+             <see cref="F:Microsoft.HealthVault.Thing.ThingSections.Core" /> bit
+             set.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tags">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;string&gt; Tags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;string&gt; Tags" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.Tags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the list of tags on the <see cref="T:Microsoft.HealthVault.Thing.ThingBase" />.
+             </summary>
+        <value>
+             A string representing the tag list.
+             </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformedXmlData">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,System.Xml.Linq.XDocument&gt; TransformedXmlData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, class System.Xml.Linq.XDocument&gt; TransformedXmlData" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.TransformedXmlData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Xml.Linq.XDocument&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the transformed XML data of the <see cref="T:Microsoft.HealthVault.Thing.ThingBase" />.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             Transformed XML data is provided if you so specify in
+             <see cref="T:Microsoft.HealthVault.Thing.HealthRecordSearcher" />. The dictionary values are
+             indexed by the name of the transform that was specified when the
+             search was performed.
+             <br /><br />
+             This data value is only available to get when the
+             <see cref="P:Microsoft.HealthVault.Thing.ThingBase.Sections" /> show the
+             <see cref="F:Microsoft.HealthVault.Thing.ThingSections.Xml" /> bit
+             set though it will not contain data unless a transform was
+             specified when getting the item.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public Guid TypeId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid TypeId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.TypeId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the type identifier for the thing type.
+             </summary>
+        <value>
+             A globally unique identifier for the type of the item.
+             </value>
+        <remarks>
+             The types available can be queried
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeName">
+      <MemberSignature Language="C#" Value="public string TypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TypeName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.TypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the thing type name.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             The types and names of types available can be queried
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeSpecificData">
+      <MemberSignature Language="C#" Value="public System.Xml.XPath.IXPathNavigable TypeSpecificData { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XPath.IXPathNavigable TypeSpecificData" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.TypeSpecificData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.IXPathNavigable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the XML representation of the type-specific data for the
+             <see cref="T:Microsoft.HealthVault.Thing.ThingBase" />.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             This data might contain data from other applications that also work
+             with the same type of data. Take care not to overwrite
+             existing data when making updates. Do not remove or manipulate
+             elements in the XML that you do not understand.
+             <br /><br />
+             If this property is set on a type derived from <see cref="T:Microsoft.HealthVault.Thing.ThingBase" /> the data
+             is not parsed into the object model so properties of the class may still show old data.
+             <br /><br />
+             This data value is only available to get when the
+             <see cref="P:Microsoft.HealthVault.Thing.ThingBase.Sections" /> show the
+             <see cref="F:Microsoft.HealthVault.Thing.ThingSections.Xml" /> bit
+             set.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdatedEndDate">
+      <MemberSignature Language="C#" Value="public DateTime UpdatedEndDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime UpdatedEndDate" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.ThingBase.UpdatedEndDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the date when ThingBase is not relevant.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This data value is only available when the
+            <see cref="P:Microsoft.HealthVault.Thing.ThingBase.Sections" /> show the
+            <see cref="F:Microsoft.HealthVault.Thing.ThingSections.Core" /> bit
+            set.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteItemXml">
+      <MemberSignature Language="C#" Value="public bool WriteItemXml (System.Xml.XmlWriter infoXmlWriter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool WriteItemXml(class System.Xml.XmlWriter infoXmlWriter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.ThingBase.WriteItemXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="infoXmlWriter" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="infoXmlWriter">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public virtual void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.ThingBase.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+             The XmlWriter that receives the type-specific data.
+             </param>
+        <summary>
+             Writes the XML for the type-specific data of the item to the
+             specified XmlWriter.
+             </summary>
+        <remarks>
+             Derived classes should override this method and write the type-
+             specific XML which goes in the data-xml section of the item.
+             <br /><br />
+             The default implementation writes the XML in the
+             <see cref="P:Microsoft.HealthVault.Thing.ThingBase.TypeSpecificData" /> property to the specified writer.
+             </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

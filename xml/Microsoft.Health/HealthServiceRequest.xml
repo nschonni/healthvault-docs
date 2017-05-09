@@ -1,0 +1,672 @@
+<Type Name="HealthServiceRequest" FullName="Microsoft.Health.HealthServiceRequest">
+  <TypeSignature Language="C#" Value="public class HealthServiceRequest" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HealthServiceRequest extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthServiceRequest" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Represents an individual request to a HealthVault service.
+            The class wraps up the XML generation and web request/response.
+            </summary>
+    <remarks>
+            An instance of this class can be retrieved by calling the 
+            <see cref="M:Microsoft.Health.HealthServiceConnection.CreateRequest(System.String,System.Int32)" /> 
+            method.
+            This class is not thread safe. A new instance should be created when multiple requests 
+            must execute concurrently.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthServiceRequest (Microsoft.Health.HealthServiceConnection connection, string methodName, int methodVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.HealthServiceConnection connection, string methodName, int32 methodVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceRequest.#ctor(Microsoft.Health.HealthServiceConnection,System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.HealthServiceConnection" />
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="methodVersion" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The client-side representation of the HealthVault service.
+            </param>
+        <param name="methodName">
+            The name of the method to invoke on the service.
+            </param>
+        <param name="methodVersion">
+            The version of the method to invoke on the service.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.HealthServiceRequest" /> 
+            class for the specified method.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="connection" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="methodName" /> parameter is <b>null</b> or empty.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthServiceRequest (Microsoft.Health.HealthServiceConnection connection, string methodName, int methodVersion, Microsoft.Health.HealthRecordAccessor record);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.HealthServiceConnection connection, string methodName, int32 methodVersion, class Microsoft.Health.HealthRecordAccessor record) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceRequest.#ctor(Microsoft.Health.HealthServiceConnection,System.String,System.Int32,Microsoft.Health.HealthRecordAccessor)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.HealthServiceConnection" />
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="methodVersion" Type="System.Int32" />
+        <Parameter Name="record" Type="Microsoft.Health.HealthRecordAccessor" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+             The client-side representation of the HealthVault service.
+             </param>
+        <param name="methodName">
+             The name of the method to invoke on the service.
+             </param>
+        <param name="methodVersion">
+             The version of the method to invoke on the service.
+             </param>
+        <param name="record">
+             The record to use.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.HealthServiceRequest" /> 
+             class for the specified method.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="connection" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="methodName" /> parameter is <b>null</b> or empty.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildRequestXml">
+      <MemberSignature Language="C#" Value="protected void BuildRequestXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void BuildRequestXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceRequest.BuildRequestXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+             Connects the XML using default values. 
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Xml.XmlException">
+             There is a failure building up the XML.
+             </exception>
+        <private>
+             This is protected so that the derived testing class can call it
+             to create the request XML and then verify it is correct.
+             </private>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildRequestXml">
+      <MemberSignature Language="C#" Value="protected void BuildRequestXml (string transform);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void BuildRequestXml(string transform) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceRequest.BuildRequestXml(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transform" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="transform">The optional XSL to apply.</param>
+        <summary>
+             Connects the XML using the specified optional XSL. 
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Xml.XmlException">
+             There is a failure building up the XML.
+             </exception>
+        <private>
+             This is protected so that the derived testing class can call it
+             to create the request XML and then verify it is correct.
+             </private>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelRequest">
+      <MemberSignature Language="C#" Value="public void CancelRequest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelRequest() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceRequest.CancelRequest" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Cancels any pending request to HealthVault that was initiated with the same connection
+            as this request.
+            </summary>
+        <remarks>
+            Calling this method will cancel any requests that was started using the connection.
+            It is up to the caller to start the request on another thread. Cancelling will cause
+            a HealthServiceRequestCancelledException to be thrown on the thread the request was
+            executed on.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureCode">
+      <MemberSignature Language="C#" Value="public string CultureCode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CultureCode" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceRequest.CultureCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the culture-code for the request.
+            </summary>
+        <value>
+            A string representing the culture-code.
+            </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public virtual void Execute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Execute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceRequest.Execute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Builds up the XML, makes the request and reads the response.
+            Connectivity failures will except out of the http client
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault returns an exception in the form of an 
+            exception section in the response XML.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteForTransform">
+      <MemberSignature Language="C#" Value="public virtual string ExecuteForTransform (string transform);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ExecuteForTransform(string transform) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceRequest.ExecuteForTransform(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transform" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="transform">
+            The public URL of the transform to apply to the results. If <b>null</b>,
+            no transform is applied and the results are returned
+            as a string.
+            </param>
+        <summary>
+            Same as Execute, but takes a transform url (or tag) that is
+            used to transform the result (on the server). Since the
+            response is no longer necessarily xml, it is returned as
+            a string
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCorrelationId">
+      <MemberSignature Language="C#" Value="public static Guid GetCorrelationId ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Guid GetCorrelationId() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceRequest.GetCorrelationId" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets the correlation id that was set by the user. For web applications, the correlation id
+            was set inside of HttpContext.Current.Items, so GetCorrelationId will retrieve from the 
+            HttpContext
+            
+            For non web applications, it will return whatever was set in the [ThreadStatic] variable.
+            </summary>
+        <returns />
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastResponseId">
+      <MemberSignature Language="C#" Value="public static Guid GetLastResponseId ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Guid GetLastResponseId() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceRequest.GetLastResponseId" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets the last response id that was returned by the HealthVault platform. The response id
+            is found in the response headers and is set when a request finishes executing.
+            
+            For web applications, the response id is stored in the HttpContext items to be shared across
+            the web request.
+            
+            For non web applications, the response id is stored in thread local storage so the last response
+            in the current thread will be returned.
+            
+            If an error occurs / exception thrown, the caller can call GetLastResponseId to get that response
+            id which can be used to look up error information in the HealthVault logs.
+            </summary>
+        <returns />
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleResponse">
+      <MemberSignature Language="C#" Value="public void HandleResponse (System.IO.Stream stream, System.Net.WebHeaderCollection responseHeaders);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void HandleResponse(class System.IO.Stream stream, class System.Net.WebHeaderCollection responseHeaders) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceRequest.HandleResponse(System.IO.Stream,System.Net.WebHeaderCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="responseHeaders" Type="System.Net.WebHeaderCollection" />
+      </Parameters>
+      <Docs>
+        <param name="stream">
+            The response stream.
+            </param>
+        <param name="responseHeaders">
+            The response headers.
+            </param>
+        <summary> 
+            Represents the <see cref="T:Microsoft.Health.IEasyWebResponseHandler" /> callback.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            HealthVault returns an exception in the form of an 
+            exception section in the response XML.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleResponseResult">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.HealthServiceResponseData HandleResponseResult (System.IO.Stream stream, System.Net.WebHeaderCollection responseHeaders);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.HealthServiceResponseData HandleResponseResult(class System.IO.Stream stream, class System.Net.WebHeaderCollection responseHeaders) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceRequest.HandleResponseResult(System.IO.Stream,System.Net.WebHeaderCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthServiceResponseData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="responseHeaders" Type="System.Net.WebHeaderCollection" />
+      </Parameters>
+      <Docs>
+        <param name="stream">
+            The response stream from the web request.
+            </param>
+        <param name="responseHeaders">
+            The response headers from the web request.
+            </param>
+        <summary>
+            Handles the response data and headers retrieved from the web request.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            HealthVault returns an exception in the form of an 
+            exception section in the response XML.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleResponseStream">
+      <MemberSignature Language="C#" Value="public void HandleResponseStream (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void HandleResponseStream(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceRequest.HandleResponseStream(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">
+            The response stream.
+            </param>
+        <summary> 
+            Represents the <see cref="T:Microsoft.Health.IEasyWebResponseHandler" /> callback.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            HealthVault returns an exception in the form of an 
+            exception section in the response XML.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleResponseStreamResult">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.HealthServiceResponseData HandleResponseStreamResult (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.HealthServiceResponseData HandleResponseStreamResult(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceRequest.HandleResponseStreamResult(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthServiceResponseData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">
+            The response stream from the web request.
+            </param>
+        <summary>
+            Handles the data retrieved by making the web request.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            HealthVault returns an exception in the form of an 
+            exception section in the response XML.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImpersonatedPersonId">
+      <MemberSignature Language="C#" Value="public Guid ImpersonatedPersonId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ImpersonatedPersonId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceRequest.ImpersonatedPersonId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the identifier of the person being impersonated.
+            </summary>
+        <value>
+            A GUID representing the identifier.
+            </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodName">
+      <MemberSignature Language="C#" Value="public string MethodName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MethodName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceRequest.MethodName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the method name to call.
+            </summary>
+        <value>
+            A string representing the method name.
+            </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodVersion">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; MethodVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; MethodVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceRequest.MethodVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the version of the method to call.
+            </summary>
+        <value>
+            An integer representing the version.
+            </value>
+        <remarks>
+            If <b>null</b>, the current version is called.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public string Parameters { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Parameters" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceRequest.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the parameters for the method invocation.
+            The parameters are specified via XML for the particular method.
+            </summary>
+        <value>
+            A string representing the parameters.
+            </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecordId">
+      <MemberSignature Language="C#" Value="public Guid RecordId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid RecordId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceRequest.RecordId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the record identifier.
+            </summary>
+        <value>
+            A GUID representing the identifier.
+            </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestCompressionMethod">
+      <MemberSignature Language="C#" Value="public string RequestCompressionMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestCompressionMethod" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceRequest.RequestCompressionMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the request compression method used by the connection.
+            </summary>
+        <value>
+            A string representing the request compression method.
+            </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Response">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.HealthServiceResponseData Response { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.HealthServiceResponseData Response" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceRequest.Response" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthServiceResponseData</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the response after Execute is called.
+            </summary>
+        <value>
+            An instance of <see cref="T:Microsoft.Health.HealthServiceResponseData" />.
+            </value>
+        <remarks>To be added.</remarks>
+        <private>
+            The setter is internal as a test hook so that the response can 
+            be set by test code in derived classes.
+            </private>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseStreamHandler">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.HealthServiceRequest.WebResponseStreamHandler ResponseStreamHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.HealthServiceRequest/WebResponseStreamHandler ResponseStreamHandler" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceRequest.ResponseStreamHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthServiceRequest+WebResponseStreamHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Defines a delegate that gets or sets all responses for requests to the 
+            HealthVault Service.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            If this property is set, the specified method is called once
+            the response stream is retrieved for handling the result of the
+            request to the HealthVault Service. If the property is not
+            set, the response is processed and the results can be 
+            retrieved using the <see cref="P:Microsoft.Health.HealthServiceRequest.Response" /> property.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCorrelationId">
+      <MemberSignature Language="C#" Value="public static void SetCorrelationId (Guid correlationId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetCorrelationId(valuetype System.Guid correlationId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceRequest.SetCorrelationId(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="correlationId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="correlationId">To be added.</param>
+        <summary>
+            To allow applications to keep track of calls to platform, the application
+            can optionally set a correlation id. This will be passed up in web requests to
+            HealthVault and used when HealthVault writes to its logs. If issues occur, this
+            id can be used by the HealthVault team to help debug the issue.
+            
+            For asp.net applications, we want to avoid the use of thread local for setting
+            the request id since a single web request is not guaranteed to fully execute on the
+            same thread - using HttpContext.Items is the recommended way.
+            
+            For non web applications, this method sets a [ThreadStatic] variable which stores the 
+            id in thread local storage. All HealthVault requests made on this thread will re-use this
+            variable
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeoutSeconds">
+      <MemberSignature Language="C#" Value="public int TimeoutSeconds { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TimeoutSeconds" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceRequest.TimeoutSeconds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the timeout for the request, in seconds.
+            </summary>
+        <value>
+            An integer representing the timeout, in seconds.
+            </value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The timeout value is set to less than 0.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

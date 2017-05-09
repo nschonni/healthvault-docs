@@ -1,0 +1,93 @@
+<Type Name="UserTagSetDefinition" FullName="Microsoft.Health.UserTagSetDefinition">
+  <TypeSignature Language="C#" Value="public class UserTagSetDefinition : Microsoft.Health.AuthorizationSetDefinition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UserTagSetDefinition extends Microsoft.Health.AuthorizationSetDefinition" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.UserTagSetDefinition" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.AuthorizationSetDefinition</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("This class will soon be removed from the SDK. Please use HealthRecordItem.Flags to restrict item access or HealthRecordItem.Tags to use user tags.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            Defines a set of health record items for authorization 
+            purposes whose user tags are within a specified set.
+            </summary>
+    <remarks>
+            Permissions on data in a person's health records are always included
+            in an authorization set (whether implicitly via their type or 
+            effective date, or explicitly by setting the system set.) This class
+            serves as a set of health record items that have effective dates 
+            falling within the specified range. Other types of authorization 
+            sets include:
+            <see cref="T:Microsoft.Health.TypeIdSetDefinition" />.
+            <see cref="T:Microsoft.Health.DateRangeSetDefinition" />.
+            </remarks>
+    <altmember cref="T:Microsoft.Health.AuthorizationSetDefinition" />
+    <altmember cref="T:Microsoft.Health.TypeIdSetDefinition" />
+    <altmember cref="T:Microsoft.Health.DateRangeSetDefinition" />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserTagSetDefinition (string userTags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string userTags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.UserTagSetDefinition.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="userTags" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="userTags">
+            A string with comma-separated user tags.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.UserTagSetDefinition" /> 
+            class with the specified user tags.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="userTags" /> parameter is <b>null</b> or does 
+            not contain at least one valid user tag.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXml">
+      <MemberSignature Language="C#" Value="public override string GetXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.UserTagSetDefinition.GetXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets the XML representation of the set.
+            </summary>
+        <returns>
+            The XML representation of the set as a string.
+            </returns>
+        <remarks>
+            The XML representation adheres to the schema required by the
+            HealthVault methods.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            If no user tags are specified in the <see cref="P:Microsoft.Health.UserTagSetDefinition.UserTags" /> property.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

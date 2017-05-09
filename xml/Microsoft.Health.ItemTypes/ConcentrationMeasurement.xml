@@ -1,0 +1,202 @@
+<Type Name="ConcentrationMeasurement" FullName="Microsoft.Health.ItemTypes.ConcentrationMeasurement">
+  <TypeSignature Language="C#" Value="public class ConcentrationMeasurement : Microsoft.Health.ItemTypes.Measurement&lt;double&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConcentrationMeasurement extends Microsoft.Health.ItemTypes.Measurement`1&lt;float64&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.ConcentrationMeasurement" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.ItemTypes.Measurement&lt;System.Double&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="MeasurementType">System.Double</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Represents a concentration measurement (volume / volume).
+            </summary>
+    <remarks>
+            In HealthVault, concentration readings have values and display values. 
+            All values are stored in a base unit of mmol/L. An application can 
+            take a concentration measurement like Cholesterol using any scale the 
+            application chooses and can store the user-entered value as the display value,
+            but the concentration value must be converted to mmol/L to be stored in HealthVault.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConcentrationMeasurement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ConcentrationMeasurement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ConcentrationMeasurement" /> 
+            class with empty values.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConcentrationMeasurement (double millimolesPerLiter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 millimolesPerLiter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ConcentrationMeasurement.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="millimolesPerLiter" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="millimolesPerLiter">
+            The concentration value in millimoles per liter.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ConcentrationMeasurement" /> 
+            class with the specified value in millimoles per liter (mmol/L).
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConcentrationMeasurement (double millimolesPerLiter, Microsoft.Health.ItemTypes.DisplayValue displayValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 millimolesPerLiter, class Microsoft.Health.ItemTypes.DisplayValue displayValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ConcentrationMeasurement.#ctor(System.Double,Microsoft.Health.ItemTypes.DisplayValue)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="millimolesPerLiter" Type="System.Double" />
+        <Parameter Name="displayValue" Type="Microsoft.Health.ItemTypes.DisplayValue" />
+      </Parameters>
+      <Docs>
+        <param name="millimolesPerLiter">
+            The concentration value in millimoles per liter.
+            </param>
+        <param name="displayValue">
+            The display value of the concentration measurement. This should 
+            contain the exact measurement as entered by the user, even if it 
+            uses some other unit of measure besides mmol/L. The display value
+            <see cref="P:Microsoft.Health.ItemTypes.DisplayValue.Units" /> and 
+            <see cref="P:Microsoft.Health.ItemTypes.DisplayValue.UnitsCode" /> 
+            represents the unit of measure for the user-entered value.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ConcentrationMeasurement" /> 
+            class with the specified value in millimoles per liter (mmol/L) 
+            and display value.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertMeasurementValue">
+      <MemberSignature Language="C#" Value="protected override void AssertMeasurementValue (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AssertMeasurementValue(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ConcentrationMeasurement.AssertMeasurementValue(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+            The concentration measurement.
+            </param>
+        <summary>
+            Verifies the value is a legal concentration measurement in 
+            millimoles per liter (mmol/L).
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is less than or equal to zero.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValueString">
+      <MemberSignature Language="C#" Value="protected override string GetValueString (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetValueString(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ConcentrationMeasurement.GetValueString(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>
+            Gets a string representation of the concentration value in the base units.
+            </summary>
+        <returns>
+            The concentration value as a string in the base units.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseValueXml">
+      <MemberSignature Language="C#" Value="protected override void ParseValueXml (System.Xml.XPath.XPathNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ParseValueXml(class System.Xml.XPath.XPathNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ConcentrationMeasurement.ParseValueXml(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="navigator"> 
+            The XML node representing the concentration value.
+            </param>
+        <summary> 
+            Populates the data for the concentration value from the XML.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteValueXml">
+      <MemberSignature Language="C#" Value="protected override void WriteValueXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WriteValueXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ConcentrationMeasurement.WriteValueXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"> 
+            The XmlWriter to write the concentration value to.
+            </param>
+        <summary> 
+            Writes the concentration value to the specified XML writer.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,458 @@
+<Type Name="Immunization" FullName="Microsoft.Health.ItemTypes.Immunization">
+  <TypeSignature Language="C#" Value="public class Immunization : Microsoft.Health.HealthRecordItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Immunization extends Microsoft.Health.HealthRecordItem" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Immunization" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Represents health record item type that contains information about an immunization.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Immunization ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Immunization.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Immunization" /> class with 
+            default values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Immunization (Microsoft.Health.ItemTypes.CodableValue name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.ItemTypes.CodableValue name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Immunization.#ctor(Microsoft.Health.ItemTypes.CodableValue)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="Microsoft.Health.ItemTypes.CodableValue" />
+      </Parameters>
+      <Docs>
+        <param name="name">
+            The name of the immunization.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Immunization" /> class 
+            specifying the mandatory values.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="name" /> parameter is null.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Immunization (Microsoft.Health.ItemTypes.CodableValue name, Microsoft.Health.ItemTypes.ApproximateDateTime dateAdministrated);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.ItemTypes.CodableValue name, class Microsoft.Health.ItemTypes.ApproximateDateTime dateAdministrated) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Immunization.#ctor(Microsoft.Health.ItemTypes.CodableValue,Microsoft.Health.ItemTypes.ApproximateDateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="Microsoft.Health.ItemTypes.CodableValue" />
+        <Parameter Name="dateAdministrated" Type="Microsoft.Health.ItemTypes.ApproximateDateTime" />
+      </Parameters>
+      <Docs>
+        <param name="name">
+            The name of the immunization.
+            </param>
+        <param name="dateAdministrated">
+            The approximate date that the immunization was adminstrated.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Immunization" /> class 
+            specifying the mandatory values.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="name" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Administrator">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.PersonItem Administrator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.PersonItem Administrator" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Immunization.Administrator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.PersonItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the name of the administrator of the immunization.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.PersonItem" /> instance representing the person.
+            </value>
+        <remarks>
+            Set the value to null if the administrator should not be stored.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdverseEvent">
+      <MemberSignature Language="C#" Value="public string AdverseEvent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AdverseEvent" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Immunization.AdverseEvent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets any adverse event description for the immunization.
+            </summary>
+        <value>
+            A string representing the event description.
+            </value>
+        <remarks>
+            Set the value to null if the description should not be stored.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnatomicSurface">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.CodableValue AnatomicSurface { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.CodableValue AnatomicSurface" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Immunization.AnatomicSurface" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the anatomic surface for the immunization.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the surface.
+            </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Consent">
+      <MemberSignature Language="C#" Value="public string Consent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Consent" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Immunization.Consent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the consent description for the immunization.
+            </summary>
+        <value>
+            A string representing the consent description.
+            </value>
+        <remarks>
+            Set the value to null if the consent should not be stored.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DateAdministrated">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.ApproximateDateTime DateAdministrated { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.ApproximateDateTime DateAdministrated" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Immunization.DateAdministrated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the date the immunization was administrated.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDateTime" /> instance representing the date.
+            </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpirationDate">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.ApproximateDate ExpirationDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.ApproximateDate ExpirationDate" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Immunization.ExpirationDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.ApproximateDate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the expiration date for the vaccine.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDate" /> instance representing the date.
+            </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Lot">
+      <MemberSignature Language="C#" Value="public string Lot { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Lot" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Immunization.Lot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the lot of the vaccine.
+            </summary>
+        <value>
+            A string representing the lot.
+            </value>
+        <remarks>
+            Set the value to null if the lot should not be stored.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Manufacturer">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.CodableValue Manufacturer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.CodableValue Manufacturer" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Immunization.Manufacturer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the manufacturer of the vaccine.
+            </summary>
+        <value>
+            A string representing the manufacturer.
+            </value>
+        <remarks>
+            Set the value to null if the manufacturer should not be stored.
+            The preferred vocabulary for the immunization manufacturer is "vaccine-manufacturers-mvx".
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.CodableValue Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.CodableValue Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Immunization.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the name of the immunization.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the name.
+            </value>
+        <remarks>
+            The preferred vocabulary for the immunization name is "vaccines-cvx".
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is null during set.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="protected override void ParseXml (System.Xml.XPath.IXPathNavigable typeSpecificXml);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ParseXml(class System.Xml.XPath.IXPathNavigable typeSpecificXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Immunization.ParseXml(System.Xml.XPath.IXPathNavigable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
+      </Parameters>
+      <Docs>
+        <param name="typeSpecificXml">
+            The XML to get the immunization data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.Immunization" /> instance from the data in the XML.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            an immunization node.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Route">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.CodableValue Route { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.CodableValue Route" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Immunization.Route" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the medical route for the immunization.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the route.
+            </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sequence">
+      <MemberSignature Language="C#" Value="public string Sequence { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Sequence" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Immunization.Sequence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the sequence for the immunization.
+            </summary>
+        <value>
+            A string representing the sequence.
+            </value>
+        <remarks>
+            Set the value to null if the consent should not be stored.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Immunization.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets a string representation of the immunization item.
+            </summary>
+        <returns>
+            A string representation of the immunization item.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public static readonly Guid TypeId;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid TypeId" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.Immunization.TypeId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Immunization.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+            The XmlWriter to write the immunization data to.
+            </param>
+        <summary>
+            Writes the immunization data to the specified XmlWriter.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.Immunization.Name" /> has not been set.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

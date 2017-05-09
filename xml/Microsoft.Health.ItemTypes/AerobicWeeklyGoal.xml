@@ -1,0 +1,230 @@
+<Type Name="AerobicWeeklyGoal" FullName="Microsoft.Health.ItemTypes.AerobicWeeklyGoal">
+  <TypeSignature Language="C#" Value="public class AerobicWeeklyGoal : Microsoft.Health.HealthRecordItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AerobicWeeklyGoal extends Microsoft.Health.HealthRecordItem" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.AerobicWeeklyGoal" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Represents a health record item type that encapsulates a goal to have 
+            a certain number of aerobic sessions per week.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AerobicWeeklyGoal ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.AerobicWeeklyGoal.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.AerobicWeeklyGoal" /> class with default 
+            values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> 
+            method is called.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AerobicWeeklyGoal (Microsoft.Health.ItemTypes.AerobicData session, int recurrence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.ItemTypes.AerobicData session, int32 recurrence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.AerobicWeeklyGoal.#ctor(Microsoft.Health.ItemTypes.AerobicData,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="session" Type="Microsoft.Health.ItemTypes.AerobicData" />
+        <Parameter Name="recurrence" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="session">
+             An aerobic session that defines the goal.
+             </param>
+        <param name="recurrence">
+             The number of occurrences of the session required in a week to
+             meet the goal.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.AerobicWeeklyGoal" /> class 
+             with the specified session data.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="session" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+             The <paramref name="recurrence" /> parameter is negative or zero.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AerobicSession">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.AerobicData AerobicSession { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.AerobicData AerobicSession" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.AerobicWeeklyGoal.AerobicSession" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.AerobicData</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the definition of the aerobic session needed to 
+            meet the goal.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.AerobicData" /> value representing the session definition.
+            </value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="protected override void ParseXml (System.Xml.XPath.IXPathNavigable typeSpecificXml);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ParseXml(class System.Xml.XPath.IXPathNavigable typeSpecificXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.AerobicWeeklyGoal.ParseXml(System.Xml.XPath.IXPathNavigable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
+      </Parameters>
+      <Docs>
+        <param name="typeSpecificXml">
+            The XML to get the aerobic goal data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.AerobicWeeklyGoal" /> instance from the data in the XML.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            an aerobic-session node.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Recurrence">
+      <MemberSignature Language="C#" Value="public int Recurrence { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Recurrence" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.AerobicWeeklyGoal.Recurrence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the number of sessions per week required to meet
+            the goal.
+            </summary>
+        <value>
+            An integer representing the number of sessions.
+            </value>
+        <remarks>
+            This number must be greater than zero. The property defaults
+            to three.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is less than or equal to zero.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.AerobicWeeklyGoal.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets a string representation of the aerobic weekly goal item.
+            </summary>
+        <returns>
+            A string representation of the aerobic weekly goal item.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public static readonly Guid TypeId;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid TypeId" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.AerobicWeeklyGoal.TypeId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.AerobicWeeklyGoal.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+            The XmlWriter to write the aerobic weekly goal data to.
+            </param>
+        <summary>
+            Writes the aerobic weekly goal data to the specified XmlWriter.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.AerobicWeeklyGoal.AerobicSession" /> property is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

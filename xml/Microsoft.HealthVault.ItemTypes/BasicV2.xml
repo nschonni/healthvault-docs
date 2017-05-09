@@ -1,0 +1,328 @@
+<Type Name="BasicV2" FullName="Microsoft.HealthVault.ItemTypes.BasicV2">
+  <TypeSignature Language="C#" Value="public class BasicV2 : Microsoft.HealthVault.Thing.ThingBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BasicV2 extends Microsoft.HealthVault.Thing.ThingBase" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.ItemTypes.BasicV2" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.65.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.HealthVault.Thing.ThingBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Represents information about a health record that is not considered personally
+            identifiable.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BasicV2 ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.BasicV2.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.BasicV2" /> class with default values.
+             </summary>
+        <remarks>
+             The item is not added to the health record until the <see cref="M:Microsoft.HealthVault.Clients.IThingClient.CreateNewThingsAsync``1(System.Guid,System.Collections.Generic.ICollection{``0})" /> method is called.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BirthYear">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; BirthYear { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; BirthYear" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.BasicV2.BirthYear" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the birth year of the person.
+             </summary>
+        <value>
+             An integer representing the year.
+             </value>
+        <remarks>
+             Set the value to <b>null</b> if the birth year should not be stored.
+             </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+             The <paramref name="value" /> parameter is less than 1000 or greater than
+             3000 when setting the value.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="City">
+      <MemberSignature Language="C#" Value="public string City { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string City" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.BasicV2.City" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the city of residence.
+             </summary>
+        <value>
+             A string representing the city.
+             </value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="value" /> contains only whitespace.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Country">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.ItemTypes.CodableValue Country { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.ItemTypes.CodableValue Country" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.BasicV2.Country" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the country of residence.
+             </summary>
+        <value>
+             A codable value representing the country.
+             </value>
+        <remarks>
+             Set the value to <b>null</b> if the country should not be stored.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstDayOfWeek">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DayOfWeek&gt; FirstDayOfWeek { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DayOfWeek&gt; FirstDayOfWeek" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.BasicV2.FirstDayOfWeek" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DayOfWeek&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the preferred first day of the week.
+             </summary>
+        <value>
+             A <see cref="T:System.DayOfWeek" /> instance representing the day.
+             </value>
+        <remarks>
+             Set the value to <b>null</b> if the first day of the week
+             should not be stored.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Gender">
+      <MemberSignature Language="C#" Value="public Nullable&lt;Microsoft.HealthVault.ItemTypes.Gender&gt; Gender { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Microsoft.HealthVault.ItemTypes.Gender&gt; Gender" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.BasicV2.Gender" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;Microsoft.HealthVault.ItemTypes.Gender&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the gender of the person.
+             </summary>
+        <value>
+             The person's gender.
+             </value>
+        <remarks>
+             Set the value to <b>null</b> if the gender should not be stored.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Languages">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;Microsoft.HealthVault.ItemTypes.Language&gt; Languages { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class Microsoft.HealthVault.ItemTypes.Language&gt; Languages" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.BasicV2.Languages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;Microsoft.HealthVault.ItemTypes.Language&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the language(s) the person speaks.
+             </summary>
+        <value>
+             A list of the languages.
+             </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="protected override void ParseXml (System.Xml.XPath.IXPathNavigable typeSpecificXml);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ParseXml(class System.Xml.XPath.IXPathNavigable typeSpecificXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.BasicV2.ParseXml(System.Xml.XPath.IXPathNavigable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
+      </Parameters>
+      <Docs>
+        <param name="typeSpecificXml">
+             The XML to get the basic data from.
+             </param>
+        <summary>
+             Populates this <see cref="T:Microsoft.HealthVault.ItemTypes.BasicV2" /> instance from the data in the XML.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+             The first node in <paramref name="typeSpecificXml" /> is not
+             a basic node.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PostalCode">
+      <MemberSignature Language="C#" Value="public string PostalCode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PostalCode" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.BasicV2.PostalCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the postal code of the country of residence.
+             </summary>
+        <value>
+             A string representing the postal code.
+             </value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="value" /> contains only whitespace.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StateOrProvince">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.ItemTypes.CodableValue StateOrProvince { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.ItemTypes.CodableValue StateOrProvince" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.BasicV2.StateOrProvince" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the state or province of residence.
+             </summary>
+        <value>
+             A string representing the state or province.
+             </value>
+        <remarks>
+             Set the value to <b>null</b> if the state
+             should not be stored.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.BasicV2.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+             Gets a string representation of the basic item.
+             </summary>
+        <returns>
+             A string representation of the basic item.
+             </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public static readonly Guid TypeId;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid TypeId" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.HealthVault.ItemTypes.BasicV2.TypeId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Retrieves the unique identifier for the item type.
+             </summary>
+        <returns>
+             A GUID.
+             </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.BasicV2.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+             The XmlWriter to write the basic data to.
+             </param>
+        <summary>
+             Writes the basic data to the specified XmlWriter.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="writer" /> is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

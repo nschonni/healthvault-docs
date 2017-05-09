@@ -1,0 +1,531 @@
+<Type Name="ExplanationOfBenefits" FullName="Microsoft.Health.ItemTypes.ExplanationOfBenefits">
+  <TypeSignature Language="C#" Value="public class ExplanationOfBenefits : Microsoft.Health.HealthRecordItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExplanationOfBenefits extends Microsoft.Health.HealthRecordItem" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.ExplanationOfBenefits" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+             Describes the benefits received from an insurance plan.
+             </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExplanationOfBenefits ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ExplanationOfBenefits.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ExplanationOfBenefits" /> class with default values.
+             </summary>
+        <remarks>
+             This item is not added to the health record until the
+             <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method
+             is called
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExplanationOfBenefits (Microsoft.Health.ItemTypes.HealthServiceDateTime dateSubmitted, Microsoft.Health.ItemTypes.PersonItem patient, Microsoft.Health.ItemTypes.Organization plan, string memberId, Microsoft.Health.ItemTypes.CodableValue claimType, string claimId, Microsoft.Health.ItemTypes.Organization submittedBy, Microsoft.Health.ItemTypes.Organization provider, Microsoft.Health.ItemTypes.CodableValue currency, Microsoft.Health.ItemTypes.ClaimAmounts claimTotals, System.Collections.Generic.IEnumerable&lt;Microsoft.Health.ItemTypes.Service&gt; services);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.ItemTypes.HealthServiceDateTime dateSubmitted, class Microsoft.Health.ItemTypes.PersonItem patient, class Microsoft.Health.ItemTypes.Organization plan, string memberId, class Microsoft.Health.ItemTypes.CodableValue claimType, string claimId, class Microsoft.Health.ItemTypes.Organization submittedBy, class Microsoft.Health.ItemTypes.Organization provider, class Microsoft.Health.ItemTypes.CodableValue currency, class Microsoft.Health.ItemTypes.ClaimAmounts claimTotals, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Health.ItemTypes.Service&gt; services) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ExplanationOfBenefits.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime,Microsoft.Health.ItemTypes.PersonItem,Microsoft.Health.ItemTypes.Organization,System.String,Microsoft.Health.ItemTypes.CodableValue,System.String,Microsoft.Health.ItemTypes.Organization,Microsoft.Health.ItemTypes.Organization,Microsoft.Health.ItemTypes.CodableValue,Microsoft.Health.ItemTypes.ClaimAmounts,System.Collections.Generic.IEnumerable{Microsoft.Health.ItemTypes.Service})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dateSubmitted" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
+        <Parameter Name="patient" Type="Microsoft.Health.ItemTypes.PersonItem" />
+        <Parameter Name="plan" Type="Microsoft.Health.ItemTypes.Organization" />
+        <Parameter Name="memberId" Type="System.String" />
+        <Parameter Name="claimType" Type="Microsoft.Health.ItemTypes.CodableValue" />
+        <Parameter Name="claimId" Type="System.String" />
+        <Parameter Name="submittedBy" Type="Microsoft.Health.ItemTypes.Organization" />
+        <Parameter Name="provider" Type="Microsoft.Health.ItemTypes.Organization" />
+        <Parameter Name="currency" Type="Microsoft.Health.ItemTypes.CodableValue" />
+        <Parameter Name="claimTotals" Type="Microsoft.Health.ItemTypes.ClaimAmounts" />
+        <Parameter Name="services" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Health.ItemTypes.Service&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateSubmitted">
+             The date when the claim was submitted.
+             </param>
+        <param name="patient">
+             The name of the patient.
+             </param>
+        <param name="plan">
+             The plan covering this claim.
+             </param>
+        <param name="memberId">
+             The member id of the plan member.
+             </param>
+        <param name="claimType">
+             The type of the claim (medical, dental, etc.)
+             </param>
+        <param name="claimId">
+             The claim id.
+             </param>
+        <param name="submittedBy">
+             The organization that submitted this claim.
+             </param>
+        <param name="provider">
+             The provider that performed the services.
+             </param>
+        <param name="currency">
+             The currency used.
+             </param>
+        <param name="claimTotals">
+             A summary of the financial information about this claim.
+             </param>
+        <param name="services">
+             The service included in this claim.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ExplanationOfBenefits" /> class specifying mandatory values.
+             </summary>
+        <remarks>
+             This item is not added to the health record until the
+             <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method
+             is called.
+             </remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="memberId" /> is empty or contains only whitespace.
+             If <paramref name="claimId" /> is empty or contains only whitespace.
+             If <paramref name="services" /> is <b>null</b> or doesn't contain any values.            
+             </exception>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="memberId" /> is <b>null</b>.
+             If <paramref name="claimId" /> is <b>null</b>.
+             If <paramref name="dateSubmitted" /> is <b>null</b>.            
+             If <paramref name="patient" /> is <b>null</b>.            
+             If <paramref name="plan" /> is <b>null</b>.            
+             If <paramref name="claimType" /> is <b>null</b>.            
+             If <paramref name="submittedBy" /> is <b>null</b>.            
+             If <paramref name="provider" /> is <b>null</b>.            
+             If <paramref name="currency" /> is <b>null</b>.            
+             If <paramref name="claimTotals" /> is <b>null</b>.            
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimId">
+      <MemberSignature Language="C#" Value="public string ClaimId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClaimId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.ClaimId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the claim id.
+             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="value" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="value" /> is empty or contains only whitespace.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimTotals">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.ClaimAmounts ClaimTotals { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.ClaimAmounts ClaimTotals" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.ClaimTotals" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.ClaimAmounts</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets a summary of the financial information about this claim.
+             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="value" /> parameter is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimType">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.CodableValue ClaimType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.CodableValue ClaimType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.ClaimType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the type of the claim (medical, dental, etc.)
+             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="value" /> parameter is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Currency">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.CodableValue Currency { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.CodableValue Currency" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.Currency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the currency used.
+             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="value" /> parameter is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DateSubmitted">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.HealthServiceDateTime DateSubmitted { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.HealthServiceDateTime DateSubmitted" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.DateSubmitted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the date when the claim was submitted.
+             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="value" /> parameter is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupId">
+      <MemberSignature Language="C#" Value="public string GroupId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GroupId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.GroupId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the group id for the member's plan.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             If there is no information about the groupId the value should be set to <b>null</b></remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="value" /> contains only whitespace.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberId">
+      <MemberSignature Language="C#" Value="public string MemberId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MemberId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.MemberId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the member id of the plan member.
+             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="value" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="value" /> is empty or contains only whitespace.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="protected override void ParseXml (System.Xml.XPath.IXPathNavigable typeSpecificXml);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ParseXml(class System.Xml.XPath.IXPathNavigable typeSpecificXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ExplanationOfBenefits.ParseXml(System.Xml.XPath.IXPathNavigable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
+      </Parameters>
+      <Docs>
+        <param name="typeSpecificXml">
+             The XML to get the ExplanationOfBenefits data from.
+             </param>
+        <summary>
+             Populates this <see cref="T:Microsoft.Health.ItemTypes.ExplanationOfBenefits" /> instance from the data in the specified XML.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="typeSpecificXml" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:System.InvalidOperationException">
+             If the first node in <paramref name="typeSpecificXml" /> is not
+             a ExplanationOfBenefits node.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Patient">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.PersonItem Patient { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.PersonItem Patient" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.Patient" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.PersonItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the name of the patient.
+             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="value" /> parameter is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Plan">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.Organization Plan { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.Organization Plan" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.Plan" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.Organization</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the plan covering this claim.
+             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="value" /> parameter is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.Organization Provider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.Organization Provider" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.Organization</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the provider that performed the services.
+             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="value" /> parameter is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RelationshipToMember">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.CodableValue RelationshipToMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.CodableValue RelationshipToMember" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.RelationshipToMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the relationship of the patient to the primary plan member.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             If there is no information about the relationshipToMember the value should be set to <b>null</b>.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Services">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.Service&gt; Services { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class Microsoft.Health.ItemTypes.Service&gt; Services" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.Services" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.Service&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets a collection of the services included in this claim.
+             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="value" /> parameter is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SubmittedBy">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.Organization SubmittedBy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.Organization SubmittedBy" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.SubmittedBy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.Organization</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the organization that submitted this claim.
+             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="value" /> parameter is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ExplanationOfBenefits.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+             Gets a string representation of the ExplanationOfBenefits.
+             </summary>
+        <returns>
+             A string representation of the ExplanationOfBenefits.
+             </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public static readonly Guid TypeId;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid TypeId" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.ExplanationOfBenefits.TypeId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Retrieves the unique identifier for the item type.
+             </summary>
+        <returns>
+             A GUID.
+             </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ExplanationOfBenefits.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+             The XML writer into which the ExplanationOfBenefits should be
+             written.
+             </param>
+        <summary>
+             Writes the XML representation of the ExplanationOfBenefits into
+             the specified XML writer.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="writer" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+             If <see cref="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.DateSubmitted" /> is <b>null</b>.
+             If <see cref="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.Patient" /> is <b>null</b>.
+             If <see cref="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.Plan" /> is <b>null</b>.
+             If <see cref="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.MemberId" /> is <b>null</b>.
+             If <see cref="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.ClaimType" /> is <b>null</b>.
+             If <see cref="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.ClaimId" /> is <b>null</b>.
+             If <see cref="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.SubmittedBy" /> is <b>null</b>.
+             If <see cref="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.Provider" /> is <b>null</b>.
+             If <see cref="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.Currency" /> is <b>null</b>.
+             If <see cref="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.ClaimTotals" /> is <b>null</b>.
+             If <see cref="P:Microsoft.Health.ItemTypes.ExplanationOfBenefits.Services" /> collection is <b>null</b> or empty.                
+             </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

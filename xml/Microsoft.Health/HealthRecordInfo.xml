@@ -1,0 +1,682 @@
+<Type Name="HealthRecordInfo" FullName="Microsoft.Health.HealthRecordInfo">
+  <TypeSignature Language="C#" Value="public class HealthRecordInfo : Microsoft.Health.HealthRecordAccessor, Microsoft.Health.IMarshallable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HealthRecordInfo extends Microsoft.Health.HealthRecordAccessor implements class Microsoft.Health.IMarshallable" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthRecordInfo" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.HealthRecordAccessor</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Health.IMarshallable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>
+            Represents the APIs and information about a health record for an individual.
+            </summary>
+    <remarks>
+            A HealthRecordInfo represents a person's view of a health record and 
+            information about the health record such as the state, name, date of
+            expiration, and so on. This view may vary based upon the access rights the 
+            person has to the record and multiple people may have access to the 
+            same record but have different views. For instance, a husband may 
+            have a HealthRecordInfo instance for himself and another for his 
+            wife's health record which she shared with him.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthRecordInfo (Microsoft.Health.ApplicationConnection connection, Guid id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.ApplicationConnection connection, valuetype System.Guid id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordInfo.#ctor(Microsoft.Health.ApplicationConnection,System.Guid)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="id" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            An instance of a <see cref="T:Microsoft.Health.ApplicationConnection" /> 
+            to which the record operations are directed.
+            </param>
+        <param name="id">
+            The unique identifier for the record.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.HealthRecordInfo" /> class, 
+            providing a new view of a personal health record.
+            </summary>
+        <remarks>
+            With this constructor, none of the data held in the properties
+            is valid except the 
+            <see cref="P:Microsoft.Health.HealthRecordAccessor.Id" /> 
+            property. The ID is not validated with the service and the data
+            is not retrieved until 
+            <see cref="M:Microsoft.Health.HealthRecordInfo.Refresh" />
+            is called. However, any of the methods can be called without 
+            Update being called.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="connection" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="id" /> parameter is Guid.Empty.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationSpecificRecordId">
+      <MemberSignature Language="C#" Value="public string ApplicationSpecificRecordId { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationSpecificRecordId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.ApplicationSpecificRecordId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the application specific record id for the specified 
+            record and application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromXml">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.HealthRecordInfo CreateFromXml (Microsoft.Health.ApplicationConnection connection, System.Xml.XPath.XPathNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.HealthRecordInfo CreateFromXml(class Microsoft.Health.ApplicationConnection connection, class System.Xml.XPath.XPathNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordInfo.CreateFromXml(Microsoft.Health.ApplicationConnection,System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthRecordInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            A connection for the current user.
+            </param>
+        <param name="navigator">
+            The XML containing the record information.
+            </param>
+        <summary>
+            Creates an instance of a HealthRecordInfo object using
+            the specified XML.
+            </summary>
+        <returns>
+            A new instance of a HealthRecordInfo object populated with the
+            record information.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="connection" /> or <paramref name="navigator" /> 
+            parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DateAuthorizationExpires">
+      <MemberSignature Language="C#" Value="public DateTime DateAuthorizationExpires { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime DateAuthorizationExpires" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.DateAuthorizationExpires" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the date/time that the authorization for the record expires.
+            </summary>
+        <value>
+            A DateTime in UTC indicating when the record is no longer
+            accessible to the user.
+            </value>
+        <remarks>
+            When a person shares their record with another HealthVault account,
+            they can specify the date when that sharing is revoked (if ever).
+            This property indicates that date. If the person tries to access
+            the record after the indicated date, they receive a
+            <see cref="T:Microsoft.Health.HealthServiceAccessDeniedException" />.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The record was constructed using the record ID and 
+            <see cref="M:Microsoft.Health.HealthRecordInfo.Refresh" /> has not been called.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DateCreated">
+      <MemberSignature Language="C#" Value="public DateTime DateCreated { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime DateCreated" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.DateCreated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the date the record was created, in UTC.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DateUpdated">
+      <MemberSignature Language="C#" Value="public DateTime DateUpdated { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime DateUpdated" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.DateUpdated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the date the record was updated, in UTC.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public string DisplayName { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the display name of the record.
+            </summary>
+        <value>
+            A string representing the name of the record as seen by the
+            current user.
+            </value>
+        <remarks>
+            A record has a name that defaults to the name of the owner of
+            the record. A nickname can override the record name for each 
+            person authorized to use the record. If the nickname is specified,
+            it is returned in this property. If the nickname is not specified,
+            the record name is returned.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The record was constructed using the record ID and 
+            <see cref="M:Microsoft.Health.HealthRecordInfo.Refresh" /> has not been called.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFromAlternateId">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.HealthRecordInfo GetFromAlternateId (Microsoft.Health.ApplicationConnection connection, string alternateId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.HealthRecordInfo GetFromAlternateId(class Microsoft.Health.ApplicationConnection connection, string alternateId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordInfo.GetFromAlternateId(Microsoft.Health.ApplicationConnection,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthRecordInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="alternateId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connection">The application connection to use.</param>
+        <param name="alternateId">The alternateId to look up.</param>
+        <summary>
+             Look up the record that were
+             previously associated with this alternate id.
+             </summary>
+        <returns>
+             A new instance of <see cref="T:Microsoft.Health.HealthRecordInfo" /> that can be used to access the
+             record.
+             </returns>
+        <returns>A HealthRecordInfo that can be used to access the record.</returns>
+        <remarks>
+             To obtain the person and record info, use <see cref="M:Microsoft.Health.PersonInfo.GetFromAlternateId(Microsoft.Health.ApplicationConnection,System.String)" />.
+             </remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The alternateId parameter is null.
+             </exception>
+        <exception cref="T:System.ArgumentException">
+             The alternateId parameter is empty, all whitespace, or more than 255 characters in length.
+             </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+             The HealthVault service returned an error. 
+             If the alternate Id is not associated with a person and record id, the ErrorCode property
+             will be set to AlternateIdNotFound.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXml">
+      <MemberSignature Language="C#" Value="public override string GetXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordInfo.GetXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets the XML representation of the HealthRecordInfo.
+            </summary>
+        <returns>
+            A string containing the XML representation of the HealthRecordInfo.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasAuthorizationExpired">
+      <MemberSignature Language="C#" Value="public bool HasAuthorizationExpired { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasAuthorizationExpired" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.HasAuthorizationExpired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <b>true</b> if the authorization of the authenticated person has
+            expired for this record; otherwise, <b>false</b>.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HealthRecordAuthorizationStatus">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.HealthRecordAuthorizationStatus HealthRecordAuthorizationStatus { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Health.HealthRecordAuthorizationStatus HealthRecordAuthorizationStatus" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.HealthRecordAuthorizationStatus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthRecordAuthorizationStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the <see cref="P:Microsoft.Health.HealthRecordInfo.HealthRecordAuthorizationStatus" /> for the record.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The status indicates whether, at the time of retrieval, the application 
+            is able to access the record.  Any status other than NoActionRequired 
+            requires user intervention in HealthVault before the application may 
+            successfully access the record.  
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCustodian">
+      <MemberSignature Language="C#" Value="public bool IsCustodian { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCustodian" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.IsCustodian" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a value indicating whether or not the person is a custodian 
+            of the record.
+            </summary>
+        <value>
+          <b>true</b> if the person is a custodian of the record; otherwise, 
+            <b>false</b>.
+            </value>
+        <remarks>
+            A person is considered a custodian if they have been given 
+            ownership of the record. The owner can give ownership to another 
+            as an explicit action when sharing the record.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The record was constructed using the record ID and 
+            <see cref="M:Microsoft.Health.HealthRecordInfo.Refresh" /> has not been called.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LatestOperationSequenceNumber">
+      <MemberSignature Language="C#" Value="public long LatestOperationSequenceNumber { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 LatestOperationSequenceNumber" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.LatestOperationSequenceNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the record's latest operation sequence number.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The record's operation sequence number is used when sync'ing data from a 
+            record. Anytime an operation is performed against a health record item HealthVault
+            stamps it with the next increment of the operation sequence number for the record.
+            For example, the first item added to the record would be stamped with the sequence
+            number 1, the next operation would stamp the thing with 2, etc. Applications can
+            determine all operations that have occurred since a known point by calling 
+            GetRecordOperations and passing the sequence number of the known point.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Marshal">
+      <MemberSignature Language="C#" Value="public void Marshal (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Marshal(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordInfo.Marshal(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+            The writer that receives the record information.
+            </param>
+        <summary>
+            Writes the record information into the specified writer as XML.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the name of the record.
+            </summary>
+        <value>
+            A string indicating the name of the record.
+            </value>
+        <remarks>
+            The name defaults to the name of the person to whom the record
+            belongs. See <see cref="P:Microsoft.Health.HealthRecordInfo.DisplayName" /> for how to override the 
+            name to customize the view for a person authorized to view the 
+            record.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The record was constructed using the record ID and 
+            <see cref="M:Microsoft.Health.HealthRecordInfo.Refresh" /> has not been called.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="QuotaInBytes">
+      <MemberSignature Language="C#" Value="public Nullable&lt;long&gt; QuotaInBytes { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int64&gt; QuotaInBytes" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.QuotaInBytes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int64&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the maximum total size in bytes that the <see cref="T:Microsoft.Health.HealthRecordItem" />s in 
+            the <see cref="T:Microsoft.Health.HealthRecordInfo" /> can occupy.
+            </summary>
+        <value>To be added.</value>
+        <remarks> 
+            This data value is only available when the <see cref="T:Microsoft.Health.HealthRecordInfo" /> object is 
+            fetched from the HealthVault platform as opposed to created on the fly.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuotaUsedInBytes">
+      <MemberSignature Language="C#" Value="public Nullable&lt;long&gt; QuotaUsedInBytes { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int64&gt; QuotaUsedInBytes" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.QuotaUsedInBytes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int64&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the total size in bytes that the <see cref="T:Microsoft.Health.HealthRecordItem" />s in 
+            the <see cref="T:Microsoft.Health.HealthRecordInfo" /> currently occupy.
+            </summary>
+        <value>To be added.</value>
+        <remarks> 
+            This data value is only available when the <see cref="T:Microsoft.Health.HealthRecordInfo" /> object is 
+            fetched from the HealthVault platform as opposed to created on the fly.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecordAppAuthCreatedDate">
+      <MemberSignature Language="C#" Value="public DateTime RecordAppAuthCreatedDate { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime RecordAppAuthCreatedDate" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.RecordAppAuthCreatedDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the date when the user authorized the application to the record, in UTC.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordInfo.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Updates the <see cref="T:Microsoft.Health.HealthRecordInfo" /> instance with data from 
+            the server using the <see cref="P:Microsoft.Health.HealthRecordAccessor.Id" />.
+            </summary>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            This method is called and the 
+            <see cref="P:Microsoft.Health.HealthRecordAccessor.Connection" /> 
+            object of the <see cref="T:Microsoft.Health.HealthRecordInfo" /> is not an 
+            <see cref="T:Microsoft.Health.AuthenticatedConnection" />.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RelationshipName">
+      <MemberSignature Language="C#" Value="public string RelationshipName { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelationshipName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.RelationshipName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the localized string representing the relationship between
+            the person authorized to view this record and the owner of the
+            record.
+            </summary>
+        <value>
+            A string representation of the enumeration value indicating the 
+            relationship between the record owner and the person authorized 
+            to use the record.
+            </value>
+        <remarks>
+            See <see cref="P:Microsoft.Health.HealthRecordInfo.RelationshipType" /> for more information on the
+            relationships and what they mean.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The record was constructed using the record ID and 
+            <see cref="M:Microsoft.Health.HealthRecordInfo.Refresh" /> has not been called.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RelationshipType">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.RelationshipType RelationshipType { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Health.RelationshipType RelationshipType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.RelationshipType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.RelationshipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the relationship the person authorized to view this record
+            has with the "owner" of the record.
+            </summary>
+        <value>
+            An enumeration value indicating the relationship between the 
+            record owner and the person authorized to use the record.
+            </value>
+        <remarks>
+            See <see cref="P:Microsoft.Health.HealthRecordInfo.RelationshipType" /> for more information on the
+            relationships and what they mean.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The record was constructed using the record ID and 
+            <see cref="M:Microsoft.Health.HealthRecordInfo.Refresh" /> has not been called.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.HealthRecordState State { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Health.HealthRecordState State" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordInfo.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthRecordState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets the state of a <see cref="T:Microsoft.Health.HealthRecordInfo" />.
+             </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordInfo.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets the name of the record.
+            </summary>
+        <returns>
+            The name of the record.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unmarshal">
+      <MemberSignature Language="C#" Value="public void Unmarshal (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Unmarshal(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordInfo.Unmarshal(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">
+            The reader from which to get the data for the class instance.
+            </param>
+        <summary>
+            Populates the data of the class from the XML in
+            the specified reader.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="reader" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

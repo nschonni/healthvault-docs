@@ -1,0 +1,104 @@
+<Type Name="Subscription" FullName="Microsoft.Health.Events.Subscription">
+  <TypeSignature Language="C#" Value="public abstract class Subscription" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Subscription extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.Events.Subscription" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            The base class for all subscriptions.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CommonSubscriptionData">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.Events.CommonSubscriptionData CommonSubscriptionData { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.Events.CommonSubscriptionData CommonSubscriptionData" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Events.Subscription.CommonSubscriptionData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.Events.CommonSubscriptionData</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the <see cref="P:Microsoft.Health.Events.Subscription.CommonSubscriptionData" /> that is associated with this subscription.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.Events.Subscription Deserialize (System.Xml.XPath.XPathNavigator subscriptionNavigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.Events.Subscription Deserialize(class System.Xml.XPath.XPathNavigator subscriptionNavigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.Subscription.Deserialize(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.Events.Subscription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subscriptionNavigator" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="subscriptionNavigator">The xml representation to deserialize.</param>
+        <summary>
+             Create an instance of a Subscription by deserializing the subscription XML.
+             </summary>
+        <returns>The subscription.</returns>
+        <remarks>
+             The returned type will be a type derived from Subscription, such as the <see cref="T:Microsoft.Health.Events.HealthRecordItemChangedSubscription" /> class. 
+             </remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="subscriptionNavigator" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="subscriptionNavigator" /> parameter XML does not contain 
+             a subscription node.
+             </exception>
+        <exception cref="T:System.InvalidOperationException">
+             The <paramref name="subscriptionNavigator" /> parameter XML has an unrecognized 
+             subscription type.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.Xml.XmlWriter xmlWriter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Serialize(class System.Xml.XmlWriter xmlWriter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.Subscription.Serialize(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="xmlWriter">The XmlWriter to write the data to.</param>
+        <summary>
+            Save the subscription to XML.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="xmlWriter" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.InvalidOperationException">
+            The <seealso name="CommonItemSubscriptionData" /> property is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

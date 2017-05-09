@@ -1,0 +1,338 @@
+<Type Name="AsthmaInhalerUse" FullName="Microsoft.Health.ItemTypes.AsthmaInhalerUse">
+  <TypeSignature Language="C#" Value="public class AsthmaInhalerUse : Microsoft.Health.HealthRecordItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AsthmaInhalerUse extends Microsoft.Health.HealthRecordItem" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.AsthmaInhalerUse" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Represents a health record item type that encapsulates a single use of 
+            an asthma inhaler.
+            </summary>
+    <remarks>
+            A single use can consist of multiple doses if the prescription
+            calls for it.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AsthmaInhalerUse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.AsthmaInhalerUse.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.AsthmaInhalerUse" /> class with default values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AsthmaInhalerUse (Microsoft.Health.ItemTypes.HealthServiceDateTime when, Microsoft.Health.ItemTypes.CodableValue drug, int doseCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.ItemTypes.HealthServiceDateTime when, class Microsoft.Health.ItemTypes.CodableValue drug, int32 doseCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.AsthmaInhalerUse.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime,Microsoft.Health.ItemTypes.CodableValue,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="when" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
+        <Parameter Name="drug" Type="Microsoft.Health.ItemTypes.CodableValue" />
+        <Parameter Name="doseCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="when">
+            The date/time when the inhaler was used.
+            </param>
+        <param name="drug">
+            The name of the drug being used in the inhaler.
+            </param>
+        <param name="doseCount">
+            The count of doses for each inhaler use.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.AsthmaInhalerUse" /> class 
+            specifying the mandatory values.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="drug" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeviceId">
+      <MemberSignature Language="C#" Value="public string DeviceId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DeviceId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.AsthmaInhalerUse.DeviceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the identifier for the device used.
+            </summary>
+        <value>
+            A string representing the device identifier.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the device identifier should not be 
+            stored.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DoseCount">
+      <MemberSignature Language="C#" Value="public int DoseCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DoseCount" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.AsthmaInhalerUse.DoseCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the count of doses for each inhaler use.
+            </summary>
+        <value>
+            An integer representing the count.
+            </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DosePurpose">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.CodableValue DosePurpose { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.CodableValue DosePurpose" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.AsthmaInhalerUse.DosePurpose" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the target of the inhaler usage.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            Examples include relief (the dose purpose is
+            intended to relieve immediate asthma symptoms), 
+            prevention (the dose purpose is intended to 
+            prevent asthma symptoms), control (the dose 
+            purpose is intended to control the impact of 
+            current asthma symptoms), other (the dose 
+            purpose is known, but other than to relieve, 
+            prevent or control asthma symptoms), and 
+            undefined (there is not enough information 
+            about the inhaler usage to discern purpose).
+            <br /><br />
+            Codes for this value are in the "dose-purpose" 
+            vocabulary.
+            </remarks>
+        <see cref="T:Microsoft.Health.ItemTypes.CodableValue" />
+      </Docs>
+    </Member>
+    <Member MemberName="Drug">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.CodableValue Drug { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.CodableValue Drug" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.AsthmaInhalerUse.Drug" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the drug being used in the inhaler.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the 
+            drug.
+            </value>
+        <remarks>
+            The name of the drug in the canister.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="protected override void ParseXml (System.Xml.XPath.IXPathNavigable typeSpecificXml);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ParseXml(class System.Xml.XPath.IXPathNavigable typeSpecificXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.AsthmaInhalerUse.ParseXml(System.Xml.XPath.IXPathNavigable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
+      </Parameters>
+      <Docs>
+        <param name="typeSpecificXml">
+            The XML to get the asthma inhaler use data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.AsthmaInhalerUse" /> instance from the data in the XML.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            an asthma-inhaler-use node.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Strength">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.CodableValue Strength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.CodableValue Strength" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.AsthmaInhalerUse.Strength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the strength of the dosage for each inhaler use.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the 
+            dosage strength.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the strength should not be stored.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.AsthmaInhalerUse.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets a string representation of the asthma inhaler use item.
+            </summary>
+        <returns>
+            A string representation of the asthma inhaler use item.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public static readonly Guid TypeId;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid TypeId" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.AsthmaInhalerUse.TypeId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="When">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.HealthServiceDateTime When { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.HealthServiceDateTime When" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.AsthmaInhalerUse.When" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the date when the inhaler use occurred.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing 
+            the date. The default value is the current year, month, and day.
+            </value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.AsthmaInhalerUse.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+            The XmlWriter to write the asthma inhaler use data to.
+            </param>
+        <summary>
+            Writes the asthma inhaler use data to the specified XmlWriter.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.AsthmaInhalerUse.When" />, <see cref="P:Microsoft.Health.ItemTypes.AsthmaInhalerUse.DoseCount" />, or
+            <see cref="P:Microsoft.Health.ItemTypes.AsthmaInhalerUse.Drug" /> property is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

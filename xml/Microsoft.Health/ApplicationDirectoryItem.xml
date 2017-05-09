@@ -1,0 +1,274 @@
+<Type Name="ApplicationDirectoryItem" FullName="Microsoft.Health.ApplicationDirectoryItem">
+  <TypeSignature Language="C#" Value="public class ApplicationDirectoryItem : Microsoft.Health.DirectoryItem, System.Xml.Serialization.IXmlSerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ApplicationDirectoryItem extends Microsoft.Health.DirectoryItem implements class System.Xml.Serialization.IXmlSerializable" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ApplicationDirectoryItem" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.Directory</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.DirectoryItem</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Xml.Serialization.IXmlSerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>
+            Defines the information for a HealthVault ApplicationDirectoryItem.
+            An application directory item contains directory information
+            for an application that works with HealthVault. 
+            </summary>
+    <remarks>
+            Directory information typically consists of short description of the application, and a detailed long description in html.
+            Supplementary information like application screenshots, company details, etc. are also available.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationDirectoryItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ApplicationDirectoryItem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ApplicationDirectoryItem" /> class with default parameters.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionDescription">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.CultureSpecificStringDictionary ConnectionDescription { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.CultureSpecificStringDictionary ConnectionDescription" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationDirectoryItem.ConnectionDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.CultureSpecificStringDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a dictionary of language specifiers and localized description of the connection process for the item.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The key is the language-country string such as "en-US", and the value is the localized version of the string.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchema">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema GetSchema ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.Schema.XmlSchema GetSchema() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ApplicationDirectoryItem.GetSchema" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Get the schema as per IXmlSerializable requirement.
+            Always returns null.
+            </summary>
+        <returns>null</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPopular">
+      <MemberSignature Language="C#" Value="public bool IsPopular { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPopular" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationDirectoryItem.IsPopular" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a value indicating whether this application is popular.
+            </summary>
+        <value>
+          <c>true</c> if this instance is popular; otherwise, <c>false</c>.
+            </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LargeLogo">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ApplicationBinaryConfiguration LargeLogo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ApplicationBinaryConfiguration LargeLogo" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationDirectoryItem.LargeLogo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ApplicationBinaryConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the large logo for the application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The large logo is shown at various times to the user when interacting with the
+            HealthVault Shell. The large logo must be 120x60 pixels or smaller, and is limited 
+            to 160kb in size.
+            
+            On updating an application configuration the large logo will only 
+            be updated if the value is not null.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopularityRank">
+      <MemberSignature Language="C#" Value="public int PopularityRank { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PopularityRank" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationDirectoryItem.PopularityRank" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a number indicating this item's popularity rank.  The smaller the number,
+            the more popular the item.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrivacyStatementUrl">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.CultureSpecificUrlDictionary PrivacyStatementUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.CultureSpecificUrlDictionary PrivacyStatementUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationDirectoryItem.PrivacyStatementUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.CultureSpecificUrlDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a dictionary of language specifiers and localized URL to retrieve the privacy statement URL on this item.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The key is the language-country string such as "en-US", and the value is the localized version of the URL.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadXml">
+      <MemberSignature Language="C#" Value="public void ReadXml (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReadXml(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ApplicationDirectoryItem.ReadXml(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">
+            The XmlReader stream from which the object is deserialized.
+            </param>
+        <summary>
+            Generates an object from its XML representation.
+            </summary>
+        <remarks>
+            The ReadXml method must reconstitute your object using the information that was written by the WriteXml method
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the argument <paramref name="reader" /> was <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Screenshots">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;Microsoft.Health.Screenshot&gt; Screenshots { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class Microsoft.Health.Screenshot&gt; Screenshots" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationDirectoryItem.Screenshots" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.Screenshot&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a list of screenshots for this application.
+            Typically showing consumer use cases.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TermsOfUseUrl">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.CultureSpecificUrlDictionary TermsOfUseUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.CultureSpecificUrlDictionary TermsOfUseUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationDirectoryItem.TermsOfUseUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.CultureSpecificUrlDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets dictionary of language specifiers and localized URL to retrieve terms of use URL on this item.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The key is the language-country string such as "en-US", and the value is the localized version of the string.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ApplicationDirectoryItem.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">The XmlWriter stream to which the object is serialized. 
+            </param>
+        <summary>
+            Converts an object into its XML representation.
+            </summary>
+        <remarks>
+            Write sufficient information to the XmlWriter stream to allow the ReadXml method to reconstitute the object.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the argument <paramref name="writer" /> was <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

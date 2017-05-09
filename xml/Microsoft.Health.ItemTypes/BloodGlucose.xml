@@ -1,0 +1,348 @@
+<Type Name="BloodGlucose" FullName="Microsoft.Health.ItemTypes.BloodGlucose">
+  <TypeSignature Language="C#" Value="public class BloodGlucose : Microsoft.Health.HealthRecordItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BloodGlucose extends Microsoft.Health.HealthRecordItem" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.BloodGlucose" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Health record item type that represents a blood glucose measurement.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BloodGlucose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BloodGlucose.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Constructs a new BloodGlucose health record item instance with 
+            default values.
+            </summary>
+        <remarks>
+            The item isn't added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BloodGlucose (Microsoft.Health.ItemTypes.HealthServiceDateTime when, Microsoft.Health.ItemTypes.BloodGlucoseMeasurement value, Microsoft.Health.ItemTypes.CodableValue glucoseMeasurementType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.ItemTypes.HealthServiceDateTime when, class Microsoft.Health.ItemTypes.BloodGlucoseMeasurement value, class Microsoft.Health.ItemTypes.CodableValue glucoseMeasurementType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BloodGlucose.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime,Microsoft.Health.ItemTypes.BloodGlucoseMeasurement,Microsoft.Health.ItemTypes.CodableValue)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="when" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
+        <Parameter Name="value" Type="Microsoft.Health.ItemTypes.BloodGlucoseMeasurement" />
+        <Parameter Name="glucoseMeasurementType" Type="Microsoft.Health.ItemTypes.CodableValue" />
+      </Parameters>
+      <Docs>
+        <param name="when">
+            The date/time when the blood glucose reading was take.
+            </param>
+        <param name="value">
+            The blood glucose value of the reading.
+            </param>
+        <param name="glucoseMeasurementType">
+            How the glucose was measured; whole blood, plasma, etc. 
+            </param>
+        <summary>
+            Constructs the new blood glucose health record item instance
+            specifying the mandatory values.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="when" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GlucoseMeasurementType">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.CodableValue GlucoseMeasurementType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.CodableValue GlucoseMeasurementType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BloodGlucose.GlucoseMeasurementType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or set the glucose measurement type.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The measurement type is how the reading was taken; whole blood,
+            plasma, etc. The common value for the measurement types are defined
+            in the glucose-measurement-type vocabulary.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsControlTest">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsControlTest { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsControlTest" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BloodGlucose.IsControlTest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets a value indicating whether the reading was taken as a 
+            control test.
+            </summary>
+        <value>
+          <b>true</b> if the reading was taken as a control test; otherwise, 
+            <b>false</b>.
+            </value>
+        <remarks>
+            If the device does not support this function, the value is 
+            <b>null</b>.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasurementContext">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.CodableValue MeasurementContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.CodableValue MeasurementContext" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BloodGlucose.MeasurementContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the contextual information about the reading.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the information.
+            </value>
+        <remarks>
+            Common values for the measurement context can be found in the
+            "glucose-measurement-context" vocabulary.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutsideOperatingTemperature">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; OutsideOperatingTemperature { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; OutsideOperatingTemperature" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BloodGlucose.OutsideOperatingTemperature" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets whether the reading was taken outside the operating
+            temperature for the device.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            If the device does not support this function, the value is 
+            <b>null</b>.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="protected override void ParseXml (System.Xml.XPath.IXPathNavigable typeSpecificXml);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ParseXml(class System.Xml.XPath.IXPathNavigable typeSpecificXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BloodGlucose.ParseXml(System.Xml.XPath.IXPathNavigable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
+      </Parameters>
+      <Docs>
+        <param name="typeSpecificXml">
+            The XML to get the blood glucose data from.
+            </param>
+        <summary>
+            Populates this BloodGlucose instance from the data in the XML.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            a blood-glucose node.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadingNormalcy">
+      <MemberSignature Language="C#" Value="public Nullable&lt;Microsoft.Health.ItemTypes.Normalcy&gt; ReadingNormalcy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype Microsoft.Health.ItemTypes.Normalcy&gt; ReadingNormalcy" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BloodGlucose.ReadingNormalcy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;Microsoft.Health.ItemTypes.Normalcy&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets a value indicating whether the reading was within the 
+            normal range of values.
+            </summary>
+        <value>
+          <b>true</b> if the reading was within normal range; otherwise, 
+            <b>false</b>. 
+            </value>
+        <remarks>
+            If the device does not support this function, the value is 
+            <b>null</b>.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BloodGlucose.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets a string representation of the blood glucose item.
+            </summary>
+        <returns>
+            A string representation of the blood glucose item.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public static readonly Guid TypeId;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid TypeId" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.BloodGlucose.TypeId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The unique identifier for the item type.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.BloodGlucoseMeasurement Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.BloodGlucoseMeasurement Value" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BloodGlucose.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.BloodGlucoseMeasurement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or set the blood glucose value.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The blood glucose value is normally measured in mmol/L.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="When">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ItemTypes.HealthServiceDateTime When { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.ItemTypes.HealthServiceDateTime When" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BloodGlucose.When" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the date/time when the blood glucose measurement
+            was taken.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The value defaults to the current year, month, and day.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BloodGlucose.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+            The XmlWriter to write the blood glucose data to.
+            </param>
+        <summary>
+            Writes the blood glucose data to the specified XmlWriter.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.BloodGlucose.Value" /> or <see cref="P:Microsoft.Health.ItemTypes.BloodGlucose.GlucoseMeasurementType" /> 
+            parameter has not been set.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,110 @@
+<Type Name="VocabularySearchHelper" FullName="Microsoft.Health.VocabularySearchHelper">
+  <TypeSignature Language="C#" Value="public static class VocabularySearchHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit VocabularySearchHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.VocabularySearchHelper" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Represents an API set to create URLs that will handle HTTP GET queries for searches on 
+            a specified vocabulary.
+            </summary>
+    <remarks>
+            The urls provide a means for browser based access to the vocabulary search in HealthVault.
+            The response is returned in JSON format.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateVocabularySearchRequestJsonAuthenticatedUrl">
+      <MemberSignature Language="C#" Value="public static Uri CreateVocabularySearchRequestJsonAuthenticatedUrl (Microsoft.Health.VocabularySearchParameters searchParameters, string jsonCallbackName, int timeToLiveMinutes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri CreateVocabularySearchRequestJsonAuthenticatedUrl(class Microsoft.Health.VocabularySearchParameters searchParameters, string jsonCallbackName, int32 timeToLiveMinutes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.VocabularySearchHelper.CreateVocabularySearchRequestJsonAuthenticatedUrl(Microsoft.Health.VocabularySearchParameters,System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchParameters" Type="Microsoft.Health.VocabularySearchParameters" />
+        <Parameter Name="jsonCallbackName" Type="System.String" />
+        <Parameter Name="timeToLiveMinutes" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="searchParameters">
+             The set of parameters that identify the vocabulary to search, maximum search results,
+             the culture etc.
+             </param>
+        <param name="jsonCallbackName">
+             This is the name of the callback function that will be called to parse the JSON response.
+             </param>
+        <param name="timeToLiveMinutes">
+             The amount of time in minutes that the URL will be valid for. 
+             </param>
+        <summary>
+             Creates a vocabulary search request url in which the application is identified using 
+             the application certificate as the authentication parameter.
+             </summary>
+        <returns>
+             A URL which can be used in the browser to make AJAX calls to HealthVault vocabulary search.
+             </returns>
+        <remarks>
+             1. This is an authenticated access mechanism for public and restricted vocabularies in 
+                HealthVault.
+             2. The call will require more processing on the HealthVault server and it is recommended, 
+                that this mechanism be used to mainly access restricted vocabularies in HealthVault that
+                require authenticated access.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateVocabularySearchRequestJsonUrl">
+      <MemberSignature Language="C#" Value="public static Uri CreateVocabularySearchRequestJsonUrl (Microsoft.Health.VocabularySearchParameters searchParameters, string jsonCallbackName, Guid serviceToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri CreateVocabularySearchRequestJsonUrl(class Microsoft.Health.VocabularySearchParameters searchParameters, string jsonCallbackName, valuetype System.Guid serviceToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.VocabularySearchHelper.CreateVocabularySearchRequestJsonUrl(Microsoft.Health.VocabularySearchParameters,System.String,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchParameters" Type="Microsoft.Health.VocabularySearchParameters" />
+        <Parameter Name="jsonCallbackName" Type="System.String" />
+        <Parameter Name="serviceToken" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="searchParameters">
+            The set of parameters that identify the vocabulary to search, maximum search results,
+            the culture, etc.
+            </param>
+        <param name="jsonCallbackName">
+            This is the name of the callback function that will be called to parse the JSON response.
+            </param>
+        <param name="serviceToken">
+            A Guid token that is used to identify the application that is going to make the search call.
+            </param>
+        <summary>
+            Creates a vocabulary search request URL in which the application is identified using 
+            its service token.
+            </summary>
+        <returns>
+            A URL which can be used in the browser to make AJAX calls to HealthVault vocabulary search.
+            </returns>
+        <remarks>
+            1. This is a fast access mechanism to publicly available vocabularies in HealthVault.
+            2. The service token is available at <see cref="P:Microsoft.Health.ApplicationInfo.ClientServiceToken" />
+            3. Searches to restricted vocabularies that an application has access to will not succeed
+               with this method. For those searches please use 
+               <see cref="M:Microsoft.Health.VocabularySearchHelper.CreateVocabularySearchRequestJsonAuthenticatedUrl(Microsoft.Health.VocabularySearchParameters,System.String,System.Int32)" /></remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

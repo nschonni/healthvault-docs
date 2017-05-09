@@ -1,0 +1,191 @@
+<Type Name="ApplicationBinaryConfiguration" FullName="Microsoft.Health.ApplicationBinaryConfiguration">
+  <TypeSignature Language="C#" Value="public class ApplicationBinaryConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ApplicationBinaryConfiguration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ApplicationBinaryConfiguration" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Represents configuration data for an application which can be read from a file or stream 
+            and has an associated content type.
+            </summary>
+    <remarks>
+            HealthVault applications can be configured with logos, privacy statements, and terms of
+            use statements that can be read from a file or stream. This class wraps the content and 
+            content type for that configuration.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationBinaryConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ApplicationBinaryConfiguration.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Constructs a <see cref="T:Microsoft.Health.ApplicationBinaryConfiguration" /> with default values.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationBinaryConfiguration (System.IO.Stream binaryConfigurationContent, string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream binaryConfigurationContent, string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ApplicationBinaryConfiguration.#ctor(System.IO.Stream,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binaryConfigurationContent" Type="System.IO.Stream" />
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="binaryConfigurationContent">
+            A stream containing the content.
+            </param>
+        <param name="contentType">
+            The MIME type of the content in the stream specified by 
+            <paramref name="binaryConfigurationContent" />.
+            </param>
+        <summary>
+            Constructs a <see cref="T:Microsoft.Health.ApplicationBinaryConfiguration" /> with the specified stream and
+            content type.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="binaryConfigurationContent" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="contentType" /> is
+            <b>null</b> or empty.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationBinaryConfiguration (string binaryConfigurationFilePath, string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string binaryConfigurationFilePath, string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ApplicationBinaryConfiguration.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binaryConfigurationFilePath" Type="System.String" />
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="binaryConfigurationFilePath">
+             A local path to a file to use as the content.
+             </param>
+        <param name="contentType">
+             The MIME type of the content in the file specified by 
+             <paramref name="binaryConfigurationFilePath" />.
+             </param>
+        <summary>
+             Constructs a <see cref="T:Microsoft.Health.ApplicationBinaryConfiguration" /> with the specified file and
+             content type.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="binaryConfigurationFilePath" /> or <paramref name="contentType" /> is
+             <b>null</b> or empty,<br />
+             or <paramref name="binaryConfigurationFilePath" /> contains one or more invalid
+             characters as defined by <see cref="F:System.IO.Path.InvalidPathChars" />.
+             </exception>
+        <exception cref="T:System.IO.PathTooLongException">
+             If <paramref name="binaryConfigurationFilePath" /> is too long.
+             </exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+             If <paramref name="binaryConfigurationFilePath" /> is invalid (for example, it is on an
+             unmapped drive).
+             </exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="binaryConfigurationFilePath" /> is a file that is read-only.
+             -or- 
+             This operation is not supported on the current platform.
+             -or- 
+             <paramref name="binaryConfigurationFilePath" /> specified a directory.
+             -or- 
+             The caller does not have the required permission. 
+             </exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+             The file specified in <paramref name="binaryConfigurationFilePath" /> was not found.
+             </exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="binaryConfigurationFilePath" /> is in an invalid format.
+             </exception>
+        <exception cref="T:System.Security.SecurityException">
+             The caller does not have the required permission.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BinaryConfigurationContent">
+      <MemberSignature Language="C#" Value="public byte[] BinaryConfigurationContent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] BinaryConfigurationContent" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationBinaryConfiguration.BinaryConfigurationContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the binary content.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public string ContentType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationBinaryConfiguration.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the MIME type of the content.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureSpecificBinaryConfigurationContents">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.CultureSpecificByteArrayDictionary CultureSpecificBinaryConfigurationContents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.CultureSpecificByteArrayDictionary CultureSpecificBinaryConfigurationContents" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ApplicationBinaryConfiguration.CultureSpecificBinaryConfigurationContents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.CultureSpecificByteArrayDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+                Gets a dictionary of language specifiers and localized content.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

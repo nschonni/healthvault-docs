@@ -1,0 +1,207 @@
+<Type Name="VolumeMeasurement" FullName="Microsoft.Health.ItemTypes.VolumeMeasurement">
+  <TypeSignature Language="C#" Value="public class VolumeMeasurement : Microsoft.Health.ItemTypes.Measurement&lt;double&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VolumeMeasurement extends Microsoft.Health.ItemTypes.Measurement`1&lt;float64&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.VolumeMeasurement" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.ItemTypes.Measurement&lt;System.Double&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="MeasurementType">System.Double</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Represents the volume of a gas, liquid, etc. and a display value
+            associated with the measurement.
+            </summary>
+    <remarks>
+            In HealthVault, volume measurements have values and display values. 
+            All values are stored in a base unit of liters (L). 
+            An application can take a volume value using any scale the application 
+            chooses and can store the user-entered value as the display value, 
+            but the volumn value must be converted to liters to be stored in HealthVault.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VolumeMeasurement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.VolumeMeasurement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.VolumeMeasurement" /> class 
+            with empty values.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VolumeMeasurement (double liters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 liters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.VolumeMeasurement.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="liters" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="liters">
+            The volume in liters.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.VolumeMeasurement" /> class 
+            with the specified value in liters.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="liters" /> is less than zero.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VolumeMeasurement (double liters, Microsoft.Health.ItemTypes.DisplayValue displayValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 liters, class Microsoft.Health.ItemTypes.DisplayValue displayValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.VolumeMeasurement.#ctor(System.Double,Microsoft.Health.ItemTypes.DisplayValue)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="liters" Type="System.Double" />
+        <Parameter Name="displayValue" Type="Microsoft.Health.ItemTypes.DisplayValue" />
+      </Parameters>
+      <Docs>
+        <param name="liters">
+            The volume in liters.
+            </param>
+        <param name="displayValue">
+            The display value of the volume. This should contain the
+            exact volume as entered by the user even if it uses some
+            other unit of measure besides liters. The display value
+            <see cref="P:Microsoft.Health.ItemTypes.DisplayValue.Units" /> and 
+            <see cref="P:Microsoft.Health.ItemTypes.DisplayValue.UnitsCode" /> 
+            represents the unit of measure for the user-entered value.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.VolumeMeasurement" /> class with 
+            the specified value in liters and optional display value.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="liters" /> is less than zero.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertMeasurementValue">
+      <MemberSignature Language="C#" Value="protected override void AssertMeasurementValue (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AssertMeasurementValue(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.VolumeMeasurement.AssertMeasurementValue(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+            The volume measurement.
+            </param>
+        <summary>
+            Verifies the value is a legal volume value in liters.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is less than zero.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValueString">
+      <MemberSignature Language="C#" Value="protected override string GetValueString (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetValueString(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.VolumeMeasurement.GetValueString(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>
+            Gets a string representation of the volume in the base units.
+            </summary>
+        <returns>
+            The volume as a string in the base units.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseValueXml">
+      <MemberSignature Language="C#" Value="protected override void ParseValueXml (System.Xml.XPath.XPathNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ParseValueXml(class System.Xml.XPath.XPathNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.VolumeMeasurement.ParseValueXml(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="navigator"> 
+            The XML node representing the volume.
+            </param>
+        <summary> 
+            Populates the data for the volume from the XML.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteValueXml">
+      <MemberSignature Language="C#" Value="protected override void WriteValueXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WriteValueXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.VolumeMeasurement.WriteValueXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"> 
+            The XmlWriter to write the volume to.
+            </param>
+        <summary> 
+            Writes the volume to the specified XML writer.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

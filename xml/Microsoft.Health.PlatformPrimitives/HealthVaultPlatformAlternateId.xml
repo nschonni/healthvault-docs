@@ -1,0 +1,300 @@
+<Type Name="HealthVaultPlatformAlternateId" FullName="Microsoft.Health.PlatformPrimitives.HealthVaultPlatformAlternateId">
+  <TypeSignature Language="C#" Value="public class HealthVaultPlatformAlternateId" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HealthVaultPlatformAlternateId extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformAlternateId" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Provides low-level access to the HealthVault alternate id operations.
+            </summary>
+    <remarks>
+      <see cref="T:Microsoft.Health.HealthVaultPlatform" /> uses this class to perform operations. Set 
+            HealthVaultPlatformAlternateId.Current to a derived class to intercept all message calls.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthVaultPlatformAlternateId ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformAlternateId.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssociateAlternateId">
+      <MemberSignature Language="C#" Value="public virtual void AssociateAlternateId (Microsoft.Health.ApplicationConnection connection, Microsoft.Health.HealthRecordAccessor accessor, string alternateId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AssociateAlternateId(class Microsoft.Health.ApplicationConnection connection, class Microsoft.Health.HealthRecordAccessor accessor, string alternateId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformAlternateId.AssociateAlternateId(Microsoft.Health.ApplicationConnection,Microsoft.Health.HealthRecordAccessor,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="accessor" Type="Microsoft.Health.HealthRecordAccessor" />
+        <Parameter Name="alternateId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use to access the data.
+            </param>
+        <param name="accessor">
+            The record to use.
+            </param>
+        <param name="alternateId">
+            The alternate ID.
+            </param>
+        <summary>
+            Associates an alternate ID with a record.
+            </summary>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The connection, accessor, or alternateId parameters are null
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The alternateId parameter is empty, all whitespace, or more than 255 characters in length.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error. 
+            If the alternate ID is already associated by this application, the ErrorCode property
+            will be set to DuplicateAlternateId.
+            If the number of alternate IDs associated with a record exceeds the limit, the ErrorCode
+            property will be set to AlternateIdsLimitExceeded.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableMock">
+      <MemberSignature Language="C#" Value="public static void DisableMock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DisableMock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformAlternateId.DisableMock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Removes mocking of calls to this class.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            There is no mock registered for this class.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisassociateAlternateId">
+      <MemberSignature Language="C#" Value="public virtual void DisassociateAlternateId (Microsoft.Health.ApplicationConnection connection, string alternateId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DisassociateAlternateId(class Microsoft.Health.ApplicationConnection connection, string alternateId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformAlternateId.DisassociateAlternateId(Microsoft.Health.ApplicationConnection,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="alternateId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use to access the data.
+            </param>
+        <param name="alternateId">
+            The alternate ID.
+            </param>
+        <summary>
+            Disassociates an alternate ID with a record.
+            </summary>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The connection, or alternateId parameters are null.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The alternateId parameter is empty, all whitespace, or more than 255 characters in length.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error. 
+            If the alternate Id is not associated with a person and record id, the ErrorCode property
+            will be set to AlternateIdNotFound.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisassociateAlternateId">
+      <MemberSignature Language="C#" Value="public virtual void DisassociateAlternateId (Microsoft.Health.ApplicationConnection connection, Microsoft.Health.HealthRecordAccessor accessor, string alternateId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DisassociateAlternateId(class Microsoft.Health.ApplicationConnection connection, class Microsoft.Health.HealthRecordAccessor accessor, string alternateId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformAlternateId.DisassociateAlternateId(Microsoft.Health.ApplicationConnection,Microsoft.Health.HealthRecordAccessor,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="accessor" Type="Microsoft.Health.HealthRecordAccessor" />
+        <Parameter Name="alternateId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use to access the data.
+            </param>
+        <param name="accessor">
+            The record to use.
+            </param>
+        <param name="alternateId">
+            The alternate ID.
+            </param>
+        <summary>
+            Disassociates an alternate ID with a record.
+            </summary>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The connection, accessor, or alternateId parameters are null.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The alternateId parameter is empty, all whitespace, or more than 255 characters in length.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error. 
+            If the alternate Id is not associated with a person and record id, the ErrorCode property
+            will be set to AlternateIdNotFound.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableMock">
+      <MemberSignature Language="C#" Value="public static void EnableMock (Microsoft.Health.PlatformPrimitives.HealthVaultPlatformAlternateId mock);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnableMock(class Microsoft.Health.PlatformPrimitives.HealthVaultPlatformAlternateId mock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformAlternateId.EnableMock(Microsoft.Health.PlatformPrimitives.HealthVaultPlatformAlternateId)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mock" Type="Microsoft.Health.PlatformPrimitives.HealthVaultPlatformAlternateId" />
+      </Parameters>
+      <Docs>
+        <param name="mock">The mocking class.</param>
+        <summary>
+            Enables mocking of calls to this class.
+            </summary>
+        <remarks>
+            The calling class should pass in a class that derives from this
+            class and overrides the calls to be mocked. 
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            There is already a mock registered for this class.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAlternateIds">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.Collection&lt;string&gt; GetAlternateIds (Microsoft.Health.ApplicationConnection connection, Microsoft.Health.HealthRecordAccessor accessor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ObjectModel.Collection`1&lt;string&gt; GetAlternateIds(class Microsoft.Health.ApplicationConnection connection, class Microsoft.Health.HealthRecordAccessor accessor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformAlternateId.GetAlternateIds(Microsoft.Health.ApplicationConnection,Microsoft.Health.HealthRecordAccessor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="accessor" Type="Microsoft.Health.HealthRecordAccessor" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use to access the data.
+            </param>
+        <param name="accessor">
+            The record to use.
+            </param>
+        <summary>
+            Gets the list of alternate IDs that are associated with a record.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error. 
+            If the alternate Id is not associated with a person and record id, the ErrorCode property
+            will be set to AlternateIdNotFound.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPersonAndRecordForAlternateId">
+      <MemberSignature Language="C#" Value="public virtual Microsoft.Health.PersonInfo GetPersonAndRecordForAlternateId (Microsoft.Health.ApplicationConnection connection, string alternateId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Health.PersonInfo GetPersonAndRecordForAlternateId(class Microsoft.Health.ApplicationConnection connection, string alternateId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformAlternateId.GetPersonAndRecordForAlternateId(Microsoft.Health.ApplicationConnection,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="alternateId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use to access the data.
+            </param>
+        <param name="alternateId">
+            The alternate ID.
+            </param>
+        <summary>
+            Gets the person and record IDs that were previosly associated
+            with an alternate ID.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The connection, accessor, or alternateId parameters are null
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The alternateId parameter is empty, all whitespace, or more than 255 characters in length.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error. 
+            If the alternate Id is not associated with a person and record id, the ErrorCode property
+            will be set to AlternateIdNotFound.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

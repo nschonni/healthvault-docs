@@ -1,0 +1,428 @@
+<Type Name="HealthVaultPlatformItem" FullName="Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem">
+  <TypeSignature Language="C#" Value="public class HealthVaultPlatformItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HealthVaultPlatformItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Provides low-level access to the HealthVault item operations.
+            </summary>
+    <remarks>
+      <see cref="T:Microsoft.Health.HealthVaultPlatform" /> uses this class to perform operations. Set 
+            HealthVaultPlatformItem.Current to a derived class to intercept all calls.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthVaultPlatformItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableMock">
+      <MemberSignature Language="C#" Value="public static void DisableMock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DisableMock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem.DisableMock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Removes mocking of calls to this class.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            There is no mock registered for this class.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableMock">
+      <MemberSignature Language="C#" Value="public static void EnableMock (Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem mock);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnableMock(class Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem mock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem.EnableMock(Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mock" Type="Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem" />
+      </Parameters>
+      <Docs>
+        <param name="mock">The mocking class.</param>
+        <summary>
+            Enables mocking of calls to this class.
+            </summary>
+        <remarks>
+            The calling class should pass in a class that derives from this
+            class and overrides the calls to be mocked. 
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            There is already a mock registered for this class.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingItems">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.HealthRecordItemCollection&gt; GetMatchingItems (Microsoft.Health.ApplicationConnection connection, Microsoft.Health.HealthRecordAccessor accessor, Microsoft.Health.HealthRecordSearcher searcher);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class Microsoft.Health.HealthRecordItemCollection&gt; GetMatchingItems(class Microsoft.Health.ApplicationConnection connection, class Microsoft.Health.HealthRecordAccessor accessor, class Microsoft.Health.HealthRecordSearcher searcher) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem.GetMatchingItems(Microsoft.Health.ApplicationConnection,Microsoft.Health.HealthRecordAccessor,Microsoft.Health.HealthRecordSearcher)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.Health.HealthRecordItemCollection&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="accessor" Type="Microsoft.Health.HealthRecordAccessor" />
+        <Parameter Name="searcher" Type="Microsoft.Health.HealthRecordSearcher" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use to access the data.
+            </param>
+        <param name="accessor">
+            The record to use.
+            </param>
+        <param name="searcher">
+            The searcher that defines what items to return.
+            </param>
+        <summary>
+            Gets the health record items that match the filters as specified by 
+            the properties of this class.
+            </summary>
+        <returns>
+            A collection of health record items that match the applied filters.
+            </returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The response from the server was anything but 
+            <see cref="F:Microsoft.Health.HealthServiceStatusCode.Ok" />.
+            -or-
+            <see cref="P:Microsoft.Health.HealthRecordSearcher.Filters" /> is empty
+            or contains invalid filters.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingItemsRaw">
+      <MemberSignature Language="C#" Value="public virtual System.Xml.XPath.XPathNavigator GetMatchingItemsRaw (Microsoft.Health.ApplicationConnection connection, Microsoft.Health.HealthRecordAccessor accessor, Microsoft.Health.HealthRecordSearcher searcher);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XPath.XPathNavigator GetMatchingItemsRaw(class Microsoft.Health.ApplicationConnection connection, class Microsoft.Health.HealthRecordAccessor accessor, class Microsoft.Health.HealthRecordSearcher searcher) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem.GetMatchingItemsRaw(Microsoft.Health.ApplicationConnection,Microsoft.Health.HealthRecordAccessor,Microsoft.Health.HealthRecordSearcher)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.XPathNavigator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="accessor" Type="Microsoft.Health.HealthRecordAccessor" />
+        <Parameter Name="searcher" Type="Microsoft.Health.HealthRecordSearcher" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use to access the data.
+            </param>
+        <param name="accessor">
+            The record to use.
+            </param>
+        <param name="searcher">
+            The searcher that defines what items to return.
+            </param>
+        <summary>
+            Gets the health record items that match the filters as specified by 
+            the properties of this class.
+            </summary>
+        <returns>
+            An XPathNavigator representing the raw results of the search.
+            </returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            <br /><br />
+            This method is typically used when the calling application wants to
+            handle the raw health record item XML directly instead of using the 
+            object model.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingItemsReader">
+      <MemberSignature Language="C#" Value="public virtual System.Xml.XmlReader GetMatchingItemsReader (Microsoft.Health.ApplicationConnection connection, Microsoft.Health.HealthRecordAccessor accessor, Microsoft.Health.HealthRecordSearcher searcher);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XmlReader GetMatchingItemsReader(class Microsoft.Health.ApplicationConnection connection, class Microsoft.Health.HealthRecordAccessor accessor, class Microsoft.Health.HealthRecordSearcher searcher) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem.GetMatchingItemsReader(Microsoft.Health.ApplicationConnection,Microsoft.Health.HealthRecordAccessor,Microsoft.Health.HealthRecordSearcher)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="accessor" Type="Microsoft.Health.HealthRecordAccessor" />
+        <Parameter Name="searcher" Type="Microsoft.Health.HealthRecordSearcher" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use to access the data.
+            </param>
+        <param name="accessor">
+            The record to use.
+            </param>
+        <param name="searcher">
+            The searcher that defines what items to return.
+            </param>
+        <summary>
+            Gets the health record items that match the filters as specified by 
+            the properties of this class.
+            </summary>
+        <returns>
+            An XmlReader representing the raw results of the search.
+            </returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            <br /><br />
+            This method is typically used when the calling application wants to
+            handle the raw health record item XML directly instead of using the 
+            object model.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTransformedItems">
+      <MemberSignature Language="C#" Value="public virtual string GetTransformedItems (Microsoft.Health.ApplicationConnection connection, Microsoft.Health.HealthRecordAccessor accessor, Microsoft.Health.HealthRecordSearcher searcher, string transform);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetTransformedItems(class Microsoft.Health.ApplicationConnection connection, class Microsoft.Health.HealthRecordAccessor accessor, class Microsoft.Health.HealthRecordSearcher searcher, string transform) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem.GetTransformedItems(Microsoft.Health.ApplicationConnection,Microsoft.Health.HealthRecordAccessor,Microsoft.Health.HealthRecordSearcher,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="accessor" Type="Microsoft.Health.HealthRecordAccessor" />
+        <Parameter Name="searcher" Type="Microsoft.Health.HealthRecordSearcher" />
+        <Parameter Name="transform" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use to access the data.
+            </param>
+        <param name="accessor">
+            The record to use.
+            </param>
+        <param name="searcher">
+            The searcher that defines what items to return.
+            </param>
+        <param name="transform">
+            A URL to a transform to run on the resulting XML. This can be
+            a fully-qualified URL or the name of one of the standard XSLs
+            provided by the HealthVault system.
+            </param>
+        <summary>
+            Gets the health record items specified by the 
+            <see cref="T:Microsoft.Health.HealthRecordSearcher" /> and runs them through the specified 
+            transform.
+            </summary>
+        <returns>
+            The string resulting from performing the specified transform on
+            the XML representation of the items.
+            </returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            <br /><br />
+            Any call to HealthVault may specify a transform to be run on the
+            response XML. The transform can be specified as a XSL fragment or
+            a well-known transform tag provided by the HealthVault service. If a
+            XSL fragment is specified, it gets compiled and cached on the server.
+            <br /><br />
+            A final-xsl is useful when you want to convert the result from XML to
+            HTML so that you can display the result directly in a web page.
+            You may also use it to generate other data formats like CCR, CCD, CSV,
+            RSS, etc.
+            <br /><br />
+            Transform fragments cannot contain embedded script. The following set
+            of parameters are passed to all final-xsl transforms:<br /><ul><li>currentDateTimeUtc - the date and time just before the transform 
+                started executing</li><li>requestingApplicationName - the name of the application that
+                made the request to HealthVault.</li><li>countryCode - the ISO 3166 country code from the request.</li><li>languageCode - the ISO 639-1 language code from the request.</li><li>personName - the name of the person making the request.</li><li>recordName - if the request identified a HealthVault record to 
+                be used, this parameter contains the name of that record.</li></ul></remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:Microsoft.Health.HealthRecordView.Sections" /> does not
+            contain the XML section in the view.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            There is a failure retrieving the items.
+            -or-
+            No filters have been specified.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NewItems">
+      <MemberSignature Language="C#" Value="public virtual void NewItems (Microsoft.Health.ApplicationConnection connection, Microsoft.Health.HealthRecordAccessor accessor, System.Collections.Generic.IList&lt;Microsoft.Health.HealthRecordItem&gt; items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void NewItems(class Microsoft.Health.ApplicationConnection connection, class Microsoft.Health.HealthRecordAccessor accessor, class System.Collections.Generic.IList`1&lt;class Microsoft.Health.HealthRecordItem&gt; items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem.NewItems(Microsoft.Health.ApplicationConnection,Microsoft.Health.HealthRecordAccessor,System.Collections.Generic.IList{Microsoft.Health.HealthRecordItem})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="accessor" Type="Microsoft.Health.HealthRecordAccessor" />
+        <Parameter Name="items" Type="System.Collections.Generic.IList&lt;Microsoft.Health.HealthRecordItem&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use to access the data.
+            </param>
+        <param name="accessor">
+            The record to use.
+            </param>
+        <param name="items">
+            The health record items from which to create new instances.
+            </param>
+        <summary>
+            Creates new health record items associated with the record.
+            </summary>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error. 
+            The exception's Error property will contain the index of the
+            item on which the failure occurred in the ErrorInfo property. If any failures occur, 
+            no items will have been created.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            At least one HealthRecordItem in the supplied list was null.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveItems">
+      <MemberSignature Language="C#" Value="public virtual void RemoveItems (Microsoft.Health.ApplicationConnection connection, Microsoft.Health.HealthRecordAccessor accessor, System.Collections.Generic.IList&lt;Microsoft.Health.HealthRecordItemKey&gt; itemsToRemove);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveItems(class Microsoft.Health.ApplicationConnection connection, class Microsoft.Health.HealthRecordAccessor accessor, class System.Collections.Generic.IList`1&lt;class Microsoft.Health.HealthRecordItemKey&gt; itemsToRemove) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem.RemoveItems(Microsoft.Health.ApplicationConnection,Microsoft.Health.HealthRecordAccessor,System.Collections.Generic.IList{Microsoft.Health.HealthRecordItemKey})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="accessor" Type="Microsoft.Health.HealthRecordAccessor" />
+        <Parameter Name="itemsToRemove" Type="System.Collections.Generic.IList&lt;Microsoft.Health.HealthRecordItemKey&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+            The connection to use to access the data.
+            </param>
+        <param name="accessor">
+            The record to use.
+            </param>
+        <param name="itemsToRemove">
+            The unique item identifiers of the items to remove.
+            </param>
+        <summary>
+            Marks the specified health record item as deleted.
+            </summary>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            <br /><br />
+            Health record items are never completely deleted. They are marked 
+            as deleted and are ignored for most normal operations. Items can 
+            be undeleted by contacting customer service.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="itemsToRemove" /> parameter is empty.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            Errors removed the health record items from the server.
+            The exception's Error property will contain the index of the
+            item on which the failure occurred in the ErrorInfo property. If any failures occur, 
+            no items will have been removed.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateItems">
+      <MemberSignature Language="C#" Value="public virtual void UpdateItems (Microsoft.Health.ApplicationConnection connection, Microsoft.Health.HealthRecordAccessor accessor, System.Collections.Generic.IList&lt;Microsoft.Health.HealthRecordItem&gt; itemsToUpdate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UpdateItems(class Microsoft.Health.ApplicationConnection connection, class Microsoft.Health.HealthRecordAccessor accessor, class System.Collections.Generic.IList`1&lt;class Microsoft.Health.HealthRecordItem&gt; itemsToUpdate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformItem.UpdateItems(Microsoft.Health.ApplicationConnection,Microsoft.Health.HealthRecordAccessor,System.Collections.Generic.IList{Microsoft.Health.HealthRecordItem})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
+        <Parameter Name="accessor" Type="Microsoft.Health.HealthRecordAccessor" />
+        <Parameter Name="itemsToUpdate" Type="System.Collections.Generic.IList&lt;Microsoft.Health.HealthRecordItem&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+             The connection to use to access the data.
+             </param>
+        <param name="accessor">
+             The record to use.
+             </param>
+        <param name="itemsToUpdate">
+             The health record items to be updated.
+             </param>
+        <summary>
+             Updates the specified health record items in one batch call to 
+             the service.
+             </summary>
+        <remarks>
+             Only new items are updated with the appropriate unique identifier. 
+             All other sections must be updated manually.
+             <br /><br />
+             This method accesses the HealthVault service across the network.
+             </remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="itemsToUpdate" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="itemsToUpdate" /> contains a <b>null</b> member or
+             a <see cref="T:Microsoft.Health.HealthRecordItem" /> instance that does not have an ID.
+             </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+             The HealthVault service returned an error.
+             The exception's Error property will contain the index of the
+             item on which the failure occurred in the ErrorInfo property. If any failures occur, 
+             no items will have been updated.
+             </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

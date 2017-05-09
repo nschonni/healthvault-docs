@@ -1,0 +1,239 @@
+<Type Name="HealthServiceRestRequest" FullName="Microsoft.Health.Rest.HealthServiceRestRequest">
+  <TypeSignature Language="C#" Value="public class HealthServiceRestRequest" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HealthServiceRestRequest extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.Rest.HealthServiceRestRequest" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Represents an individual request to a HealthVault REST service.
+            The class wraps up the header generation and web request/response.
+            </summary>
+    <remarks>
+            This class is not thread safe. A new instance should be created when multiple requests 
+            must execute concurrently.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthServiceRestRequest (Microsoft.Health.HealthServiceConnection connection, string httpVerb, Uri fullUri, string requestBody = null, System.Collections.Specialized.NameValueCollection optionalHeaders = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.HealthServiceConnection connection, string httpVerb, class System.Uri fullUri, string requestBody, class System.Collections.Specialized.NameValueCollection optionalHeaders) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Rest.HealthServiceRestRequest.#ctor(Microsoft.Health.HealthServiceConnection,System.String,System.Uri,System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.HealthServiceConnection" />
+        <Parameter Name="httpVerb" Type="System.String" />
+        <Parameter Name="fullUri" Type="System.Uri" />
+        <Parameter Name="requestBody" Type="System.String" />
+        <Parameter Name="optionalHeaders" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+             The client-side representation of the HealthVault service.
+             </param>
+        <param name="httpVerb">
+             The HTTP Verb to execute against the service.
+             </param>
+        <param name="fullUri">
+             The full URI of the API request.
+             </param>
+        <param name="requestBody">
+             The body for this request.
+             </param>
+        <param name="optionalHeaders">
+             Optional headers to include in the API request.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.Rest.HealthServiceRestRequest" /> 
+             class for the specified parameters.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="connection" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="fullUri" /> parameter is <b>null</b> or empty.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthServiceRestRequest (Microsoft.Health.HealthServiceConnection connection, string httpVerb, string path, System.Collections.Specialized.NameValueCollection queryStringParameters = null, string requestBody = null, Uri apiRoot = null, System.Collections.Specialized.NameValueCollection optionalHeaders = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.HealthServiceConnection connection, string httpVerb, string path, class System.Collections.Specialized.NameValueCollection queryStringParameters, string requestBody, class System.Uri apiRoot, class System.Collections.Specialized.NameValueCollection optionalHeaders) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Rest.HealthServiceRestRequest.#ctor(Microsoft.Health.HealthServiceConnection,System.String,System.String,System.Collections.Specialized.NameValueCollection,System.String,System.Uri,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connection" Type="Microsoft.Health.HealthServiceConnection" />
+        <Parameter Name="httpVerb" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="queryStringParameters" Type="System.Collections.Specialized.NameValueCollection" />
+        <Parameter Name="requestBody" Type="System.String" />
+        <Parameter Name="apiRoot" Type="System.Uri" />
+        <Parameter Name="optionalHeaders" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="connection">
+             The client-side representation of the HealthVault service.
+             </param>
+        <param name="httpVerb">
+             The HTTP Verb to execute against the service.
+             </param>
+        <param name="path">
+             The path to the resource in the URL.
+             </param>
+        <param name="queryStringParameters">
+             A collection of query string parameters.
+             </param>
+        <param name="requestBody">
+             The body for this request.
+             </param>
+        <param name="apiRoot">
+             Domain name override, used to redirect to other endpoints.
+             </param>
+        <param name="optionalHeaders">
+             Optional headers to include in the API request.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.Rest.HealthServiceRestRequest" /> 
+             class for the specified parameters.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="connection" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="path" /> parameter is <b>null</b> or empty.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public void Execute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Execute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Rest.HealthServiceRestRequest.Execute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Builds up the request and reads the response.        
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleResponse">
+      <MemberSignature Language="C#" Value="public void HandleResponse (System.IO.Stream stream, System.Net.WebHeaderCollection responseHeaders);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void HandleResponse(class System.IO.Stream stream, class System.Net.WebHeaderCollection responseHeaders) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Rest.HealthServiceRestRequest.HandleResponse(System.IO.Stream,System.Net.WebHeaderCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="responseHeaders" Type="System.Net.WebHeaderCollection" />
+      </Parameters>
+      <Docs>
+        <param name="stream">
+            The response stream.
+            </param>
+        <param name="responseHeaders">
+            Response headers.
+            </param>
+        <summary> 
+            Represents the <see cref="T:Microsoft.Health.IEasyWebResponseHandler" /> callback.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecordId">
+      <MemberSignature Language="C#" Value="public Guid RecordId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid RecordId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Rest.HealthServiceRestRequest.RecordId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Optional parameter to specify what record to access.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Response">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.Rest.HealthServiceRestResponseData Response { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.Rest.HealthServiceRestResponseData Response" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Rest.HealthServiceRestRequest.Response" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.Rest.HealthServiceRestResponseData</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The response details from the server
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCorrelationId">
+      <MemberSignature Language="C#" Value="public static void SetCorrelationId (Guid correlationId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetCorrelationId(valuetype System.Guid correlationId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Rest.HealthServiceRestRequest.SetCorrelationId(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="correlationId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="correlationId">To be added.</param>
+        <summary>
+            To allow applications to keep track of calls to platform, the application
+            can optionally set a correlation id. This will be passed up in web requests to
+            HealthVault and used when HealthVault writes to its logs. If issues occur, this
+            id can be used by the HealthVault team to help debug the issue.
+            
+            For asp.net applications, we want to avoid the use of thread local for setting
+            the request id since a single web request is not guaranteed to fully execute on the
+            same thread - using HttpContext.Items is the recommended way.
+            
+            For non web applications, this method sets a [ThreadStatic] variable which stores the 
+            id in thread local storage. All HealthVault requests made on this thread will re-use this
+            variable
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,209 @@
+<Type Name="CachedServiceInfoProvider" FullName="Microsoft.Health.CachedServiceInfoProvider">
+  <TypeSignature Language="C#" Value="public class CachedServiceInfoProvider : Microsoft.Health.IServiceInfoProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CachedServiceInfoProvider extends System.Object implements class Microsoft.Health.IServiceInfoProvider" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.CachedServiceInfoProvider" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Health.IServiceInfoProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>
+             A cached provider for service info retrieved from the HealthVault web-service.
+             </summary>
+    <remarks>
+             This provider will cache the service information it obtains from Platform for
+             a configured or specified period of time. 
+             </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CachedServiceInfoProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.CachedServiceInfoProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Initializes a new instance of the provider using the expiration period
+            provided through configuration and retrieving the full service info response.
+            </summary>
+        <remarks>
+            The expiration period is the value of the
+            <see cref="P:Microsoft.Health.HealthApplicationConfiguration.ServiceInfoDefaultCacheTtl" /> configuration.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CachedServiceInfoProvider (Microsoft.Health.ServiceInfoSections responseSections);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Microsoft.Health.ServiceInfoSections responseSections) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.CachedServiceInfoProvider.#ctor(Microsoft.Health.ServiceInfoSections)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="responseSections" Type="Microsoft.Health.ServiceInfoSections" />
+      </Parameters>
+      <Docs>
+        <param name="responseSections">
+            The categories of information to be populated in the
+            <see cref="T:Microsoft.Health.ServiceInfo" /> instance, represented as the result of XOR'ing the
+            desired categories.
+            </param>
+        <summary>
+            Initializes a new instance of the provider using the expiration period
+            provided through configuration and retrieving the service information
+            for the specified response sections.
+            </summary>
+        <remarks>
+            The expiration period is the value of the
+            <see cref="P:Microsoft.Health.HealthApplicationConfiguration.ServiceInfoDefaultCacheTtl" /> configuration.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CachedServiceInfoProvider (TimeSpan timeToLive);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.TimeSpan timeToLive) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.CachedServiceInfoProvider.#ctor(System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="timeToLive" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeToLive">
+            Period of time before the cached instance of service info is considered expired, and a new copy is obtained
+            from the HealthVault web-service.
+            </param>
+        <summary>
+            Initializes a new instance of the provider with a specified expiration period and
+            retrieving the full service info response.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CachedServiceInfoProvider (Uri healthServiceUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri healthServiceUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.CachedServiceInfoProvider.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="healthServiceUrl" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="healthServiceUrl">
+            The URL for the HealthVault web-service to use to retrieve the service information.
+            </param>
+        <summary>
+            Initializes a new instance of the provider using the expiration period
+            provided through configuration and retrieving the full service info response
+            using the specified HealthVault web-service URL.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CachedServiceInfoProvider (Microsoft.Health.ServiceInfoSections responseSections, TimeSpan timeToLive);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Microsoft.Health.ServiceInfoSections responseSections, valuetype System.TimeSpan timeToLive) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.CachedServiceInfoProvider.#ctor(Microsoft.Health.ServiceInfoSections,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="responseSections" Type="Microsoft.Health.ServiceInfoSections" />
+        <Parameter Name="timeToLive" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="responseSections">
+            The categories of information to be populated in the
+            <see cref="T:Microsoft.Health.ServiceInfo" /> instance, represented as the result of XOR'ing the
+            desired categories.
+            </param>
+        <param name="timeToLive">
+            Period of time before the cached instance of service info is considered expired, and a new copy is obtained
+            from the HealthVault web-service.
+            </param>
+        <summary>
+            Initializes a new instance of the provider with a specified expiration period and
+            retrieving the service information for the specified response sections.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CachedServiceInfoProvider (Microsoft.Health.ServiceInfoSections responseSections, TimeSpan timeToLive, Uri healthServiceUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Microsoft.Health.ServiceInfoSections responseSections, valuetype System.TimeSpan timeToLive, class System.Uri healthServiceUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.CachedServiceInfoProvider.#ctor(Microsoft.Health.ServiceInfoSections,System.TimeSpan,System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="responseSections" Type="Microsoft.Health.ServiceInfoSections" />
+        <Parameter Name="timeToLive" Type="System.TimeSpan" />
+        <Parameter Name="healthServiceUrl" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="responseSections">
+            The categories of information to be populated in the
+            <see cref="T:Microsoft.Health.ServiceInfo" /> instance, represented as the result of XOR'ing the
+            desired categories.
+            </param>
+        <param name="timeToLive">
+            Period of time before the cached instance of service info is considered expired, and a new copy is obtained
+            from the HealthVault web-service.
+            </param>
+        <param name="healthServiceUrl">
+            The URL for of the HealthVault web-service to use to retrieve the service information.
+            </param>
+        <summary>
+            Initializes a new instance of the provider with a specified expiration period and
+            retrieving the service information for the specified response sections using the
+            specified HealthVault web-service URL.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetServiceInfo">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ServiceInfo GetServiceInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Health.ServiceInfo GetServiceInfo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.CachedServiceInfoProvider.GetServiceInfo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ServiceInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Returns the service information retrieved from the HealthVault web-service.
+            </summary>
+        <returns>
+            Service information retrieved from the HealthVault web-service.
+            </returns>
+        <remarks>
+            Calls to this method are thread-safe.
+            </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,670 @@
+<Type Name="ApproximateDateTime" FullName="Microsoft.HealthVault.ItemTypes.ApproximateDateTime">
+  <TypeSignature Language="C#" Value="public class ApproximateDateTime : Microsoft.HealthVault.ItemTypes.ItemBase, IComparable, IComparable&lt;DateTime&gt;, IComparable&lt;Microsoft.HealthVault.ItemTypes.ApproximateDateTime&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ApproximateDateTime extends Microsoft.HealthVault.ItemTypes.ItemBase implements class System.IComparable, class System.IComparable`1&lt;class Microsoft.HealthVault.ItemTypes.ApproximateDateTime&gt;, class System.IComparable`1&lt;valuetype System.DateTime&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.65.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.HealthVault.ItemTypes.ItemBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IComparable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IComparable&lt;Microsoft.HealthVault.ItemTypes.ApproximateDateTime&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IComparable&lt;System.DateTime&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>
+             An approximation of a date and time.
+             </summary>
+    <remarks>
+             To use this class, you must specify either an approximate date or a
+             descriptive date such as "as a baby."
+             </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApproximateDateTime ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+             class with default values.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApproximateDateTime (Microsoft.HealthVault.ItemTypes.ApproximateDate approximateDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.HealthVault.ItemTypes.ApproximateDate approximateDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.#ctor(Microsoft.HealthVault.ItemTypes.ApproximateDate)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="approximateDate" Type="Microsoft.HealthVault.ItemTypes.ApproximateDate" />
+      </Parameters>
+      <Docs>
+        <param name="approximateDate">
+             The approximation of the date.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+             class with the specified date.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="approximateDate" /> parameter is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApproximateDateTime (DateTime dateTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DateTime dateTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.#ctor(System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dateTime" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="dateTime">
+             The DateTime instance
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+             class from a DateTime instance.
+             </summary>
+        <remarks>
+             The time zone is not set by this constructor.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApproximateDateTime (string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="description">
+             The description of the approximate date.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+             class with the specified description.
+             </summary>
+        <remarks>
+             The description and approximate date/time are mutually exclusive. A description
+             is the approximation of a date without using year, month, day.  For instance,
+             "when I was a toddler" can be used as an approximate date.
+             </remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="description" /> parameter is <b>null</b> or empty.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApproximateDateTime (Microsoft.HealthVault.ItemTypes.ApproximateDate approximateDate, Microsoft.HealthVault.ItemTypes.ApproximateTime approximateTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.HealthVault.ItemTypes.ApproximateDate approximateDate, class Microsoft.HealthVault.ItemTypes.ApproximateTime approximateTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.#ctor(Microsoft.HealthVault.ItemTypes.ApproximateDate,Microsoft.HealthVault.ItemTypes.ApproximateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="approximateDate" Type="Microsoft.HealthVault.ItemTypes.ApproximateDate" />
+        <Parameter Name="approximateTime" Type="Microsoft.HealthVault.ItemTypes.ApproximateTime" />
+      </Parameters>
+      <Docs>
+        <param name="approximateDate">
+             The approximation of the date.
+             </param>
+        <param name="approximateTime">
+             The approximation of the time.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+             class with the specified date and time.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="approximateDate" /> is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApproximateDateTime (Microsoft.HealthVault.ItemTypes.ApproximateDate approximateDate, Microsoft.HealthVault.ItemTypes.ApproximateTime approximateTime, Microsoft.HealthVault.ItemTypes.CodableValue timeZone);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.HealthVault.ItemTypes.ApproximateDate approximateDate, class Microsoft.HealthVault.ItemTypes.ApproximateTime approximateTime, class Microsoft.HealthVault.ItemTypes.CodableValue timeZone) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.#ctor(Microsoft.HealthVault.ItemTypes.ApproximateDate,Microsoft.HealthVault.ItemTypes.ApproximateTime,Microsoft.HealthVault.ItemTypes.CodableValue)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="approximateDate" Type="Microsoft.HealthVault.ItemTypes.ApproximateDate" />
+        <Parameter Name="approximateTime" Type="Microsoft.HealthVault.ItemTypes.ApproximateTime" />
+        <Parameter Name="timeZone" Type="Microsoft.HealthVault.ItemTypes.CodableValue" />
+      </Parameters>
+      <Docs>
+        <param name="approximateDate">
+             The approximation of the date.
+             </param>
+        <param name="approximateTime">
+             The approximation of the time.
+             </param>
+        <param name="timeZone">
+             The time zone of the approximate time.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+             class with the specified date, time, and time zone.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="approximateDate" /> parameter is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApproximateDate">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.ItemTypes.ApproximateDate ApproximateDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.ItemTypes.ApproximateDate ApproximateDate" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.ApproximateDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.ItemTypes.ApproximateDate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the approximate date.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             The <paramref name="value" /> parameter is <b>null</b> when set, and
+             <see cref="P:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.Description" /> must be set to a non-<b>null</b> value before
+             calling <see cref="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.WriteXml(System.String,System.Xml.XmlWriter)" />.
+             <br /><br />
+             The property value defaults to the current year.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApproximateTime">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.ItemTypes.ApproximateTime ApproximateTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.ItemTypes.ApproximateTime ApproximateTime" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.ApproximateTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.ItemTypes.ApproximateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the approximate time.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             This value is only used if <see cref="P:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.ApproximateDate" /> is set
+             to a non-<b>null</b> value.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (Microsoft.HealthVault.ItemTypes.ApproximateDateTime other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(class Microsoft.HealthVault.ItemTypes.ApproximateDateTime other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.CompareTo(Microsoft.HealthVault.ItemTypes.ApproximateDateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+      </Parameters>
+      <Docs>
+        <param name="other">
+             The date to be compared.
+             </param>
+        <summary>
+             Compares the specified object to this <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+             object.
+             </summary>
+        <returns>
+             A 32-bit signed integer that indicates the relative order of the
+             objects being compared. If the result is less than zero, the
+             instance is less than <paramref name="other" />. If the result is zero
+             the instance is equal to <paramref name="other" />. If the result is
+             greater than zero, the instance is greater than
+             <paramref name="other" />.
+             </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (DateTime other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(valuetype System.DateTime other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.CompareTo(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="other">
+             The date to be compared.
+             </param>
+        <summary>
+             Compares the specified object to this <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+             object.
+             </summary>
+        <returns>
+             A 32-bit signed integer that indicates the relative order of the
+             objects being compared. If the result is less than zero, the
+             instance is less than <paramref name="other" />. If the result is zero,
+             the instance is equal to <paramref name="other" />. If the result is
+             greater than zero, the instance is greater than
+             <paramref name="other" />.
+             </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">
+             The object to be compared.
+             </param>
+        <summary>
+             Compares the specified object to this <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+             object.
+             </summary>
+        <returns>
+             A 32-bit signed integer that indicates the relative order of the
+             objects being compared. If the result is less than zero, the
+             instance is less than <paramref name="obj" />. If the result is zero,
+             the instance is equal to <paramref name="obj" />. If the result is
+             greater than zero, the instance is greater than <paramref name="obj" />.
+             </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="obj" /> parameter is not an <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+             or <see cref="T:System.DateTime" /> object.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the descriptive form of the approximate date.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             The descriptive form of the approximate date is a value such as
+             "As a baby...".
+             <br /><br />
+             If <paramref name="value" /> is <b>null</b> when set,
+             <see cref="P:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.ApproximateDate" /> must be set to a non-<b>null</b> value
+             before calling <see cref="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.WriteXml(System.String,System.Xml.XmlWriter)" />.
+             If <paramref name="value" /> is not <b>null</b> when set,
+             <see cref="P:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.ApproximateDate" /> is set to <b>null</b>.
+             </remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="value" /> contains only whitespace.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">
+             The object to be compared.
+             </param>
+        <summary>
+             Gets a value indicating whether the specified object is equal to this object.
+             </summary>
+        <returns>
+          <b>true</b> if the <paramref name="obj" /> is an
+             <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" /> object and the year, month, and
+             day exactly match the year, month, and day of this object; otherwise,
+             <b>false</b>.
+             </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="obj" /> parameter is not an <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+             or <see cref="T:System.DateTime" /> object.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+             See the base class documentation.
+             </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool op_Equality (Microsoft.HealthVault.ItemTypes.ApproximateDateTime date, object secondInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class Microsoft.HealthVault.ItemTypes.ApproximateDateTime date, object secondInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.op_Equality(Microsoft.HealthVault.ItemTypes.ApproximateDateTime,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="date" Type="Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+        <Parameter Name="secondInstance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="date">
+             The date object to be compared.
+             </param>
+        <param name="secondInstance">
+             The second object to be compared.
+             </param>
+        <summary>
+             Gets a value indicating whether the specified object is equal to
+             the specified date.
+             </summary>
+        <returns>
+          <b>true</b> if the year, month, and day of the <paramref name="date" />
+             exactly match the year, month, and day of <paramref name="secondInstance" />;
+             otherwise, <b>false</b>.
+             </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="secondInstance" />
+             is not an <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" /> or
+             <see cref="T:System.DateTime" /> object.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThan">
+      <MemberSignature Language="C#" Value="public static bool op_GreaterThan (Microsoft.HealthVault.ItemTypes.ApproximateDateTime date, object secondInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_GreaterThan(class Microsoft.HealthVault.ItemTypes.ApproximateDateTime date, object secondInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.op_GreaterThan(Microsoft.HealthVault.ItemTypes.ApproximateDateTime,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="date" Type="Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+        <Parameter Name="secondInstance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="date">
+             The date object to be compared.
+             </param>
+        <param name="secondInstance">
+             The second object to be compared.
+             </param>
+        <summary>
+             Gets a value indicating whether the specified date is greater than
+             the specified object.
+             </summary>
+        <returns>
+          <b>true</b> if the year, month, and day of the <paramref name="date" />
+             is greater than the year, month, and day of <paramref name="secondInstance" />;
+             otherwise, <b>false</b>.
+             </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="secondInstance" /> parameter
+             is not an <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" /> or
+             <see cref="T:System.DateTime" /> object.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool op_Inequality (Microsoft.HealthVault.ItemTypes.ApproximateDateTime date, object secondInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class Microsoft.HealthVault.ItemTypes.ApproximateDateTime date, object secondInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.op_Inequality(Microsoft.HealthVault.ItemTypes.ApproximateDateTime,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="date" Type="Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+        <Parameter Name="secondInstance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="date">
+             The date object to be compared.
+             </param>
+        <param name="secondInstance">
+             The second object to be compared.
+             </param>
+        <summary>
+             Gets a value indicating whether the specified object is not equal
+             to the specified
+             date.
+             </summary>
+        <returns>
+          <b>false</b> if the year, month, and day of the <paramref name="date" />
+             exactly match the year, month, and day of <paramref name="secondInstance" />;
+             otherwise, <b>true</b>.
+             </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="secondInstance" /> parameter
+             is not an <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" /> or
+             <see cref="T:System.DateTime" /> object.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThan">
+      <MemberSignature Language="C#" Value="public static bool op_LessThan (Microsoft.HealthVault.ItemTypes.ApproximateDateTime date, object secondInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_LessThan(class Microsoft.HealthVault.ItemTypes.ApproximateDateTime date, object secondInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.op_LessThan(Microsoft.HealthVault.ItemTypes.ApproximateDateTime,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="date" Type="Microsoft.HealthVault.ItemTypes.ApproximateDateTime" />
+        <Parameter Name="secondInstance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="date">
+             The date object to be compared.
+             </param>
+        <param name="secondInstance">
+             The second object to be compared.
+             </param>
+        <summary>
+             Gets a value indicating whether the specified date is less than the specified
+             object.
+             </summary>
+        <returns>
+          <b>true</b> if the year, month, and day of the <paramref name="date" />
+             is less than the year, month, and day of <paramref name="secondInstance" />;
+             otherwise, <b>false</b>.
+             </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="secondInstance" /> parameter
+             is not an <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateDateTime" /> or
+             <see cref="T:System.DateTime" /> object.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="public override void ParseXml (System.Xml.XPath.XPathNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ParseXml(class System.Xml.XPath.XPathNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.ParseXml(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="navigator">
+             The XML node representing the approximate date and time.
+             </param>
+        <summary>
+             Populates the data for the approximate date and time from the XML.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="navigator" /> parameter is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeZone">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.ItemTypes.CodableValue TimeZone { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.ItemTypes.CodableValue TimeZone" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.TimeZone" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the time zone.
+             </summary>
+        <value>To be added.</value>
+        <remarks>
+             This value is only used if <see cref="P:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.ApproximateDate" /> is set
+             to a non-<b>null</b> value.
+             HealthVault does not interpret this value or adjust dates accordingly.
+             It is up to the application to decide how this value is used.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (string nodeName, System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(string nodeName, class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.WriteXml(System.String,System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodeName" Type="System.String" />
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="nodeName">
+             The name of the outer element for the approximate date and time.
+             </param>
+        <param name="writer">
+             The XmlWriter to write the approximate date and time to.
+             </param>
+        <summary>
+             Writes the approximate date and time to the specified XML writer.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+             </exception>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="writer" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:Microsoft.HealthVault.Exceptions.ThingSerializationException">
+             The <see cref="P:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.ApproximateDate" /> is <b>null</b> and <see cref="P:Microsoft.HealthVault.ItemTypes.ApproximateDateTime.Description" /> is <b>null</b> or empty.
+             </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

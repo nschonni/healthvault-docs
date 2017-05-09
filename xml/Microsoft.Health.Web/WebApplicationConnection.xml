@@ -1,0 +1,397 @@
+<Type Name="WebApplicationConnection" FullName="Microsoft.Health.Web.WebApplicationConnection">
+  <TypeSignature Language="C#" Value="public class WebApplicationConnection : Microsoft.Health.AuthenticatedConnection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebApplicationConnection extends Microsoft.Health.AuthenticatedConnection" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.Web.WebApplicationConnection" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.AuthenticatedConnection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Represents an authenticated interface to HealthVault. 
+            </summary>
+    <remarks>
+            Most operations performed against the service require authentication. 
+            A connection must be made to HealthVault to access the
+            web methods that the service exposes. The class does not maintain
+            an open connection to the service. It uses XML over HTTP to 
+            make requests and receive responses from the service. The connection
+            just maintains the data necessary to make the request.
+            <br /><br />
+            An authenticated connection takes the user name and password, and
+            authenticates against HealthVault and then stores an 
+            authentication token which is then passed to the service on each 
+            subsequent request. An authenticated connection is required for 
+            accessing a person's health record. 
+            <br /><br />
+            For operations that do not require authentication, the 
+            <see cref="T:Microsoft.Health.AnonymousConnection" /> or <see cref="T:Microsoft.Health.ApplicationConnection" />
+            class can be used.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebApplicationConnection (Microsoft.Health.Authentication.Credential credential);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.Authentication.Credential credential) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationConnection.#ctor(Microsoft.Health.Authentication.Credential)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="credential" Type="Microsoft.Health.Authentication.Credential" />
+      </Parameters>
+      <Docs>
+        <param name="credential">
+            The credential of the user to authenticate for access to
+            HealthVault.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.WebApplicationConnection" /> class with 
+            default values from the application or web configuration file.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="credential" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebApplicationConnection (Microsoft.Health.HealthServiceInstance serviceInstance, Microsoft.Health.Authentication.Credential credential);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.HealthServiceInstance serviceInstance, class Microsoft.Health.Authentication.Credential credential) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationConnection.#ctor(Microsoft.Health.HealthServiceInstance,Microsoft.Health.Authentication.Credential)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
+        <Parameter Name="credential" Type="Microsoft.Health.Authentication.Credential" />
+      </Parameters>
+      <Docs>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <param name="credential">
+            The credential of the user to authenticate for access to 
+            HealthVault.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.WebApplicationConnection" /> class 
+            with the HealthVault web-service instance and credential.
+            </summary>
+        <remarks>
+            If <paramref name="serviceInstance" /> is <b>null</b>, the URL for the configured
+            default HealthVault web-service instance is used.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebApplicationConnection (Guid callingApplicationId, Microsoft.Health.Authentication.Credential credential);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid callingApplicationId, class Microsoft.Health.Authentication.Credential credential) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationConnection.#ctor(System.Guid,Microsoft.Health.Authentication.Credential)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callingApplicationId" Type="System.Guid" />
+        <Parameter Name="credential" Type="Microsoft.Health.Authentication.Credential" />
+      </Parameters>
+      <Docs>
+        <param name="callingApplicationId">
+            The HealthVault application identifier.
+            </param>
+        <param name="credential">
+            The credential of the user to authenticate for access to 
+            HealthVault.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.WebApplicationConnection" /> class 
+            with the specified app-ID, and credential.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="credential" /> is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebApplicationConnection (Guid callingApplicationId, Microsoft.Health.HealthServiceInstance serviceInstance, Microsoft.Health.Authentication.Credential credential);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid callingApplicationId, class Microsoft.Health.HealthServiceInstance serviceInstance, class Microsoft.Health.Authentication.Credential credential) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationConnection.#ctor(System.Guid,Microsoft.Health.HealthServiceInstance,Microsoft.Health.Authentication.Credential)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callingApplicationId" Type="System.Guid" />
+        <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
+        <Parameter Name="credential" Type="Microsoft.Health.Authentication.Credential" />
+      </Parameters>
+      <Docs>
+        <param name="callingApplicationId">
+            The HealthVault application identifier.
+            </param>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <param name="credential">
+            The credential of the user to authenticate for access to 
+            HealthVault.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.WebApplicationConnection" /> class 
+            with the specified app-ID, HealthVault web-service instance, and credential.
+            </summary>
+        <remarks>
+            If <paramref name="serviceInstance" /> is <b>null</b>, the URL for the configured
+            default HealthVault web-service instance is used.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebApplicationConnection (Guid callingApplicationId, string healthServiceUrl, Microsoft.Health.Authentication.Credential credential);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid callingApplicationId, string healthServiceUrl, class Microsoft.Health.Authentication.Credential credential) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationConnection.#ctor(System.Guid,System.String,Microsoft.Health.Authentication.Credential)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callingApplicationId" Type="System.Guid" />
+        <Parameter Name="healthServiceUrl" Type="System.String" />
+        <Parameter Name="credential" Type="Microsoft.Health.Authentication.Credential" />
+      </Parameters>
+      <Docs>
+        <param name="callingApplicationId">
+            The HealthVault application identifier.
+            </param>
+        <param name="healthServiceUrl">
+            The URL of the HealthVault service.
+            </param>
+        <param name="credential">
+            The credential of the user to authenticate for access to 
+            HealthVault.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.WebApplicationConnection" /> class 
+            with the specified app-ID, string-formatted URL, and credential.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="healthServiceUrl" /> parameter or
+            <paramref name="credential" /> is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebApplicationConnection (Guid callingApplicationId, Uri healthServiceUrl, Microsoft.Health.Authentication.Credential credential);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid callingApplicationId, class System.Uri healthServiceUrl, class Microsoft.Health.Authentication.Credential credential) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationConnection.#ctor(System.Guid,System.Uri,Microsoft.Health.Authentication.Credential)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callingApplicationId" Type="System.Guid" />
+        <Parameter Name="healthServiceUrl" Type="System.Uri" />
+        <Parameter Name="credential" Type="Microsoft.Health.Authentication.Credential" />
+      </Parameters>
+      <Docs>
+        <param name="callingApplicationId">
+            The HealthVault application identifier.
+            </param>
+        <param name="healthServiceUrl">
+            The URL of the HealthVault service.
+            </param>
+        <param name="credential">
+            The credential of the user to authenticate for access to 
+            HealthVault.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.WebApplicationConnection" /> class 
+            with the specified app-ID, URL, and credential.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="healthServiceUrl" /> parameter or
+            <paramref name="credential" /> is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendInsecureMessage">
+      <MemberSignature Language="C#" Value="public void SendInsecureMessage (System.Collections.Generic.IList&lt;Microsoft.Health.MailRecipient&gt; mailRecipient, string subject, string textBody, string htmlBody);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendInsecureMessage(class System.Collections.Generic.IList`1&lt;class Microsoft.Health.MailRecipient&gt; mailRecipient, string subject, string textBody, string htmlBody) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationConnection.SendInsecureMessage(System.Collections.Generic.IList{Microsoft.Health.MailRecipient},System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mailRecipient" Type="System.Collections.Generic.IList&lt;Microsoft.Health.MailRecipient&gt;" />
+        <Parameter Name="subject" Type="System.String" />
+        <Parameter Name="textBody" Type="System.String" />
+        <Parameter Name="htmlBody" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="mailRecipient">
+            The addresses and display names of the people to send the 
+            message to.
+            </param>
+        <param name="subject">
+            The subject of the message.
+            </param>
+        <param name="textBody">
+            The text body of the message.
+            </param>
+        <param name="htmlBody">
+            The HTML body of the message.
+            </param>
+        <summary>
+            Sends an insecure message to the specified message recipients.
+            </summary>
+        <remarks>
+            If both the <paramref name="textBody" /> and 
+            <paramref name="htmlBody" /> of the message is specified then a
+            multi-part message will be sent so that the html body will be used
+            and fallback to text if not supported by the client.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="mailRecipient" /> property is <b>null</b> or empty, 
+            or the <paramref name="subject" /> parameter is <b>null</b> or empty, or 
+            the <paramref name="textBody" /> and <paramref name="htmlBody" /> 
+            parameters are both <b>null</b> or empty.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The server returned a failure when making the request.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendInsecureMessage">
+      <MemberSignature Language="C#" Value="public void SendInsecureMessage (System.Collections.Generic.IList&lt;Guid&gt; personIds, bool addressMustBeValidated, string subject, string textBody, string htmlBody);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendInsecureMessage(class System.Collections.Generic.IList`1&lt;valuetype System.Guid&gt; personIds, bool addressMustBeValidated, string subject, string textBody, string htmlBody) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationConnection.SendInsecureMessage(System.Collections.Generic.IList{System.Guid},System.Boolean,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="personIds" Type="System.Collections.Generic.IList&lt;System.Guid&gt;" />
+        <Parameter Name="addressMustBeValidated" Type="System.Boolean" />
+        <Parameter Name="subject" Type="System.String" />
+        <Parameter Name="textBody" Type="System.String" />
+        <Parameter Name="htmlBody" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="personIds">
+            The unique identifiers of the people to which the message should be
+            sent.
+            </param>
+        <param name="addressMustBeValidated">
+          <b>true</b> if HealthVault ensures that the person has validated 
+            their message address before sending the mail; <b>false</b> if the 
+            message will be sent even if the person's address has not been 
+            validated.
+            </param>
+        <param name="subject">
+            The subject of the message.
+            </param>
+        <param name="textBody">
+            The text body of the message.
+            </param>
+        <param name="htmlBody">
+            The HTML body of the message.
+            </param>
+        <summary>
+            Sends an insecure message to the specified message recipients.
+            </summary>
+        <remarks>
+            If both the <paramref name="textBody" /> and 
+            <paramref name="htmlBody" /> of the message is specified then a
+            multi-part message will be sent so that the html body will be used
+            and fallback to text if not supported by the client.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="personIds" /> or <paramref name="subject" />, 
+            <paramref name="textBody" />  or <paramref name="htmlBody" /> parameters 
+            are <b>null</b> or empty.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The server returned a failure when making the request.        
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendInsecureMessageToCustodians">
+      <MemberSignature Language="C#" Value="public void SendInsecureMessageToCustodians (Guid recordId, bool addressMustBeValidated, string subject, string textBody, string htmlBody);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendInsecureMessageToCustodians(valuetype System.Guid recordId, bool addressMustBeValidated, string subject, string textBody, string htmlBody) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationConnection.SendInsecureMessageToCustodians(System.Guid,System.Boolean,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="recordId" Type="System.Guid" />
+        <Parameter Name="addressMustBeValidated" Type="System.Boolean" />
+        <Parameter Name="subject" Type="System.String" />
+        <Parameter Name="textBody" Type="System.String" />
+        <Parameter Name="htmlBody" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="recordId">
+            The unique identifier of the health record for which the 
+            custodians should be sent the message.
+            </param>
+        <param name="addressMustBeValidated">
+          <b>true</b> if HealthVault ensures that the person has validated 
+            their message address before sending the mail; <b>false</b> if the 
+            message will be sent even if the person's address has not been 
+            validated.
+            </param>
+        <param name="subject">
+            The subject of the message.
+            </param>
+        <param name="textBody">
+            The text body of the message.
+            </param>
+        <param name="htmlBody">
+            The HTML body of the message.
+            </param>
+        <summary>
+            Sends an insecure message to custodians of the specified health 
+            record.
+            </summary>
+        <remarks>
+            If both the <paramref name="textBody" /> and 
+            <paramref name="htmlBody" /> of the message is specified, then a
+            multi-part message is sent so that the HTML body will be used
+            and falls back to text if not supported by the client.
+            </remarks>
+        <exception cref="T:System.ArgumentException"> 
+            The <paramref name="recordId" /> parameter is <see cref="F:System.Guid.Empty" />
+            -or-
+            The <paramref name="subject" /> parameter is <b>null</b> or empty,
+            -or-
+            The <paramref name="textBody" /> and <paramref name="htmlBody" /> parameters 
+            are both <b>null</b> or empty.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The server returned a failure when making the request.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

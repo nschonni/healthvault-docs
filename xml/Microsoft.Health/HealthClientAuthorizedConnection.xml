@@ -1,0 +1,354 @@
+<Type Name="HealthClientAuthorizedConnection" FullName="Microsoft.Health.HealthClientAuthorizedConnection">
+  <TypeSignature Language="C#" Value="public class HealthClientAuthorizedConnection : Microsoft.Health.Web.OfflineWebApplicationConnection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HealthClientAuthorizedConnection extends Microsoft.Health.Web.OfflineWebApplicationConnection" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthClientAuthorizedConnection" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.Web.OfflineWebApplicationConnection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+             Represents an authorized connection between a HealthVault client application
+             and the HealthVault service.
+             </summary>
+    <remarks>
+             HealthClientAuthorizedConnection is a connection used by a HealthVault client 
+             application. The connection is authenticated using an
+             application certificate in the user store, and does not require an authenticated user.
+             The connection is only valid for <see cref="T:Microsoft.Health.HealthClientApplication" /> instances, and 
+             each instance must be authorized using the HealthVault Shell service.
+             </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthClientAuthorizedConnection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthClientAuthorizedConnection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates an instance of HealthClientAuthorizedConnection using
+            connection information stored in a configuration file.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Microsoft.Health.InvalidConfigurationException">
+            The web or application configuration file does not contain 
+            configuration entries for "ApplicationID" or "HealthServiceUrl".
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthClientAuthorizedConnection (Microsoft.Health.Web.Authentication.WebApplicationCredential webApplicationCredential);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.Web.Authentication.WebApplicationCredential webApplicationCredential) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthClientAuthorizedConnection.#ctor(Microsoft.Health.Web.Authentication.WebApplicationCredential)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="webApplicationCredential" Type="Microsoft.Health.Web.Authentication.WebApplicationCredential" />
+      </Parameters>
+      <Docs>
+        <param name="webApplicationCredential">
+            Credential for authenticating the application.
+            </param>
+        <summary>
+            Creates an instance of HealthClientAuthorizedConnection
+            using a specified <see cref="T:Microsoft.Health.Web.Authentication.WebApplicationCredential" /> and
+            connection information stored in a configuration file..
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Microsoft.Health.InvalidConfigurationException">
+            The web or application configuration file does not contain 
+            configuration entries for "ApplicationID" or "HealthServiceUrl".
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthClientAuthorizedConnection (Microsoft.Health.Web.Authentication.WebApplicationCredential webApplicationCredential, Microsoft.Health.HealthServiceInstance serviceInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.Web.Authentication.WebApplicationCredential webApplicationCredential, class Microsoft.Health.HealthServiceInstance serviceInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthClientAuthorizedConnection.#ctor(Microsoft.Health.Web.Authentication.WebApplicationCredential,Microsoft.Health.HealthServiceInstance)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="webApplicationCredential" Type="Microsoft.Health.Web.Authentication.WebApplicationCredential" />
+        <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
+      </Parameters>
+      <Docs>
+        <param name="webApplicationCredential">
+            Credential for authenticating the application.
+            </param>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <summary>
+            Creates a new instance of HealthClientAuthorizedConnection
+            using a specified <see cref="T:Microsoft.Health.Web.Authentication.WebApplicationCredential" /> and HealthVault web-service instance.
+            </summary>
+        <remarks>
+            If <paramref name="serviceInstance" /> is <b>null</b>, the URL for the configured
+            default HealthVault web-service instance is used.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthClientAuthorizedConnection (Microsoft.Health.Web.Authentication.WebApplicationCredential webApplicationCredential, Guid applicationId, Microsoft.Health.HealthServiceInstance serviceInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.Web.Authentication.WebApplicationCredential webApplicationCredential, valuetype System.Guid applicationId, class Microsoft.Health.HealthServiceInstance serviceInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthClientAuthorizedConnection.#ctor(Microsoft.Health.Web.Authentication.WebApplicationCredential,System.Guid,Microsoft.Health.HealthServiceInstance)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="webApplicationCredential" Type="Microsoft.Health.Web.Authentication.WebApplicationCredential" />
+        <Parameter Name="applicationId" Type="System.Guid" />
+        <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
+      </Parameters>
+      <Docs>
+        <param name="webApplicationCredential">
+            Credential for authenticating the application.
+            </param>
+        <param name="applicationId">
+            The ID of the client application.
+            </param>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <summary>
+            Creates a new instance of HealthClientAuthorizedConnection
+            using a specified <see cref="T:Microsoft.Health.Web.Authentication.WebApplicationCredential" />, application ID, and HealthVault web-service instance.
+            </summary>
+        <remarks>
+            If <paramref name="serviceInstance" /> is <b>null</b>, the URL for the configured
+            default HealthVault web-service instance is used.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthClientAuthorizedConnection (Microsoft.Health.Web.Authentication.WebApplicationCredential webApplicationCredential, Guid applicationId, Uri healthServiceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.Web.Authentication.WebApplicationCredential webApplicationCredential, valuetype System.Guid applicationId, class System.Uri healthServiceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthClientAuthorizedConnection.#ctor(Microsoft.Health.Web.Authentication.WebApplicationCredential,System.Guid,System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="webApplicationCredential" Type="Microsoft.Health.Web.Authentication.WebApplicationCredential" />
+        <Parameter Name="applicationId" Type="System.Guid" />
+        <Parameter Name="healthServiceUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="webApplicationCredential">
+            Credential for authenticating the application.
+            </param>
+        <param name="applicationId">
+            The ID of the client application.
+            </param>
+        <param name="healthServiceUri">
+            The URL of the HealthVault platform service.
+            </param>
+        <summary>
+            Creates a new instance of HealthClientAuthorizedConnection
+            using a specified <see cref="T:Microsoft.Health.Web.Authentication.WebApplicationCredential" />, application ID, and health service URL.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="healthServiceUri" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.UriFormatException">
+            The <paramref name="healthServiceUri" /> parameter is not a properly 
+            formatted URL.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthClientAuthorizedConnection (Microsoft.Health.Web.Authentication.WebApplicationCredential webApplicationCredential, Guid applicationId, Microsoft.Health.HealthServiceInstance serviceInstance, Guid personId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.Web.Authentication.WebApplicationCredential webApplicationCredential, valuetype System.Guid applicationId, class Microsoft.Health.HealthServiceInstance serviceInstance, valuetype System.Guid personId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthClientAuthorizedConnection.#ctor(Microsoft.Health.Web.Authentication.WebApplicationCredential,System.Guid,Microsoft.Health.HealthServiceInstance,System.Guid)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="webApplicationCredential" Type="Microsoft.Health.Web.Authentication.WebApplicationCredential" />
+        <Parameter Name="applicationId" Type="System.Guid" />
+        <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
+        <Parameter Name="personId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="webApplicationCredential">
+            Credential for authenticating the application.
+            </param>
+        <param name="applicationId">
+            The ID of the client application.
+            </param>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <param name="personId">
+            The ID of the person for whom the authorized connection is created.
+            </param>
+        <summary>
+            Creates a new instance of HealthClientAuthorizedConnection
+            with a WebApplicationCredential, an application ID, 
+            HealthVault web-service instance, and person ID.
+            </summary>
+        <remarks>
+            If <paramref name="serviceInstance" /> is <b>null</b>, the URL for the configured
+            default HealthVault web-service instance is used.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthClientAuthorizedConnection (Microsoft.Health.Web.Authentication.WebApplicationCredential webApplicationCredential, Guid applicationId, Uri healthServiceUri, Guid personId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Health.Web.Authentication.WebApplicationCredential webApplicationCredential, valuetype System.Guid applicationId, class System.Uri healthServiceUri, valuetype System.Guid personId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthClientAuthorizedConnection.#ctor(Microsoft.Health.Web.Authentication.WebApplicationCredential,System.Guid,System.Uri,System.Guid)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="webApplicationCredential" Type="Microsoft.Health.Web.Authentication.WebApplicationCredential" />
+        <Parameter Name="applicationId" Type="System.Guid" />
+        <Parameter Name="healthServiceUri" Type="System.Uri" />
+        <Parameter Name="personId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="webApplicationCredential">
+            Credential for authenticating the application
+            </param>
+        <param name="applicationId">
+            The ID of the client application.
+            </param>
+        <param name="healthServiceUri">
+            The URL of the HealthVault platform service.
+            </param>
+        <param name="personId">
+            The ID of the person for whom the authorized connection is created.
+            </param>
+        <summary>
+            Creates a new instance of HealthClientAuthorizedConnection
+            with a WebApplicationCredential, an applicationID, 
+            healthServiceUri and personId
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="healthServiceUri" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.UriFormatException">
+            The <paramref name="healthServiceUri" /> parameter is not a properly 
+            formatted URL.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMeaningfulUseTimelyAccessDocumentReport">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IEnumerable&lt;Microsoft.Health.MeaningfulUse.DocumentReceipt&gt; GetMeaningfulUseTimelyAccessDocumentReport (Microsoft.Health.DateRange reportingPeriodFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Health.MeaningfulUse.DocumentReceipt&gt; GetMeaningfulUseTimelyAccessDocumentReport(class Microsoft.Health.DateRange reportingPeriodFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthClientAuthorizedConnection.GetMeaningfulUseTimelyAccessDocumentReport(Microsoft.Health.DateRange)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Microsoft.Health.MeaningfulUse.DocumentReceipt&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reportingPeriodFilter" Type="Microsoft.Health.DateRange" />
+      </Parameters>
+      <Docs>
+        <param name="reportingPeriodFilter">
+            The UTC reporting period to be used to retrieve the Timely Access Report.
+            </param>
+        <summary>
+            Retrieves the Meaningful Use Timely Access Report for the application.
+            </summary>
+        <returns>
+            An IEnumerable iterator of <see cref="T:Microsoft.Health.MeaningfulUse.DocumentReceipt" /> objects which contains the
+            list of document receipts having an event date (visit or discharge date) within the specified reporting period.
+            </returns>
+        <remarks>
+            Not supported for this connection.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            Not supported.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMeaningfulUseTimelyAccessDOPUDocumentReport">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IEnumerable&lt;Microsoft.Health.MeaningfulUse.DOPUDocumentReceipt&gt; GetMeaningfulUseTimelyAccessDOPUDocumentReport (Microsoft.Health.DateRange availableDateFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Health.MeaningfulUse.DOPUDocumentReceipt&gt; GetMeaningfulUseTimelyAccessDOPUDocumentReport(class Microsoft.Health.DateRange availableDateFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthClientAuthorizedConnection.GetMeaningfulUseTimelyAccessDOPUDocumentReport(Microsoft.Health.DateRange)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Microsoft.Health.MeaningfulUse.DOPUDocumentReceipt&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="availableDateFilter" Type="Microsoft.Health.DateRange" />
+      </Parameters>
+      <Docs>
+        <param name="availableDateFilter">
+            The UTC date range used to filter the entries in the Timely Access Report by the date the CCDA document was made available to HealthVault.
+            </param>
+        <summary>
+            Retrieves the Meaningful Use Timely Access Report for applications that use DOPU to transfer CCDA documents to HealthVault.
+            </summary>
+        <returns>
+            An IEnumerable iterator of <see cref="T:Microsoft.Health.MeaningfulUse.DOPUDocumentReceipt" /> objects which contains the list of CCDA document receipts sent to HealthVault using DOPU, filtered by the available date range. 
+            </returns>
+        <remarks>
+            Not supported for this connection.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            Not supported.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMeaningfulUseVDTReport">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IEnumerable&lt;Microsoft.Health.MeaningfulUse.PatientActivity&gt; GetMeaningfulUseVDTReport (Microsoft.Health.DateRange reportingPeriodFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Health.MeaningfulUse.PatientActivity&gt; GetMeaningfulUseVDTReport(class Microsoft.Health.DateRange reportingPeriodFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthClientAuthorizedConnection.GetMeaningfulUseVDTReport(Microsoft.Health.DateRange)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Microsoft.Health.MeaningfulUse.PatientActivity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reportingPeriodFilter" Type="Microsoft.Health.DateRange" />
+      </Parameters>
+      <Docs>
+        <param name="reportingPeriodFilter">
+            The UTC reporting period to be used to retrieve the VDT Report.
+            </param>
+        <summary>
+            Retrieves the Meaningful Use View, Download, and Transmit (VDT) Report for the application.
+            </summary>
+        <returns>
+            An IEnumerable iterator of <see cref="T:Microsoft.Health.MeaningfulUse.PatientActivity" /> objects which contains the list of patients to which the
+            data source sent a CCDA document where the event date (visit or discharge date) is within the specified reporting period,
+            and additionally, the patient viewed, downloaded or transmitted to a 3rd party, health information in the record.
+            </returns>
+        <remarks>
+            Not supported for this connection.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            Not supported.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

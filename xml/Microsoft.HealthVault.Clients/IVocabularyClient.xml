@@ -1,0 +1,217 @@
+<Type Name="IVocabularyClient" FullName="Microsoft.HealthVault.Clients.IVocabularyClient">
+  <TypeSignature Language="C#" Value="public interface IVocabularyClient : Microsoft.HealthVault.Clients.IClient" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IVocabularyClient implements class Microsoft.HealthVault.Clients.IClient" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.Clients.IVocabularyClient" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.65.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.HealthVault.Clients.IClient</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>
+            An interface for the HealthVault vocabulary client. Used to access vocabularies.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetVocabulariesAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Collections.Generic.IList&lt;Microsoft.HealthVault.Vocabulary.Vocabulary&gt;&gt; GetVocabulariesAsync (System.Collections.Generic.IList&lt;Microsoft.HealthVault.Vocabulary.VocabularyKey&gt; vocabularyKeys, bool cultureIsFixed = false);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.Collections.Generic.IList`1&lt;class Microsoft.HealthVault.Vocabulary.Vocabulary&gt;&gt; GetVocabulariesAsync(class System.Collections.Generic.IList`1&lt;class Microsoft.HealthVault.Vocabulary.VocabularyKey&gt; vocabularyKeys, bool cultureIsFixed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IVocabularyClient.GetVocabulariesAsync(System.Collections.Generic.IList{Microsoft.HealthVault.Vocabulary.VocabularyKey},System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Collections.Generic.IList&lt;Microsoft.HealthVault.Vocabulary.Vocabulary&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vocabularyKeys" Type="System.Collections.Generic.IList&lt;Microsoft.HealthVault.Vocabulary.VocabularyKey&gt;" />
+        <Parameter Name="cultureIsFixed" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="vocabularyKeys">
+            A list of keys identifying the requested vocabularies.
+            </param>
+        <param name="cultureIsFixed">
+            HealthVault looks for the vocabulary items for the culture info
+            specified using <see cref="!:HealthServiceConnection.Culture" />.
+            If <paramref name="cultureIsFixed" /> is set to <b>false</b> and if
+            items are not found for the specified culture, items for the
+            default fallback culture are returned. If
+            <paramref name="cultureIsFixed" /> is set to <b>true</b>,
+            fallback will not occur, and if items are not found for the
+            specified culture, empty strings are returned.
+            </param>
+        <summary>
+            Retrieves lists of vocabulary items for the specified vocabularies in the user's current culture.
+            </summary>
+        <returns>
+            One of the specified vocabularies and its items, or empty strings.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Microsoft.HealthVault.Exceptions.HealthServiceException">
+            There is an error in the server request.
+            <br></br>
+            -Or- 
+            <br></br>
+            One of the requested vocabularies is not found on the server.
+            <br></br>
+            -Or- 
+            <br></br>
+            One of the requested vocabularies does not contain representations 
+            for its items for the specified culture
+            <br></br>
+            -Or- 
+            <br></br>
+            There is an error loading the vocabularies.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVocabularyAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;Microsoft.HealthVault.Vocabulary.Vocabulary&gt; GetVocabularyAsync (Microsoft.HealthVault.Vocabulary.VocabularyKey key, bool cultureIsFixed = false);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.HealthVault.Vocabulary.Vocabulary&gt; GetVocabularyAsync(class Microsoft.HealthVault.Vocabulary.VocabularyKey key, bool cultureIsFixed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IVocabularyClient.GetVocabularyAsync(Microsoft.HealthVault.Vocabulary.VocabularyKey,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.HealthVault.Vocabulary.Vocabulary&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="Microsoft.HealthVault.Vocabulary.VocabularyKey" />
+        <Parameter Name="cultureIsFixed" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="key">The key for the vocabulary to fetch</param>
+        <param name="cultureIsFixed">
+            HealthVault looks for the vocabulary items for the culture info
+            specified by the system.
+            If <paramref name="cultureIsFixed" /> is set to <b>false</b> and if
+            items are not found for the specified culture, items for the
+            default fallback culture are returned. If
+            <paramref name="cultureIsFixed" /> is set to <b>true</b>,
+            fallback will not occur, and if items are not found for the
+            specified culture, empty strings are returned.
+            </param>
+        <summary>
+            Retrieves lists of vocabulary items for the specified vocabulary in the user's current culture.
+            </summary>
+        <returns>
+            The specified vocabulary and its items, or empty strings.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:Microsoft.HealthVault.Exceptions.HealthServiceException">
+            There is an error in the server request.
+            <br></br>
+            -Or- 
+            <br></br>
+            The requested vocabulary is not found on the server.
+            <br></br>
+            -Or- 
+            <br></br>
+            The requested vocabulary does not contain representations 
+            for its items for the specified culture
+            <br></br>
+            -Or- 
+            <br></br>
+            There is an error loading the vocabulary.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVocabularyKeysAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Collections.Generic.IReadOnlyCollection&lt;Microsoft.HealthVault.Vocabulary.VocabularyKey&gt;&gt; GetVocabularyKeysAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.Collections.Generic.IReadOnlyCollection`1&lt;class Microsoft.HealthVault.Vocabulary.VocabularyKey&gt;&gt; GetVocabularyKeysAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IVocabularyClient.GetVocabularyKeysAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Collections.Generic.IReadOnlyCollection&lt;Microsoft.HealthVault.Vocabulary.VocabularyKey&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Retrieves a collection of key information for identifying and 
+            describing the vocabularies in the system.
+            </summary>
+        <returns>
+            A collection of keys identifying the vocabularies in the system.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SearchVocabularyAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.HealthVault.Vocabulary.VocabularyKey&gt;&gt; SearchVocabularyAsync (string searchValue, Microsoft.HealthVault.Vocabulary.VocabularySearchType searchType, Nullable&lt;int&gt; maxResults);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class Microsoft.HealthVault.Vocabulary.VocabularyKey&gt;&gt; SearchVocabularyAsync(string searchValue, valuetype Microsoft.HealthVault.Vocabulary.VocabularySearchType searchType, valuetype System.Nullable`1&lt;int32&gt; maxResults) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IVocabularyClient.SearchVocabularyAsync(System.String,Microsoft.HealthVault.Vocabulary.VocabularySearchType,System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.HealthVault.Vocabulary.VocabularyKey&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchValue" Type="System.String" />
+        <Parameter Name="searchType" Type="Microsoft.HealthVault.Vocabulary.VocabularySearchType" />
+        <Parameter Name="maxResults" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="searchValue">
+                The search string to use.
+            </param>
+        <param name="searchType">
+                The type of search to perform.
+            </param>
+        <param name="maxResults">
+                The maximum number of results to return. If null, all matching results 
+                are returned, up to a maximum number defined by the service config 
+                value with key maxResultsPerVocabularyRetrieval.
+            </param>
+        <summary>
+            Searches a specific vocabulary and retrieves the matching vocabulary items.
+            </summary>
+        <returns>
+            A <see cref="T:Microsoft.HealthVault.Vocabulary.VocabularyItemCollection" /> populated with entries matching 
+            the search criteria.
+            </returns>
+        <remarks>
+            This method does text search matching of display text and abbreviation text
+            for the culture defined by the <see cref="!:HealthServiceConnection.Culture" />. 
+            The <paramref name="searchValue" /> is a string of characters in the specified 
+            culture. 
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="searchValue" /> is <b>null</b> or empty or greater 
+            than <b>255</b> characters.
+            <br></br>
+            -Or-
+            <br></br>
+            if <paramref name="searchType" /> is not a known 
+            <see cref="T:Microsoft.HealthVault.Vocabulary.VocabularySearchType" /> value.        
+            <br></br>
+            -Or-
+            <br></br>
+            when <paramref name="maxResults" /> is defined but has a value less than 1.        
+            </exception>
+        <exception cref="T:Microsoft.HealthVault.Exceptions.HealthServiceException">
+            There is an error in the server request.         
+            <br></br>
+            -Or-        
+            <br></br>
+            The requested vocabulary is not found on the server.
+            <br></br>
+            -Or- 
+            The requested search culture is not supported. 
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

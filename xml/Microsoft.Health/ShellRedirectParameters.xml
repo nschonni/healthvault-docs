@@ -1,0 +1,506 @@
+<Type Name="ShellRedirectParameters" FullName="Microsoft.Health.ShellRedirectParameters">
+  <TypeSignature Language="C#" Value="public class ShellRedirectParameters" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ShellRedirectParameters extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ShellRedirectParameters" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Parameters for constructing a HealthVault Shell redirect URL.
+            </summary>
+    <remarks>
+            See the <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface documentation</a> for
+            complete listing of all parameters supported by Shell.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ShellRedirectParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ShellRedirectParameters.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Health.ShellRedirectParameters" /> class that is empty.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ShellRedirectParameters (string shellRedirectorUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string shellRedirectorUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ShellRedirectParameters.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="shellRedirectorUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="shellRedirectorUrl">To be added.</param>
+        <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Health.ShellRedirectParameters" /> class with
+            the specified Shell redirector URL.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionParameters">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameValueCollection ActionParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection ActionParameters" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ShellRedirectParameters.ActionParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the collection of user-defined parameters which are included in the return redirect
+            when HealthVault Shell redirects back to the application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+          <p>
+            These parameters allow the application to transfer its state through the
+            HealthVault Shell redirect.
+            See the <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface documentation</a>.
+            </p>
+          <p>
+            This is encoded as a key-value query string (application/x-www-form-urlencoded) along with <see cref="P:ActionQueryString" />
+            as the value of the <b>actionqs</b> parameter in the <b>targetqs</b> query string parameter.
+            </p>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionQueryString">
+      <MemberSignature Language="C#" Value="public string ActionQueryString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ActionQueryString" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ShellRedirectParameters.ActionQueryString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the query string which is included in the return redirect when HealthVault Shell
+            redirects back to the application.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+          <p>
+            This query string allows the application to transfer its state through the
+            HealthVault Shell redirect.
+            See the <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface documentation</a>.
+            </p>
+          <p>
+            When specified, this value is used along with the <see cref="P:ActionParameters" /> name-value collection as the value
+            of the <b>actionqs</b> parameter in the <b>targetqs</b> query string parameter.
+            </p>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowInstanceBounce">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; AllowInstanceBounce { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; AllowInstanceBounce" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ShellRedirectParameters.AllowInstanceBounce" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the parameter that specifies whether the target instance of HealthVault Shell can redirect the
+            user to another instance of HealthVault Shell where the user's account might
+            reside.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+          <p>
+            See the <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface documentation</a>.
+            </p>
+          <p>
+            If set to true, this is encoded as the value of the <b>aib</b> parameter in the 
+            <b>targetqs</b> query string parameter.
+            </p>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationId">
+      <MemberSignature Language="C#" Value="public Nullable&lt;Guid&gt; ApplicationId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Guid&gt; ApplicationId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ShellRedirectParameters.ApplicationId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Guid&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the application identifier parameter.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.ShellRedirectParameters Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Health.ShellRedirectParameters Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ShellRedirectParameters.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ShellRedirectParameters</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Makes a copy of the redirect parameters object.
+            </summary>
+        <returns>
+            A copy of the redirect parameters object.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConstructRedirectorQueryString">
+      <MemberSignature Language="C#" Value="public string ConstructRedirectorQueryString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ConstructRedirectorQueryString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ShellRedirectParameters.ConstructRedirectorQueryString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Construct the query string for the Shell redirect URL.
+            </summary>
+        <returns>
+            The Shell redirect query string.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:Microsoft.Health.ShellRedirectParameters.TargetLocation" /> is not set.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConstructRedirectUrl">
+      <MemberSignature Language="C#" Value="public Uri ConstructRedirectUrl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Uri ConstructRedirectUrl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ShellRedirectParameters.ConstructRedirectUrl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Constructs a Shell redirect URL for the redirect parameters.
+            </summary>
+        <returns>
+            The constructed URL.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            No <see cref="P:Microsoft.Health.ShellRedirectParameters.TargetLocation" /> is specified.
+            </exception>
+        <exception cref="T:System.Configuration.ConfigurationException">
+            No <see cref="P:Microsoft.Health.ShellRedirectParameters.ShellRedirectorUrl" /> specified or 
+            Shell URL configured for the application
+            (<see cref="P:Microsoft.Health.HealthApplicationConfiguration.HealthVaultShellUrl" />).
+            </exception>
+        <exception cref="T:System.UriFormatException">
+            The specified parameters construct an invalid URL.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConstructTargetQueryString">
+      <MemberSignature Language="C#" Value="public string ConstructTargetQueryString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ConstructTargetQueryString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ShellRedirectParameters.ConstructTargetQueryString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Constructs the query string for the target.
+            </summary>
+        <returns>
+            The Shell redirect query string.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMultiRecordApplication">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsMultiRecordApplication { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsMultiRecordApplication" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ShellRedirectParameters.IsMultiRecordApplication" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the parameter that specifies whether
+            the application simultaneously deals with multiple records
+            for the same person.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            If set to true, this is encoded as the value of the <b>ismra</b> parameter in the 
+            <b>targetqs</b> query string parameter.
+            
+            <p>
+            See the <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface documentation</a>.
+            </p></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnUrl">
+      <MemberSignature Language="C#" Value="public string ReturnUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ReturnUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ShellRedirectParameters.ReturnUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the URL that the non-production HealthVault Shell will redirect
+            back to after the user interaction for the requested target
+            location is complete.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+          <p>
+            This parameter is intended to make development in non-production HealthVault
+            environments easier.  In the production HealthVault environment, redirects
+            will return to HealthVault's action URL configuration for the application ID.
+            See the <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface documentation</a>.
+            </p>
+          <p>
+            If specified or configured, this is encoded as the value of the <b>redirect</b> parameter in the 
+            <b>targetqs</b> query string parameter.
+            </p>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShellRedirectorUrl">
+      <MemberSignature Language="C#" Value="public string ShellRedirectorUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ShellRedirectorUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ShellRedirectParameters.ShellRedirectorUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the base Shell redirector URL.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+          <p>
+            For example, "https://account.healthvault.com/redirect.aspx".
+            </p>
+          <p>
+            If the specified URL does not end with "/redirect.aspx", when 
+            <see cref="M:Microsoft.Health.ShellRedirectParameters.ConstructRedirectUrl" /> is called, "/redirect.aspx"
+            is appended to the URL used for redirection.
+            </p>
+          <p>
+            If not specified, the value of the <see cref="P:Microsoft.Health.HealthApplicationConfiguration.HealthVaultShellUrl" /> configuration is
+            used for constructing the Shell redirect URL.
+            </p>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignupCode">
+      <MemberSignature Language="C#" Value="public string SignupCode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignupCode" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ShellRedirectParameters.SignupCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the signup code parameter for creating a HealthVault account.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+          <p>
+            This is required for applications in locations with limited access to HealthVault.
+            Signup codes may be obtained from
+            <see cref="M:Microsoft.Health.ApplicationConnection.NewSignupCode" />,
+            <see cref="M:Microsoft.Health.PatientConnect.PatientConnection.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.Uri,System.String)" />,
+            <see cref="M:Microsoft.Health.Package.ConnectPackage.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String,System.Collections.Generic.IList{Microsoft.Health.HealthRecordItem})" />,
+            <see cref="M:Microsoft.Health.Package.ConnectPackage.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,Microsoft.Health.ItemTypes.PasswordProtectedPackage)" />,
+            <see cref="M:Microsoft.Health.Package.ConnectPackage.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String,Microsoft.Health.ItemTypes.PasswordProtectedPackage)" />,
+            <see cref="M:Microsoft.Health.Package.ConnectPackage.CreatePackage(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IList{Microsoft.Health.HealthRecordItem})" />,
+            and <see cref="M:Microsoft.Health.Package.ConnectPackage.AllocatePackageId(Microsoft.Health.Web.OfflineWebApplicationConnection)" />.
+            </p>
+          <p>
+            If specified, this is encoded as the value of the <b>signupcode</b> parameter in the 
+            <b>targetqs</b> query string parameter.
+            </p>
+          <p>
+            See the <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface documentation</a>.
+            </p>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetLocation">
+      <MemberSignature Language="C#" Value="public string TargetLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetLocation" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ShellRedirectParameters.TargetLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the name of the location to redirect to in HealthVault Shell.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+          <p>
+            See <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface</a> for
+            complete listing of target locations and their parameters.
+            </p>
+          <p>
+            This is encoded as the value of the <b>target</b> query string parameter in the
+            redirect URL.
+            </p>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetParameters">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameValueCollection TargetParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection TargetParameters" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ShellRedirectParameters.TargetParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the collection of target-specific parameters to pass to the target location.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+          <p>
+            See <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface</a> for
+            complete listing of target locations and their parameters.
+            </p>
+          <p>
+            This is encoded as a key-value query string (application/x-www-form-urlencoded) along with <see cref="P:TargetQueryString" />
+            as the value of the <b>targetqs</b> query string parameter in the redirect URL.
+            </p>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetQueryString">
+      <MemberSignature Language="C#" Value="public string TargetQueryString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetQueryString" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ShellRedirectParameters.TargetQueryString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the target-specific query string that is passed to the target location.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+          <p>
+            When specified, this value is used along with the <see cref="P:TargetParameters" /> name-value collection as the value
+            of the <b>targetqs</b> query string parameter.
+            </p>
+          <p>
+            See <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface</a> for
+            complete listing of target locations and their parameters.
+            </p>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenRedirectionMethod">
+      <MemberSignature Language="C#" Value="public string TokenRedirectionMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TokenRedirectionMethod" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ShellRedirectParameters.TokenRedirectionMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the parameter that specifies the token redirection method.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This is the HTTP method HealthVault Shell will use when redirecting user back
+            to the application with the auth token.
+            See the <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface documentation</a>.
+            </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

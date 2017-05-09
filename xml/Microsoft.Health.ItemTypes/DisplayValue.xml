@@ -1,0 +1,328 @@
+<Type Name="DisplayValue" FullName="Microsoft.Health.ItemTypes.DisplayValue">
+  <TypeSignature Language="C#" Value="public class DisplayValue : Microsoft.Health.ItemTypes.HealthRecordItemData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DisplayValue extends Microsoft.Health.ItemTypes.HealthRecordItemData" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.DisplayValue" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Represents the display value for a length, weight, or other type
+            of measurement.
+            </summary>
+    <remarks>
+            A display value differs from a value in that it is the value as entered
+            by the user rather than the value converted to a base unit. The unit
+            used can also reference the unit through the HealthVault dictionary code.
+            
+            Single-valued display values ("15 pounds") should be expressed using the
+            <see cref="P:Microsoft.Health.ItemTypes.DisplayValue.Value" /> and <see cref="P:Microsoft.Health.ItemTypes.DisplayValue.Units" /> properties. 
+            
+            Multi-valued display values ("12 pounds 3 ounces") can be expressed using the 
+            <see cref="P:Microsoft.Health.ItemTypes.DisplayValue.Text" /> property, but should also be expressed using value and 
+            units ("12.25 pounds").
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DisplayValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DisplayValue.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.DisplayValue" /> class with empty values.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DisplayValue (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DisplayValue.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+            The value as it was entered.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.DisplayValue" /> class 
+            with the specified value.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DisplayValue (double value, string units);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value, string units) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DisplayValue.#ctor(System.Double,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="units" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+            The value as it was entered.
+            </param>
+        <param name="units">
+            The units of the <paramref name="value" /> as it was
+            entered.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.DisplayValue" /> class 
+            with the specified value and units.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="units" /> is <b>null</b> or empty.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DisplayValue (double value, string units, string unitsCode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value, string units, string unitsCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DisplayValue.#ctor(System.Double,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="units" Type="System.String" />
+        <Parameter Name="unitsCode" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+            The value as it was entered.
+            </param>
+        <param name="units">
+            The units of the <paramref name="value" /> as it was
+            entered.
+            </param>
+        <param name="unitsCode">
+            The Health Lexicon vocabulary code for the unit of measure.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.DisplayValue" /> class with 
+            the specified value, units, and units code.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="units" /> is <b>null</b> or empty.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="public override void ParseXml (System.Xml.XPath.XPathNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ParseXml(class System.Xml.XPath.XPathNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DisplayValue.ParseXml(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="navigator"> 
+            The XML node representing the display value.
+            </param>
+        <summary> 
+            Populates the data for the display value from the XML.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DisplayValue.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the display text.
+            </summary>
+        <value>
+            A string representing the display value.
+            </value>
+        <remarks>
+            If the display value cannot be properly expressed as "number units", the
+            Text property can be used to express the display value. An
+            example of this would be expressing a height as "5 feet 8 inches".
+            
+            Applications that use the Text property should still express the value
+            in the "number units" format for applications that predate the introduction
+            of this property.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> set is <b>null</b> or empty.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DisplayValue.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Retrieves a string representation of the display value.
+            </summary>
+        <returns>
+            The value with the optional units.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Units">
+      <MemberSignature Language="C#" Value="public string Units { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Units" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DisplayValue.Units" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the units of measure as defined by the user.
+            </summary>
+        <value>
+            A string representing the units.
+            </value>
+        <remarks>
+            When the units are different from the base units for the particular
+            type of measurement, the units should be set and if possible the
+            <see cref="P:Microsoft.Health.ItemTypes.DisplayValue.UnitsCode" /> should also be set.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> set is <b>null</b>, empty.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UnitsCode">
+      <MemberSignature Language="C#" Value="public string UnitsCode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UnitsCode" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DisplayValue.UnitsCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the code used in the HealthVault Dictionary to represent
+            the units.
+            </summary>
+        <value>
+            A string representing the code.
+            </value>
+        <remarks>
+            The code is used to abstract the units from the application so
+            that the application can retrieve the appropriate value for the
+            culture desired.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public double Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Value" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DisplayValue.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the display value.
+            </summary>
+        <value>
+            A number representing the display value.
+            </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (string nodeName, System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(string nodeName, class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DisplayValue.WriteXml(System.String,System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodeName" Type="System.String" />
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="nodeName">
+            The name of the outer element for the display value.
+            </param>
+        <param name="writer"> 
+            The XmlWriter to write the display value to.
+            </param>
+        <summary> 
+            Writes the display value to the specified XML writer.
+            </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.DisplayValue.Units" /> property has not been set.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

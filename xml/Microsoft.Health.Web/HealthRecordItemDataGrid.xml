@@ -1,0 +1,928 @@
+<Type Name="HealthRecordItemDataGrid" FullName="Microsoft.Health.Web.HealthRecordItemDataGrid">
+  <TypeSignature Language="C#" Value="public class HealthRecordItemDataGrid : System.Web.UI.Control, System.Web.UI.INamingContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HealthRecordItemDataGrid extends System.Web.UI.Control implements class System.Web.UI.INamingContainer" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.Web.HealthRecordItemDataGrid" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.Web</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.INamingContainer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+            An ASP.NET server control for viewing health record items.
+            </summary>
+    <remarks>
+            The HealthRecordItemDataGrid works with the 
+            <see cref="T:Microsoft.Health.HealthRecordItemDataTable" /> to show a 
+            paged list of the health record items matching the specified
+            search criteria.<br /><br />
+            This control can only be used inside a <see cref="T:Microsoft.Health.Web.HealthServicePage" />.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthRecordItemDataGrid ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthRecordItemDataGrid.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Constructs a HealthRecordItemDataGrid instance with default values.
+            </summary>
+        <remarks>
+            It is usually not necessary to explicitly instantiate the data
+            grid. Instead, specify the grid in an .aspx file.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.CommandEventHandler Action;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.CommandEventHandler Action" />
+      <MemberSignature Language="DocId" Value="E:Microsoft.Health.Web.HealthRecordItemDataGrid.Action" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.CommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> 
+            The event handler for the server-side action event.
+            </summary>
+        <remarks>
+            The Action event is fired in response to an action link being
+            clicked. The Action event can be handled by associating a method
+            with the Action property in the HealthRecordItemDataGrid element
+            in the aspx page.<br /><br />
+            The action command is passed to the event handler as a parameter.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionCommands">
+      <MemberSignature Language="C#" Value="public string ActionCommands { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ActionCommands" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ActionCommands" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> 
+            Gets or sets the action commands.
+            </summary>
+        <value>To be added.</value>
+        <remarks> 
+            This value is ignored unless 
+            <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ActionLabels" /> is also set.<br /><br />
+            Actions are server-side events that can be configured through
+            attributes of the HealthRecordItemDataGrid element in an aspx
+            file. Actions consist of text which gets displayed as a link,
+            a command identifier, and an action event handler to call to
+            handle the action when clicked. When an action is specified a
+            column is automatically added to the data grid and the action
+            link is added to the column.<br /><br />
+            The ActionCommands is a comma separated list that must have the same
+            number of values as the <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ActionLabels" /> property.
+            Each command corresponds to the label at the same index in the
+            <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ActionLabels" /> property. When the action link is 
+            clicked <see cref="E:Microsoft.Health.Web.HealthRecordItemDataGrid.Action" /> event is fired with the action command
+            as an argument.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionHeaderText">
+      <MemberSignature Language="C#" Value="public string ActionHeaderText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ActionHeaderText" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ActionHeaderText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> 
+            Gets or sets the header text for the action links column.
+            </summary>
+        <value>To be added.</value>
+        <remarks> 
+            This value is ignored unless <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ActionLabels" /> and
+            <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ActionCommands" /> are also set.<br /><br />
+            Actions are server-side events that can be configured through
+            attributes of the HealthRecordItemDataGrid element in an aspx
+            file. Actions consist of text which gets displayed as a link,
+            a command identifier, and an action event handler to call to
+            handle the action when clicked. When an action is specified a
+            column is automatically added to the data grid and the action
+            link is added to the column.<br /><br />
+            The ActionHeaderText is the text used for the column that is
+            automatically added.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionLabels">
+      <MemberSignature Language="C#" Value="public string ActionLabels { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ActionLabels" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ActionLabels" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> 
+            Gets or sets the action link text.
+            </summary>
+        <value>To be added.</value>
+        <remarks> 
+            This value is ignored unless 
+            <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ActionCommands" /> is also set.<br /><br />
+            Actions are server-side events that can be configured through
+            attributes of the HealthRecordItemDataGrid element in an aspx
+            file. Actions consist of text which gets displayed as a link,
+            a command identifier, and an action event handler to call to
+            handle the action when clicked. When an action is specified a
+            column is automatically added to the data grid and the action
+            link is added to the column.<br /><br />
+            The ActionLabels is a comma separated list that must have the same
+            number of values as the <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ActionCommands" /> property.
+            Each label corresponds to the command at the same index in the
+            <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ActionCommands" /> property.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionSpacer">
+      <MemberSignature Language="C#" Value="public string ActionSpacer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ActionSpacer" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ActionSpacer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> 
+            Gets or sets the action links separator.
+            </summary>
+        <value>To be added.</value>
+        <remarks> 
+            This value is ignored unless <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ActionLabels" /> and
+            <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ActionCommands" /> are also set.<br /><br />
+            Actions are server-side events that can be configured through
+            attributes of the HealthRecordItemDataGrid element in an aspx
+            file. Actions consist of text which gets displayed as a link,
+            a command identifier, and an action event handler to call to
+            handle the action when clicked. When an action is specified a
+            column is automatically added to the data grid and the action
+            link is added to the column.<br /><br />
+            The ActionSpacer is the HTML used to separate multiple actions
+            in the added column. The default value is a single space.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternatingRowCssClass">
+      <MemberSignature Language="C#" Value="public string AlternatingRowCssClass { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AlternatingRowCssClass" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.AlternatingRowCssClass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the CSS class used for alternating row styles.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            To have alternating row styles for the data grid, the styles
+            need to be controlled by a separate CSS class and will be attached
+            to the table rows on Render.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellPadding">
+      <MemberSignature Language="C#" Value="public int CellPadding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CellPadding" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.CellPadding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the cell padding for the data grid. 
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The default value is 0.<br />
+            This value must be set before <see cref="M:Microsoft.Health.Web.HealthRecordItemDataGrid.Render(System.Web.UI.HtmlTextWriter)" /> is called.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellSpacing">
+      <MemberSignature Language="C#" Value="public int CellSpacing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CellSpacing" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.CellSpacing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the cell spacing for the data grid.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The default value is 0.<br />
+            This value must be set before <see cref="M:Microsoft.Health.Web.HealthRecordItemDataGrid.Render(System.Web.UI.HtmlTextWriter)" /> is called.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChildControls">
+      <MemberSignature Language="C#" Value="protected override void CreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthRecordItemDataGrid.CreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Called by the ASP.NET page to notify server controls that use
+            composition-based implementation to create any child controls they 
+            contain in preparation for posting back or rendering.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CssClass">
+      <MemberSignature Language="C#" Value="public string CssClass { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CssClass" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.CssClass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the CSS class used for the control layout.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+          <div class="CssClass">
+            <div>
+              <table>GridView</table>
+            </div>
+            <div>Error Message</div>
+          </div>
+            To control the way the controls look use CSS selector methods
+            i.e. div.myClass div table tr td to access the td of the grid
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataChanged">
+      <MemberSignature Language="C#" Value="public bool DataChanged { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DataChanged" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.DataChanged" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> 
+            Gets or sets a value which indicates to the data grid that data
+            has changed and it should be refreshed.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterOverride">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.HealthRecordFilter FilterOverride { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.HealthRecordFilter FilterOverride" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.FilterOverride" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthRecordFilter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> 
+            Gets or sets the filter to use to get information from the
+            health record.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The data grid can either show health record items of specific
+            types specified by the <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.TypeIds" /> property or by
+            specifying a specific filter.<br /><br />
+            If this property is set the <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.TypeIds" /> property will
+            be ignored.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FinalPreRender">
+      <MemberSignature Language="C#" Value="public event EventHandler FinalPreRender;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler FinalPreRender" />
+      <MemberSignature Language="DocId" Value="E:Microsoft.Health.Web.HealthRecordItemDataGrid.FinalPreRender" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> 
+             The event handler for a "last chance" look at the grid before
+             it is rendered.
+             </summary>
+        <remarks>
+             This event is fired just before rendering. The grid is full and
+             all actions are complete.<br /><br />
+             Note that using this event requires looking directly into the 
+             contents of the control! This is not guaranteed to be supported
+             in future versions of the SDK and therefore you should use it
+             at your own risk.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GridViewClientId">
+      <MemberSignature Language="C#" Value="public string GridViewClientId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GridViewClientId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.GridViewClientId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the client ID of the grid view portion of the control.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This is the ID of the &lt;table/&gt; element in the control so that
+            it may be accessed using client side scripting or CSS.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleAction">
+      <MemberSignature Language="C#" Value="public void HandleAction (object sender, System.Web.UI.WebControls.CommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void HandleAction(object sender, class System.Web.UI.WebControls.CommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthRecordItemDataGrid.HandleAction(System.Object,System.Web.UI.WebControls.CommandEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.Web.UI.WebControls.CommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">
+            The source of the event.
+            </param>
+        <param name="e">
+            A <see cref="T:System.Web.UI.WebControls.CommandEventArgs" /> that
+            contains the event data.
+            </param>
+        <summary> 
+            The default event handler for the server-side action event.
+            </summary>
+        <remarks>
+            This method handles the built-in actions like "_wcDelete" and then
+            passes on any unknown commands to the <see cref="E:Microsoft.Health.Web.HealthRecordItemDataGrid.Action" />
+            event handler.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFiltered">
+      <MemberSignature Language="C#" Value="public bool IsFiltered { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFiltered" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.IsFiltered" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a value that indicates whether the result data has been
+            filtered by HealthVault.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            To use this property, override the 
+            <see cref="M:System.Web.UI.Page.OnPreRenderComplete(System.EventArgs)" />, call the 
+            base class implementation, and then check if the data was filtered.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSignedColumnValueOverride">
+      <MemberSignature Language="C#" Value="public string IsSignedColumnValueOverride { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string IsSignedColumnValueOverride" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.IsSignedColumnValueOverride" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets a value shown in the signed column if the column is defined for the 
+            specified item type.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            Instead of showing 'True' when item is signed, we could show an image by overriding
+            the signed column value.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JavaScriptRowEventHandler">
+      <MemberSignature Language="C#" Value="public string JavaScriptRowEventHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string JavaScriptRowEventHandler" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.JavaScriptRowEventHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets n event handler that gets fired when an event occurs 
+            within a row of the data grid.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The JavaScript row event handler should be in the form of:
+            function Foo(thingId, thingTypeId, thingVersion, eventType, row, event)
+            thingId = the Id of the thing
+            thingTypeId = the type id of the thing type
+            thingVersion = the version stamp of the thing type
+            eventType = onmouseover, onmouseout, onclick
+            row = the row index that the event occurred on.
+            event = javascript event 
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClientAction">
+      <MemberSignature Language="C#" Value="public string OnClientAction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OnClientAction" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.OnClientAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> 
+            The event handler for client-side action events.
+            </summary>
+        <value>To be added.</value>
+        <remarks> 
+            If present, this javascript function is called when action links
+            are clicked before the server-side <see cref="E:Microsoft.Health.Web.HealthRecordItemDataGrid.Action" /> 
+            handler.<br /><br />
+            The function should return true to proceed, or false to abort
+            calling the server-side handler.<br /><br />
+            prototype is handler(event, action, thing_key)<br /><ul><li>event = javascript event</li><li>action = action command that was clicked</li><li>key = thing id and version stamp, comma-separated</li></ul></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthRecordItemDataGrid.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">
+            The event arguments.
+            </param>
+        <summary>
+            Overrides the base class OnPreRender to populate the data from
+            HealthVault.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageIndex">
+      <MemberSignature Language="C#" Value="public int PageIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageIndex" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.PageIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the page index to be shown.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This value must be set before <see cref="M:Microsoft.Health.Web.HealthRecordItemDataGrid.Render(System.Web.UI.HtmlTextWriter)" /> is called.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            If the PageIndex property is set to a value less than 0.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PageSize">
+      <MemberSignature Language="C#" Value="public int PageSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageSize" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.PageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the number or results that are shown per page.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This value can also be configured using a web.config setting 
+            named "DataGrid_ItemsPerPage".<br />
+            This value must be set before <see cref="M:Microsoft.Health.Web.HealthRecordItemDataGrid.Render(System.Web.UI.HtmlTextWriter)" /> is called.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopulateGridView">
+      <MemberSignature Language="C#" Value="protected void PopulateGridView ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void PopulateGridView() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthRecordItemDataGrid.PopulateGridView" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Populates the encapsulated GridView by building the search filters
+            or use the FilterOverride to get health record information.
+            </summary>
+        <remarks>
+            To get information on results returned, look at the 
+            <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.IsFiltered" /> and <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ResultCount" />
+            properties.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            If the <see cref="T:Microsoft.Health.Web.HealthRecordItemDataGrid" /> instance is placed in
+            a page not deriving from <see cref="T:Microsoft.Health.Web.HealthServicePage" />.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Record">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.HealthRecordAccessor Record { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Health.HealthRecordAccessor Record" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.Record" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthRecordAccessor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the HealthVault record to use.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            If the value is <b>null</b> the property will attempt to use the page property of
+            the control to obtain the selected record. This will only work if the page is derived
+            from <see cref="T:Microsoft.Health.Web.HealthServicePage" />.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.HealthRecordItemDataGrid.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">To be added.</param>
+        <summary>
+            Renders the HTML for the HealthRecordItemDataGrid.
+            </summary>
+        <remarks>
+            The control consists of 3 main elements:
+            <div class="CssClass"><div><table>GridView</table></div><div>Error Message</div></div></remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResultCount">
+      <MemberSignature Language="C#" Value="public int ResultCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ResultCount" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ResultCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the number of results returned in the data grid.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            To provide alternate UI when no results are returned, override
+            the <see cref="M:System.Web.UI.Page.OnPreRenderComplete(System.EventArgs)" />, call the 
+            base class implementation, and then check this property.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowActionLinks">
+      <MemberSignature Language="C#" Value="public bool ShowActionLinks { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowActionLinks" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ShowActionLinks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets a value which indicates to the data grid whether or not to show the 
+            action links in each row.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The default value is true.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowAuditColumns">
+      <MemberSignature Language="C#" Value="public bool ShowAuditColumns { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowAuditColumns" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ShowAuditColumns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets a value which indicates to the data grid whether or not to show the 
+            audit columns for items.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The default value is false.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowErrorMessages">
+      <MemberSignature Language="C#" Value="public bool ShowErrorMessages { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowErrorMessages" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ShowErrorMessages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets a value that indicates whether the data grid should
+            automatically show error messages when no results are found or
+            when the results are filtered.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The default value is false.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowIsPersonalFlag">
+      <MemberSignature Language="C#" Value="public bool ShowIsPersonalFlag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowIsPersonalFlag" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ShowIsPersonalFlag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets a value which indicates to the data grid whether or not to show the 
+            personal flag for items marked as personal.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The default value is false.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowIsSignedColumn">
+      <MemberSignature Language="C#" Value="public bool ShowIsSignedColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowIsSignedColumn" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.ShowIsSignedColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets a value which indicates to the data grid whether or not to show the 
+            signed column if the column is defined for the specified item type.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The default value is false.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TableView">
+      <MemberSignature Language="C#" Value="public Microsoft.Health.HealthRecordItemDataTableView TableView { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Health.HealthRecordItemDataTableView TableView" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.TableView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.HealthRecordItemDataTableView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary> 
+            Gets or sets the type of view the data table exposes through the
+            data grid.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The default value is 
+            <see cref="F:Microsoft.Health.HealthRecordItemDataTableView.Default" />.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeIds">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Guid&gt; TypeIds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;valuetype System.Guid&gt; TypeIds" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.TypeIds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Guid&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the unique type identifier for the health record
+            items to show in the data grid.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            The data grid can either show health record items of specific
+            types or by specifying a more detailed filter in the 
+            <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.FilterOverride" /> property.<br /><br />
+            If the <see cref="P:Microsoft.Health.Web.HealthRecordItemDataGrid.FilterOverride" /> property is set, this property
+            is ignored.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisibleColumns">
+      <MemberSignature Language="C#" Value="public string VisibleColumns { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VisibleColumns" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.HealthRecordItemDataGrid.VisibleColumns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The columns that should be shown in the data grid.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This is a comma separated list of the columns that should be shown
+            in the data grid. If the value is "*" all data columns will be
+            shown. If the value is null or empty, the display 
+            columns defined for the specified item type are shown. 
+            The default value is null.
+            </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

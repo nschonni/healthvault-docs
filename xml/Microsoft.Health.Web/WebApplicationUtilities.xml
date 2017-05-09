@@ -1,0 +1,1937 @@
+<Type Name="WebApplicationUtilities" FullName="Microsoft.Health.Web.WebApplicationUtilities">
+  <TypeSignature Language="C#" Value="public static class WebApplicationUtilities" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit WebApplicationUtilities extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.Web.WebApplicationUtilities" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health.Web</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary> 
+            A collection of utility functions to help HealthVault web application developers 
+            authenticate and perform other actions with HealthVault.
+            </summary>
+    <remarks>
+            If possible, it is recommended that HealthVault applications derive from
+            <see cref="T:Microsoft.Health.Web.HealthServicePage" />. If the requirements for the application don't allow for
+            derivation due to deriving from another base class or needing access from control classes,
+            the static utility methods in this class give the developer access to the same functionality
+            that is available in the <see cref="T:Microsoft.Health.Web.HealthServicePage" />.
+            <br /><br />
+            Methods like <see cref="M:Microsoft.Health.Web.WebApplicationUtilities.PageOnInit(System.Web.HttpContext,System.Boolean)" /> and 
+            <see cref="M:Microsoft.Health.Web.WebApplicationUtilities.PageOnPreLoad(System.Web.HttpContext,System.Boolean,System.Boolean)" /> should be called from
+            the application's page <see cref="M:System.Web.UI.Page.OnInit(System.EventArgs)" /> and 
+            <see cref="M:System.Web.UI.Page.OnPreLoad(System.EventArgs)" /> methods respectively.
+            <br /><br />
+            Other methods help the application with management of the HealthVault cookie. For instance,
+            <see cref="M:Microsoft.Health.Web.WebApplicationUtilities.LoadPersonInfoFromCookie(System.Web.HttpContext)" /> reads the HealthVault cookie from the request and
+            instantiates the <see cref="T:Microsoft.Health.PersonInfo" /> instance for the logged in person. Note, some
+            methods like <see cref="M:Microsoft.Health.Web.WebApplicationUtilities.LoadPersonInfoFromCookie(System.Web.HttpContext)" /> require another method be called first
+            to handle the user's authentication token. Methods like 
+            <see cref="M:Microsoft.Health.Web.WebApplicationUtilities.SavePersonInfoToCookie(System.Web.HttpContext,Microsoft.Health.PersonInfo)" /> and 
+            <see cref="M:Microsoft.Health.Web.WebApplicationUtilities.RefreshAndSavePersonInfoToCookie(System.Web.HttpContext,Microsoft.Health.PersonInfo)" /> deal with storing the HealthVault user information in a 
+            cookie or session.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AnonymousConnection">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.AnonymousConnection AnonymousConnection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.Health.AnonymousConnection AnonymousConnection" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationUtilities.AnonymousConnection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.AnonymousConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a HealthVault connection for the configured default HealthVault web-service instance
+            without an authentication token for either the user or the application.
+            </summary>
+        <value>
+            A connection to HealthVault that does not contain user or application
+            authentication information.
+            </value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">
+            If the application private key could not be found in the 
+            certificate store to sign requests.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationAuthenticationCredential">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.Web.Authentication.WebApplicationCredential ApplicationAuthenticationCredential { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.Health.Web.Authentication.WebApplicationCredential ApplicationAuthenticationCredential" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationUtilities.ApplicationAuthenticationCredential" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.Web.Authentication.WebApplicationCredential</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a credential used to authenticate the web application to
+            HealthVault.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationConnection">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.ApplicationConnection ApplicationConnection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.Health.ApplicationConnection ApplicationConnection" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationUtilities.ApplicationConnection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ApplicationConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a HealthVault application connection without a user context for the
+            configured default HealthVault web-service instance.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ApplicationConnection" /> connection.
+            </value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">
+            If the application private key could not be found in the 
+            certificate store to sign requests.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Compress">
+      <MemberSignature Language="C#" Value="public static string Compress (string data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Compress(string data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.Compress(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="data">
+            String to be compressed.
+            </param>
+        <summary>
+            Compress incoming string.
+            </summary>
+        <returns>
+            Base 64 string of compressed data.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compress">
+      <MemberSignature Language="C#" Value="public static string Compress (string data, out int bufferLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Compress(string data, int32 bufferLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.Compress(System.String,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.String" />
+        <Parameter Name="bufferLength" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="data">
+            String to be compressed.
+            </param>
+        <param name="bufferLength">
+            The length of the incoming string in bytes.
+            </param>
+        <summary>
+            Compress incoming string.
+            </summary>
+        <returns>
+            Base 64 string of compressed data.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConstructShellTargetUrl">
+      <MemberSignature Language="C#" Value="public static Uri ConstructShellTargetUrl (System.Web.HttpContext context, Microsoft.Health.ShellRedirectParameters redirectParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri ConstructShellTargetUrl(class System.Web.HttpContext context, class Microsoft.Health.ShellRedirectParameters redirectParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.ConstructShellTargetUrl(System.Web.HttpContext,Microsoft.Health.ShellRedirectParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="redirectParameters" Type="Microsoft.Health.ShellRedirectParameters" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="redirectParameters">
+            HealthVault Shell redirect parameters.
+            </param>
+        <summary>
+            Constructs a URL to be redirected to via the HealthVault URL 
+            redirector.
+            </summary>
+        <returns>
+            The constructed URL.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.UriFormatException">
+            If the specific target location causes an improper URL to be
+            constructed.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConstructShellTargetUrl">
+      <MemberSignature Language="C#" Value="public static Uri ConstructShellTargetUrl (System.Web.HttpContext context, string targetLocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri ConstructShellTargetUrl(class System.Web.HttpContext context, string targetLocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.ConstructShellTargetUrl(System.Web.HttpContext,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="targetLocation" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="targetLocation">
+            A known constant indicating the internal HealthVault 
+            service Shell location to redirect to.
+            See <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface</a>.
+            </param>
+        <summary>
+            Constructs a URL to be redirected to via the HealthVault URL 
+            redirector.
+            </summary>
+        <returns>
+            The constructed URL.
+            </returns>
+        <remarks>
+            The <paramref name="targetLocation" /> will be passed as the target parameter value to
+            the redirector URL.
+            </remarks>
+        <exception cref="T:System.UriFormatException">
+            If the specific target location causes an improper URL to be
+            constructed.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConstructShellTargetUrl">
+      <MemberSignature Language="C#" Value="public static Uri ConstructShellTargetUrl (System.Web.HttpContext context, string targetLocation, string targetQuery);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri ConstructShellTargetUrl(class System.Web.HttpContext context, string targetLocation, string targetQuery) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.ConstructShellTargetUrl(System.Web.HttpContext,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="targetLocation" Type="System.String" />
+        <Parameter Name="targetQuery" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="targetLocation">
+            A known constant indicating the internal HealthVault 
+            service Shell location to redirect to.
+            See <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface</a>.
+            </param>
+        <param name="targetQuery">
+            The query string value to pass to the URL to which redirection is 
+            taking place.
+            </param>
+        <summary>
+            Constructs a URL to be redirected to via the HealthVault URL 
+            redirector.
+            </summary>
+        <returns>
+            The constructed URL.
+            </returns>
+        <remarks>
+            The <paramref name="targetLocation" /> will be passed as the target parameter value to
+            the redirector URL.
+            The <paramref name="targetQuery" /> will be URL encoded and passed as the targetqs 
+            parameter value to the redirector URL.
+            </remarks>
+        <exception cref="T:System.UriFormatException">
+            If the specific target location causes an improper URL to be
+            constructed.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConstructShellTargetUrl">
+      <MemberSignature Language="C#" Value="public static Uri ConstructShellTargetUrl (System.Web.HttpContext context, string targetLocation, string targetQuery, string actionUrlQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri ConstructShellTargetUrl(class System.Web.HttpContext context, string targetLocation, string targetQuery, string actionUrlQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.ConstructShellTargetUrl(System.Web.HttpContext,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="targetLocation" Type="System.String" />
+        <Parameter Name="targetQuery" Type="System.String" />
+        <Parameter Name="actionUrlQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="targetLocation">
+            A known constant indicating the internal HealthVault 
+            service Shell location to redirect to.
+            See <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface</a>.
+            </param>
+        <param name="targetQuery">
+            The query string value to pass to the URL to which redirection is 
+            taking place.
+            </param>
+        <param name="actionUrlQueryString">
+            The query string parameters passed to the calling application action URL after the
+            target action is completed in the Shell.
+            </param>
+        <summary>
+            Constructs a URL to be redirected to via the HealthVault URL 
+            redirector.
+            </summary>
+        <returns>
+            The constructed URL.
+            </returns>
+        <remarks>
+            The <paramref name="targetLocation" /> will be passed as the target parameter value to
+            the redirector URL.
+            The <paramref name="targetQuery" /> will be URL encoded and passed as the targetqs 
+            parameter value to the redirector URL.
+            The <paramref name="actionUrlQueryString" /> will be URL encoded and passed as the actionqs
+            parameter value to the redirector URL.
+            </remarks>
+        <exception cref="T:System.UriFormatException">
+            If the specific target location causes an improper URL to be
+            constructed.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Decompress">
+      <MemberSignature Language="C#" Value="public static string Decompress (string compressedData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Decompress(string compressedData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.Decompress(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="compressedData" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="compressedData">
+            Base 64 String of compressed data.
+            </param>
+        <summary>
+            Decompress a compressed string.
+            </summary>
+        <returns>
+            Uncompressed string.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DictionaryConnection">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.ApplicationConnection DictionaryConnection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.Health.ApplicationConnection DictionaryConnection" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.WebApplicationUtilities.DictionaryConnection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ApplicationConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a HealthVault connection for the configured default HealthVault web-service instance,
+            without an authentication token for the user but with an application authentication token,
+            which can be used to access vocabularies.
+            </summary>
+        <value>
+            A <see cref="P:Microsoft.Health.Web.WebApplicationUtilities.ApplicationConnection" /> connection.
+            </value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">
+            If the application private key could not be found in the 
+            certificate store to sign requests.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAnonymousConnectionForInstance">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.AnonymousConnection GetAnonymousConnectionForInstance (Microsoft.Health.HealthServiceInstance serviceInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.AnonymousConnection GetAnonymousConnectionForInstance(class Microsoft.Health.HealthServiceInstance serviceInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.GetAnonymousConnectionForInstance(Microsoft.Health.HealthServiceInstance)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.AnonymousConnection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
+      </Parameters>
+      <Docs>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <summary>
+            Gets a HealthVault connection for the specified HealthVault web-service instance
+            without an authentication token for either the user or the application.
+            </summary>
+        <returns>
+            A connection to HealthVault that does not contain user or application
+            authentication information.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">
+            If the application private key could not be found in the 
+            certificate store to sign requests.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetApplicationAuthenticationCredential">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.Web.Authentication.WebApplicationCredential GetApplicationAuthenticationCredential (Guid appId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.Web.Authentication.WebApplicationCredential GetApplicationAuthenticationCredential(valuetype System.Guid appId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.GetApplicationAuthenticationCredential(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.Web.Authentication.WebApplicationCredential</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="appId">
+            The unique application identifier to get the credential for.
+            </param>
+        <summary>
+            Gets a credential used to authenticate the web application to
+            Microsoft HealthVault.
+            </summary>
+        <returns>
+            The application credential for the specified application.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetApplicationConnection">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.ApplicationConnection GetApplicationConnection (Microsoft.Health.HealthServiceInstance serviceInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.ApplicationConnection GetApplicationConnection(class Microsoft.Health.HealthServiceInstance serviceInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.GetApplicationConnection(Microsoft.Health.HealthServiceInstance)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ApplicationConnection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
+      </Parameters>
+      <Docs>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <summary>
+            Gets a HealthVault application connection without a user context for the
+            specified HealthVault web-service instance.
+            </summary>
+        <returns>
+            A <see cref="T:Microsoft.Health.ApplicationConnection" /> connection.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">
+            If the application private key could not be found in the 
+            certificate store to sign requests.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetApplicationConnection">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.ApplicationConnection GetApplicationConnection (Guid appId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.ApplicationConnection GetApplicationConnection(valuetype System.Guid appId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.GetApplicationConnection(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ApplicationConnection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="appId">
+            The unique application identifier for the application to get the connection for.
+            </param>
+        <summary>
+            Gets a HealthVault application connection without a user context for the
+            configured default HealthVault web-service instance.
+            </summary>
+        <returns>
+            A <see cref="T:Microsoft.Health.ApplicationConnection" /> connection.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">
+            If the application private key could not be found in the 
+            certificate store to sign requests.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetApplicationConnection">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.ApplicationConnection GetApplicationConnection (Guid appId, Microsoft.Health.HealthServiceInstance serviceInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.ApplicationConnection GetApplicationConnection(valuetype System.Guid appId, class Microsoft.Health.HealthServiceInstance serviceInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.GetApplicationConnection(System.Guid,Microsoft.Health.HealthServiceInstance)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ApplicationConnection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.Guid" />
+        <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
+      </Parameters>
+      <Docs>
+        <param name="appId">
+            The unique application identifier for the application to get the connection for.
+            </param>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <summary>
+            Gets a HealthVault application connection without a user context for the
+            specified HealthVault web-service instance.
+            </summary>
+        <returns>
+            A <see cref="T:Microsoft.Health.ApplicationConnection" /> connection.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">
+            If the application private key could not be found in the 
+            certificate store to sign requests.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAuthenticatedConnection">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.Web.WebApplicationConnection GetAuthenticatedConnection (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.Web.WebApplicationConnection GetAuthenticatedConnection(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.GetAuthenticatedConnection(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.Web.WebApplicationConnection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">To be added.</param>
+        <summary>
+            Gets a HealthVault connection for the authenticated user.
+            </summary>
+        <returns>
+            A <see cref="T:Microsoft.Health.Web.WebApplicationConnection" />.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">
+            If the application private key could not be found in the 
+            certificate store to sign requests.
+            </exception>
+        <exception cref="T:System.InvalidOperationException">
+            If a person has not been logged in.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDictionaryConnectionForInstance">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.ApplicationConnection GetDictionaryConnectionForInstance (Microsoft.Health.HealthServiceInstance serviceInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.ApplicationConnection GetDictionaryConnectionForInstance(class Microsoft.Health.HealthServiceInstance serviceInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.GetDictionaryConnectionForInstance(Microsoft.Health.HealthServiceInstance)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.ApplicationConnection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
+      </Parameters>
+      <Docs>
+        <param name="serviceInstance">To be added.</param>
+        <summary>
+            Gets a HealthVault connection for the specified HealthVault web-service instance, without
+            an authentication token for the user but with an application authentication token, which
+            can be used to access vocabularies.
+            </summary>
+        <returns>
+            A <see cref="P:Microsoft.Health.Web.WebApplicationUtilities.ApplicationConnection" /> connection.
+            </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">
+            If the application private key could not be found in the 
+            certificate store to sign requests.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPersonInfo">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.PersonInfo GetPersonInfo (string authToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.PersonInfo GetPersonInfo(string authToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.GetPersonInfo(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authToken" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="authToken">
+            The authentication token for a user. This can be retrieved by extracting the WCToken
+            query string parameter from the request after the user has been redirected to the
+            HealthVault AUTH page. See <see cref="M:Microsoft.Health.Web.WebApplicationUtilities.RedirectToShellUrl(System.Web.HttpContext,System.String)" /> for more information.
+            </param>
+        <summary>
+            Gets the authenticated person's information using the specified authentication token from
+            the configured default HealthVault web-service instance.
+            </summary>
+        <returns>
+            The information about the logged in person.
+            </returns>
+        <remarks>
+            Applications that work with more than one HealthVault instance should not call this method.
+            Instead, call the overload which takes an <see cref="T:Microsoft.Health.HealthServiceInstance" />, specifying the
+            HealthVault instance where the session auth token was created.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPersonInfo">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.PersonInfo GetPersonInfo (string authToken, Microsoft.Health.HealthServiceInstance serviceInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.PersonInfo GetPersonInfo(string authToken, class Microsoft.Health.HealthServiceInstance serviceInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.GetPersonInfo(System.String,Microsoft.Health.HealthServiceInstance)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authToken" Type="System.String" />
+        <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
+      </Parameters>
+      <Docs>
+        <param name="authToken">
+            The authentication token for a user. This can be retrieved by extracting the WCToken
+            query string parameter from the request after the user has been redirected to the
+            HealthVault AUTH page. See <see cref="M:Microsoft.Health.Web.WebApplicationUtilities.RedirectToShellUrl(System.Web.HttpContext,System.String)" /> for more information.
+            </param>
+        <param name="serviceInstance">
+            The HealthVault web-service instance where the session auth token was received from.
+            </param>
+        <summary>
+            Gets the authenticated person's information using the specified authentication token from
+            the specified HealthVault web-service instance.
+            </summary>
+        <returns>
+            The information about the logged in person.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPersonInfo">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.PersonInfo GetPersonInfo (string authToken, Guid appId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.PersonInfo GetPersonInfo(string authToken, valuetype System.Guid appId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.GetPersonInfo(System.String,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authToken" Type="System.String" />
+        <Parameter Name="appId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="authToken">
+            The authentication token for a user. This can be retrieved by extracting the WCToken
+            query string parameter from the request after the user has been redirected to the
+            HealthVault AUTH page. See <see cref="M:Microsoft.Health.Web.WebApplicationUtilities.RedirectToShellUrl(System.Web.HttpContext,System.String)" /> for more information.
+            </param>
+        <param name="appId">
+            The unique identifier for the application.
+            </param>
+        <summary>
+            Gets the authenticated person's information using the specified authentication token,
+            from the specified HealthVault web-service instance.
+            </summary>
+        <returns>
+            The information about the logged in person.
+            </returns>
+        <remarks>
+            Applications that work with more than one HealthVault instance should not call this method.
+            Instead, call the overload which takes an <see cref="T:Microsoft.Health.HealthServiceInstance" />, specifying the
+            HealthVault instance where the session auth token was created.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPersonInfo">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.PersonInfo GetPersonInfo (string authToken, Guid appId, Microsoft.Health.HealthServiceInstance serviceInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.PersonInfo GetPersonInfo(string authToken, valuetype System.Guid appId, class Microsoft.Health.HealthServiceInstance serviceInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.GetPersonInfo(System.String,System.Guid,Microsoft.Health.HealthServiceInstance)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authToken" Type="System.String" />
+        <Parameter Name="appId" Type="System.Guid" />
+        <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
+      </Parameters>
+      <Docs>
+        <param name="authToken">
+            The authentication token for a user. This can be retrieved by extracting the WCToken
+            query string parameter from the request after the user has been redirected to the
+            HealthVault AUTH page. See <see cref="M:Microsoft.Health.Web.WebApplicationUtilities.RedirectToShellUrl(System.Web.HttpContext,System.String)" /> for more information.
+            </param>
+        <param name="appId">
+            The unique identifier for the application.
+            </param>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <summary>
+            Gets the authenticated person's information using the specified authentication token,
+            from the specified HealthVault web-service instance.
+            </summary>
+        <returns>
+            The information about the logged in person.
+            </returns>
+        <remarks>
+            Applications that work with more than one HealthVault instance should not call this method.
+            Instead, call the overload which takes an <see cref="T:Microsoft.Health.HealthServiceInstance" />, specifying the
+            HealthVault instance where the session auth token was created.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GotoHelp">
+      <MemberSignature Language="C#" Value="public static void GotoHelp (System.Web.HttpContext context, string topic);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void GotoHelp(class System.Web.HttpContext context, string topic) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.GotoHelp(System.Web.HttpContext,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="topic" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="topic">
+            Optional topic string. For example, "faq" would redirect the user's browser to the
+            HealthVault frequently asked questions.
+            </param>
+        <summary>
+            Redirects application to Shell help page
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadPersonInfoFromCookie">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.PersonInfo LoadPersonInfoFromCookie (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.PersonInfo LoadPersonInfoFromCookie(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.LoadPersonInfoFromCookie(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <summary>
+            Gets the person's information from the cookie.
+            </summary>
+        <returns>
+            The person's information that was stored in the cookie or null if the cookie doesn't 
+            exist. Note, the <see cref="T:Microsoft.Health.PersonInfo" /> returned may contain an expired authentication
+            token.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadPersonInfoFromCookie">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.PersonInfo LoadPersonInfoFromCookie (System.Web.HttpCookie cookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.PersonInfo LoadPersonInfoFromCookie(class System.Web.HttpCookie cookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.LoadPersonInfoFromCookie(System.Web.HttpCookie)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cookie" Type="System.Web.HttpCookie" />
+      </Parameters>
+      <Docs>
+        <param name="cookie">
+            The cookie to load the person's information from
+            </param>
+        <summary>
+            Gets the person's information from the cookie.
+            </summary>
+        <returns>
+            The person's information that was stored in the cookie or null if the cookie doesn't
+            contain the information. Note, the <see cref="T:Microsoft.Health.PersonInfo" /> returned may contain an 
+            expired authentication token.
+            </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageOnInit">
+      <MemberSignature Language="C#" Value="public static void PageOnInit (System.Web.HttpContext context, bool isPageSslSecure);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void PageOnInit(class System.Web.HttpContext context, bool isPageSslSecure) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.PageOnInit(System.Web.HttpContext,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="isPageSslSecure" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="isPageSslSecure">
+            If true, the application requires all connections to this page be over a secure SSL
+            channel.
+            </param>
+        <summary>
+            Replicates the <see cref="M:Microsoft.Health.Web.HealthServicePage.OnInit(System.EventArgs)" /> behavior by redirecting to a 
+            secure version of the page if the URL requested is insecure and the application requires
+            a secure connection.
+            </summary>
+        <remarks>
+            Applications can require certain pages (or all pages) to be accessed only over a secure
+            SSL channel. To do this the application must set the "WCPage_SSLForSecure" config value
+            in the web.config file and pass "true" to <paramref name="isPageSslSecure" />.
+            <br /><br />
+            If the conditions above are true the user's browser will automatically be redirected
+            to a secure version of the page.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageOnPreLoad">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.PersonInfo PageOnPreLoad (System.Web.HttpContext context, bool logOnRequired);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.PersonInfo PageOnPreLoad(class System.Web.HttpContext context, bool logOnRequired) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.PageOnPreLoad(System.Web.HttpContext,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="logOnRequired" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="logOnRequired">
+            True if the requested page requires the user to be logged on to HealthVault, or false
+            otherwise. If true and the user isn't logged on, the user's browser will be automatically
+            redirected to the HealthVault authentication page.
+            </param>
+        <summary>
+            Ensures that the person is logged on if <paramref name="logOnRequired" /> is true.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>
+            It is recommended that HealthVault applications that cannot derive from 
+            <see cref="T:Microsoft.Health.Web.HealthServicePage" /> call this method during their pages OnPreLoad. This
+            method will ensure that the HealthVault token is extracted from the URL query string,
+            the authenticated person's <see cref="T:Microsoft.Health.PersonInfo" /> is retrieved and stored in a cookie.
+            This will make the person's information available through the cookie on all future 
+            requests until they log off.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageOnPreLoad">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.PersonInfo PageOnPreLoad (System.Web.HttpContext context, bool logOnRequired, bool isMra);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.PersonInfo PageOnPreLoad(class System.Web.HttpContext context, bool logOnRequired, bool isMra) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.PageOnPreLoad(System.Web.HttpContext,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="logOnRequired" Type="System.Boolean" />
+        <Parameter Name="isMra" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="logOnRequired">
+            True if the requested page requires the user to be logged on to HealthVault, or false
+            otherwise. If true and the user isn't logged on, the user's browser will be automatically
+            redirected to the HealthVault authentication page.
+            </param>
+        <param name="isMra">
+            Whether this application simultaneously deals with multiple records
+            for the same person.
+            </param>
+        <summary>
+            Ensures that the person is logged on if <paramref name="logOnRequired" /> is true.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>
+            It is recommended that HealthVault applications that cannot derive from 
+            <see cref="T:Microsoft.Health.Web.HealthServicePage" /> call this method during their pages OnPreLoad. This
+            method will ensure that the HealthVault token is extracted from the URL query string,
+            the authenticated person's <see cref="T:Microsoft.Health.PersonInfo" /> is retrieved and stored in a cookie.
+            This will make the person's information available through the cookie on all future 
+            requests until they log off.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageOnPreLoad">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.PersonInfo PageOnPreLoad (System.Web.HttpContext context, bool logOnRequired, Guid appId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.PersonInfo PageOnPreLoad(class System.Web.HttpContext context, bool logOnRequired, valuetype System.Guid appId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.PageOnPreLoad(System.Web.HttpContext,System.Boolean,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="logOnRequired" Type="System.Boolean" />
+        <Parameter Name="appId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="logOnRequired">
+            True if the requested page requires the user to be logged on to HealthVault, or false
+            otherwise. If true and the user isn't logged on, the user's browser will be automatically
+            redirected to the HealthVault authentication page.
+            </param>
+        <param name="appId">
+            The unique application identifier.
+            </param>
+        <summary>
+            Ensures that the person is logged on if <paramref name="logOnRequired" /> is true.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>
+            It is recommended that HealthVault applications that cannot derive from 
+            <see cref="T:Microsoft.Health.Web.HealthServicePage" /> call this method during their pages OnPreLoad. This
+            method will ensure that the HealthVault token is extracted from the URL query string,
+            the authenticated person's <see cref="T:Microsoft.Health.PersonInfo" /> is retrieved and stored in a cookie.
+            This will make the person's information available through the cookie on all future 
+            requests until they log off.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageOnPreLoad">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.PersonInfo PageOnPreLoad (System.Web.HttpContext context, bool logOnRequired, bool isMra, Guid appId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.PersonInfo PageOnPreLoad(class System.Web.HttpContext context, bool logOnRequired, bool isMra, valuetype System.Guid appId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.PageOnPreLoad(System.Web.HttpContext,System.Boolean,System.Boolean,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="logOnRequired" Type="System.Boolean" />
+        <Parameter Name="isMra" Type="System.Boolean" />
+        <Parameter Name="appId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="logOnRequired">
+            True if the requested page requires the user to be logged on to HealthVault, or false
+            otherwise. If true and the user isn't logged on, the user's browser will be automatically
+            redirected to the HealthVault authentication page.
+            </param>
+        <param name="isMra">
+            Whether this application simultaneously deals with multiple records
+            for the same person.
+            </param>
+        <param name="appId">
+            The unique identifier for the application.
+            </param>
+        <summary>
+            Ensures that the person is logged on if <paramref name="logOnRequired" /> is true.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>
+            It is recommended that HealthVault applications that cannot derive from 
+            <see cref="T:Microsoft.Health.Web.HealthServicePage" /> call this method during their pages OnPreLoad. This
+            method will ensure that the HealthVault token is extracted from the URL query string,
+            the authenticated person's <see cref="T:Microsoft.Health.PersonInfo" /> is retrieved and stored in a cookie.
+            This will make the person's information available through the cookie on all future 
+            requests until they log off.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToLogOn">
+      <MemberSignature Language="C#" Value="public static void RedirectToLogOn (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RedirectToLogOn(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.RedirectToLogOn(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <summary>
+            Redirects the caller's browser to the logon page for 
+            authentication.
+            </summary>
+        <remarks>
+            After the user successfully authenticates, they get redirected 
+            back to the action url for which the target is set to either
+            AppAuthSuccess or AppAuthRejected depending on whether the user
+            authorized one or more records for use with the application, 
+            with the authentication token in the query
+            string. This is stripped out and used to populate HealthVault
+            data for the page.<br /><br />
+            This overload assumes that the applications does not simultaneously
+            deal with multiple records for the same person i.e. isMra is false.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToLogOn">
+      <MemberSignature Language="C#" Value="public static void RedirectToLogOn (System.Web.HttpContext context, Microsoft.Health.ShellRedirectParameters redirectParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RedirectToLogOn(class System.Web.HttpContext context, class Microsoft.Health.ShellRedirectParameters redirectParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.RedirectToLogOn(System.Web.HttpContext,Microsoft.Health.ShellRedirectParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="redirectParameters" Type="Microsoft.Health.ShellRedirectParameters" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="redirectParameters">
+            HealthVault Shell redirect parameters.
+            </param>
+        <summary>
+            Redirects the caller's browser to the logon page for 
+            authentication.
+            </summary>
+        <remarks>
+            After the user successfully authenticates, they get redirected 
+            to the action url for which the target is set to either
+            AppAuthSuccess or AppAuthRejected depending on whether the user
+            authorized one or more records for use with the application, 
+            with the authentication token in the query
+            string. This is stripped out and used to populate HealthVault
+            data for the page.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToLogOn">
+      <MemberSignature Language="C#" Value="public static void RedirectToLogOn (System.Web.HttpContext context, bool isMra);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RedirectToLogOn(class System.Web.HttpContext context, bool isMra) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.RedirectToLogOn(System.Web.HttpContext,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="isMra" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="isMra">
+            Whether this application simultaneously deals with multiple records
+            for the same person.
+            </param>
+        <summary>
+            Redirects the caller's browser to the logon page for 
+            authentication.
+            </summary>
+        <remarks>
+            After the user successfully authenticates, they get redirected 
+            to the action url for which the target is set to either
+            AppAuthSuccess or AppAuthRejected depending on whether the user
+            authorized one or more records for use with the application, with 
+            the authentication token in the query
+            string. This is stripped out and used to populate HealthVault
+            data for the page.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToLogOn">
+      <MemberSignature Language="C#" Value="public static void RedirectToLogOn (System.Web.HttpContext context, bool isMra, string actionUrlQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RedirectToLogOn(class System.Web.HttpContext context, bool isMra, string actionUrlQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.RedirectToLogOn(System.Web.HttpContext,System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="isMra" Type="System.Boolean" />
+        <Parameter Name="actionUrlQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="isMra">
+            Whether this application simultaneously deals with multiple records
+            for the same person.
+            </param>
+        <param name="actionUrlQueryString">
+            The query string parameters to pass to the signin action URL after
+            signin.
+            </param>
+        <summary>
+            Redirects the caller's browser to the logon page for 
+            authentication.
+            </summary>
+        <remarks>
+            After the user successfully authenticates, they get redirected 
+            to the action url for which the target is set to either
+            AppAuthSuccess or AppAuthRejected depending on whether the user
+            authorized one or more records for use with the application, 
+            with the authentication token in the query
+            string. This is stripped out and used to populate HealthVault
+            data for the page.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToLogOn">
+      <MemberSignature Language="C#" Value="public static void RedirectToLogOn (System.Web.HttpContext context, bool isMra, string actionUrlQueryString, string signupCode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RedirectToLogOn(class System.Web.HttpContext context, bool isMra, string actionUrlQueryString, string signupCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.RedirectToLogOn(System.Web.HttpContext,System.Boolean,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="isMra" Type="System.Boolean" />
+        <Parameter Name="actionUrlQueryString" Type="System.String" />
+        <Parameter Name="signupCode" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="isMra">
+            Whether this application simultaneously deals with multiple records
+            for the same person.
+            </param>
+        <param name="actionUrlQueryString">
+            The query string parameters to pass to the signin action URL after
+            signin.
+            </param>
+        <param name="signupCode">
+            The signup code for creating a HealthVault account.  This is required
+            for applications in locations with limited access to HealthVault.
+            Signup codes may be obtained from
+            <see cref="M:Microsoft.Health.ApplicationConnection.NewSignupCode" />,
+            <see cref="M:Microsoft.Health.PatientConnect.PatientConnection.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.Uri,System.String)" />,
+            <see cref="M:Microsoft.Health.Package.ConnectPackage.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String,System.Collections.Generic.IList{Microsoft.Health.HealthRecordItem})" />,
+            <see cref="M:Microsoft.Health.Package.ConnectPackage.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,Microsoft.Health.ItemTypes.PasswordProtectedPackage)" />,
+            <see cref="M:Microsoft.Health.Package.ConnectPackage.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String,Microsoft.Health.ItemTypes.PasswordProtectedPackage)" />,
+            <see cref="M:Microsoft.Health.Package.ConnectPackage.CreatePackage(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IList{Microsoft.Health.HealthRecordItem})" />,
+            and <see cref="M:Microsoft.Health.Package.ConnectPackage.AllocatePackageId(Microsoft.Health.Web.OfflineWebApplicationConnection)" /></param>
+        <summary>
+            Redirects the caller's browser to the logon page for 
+            authentication.
+            </summary>
+        <remarks>
+            After the user successfully authenticates, they get redirected 
+            to the action url for which the target is set to either
+            AppAuthSuccess or AppAuthRejected depending on whether the user
+            authorized one or more records for use with the application, 
+            with the authentication token in the query
+            string. This is stripped out and used to populate HealthVault
+            data for the page.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToShellUrl">
+      <MemberSignature Language="C#" Value="public static void RedirectToShellUrl (System.Web.HttpContext context, Microsoft.Health.ShellRedirectParameters redirectParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RedirectToShellUrl(class System.Web.HttpContext context, class Microsoft.Health.ShellRedirectParameters redirectParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.RedirectToShellUrl(System.Web.HttpContext,Microsoft.Health.ShellRedirectParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="redirectParameters" Type="Microsoft.Health.ShellRedirectParameters" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="redirectParameters">
+            HealthVault Shell redirect parameters.
+            </param>
+        <summary>
+            Redirects to the HealthVault Shell URL with the query string params 
+            appended.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToShellUrl">
+      <MemberSignature Language="C#" Value="public static void RedirectToShellUrl (System.Web.HttpContext context, string targetLocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RedirectToShellUrl(class System.Web.HttpContext context, string targetLocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.RedirectToShellUrl(System.Web.HttpContext,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="targetLocation" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="targetLocation">
+            A known constant indicating the internal HealthVault 
+            service Shell location to redirect to.
+            See <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface</a>.
+            </param>
+        <summary>
+            Redirects to the HealthVault Shell URL with the query string params 
+            appended.
+            </summary>
+        <remarks>
+            The <paramref name="targetLocation" /> will be passed as the target parameter value to
+            the redirector URL.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToShellUrl">
+      <MemberSignature Language="C#" Value="public static void RedirectToShellUrl (System.Web.HttpContext context, string targetLocation, string targetQuery);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RedirectToShellUrl(class System.Web.HttpContext context, string targetLocation, string targetQuery) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.RedirectToShellUrl(System.Web.HttpContext,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="targetLocation" Type="System.String" />
+        <Parameter Name="targetQuery" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="targetLocation">
+            A known constant indicating the internal HealthVault 
+            service Shell location to redirect to.
+            See <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface</a>.
+            </param>
+        <param name="targetQuery">
+            The query string value to pass to the URL to which redirection is 
+            taking place. 
+            </param>
+        <summary>
+            Redirects to the HealthVault Shell URL with the queryString params 
+            appended.
+            </summary>
+        <remarks>
+            The <paramref name="targetLocation" /> will be passed as the target parameter value to
+            the redirector URL.
+            The <paramref name="targetQuery" /> will be URL encoded and passed as the targetqs 
+            parameter value to the redirector URL.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToShellUrl">
+      <MemberSignature Language="C#" Value="public static void RedirectToShellUrl (System.Web.HttpContext context, string targetLocation, string targetQuery, string actionUrlQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RedirectToShellUrl(class System.Web.HttpContext context, string targetLocation, string targetQuery, string actionUrlQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.RedirectToShellUrl(System.Web.HttpContext,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="targetLocation" Type="System.String" />
+        <Parameter Name="targetQuery" Type="System.String" />
+        <Parameter Name="actionUrlQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="targetLocation">
+            A known constant indicating the internal HealthVault 
+            service Shell location to redirect to.
+            See <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface</a>.
+            </param>
+        <param name="targetQuery">
+            The query string value to pass to the URL to which redirection is 
+            taking place. 
+            </param>
+        <param name="actionUrlQueryString">
+            The query string parameters passed to the calling application action URL after the
+            target action is completed in the Shell.
+            </param>
+        <summary>
+            Redirects to the HealthVault Shell URL with the queryString params 
+            appended.
+            </summary>
+        <remarks>
+            The <paramref name="targetLocation" /> will be passed as the target parameter value to
+            the redirector URL.
+            The <paramref name="targetQuery" /> will be URL encoded and passed as the targetqs 
+            parameter value to the redirector URL.
+            The <paramref name="actionUrlQueryString" /> will be URL encoded and passed as the actionqs
+            parameter value to the redirector URL.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshAndSavePersonInfoToCookie">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.PersonInfo RefreshAndSavePersonInfoToCookie (System.Web.HttpContext context, Microsoft.Health.PersonInfo personInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.PersonInfo RefreshAndSavePersonInfoToCookie(class System.Web.HttpContext context, class Microsoft.Health.PersonInfo personInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.RefreshAndSavePersonInfoToCookie(System.Web.HttpContext,Microsoft.Health.PersonInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="personInfo" Type="Microsoft.Health.PersonInfo" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="personInfo">
+            The information about the authenticated person that needs refreshing.
+            </param>
+        <summary> 
+            Cleans the application's session of HealthVault information and 
+            then repopulates it.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>
+            This method should be called anytime an action occurs that will affect the 
+            <see cref="T:Microsoft.Health.PersonInfo" /> object for the authenticated person. This includes changing
+            the person's authorization for the application or changing the selected record.
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            If a person isn't logged on when this is called.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshAndSavePersonInfoToCookie">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.PersonInfo RefreshAndSavePersonInfoToCookie (System.Web.HttpContext context, string authToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.PersonInfo RefreshAndSavePersonInfoToCookie(class System.Web.HttpContext context, string authToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.RefreshAndSavePersonInfoToCookie(System.Web.HttpContext,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="authToken" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="authToken">
+            The authentication to use to populate the session with HealthVault
+            information.
+            </param>
+        <summary> 
+            Cleans the application's session of HealthVault information and 
+            then repopulates it using the specified authentication.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>
+            This method should be called anytime the application takes a redirect from the 
+            HealthVault shell and there is a WCToken on the query string. Note, if you are calling
+            <see cref="M:Microsoft.Health.Web.WebApplicationUtilities.PageOnPreLoad(System.Web.HttpContext,System.Boolean,System.Boolean)" /> or 
+            <see cref="M:Microsoft.Health.Web.WebApplicationUtilities.PageOnPreLoad(System.Web.HttpContext,System.Boolean)" /> this is handled for you.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If HealthVault returns an error when getting information
+            about the person in the <paramref name="authToken" />.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshAndSavePersonInfoToCookie">
+      <MemberSignature Language="C#" Value="public static Microsoft.Health.PersonInfo RefreshAndSavePersonInfoToCookie (System.Web.HttpContext context, string authToken, Microsoft.Health.HealthServiceInstance serviceInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Health.PersonInfo RefreshAndSavePersonInfoToCookie(class System.Web.HttpContext context, string authToken, class Microsoft.Health.HealthServiceInstance serviceInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.RefreshAndSavePersonInfoToCookie(System.Web.HttpContext,System.String,Microsoft.Health.HealthServiceInstance)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Health.PersonInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="authToken" Type="System.String" />
+        <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="authToken">
+            The authentication to use to populate the session with HealthVault
+            information.
+            </param>
+        <param name="serviceInstance">
+            The HealthVault web-service instance that the session auth token
+            was originally received from.
+            </param>
+        <summary> 
+            Cleans the application's session of HealthVault information and 
+            then repopulates it using the specified authentication token and
+            HealthVault web-service instance.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>
+            This method should be called anytime the application takes a redirect from the 
+            HealthVault shell and there is a WCToken on the query string. Note, if you are calling
+            <see cref="M:Microsoft.Health.Web.WebApplicationUtilities.PageOnPreLoad(System.Web.HttpContext,System.Boolean,System.Boolean)" /> or 
+            <see cref="M:Microsoft.Health.Web.WebApplicationUtilities.PageOnPreLoad(System.Web.HttpContext,System.Boolean)" /> this is handled for you.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If HealthVault returns an error when getting information
+            about the person in the <paramref name="authToken" />.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SavePersonInfoToCookie">
+      <MemberSignature Language="C#" Value="public static System.Web.HttpCookie SavePersonInfoToCookie (Microsoft.Health.PersonInfo personInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.HttpCookie SavePersonInfoToCookie(class Microsoft.Health.PersonInfo personInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.SavePersonInfoToCookie(Microsoft.Health.PersonInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCookie</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="personInfo" Type="Microsoft.Health.PersonInfo" />
+      </Parameters>
+      <Docs>
+        <param name="personInfo">
+            The authenticated person's information.
+            </param>
+        <summary>
+            Stores the specified person's information in the cookie.
+            </summary>
+        <returns>
+            A cookie containing the person's information.
+            </returns>
+        <remarks>
+            If <paramref name="personInfo" /> is null, the returned cookie will have an
+            expiration date in the past, and adding it to a response would result in the cookie
+            being cleared.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SavePersonInfoToCookie">
+      <MemberSignature Language="C#" Value="public static System.Web.HttpCookie SavePersonInfoToCookie (Microsoft.Health.PersonInfo personInfo, System.Web.HttpCookie existingCookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.HttpCookie SavePersonInfoToCookie(class Microsoft.Health.PersonInfo personInfo, class System.Web.HttpCookie existingCookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.SavePersonInfoToCookie(Microsoft.Health.PersonInfo,System.Web.HttpCookie)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCookie</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="personInfo" Type="Microsoft.Health.PersonInfo" />
+        <Parameter Name="existingCookie" Type="System.Web.HttpCookie" />
+      </Parameters>
+      <Docs>
+        <param name="personInfo">
+            The authenticated person's information.
+            </param>
+        <param name="existingCookie">
+            The existing cooke containing the person's information. The expiration date of this 
+            cookie will be used as the expiration date of the returned cookie.
+            </param>
+        <summary>
+            Stores the specified person's information in the cookie.
+            </summary>
+        <returns>
+            A cookie containing the person's information.
+            </returns>
+        <remarks>
+            If <paramref name="personInfo" /> is null, the returned cookie will have an
+            expiration date in the past, and adding it to a response would result in the cookie
+            being cleared.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SavePersonInfoToCookie">
+      <MemberSignature Language="C#" Value="public static void SavePersonInfoToCookie (System.Web.HttpContext context, Microsoft.Health.PersonInfo personInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SavePersonInfoToCookie(class System.Web.HttpContext context, class Microsoft.Health.PersonInfo personInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.SavePersonInfoToCookie(System.Web.HttpContext,Microsoft.Health.PersonInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="personInfo" Type="Microsoft.Health.PersonInfo" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="personInfo">
+            The authenticated person's information.
+            </param>
+        <summary>
+            Stores the specified person's information in the cookie.
+            </summary>
+        <remarks>
+            If <paramref name="personInfo" /> is null, this call will not clear the cookie.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SavePersonInfoToCookie">
+      <MemberSignature Language="C#" Value="public static void SavePersonInfoToCookie (System.Web.HttpContext context, Microsoft.Health.PersonInfo personInfo, bool clearIfNull);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SavePersonInfoToCookie(class System.Web.HttpContext context, class Microsoft.Health.PersonInfo personInfo, bool clearIfNull) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.SavePersonInfoToCookie(System.Web.HttpContext,Microsoft.Health.PersonInfo,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="personInfo" Type="Microsoft.Health.PersonInfo" />
+        <Parameter Name="clearIfNull" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="personInfo">
+            The person's information to store. If null and <paramref name="clearIfNull" /> is true,
+            the cookie will be cleared and the person will be logged off from HealthVault.
+            </param>
+        <param name="clearIfNull">
+            If true and <paramref name="personInfo" /> is null, the cookie will be cleared and the
+            person will be logged off from HealthVault.
+            </param>
+        <summary>
+            Stores the specified person's information in the cookie.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public static void SignOut (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SignOut(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.SignOut(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <summary>
+            Signs the person out, cleans up the HealthVault session 
+            information, and redirects the user's browser to the signout action 
+            URL.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public static void SignOut (System.Web.HttpContext context, Guid appId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SignOut(class System.Web.HttpContext context, valuetype System.Guid appId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.SignOut(System.Web.HttpContext,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="appId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="appId">
+            The unique identifier for the application.
+            </param>
+        <summary>
+            Signs the person out, cleans up the HealthVault session 
+            information, and redirects the user's browser to the signout action 
+            URL.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public static void SignOut (System.Web.HttpContext context, string actionUrlQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SignOut(class System.Web.HttpContext context, string actionUrlQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.SignOut(System.Web.HttpContext,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="actionUrlQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="actionUrlQueryString">
+            The query string parameters to pass to the signout action URL after
+            cleaning up data.
+            </param>
+        <summary>
+            Signs the person out, cleans up the HealthVault session 
+            information, and redirects the user's browser to the signout action 
+            URL with the specified querystring parameter if any.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public static void SignOut (System.Web.HttpContext context, string actionUrlQueryString, Guid appId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SignOut(class System.Web.HttpContext context, string actionUrlQueryString, valuetype System.Guid appId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.SignOut(System.Web.HttpContext,System.String,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="actionUrlQueryString" Type="System.String" />
+        <Parameter Name="appId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="actionUrlQueryString">
+            The query string parameters to pass to the signout action URL after
+            cleaning up data.
+            </param>
+        <param name="appId">
+            The unique identifier of the application.
+            </param>
+        <summary>
+            Signs the person out, cleans up the HealthVault session 
+            information, and redirects the user's browser to the signout action 
+            URL with the specified querystring parameter if any.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public static void SignOut (System.Web.HttpContext context, string actionUrlQueryString, Guid appId, string credentialToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SignOut(class System.Web.HttpContext context, string actionUrlQueryString, valuetype System.Guid appId, string credentialToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.SignOut(System.Web.HttpContext,System.String,System.Guid,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="actionUrlQueryString" Type="System.String" />
+        <Parameter Name="appId" Type="System.Guid" />
+        <Parameter Name="credentialToken" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="actionUrlQueryString">
+            The query string parameters to pass to the signout action URL after
+            cleaning up data.
+            </param>
+        <param name="appId">
+            The unique identifier of the application.
+            </param>
+        <param name="credentialToken">
+            The user's credential token to sign out.
+            </param>
+        <summary>
+            Signs the person out, cleans up the HealthVault session 
+            information, and redirects the user's browser to the signout action 
+            URL with the specified querystring parameter (including user's credential token) if any.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public static void SignOut (System.Web.HttpContext context, string actionUrlQueryString, Guid appId, string credentialToken, Microsoft.Health.HealthServiceInstance serviceInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SignOut(class System.Web.HttpContext context, string actionUrlQueryString, valuetype System.Guid appId, string credentialToken, class Microsoft.Health.HealthServiceInstance serviceInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.SignOut(System.Web.HttpContext,System.String,System.Guid,System.String,Microsoft.Health.HealthServiceInstance)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="actionUrlQueryString" Type="System.String" />
+        <Parameter Name="appId" Type="System.Guid" />
+        <Parameter Name="credentialToken" Type="System.String" />
+        <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="actionUrlQueryString">
+            The query string parameters to pass to the signout action URL after
+            cleaning up data.
+            </param>
+        <param name="appId">
+            The unique identifier of the application.
+            </param>
+        <param name="credentialToken">
+            The user's credential token to sign out.
+            </param>
+        <param name="serviceInstance">
+            The HealthVault instance where the user account resides.
+            If <b>null</b>, the configured default HealthVault Shell URL will be used.
+            </param>
+        <summary>
+            Signs the person out, cleans up the HealthVault session 
+            information, and redirects the user's browser to the signout action 
+            URL with the specified querystring parameter (including user's credential token) if any.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public static void SignOut (System.Web.HttpContext context, string actionUrlQueryString, Guid appId, string credentialToken, string shellRedirectorUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SignOut(class System.Web.HttpContext context, string actionUrlQueryString, valuetype System.Guid appId, string credentialToken, string shellRedirectorUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.WebApplicationUtilities.SignOut(System.Web.HttpContext,System.String,System.Guid,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="actionUrlQueryString" Type="System.String" />
+        <Parameter Name="appId" Type="System.Guid" />
+        <Parameter Name="credentialToken" Type="System.String" />
+        <Parameter Name="shellRedirectorUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+            The current request context.
+            </param>
+        <param name="actionUrlQueryString">
+            The query string parameters to pass to the signout action URL after
+            cleaning up data.
+            </param>
+        <param name="appId">
+            The unique identifier of the application.
+            </param>
+        <param name="credentialToken">
+            The user's credential token to sign out.
+            </param>
+        <param name="shellRedirectorUrl">
+            The base HealthVault Shell redirector URL.  If <b>null</b>,
+            the configured default HealthVault Shell URL will be used.
+            </param>
+        <summary>
+            Signs the person out, cleans up the HealthVault session 
+            information, and redirects the user's browser to the signout action 
+            URL with the specified querystring parameter (including user's credential token) if any.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

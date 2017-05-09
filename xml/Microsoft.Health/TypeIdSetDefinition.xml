@@ -1,0 +1,113 @@
+<Type Name="TypeIdSetDefinition" FullName="Microsoft.Health.TypeIdSetDefinition">
+  <TypeSignature Language="C#" Value="public class TypeIdSetDefinition : Microsoft.Health.AuthorizationSetDefinition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TypeIdSetDefinition extends Microsoft.Health.AuthorizationSetDefinition" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Health.TypeIdSetDefinition" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Health</AssemblyName>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Health.AuthorizationSetDefinition</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Defines a set of health record items of the specified type 
+            for authorization purposes.
+            </summary>
+    <remarks>
+            Permissions on data in a person's health records are always included
+            in an authorization set (whether implicitly via their type or 
+            effective date, or explicitly by setting the system set.) This class
+            serves as a set of health record items that have a specified type ID. 
+            Other types of authorization sets include:
+            <see cref="T:Microsoft.Health.DateRangeSetDefinition" />.
+            </remarks>
+    <altmember cref="T:Microsoft.Health.AuthorizationSetDefinition" />
+    <altmember cref="T:Microsoft.Health.DateRangeSetDefinition" />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeIdSetDefinition (Guid typeId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid typeId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.TypeIdSetDefinition.#ctor(System.Guid)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="typeId">
+            The identifier of the type for the set.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.TypeIdSetDefinition" /> class 
+            with the specified type identifier.
+            </summary>
+        <remarks>
+            The <paramref name="typeId" /> must be the identifier for a health
+            record item type. See 
+            <see cref="M:Microsoft.Health.ItemTypeManager.GetHealthRecordItemTypeDefinition(System.Guid,Microsoft.Health.HealthServiceConnection)" />
+            for information on getting the value health record item types.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="typeId" /> parameter is Guid.Empty.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXml">
+      <MemberSignature Language="C#" Value="public override string GetXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Health.TypeIdSetDefinition.GetXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Gets the XML representation of the set.
+            </summary>
+        <returns>
+            The XML representation of the set as a string.
+            </returns>
+        <remarks>
+            The XML representation adheres to the schema required by the
+            HealthVault methods.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public Guid TypeId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid TypeId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Health.TypeIdSetDefinition.TypeId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the type identifier for the set.
+            </summary>
+        <value>
+            A Guid representing the unique identifier for a health record item
+            type.
+            </value>
+        <remarks>
+            The value must be the identifier for a health record item
+            type. 
+            <see cref="M:Microsoft.Health.ItemTypeManager.GetHealthRecordItemTypeDefinition(System.Guid,Microsoft.Health.HealthServiceConnection)" />
+            for information on getting the value health record item types.
+            </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
