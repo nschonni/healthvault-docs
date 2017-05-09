@@ -1,0 +1,98 @@
+<Type Name="WebHealthVaultFactory" FullName="Microsoft.HealthVault.Web.WebHealthVaultFactory">
+  <TypeSignature Language="C#" Value="public class WebHealthVaultFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebHealthVaultFactory extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.Web.WebHealthVaultFactory" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault.Web</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Factory class to create Web/Offline connections
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebHealthVaultFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Web.WebHealthVaultFactory.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOfflineConnectionAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;Microsoft.HealthVault.Web.Connection.IOfflineHealthVaultConnection&gt; CreateOfflineConnectionAsync (string offlinePersonId, string instanceId = null, Microsoft.HealthVault.Connection.SessionCredential sessionCredential = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class Microsoft.HealthVault.Web.Connection.IOfflineHealthVaultConnection&gt; CreateOfflineConnectionAsync(string offlinePersonId, string instanceId, class Microsoft.HealthVault.Connection.SessionCredential sessionCredential) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Web.WebHealthVaultFactory.CreateOfflineConnectionAsync(System.String,System.String,Microsoft.HealthVault.Connection.SessionCredential)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.AsyncStateMachine(typeof(Microsoft.HealthVault.Web.WebHealthVaultFactory/&lt;CreateOfflineConnectionAsync&gt;d__1))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.HealthVault.Web.Connection.IOfflineHealthVaultConnection&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offlinePersonId" Type="System.String" />
+        <Parameter Name="instanceId" Type="System.String" />
+        <Parameter Name="sessionCredential" Type="Microsoft.HealthVault.Connection.SessionCredential" />
+      </Parameters>
+      <Docs>
+        <param name="offlinePersonId">The offline person identifier.</param>
+        <param name="instanceId">The instance identifier.</param>
+        <param name="sessionCredential">The session credential.</param>
+        <summary>
+            Creates the offline connection.
+            </summary>
+        <returns />
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWebConnectionAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;Microsoft.HealthVault.Web.Connection.IWebHealthVaultConnection&gt; CreateWebConnectionAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class Microsoft.HealthVault.Web.Connection.IWebHealthVaultConnection&gt; CreateWebConnectionAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Web.WebHealthVaultFactory.CreateWebConnectionAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.AsyncStateMachine(typeof(Microsoft.HealthVault.Web.WebHealthVaultFactory/&lt;CreateWebConnectionAsync&gt;d__0))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.HealthVault.Web.Connection.IWebHealthVaultConnection&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates an authenticated web connection when the reuest 
+            has been authenticated using [RequireSignIn] attribute.
+            In case the request has not been authenticated, an anonymous
+            connection is created.
+            </summary>
+        <returns>IWebHealthVaultConnection</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">
+                WebConnectionInfo is expected for authenticated connections
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,212 @@
+<Type Name="IThingClient" FullName="Microsoft.HealthVault.Clients.IThingClient">
+  <TypeSignature Language="C#" Value="public interface IThingClient : Microsoft.HealthVault.Clients.IClient" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IThingClient implements class Microsoft.HealthVault.Clients.IClient" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.Clients.IThingClient" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.HealthVault.Clients.IClient</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>
+            An interface for the HealthVault thing client. Used to access things associated with a particular record.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateNewThingsAsync&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task CreateNewThingsAsync&lt;T&gt; (Guid recordId, System.Collections.Generic.ICollection&lt;T&gt; things) where T : Microsoft.HealthVault.Thing.IThing;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task CreateNewThingsAsync&lt;(class Microsoft.HealthVault.Thing.IThing) T&gt;(valuetype System.Guid recordId, class System.Collections.Generic.ICollection`1&lt;!!T&gt; things) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IThingClient.CreateNewThingsAsync``1(System.Guid,System.Collections.Generic.ICollection{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <InterfaceName>Microsoft.HealthVault.Thing.IThing</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="recordId" Type="System.Guid" />
+        <Parameter Name="things" Type="System.Collections.Generic.ICollection&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">To be added.</typeparam>
+        <param name="recordId">The health record's ID.</param>
+        <param name="things">The collection of things to create.</param>
+        <summary>
+            Creates a new collection of things.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetThingAsync&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;T&gt; GetThingAsync&lt;T&gt; (Guid recordId, Guid thingId) where T : Microsoft.HealthVault.Thing.IThing;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;!!T&gt; GetThingAsync&lt;(class Microsoft.HealthVault.Thing.IThing) T&gt;(valuetype System.Guid recordId, valuetype System.Guid thingId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IThingClient.GetThingAsync``1(System.Guid,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <InterfaceName>Microsoft.HealthVault.Thing.IThing</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="recordId" Type="System.Guid" />
+        <Parameter Name="thingId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">To be added.</typeparam>
+        <param name="recordId">The health record's ID.</param>
+        <param name="thingId">The unique identifier of the thing</param>
+        <summary>
+            Gets a ThingBase by its unique identifier
+            </summary>
+        <returns>The thing requested</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetThingsAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Collections.Generic.IReadOnlyCollection&lt;Microsoft.HealthVault.Thing.ThingCollection&gt;&gt; GetThingsAsync (Guid recordId, Microsoft.HealthVault.Thing.ThingQuery query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.Collections.Generic.IReadOnlyCollection`1&lt;class Microsoft.HealthVault.Thing.ThingCollection&gt;&gt; GetThingsAsync(valuetype System.Guid recordId, class Microsoft.HealthVault.Thing.ThingQuery query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IThingClient.GetThingsAsync(System.Guid,Microsoft.HealthVault.Thing.ThingQuery)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Collections.Generic.IReadOnlyCollection&lt;Microsoft.HealthVault.Thing.ThingCollection&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="recordId" Type="System.Guid" />
+        <Parameter Name="query" Type="Microsoft.HealthVault.Thing.ThingQuery" />
+      </Parameters>
+      <Docs>
+        <param name="recordId">The health record's ID.</param>
+        <param name="query">An instance of <see cref="T:Microsoft.HealthVault.Thing.ThingQuery" />.  Use this query to identify parameters for the search.</param>
+        <summary>
+            Gets a collection of Things that match a given query. 
+            </summary>
+        <returns>ICollection of ThingBase</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetThingsAsync&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Collections.Generic.IReadOnlyCollection&lt;T&gt;&gt; GetThingsAsync&lt;T&gt; (Guid recordId, Microsoft.HealthVault.Thing.ThingQuery query = null) where T : Microsoft.HealthVault.Thing.IThing;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.Collections.Generic.IReadOnlyCollection`1&lt;!!T&gt;&gt; GetThingsAsync&lt;(class Microsoft.HealthVault.Thing.IThing) T&gt;(valuetype System.Guid recordId, class Microsoft.HealthVault.Thing.ThingQuery query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IThingClient.GetThingsAsync``1(System.Guid,Microsoft.HealthVault.Thing.ThingQuery)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Collections.Generic.IReadOnlyCollection&lt;T&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <InterfaceName>Microsoft.HealthVault.Thing.IThing</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="recordId" Type="System.Guid" />
+        <Parameter Name="query" Type="Microsoft.HealthVault.Thing.ThingQuery" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">To be added.</typeparam>
+        <param name="recordId">The health record's ID.</param>
+        <param name="query">An instance of <see cref="T:Microsoft.HealthVault.Thing.ThingQuery" />.  If you leave this null, it will return all things of the specified type.</param>
+        <summary>
+            Gets a collection of Things of the specific type. 
+            </summary>
+        <returns>ICollection of ThingBase</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveThingsAsync&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task RemoveThingsAsync&lt;T&gt; (Guid recordId, System.Collections.Generic.ICollection&lt;T&gt; things) where T : Microsoft.HealthVault.Thing.IThing;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task RemoveThingsAsync&lt;(class Microsoft.HealthVault.Thing.IThing) T&gt;(valuetype System.Guid recordId, class System.Collections.Generic.ICollection`1&lt;!!T&gt; things) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IThingClient.RemoveThingsAsync``1(System.Guid,System.Collections.Generic.ICollection{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <InterfaceName>Microsoft.HealthVault.Thing.IThing</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="recordId" Type="System.Guid" />
+        <Parameter Name="things" Type="System.Collections.Generic.ICollection&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">To be added.</typeparam>
+        <param name="recordId">The health record's ID.</param>
+        <param name="things">The collection of things to put.</param>
+        <summary>
+            Removes a collection of things.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateThingsAsync&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task UpdateThingsAsync&lt;T&gt; (Guid recordId, System.Collections.Generic.ICollection&lt;T&gt; things) where T : Microsoft.HealthVault.Thing.IThing;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task UpdateThingsAsync&lt;(class Microsoft.HealthVault.Thing.IThing) T&gt;(valuetype System.Guid recordId, class System.Collections.Generic.ICollection`1&lt;!!T&gt; things) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IThingClient.UpdateThingsAsync``1(System.Guid,System.Collections.Generic.ICollection{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <InterfaceName>Microsoft.HealthVault.Thing.IThing</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="recordId" Type="System.Guid" />
+        <Parameter Name="things" Type="System.Collections.Generic.ICollection&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">To be added.</typeparam>
+        <param name="recordId">The health record's ID.</param>
+        <param name="things">The collection of things to update.</param>
+        <summary>
+            Updates a collection of things that already exists.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

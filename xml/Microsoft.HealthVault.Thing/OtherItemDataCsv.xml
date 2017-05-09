@@ -1,0 +1,154 @@
+<Type Name="OtherItemDataCsv" FullName="Microsoft.HealthVault.Thing.OtherItemDataCsv">
+  <TypeSignature Language="C#" Value="public abstract class OtherItemDataCsv : Microsoft.HealthVault.Thing.OtherItemData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit OtherItemDataCsv extends Microsoft.HealthVault.Thing.OtherItemData" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.Thing.OtherItemDataCsv" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.HealthVault.Thing.OtherItemData</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+             The OtherItemDataCSV class is used to store and retrieve data stored in the HealthVault
+             comma-separated format.
+             </summary>
+    <remarks>
+             It is not used directly but through a derived class that is specific to a thing type -
+             for example, the ExerciseSamplesData class.
+             </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected OtherItemDataCsv ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.OtherItemDataCsv.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.HealthVault.Thing.OtherItemDataCsv" /> class
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected OtherItemDataCsv (string data, string contentEncoding, string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string data, string contentEncoding, string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.OtherItemDataCsv.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="data" Type="System.String" />
+        <Parameter Name="contentEncoding" Type="System.String" />
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="data">
+             The data to store in the other data section of the health record
+             item.
+             </param>
+        <param name="contentEncoding">
+             The type of encoding that was done on the data. Usually this will
+             be "base64" but other encodings are acceptable.
+             </param>
+        <param name="contentType">
+             The MIME-content type of the data.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.Thing.OtherItemDataCsv" /> class
+             with the specified data, encoding, and content type.
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsDouble">
+      <MemberSignature Language="C#" Value="protected System.Collections.ObjectModel.Collection&lt;Microsoft.HealthVault.Thing.OtherItemDataCsvItem&gt; GetAsDouble ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Collections.ObjectModel.Collection`1&lt;class Microsoft.HealthVault.Thing.OtherItemDataCsvItem&gt; GetAsDouble() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.OtherItemDataCsv.GetAsDouble" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.HealthVault.Thing.OtherItemDataCsvItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Parses the comma-delimited data into a series of double values.
+            </summary>
+        <returns>A collection of OtherItemDataCsvItem</returns>
+        <remarks>
+            The collection contains two kinds of values.
+            OtherItemDataCsvDouble items contain double values
+            OtherItemDataCsvEscape items contain escapes
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsString">
+      <MemberSignature Language="C#" Value="protected System.Collections.ObjectModel.Collection&lt;Microsoft.HealthVault.Thing.OtherItemDataCsvItem&gt; GetAsString ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Collections.ObjectModel.Collection`1&lt;class Microsoft.HealthVault.Thing.OtherItemDataCsvItem&gt; GetAsString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.OtherItemDataCsv.GetAsString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.HealthVault.Thing.OtherItemDataCsvItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Parse the comma-separated representation into an array of strings.
+            </summary>
+        <returns>A collection of the strings.</returns>
+        <remarks>
+            When this method returns, the Escapes collection will contain any
+            escapes encountered during the parsing.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If the content type is not "text/csv".
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            If the Data section is null.
+            </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOtherData">
+      <MemberSignature Language="C#" Value="protected void SetOtherData (System.Collections.Generic.IList&lt;Microsoft.HealthVault.Thing.OtherItemDataCsvItem&gt; values);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetOtherData(class System.Collections.Generic.IList`1&lt;class Microsoft.HealthVault.Thing.OtherItemDataCsvItem&gt; values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.OtherItemDataCsv.SetOtherData(System.Collections.Generic.IList{Microsoft.HealthVault.Thing.OtherItemDataCsvItem})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Collections.Generic.IList&lt;Microsoft.HealthVault.Thing.OtherItemDataCsvItem&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="values">The collection of values to store.</param>
+        <summary>
+            Create the comma-delimited representation of a set of data and escapes.
+            </summary>
+        <remarks>
+            The escapes are inserted into the comma-delimited list in the appropriate places.
+            Any escape that occurs after the last element is ignored.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the parameter <paramref name="values" /> is null.
+            </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

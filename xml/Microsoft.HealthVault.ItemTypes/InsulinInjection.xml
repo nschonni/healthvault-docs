@@ -1,0 +1,252 @@
+<Type Name="InsulinInjection" FullName="Microsoft.HealthVault.ItemTypes.InsulinInjection">
+  <TypeSignature Language="C#" Value="public class InsulinInjection : Microsoft.HealthVault.Thing.ThingBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InsulinInjection extends Microsoft.HealthVault.Thing.ThingBase" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.ItemTypes.InsulinInjection" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.HealthVault.Thing.ThingBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+             Represents a thing type that encapsulates an insulin injection.
+             </summary>
+    <remarks>
+             This class represents any injection unit used to dispense insulin.
+             The injector might or might not have a device component.
+             </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InsulinInjection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.InsulinInjection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.InsulinInjection" /> class with
+             default values.
+             </summary>
+        <remarks>
+             The item is not added to the health record until the <see cref="M:Microsoft.HealthVault.Clients.IThingClient.CreateNewThingsAsync``1(System.Guid,System.Collections.Generic.ICollection{``0})" /> method is called.
+             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InsulinInjection (Microsoft.HealthVault.ItemTypes.CodableValue insulinType, Microsoft.HealthVault.ItemTypes.InsulinInjectionMeasurement amount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.HealthVault.ItemTypes.CodableValue insulinType, class Microsoft.HealthVault.ItemTypes.InsulinInjectionMeasurement amount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.InsulinInjection.#ctor(Microsoft.HealthVault.ItemTypes.CodableValue,Microsoft.HealthVault.ItemTypes.InsulinInjectionMeasurement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="insulinType" Type="Microsoft.HealthVault.ItemTypes.CodableValue" />
+        <Parameter Name="amount" Type="Microsoft.HealthVault.ItemTypes.InsulinInjectionMeasurement" />
+      </Parameters>
+      <Docs>
+        <param name="insulinType">
+             The type of insulin being used.
+             </param>
+        <param name="amount">
+             The amount of insulin.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.InsulinInjection" /> class
+             with the specified insulin type and amount.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="amount" /> or <paramref name="insulinType" /> parameter
+             is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Amount">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.ItemTypes.InsulinInjectionMeasurement Amount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.ItemTypes.InsulinInjectionMeasurement Amount" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.InsulinInjection.Amount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.ItemTypes.InsulinInjectionMeasurement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the amount of insulin.
+             </summary>
+        <value>
+             An <see cref="T:Microsoft.HealthVault.ItemTypes.InsulinInjectionMeasurement" /> representing
+             the amount.
+             </value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The value is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeviceId">
+      <MemberSignature Language="C#" Value="public string DeviceId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DeviceId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.InsulinInjection.DeviceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the identifier for the device.
+             </summary>
+        <value>
+             A string representing the identifier.
+             </value>
+        <remarks>
+             Set the value to <b>null</b> if the device identifier should not be
+             stored.
+             </remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="value" /> contains only whitespace.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InsulinType">
+      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.ItemTypes.CodableValue InsulinType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.HealthVault.ItemTypes.CodableValue InsulinType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.InsulinInjection.InsulinType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.HealthVault.ItemTypes.CodableValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Gets or sets the type of insulin being used in the injector.
+             </summary>
+        <value>
+             A <see cref="T:Microsoft.HealthVault.ItemTypes.CodableValue" /> representing the type.
+             </value>
+        <remarks>
+             The preferred vocabulary is "insulin-types".
+             </remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="value" /> parameter is <b>null</b>.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="protected override void ParseXml (System.Xml.XPath.IXPathNavigable typeSpecificXml);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ParseXml(class System.Xml.XPath.IXPathNavigable typeSpecificXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.InsulinInjection.ParseXml(System.Xml.XPath.IXPathNavigable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
+      </Parameters>
+      <Docs>
+        <param name="typeSpecificXml">
+             The XML to get the insulin injection data from.
+             </param>
+        <summary>
+             Populates this <see cref="T:Microsoft.HealthVault.ItemTypes.InsulinInjection" /> instance from the data in the XML.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+             The first node in <paramref name="typeSpecificXml" /> is not
+             an insulin-injection node.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.InsulinInjection.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+             Gets a string representation of the insulin injection item.
+             </summary>
+        <returns>
+             A string representation of the insulin injection item.
+             </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public static readonly Guid TypeId;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid TypeId" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.HealthVault.ItemTypes.InsulinInjection.TypeId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Retrieves the unique identifier for the item type.
+             </summary>
+        <returns>
+             A GUID.
+             </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.InsulinInjection.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">
+             The XmlWriter to write the insulin injection data to.
+             </param>
+        <summary>
+             Writes the insulin injection data to the specified XmlWriter.
+             </summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="writer" /> is <b>null</b>.
+             </exception>
+        <exception cref="T:Microsoft.HealthVault.Exceptions.ThingSerializationException">
+             The <see cref="P:Microsoft.HealthVault.ItemTypes.InsulinInjection.InsulinType" /> property is <b>null</b>, or the <see cref="P:Microsoft.HealthVault.ItemTypes.InsulinInjection.Amount" /> property is <b>null</b> or empty.
+             </exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
