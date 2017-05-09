@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns:this="urn:com.microsoft.wc.thing.message" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com.microsoft.wc.thing.message">
+    <import namespace="urn:com.microsoft.wc.thing.types" schemaLocation="base.xsd"/>
+    <import namespace="urn:com.microsoft.wc.dates" schemaLocation="dates.xsd"/>
+    <annotation>
+        <documentation>
+            <type-id>72dc49e1-1486-4634-b651-ef560ed051e5</type-id>
+            <type-name>Message</type-name>
+            <summary>
+                A multipart message including message text and attachments. 
+            </summary>
+            <remarks>
+                The message is stored in two forms.
+                
+                The "FullMessage" blob contains the message in the native format.
+                
+                The text of the message is available in the blobs denoted by the 'html-blob-name" and
+                "text-blob-name" element. Any attachments to the message are described in the "attachments"
+                element. 
+
+                The data stored is intended to be compatible with the SendMail Multipart MIME format
+            </remarks>
+            <effective-date-element>when</effective-date-element>
+        </documentation>
+    </annotation>
+    <complexType name="message-header-item">
+        <annotation>
+            <documentation>
+                <summary>
+                    An item of header information.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="name" type="t:stringnznw">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The name of the header item.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="value" type="t:stringnznw">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The value of the header item.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="message-attachment">
+        <annotation>
+            <documentation>
+                <summary>
+                    An attachment to the message.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="name" type="t:stringnznw">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The name of the attachment.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="blob-name" type="t:stringnznw">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The name of the blob storing the attachment
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="inline-display" type="boolean">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            If true the attachment is intended to be displayed inline with the text. 
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="content-id" type="t:stringnznw" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Defines the content identifier for attachments that will be displayed inline
+                            with the text.
+                        </summary>
+                        <remarks>
+                            If this attachment is inline and the message text is available as HTML, the HTML
+                            contains an img tag reference to this content id in the location where the attachment 
+                            should be displayed. 
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <element name="message">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The Message type is used to store a multipart message, including message text and attachments. 
+                    </summary>
+                    <remarks>
+                        The message is stored in two forms.
+                
+                        The "FullMessage" blob contains the message in the native format.
+                
+                        The text of the message is available in the blobs denoted by the 'html-blob-name" and
+                        "text-blob-name" element. Any attachments to the message are described in the "attachments"
+                        element. 
+
+                        The data stored is intended to be compatible with the SendMail Multipart MIME format
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="when" type="d:date-time">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The date and time of the message.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="headers" type="this:message-header-item" minOccurs="0" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A collection of header information associated with this message.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="size" type="positiveInteger">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The size of the message in bytes.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="summary" type="string" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A summary of the message.
+                            </summary>
+                            <remarks>
+                                The summary contains the first 512 characters of the message in text format. 
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="html-blob-name" type="t:stringnznw" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The name of the blob that stores the message in HTML format.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="text-blob-name" type="t:stringnznw" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The name of the blob that stores the message in text format. 
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="attachments" type="this:message-attachment" minOccurs="0" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Attachments to the message.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<schema xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns:this="urn:com.microsoft.wc.thing.blood-oxygen-saturation" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com.microsoft.wc.thing.blood-oxygen-saturation">
+    <import namespace="urn:com.microsoft.wc.thing.types" schemaLocation="base.xsd"/>
+    <import namespace="urn:com.microsoft.wc.dates" schemaLocation="dates.xsd"/>
+    <annotation>
+        <documentation>
+            <type-id>3a54f95f-03d8-4f62-815f-f691fc94a500</type-id>
+            <type-name>Blood oxygen saturation</type-name>
+            <wrapper-class-name>BloodOxygenSaturation</wrapper-class-name>
+            <wrapper-class-fwlink>136056</wrapper-class-fwlink>
+            <sample-xml-fwlink>136057</sample-xml-fwlink>
+            <data-type-guide-fwlink>136055</data-type-guide-fwlink>            
+            <summary>
+                The percentage of oxygen saturation in the blood.
+            </summary>
+            <seealso-thing-type-version-id>7b2ea78c-4b78-4f75-a6a7-5396fe38b09a</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>9c48a2b8-952c-4f5a-935d-f3292326bf54</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>1e1ccbfc-a55d-4d91-8940-fa2fbf73c195</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>b81eb4a6-6eac-4292-ae93-3872d6870994</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>73822612-C15F-4B49-9E65-6AF369E55C65</seealso-thing-type-version-id>
+        </documentation>
+    </annotation>
+    <element name="blood-oxygen-saturation">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Percentage of oxygen saturation in the blood.
+                    </summary>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="when" type="d:date-time">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The date and time of this measurement.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="value" type="t:percentage">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The measured blood oxygen saturation percentage.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="measurement-method" type="t:codable-value" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The technique used to obtain the measurement.
+                            </summary>
+                            <preferred-vocabulary>blood-oxygen-saturation-measurement-method</preferred-vocabulary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="measurement-flags" type="t:codable-value" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Additional information about the measurement.
+                            </summary>
+                            <remarks>
+                                Examples: Incomplete measurement, irregular heartbeat.
+                            </remarks>
+                            <preferred-vocabulary>Contact the HealthVault team to help define this vocabulary.</preferred-vocabulary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns:this="urn:com.microsoft.wc.thing.medical-images" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com.microsoft.wc.thing.medical-images">
+    <import namespace="urn:com.microsoft.wc.thing.types" schemaLocation="base.xsd"/>
+    <import namespace="urn:com.microsoft.wc.dates" schemaLocation="dates.xsd"/>
+    <annotation>
+        <documentation>
+            <type-id>cdfc0a9b-6d3b-4d16-afa8-02b86d621a8d</type-id>
+            <type-name>Medical image study</type-name>
+            <version>2</version>
+            <wrapper-class-name>MedicalImageStudyV2</wrapper-class-name>
+            <summary>
+                A study containing medical images.
+            </summary>
+            <remarks>
+                DICOM data is stored in the named blob portion of the data type, and it is recommended that normal
+                DICOM conventions are used for naming.
+
+                An application may store XDS-i manifest information in XML format in the xds-i element.
+            </remarks>
+            <related-links>
+                <related-link>
+                    <text>
+                        HealthVault medical imaging
+                    </text>
+                    <link>
+                        http://go.microsoft.com/fwlink/?LinkId=513251
+                    </link>
+                </related-link>
+                <related-link>
+                    <text>
+                        Working with Blobs and Streamed Data
+                    </text>
+                    <link>
+                        http://go.microsoft.com/fwlink/?LinkId=513264
+                    </link>
+                </related-link>
+            </related-links>
+        </documentation>
+    </annotation>
+    <complexType name="medical-image-study-series-image">
+        <annotation>
+            <documentation>
+                <summary>
+                    Information about a single image in a series.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="image-blob-name" type="t:stringnznw">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The name of the blob holding the original data for this image.
+                        </summary>
+                        <remarks>
+                            DICOM tag (0008,0018).
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="image-preview-blob-name" type="t:stringnznw" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The name of the blob holding a smaller version of the image suitable for web viewing or email.
+                        </summary>
+                        <remarks>
+                            Previews should be stored using the jpeg or png format.
+
+                            It is recommended that the shorter dimension of the image be no less than 500 pixels in size.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="medical-image-study-series">
+        <annotation>
+            <documentation>
+                <summary>
+                    A specific series of images.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="acquisition-datetime" type="d:date-time" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The date and time that the image was acquired.
+                        </summary>
+                        <remarks>
+                            DICOM tags (0008,0022), (0008,0032).
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="description" type="t:stringnznw" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A description of the series.
+                        </summary>
+                        <remarks>
+                            DICOM tag (0008,103E).
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="images" type="this:medical-image-study-series-image" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The collection of images.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="institution-name" type="t:Organization" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The name of the institution where the images were acquired.
+                        </summary>
+                        <remarks>
+                            DICOM tag (0008,0080).
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="modality" type="t:codable-value" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The method (or modality) in which the images were acquired.
+                        </summary>
+                        <remarks>
+                            DICOM tag (0008,0060).
+                        </remarks>
+                        <preferred-vocabulary>dicom.modality</preferred-vocabulary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="body-part" type="t:codable-value" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The body part that was imaged.
+                        </summary>
+                        <remarks>
+                            DICOM tag (0018,0015).
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="preview-blob-name" type="t:stringnznw" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The name of the blob holding a smaller version of the image suitable for web viewing or email.
+                        </summary>
+                        <remarks>
+                            Previews should be stored using the jpeg or png format.
+
+                            It is recommended that the shorter dimension of the image be no less than 500 pixels in size.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="series-instance-uid" type="t:stringnznw" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The series instance UID.
+                        </summary>
+                        <remarks>
+                            DICOM tag (0020,000E).
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <element name="medical-image-study">
+        <annotation>
+            <documentation>
+                <summary>
+                    A collection of medical images.
+                </summary>
+                <remarks>
+                    DICOM data is stored in the named blob portion of the data type, and it is recommended that normal
+                    DICOM conventions are used for naming.
+
+                    An application may store XDS-i manifest information in XML format in the xds-i element.
+                </remarks>
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="when" type="d:date-time">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The date and time the study was created.
+                            </summary>
+                            <remarks>
+                                DICOM tags (0008,0020) and (0008,0030).
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="patient-name" type="t:stringnznw" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The name of the patient as contained in the medical image.
+                            </summary>
+                            <remarks>
+                                DICOM tag (0010,0010).
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="description" type="t:stringnznw" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A description of the study.
+                            </summary>
+                            <remarks>
+                                DICOM tag (0008,1030).
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="series" type="this:medical-image-study-series" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A collection of series.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="reason" type="t:codable-value" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The reason for the study.
+                            </summary>
+                            <remarks>
+                                DICOM tag (0032,1030).
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="preview-blob-name" type="t:stringnznw" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The name of the blob holding a smaller version of the image suitable for web viewing or email.
+                            </summary>
+                            <remarks>
+                                Previews should be stored using the jpeg or png format.
+
+                                It is recommended that the shorter dimension of the image be no less than 500 pixels in size.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="key-images" type="this:medical-image-study-series-image" minOccurs="0" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The important images in the study.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="study-instance-uid" type="t:stringnznw" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The study instance UID.
+                            </summary>
+                            <remarks>
+                                DICOM tag (0020,000D).
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="referring-physician" type="t:person" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The physician who ordered the study.
+                            </summary>
+                            <remarks>
+                                DICOM tag (0008,0090)
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="accession-number" type="t:stringnznw" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The radiology information service generated number that identifies the order for the study.
+                            </summary>
+                            <remarks>
+                                DICOM tag (0008,0050).
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
