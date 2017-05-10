@@ -355,4 +355,4 @@ The **GetServiceDefinition** request returns information about Microsoft HealthV
 .NET SDK
 --------
 
-The HealthVault .Net SDK provides classes for reading and writing data. For querying and writing data, use the [HealthRecordAccessor](/healthvault/sdks/dotnet/microsoft.health.healthrecordaccessor.yml) class. For advanced querying, use the [HealthRecordSearcher](/healthvault/sdks/dotnet/microsoft.health.healthrecordsearcher.yml) class.
+The HealthVault .Net SDK provides classes for reading and writing data. For querying and writing data, use the [HealthRecordAccessor](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.healthrecordaccessor) class. For advanced querying, use the [HealthRecordSearcher](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.healthrecordsearcher) class.
