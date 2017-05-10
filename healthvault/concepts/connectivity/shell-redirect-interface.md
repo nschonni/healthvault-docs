@@ -44,7 +44,7 @@ You should URL-encode the targetqs. For example:
 
 ### Using the .NET SDK
 
-The .NET SDK has some helper methods that create the URL for you. Using the classes in the [Microsoft.Health.Web](/healthvault/sdks/dotnet/microsoft.health.web.yml) namespace, a web application can extend the [HealthServicePage](/healthvault/sdks/dotnet//microsoft.health.web.healthservicepage.yml) class and invoke the RedirectToShellUrl()) method or can use the [WebApplicationUtilities](/healthvault/sdks/dotnet/microsoft.health.web.webapplicationutilities.yml) class to redirect to the Shell. For example, if the page extends from the **HealthServicePage** class:
+The .NET SDK has some helper methods that create the URL for you. Using the classes in the [Microsoft.Health.Web](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.web) namespace, a web application can extend the [HealthServicePage](https://docs.microsoft.com/en-us/dotnet/api//microsoft.health.web.healthservicepage) class and invoke the RedirectToShellUrl()) method or can use the [WebApplicationUtilities](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.web.webapplicationutilities) class to redirect to the Shell. For example, if the page extends from the **HealthServicePage** class:
 
 ```cs
 this.RedirectToShellUrl("APPAUTH", "appid=" + this.ApplicationId.ToString() + "&ismra=true" + "&extrecordid=12854139-f27b-4ab4-ab68-c1757b9fad0w"); 
@@ -246,7 +246,7 @@ An example response URL:
 
 <span class="literalValue">https:// <span class="parameter">ActionURL</span>?target=SignOut</span>
 
-The .NET SDK wrapper for this target is the [HealthServicePage.SignOut](/healthvault/sdks/dotnet/microsoft.health.web.healthservicepage.signout.aspx) method. This method also discards the application auth cookie; discarding the cookie is required to sign the user out of the application. If the application does not use this method, it must manually delete the auth cookie when signing the user out.
+The .NET SDK wrapper for this target is the [HealthServicePage.SignOut](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.web.healthservicepage.signout.aspx) method. This method also discards the application auth cookie; discarding the cookie is required to sign the user out of the application. If the application does not use this method, it must manually delete the auth cookie when signing the user out.
 
 ### AUTH
 
@@ -297,7 +297,7 @@ Response URL example:
 
 <span class="literalValue">http:// <span class="parameter">ActionURL</span>?target=SelectedRecordChanged</span>
 
-The .NET SDK wrapper for this target is the [HealthServicePage.RedirectToLogOn](/healthvault/sdks/dotnet/microsoft.health.web.healthservicepage.redirecttologon.aspx) method, which additionally sets the *actionqs* parameter to the full relative path of the current page, including query string parameters, which is used to ensure that the user lands back on the page they started from. However, this use of actionqs is by convention only and other platforms need not follow it.
+The .NET SDK wrapper for this target is the [HealthServicePage.RedirectToLogOn](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.web.healthservicepage.redirecttologon.aspx) method, which additionally sets the *actionqs* parameter to the full relative path of the current page, including query string parameters, which is used to ensure that the user lands back on the page they started from. However, this use of actionqs is by convention only and other platforms need not follow it.
 
 In case of an online web application, the application needs to store the auth token and should exchange it in any further calls to the HealthVault web service.
 
@@ -1046,7 +1046,7 @@ Returned when the Shell finds an invalid record id in the extrecordid parameter.
 
 Returned when the user canceled an application auth request.
 
-If this return is the result of the .NET SDK [HealthServicePage.RedirectToLogOn](/healthvault/sdks/dotnet/microsoft.health.web.healthservicepage.redirecttologon.aspx) or [WebApplicationUtilities.RedirectToLogOn](/healthvault/sdks/dotnet/microsoft.health.web.webapplicationutilities.redirecttologon.aspx) method, the actionqs parameter is set to the relative path and query string that the user was viewing when the logon request was initiated.
+If this return is the result of the .NET SDK [HealthServicePage.RedirectToLogOn](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.web.healthservicepage.redirecttologon.aspx) or [WebApplicationUtilities.RedirectToLogOn](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.web.webapplicationutilities.redirecttologon.aspx) method, the actionqs parameter is set to the relative path and query string that the user was viewing when the logon request was initiated.
 
 In addition, TargetDetails are also appended to the return target; either CREATEACCOUNTSUCCESS or CREATEACCOUNTFAILURE.
 
@@ -1084,7 +1084,7 @@ Returned when the CCR/CCD reconcile transaction fails.
 
 Returned from an APPAUTH request where the user selects a new record for use in an SRA application .
 
-It is important that the application refresh any cached record-related information when this target is received. Users of the .NET SDK can use the [HealthServicePage.RefreshAndPersist()](/healthvault/sdks/dotnet/microsoft.health.web.healthservicepage.yml) method to accomplish this refresh.
+It is important that the application refresh any cached record-related information when this target is received. Users of the .NET SDK can use the [HealthServicePage.RefreshAndPersist()](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.web.healthservicepage) method to accomplish this refresh.
 
 **SHARERECORDFAILED**
 

@@ -216,7 +216,7 @@ HealthRecordItem ccda = new HealthRecordItem(
 
 See <a href="/healthvault/concepts/data/extending-data-types" id="PageContent_14102_3">Extending data types</a> for more information on specifying thing extensions.
 
-In the HealthVault .NET SDK, the [HealthRecordItemExtension](/healthvault/sdks/dotnet/microsoft.health.healthrecorditemextension.aspx) class is used to specify extensions.
+In the HealthVault .NET SDK, the [HealthRecordItemExtension](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.healthrecorditemextension.aspx) class is used to specify extensions.
 
 The [HealthVault Meaningful Use Reporting Sample](https://github.com/Microsoft/healthvault-samples/tree/master/dotNET/HealthVault%20Meaningful%20Use%20Reporting) also demonstrates overriding the patient ID and event date in .NET.
 

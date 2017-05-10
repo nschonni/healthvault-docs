@@ -45,7 +45,7 @@ An example response URL:
 
 <span class="command">https:// <span class="parameter">applicationActionURL</span>?target=AppAuthSuccess&wctoken= <span class="parameter">auth\_token</span>&instanceId=1</span>
 
-You can choose either Get or Post for receiving the auth token, using the optional **trm** parameter of the AUTH target (default is Get). Once you have the auth token, call the HealthVault [WebApplicationUtilities.GetPersonInfo](/healthvault/sdks/dotnet/microsoft.health.web.webapplicationutilities.getpersoninfo.yml) method and pass back the auth token to get the [PersonInfo](/healthvault/sdks/dotnet/microsoft.health.personinfo.yml) object, which will contain the PersonID and their RecordIDs that are authorized to the application.
+You can choose either Get or Post for receiving the auth token, using the optional **trm** parameter of the AUTH target (default is Get). Once you have the auth token, call the HealthVault [WebApplicationUtilities.GetPersonInfo](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.web.webapplicationutilities.getpersoninfo) method and pass back the auth token to get the [PersonInfo](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.personinfo) object, which will contain the PersonID and their RecordIDs that are authorized to the application.
 
 The following diagram depicts the auth process.
 
