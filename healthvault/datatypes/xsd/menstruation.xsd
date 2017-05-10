@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<schema
+    targetNamespace="urn:com.microsoft.wc.thing.menstruation"
+    xmlns:weight="urn:com.microsoft.wc.thing.menstruation"
+    xmlns:t="urn:com.microsoft.wc.thing.types"
+    xmlns:d="urn:com.microsoft.wc.dates"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <import
+        namespace="urn:com.microsoft.wc.thing.types"
+        schemaLocation="base.xsd" />
+    <import
+        namespace="urn:com.microsoft.wc.dates"
+        schemaLocation="dates.xsd" />
+
+    <annotation>
+        <documentation>
+            <type-id>caff3ff3-812f-44b1-9c9f-c1af13167705</type-id>
+            <type-name>Menstruation</type-name>
+            <wrapper-class-name>Menstruation</wrapper-class-name>
+            <wrapper-class-fwlink></wrapper-class-fwlink>
+            <sample-xml-fwlink></sample-xml-fwlink>
+            <data-type-guide-fwlink></data-type-guide-fwlink>
+            <summary>
+                A single assessment of menstrual flow.
+            </summary>
+            <seealso-thing-type-version-id>46d485cf-2b84-429d-9159-83152ba801f4</seealso-thing-type-version-id>
+            <effective-date-element>when</effective-date-element>
+            <related-links>
+                <related-link>
+                    <text>
+                        
+                    </text>
+                    <link>
+                        
+                    </link>
+                </related-link>
+            </related-links>
+        </documentation>
+    </annotation>
+
+    <element name="menstruation">
+        <complexType>
+
+            <annotation>
+                <documentation>
+                    <summary>
+                        A single assessment of menstrual flow including heaviness and whether the menstruation is the start of a new cycle/period.
+                    </summary>
+                </documentation>
+            </annotation>
+
+            <sequence>
+                <element name="when" type="d:date-time" minOccurs="1" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The date and time of the menstrual flow.
+                            </summary>
+                            <remark>
+                                Menstrual flow is generally recorded once per day.
+                            </remark>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="is-new-cycle" type="boolean" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Indicates whether this instance represents the start of a new menstrual cycle, e.g., the first day of a period.
+                            </summary>
+                            <remark>
+                                The default is false.
+                            </remark>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="amount" type="t:codable-value" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The amount of discharged fluid (e.g., light, medium, heavy or spotting).
+                            </summary>
+                            <preferred-vocabulary>menstrual-flow-amount</preferred-vocabulary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
+

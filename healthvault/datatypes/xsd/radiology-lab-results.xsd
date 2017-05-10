@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:lab="urn:com.microsoft.wc.thing.radiology-lab-results" xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com.microsoft.wc.thing.radiology-lab-results">
+    <import
+        namespace="urn:com.microsoft.wc.thing.types"
+        schemaLocation="base.xsd" />
+    
+    <import 
+        namespace="urn:com.microsoft.wc.dates" 
+        schemaLocation="dates.xsd"/>
+    
+    <annotation>
+        <documentation>
+            <type-id>E4911BD3-61BF-4E10-AE78-9C574B888B8F</type-id>
+            <type-name>Radiology result</type-name>
+            <wrapper-class-name>RadiologyLabResults</wrapper-class-name>
+            <wrapper-class-fwlink>136224</wrapper-class-fwlink>
+            <sample-xml-fwlink>136225</sample-xml-fwlink>
+            <data-type-guide-fwlink>136223</data-type-guide-fwlink>
+            <summary>
+                The results of a radiology lab test.
+            </summary>
+            <remarks>
+                This thing type describes the radiology lab results a person 
+                has.
+            </remarks>
+            <seealso-thing-type-version-id>9c48a2b8-952c-4f5a-935d-f3292326bf54</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>1e1ccbfc-a55d-4d91-8940-fa2fbf73c195</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>5800eab5-a8c2-482a-a4d6-f1db25ae08c3</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>B8FCB138-F8E6-436A-A15D-E3A2D6916094</seealso-thing-type-version-id>
+            <effective-date-element>when</effective-date-element>
+        </documentation>
+    </annotation>
+    <element name="radiology-lab-results">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Information related to a radiology lab-results.
+                    </summary>
+                    <remarks>
+                        This thing type describes the radiology lab results a 
+                        person has.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="when" type="d:date-time">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The date and time the lab results.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="title" type="string" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Free form title for radiology lab results.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="anatomic-site" type="string" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The anatomic site description in a radiology lab results.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="result-text" type="string" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The textual content for radiology lab results.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

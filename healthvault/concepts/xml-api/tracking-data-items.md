@@ -22,9 +22,9 @@ To put it another way, if you create a data item and then modify it over time, o
 
 By default, you see only the current state of the data items, but this is controlled by the filter that you use when you query for items. Here are the filter properties that let you do this:
 
-The [CurrentVersionOnly](/healthvault/sdks/dotnet/microsoft.health.healthrecordfilter.currentversiononly.yml) property is true by default. Set it to false to get all the versions back.
+The [CurrentVersionOnly](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.healthrecordfilter.currentversiononly) property is true by default. Set it to false to get all the versions back.
 
-The [States](/healthvault/sdks/dotnet/microsoft.health.healthrecordfilter.states.yml) property can be used to get all of the data, or just the active or deleted data. For more information, see the [HealthRecordItemStates](/healthvault/sdks/dotnet/microsoft.health.healthrecorditemstates.yml) enumeration.
+The [States](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.healthrecordfilter.states) property can be used to get all of the data, or just the active or deleted data. For more information, see the [HealthRecordItemStates](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.healthrecorditemstates) enumeration.
 
 Who changed my data?
 --------------------

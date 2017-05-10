@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<schema
+	targetNamespace="urn:com.microsoft.wc.thing.aerobic-weekly"
+	xmlns:aw="urn:com.microsoft.wc.thing.aerobic-weekly"
+	xmlns:t="urn:com.microsoft.wc.thing.types"
+	xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <import
+        namespace="urn:com.microsoft.wc.thing.types"
+        schemaLocation="base.xsd" />
+
+    <annotation>
+        <documentation>
+            <type-id>e4501363-fb95-4a11-bb60-da64e98048b5</type-id>
+            <type-name>Weekly aerobic exercise goal</type-name>
+            <wrapper-class-name>AerobicWeeklyGoal</wrapper-class-name>
+            <wrapper-class-fwlink>136242</wrapper-class-fwlink>
+            <sample-xml-fwlink>136243</sample-xml-fwlink>
+            <data-type-guide-fwlink>136241</data-type-guide-fwlink>
+
+            <summary>
+                A weekly goal for aerobic exercise.
+            </summary>
+            <remarks>
+                The thing's effective_date metadata implies the date on which
+                this goal was initiated, for purposes of graphing, etc.
+            </remarks>
+            <seealso-thing-type-version-id>7b2ea78c-4b78-4f75-a6a7-5396fe38b09a</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>415c95e0-0533-4d9c-ac73-91dc5031186c</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>85a21ddb-db20-4c65-8d30-33c899ccf612</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>dad8bb47-9ad0-4f09-a020-0ff051d1d0f7</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>609319bf-35cc-40a4-b9d7-1b329679baaa</seealso-thing-type-version-id>
+        </documentation>
+    </annotation>
+
+    <element name="aerobic-weekly">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Defines a weekly goal for aerobic exercise.
+                    </summary>
+                    <remarks>
+                        The thing's effective_date metadata implies the date on which
+                        this goal was initiated, for purposes of graphing, etc.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+
+                <element name="session" minOccurs="1" maxOccurs="1"
+                    type="t:aerobic-session">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The metrics to use for measuring the goal.
+                            </summary>
+                            <remarks>
+                                A recorded aerobic-session must match or
+                                exceed this session in order to mark the
+                                goal as achieved.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="recurrence" minOccurs="1" maxOccurs="1"
+                    type="t:positiveInt">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The number of times per week the session must
+                                occur to meet the goal.
+                            </summary>
+                            <remarks>
+                                For example, if I want to run 5 kilometers 
+                                three times a week, the session would have a
+                                mode of 'run' and a distance of '5' and the
+                                recurrence would be set to '3'.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>
+

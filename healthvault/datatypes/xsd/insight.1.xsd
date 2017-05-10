@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+<schema xmlns:this="urn:com.microsoft.wc.thing.insight" xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com.microsoft.wc.thing.insight" xmlns:wct="urn:com.microsoft.wc.types">
+
+    <import
+        namespace="urn:com.microsoft.wc.thing.types"
+        schemaLocation="base.xsd" />
+    
+    <import namespace="urn:com.microsoft.wc.dates" 
+            schemaLocation="dates.xsd"/>
+     
+     <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+    
+    <annotation>
+        <documentation>
+            <type-id>5d15b7bc-0499-4dc4-8df7-ef1a2332cfb5</type-id>
+            <type-name>Insight</type-name>
+            <version>1</version>
+            <wrapper-class-name>Insight</wrapper-class-name>
+            <wrapper-class-fwlink></wrapper-class-fwlink>
+            <summary>
+                A single instance of health insight.
+            </summary>
+            <effective-date-element>when</effective-date-element>
+        </documentation>
+    </annotation>
+    
+    <complexType name="DataUsed">
+        <sequence>
+            <element name="data-used" type="string" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    
+    <complexType name="InsightTags">
+        <sequence>
+            <element name="tag" type="wct:string1024nw" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    
+    <complexType name="StructuredInsightValue">
+        <sequence>
+            <element name="key" type="string" minOccurs="1" maxOccurs="1" />
+            <element name="value" type="anyType" minOccurs="1" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    
+    <complexType name="StructuredInsightValues">
+        <sequence>
+            <element name="value" type="this:StructuredInsightValue" minOccurs="1" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    
+    <complexType name="InsightAttribution">
+        <sequence>
+            <element name="name" type="wct:stringnz256" minOccurs="1" maxOccurs="1">
+               <annotation>
+                   <documentation>
+                       <summary>
+                           Name of the source, this insight is attributed to.
+                       </summary>
+                   </documentation>
+               </annotation>
+            </element>                        
+            <element name="attribution-required" type="boolean" minOccurs="0" maxOccurs="1">
+               <annotation>
+                   <documentation>
+                       <summary>
+                           If attribution needs to be mentioned on the apps for this source.
+                       </summary>
+                   </documentation>
+               </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="InsightMessages">
+        <sequence>
+            <element name="regular" type="string" minOccurs="0" maxOccurs="1">
+               <annotation>
+                   <documentation>
+                       <summary>
+                           Regular sized message string.
+                       </summary>
+                   </documentation>
+               </annotation>
+            </element>                        
+            <element name="short" type="string" minOccurs="0" maxOccurs="1">
+               <annotation>
+                   <documentation>
+                       <summary>
+                           Short message string.
+                       </summary>
+                   </documentation>
+               </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <element name="insight">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Defines an insight raised for a user.
+                    </summary>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="raised-insight-id" type="wct:string128nw" minOccurs="1" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Unique id of this insight instance.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="catalog-id" type="wct:string128nw" minOccurs="1" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Id of the catalog item for this insight.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="when" type="d:date-time" minOccurs="1" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The date and time the insight was created.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="expiration-date" type="d:date-time" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Date when the insight expires.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="channel" type="wct:string128nw" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Shows what does this Insight impact. For example sleep or activity etc.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="algo-class" type="wct:string128nw" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Represents the algorithm class used to create this Insight.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="directionality" type="wct:string128nw" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Represents which way the Insight is trending. For example positive, negative or neutral.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="time-span-pivot" type="wct:string128nw" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Represents the aggregation time span of the data. For example, data is aggregated weekly or daily.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="comparison-pivot" type="wct:string128nw" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Represents how the user was compared for deriving this Insight. Example with themselves or people similar to the user.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="tone-pivot" type="wct:string128nw" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Represents the tone of the Insight, like better or worse.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="scope-pivot" type="wct:string128nw" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Represents the scope of the Insight. For example, for a specific event or event types.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="data-used-pivot" type="this:DataUsed" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                 Represents a list of data types used as input to the insight calculation.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="annotation" type="string" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Describes how we got to this conclusion and why this Insight is relevant to the user.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="strength" type="t:positiveDouble" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Represents the strength of the data used for calculating the Insights.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="confidence" type="t:positiveDouble" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Confidence level of our result.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="origin" type="wct:string128nw" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Where was this insight generated.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="tags" type="this:InsightTags" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Tags associated with this insight. Can be used by clients for grouping, filtering etc.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="values" type="this:StructuredInsightValues" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Values associated with the insight message. Each value will be a parameter to a format string.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="links" type="this:StructuredInsightValues" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                List of actions associated with this insight.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="messages" type="this:InsightMessages" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Collection of message strings associated with this Insight.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                
+                <element name="attribution" type="this:InsightAttribution" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Attribution related information for this Insight.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

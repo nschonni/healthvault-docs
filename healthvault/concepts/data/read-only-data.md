@@ -187,9 +187,9 @@ By default, the individual items reconciled from a clinical document are not rea
 .NET SDK
 --------
 
-When using the HealthVault .NET SDK for querying and writing data, use the [HealthRecordAccessor](/healthvault/sdks/dotnet/microsoft.health.healthrecordaccessor.yml) class.
+When using the HealthVault .NET SDK for querying and writing data, use the [HealthRecordAccessor](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.healthrecordaccessor) class.
 
-To specify that a thing instance should be read-only when creating data, set the [HealthRecordItem.IsReadOnly](/healthvault/sdks/dotnet/microsoft.health.healthrecorditem.isreadonly.yml) property to **true**.
+To specify that a thing instance should be read-only when creating data, set the [HealthRecordItem.IsReadOnly](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.healthrecorditem.isreadonly) property to **true**.
 
 To determine if a thing instance is read-only when reading data, check the value of the **IsReadOnly** property. Note that you must query for the **Core** or **Effective Permissions** section to retrieve the value of the **IsReadOnly** property.
 
