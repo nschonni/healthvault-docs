@@ -26,7 +26,7 @@ US HealthVault instance
 |----|----|----|
 | Shell PPE URL | <https://account.healthvault-ppe.com/> | Used by developers to create HealthVault accounts for developing and testing applications in US PPE. | 
 | Platform PPE URL | <https://platform.healthvault-ppe.com/platform> | The HealthVault platform service URL for US PPE. |
-| Platform PPE IP Range | 157.55.174.247 | The IP range for US HealthVault platform PPE. | 
+| Platform PPE IP Range | 157.55.174.247 | The IP range for US HealthVault platform PPE. |  
 | REST URL | <https://data.ppe.microsofthealth.net> | The URL for the HealthVault REST API in US PPE. | 
 | REST IP | 157.55.174.228 | The IP address for the US | 
 | Application Configuration Center (ACC) | <https://config.healthvault-ppe.com/> | The ACC URL for creating and managing apps in all instances | 
