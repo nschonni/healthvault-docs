@@ -151,7 +151,6 @@ Function Combine-ThingInfo($xmlInfo, $xsdInfo) {
     $thing.Xsd = $xsdInfo.Raw
     $thing.Remarks = $xsdInfo.Remarks
     $thing.Summary = $xsdInfo.Summary
-    $thing.XmlExampleFWLink = $xsdInfo.XmlExampleFWLink
     $thing.DotNetClassInfo = $xsdInfo.DotNetClassInfo
     $thing.IsSingletonType = $xmlInfo.IsSingletonType
     $thing.IsImmutable = $xmlInfo.IsImmutable
@@ -202,11 +201,10 @@ Function Parse-XsdInfo($xsdItem, $backupId) {
     $info.Name = $documentation.'type-name'
     $info.ThingTypeId = if ($documentation.'type-id') {$documentation.'type-id'} else {$backupId}
     $info.RelatedDataTypeGuids = @($documentation.'seealso-thing-type-version-id' | ?{$_})
-    $info.XmlExampleFWLink = $documentation.'sample-xml-fwlink'
 
     $script:currentTypeId = $info.ThingTypeId
 
-    $classInfo = @{"Name" = $documentation.'type-name'; "FWLink" = $documentation.'wrapper-class-fwlink'}
+    $classInfo = @{"Name" = $documentation.'type-name'; "ClassName" = $documentation.'wrapper-class-name'}
     $info.DotNetClassInfo = $classInfo
 
     $info.RelatedLinks = @($documentation.'related-links'.'related-link' | ?{$_} | %{@{"Text" = (Clean-AndTrim $_.text);"Link" = (Clean-AndTrim $_.link)}})
@@ -543,10 +541,6 @@ Function md-Link($displayText, $link) {
     "`[$displayText`]`($link`)"
 }
 
-Function md-FWLink($displayText, $fwlinkId) {
-    md-Link $displayText "https://go.microsoft.com/fwlink/?LinkID=$fwlinkId"
-}
-
 Function md-XrefLink($name, $id) {
     md-Link $name "xref:HV_$id"
 }
@@ -660,10 +654,11 @@ ${relatedArticles}
 Function New-DotNetReference($thingTypeInfo) {
     if ($thingTypeInfo.DotNetClassInfo -and
         $thingTypeInfo.DotNetClassInfo.Name -and
-        $thingTypeInfo.DotNetClassInfo.FWLink) {
+        $thingTypeInfo.DotNetClassInfo.ClassName) {
         return @"
 `n## .NET reference
-- $(md-FWLink $thingTypeInfo.DotNetClassInfo.Name $thingTypeInfo.DotNetClassInfo.FWLink)
+- $(md-Link "Microsoft.Health.ItemTypes.$($thingTypeInfo.DotNetClassInfo.ClassName)" "https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.$($thingTypeInfo.DotNetClassInfo.ClassName.ToLower())")
+- $(md-Link "Microsoft.HealthVault.ItemTypes.$($thingTypeInfo.DotNetClassInfo.ClassName)" "https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.$($thingTypeInfo.DotNetClassInfo.ClassName.ToLower())")
 
 "@
     }
