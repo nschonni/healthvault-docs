@@ -10,9 +10,9 @@ description: Invite patients to a remote monitoring trial
 
 # Generate and send invitations to remote patients
 
-In the remote monitoring scenario, your application will need to invite users to participate in your program. This allows your app to get offline access to the user's data and issue ActionPlans to her. 
+In a remote monitoring scenario, your application will need to invite users to participate in your program. This allows your app to seek access to user's data and assign action plans to participants. 
 
-At a high level, the process to generate and send invitation codes is:
+The process to generate and send invitation codes is:
 
 1.  Create an offline web application connection.
 2.  Authenticate the connection. This uses the certificate you registered earlier to establish trust.
