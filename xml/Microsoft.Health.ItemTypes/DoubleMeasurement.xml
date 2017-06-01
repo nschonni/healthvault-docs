@@ -4,7 +4,7 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.DoubleMeasurement" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.Measurement&lt;System.Double&gt;</BaseTypeName>
@@ -14,7 +14,9 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a measurement of type double and display.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -24,11 +26,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DoubleMeasurement.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.DoubleMeasurement" /> class using 
+            default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -38,14 +43,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DoubleMeasurement.#ctor(System.Double)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="value" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="value">
+            The value of the measurement.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.DoubleMeasurement" /> class 
+            with the specified value.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -55,16 +65,28 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DoubleMeasurement.#ctor(System.Double,Microsoft.Health.ItemTypes.DisplayValue)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="value" Type="System.Double" />
         <Parameter Name="displayValue" Type="Microsoft.Health.ItemTypes.DisplayValue" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <param name="displayValue">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="value">
+            The value of the measurement.
+            </param>
+        <param name="displayValue">
+            The display value of the measurement. This should contain the
+            exact measurement as entered by the user even if it uses some
+            other unit of measure. The display value
+            <see cref="P:Microsoft.Health.ItemTypes.DisplayValue.Units" /> and 
+            <see cref="P:Microsoft.Health.ItemTypes.DisplayValue.UnitsCode" /> 
+            represents the unit of measure for the user entered value.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.DoubleMeasurement" /> class 
+            with the specified value and optional display value.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -74,7 +96,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DoubleMeasurement.AssertMeasurementValue(System.Double)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -83,9 +105,16 @@
         <Parameter Name="value" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="value">
+            The value of the measurement.
+            </param>
+        <summary>
+            Verifies that the value is a legal value.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is less than or equal to zero.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetValueString">
@@ -94,7 +123,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DoubleMeasurement.GetValueString(System.Double)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -104,8 +133,12 @@
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Retrieves a string representation of the measurement in the base units.
+            </summary>
+        <returns>
+            The measurement as a string in the base units.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -115,7 +148,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DoubleMeasurement.ParseValueXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -124,8 +157,12 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator"> 
+            The XML node representing the measurement.
+            </param>
+        <summary> 
+            Populates the data for the measurement from the XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -135,15 +172,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DoubleMeasurement.ValueElementName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the name of the element that defines the value for 
+            the measurement.
+            </summary>
+        <value>
+            A string representing the element name.
+            </value>
+        <remarks>
+            The default value for the element name is "value" but should be
+            overridden in derived classes to provide a specific element name
+            where appropriate.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteValueXml">
@@ -152,7 +198,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DoubleMeasurement.WriteValueXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -161,8 +207,12 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer"> 
+            The XmlWriter to write the measurement to.
+            </param>
+        <summary> 
+            Writes the measurement to the specified XML writer.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

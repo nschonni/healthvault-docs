@@ -4,15 +4,23 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.TestResultRangeValue" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents a lab test result range value.
+            </summary>
+    <remarks>
+            A range consists of minimum and/or maximum values.
+            An open-ended range may be created by omitting the minimum or maximum value.
+            
+            For example, "greater than 3.5" is created by setting the minimum value to 3.5 and
+            the maximum value to null. 
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +29,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.TestResultRangeValue.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the LabTestResultRangeValue class with 
+            default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,14 +46,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.TestResultRangeValue.Maximum" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the maximum value of the range.
+            </summary>
+        <value>
+            A value of type double? that represents the maximum value of the range.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -52,14 +67,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.TestResultRangeValue.Minimum" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the minimum value of the range.
+            </summary>
+        <value>
+            A value of type double? that represents the minimum value of the range.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -69,7 +88,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.TestResultRangeValue.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -78,9 +97,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator"> 
+            The XML node representing the range.
+            </param>
+        <summary> 
+            Populates the data for the range from the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -89,15 +115,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.TestResultRangeValue.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+             Gets a string representation of the test result range value.
+             </summary>
+        <returns>
+             A string representation of the test result range value item.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -107,7 +137,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.TestResultRangeValue.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -117,10 +147,22 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the outer element for the range data.
+            </param>
+        <param name="writer"> 
+            The XmlWriter to write the range data to.
+            </param>
+        <summary> 
+            Writes the range data to the specified XML writer.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

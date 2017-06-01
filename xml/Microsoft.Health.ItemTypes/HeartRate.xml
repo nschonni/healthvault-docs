@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.HeartRate" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            A measurement of the record owner's heart rate.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HeartRate.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates an instance of <see cref="T:Microsoft.Health.ItemTypes.HeartRate" /> with default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,17 +39,25 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HeartRate.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime,System.Int32)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="when" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
         <Parameter Name="value" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="when">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="when">The date and time the measurement was taken.</param>
+        <param name="value">The heart rate in beats per minute (BPM).</param>
+        <summary>
+            Creates an instance of <see cref="T:Microsoft.Health.ItemTypes.HeartRate" /> with specified parameters. 
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="when" /> is <b>null</b>. 
+            </exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="value" /> is less than zero.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="MeasurementConditions">
@@ -54,15 +66,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HeartRate.MeasurementConditions" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the conditions under which the heart rate was measured.
+            </summary>
+        <value>
+            The conditions under which the heart rate was measured. 
+            </value>
+        <remarks>
+            Examples: Resting, Active, Morning, Evening. If the value is not known, it will be set to <b>null</b>. The preferred vocabulary 
+            for this value is "heart-rate-measurement-conditions".
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="MeasurementFlags">
@@ -71,15 +90,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HeartRate.MeasurementFlags" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the additional information about the measurement. 
+            </summary>
+        <value>
+            The additional information about the measurement
+            </value>
+        <remarks>
+            Examples: Incomplete measurement, irregular heartbeat, triple scan. The preferred
+            vocabulary for this value is "heart-rate-measurement-flags". If the value is not 
+            known, it will be set to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="MeasurementMethod">
@@ -88,15 +115,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HeartRate.MeasurementMethod" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the technique used to obtain the measurement. 
+            </summary>
+        <value>
+            The technique used to obtain the measurement.
+            </value>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>. The preferred vocabulary 
+            for this value is "heart-rate-measurement-method".
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -105,7 +139,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HeartRate.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -114,9 +148,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the heart rate data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.HeartRate" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            If the first node in <paramref name="typeSpecificXml" /> is not
+            a "heart-rate" node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -125,15 +167,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HeartRate.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets the description of a heart rate instance. 
+            </summary>
+        <returns>
+            A string representation of the heart rate item. 
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -143,13 +189,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.HeartRate.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the heart rate item type.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -159,15 +207,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HeartRate.Value" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the heart rate in beats per minutes (BPM). 
+            </summary>
+        <value>
+            An integer representing the heart rate in beats per minute(BPM).
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            If the <paramref name="value" /> parameter is less than zero.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="When">
@@ -176,15 +231,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HeartRate.When" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the date and time of this measurement.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing the date 
+            and time.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -193,7 +256,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HeartRate.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -202,9 +265,19 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the heart rate data to. 
+            </param>
+        <summary>
+            Writes the heart rate data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.HeartRate.When" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

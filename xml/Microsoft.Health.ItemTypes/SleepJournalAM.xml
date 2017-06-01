@@ -4,14 +4,17 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.SleepJournalAM" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a health record item type that encapsulates a sleep journal 
+            morning entry.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +24,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.SleepJournalAM.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.SleepJournalAM" /> class with 
+            default values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,7 +45,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.SleepJournalAM.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime,Microsoft.Health.ItemTypes.ApproximateTime,Microsoft.Health.ItemTypes.ApproximateTime,System.Int32,System.Int32,Microsoft.Health.ItemTypes.WakeState)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="when" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
@@ -46,14 +56,37 @@
         <Parameter Name="wakeState" Type="Microsoft.Health.ItemTypes.WakeState" />
       </Parameters>
       <Docs>
-        <param name="when">To be added.</param>
-        <param name="bedtime">To be added.</param>
-        <param name="wakeTime">To be added.</param>
-        <param name="sleepMinutes">To be added.</param>
-        <param name="settlingMinutes">To be added.</param>
-        <param name="wakeState">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="when">
+            The date and time when the AM sleep journal entry was taken.
+            </param>
+        <param name="bedtime">
+            The approximate time the person went to bed.
+            </param>
+        <param name="wakeTime">
+            The approximate time the person woke up.
+            </param>
+        <param name="sleepMinutes">
+            The number of minutes the person slept.
+            </param>
+        <param name="settlingMinutes">
+            The number of minutes it took the person to fall asleep after
+            going to bed.
+            </param>
+        <param name="wakeState">
+            The state of the person when they awoke.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.SleepJournalAM" /> class 
+            specifying the mandatory values.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="when" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="sleepMinutes" /> parameter or 
+            <paramref name="settlingMinutes" /> parameter is negative.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Awakenings">
@@ -62,15 +95,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.SleepJournalAM.Awakenings" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.Occurrence&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the occurrences of awakenings that occurred during
+            sleeping period.
+            </summary>
+        <value>
+            A collection representing the number of awakenings.
+            </value>
+        <remarks>
+            To add awakenings, add new <see cref="T:Microsoft.Health.ItemTypes.Occurrence" /> instances to the returned
+            collection.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Bedtime">
@@ -79,15 +120,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.SleepJournalAM.Bedtime" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the when the person went to bed.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateTime" /> instance representing the time.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b> when set.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Medications">
@@ -96,15 +144,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.SleepJournalAM.Medications" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets a description of the medications taken before bed.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the description.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the medications should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -113,7 +167,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.SleepJournalAM.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -122,9 +176,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the morning sleep journal data from.
+            </param>
+        <summary>
+            Populates this SleepJournalAM instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in the <paramref name="typeSpecificXml" /> parameter 
+            is not a sleep-am node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="SettlingMinutes">
@@ -133,15 +195,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.SleepJournalAM.SettlingMinutes" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the number of minutes spent settling into sleep.
+            </summary>
+        <value>
+            An integer representing the number of minutes.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is less than or equal to zero.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="SleepMinutes">
@@ -150,15 +219,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.SleepJournalAM.SleepMinutes" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the number of minutes slept.
+            </summary>
+        <value>
+            An integer representing the number of minutes.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is less than or equal to zero.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -167,15 +243,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.SleepJournalAM.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the sleep journal entry.
+            </summary>
+        <returns>
+            A string representing the sleep journal entry.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -185,13 +265,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.SleepJournalAM.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -201,14 +283,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.SleepJournalAM.WakeState" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.WakeState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the state of the person when they awoke.
+            </summary>
+        <value>
+            A <see cref="P:Microsoft.Health.ItemTypes.SleepJournalAM.WakeState" /> value representing the state.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -218,15 +304,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.SleepJournalAM.WakeTime" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the when the person woke up.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateTime" /> instance representing the time.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b> when set.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="When">
@@ -235,15 +328,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.SleepJournalAM.When" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the when the journal entry is made.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing the 
+            date and time.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b> when set.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -252,7 +353,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.SleepJournalAM.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -261,9 +362,22 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the morning sleep journal data to.
+            </param>
+        <summary>
+            Writes the morning sleep journal data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.SleepJournalAM.When" />, <see cref="P:Microsoft.Health.ItemTypes.SleepJournalAM.Bedtime" />, 
+            <see cref="P:Microsoft.Health.ItemTypes.SleepJournalAM.WakeTime" />, <see cref="P:Microsoft.Health.ItemTypes.SleepJournalAM.SleepMinutes" />,
+            <see cref="P:Microsoft.Health.ItemTypes.SleepJournalAM.SettlingMinutes" />, or <see cref="P:Microsoft.Health.ItemTypes.SleepJournalAM.WakeState" /> parameter 
+            has not been set.
+            </exception>
       </Docs>
     </Member>
   </Members>

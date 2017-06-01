@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.HeartRateZone" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a target heart rate zone.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HeartRateZone.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.HeartRateZone" /> class with default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,7 +39,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HeartRateZone.#ctor(System.String,System.Double,System.Double)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
@@ -43,10 +47,21 @@
         <Parameter Name="upperBoundaryPercentage" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <param name="lowerBoundaryPercentage">To be added.</param>
-        <param name="upperBoundaryPercentage">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">
+            The name of the zone.
+            </param>
+        <param name="lowerBoundaryPercentage">
+            The heart rate as a percentage of max heart rate for the lower 
+            boundary of the zone.
+            </param>
+        <param name="upperBoundaryPercentage">
+            The heart rate as a percentage of max heart rate for the upper 
+            boundary of the zone.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.HeartRateZone" /> class with 
+            the specified relative heart rate boundaries.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -56,7 +71,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HeartRateZone.#ctor(System.String,System.Int32,System.Int32)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
@@ -64,10 +79,21 @@
         <Parameter Name="upperBoundaryHeartRate" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <param name="lowerBoundaryHeartRate">To be added.</param>
-        <param name="upperBoundaryHeartRate">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">
+            The name of the zone.
+            </param>
+        <param name="lowerBoundaryHeartRate">
+            The heart rate in Beats Per Minute (BPM) for the lower boundary
+            of the zone.
+            </param>
+        <param name="upperBoundaryHeartRate">
+            The heart rate in Beats Per Minute (BPM) for the upper boundary
+            of the zone.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.HeartRateZone" /> class with 
+            the specified zone name and absolute heart rate boundaries.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -77,15 +103,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HeartRateZone.AbsoluteLowerBoundary" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the lower boundary of the heart rate zone as a
+            specific heart rate.
+            </summary>
+        <value>
+            An integer representing the boundary.
+            </value>
+        <remarks>
+            Only <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.RelativeLowerBoundary" /> or 
+            <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.AbsoluteLowerBoundary" /> can be stored. If both are
+            set, only <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.AbsoluteLowerBoundary" /> is stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="AbsoluteUpperBoundary">
@@ -94,15 +129,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HeartRateZone.AbsoluteUpperBoundary" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the upper boundary of the heart rate zone as a
+            specific heart rate.
+            </summary>
+        <value>
+            An integer representing the boundary.
+            </value>
+        <remarks>
+            Only <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.RelativeUpperBoundary" /> or 
+            <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.AbsoluteUpperBoundary" /> can be stored. If both are
+            set, only <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.AbsoluteUpperBoundary" /> is stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -111,15 +155,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HeartRateZone.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the name for the heart rate zone.
+            </summary>
+        <value>
+            A string representing the name.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the name should not be stored.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -128,7 +181,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HeartRateZone.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -137,9 +190,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator">
+            The XML containing the heart rate zone information.
+            </param>
+        <summary>
+            Populates the data from the specified XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="RelativeLowerBoundary">
@@ -148,15 +208,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HeartRateZone.RelativeLowerBoundary" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the lower boundary of the heart rate zone as a
+            percentage of the person's maximum heart rate.
+            </summary>
+        <value>
+            A number representing the boundary.
+            </value>
+        <remarks>
+            Only <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.RelativeLowerBoundary" /> or 
+            <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.AbsoluteLowerBoundary" /> can be stored. If both are
+            set, only <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.AbsoluteLowerBoundary" /> is stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="RelativeUpperBoundary">
@@ -165,15 +234,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HeartRateZone.RelativeUpperBoundary" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the upper boundary of the heart rate zone as a
+            percentage of the person's maximum heart rate.
+            </summary>
+        <value>
+            A number representing the boundary.
+            </value>
+        <remarks>
+            Only <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.RelativeUpperBoundary" /> or 
+            <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.AbsoluteUpperBoundary" /> can be stored. If both are
+            set, only <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.AbsoluteUpperBoundary" /> is stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -182,7 +260,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HeartRateZone.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -192,10 +270,30 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the outer node for the heart rate zone.
+            </param>
+        <param name="writer">
+            The XML writer into which the heart rate zone should be 
+            written.
+            </param>
+        <summary>
+            Writes the XML representation of the heart rate zone into
+            the specified XML writer.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="nodeName" /> is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If the <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.RelativeLowerBoundary" />,  
+            <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.AbsoluteLowerBoundary" />, 
+            or <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.RelativeUpperBoundary" />, or
+            <see cref="P:Microsoft.Health.ItemTypes.HeartRateZone.AbsoluteUpperBoundary" /> property is not set.
+            </exception>
       </Docs>
     </Member>
   </Members>

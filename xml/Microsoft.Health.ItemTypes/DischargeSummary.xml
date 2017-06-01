@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.DischargeSummary" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a health record item that encapsulates a discharge summary.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +23,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DischargeSummary.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.DischargeSummary" /> class with default 
+            values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,15 +44,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DischargeSummary.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="when" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
       </Parameters>
       <Docs>
-        <param name="when">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="when">
+            The date and time of the discharge summary.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.DischargeSummary" /> class 
+            specifying the mandatory values.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="when" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="AdditionalDiagnosis">
@@ -52,15 +69,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.AdditionalDiagnosis" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the additional diagnosis for the discharge summary.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the additional diagnosis.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the additional diagnosis should not be 
+            stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="AdditionalProcedure">
@@ -69,15 +93,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.AdditionalProcedure" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the additional procedure for the discharge summary.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the additional 
+            procedure.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the additional procedure should not be 
+            stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="AdmittingDiagnosis">
@@ -86,15 +118,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.AdmittingDiagnosis" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the admitting diagnosis for the discharge summary.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the diagnosis.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the admitting diagnosis should not be 
+            stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Category">
@@ -103,15 +142,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.Category" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the category for the discharge summary.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the category.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the category should not be 
+            stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="DischargeDateTime">
@@ -120,15 +166,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.DischargeDateTime" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the approximate date and time discharged.
+            </summary>
+        <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDateTime" /> instance representing the date and time.
+            </value>
+        <remarks>
+            An approximate date must have a year and may also have the month, 
+            day, or both.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -137,7 +190,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DischargeSummary.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -146,9 +199,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the discharge summary data from.
+            </param>
+        <summary>
+            Populates this discharge summary instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node of the <paramref name="typeSpecificXml" /> parameter is not
+            a discharge summary node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="PrimaryProvider">
@@ -157,15 +218,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.PrimaryProvider" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.PersonItem</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the primary provider contact information.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.PersonItem" /> instance representing the primary provider.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the primary provider contact information
+            should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="PrimaryProviderEndorsement">
@@ -174,15 +242,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.PrimaryProviderEndorsement" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the date and time for the primary provider endorsement details.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing the date and time.
+            </value>
+        <remarks>
+            The value defaults to the current year, month, and day.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="PrincipalDiagnosis">
@@ -191,15 +265,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.PrincipalDiagnosis" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the principal diagnosis for the discharge summary.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the principal diagnosis.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the principal diagnosis should not be 
+            stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="PrincipalProcedure">
@@ -208,15 +289,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.PrincipalProcedure" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the principal procedure for the discharge summary.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the principal procedure.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the principal procedure should not be 
+            stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="PrincipalProcedurePhysician">
@@ -225,15 +313,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.PrincipalProcedurePhysician" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.PersonItem</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the principal procedure physician contact information.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.PersonItem" /> instance representing the contact information.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the principal procedure physician contact information
+            should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="SecondaryProvider">
@@ -242,15 +337,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.SecondaryProvider" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.PersonItem</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the secondary provider contact information.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.PersonItem" /> instance representing the secondary provider.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the secondary provider contact information
+            should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="SecondaryProviderEndorsement">
@@ -259,15 +361,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.SecondaryProviderEndorsement" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the date and time for the secondary provider endorsement details.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing the date and time.
+            </value>
+        <remarks>
+            The value defaults to the current year, month, and day.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Setting">
@@ -276,15 +384,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.Setting" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the setting for the discharge summary.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the setting.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the setting should not be 
+            stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Specialty">
@@ -293,15 +408,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.Specialty" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the medical specialty for the discharge summary.
+            </summary>
+        <value>
+            A string representing the specialty.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the medical specialty should not be 
+            stored.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Text">
@@ -310,15 +435,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.Text" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the textual content for the discharge summary.
+            </summary>
+        <value>
+            A string representing the text content.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the medical specialty should not be 
+            stored.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -327,15 +462,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DischargeSummary.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the discharge summary.
+            </summary>
+        <returns>
+            A string representation of the discharge summary.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -345,15 +484,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.Type" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the type for the discharge summary.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the type.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the type should not be 
+            stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="TypeId">
@@ -362,13 +508,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.DischargeSummary.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -378,15 +526,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.DischargeSummary.When" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the date and time when the discharge summary occurred.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing the date 
+            and time.
+            </value>
+        <remarks>
+            The value defaults to the current year, month, and day.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -395,7 +553,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.DischargeSummary.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -404,9 +562,16 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the discharge summary data to.
+            </param>
+        <summary>
+            Writes the discharge summary data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

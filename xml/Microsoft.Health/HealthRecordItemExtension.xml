@@ -4,15 +4,32 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthRecordItemExtension" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents an extension to a health record item.
+            </summary>
+    <remarks>
+            Applications can augment the HealthVault defined data for a 
+            health record item type with application or vendor specific data by 
+            implementing item extensions.
+            <br /><br />
+            Applications that implement a health record item extension should 
+            derive from this class and register their extension by calling 
+            <see cref="M:Microsoft.Health.ItemTypeManager.RegisterExtensionHandler(System.String,System.Type)" />.
+            Whenever the HealthVault SDK reads an extension with the specified
+            extension source an instance of the derived HealthRecordItemExtension will be
+            created and it's <see cref="M:Microsoft.Health.HealthRecordItemExtension.ParseXml(System.Xml.XPath.IXPathNavigable)" /> 
+            method will be called to populate the data of the class from the 
+            web-service XML.
+            Common portions of the item extension data will be parsed by the base
+            class and exposed as properties.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +38,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemExtension.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Constructor used when creating an instance for XML deserialization.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,15 +54,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemExtension.#ctor(System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="source" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="source">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="source">
+            The source identifier for the extension. This is used to uniquely
+            identify the extension data.
+            </param>
+        <summary>
+            Constructs a health record item extension for the specified source.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="source" /> is null or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ExtensionData">
@@ -52,15 +79,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemExtension.ExtensionData" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XPath.IXPathNavigable</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the extension data for the extension.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            To modify the extension attributes use the other properties of this
+            class. To modify the extension data manipulate the returned
+            XML document unless a derived type is available, in which case
+            you should use the properties and method of the derived type to
+            manipulate the data.
+            <br /><br /></remarks>
       </Docs>
     </Member>
     <Member MemberName="Logo">
@@ -69,15 +104,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemExtension.Logo" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the URL to a logo for display use with the extension.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The logo is optional and will be ignored if set to null.
+            <br /><br />
+            In some applications a generic view of the health record item will be
+            shown. If a logo is provided on an extension those applications
+            can embed the logo in the user interface to show the user that
+            there is additional data. It can also be used along with the
+            <see cref="P:Microsoft.Health.HealthRecordItemExtension.Transform" /> to provide a link to the extension data.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -86,7 +131,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemExtension.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -95,9 +140,21 @@
         <Parameter Name="extensionData" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="extensionData">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="extensionData">
+            The XML to retrieve the extension data from. Note, this may be
+            an <see cref="T:System.Xml.XmlDocument" />.
+            </param>
+        <summary>
+            Populates the extension data from the specified XML.
+            </summary>
+        <remarks>
+            Derived classes should override this method to parse the extension
+            XML and populate class members with the data. The common extension
+            attributes are handled by the base class before this method is
+            called.
+            <br /><br />
+            The default implementation of this method does nothing.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Source">
@@ -106,15 +163,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemExtension.Source" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the extension source identifier.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The source is used to identify the extension. To register a class
+            as a handler for a specific extension source see 
+            <see cref="M:Microsoft.Health.ItemTypeManager.RegisterExtensionHandler(System.String,System.Type)" />.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> is null or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Transform">
@@ -123,15 +189,28 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemExtension.Transform" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the URL to an XSL transform which can transform the
+            XML of the extension into HTML suitable for display in a small
+            form or popup.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The transform is optional and will be ignored if set to null.
+            <br /><br />
+            In some applications a generic view of the health record item will be
+            shown. In such applications the extension data can be rendered as 
+            HTML using the specified transform. Applications should consider the
+            security implications of running external transforms within the application
+            context.
+            HealthVault Shell does not render extensions using this transform.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Version">
@@ -140,15 +219,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordItemExtension.Version" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the version of the extension.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The version is optional and will be ignored if set to null.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -157,7 +240,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordItemExtension.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -166,9 +249,24 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="writer">
+            The XML writer to write the data portion of the extension to.
+            </param>
+        <summary>
+            Writes the data portion of the extension to the specified XML
+            writer.
+            </summary>
+        <remarks>
+            Derived classes should override this method to add extension 
+            specific data to the extension XML for the item. Note, the base
+            class handles writing the extension node and it's attributes to
+            the writer. The derived class implementation should only write 
+            the inner nodes of the extension.
+            <br /><br />
+            The base implementation writes the contents of the 
+            <see cref="P:Microsoft.Health.HealthRecordItemExtension.ExtensionData" /> to the writer and should not be called
+            by the derived class.
+            </remarks>
       </Docs>
     </Member>
   </Members>

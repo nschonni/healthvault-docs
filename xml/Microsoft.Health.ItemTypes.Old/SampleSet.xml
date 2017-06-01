@@ -4,15 +4,20 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Old.SampleSet" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes.Old</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents a set of samples within a larger activity or reading.
+            </summary>
+    <remarks>
+            An example of a sample set is a set of heart rate readings during an 
+            aerobic activity.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +26,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.SampleSet.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet" /> class with no value.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,15 +42,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.SampleSet.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="baseTime" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
       </Parameters>
       <Docs>
-        <param name="baseTime">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="baseTime">
+            The time when the samples in the set started.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet" /> class with 
+            the specified start time for the set.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="baseTime" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -52,7 +67,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.SampleSet.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime,System.String,Microsoft.Health.ItemTypes.CodableValue)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="baseTime" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
@@ -60,11 +75,28 @@
         <Parameter Name="sampleUnitCode" Type="Microsoft.Health.ItemTypes.CodableValue" />
       </Parameters>
       <Docs>
-        <param name="baseTime">To be added.</param>
-        <param name="sampleUnit">To be added.</param>
-        <param name="sampleUnitCode">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="baseTime">
+            The time when the samples in the set started.
+            </param>
+        <param name="sampleUnit">
+            Text description of the unit of measure for the sample
+            values in this set.
+            </param>
+        <param name="sampleUnitCode">
+            Vocabulary code for the unit of measure for the sample
+            values in this set.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet" /> class with 
+            the specified start time for the set.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="baseTime" /> or <paramref name="sampleUnitCode" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="sampleUnit" /> parameter is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="BaseTime">
@@ -73,15 +105,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.SampleSet.BaseTime" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the time when the sample set started recording samples.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> representing the starting 
+            time for sample recording.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -90,7 +130,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.SampleSet.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -99,9 +139,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator"> 
+            The XML node representing the sample set.
+            </param>
+        <summary> 
+            Populates the data for the sample set from the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Samples">
@@ -110,14 +157,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.SampleSet.Samples" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.Old.Sample&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets a collection containing the samples in the set.
+            </summary>
+        <value>
+            A collection of samples.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -127,15 +178,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.SampleSet.SampleUnit" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets a text description of the unit of measure for the sample
+            values in this set.
+            </summary>
+        <value>
+            A string representing the description.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter is <b>null</b>, empty, or contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="SampleUnitCode">
@@ -144,15 +203,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.SampleSet.SampleUnitCode" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets the vocabulary code for the unit of measure for the sample
+            values in this set.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> representing the vocabulary 
+            code.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -161,7 +229,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.SampleSet.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -171,10 +239,26 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the outer element for the sample set.
+            </param>
+        <param name="writer"> 
+            The XmlWriter to write the sample set to.
+            </param>
+        <summary> 
+            Writes the sample set to the specified XML writer.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.Old.SampleSet.BaseTime" />, <see cref="P:Microsoft.Health.ItemTypes.Old.SampleSet.SampleUnit" />, or <see cref="P:Microsoft.Health.ItemTypes.Old.SampleSet.SampleUnitCode" /> 
+            property has not been set.
+            </exception>
       </Docs>
     </Member>
   </Members>

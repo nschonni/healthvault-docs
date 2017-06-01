@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Events.Subscription" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            The base class for all subscriptions.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,13 +23,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Events.Subscription.CommonSubscriptionData" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.Events.CommonSubscriptionData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the <see cref="P:Microsoft.Health.Events.Subscription.CommonSubscriptionData" /> that is associated with this subscription.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -38,7 +42,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.Subscription.Deserialize(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.Events.Subscription</ReturnType>
@@ -47,10 +51,25 @@
         <Parameter Name="subscriptionNavigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="subscriptionNavigator">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="subscriptionNavigator">The xml representation to deserialize.</param>
+        <summary>
+             Create an instance of a Subscription by deserializing the subscription XML.
+             </summary>
+        <returns>The subscription.</returns>
+        <remarks>
+             The returned type will be a type derived from Subscription, such as the <see cref="T:Microsoft.Health.Events.HealthRecordItemChangedSubscription" /> class. 
+             </remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="subscriptionNavigator" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="subscriptionNavigator" /> parameter XML does not contain 
+             a subscription node.
+             </exception>
+        <exception cref="T:System.InvalidOperationException">
+             The <paramref name="subscriptionNavigator" /> parameter XML has an unrecognized 
+             subscription type.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="Serialize">
@@ -59,7 +78,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.Subscription.Serialize(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -68,9 +87,17 @@
         <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="xmlWriter">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="xmlWriter">The XmlWriter to write the data to.</param>
+        <summary>
+            Save the subscription to XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="xmlWriter" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.InvalidOperationException">
+            The <seealso name="CommonItemSubscriptionData" /> property is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

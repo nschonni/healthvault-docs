@@ -4,15 +4,26 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ApplicationProvisioning.Provisioner" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            An application provisioning application can use the method of this class to 
+            provision and update child applications.
+            </summary>
+    <remarks>
+            HealthVault allows certain types of application to be used to instantiate, configure, and
+            update applications that are related to it.  For example, one implementation of an application
+            may be used and installed as many different application instances. To allow for these 
+            separate applications to be instantiated HealthVault enables a "parent" application to
+            tell HealthVault about a new installation of the application and provide certain configuration
+            values for it.  That application will then be able access HealthVault with a unique 
+            application identifier.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName="AddApplication">
@@ -21,7 +32,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ApplicationProvisioning.Provisioner.AddApplication(Microsoft.Health.Web.OfflineWebApplicationConnection,Microsoft.Health.ApplicationInfo)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
@@ -31,11 +42,33 @@
         <Parameter Name="applicationConfigurationInformation" Type="Microsoft.Health.ApplicationInfo" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="applicationConfigurationInformation">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="connection">
+             A HealthVault connection instantiated as the provisioning application.
+             </param>
+        <param name="applicationConfigurationInformation">
+             Configuration information about the application being provisioned.
+             </param>
+        <summary>
+             Adds a HealthVault application instance for a "child" application of the calling
+             application.
+             </summary>
+        <returns>
+             The new application identifier for the new application provided by HealthVault.
+             </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="connection" /> or <paramref name="applicationConfigurationInformation" />
+             is <b>null</b>.
+             </exception>
+        <exception cref="T:System.ArgumentException">
+             If <see cref="P:Microsoft.Health.ApplicationInfo.Name" />, <see cref="P:Microsoft.Health.ApplicationInfo.PublicKeys" />,
+             <see cref="P:Microsoft.Health.ApplicationInfo.OfflineBaseAuthorizations" />, <see cref="P:Microsoft.Health.ApplicationInfo.Description" />,
+             <see cref="P:Microsoft.Health.ApplicationInfo.AuthorizationReason" />, or <see cref="P:Microsoft.Health.ApplicationInfo.LargeLogo" /> 
+             is not specified.
+             </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+             If there is an error when the HealthVault service is called.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="GetApplication">
@@ -44,7 +77,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ApplicationProvisioning.Provisioner.GetApplication(Microsoft.Health.Web.OfflineWebApplicationConnection,System.Guid)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ApplicationInfo</ReturnType>
@@ -54,11 +87,34 @@
         <Parameter Name="childApplicationId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="childApplicationId">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="connection">
+            The connection to use to get the application information.
+            </param>
+        <param name="childApplicationId">
+            The unique application identifier for the child application to get the configuration
+            information for.
+            </param>
+        <summary>
+            Gets the configuration information for the specified child application ID.
+            </summary>
+        <returns>
+            Configuration information for the specified child application.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="connection" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="childApplicationId" /> is <see cref="F:System.Guid.Empty" />.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceAccessDeniedException">
+            If the application specified in the <paramref name="connection" /> is not a master
+            application, or if <paramref name="childApplicationId" /> does not identify a child
+            application of the calling application.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If there is an error when the HealthVault service is called.
+            </exception>
       </Docs>
     </Member>
   </Members>

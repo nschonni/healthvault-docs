@@ -4,15 +4,18 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes.Old</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents a health record item type that encapsulates a family history.
+            </summary>
+    <remarks>Note: Please use the new version of this data type instead of this version.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,12 +24,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1" /> class 
+            with default values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,15 +45,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.#ctor(Microsoft.Health.ItemTypes.CodableValue)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="condition" Type="Microsoft.Health.ItemTypes.CodableValue" />
       </Parameters>
       <Docs>
-        <param name="condition">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="condition">
+            The condition for the family history.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1" /> class 
+            specifying the mandatory values.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="condition" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="AgeOfOnset">
@@ -52,15 +70,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.AgeOfOnset" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the age of onset for the condition.
+            </summary>
+        <value>
+            An integer representing the age.
+            </value>
+        <remarks>
+            If the age of onset is not known, the value can be set to
+            <b>null</b>.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is negative.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="AgeOfResolution">
@@ -69,15 +97,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.AgeOfResolution" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the age of resolution for the condition.
+            </summary>
+        <value>
+            An integer representing the age.
+            </value>
+        <remarks>
+            If the age of resolution is not known, the value can be set to
+            <b>null</b>.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is negative.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Condition">
@@ -86,15 +124,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.Condition" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the condition for the family history condition.
+            </summary>
+        <value>
+            An instance of <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> representing the condition.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="DateOfBirth">
@@ -103,14 +148,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.DateOfBirth" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDate</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the date of birth for the family history.
+            </summary>
+        <value>
+            An instance of <see cref="T:Microsoft.Health.ItemTypes.ApproximateDate" /> representing the date. 
+            The default value is the current year, month, and day.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -120,15 +170,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.Duration" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.DurationValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the duration for the family history condition.
+            </summary>
+        <value>
+            An instance of <see cref="T:Microsoft.Health.ItemTypes.DurationValue" /> representing the duration.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the duration should not be 
+            stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="IsRecurring">
@@ -137,15 +194,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.IsRecurring" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets a value indicating whether this is a recurring 
+            condition.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+          <b>true</b> if this is a recurring condition; otherwise, <b>false</b>.
+            If <b>null</b>, it is unknown whether this condition is recurring or not.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -154,7 +217,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -163,9 +226,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the family history data from.
+            </param>
+        <summary>
+            Populates this family history instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            a family history node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Relationship">
@@ -174,15 +245,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.Relationship" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the relationship for the family history condition.
+            </summary>
+        <value>
+            An instance of <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> representing the 
+            relationship.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the relationship should not be 
+            stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Severity">
@@ -191,15 +270,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.Severity" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the severity for the family history condition.
+            </summary>
+        <value>
+            A string representing the severity.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the severity should not be 
+            stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Status">
@@ -208,15 +294,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.Status" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the status for the family history condition.
+            </summary>
+        <value>
+            An instance of <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> representing 
+            the status.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the status should not be 
+            stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -225,15 +319,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the family history item.
+            </summary>
+        <returns>
+            A string representation of the family history item.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -243,13 +341,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -259,7 +362,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -268,9 +371,19 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the family history data to.
+            </param>
+        <summary>
+            Writes the family history data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.Condition" /> has not been set.
+            </exception>
       </Docs>
     </Member>
   </Members>

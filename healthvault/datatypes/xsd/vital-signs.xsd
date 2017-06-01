@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:vit="urn:com.microsoft.wc.thing.vital-signs" xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com.microsoft.wc.thing.vital-signs">
+    
+    <import
+        namespace="urn:com.microsoft.wc.thing.types"
+        schemaLocation="base.xsd" />
+    
+    <import 
+        namespace="urn:com.microsoft.wc.dates" 
+        schemaLocation="dates.xsd"/>
+    
+    <annotation>
+        <documentation>
+            <type-id>73822612-C15F-4B49-9E65-6AF369E55C65</type-id>
+            <type-name>Vital signs</type-name>
+            <wrapper-class-name>VitalSigns</wrapper-class-name>
+            <wrapper-class-fwlink>136239</wrapper-class-fwlink>
+            <sample-xml-fwlink>136240</sample-xml-fwlink>
+            <data-type-guide-fwlink>136238</data-type-guide-fwlink>
+            <summary>
+                A set of vital signs such as body temperature.
+            </summary>
+            <remarks>
+                This thing type describes the vital signs of a person.
+            </remarks>
+            <seealso-thing-type-version-id>3a54f95f-03d8-4f62-815f-f691fc94a500</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>ca3c57f4-f4c1-4e15-be67-0a3caf5414ed</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>dd710b31-2b6f-45bd-9552-253562b9a7c1</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>adaf49ad-8e10-49f8-9783-174819e97051</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>98f76958-e34f-459b-a760-83c1699add38</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>9c48a2b8-952c-4f5a-935d-f3292326bf54</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>1e1ccbfc-a55d-4d91-8940-fa2fbf73c195</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>b81eb4a6-6eac-4292-ae93-3872d6870994</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>40750a6a-89b2-455c-bd8d-b420a4cb500b</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>5d8419af-90f0-4875-a370-0f881c18f6b3</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>5fd15cb7-b717-4b1c-89e0-1dbcf7f815dd</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>3d34d87e-7fc1-4153-800f-f56592cb0d17</seealso-thing-type-version-id>
+            <effective-date-element>when</effective-date-element>
+        </documentation>
+    </annotation>
+    <complexType name="vital-sign-result-type">
+        <sequence>
+            <element name="title" type="t:codable-value">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Clinical name for vital sign.
+                        </summary>
+                        <preferred-vocabulary>vital-statistics</preferred-vocabulary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="value" type="double" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Result value.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="unit" type="t:codable-value" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Result value unit.
+                        </summary>
+                        <preferred-vocabulary>lab-results-units</preferred-vocabulary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="reference-minimum" type="double" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Reference minimum value.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="reference-maximum" type="double" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Reference maximum value.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="text-value" type="string" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Free form textual content of result.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="flag" type="t:codable-value" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Flag for result.
+                        </summary>
+                        <preferred-vocabulary>lab-results-flag</preferred-vocabulary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <element name="vital-signs">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Information related to vital signs.
+                    </summary>
+                    <remarks>
+                        This thing type describes the vital signs of a person.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                    <element name="when" type="d:date-time">
+                        <annotation>
+                            <documentation>
+                                <summary>
+                                    The date and time for the vital signs.
+                                </summary>
+                            </documentation>
+                        </annotation>
+                    </element>
+                <element name="vital-signs-results" type="vit:vital-sign-result-type" minOccurs="0" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Vital sign results.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="site" type="string" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Site for vital sign.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="position" type="string" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Position of vital sign.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

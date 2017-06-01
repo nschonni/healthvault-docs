@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<schema
+    targetNamespace="urn:com.microsoft.wc.thing.meal-definition"
+    xmlns:this="urn:com.microsoft.wc.thing.meal-definition"
+    xmlns:t="urn:com.microsoft.wc.types"
+    xmlns:base="urn:com.microsoft.wc.thing.types"
+    xmlns:d="urn:com.microsoft.wc.dates"
+    xmlns:di="urn:com.microsoft.wc.thing.dietary-intake"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+        
+    <import
+        namespace="urn:com.microsoft.wc.thing.types"
+        schemaLocation="base.xsd" />
+    
+    <import
+        namespace="urn:com.microsoft.wc.dates"
+        schemaLocation="dates.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.thing.dietary-intake"
+        schemaLocation="dietary-intake.xsd"/>
+    
+    <annotation>
+        <documentation>
+            <type-id>074e122a-335a-4a47-a63d-00a8f3e79e60</type-id>
+            <type-name>Meal definition</type-name>
+            <wrapper-class-name>MealDefinition</wrapper-class-name>
+            <summary>
+                A meal that is commonly eaten or a meal associated with a particular diet plan.
+            </summary>
+            <remarks>
+                This type should not be used for storing consumption data; it is intended only to define the contents of what a meal may contain.
+            </remarks>
+            <seealso-thing-type-version-id>9c29c6b9-f40e-44ff-b24e-fba6f3074638</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>089646a6-7e25-4495-ad15-3e28d4c1a71d</seealso-thing-type-version-id>
+        </documentation>
+    </annotation>
+    
+    <complexType name="DietaryItems">
+        <sequence>
+            <element name="dietary-item" type="di:DietaryIntake" minOccurs="1" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Dietary information of an item in a meal.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    
+    <element name="meal-definition">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Information related to a meal.
+                    </summary>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="name" type="base:codable-value">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Name of the meal.
+                            </summary>
+                            <remarks>
+                                This can refer to a user-defined name or specific meals from standard meal plans.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="meal-type" type="base:codable-value" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Represents the type of meal, such as breakfast or lunch.
+                            </summary>
+                            <remarks>
+                                Uses dietary-intake-meals vocab.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="description" type="t:string1024nw" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Description of the meal.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="dietary-items" type="this:DietaryItems" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                List of items included in the meal.
+                            </summary>
+                            <remarks>
+                                This section does not contain consumption information. To record meal consumption, an application should store DietaryIntake things on the record for each item included in this section.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

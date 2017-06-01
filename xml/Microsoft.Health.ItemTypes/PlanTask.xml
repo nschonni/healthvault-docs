@@ -4,15 +4,20 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.PlanTask" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            A task assigned to a user as part of a plan.
+            </summary>
+    <remarks>
+            Applications should not interact with this data type directly.
+            Instead, they should use the ActionPlan methods in the HealthVault REST APIs.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +26,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PlanTask.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.PlanTask" /> class with default values
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,7 +42,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PlanTask.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime,System.String,System.String,System.String,Microsoft.Health.ItemTypes.ActionPlans.TaskStatus)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="dateStarted" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
@@ -50,7 +57,9 @@
         <param name="shortDescription">To be added.</param>
         <param name="longDescription">To be added.</param>
         <param name="status">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.PlanTask" /> class
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -60,15 +69,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.PlanTask.AssociatedObjectiveIds" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.List&lt;System.Guid&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The plan objectives that completion of this task counts towards.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            These values should match objective IDs defined in the associated plan.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="DateStarted">
@@ -77,15 +90,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.PlanTask.DateStarted" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The date the user started performing this task as part of their plan.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="IsReminderEnabled">
@@ -94,13 +112,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.PlanTask.IsReminderEnabled" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Whether the user should receive a reminder at the task's scheduled time.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -111,15 +131,26 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.PlanTask.LongDescription" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            A more detailed description of the task.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Applications typically display this string and would pass in a value
+            in the user's display language.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter is empty or whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -128,15 +159,26 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.PlanTask.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The task name.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Applications typically display this string and would pass in a value
+            in the user's display language.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter is empty or whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -145,7 +187,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PlanTask.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -155,7 +197,9 @@
       </Parameters>
       <Docs>
         <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.PlanTask" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -165,13 +209,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.PlanTask.Schedules" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.List&lt;Microsoft.Health.ItemTypes.ActionPlans.TaskSchedule&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The schedule of when the task is to be performed.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -182,15 +228,26 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.PlanTask.ShortDescription" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            A brief description of the task.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Applications typically display this string and would pass in a value
+            in the user's display language.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter is empty or whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Status">
@@ -199,15 +256,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.PlanTask.Status" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ActionPlans.TaskStatus</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The task status.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter has value Unknown.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="TaskType">
@@ -216,15 +278,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.PlanTask.TaskType" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Guid&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            For a task whose completion is tied to recording a specific health measurement or other
+            piece of data, this indicates the item type to be recorded.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            For example, if the task is to take your blood pressure, this would be the blood pressure type ID.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -233,15 +300,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PlanTask.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+             Gets a string representation of the insight.
+             </summary>
+        <returns>
+             A string representing the insight.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -251,13 +322,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.PlanTask.TrackingPolicy" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ActionPlans.TaskTrackingPolicy</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The rules for tracking task completion.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -268,13 +341,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.PlanTask.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -284,7 +362,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PlanTask.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -294,7 +372,9 @@
       </Parameters>
       <Docs>
         <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>
+            Writes the item data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

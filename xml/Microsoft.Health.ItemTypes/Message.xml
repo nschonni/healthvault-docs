@@ -4,15 +4,23 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Message" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+             The Message type is used to store a multipart mail message, including message text and attachments.
+             </summary>
+    <remarks>
+             The message is stored in two forms. The "FullMessage" blob contains the message in the native format. 
+             The text of the message is available in the blobs denoted by the 'html-blob-name" and "text-blob-name" 
+             element. Any attachments to the message are described in the "attachments" element.
+             
+             The data stored is intended to be compatible with the SendMail Multipart MIME format. 
+             </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,12 +29,18 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Message.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Message" /> class with default values.
+             </summary>
+        <remarks>
+             This item is not added to the health record until the
+             <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method
+             is called.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,17 +49,31 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Message.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime,System.Int64)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="when" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
         <Parameter Name="size" Type="System.Int64" />
       </Parameters>
       <Docs>
-        <param name="when">To be added.</param>
-        <param name="size">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="when">
+             The date and time of the message.
+             </param>
+        <param name="size">
+             The size of the message in bytes.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Message" /> class
+             specifying mandatory values.
+             </summary>
+        <remarks>
+             This item is not added to the health record until the
+             <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method
+             is called.
+             </remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="when" /> is <b>null</b>.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="Attachments">
@@ -54,15 +82,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Message.Attachments" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.MessageAttachment&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets the collection of attachments to the message.
+             </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+             If there are no attachments the collection will be empty.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="From">
@@ -71,15 +103,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Message.From" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the origin of the message.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The From property is equivalent to Headers["From"].
+            
+            The value of the property is null if there is no from in the
+            header collection.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Headers">
@@ -88,15 +127,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Message.Headers" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.Collections.ObjectModel.Collection&lt;System.String&gt;&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets the header information associated with this message.
+             </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+             The header information is stored in a dictionary of collections. For example, 
+             Headers["To"] returns the collection of all the "To" headers in the message, or null
+             if there were not such headers associated with the message. 
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="HtmlBlobName">
@@ -105,15 +150,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Message.HtmlBlobName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the name of the blob that stores the message in HTML format.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -122,7 +172,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Message.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -131,9 +181,20 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+             The XML to get the Message data from.
+             </param>
+        <summary>
+             Populates the <see cref="T:Microsoft.Health.ItemTypes.Message" /> instance from the data in the specified XML.
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="typeSpecificXml" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:System.InvalidOperationException">
+             If the first node in <paramref name="typeSpecificXml" /> is not
+             a Message node.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="Size">
@@ -142,13 +203,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Message.Size" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the size of the message in bytes.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -159,15 +222,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Message.Subject" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the subject of the message.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The Subject property is equivalent to Headers["Subject"].
+            
+            The value of the property is null if there is no subject in the
+            header collection.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Summary">
@@ -176,15 +246,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Message.Summary" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets a summary of the message.
+             </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+             The summary contains the first 512 characters of the message in text format. This information
+             is used to display the start of the message without having to fetch the blobs that store the
+             whole message. 
+             </remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="value" /> contains only whitespace.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="TextBlobName">
@@ -193,15 +272,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Message.TextBlobName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the name of the blob that stores the message in text format.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -210,15 +294,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Message.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+             Gets a string representation of the Message.
+             </summary>
+        <returns>
+             A string representation of the Message.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -228,13 +316,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.Message.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Retrieves the unique identifier for this type.
+             </summary>
+        <returns>
+             A GUID.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -244,15 +337,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Message.When" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the date and time of the message.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -261,7 +359,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Message.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -270,9 +368,21 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+             The XML writer into which the Message should be
+             written.
+             </param>
+        <summary>
+             Writes the XML representation of the Message into
+             the specified XML writer.
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="writer" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+             If <see cref="P:Microsoft.Health.ItemTypes.Message.When" /> is <b>null</b>.
+             </exception>
       </Docs>
     </Member>
   </Members>

@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Events.CommonSubscriptionData" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents data that is common across all event subscriptions.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.CommonSubscriptionData.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates an empty instance of the CommonSubscriptionData class. 
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,17 +39,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.CommonSubscriptionData.#ctor(Microsoft.Health.Events.NotificationChannel,Microsoft.Health.Events.NotificationAuthenticationSharedKeyInfo)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="notificationChannel" Type="Microsoft.Health.Events.NotificationChannel" />
         <Parameter Name="sharedKeyInfo" Type="Microsoft.Health.Events.NotificationAuthenticationSharedKeyInfo" />
       </Parameters>
       <Docs>
-        <param name="notificationChannel">To be added.</param>
-        <param name="sharedKeyInfo">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="notificationChannel">The channel to use for notifications.</param>
+        <param name="sharedKeyInfo">The shared key to use for authentication.</param>
+        <summary>
+            Creates an instance of the CommonSubscriptionData class and sets the notification channel and the
+            shared key information.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="sharedKeyInfo" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -54,7 +64,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.CommonSubscriptionData.#ctor(Microsoft.Health.Events.NotificationChannel,Microsoft.Health.Events.NotificationAuthenticationSharedKeyInfo,System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="notificationChannel" Type="Microsoft.Health.Events.NotificationChannel" />
@@ -62,11 +72,20 @@
         <Parameter Name="id" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="notificationChannel">To be added.</param>
-        <param name="sharedKeyInfo">To be added.</param>
-        <param name="id">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="notificationChannel">The channel to use for notifications.</param>
+        <param name="sharedKeyInfo">The shared key to use for authentication.</param>
+        <param name="id">The id of the subscription.</param>
+        <summary>
+            Creates an instance of the CommonSubscriptionData class and sets the notification channel, the shared
+            key information and the unique identifier for the subscription.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="sharedKeyInfo" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="id" /> parameter is an empty GUID.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Id">
@@ -75,13 +94,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Events.CommonSubscriptionData.Id" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Guid&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the unique identifier for the subscription.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -92,13 +113,16 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Events.CommonSubscriptionData.NotificationChannel" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.Events.NotificationChannel</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the notification channel that is used to deliver events from
+            the subscription.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -109,7 +133,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.CommonSubscriptionData.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -118,9 +142,17 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator">The XPathNavigator.</param>
+        <summary>
+            Populate the CommonSubscriptionData instance from XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="navigator" /> parameter does not contain a "common" node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="SharedKeyInfo">
@@ -129,15 +161,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Events.CommonSubscriptionData.SharedKeyInfo" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.Events.NotificationAuthenticationSharedKeyInfo</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the information used to validate the source of notifications.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            For notification channels where the HealthVault service pushes 
+            notifications to an application's end-point (ie. an HTTP 
+            notification channel), this information can be used by the 
+            application to ensure the incoming notification was sent by the 
+            HealthVault service.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -146,7 +186,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.CommonSubscriptionData.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -155,9 +195,15 @@
         <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="xmlWriter">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="xmlWriter">The XmlWriter.</param>
+        <summary>
+            Write a representation of the CommonSubscriptionData instance to XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The <see cref="P:Microsoft.Health.Events.CommonSubscriptionData.NotificationChannel" /> property is <b>null</b> or the 
+            <see cref="P:Microsoft.Health.Events.CommonSubscriptionData.SharedKeyInfo" /> property is null.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXmlInternal">
@@ -166,7 +212,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.CommonSubscriptionData.WriteXmlInternal(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -175,9 +221,15 @@
         <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="xmlWriter">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="xmlWriter">The XmlWriter</param>
+        <summary>
+            Internal implementation of <see cref="M:Microsoft.Health.Events.CommonSubscriptionData.WriteXml(System.Xml.XmlWriter)" />.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The <see cref="P:Microsoft.Health.Events.CommonSubscriptionData.NotificationChannel" /> property is <b>null</b> or the 
+            <see cref="P:Microsoft.Health.Events.CommonSubscriptionData.SharedKeyInfo" /> property is null.
+            </exception>
       </Docs>
     </Member>
   </Members>

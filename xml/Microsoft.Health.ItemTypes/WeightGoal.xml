@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.WeightGoal" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a health record item type that encapsulates a weight goal.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +23,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.WeightGoal.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.WeightGoal" /> class with default 
+            values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Goal">
@@ -35,15 +44,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.WeightGoal.Goal" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.Goal</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the goal information.
+            </summary>
+        <value>
+            A <see cref="P:Microsoft.Health.ItemTypes.WeightGoal.Goal" /> value containing the information.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the goal information should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="InitialWeight">
@@ -52,15 +67,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.WeightGoal.InitialWeight" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.WeightValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the person's initial weight.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.WeightValue" /> representing the initial weight.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the initial weight should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="MaximumWeight">
@@ -69,15 +90,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.WeightGoal.MaximumWeight" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.WeightValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the person's maximum weight.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.WeightValue" /> representing the maximum weight.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the maximum weight should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="MinimumWeight">
@@ -86,15 +113,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.WeightGoal.MinimumWeight" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.WeightValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the person's minimum weight.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.WeightValue" /> representing the minimum weight.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the minimum weight should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -103,7 +136,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.WeightGoal.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -112,9 +145,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the weight goal data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.WeightGoal" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            a weight-goal node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -123,15 +164,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.WeightGoal.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the weight goal.
+            </summary>
+        <returns>
+            A string containing the value of the weight goal.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,13 +186,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.WeightGoal.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -157,7 +207,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.WeightGoal.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -166,9 +216,16 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the weight goal data to.
+            </param>
+        <summary>
+            Writes the weight goal data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

@@ -4,7 +4,7 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Package.ConnectPackageCreationParameters" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -15,7 +15,11 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            The parameters that need to be supplied in order to create 
+            a <see cref="T:Microsoft.Health.ItemTypes.PasswordProtectedPackage" /> through the <see cref="T:Microsoft.Health.Package.ConnectPackage" />
+            creation API.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -25,7 +29,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Package.ConnectPackageCreationParameters.#ctor(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="connection" Type="Microsoft.Health.Web.OfflineWebApplicationConnection" />
@@ -35,13 +39,44 @@
         <Parameter Name="applicationPatientId" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="friendlyName">To be added.</param>
-        <param name="securityQuestion">To be added.</param>
-        <param name="securityAnswer">To be added.</param>
-        <param name="applicationPatientId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="connection">
+            The application connection to HealthVault. The application ID in the connection is used
+            when making the patient connection.
+            </param>
+        <param name="friendlyName">
+            A friendly name for the patient connection which will be shown to the user when they
+            go to HealthVault Shell to validate the connection.
+            </param>
+        <param name="securityQuestion">
+            A question (usually provided by the patient) to which the patient must provide the 
+            <paramref name="securityAnswer" /> when they go to validate the connection in the 
+            HealthVault Shell.
+            </param>
+        <param name="securityAnswer">
+            The answer to the <paramref name="securityQuestion" /> which the patient must use
+            when adding the package to their record via HealthVault Shell. The answer is 
+            case-insensitive but otherwise must match exactly. Additionally, it must be at least 
+            6 characters long.
+            </param>
+        <param name="applicationPatientId">
+            The application specific identifier for the user. This identifier is used to uniquely
+            identify the user in the application data storage whereas the HealthVault person ID is
+            used to identify the person in HealthVault.
+            </param>
+        <summary>
+            Constructs an <see cref="T:Microsoft.Health.Package.ConnectPackageCreationParameters" /> instance 
+            with supplied values.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="friendlyName" />, 
+            <paramref name="securityQuestion" />, or
+            <paramref name="applicationPatientId" /> is
+            <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="securityAnswer" /> is less than 6 characters.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -50,7 +85,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Package.ConnectPackageCreationParameters.#ctor(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.String,System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="connection" Type="Microsoft.Health.Web.OfflineWebApplicationConnection" />
@@ -61,14 +96,48 @@
         <Parameter Name="applicationPatientId" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="identityCode">To be added.</param>
-        <param name="friendlyName">To be added.</param>
-        <param name="securityQuestion">To be added.</param>
-        <param name="securityAnswer">To be added.</param>
-        <param name="applicationPatientId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="connection">
+            The application connection to HealthVault. The application ID in the connection is used
+            when making the patient connection.
+            </param>
+        <param name="identityCode">
+            A package identity token previously obtained from 
+            <see cref="M:Microsoft.Health.Package.ConnectPackage.AllocatePackageId(Microsoft.Health.Web.OfflineWebApplicationConnection)" />.  
+            </param>
+        <param name="friendlyName">
+            A friendly name for the patient connection which will be shown to the user when they
+            go to HealthVault Shell to validate the connection.
+            </param>
+        <param name="securityQuestion">
+            A question (usually provided by the patient) to which the patient must provide the 
+            <paramref name="securityAnswer" /> when they go to validate the connection in the 
+            HealthVault Shell.
+            </param>
+        <param name="securityAnswer">
+            The answer to the <paramref name="securityQuestion" /> which the patient must use
+            when adding the package to their record via HealthVault Shell. The answer is 
+            case-insensitive but otherwise must match exactly. Additionally, it must be at least 
+            6 characters long.
+            </param>
+        <param name="applicationPatientId">
+            The application specific identifier for the user. This identifier is used to uniquely
+            identify the user in the application data storage whereas the HealthVault person ID is
+            used to identify the person in HealthVault.
+            </param>
+        <summary>
+            Constructs an <see cref="T:Microsoft.Health.Package.ConnectPackageCreationParameters" /> instance 
+            with supplied values.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="identityCode" />, <paramref name="friendlyName" />, 
+            <paramref name="securityQuestion" />, or
+            <paramref name="applicationPatientId" /> is
+            <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="securityAnswer" /> is less than 6 characters.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ApplicationPatientId">
@@ -77,13 +146,17 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Package.ConnectPackageCreationParameters.ApplicationPatientId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the application specific identifier for the user. This identifier is used to 
+            uniquely identify the user in the application data storage, whereas the HealthVault 
+            person ID is used to identify the person in HealthVault.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -94,13 +167,16 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithm" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.SymmetricAlgorithm</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the algorithm used to encrypt the <see cref="T:Microsoft.Health.BlobStream" />s
+            that belong to the <see cref="T:Microsoft.Health.HealthRecordItem" />s  within the connect package.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -111,13 +187,16 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Package.ConnectPackageCreationParameters.BlobChunkEncryptionAlgorithmName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the name of the algorithm used to encrypt the <see cref="T:Microsoft.Health.BlobStream" />s
+            that belong to the <see cref="T:Microsoft.Health.HealthRecordItem" />s  within the connect package.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -128,13 +207,16 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Package.ConnectPackageCreationParameters.Connection" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.Web.OfflineWebApplicationConnection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the application connection to HealthVault. The application ID in the connection 
+            is used when making the patient connection.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -145,13 +227,16 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithm" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.SymmetricAlgorithm</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the algorithm used to encrypt the <see cref="T:Microsoft.Health.HealthRecordItem" />s, 
+            that form the contents of the connect package.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -162,13 +247,16 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageEncryptionAlgorithmName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the name of the algorithm used to encrypt the <see cref="T:Microsoft.Health.HealthRecordItem" />s, 
+            that form the contents of the connect package.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -179,13 +267,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithm" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.HMAC</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the algorithm used to generate the HMAC for the connect package.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -196,13 +286,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Package.ConnectPackageCreationParameters.ConnectPackageHMACAlgorithmName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the name of the algorithm used to generate the HMAC for the connect package.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -213,14 +305,16 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Package.ConnectPackageCreationParameters.Dispose" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Explicit clean up.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -230,14 +324,16 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Package.ConnectPackageCreationParameters.Finalize" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Last resort clean up.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -247,13 +343,16 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Package.ConnectPackageCreationParameters.FriendlyName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the friendly name for the patient connection which will be shown to the user 
+            when they go to HealthVault Shell to validate the connection.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -264,13 +363,16 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Package.ConnectPackageCreationParameters.IdentityCode" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the package identity token previously obtained from 
+            <see cref="M:Microsoft.Health.Package.ConnectPackage.AllocatePackageId(Microsoft.Health.Web.OfflineWebApplicationConnection)" />.  
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -281,13 +383,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Package.ConnectPackageCreationParameters.PasswordProtectAlgorithm" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.PasswordProtectAlgorithm</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the <see cref="P:Microsoft.Health.Package.ConnectPackageCreationParameters.PasswordProtectAlgorithm" /> to be used in the connect package.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -298,13 +402,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Package.ConnectPackageCreationParameters.Salt" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the salt used to encrypt the entities within the connect package.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -315,13 +421,16 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityAnswer" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the answer to the <see cref="P:Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityQuestion" /> which the patient must use
+            when adding the package to their record via HealthVault Shell.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -332,13 +441,17 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityQuestion" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the question (usually provided by the patient) to which the patient must provide 
+            the  <see cref="P:Microsoft.Health.Package.ConnectPackageCreationParameters.SecurityAnswer" /> when they go to validate the connection in the 
+            HealthVault Shell.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

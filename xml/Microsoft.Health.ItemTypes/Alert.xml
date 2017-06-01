@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Alert" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a weekly alert schedule.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Alert.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Alert" /> class with default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,17 +39,28 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Alert.#ctor(System.Collections.Generic.IEnumerable{System.DayOfWeek},System.Collections.Generic.IEnumerable{Microsoft.Health.ItemTypes.ApproximateTime})" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="daysOfWeek" Type="System.Collections.Generic.IEnumerable&lt;System.DayOfWeek&gt;" />
         <Parameter Name="times" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.Health.ItemTypes.ApproximateTime&gt;" />
       </Parameters>
       <Docs>
-        <param name="daysOfWeek">To be added.</param>
-        <param name="times">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="daysOfWeek">
+            The days of the week the alert should be triggered.
+            </param>
+        <param name="times">
+            The times in those days that the alert should be triggered.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Alert" /> class with the 
+            specified days and times.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="daysOfWeek" />  or <paramref name="times" /> 
+            parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="DaysOfWeek">
@@ -54,15 +69,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Alert.DaysOfWeek" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;System.DayOfWeek&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets a collection of the days of the week which the alert applies
+            to.
+            </summary>
+        <value>
+            A collection of days of the week.
+            </value>
+        <remarks>
+            To add days to be alerted, add <see cref="T:System.DayOfWeek" />
+            values to the returned collection.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -71,7 +94,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Alert.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -80,9 +103,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator">
+            The XML containing the address information.
+            </param>
+        <summary>
+            Populates the data from the specified XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Times">
@@ -91,15 +121,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Alert.Times" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.ApproximateTime&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets a collection of the times in each of the specified days to
+            be alerted.
+            </summary>
+        <value>
+            A collection of times.
+            </value>
+        <remarks>
+            To add times to be alerted, add <see cref="T:Microsoft.Health.ItemTypes.ApproximateTime" /> 
+            instances to the returned collection.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -108,15 +146,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Alert.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the alert.
+            </summary>
+        <returns>
+            A string representation of the alert.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -126,7 +168,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Alert.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -136,10 +178,28 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the outer node for the alert.
+            </param>
+        <param name="writer">
+            The XML writer into which the alert should be 
+            written.
+            </param>
+        <summary>
+            Writes the XML representation of the alert into
+            the specified XML writer.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.Alert.DaysOfWeek" /> property has no days set, or the 
+            <see cref="P:Microsoft.Health.ItemTypes.Alert.Times" /> property contains no times.
+            </exception>
       </Docs>
     </Member>
   </Members>

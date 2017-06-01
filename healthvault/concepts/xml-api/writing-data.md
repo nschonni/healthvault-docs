@@ -53,7 +53,7 @@ In the **PutThings** request, the info section must contain one or more thing in
 
 ### The response
 
-The response from a successful **PutThings** call is the thing-ids for all new or updated things. The .NET SDK automatically updates the [HealthRecordItem](/healthvault/sdks/dotnet/microsoft.health.healthrecorditem.yml) instance with the thing-id that is returned. Any apps that want direct access to the thing that was just created should store this identifier for future use.
+The response from a successful **PutThings** call is the thing-ids for all new or updated things. The .NET SDK automatically updates the [HealthRecordItem](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.healthrecorditem) instance with the thing-id that is returned. Any apps that want direct access to the thing that was just created should store this identifier for future use.
 
 ### Errors
 
@@ -84,7 +84,7 @@ Each thing-id (often referred to as the thing key) is represented by two parts.
 
 When a thing is updated, the old version is kept and a new version with a new version-stamp but the same thing-id is added to the record. The new version is marked as the current instance.
 
-When updating a thing, the application must get the current version of a thing using the **GetThings** request, update whatever fields are necessary, and then call **PutThings** with the updated XML. HealthVault will assign the version-stamp, which will be returned in the response from the **PutThings** call. Future calls to modify the thing should use this new version-stamp. The .NET SDK automatically updates the [HealthRecordItem](/healthvault/sdks/dotnet/microsoft.health.healthrecorditem.yml) object with the new version stamp after the **PutThings** call succeeds. 
+When updating a thing, the application must get the current version of a thing using the **GetThings** request, update whatever fields are necessary, and then call **PutThings** with the updated XML. HealthVault will assign the version-stamp, which will be returned in the response from the **PutThings** call. Future calls to modify the thing should use this new version-stamp. The .NET SDK automatically updates the [HealthRecordItem](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.healthrecorditem) object with the new version stamp after the **PutThings** call succeeds. 
 
 If **PutThings** is called to update a thing with a version-stamp that is not the latest, the response contains a **VERSION\_STAMP\_MISMATCH** error code. This may happen if the thing instance was updated between the time the instance was retrieved through the **GetThings** request and the **PutThings** request to update it. This could happen if another application or thread is updating the instance.
 
@@ -148,4 +148,4 @@ When streamed blobs are associated with the things in the write request, they ar
 .NET SDK
 --------
 
-The HealthVault .Net SDK provides classes for reading and writing data. For querying and writing data, use the [HealthRecordAccessor](/healthvault/sdks/dotnet/microsoft.health.healthrecordaccessor.yml) class.
+The HealthVault .Net SDK provides classes for reading and writing data. For querying and writing data, use the [HealthRecordAccessor](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.healthrecordaccessor) class.

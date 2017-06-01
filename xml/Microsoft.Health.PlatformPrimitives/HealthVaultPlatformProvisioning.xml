@@ -4,15 +4,20 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformProvisioning" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Provides low-level access to the HealthVault provisioning operations.
+            </summary>
+    <remarks>
+      <see cref="T:Microsoft.Health.HealthVaultPlatform" /> uses this class to perform operations. Set 
+            HealthVaultPlatformProvisioning.Current to a derived class to intercept all provisioning calls.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,7 +26,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformProvisioning.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -35,7 +40,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformProvisioning.AddChildApplication(Microsoft.Health.Web.OfflineWebApplicationConnection,Microsoft.Health.ApplicationInfo)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
@@ -45,11 +50,33 @@
         <Parameter Name="applicationConfigurationInformation" Type="Microsoft.Health.ApplicationInfo" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="applicationConfigurationInformation">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="connection">
+             The connection to use to add the application.
+             </param>
+        <param name="applicationConfigurationInformation">
+             Configuration information about the application being provisioned.
+             </param>
+        <summary>
+             Adds a HealthVault application instance for a "child" application of the calling
+             application.
+             </summary>
+        <returns>
+             The new application identifier for the new application provided by HealthVault.
+             </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="connection" /> or <paramref name="applicationConfigurationInformation" />
+             is <b>null</b>.
+             </exception>
+        <exception cref="T:System.ArgumentException">
+             If <see cref="P:Microsoft.Health.ApplicationInfo.Name" />, <see cref="P:Microsoft.Health.ApplicationInfo.PublicKeys" />,
+             <see cref="P:Microsoft.Health.ApplicationInfo.OfflineBaseAuthorizations" />, <see cref="P:Microsoft.Health.ApplicationInfo.Description" />,
+             <see cref="P:Microsoft.Health.ApplicationInfo.AuthorizationReason" />, or <see cref="P:Microsoft.Health.ApplicationInfo.LargeLogo" /> 
+             is not specified.
+             </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+             If there is an error when the HealthVault service is called.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="DisableMock">
@@ -58,15 +85,20 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformProvisioning.DisableMock" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Removes mocking of calls to this class.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            There is no mock registered for this class.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="EnableMock">
@@ -75,7 +107,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformProvisioning.EnableMock(Microsoft.Health.PlatformPrimitives.HealthVaultPlatformProvisioning)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -84,9 +116,17 @@
         <Parameter Name="mock" Type="Microsoft.Health.PlatformPrimitives.HealthVaultPlatformProvisioning" />
       </Parameters>
       <Docs>
-        <param name="mock">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="mock">The mocking class.</param>
+        <summary>
+            Enables mocking of calls to this class.
+            </summary>
+        <remarks>
+            The calling class should pass in a class that derives from this
+            class and overrides the calls to be mocked. 
+            </remarks>
+        <exception cref="T:System.InvalidOperationException">
+            There is already a mock registered for this class.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetChildApplication">
@@ -95,7 +135,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformProvisioning.GetChildApplication(Microsoft.Health.Web.OfflineWebApplicationConnection,System.Guid)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ApplicationInfo</ReturnType>
@@ -105,11 +145,34 @@
         <Parameter Name="childApplicationId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="childApplicationId">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="connection">
+            The connection to use to get the application information.
+            </param>
+        <param name="childApplicationId">
+            The unique application identifier for the child application to get the configuration
+            information for.
+            </param>
+        <summary>
+            Gets the configuration information for the specified child application ID.
+            </summary>
+        <returns>
+            Configuration information for the specified child application.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="connection" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="childApplicationId" /> is <see cref="F:System.Guid.Empty" />.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceAccessDeniedException">
+            If the application specified in the <paramref name="connection" /> is not a master
+            application, or if <paramref name="childApplicationId" /> does not identify a child
+            application of the calling application.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If there is an error when the HealthVault service is called.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="UpdateChildApplication">
@@ -118,7 +181,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PlatformPrimitives.HealthVaultPlatformProvisioning.UpdateChildApplication(Microsoft.Health.ApplicationConnection,Microsoft.Health.ApplicationInfo)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -128,10 +191,30 @@
         <Parameter Name="applicationInfo" Type="Microsoft.Health.ApplicationInfo" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="applicationInfo">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="connection">
+            The connection to use to make the update.
+            </param>
+        <param name="applicationInfo">
+            The <see cref="T:Microsoft.Health.ApplicationInfo" /> to update.
+            </param>
+        <summary>
+            Updates the application's configuration in HealthVault.
+            </summary>
+        <remarks>
+            This method makes a remote call to the HealthVault service.
+            The calling application in the <paramref name="connection" /> must be the same as
+            the application specified by this ApplicationInfo instance or its master application.
+            Note, this update will replace all configuration elements for the application. It is 
+            advised that <see cref="M:Microsoft.Health.ApplicationProvisioning.Provisioner.GetApplication(Microsoft.Health.Web.OfflineWebApplicationConnection,System.Guid)" /> is 
+            called to retrieve the existing application configuration before changing values and 
+            calling Update.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="connection" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
       </Docs>
     </Member>
   </Members>

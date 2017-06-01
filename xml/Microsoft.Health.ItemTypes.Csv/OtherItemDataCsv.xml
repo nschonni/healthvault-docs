@@ -4,15 +4,21 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Csv.OtherItemDataCsv" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.OtherItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            The OtherItemDataCSV class is used to store and retrieve data stored in the HealthVault
+            comma-separated format.
+            </summary>
+    <remarks>
+            It is not used directly but through a derived class that is specific to a health record item type -
+            for example, the ExerciseSamplesData class. 
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +27,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Csv.OtherItemDataCsv.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Csv.OtherItemDataCsv" /> class 
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,7 +43,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Csv.OtherItemDataCsv.#ctor(System.String,System.String,System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="data" Type="System.String" />
@@ -43,10 +51,21 @@
         <Parameter Name="contentType" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="data">To be added.</param>
-        <param name="contentEncoding">To be added.</param>
-        <param name="contentType">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="data">
+            The data to store in the other data section of the health record
+            item.
+            </param>
+        <param name="contentEncoding">
+            The type of encoding that was done on the data. Usually this will
+            be "base64" but other encodings are acceptable.
+            </param>
+        <param name="contentType">
+            The MIME-content type of the data.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Csv.OtherItemDataCsv" /> class 
+            with the specified data, encoding, and content type.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -56,16 +75,22 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Csv.OtherItemDataCsv.GetAsDouble" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.Csv.OtherItemDataCsvItem&gt;</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>
+            Parses the comma-delimited data into a series of double values. 
+            </summary>
+        <returns>A collection of OtherItemDataCsvItem</returns>
+        <remarks>
+            The collection contains two kinds of values.
+            OtherItemDataCsvDouble items contain double values
+            OtherItemDataCsvEscape items contain escapes
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetAsString">
@@ -74,16 +99,27 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Csv.OtherItemDataCsv.GetAsString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.Csv.OtherItemDataCsvItem&gt;</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>
+            Parse the comma-separated representation into an array of strings.
+            </summary>
+        <returns>A collection of the strings.</returns>
+        <remarks>
+            When this method returns, the Escapes collection will contain any 
+            escapes encountered during the parsing. 
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If the content type is not "text/csv".
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            If the Data section is null.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="SetOtherData">
@@ -92,7 +128,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Csv.OtherItemDataCsv.SetOtherData(System.Collections.Generic.IList{Microsoft.Health.ItemTypes.Csv.OtherItemDataCsvItem})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -101,9 +137,17 @@
         <Parameter Name="values" Type="System.Collections.Generic.IList&lt;Microsoft.Health.ItemTypes.Csv.OtherItemDataCsvItem&gt;" />
       </Parameters>
       <Docs>
-        <param name="values">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="values">The collection of values to store.</param>
+        <summary>
+            Create the comma-delimited representation of a set of data and escapes. 
+            </summary>
+        <remarks>
+            The escapes are inserted into the comma-delimited list in the appropriate places. 
+            Any escape that occurs after the last element is ignored.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the parameter <paramref name="values" /> is null.
+            </exception>
       </Docs>
     </Member>
   </Members>

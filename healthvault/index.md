@@ -303,7 +303,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
 
                                                 </h3>
                                                 <p>
-                                                    <a href="/healthvault/sdks/dotnet/microsoft.health">API reference</a>
+                                                    <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.health">API reference</a>
                                                 </p>
                                                 <p>
                                                     <a href="https://www.github.com/microsoft/healthvault-samples/">Get samples</a>

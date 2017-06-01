@@ -4,15 +4,19 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.HealthAssessment" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            A health record item containing the results of a health assessment.
+            </summary>
+    <remarks>
+            Examples of health assessment include high blood pressure assessment and diabetes assessment.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,12 +25,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthAssessment.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.HealthAssessment" /> class with default 
+            values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,7 +46,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthAssessment.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime,System.String,Microsoft.Health.ItemTypes.CodableValue,System.Collections.Generic.IList{Microsoft.Health.ItemTypes.Assessment})" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="when" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
@@ -44,12 +55,30 @@
         <Parameter Name="result" Type="System.Collections.Generic.IList&lt;Microsoft.Health.ItemTypes.Assessment&gt;" />
       </Parameters>
       <Docs>
-        <param name="when">To be added.</param>
-        <param name="name">To be added.</param>
-        <param name="category">To be added.</param>
-        <param name="result">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="when">
+            The date and time the assessment was completed.
+            </param>
+        <param name="name">
+            The application's name for the assessment. See <see cref="P:Microsoft.Health.ItemTypes.HealthAssessment.Name" /> for more information.
+            </param>
+        <param name="category">
+            The type of the assessment.
+            </param>
+        <param name="result">
+            The results of the assessment.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.HealthAssessment" /> class with the specified 
+            mandatory parameters.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="when" /> or <paramref name="category" />, or <paramref name="result" /> 
+            is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="name" /> is <b>null</b> or empty or <paramref name="result" /> is empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Category">
@@ -58,15 +87,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HealthAssessment.Category" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the type of assessment.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Examples: Heart assessment, diabetes assessment, colon cancer assessment.
+            The preferred vocabulary for route is "health-assessment-category".
+            Contact the HealthVault team to help define the preferred vocabulary.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -75,15 +110,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HealthAssessment.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the application's name for the assessment.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Example: Fabrikam's Heart Risk Assessment.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> is <b>null</b>, empty, or contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -92,7 +134,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthAssessment.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -101,9 +143,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the health assessment data from.
+            </param>
+        <summary>
+            Populates this health assessment instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            If the first node in <paramref name="typeSpecificXml" /> is not
+            a health-assessment node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Result">
@@ -112,15 +162,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HealthAssessment.Result" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.Assessment&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a collection of the results of the assessment.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Example: High blood pressure, low risk.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -129,15 +183,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthAssessment.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the health assessment.
+            </summary>
+        <returns>
+            A string representation of the health assessment.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -147,13 +205,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.HealthAssessment.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The unique identifier for the item type.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -163,15 +223,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.HealthAssessment.When" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the date and time of the health assessment was completed.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing the date 
+            and time.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -180,7 +248,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.HealthAssessment.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -189,9 +257,20 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the health assessment data to.
+            </param>
+        <summary>
+            Writes the health assessment data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.HealthAssessment.When" />, <see cref="P:Microsoft.Health.ItemTypes.HealthAssessment.Name" />, <see cref="P:Microsoft.Health.ItemTypes.HealthAssessment.Category" />, or 
+            <see cref="P:Microsoft.Health.ItemTypes.HealthAssessment.Result" /> property has not been set.
+            </exception>
       </Docs>
     </Member>
   </Members>

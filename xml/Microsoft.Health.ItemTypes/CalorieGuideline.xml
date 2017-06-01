@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.CalorieGuideline" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Stores suggested calorie intak guidelines. 
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +23,17 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CalorieGuideline.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Constructs an instance of suggested calorie intake guidelines with default values.
+            </summary>
+        <remarks>
+            Examples: Daily calories suggested for weight loss, calories needed for weight 
+            maintenance, BMR. 
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,7 +42,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CalorieGuideline.#ctor(Microsoft.Health.ItemTypes.ApproximateDateTime,Microsoft.Health.ItemTypes.CodableValue,Microsoft.Health.ItemTypes.GeneralMeasurement)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="when" Type="Microsoft.Health.ItemTypes.ApproximateDateTime" />
@@ -43,11 +50,26 @@
         <Parameter Name="calories" Type="Microsoft.Health.ItemTypes.GeneralMeasurement" />
       </Parameters>
       <Docs>
-        <param name="when">To be added.</param>
-        <param name="name">To be added.</param>
-        <param name="calories">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="when"> 
+            The date and time the guidelines were created.
+            </param>
+        <param name="name"> 
+            The name definies the guideline. 
+            </param>
+        <param name="calories"> 
+            The number of calories to support the guideline. 
+            </param>
+        <summary>
+            Constructs an instance of suggested calorie intake guideline with specified values. 
+            </summary>
+        <remarks>
+            Examples: Daily calories suggested for weight loss, calories needed for weight 
+            maintenance, BMR. 
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="when" />, <paramref name="name" /> or <paramref name="calories" /> 
+            is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Calories">
@@ -56,15 +78,30 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CalorieGuideline.Calories" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.GeneralMeasurement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the number of calories to support the guideline.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the number of 
+            calories to support the guideline.
+            </value>
+        <remarks>
+            This value expresses the number of calories for a specific time period. 
+            For example, 2716 calories per day could be coded as follows:
+            Display = "2716 calories/day"
+            Structured Value = "2716"
+            Structured Units = "calories-per-day"
+            using the calorie-guideline-units vocabulary. 
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -73,15 +110,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CalorieGuideline.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the name of the guideline.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the guideline definition. 
+            </value>
+        <remarks>
+            Examples: Maintain weight, Lose weight slowly, Gain weight slowly, Basal metabolic 
+            rate (BMR). The preferred vocabulary is "calorie-guideline-names". 
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -90,7 +137,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CalorieGuideline.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -99,9 +146,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the calorie guideline data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.CalorieGuideline" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            If the first node in <paramref name="typeSpecificXml" /> is not
+            a "carolie-guideline" node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -110,15 +165,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CalorieGuideline.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets the representation of a CalorieGuideline instance.
+            </summary>
+        <returns>
+            A string representation of the CalorieGuideline instance.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -128,13 +187,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.CalorieGuideline.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,15 +205,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CalorieGuideline.When" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the date and time the guidelines were created.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing the date 
+            and time.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -161,7 +230,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CalorieGuideline.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -170,9 +239,20 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the calorie guideline data to. 
+            </param>
+        <summary>
+            Writes the calorie guideline data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.CalorieGuideline.When" />, <see cref="P:Microsoft.Health.ItemTypes.CalorieGuideline.Name" /> or <see cref="P:Microsoft.Health.ItemTypes.CalorieGuideline.Calories" />
+            is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

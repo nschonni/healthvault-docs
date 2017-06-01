@@ -4,15 +4,24 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthRecordAccessor" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents the API set used to access a health record for an individual. 
+            </summary>
+    <remarks>
+            A HealthRecordAccessor represents a person's view of a health record.
+            This view can vary based upon the access rights the person has to the
+            record. More than one person might have access to the same record but have
+            different views. For instance, a husband might have a HealthRecordAccessor
+            instance for himself and another for his wife's health record to which 
+            she granted him access.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,17 +30,33 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.#ctor(Microsoft.Health.ApplicationConnection,System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="connection" Type="Microsoft.Health.ApplicationConnection" />
         <Parameter Name="id" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="id">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="connection">
+            An instance of a connection to which the record 
+            operations will be directed.
+            </param>
+        <param name="id">
+            The unique identifier for the record.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.HealthRecordAccessor" />
+            class. 
+            </summary>
+        <remarks>
+            This constructor creates a view of a personal health record.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="connection" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="id" /> parameter is Guid.Empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="AssociateAlternateId">
@@ -40,7 +65,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.AssociateAlternateId(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -49,9 +74,30 @@
         <Parameter Name="alternateId" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="alternateId">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="alternateId">
+            The alternate ID.
+            </param>
+        <summary>
+            Associates an alternate ID with this record.
+            </summary>
+        <remarks>
+            An alternate ID can be used to store an association between an ID that the
+            application understands and the person and record IDs used by HealthVault.
+            
+            The alternate id string must be from 1-255 characters in length. 
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The alternateId parameter is null.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The alternateId parameter is empty, all whitespace, or more than 255 characters in length.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error. 
+            The exception's Error property will contain the index of the
+            item on which the failure occurred in the ErrorInfo property. If any failures occur, 
+            no items will have been created.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Connection">
@@ -60,13 +106,16 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordAccessor.Connection" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ApplicationConnection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a reference to the HealthVault service that
+            created this <see cref="T:Microsoft.Health.HealthRecordAccessor" />.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -77,7 +126,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.CreateFromXml(Microsoft.Health.ApplicationConnection,System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthRecordAccessor</ReturnType>
@@ -87,11 +136,25 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="connection">
+            A connection for the current user.
+            </param>
+        <param name="navigator">
+            The XML containing the record information.
+            </param>
+        <summary>
+            Creates an instance of a HealthRecordAccessor object using
+            the specified XML.
+            </summary>
+        <returns>
+            A new instance of a HealthRecordAccessor object containing the
+            record information.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="connection" /> or <paramref name="navigator" /> 
+            parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="CreateSearcher">
@@ -100,16 +163,25 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.CreateSearcher" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthRecordSearcher</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new HealthRecordSearcher for this record.
+            </summary>
+        <returns>
+            A HealthRecordSearcher that searches for items associated
+            with this record.
+            </returns>
+        <remarks>
+            You can also call the <see cref="T:Microsoft.Health.HealthRecordSearcher" /> constructor 
+            directly and pass in a reference to this 
+            <see cref="T:Microsoft.Health.HealthRecordAccessor" />.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="CreateSearcher">
@@ -118,7 +190,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.CreateSearcher(System.Guid[])" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthRecordSearcher</ReturnType>
@@ -133,10 +205,25 @@
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="typeIds">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="typeIds">
+             A list of unique type ids to filter on.
+             </param>
+        <summary>
+             Creates a new HealthRecordSearcher for a list of specific types.
+             </summary>
+        <returns>
+             A <see cref="T:Microsoft.Health.HealthRecordSearcher" /> that searches for items with specific type IDs
+             within this record.
+             </returns>
+        <remarks>
+             The method adds a filter to the <see cref="T:Microsoft.Health.HealthRecordSearcher" /> that only returns
+             items of the specified type IDs. That filter may be accessed through the
+             returned searcher using searcher.Filters[0].
+             
+             You can also call the <see cref="T:Microsoft.Health.HealthRecordSearcher" /> constructor 
+             directly and pass in a reference to this 
+             <see cref="T:Microsoft.Health.HealthRecordAccessor" />.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="DisassociateAlternateId">
@@ -145,7 +232,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.DisassociateAlternateId(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -154,9 +241,26 @@
         <Parameter Name="alternateId" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="alternateId">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="alternateId">
+            The alternate ID.
+            </param>
+        <summary>
+            Disassociates an alternate ID with a record.
+            </summary>
+        <remarks>
+            Removes the association between the alternate ID and the record/person.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The alternateId parameter is null.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The alternateId parameter is empty, all whitespace, or more than 255 characters in length.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error. 
+            If the alternate Id is not associated with a person and record id, the ErrorCode property
+            will be set to AlternateIdNotFound.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetAlternateIds">
@@ -165,16 +269,26 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.GetAlternateIds" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the list of alternate IDs that are associated with a record.
+            </summary>
         <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If there are no associated alternate IDs, this method will return an
+            empty list. 
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error. 
+            If the alternate Id is not associated with a person and record id, the ErrorCode property
+            will be set to AlternateIdNotFound.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetItem">
@@ -183,7 +297,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.GetItem(System.Guid)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthRecordItem</ReturnType>
@@ -192,10 +306,22 @@
         <Parameter Name="itemId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="itemId">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="itemId">
+            The ID of the health record item to retrieve.
+            </param>
+        <summary>
+            Gets the health record item specified by its ID.
+            </summary>
+        <returns>
+            A <see cref="T:Microsoft.Health.HealthRecordItem" /> with the default data sections (Core and XML) 
+            filled out.
+            </returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetItem">
@@ -204,7 +330,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.GetItem(System.Guid,Microsoft.Health.HealthRecordItemSections)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthRecordItem</ReturnType>
@@ -214,11 +340,25 @@
         <Parameter Name="sections" Type="Microsoft.Health.HealthRecordItemSections" />
       </Parameters>
       <Docs>
-        <param name="itemId">To be added.</param>
-        <param name="sections">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="itemId">
+            The ID of the health record item to retrieve.
+            </param>
+        <param name="sections">
+            The data sections of the health record item to retrieve.
+            </param>
+        <summary>
+            Gets the health record item specified by its ID.
+            </summary>
+        <returns>
+            A <see cref="T:Microsoft.Health.HealthRecordItem" /> with the specified data sections 
+            filled out.
+            </returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetItemsByType">
@@ -227,7 +367,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.GetItemsByType(System.Guid)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthRecordItemCollection</ReturnType>
@@ -236,10 +376,24 @@
         <Parameter Name="typeId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="typeId">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="typeId">
+            A unique identifier for the type of health record item to filter 
+            on.
+            </param>
+        <summary>
+            Gets the health record items related to this record filtered on the
+            specified type.
+            </summary>
+        <returns>
+            A collection of the health record items related to this record
+            that match the specified type identifier.
+            </returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetItemsByType">
@@ -248,7 +402,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.GetItemsByType(System.Guid,Microsoft.Health.HealthRecordItemSections)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthRecordItemCollection</ReturnType>
@@ -258,11 +412,27 @@
         <Parameter Name="sections" Type="Microsoft.Health.HealthRecordItemSections" />
       </Parameters>
       <Docs>
-        <param name="typeId">To be added.</param>
-        <param name="sections">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="typeId">
+            A unique identifier for the type of health record item to filter 
+            on.
+            </param>
+        <param name="sections">
+            The data sections of the health record item to retrieve.
+            </param>
+        <summary>
+            Gets the health record items related to this record filtered on the
+            specified type.
+            </summary>
+        <returns>
+            A collection of the health record items related to this record
+            that match the specified type identifier.
+            </returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetItemsByType">
@@ -271,7 +441,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.GetItemsByType(System.Guid,Microsoft.Health.HealthRecordView)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthRecordItemCollection</ReturnType>
@@ -281,11 +451,27 @@
         <Parameter Name="view" Type="Microsoft.Health.HealthRecordView" />
       </Parameters>
       <Docs>
-        <param name="typeId">To be added.</param>
-        <param name="view">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="typeId">
+            A unique identifier for the type of health record item to filter 
+            on.
+            </param>
+        <param name="view">
+            The view to use when retrieving the data.
+            </param>
+        <summary>
+            Gets the health record items related to this record filtered on the
+            specified type.
+            </summary>
+        <returns>
+            A collection of the health record items related to this record
+            that match the specified type identifier.
+            </returns>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetValidGroupMembership">
@@ -294,7 +480,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.GetValidGroupMembership(System.Collections.Generic.IList{System.Guid})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.HealthRecordItem&gt;</ReturnType>
@@ -303,10 +489,32 @@
         <Parameter Name="applicationIds" Type="System.Collections.Generic.IList&lt;System.Guid&gt;" />
       </Parameters>
       <Docs>
-        <param name="applicationIds">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="applicationIds">
+            A collection of unique application identifiers for which to 
+            search for group memberships.  For a null or empty application identifier 
+            list, return all valid group memberships for the record.  Otherwise, 
+            return only those group memberships last updated by one of the 
+            supplied application identifiers.
+            </param>
+        <summary>
+            Gets valid group memberships for a record.
+            </summary>
+        <returns>
+            A List of HealthRecordItems representing the valid group memberships.
+            </returns>
+        <remarks>
+            Group membership thing types allow an application to signify that the
+            record belongs to an application defined group.  A record in the group may be 
+            eligible for special programs offered by other applications, for example.  
+            Applications then need a away to query for valid group memberships.
+            <br />
+            Valid group memberships are those memberships which are not expired, and whose
+            last updating application is authorized by the the last updating person to 
+            read and delete the membership.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If an error occurs while contacting the HealthVault service.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetXml">
@@ -315,15 +523,20 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.GetXml" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Retrieves the XML representation of the <see cref="T:Microsoft.Health.HealthRecordAccessor" />.
+            </summary>
+        <returns>
+            A string containing the XML representation of the 
+            <see cref="T:Microsoft.Health.HealthRecordAccessor" />.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -333,15 +546,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordAccessor.Id" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the record identifier.
+            </summary>
+        <value>
+            A globally unique identifier (GUID) for the record.
+            </value>
+        <remarks>
+            The record identifier is issued when the record is created. Creating
+            the account automatically creates a self record as well.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Location">
@@ -350,13 +570,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordAccessor.Location" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.Location</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the location of the person that this record is for.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -367,7 +589,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -376,9 +598,22 @@
         <Parameter Name="item" Type="Microsoft.Health.HealthRecordItem" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="item">
+            The health record item to be created in the HealthVault service.
+            </param>
+        <summary>
+            Creates a new health record item associated with this record in the 
+            HealthVault service.
+            </summary>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The HealthRecordItem supplied was null.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="NewItems">
@@ -387,7 +622,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.NewItems(System.Collections.Generic.IList{Microsoft.Health.HealthRecordItem})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -396,9 +631,24 @@
         <Parameter Name="items" Type="System.Collections.Generic.IList&lt;Microsoft.Health.HealthRecordItem&gt;" />
       </Parameters>
       <Docs>
-        <param name="items">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="items">
+            The health record items from which to create new instances.
+            </param>
+        <summary>
+            Creates new health record items associated with the record.
+            </summary>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error. 
+            The exception's Error property will contain the index of the
+            item on which the failure occurred in the ErrorInfo property. If any failures occur, 
+            no items will have been created.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            At least one HealthRecordItem in the supplied list was null.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="QueryPermissions">
@@ -407,7 +657,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.QueryPermissions(System.Collections.Generic.IList{Microsoft.Health.HealthRecordItemTypeDefinition})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.HealthRecordItemTypePermission&gt;</ReturnType>
@@ -416,10 +666,30 @@
         <Parameter Name="healthRecordItemTypes" Type="System.Collections.Generic.IList&lt;Microsoft.Health.HealthRecordItemTypeDefinition&gt;" />
       </Parameters>
       <Docs>
-        <param name="healthRecordItemTypes">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="healthRecordItemTypes">
+            A collection of <see cref="T:Microsoft.Health.HealthRecordItemTypeDefinition" /> 
+            representing the health record item types 
+            for which the permissions are being queried. 
+            </param>
+        <summary>
+            Returns a list of <see cref="T:Microsoft.Health.HealthRecordItemTypePermission" /> 
+            objects which represent the permissions that the current
+            authenticated person has for the HealthRecordItemTypes specified
+            in the current health record when using the current application.
+            </summary>
+        <returns>
+            A list of <see cref="T:Microsoft.Health.HealthRecordItemTypePermission" /> 
+            objects which represent the permissions that the current
+            authenticated person has for the HealthRecordItemTypes specified
+            in the current health record when using the current application.
+            </returns>
+        <remarks> 
+            If the list of health record item types is empty, an empty list is 
+            returned. If for a health record item type, the person has 
+            neither online access nor offline access permissions, 
+            HealthRecordItemTypePermission object is not returned for that
+            health record item type. 
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="QueryPermissions">
@@ -428,7 +698,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.QueryPermissions(System.Collections.Generic.IList{System.Guid})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.HealthRecordItemTypePermission&gt;</ReturnType>
@@ -437,10 +707,34 @@
         <Parameter Name="healthRecordItemTypeIds" Type="System.Collections.Generic.IList&lt;System.Guid&gt;" />
       </Parameters>
       <Docs>
-        <param name="healthRecordItemTypeIds">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="healthRecordItemTypeIds">
+            A collection of uniqueidentifiers to identify the health record  
+            item types, for which the permissions are being queried. 
+            </param>
+        <summary>
+            Gets the permissions which the authenticated person 
+            has when using the calling application for the specified item types 
+            in this health record.
+            </summary>
+        <returns>
+            A list of <see cref="T:Microsoft.Health.HealthRecordItemTypePermission" /> 
+            objects which represent the permissions that the current
+            authenticated person has for the HealthRecordItemTypes specified
+            in the current health record when using the current application.
+            </returns>
+        <remarks> 
+            If the list of health record item types is empty, an empty list is 
+            returned. If for a health record item type, the person has 
+            neither online access nor offline access permissions, 
+            HealthRecordItemTypePermission object is not returned for that
+            health record item type. 
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="healthRecordItemTypeIds" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If there is an exception during executing the request to HealthVault. 
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="QueryPermissionsByTypes">
@@ -449,7 +743,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.QueryPermissionsByTypes(System.Collections.Generic.IList{System.Guid})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IDictionary&lt;System.Guid,Microsoft.Health.HealthRecordItemTypePermission&gt;</ReturnType>
@@ -458,10 +752,31 @@
         <Parameter Name="healthRecordItemTypeIds" Type="System.Collections.Generic.IList&lt;System.Guid&gt;" />
       </Parameters>
       <Docs>
-        <param name="healthRecordItemTypeIds">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="healthRecordItemTypeIds">
+            A collection of unique identifiers to identify the health record  
+            item types, for which the permissions are being queried. 
+            </param>
+        <summary>
+            Gets the permissions which the authenticated person 
+            has when using the calling application for the specified item types
+            in this  record.
+            </summary>
+        <returns>
+            Returns a dictionary of <see cref="T:Microsoft.Health.HealthRecordItemTypePermission" /> 
+            with health record item types as the keys. 
+            </returns>
+        <remarks> 
+            If the list of health record item types is empty, an empty dictionary is 
+            returned. If for a health record item type, the person has 
+            neither online access nor offline access permissions, 
+            <b> null </b> will be returned for that type in the dictionary.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="healthRecordItemTypeIds" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If there is an exception during executing the request to HealthVault. 
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="QueryRecordPermissions">
@@ -470,7 +785,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.QueryRecordPermissions(System.Collections.Generic.IList{System.Guid})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthRecordPermissions</ReturnType>
@@ -479,10 +794,34 @@
         <Parameter Name="healthRecordItemTypeIds" Type="System.Collections.Generic.IList&lt;System.Guid&gt;" />
       </Parameters>
       <Docs>
-        <param name="healthRecordItemTypeIds">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="healthRecordItemTypeIds">
+            A collection of uniqueidentifiers to identify the health record  
+            item types, for which the permissions are being queried. 
+            </param>
+        <summary>
+            Gets the permissions which the authenticated person 
+            has when using the calling application for the specified item types 
+            in this health record as well as the other permission settings such as <see cref="P:Microsoft.Health.HealthRecordPermissions.MeaningfulUseOptIn">MeaningfulUseOptIn</see>.
+            </summary>
+        <returns>
+            A <see cref="T:Microsoft.Health.HealthRecordPermissions" /> object
+            which contains a collection of <see cref="T:Microsoft.Health.HealthRecordItemTypePermission" /> objects and
+            other permission settings.
+            </returns>
+        <remarks> 
+            If the list of health record item types is empty, an empty list is 
+            returned for <see cref="T:Microsoft.Health.HealthRecordPermissions" /> object's ItemTypePermissions property.
+            If for a health record item type, the person has 
+            neither online access nor offline access permissions, 
+            HealthRecordItemTypePermission object is not returned for that
+            health record item type. 
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="healthRecordItemTypeIds" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            There is an error in the server request.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="RemoveApplicationAuthorization">
@@ -491,15 +830,24 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.RemoveApplicationAuthorization" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Releases the authorization of the application on the health record.
+            </summary>
+        <remarks>
+            Once the application releases the authorization to the health record, 
+            calling any methods of this <see cref="T:Microsoft.Health.HealthRecordAccessor" /> will result 
+            in a <see cref="T:Microsoft.Health.HealthServiceAccessDeniedException" />."
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            Errors during the authorization release.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="RemoveItem">
@@ -508,7 +856,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.RemoveItem(Microsoft.Health.HealthRecordItem)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -517,9 +865,26 @@
         <Parameter Name="item" Type="Microsoft.Health.HealthRecordItem" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="item">
+            The health record item to remove.
+            </param>
+        <summary>
+            Marks the specified health record item as deleted.
+            </summary>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            <br /><br />
+            Health record items are never completely deleted. Instead, they 
+            are marked as deleted and are ignored for most normal operations. 
+            Items can be undeleted by contacting customer service.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="item" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            There are errors that remove the health record item from 
+            the server.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="RemoveItem">
@@ -528,7 +893,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.RemoveItem(Microsoft.Health.HealthRecordItemKey)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -537,9 +902,25 @@
         <Parameter Name="itemId" Type="Microsoft.Health.HealthRecordItemKey" />
       </Parameters>
       <Docs>
-        <param name="itemId">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="itemId">
+             The unique item identifier to remove.
+             </param>
+        <summary>
+             Marks the specified health record item as deleted.
+             </summary>
+        <remarks>
+             This method accesses the HealthVault service across the network.
+             <br /><br />
+             Health record items are never completely deleted. They are marked 
+             as deleted and are ignored for most normal operations. Items can 
+             be undeleted by contacting customer service.
+             </remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="itemId" /> parameter is Guid.Empty.
+             </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+             Errors removed the health record items from the server.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="RemoveItems">
@@ -548,7 +929,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.RemoveItems(System.Collections.Generic.IList{Microsoft.Health.HealthRecordItem})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -557,9 +938,28 @@
         <Parameter Name="itemsToRemove" Type="System.Collections.Generic.IList&lt;Microsoft.Health.HealthRecordItem&gt;" />
       </Parameters>
       <Docs>
-        <param name="itemsToRemove">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="itemsToRemove">
+            A list of the health record items to remove.
+            </param>
+        <summary>
+            Marks the specified health record item as deleted.
+            </summary>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            <br /><br />
+            Health record items are never completely deleted. They are marked
+            as deleted and are ignored for most normal operations. Items can 
+            be undeleted by contacting customer service.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="itemsToRemove" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            Errors removed the health record items from the server.
+            The exception's Error property will contain the index of the
+            item on which the failure occurred in the ErrorInfo property. If any failures occur, 
+            no items will have been removed.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="RemoveItems">
@@ -568,7 +968,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.RemoveItems(System.Collections.Generic.IList{Microsoft.Health.HealthRecordItemKey})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -577,9 +977,28 @@
         <Parameter Name="itemsToRemove" Type="System.Collections.Generic.IList&lt;Microsoft.Health.HealthRecordItemKey&gt;" />
       </Parameters>
       <Docs>
-        <param name="itemsToRemove">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="itemsToRemove">
+            The unique item identifiers of the items to remove.
+            </param>
+        <summary>
+            Marks the specified health record item as deleted.
+            </summary>
+        <remarks>
+            This method accesses the HealthVault service across the network.
+            <br /><br />
+            Health record items are never completely deleted. They are marked 
+            as deleted and are ignored for most normal operations. Items can 
+            be undeleted by contacting customer service.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="itemsToRemove" /> parameter is empty.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            Errors removed the health record items from the server.
+            The exception's Error property will contain the index of the
+            item on which the failure occurred in the ErrorInfo property. If any failures occur, 
+            no items will have been removed.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="SendMessageToCustodiansFromApplication">
@@ -588,7 +1007,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.SendMessageToCustodiansFromApplication(System.Boolean,System.String,System.String,System.String,System.String,System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -602,14 +1021,64 @@
         <Parameter Name="htmlBody" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="addressMustBeValidated">To be added.</param>
-        <param name="senderMailboxName">To be added.</param>
-        <param name="senderDisplayName">To be added.</param>
-        <param name="subject">To be added.</param>
-        <param name="textBody">To be added.</param>
-        <param name="htmlBody">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="addressMustBeValidated">
+            If true, HealthVault will only send the message to custodians with 
+            validated e-mail addresses. If false, the message will
+            be sent even if the custodians' addresses have not been validated.
+            </param>
+        <param name="senderMailboxName">
+            An application specified mailbox name that's sending the message.
+            The mailbox name is appended to the application's domain name to 
+            form the From email address of the message. This parameter should
+            only contain the characters before the @ symbol of the email 
+            address.
+            </param>
+        <param name="senderDisplayName">
+            The message sender's display name.
+            </param>
+        <param name="subject">
+            The subject of the message.
+            </param>
+        <param name="textBody">
+            The text body of the message.
+            </param>
+        <param name="htmlBody">
+            The HTML body of the message.
+            </param>
+        <summary>
+            Sends an insecure message originating from the application 
+            to custodians of the health record.
+            </summary>
+        <remarks>
+            If both the <paramref name="textBody" /> and 
+            <paramref name="htmlBody" /> of the message is specified then a
+            multi-part message will be sent so that the html body will be used
+            and fallback to text if not supported by the client.
+            
+            If the domain name of the application has not been previously 
+            set (usually through app registration), this method will throw 
+            a <see cref="T:Microsoft.Health.HealthServiceException" />.      
+            
+            The calling application and the person through which authorization to the 
+            record was obtained must be authorized for the record. 
+            The person must be either authenticated, or if the person is offline,
+            their person Id specified as the offline person Id.
+            See <see cref="T:Microsoft.Health.Web.OfflineWebApplicationConnection" /> 
+            for more information.
+            </remarks>
+        <exception cref="T:System.ArgumentException"> 
+            if <paramref name="senderMailboxName" /> is null or empty,
+            -or-
+            if <paramref name="senderDisplayName" /> is null or empty,
+            -or-
+            if <paramref name="subject" /> is null or empty,
+            -or-
+            if <paramref name="textBody" /> and <paramref name="htmlBody" />
+            are both null or empty.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If the server returned a failure when making the request.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="UpdateItem">
@@ -618,7 +1087,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.UpdateItem(Microsoft.Health.HealthRecordItem)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -627,9 +1096,27 @@
         <Parameter Name="item" Type="Microsoft.Health.HealthRecordItem" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="item">
+             The health record item to be updated.
+             </param>
+        <summary>
+             Updates the specified health record item.
+             </summary>
+        <remarks>
+             Only new items are updated with the appropriate unique identifier. 
+             All other sections must be updated manually.
+             <br /><br />
+             This method accesses the HealthVault service across the network.
+             </remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="item" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="item" /> parameter does not have an ID.
+             </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+             The HealthVault service returned an error.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="UpdateItems">
@@ -638,7 +1125,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordAccessor.UpdateItems(System.Collections.Generic.IList{Microsoft.Health.HealthRecordItem})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -647,9 +1134,32 @@
         <Parameter Name="itemsToUpdate" Type="System.Collections.Generic.IList&lt;Microsoft.Health.HealthRecordItem&gt;" />
       </Parameters>
       <Docs>
-        <param name="itemsToUpdate">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="itemsToUpdate">
+             The health record items to be updated.
+             </param>
+        <summary>
+             Updates the specified health record items in one batch call to 
+             the service.
+             </summary>
+        <remarks>
+             Only new items are updated with the appropriate unique identifier. 
+             All other sections must be updated manually.
+             <br /><br />
+             This method accesses the HealthVault service across the network.
+             </remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="itemsToUpdate" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="itemsToUpdate" /> contains a <b>null</b> member or
+             a <see cref="T:Microsoft.Health.HealthRecordItem" /> instance that does not have an ID.
+             </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+             The HealthVault service returned an error.
+             The exception's Error property will contain the index of the
+             item on which the failure occurred in the ErrorInfo property. If any failures occur, 
+             no items will have been updated.
+             </exception>
       </Docs>
     </Member>
   </Members>

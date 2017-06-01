@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.BloodOxygenSaturation" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Percentage of oxygen saturation in the blood.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BloodOxygenSaturation.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates an instance of <see cref="T:Microsoft.Health.ItemTypes.BloodOxygenSaturation" /> with default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,17 +39,25 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BloodOxygenSaturation.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime,System.Double)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="when" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
         <Parameter Name="value" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="when">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="when">The date and time the measurement was taken.</param>
+        <param name="value">The percentage of oxygen saturation in the blood.</param>
+        <summary>
+            Creates an instance of <see cref="T:Microsoft.Health.ItemTypes.BloodOxygenSaturation" /> with specified parameters. 
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="when" /> is <b>null</b>. 
+            </exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="value" /> is less than 0.0 or greater than 1.0.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="MeasurementFlags">
@@ -54,15 +66,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BloodOxygenSaturation.MeasurementFlags" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the additional information about the measurement. 
+            </summary>
+        <value>
+            The additional information about the measurement
+            </value>
+        <remarks>
+            Examples: Incomplete measurement, irregular heartbeat. If the value is not known, 
+            it will be set to <b>null</b>. The preferred vocabulary for this value is 
+            "blood-oxygen-saturation-measurement-method".
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="MeasurementMethod">
@@ -71,15 +91,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BloodOxygenSaturation.MeasurementMethod" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the technique used to obtain the measurement. 
+            </summary>
+        <value>
+            The technique used to obtain the measurement.
+            </value>
+        <remarks>
+            If the value is not known, it will be set to <b>null</b>. The preferred vocabulary 
+            for this value is "blood-oxygen-saturation-measurement-method". 
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -88,7 +115,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BloodOxygenSaturation.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -97,9 +124,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the blood oxygen saturation data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.BloodOxygenSaturation" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            If the first node in <paramref name="typeSpecificXml" /> is not
+            a "blood-oxygen-saturation" node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -108,15 +143,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BloodOxygenSaturation.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets the description of a blood oxygen instance. 
+            </summary>
+        <returns>
+            A string representation of the blood oxygen item. 
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -126,13 +165,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.BloodOxygenSaturation.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the blood oxygen saturation item type.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -142,15 +183,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BloodOxygenSaturation.Value" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Double</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the measured blood oxygen saturation percentage. 
+            </summary>
+        <value>
+            The measured blood oxygen saturation percentage.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            If the <paramref name="value" /> parameter is less than 0.0 or greater than 1.0.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="When">
@@ -159,15 +207,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BloodOxygenSaturation.When" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the date and time of this measurement.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing the date 
+            and time.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -176,7 +232,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BloodOxygenSaturation.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -185,9 +241,19 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the blood oxygen saturation data to. 
+            </param>
+        <summary>
+            Writes the blood oxygen saturation data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.BloodOxygenSaturation.When" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

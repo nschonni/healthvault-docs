@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.BodyCompositionValue" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            A single measurement of body composition.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +23,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BodyCompositionValue.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Constructs a new instance of the <see cref="T:Microsoft.Health.ItemTypes.BodyCompositionValue" /> class 
+            with default values.
+            </summary>
+        <remarks>
+            The mass-value element is used to store mass values, and the percentage-value is 
+            used to store precentages. An application should set one or the other. When both 
+            values are available, they should be stored in separate instance. 
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="MassValue">
@@ -35,15 +44,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BodyCompositionValue.MassValue" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.WeightValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets a body composition measurement stored as a mass.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Examples: 45 Kg, 15 lbs. 
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -52,7 +65,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BodyCompositionValue.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -61,9 +74,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator">
+             The XML to get the body composition value data from.
+             </param>
+        <summary>
+             Populates this <see cref="T:Microsoft.Health.ItemTypes.BodyCompositionValue" /> instance from the data in the XML. 
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="navigator" /> is <b> null </b>.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="PercentValue">
@@ -72,15 +92,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BodyCompositionValue.PercentValue" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets a body composition measurement stored as a percentage.  
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Examples: 0.37 (37%), 0.075 (7.5%). 
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -89,15 +113,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BodyCompositionValue.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of BodyCompositionValue. 
+            </summary>
+        <returns>
+            A string representation of the BodyCompositionValue.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -107,7 +135,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BodyCompositionValue.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -117,10 +145,22 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the outer node for the body composition value item.
+            </param>
+        <param name="writer">
+            The XmlWriter to write the body composition value data to.
+            </param>
+        <summary>
+            Writes the body composition value data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="nodeName" /> is <b> null </b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b> null </b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

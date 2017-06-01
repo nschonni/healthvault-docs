@@ -4,15 +4,19 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.BodyDimension" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+             Stores a body dimension.
+             </summary>
+    <remarks>
+             Exmaples: Waist size, head circumference, length (pediatric). 
+             </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,12 +25,16 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BodyDimension.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Stores a body dimension.
+            </summary>
+        <remarks>
+            Examples: Waist size, head circumference, length (pediatric). 
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,7 +43,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BodyDimension.#ctor(Microsoft.Health.ItemTypes.ApproximateDateTime,Microsoft.Health.ItemTypes.CodableValue,Microsoft.Health.ItemTypes.Length)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="when" Type="Microsoft.Health.ItemTypes.ApproximateDateTime" />
@@ -43,11 +51,25 @@
         <Parameter Name="value" Type="Microsoft.Health.ItemTypes.Length" />
       </Parameters>
       <Docs>
-        <param name="when">To be added.</param>
-        <param name="measurementName">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="when">
+             The date and time of the body dimension measurement.
+             </param>
+        <param name="measurementName">
+             The name of the body dimension measurement.
+             </param>
+        <param name="value">
+             The value of the body dimension measurement. 
+             </param>
+        <summary>
+             Stores a body dimension.
+             </summary>
+        <remarks>
+             Examples: Waist size, head circumference, length (pediatric). 
+             </remarks>
+        <exception cref="T:System.ArgumentNullException"> 
+             If <paramref name="when" />, <paramref name="measurementName" /> or 
+             <paramref name="value" /> is <b>null</b>.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="MeasurementName">
@@ -56,15 +78,27 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BodyDimension.MeasurementName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the name of this measurement.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> instance representing the name
+            of this measurement.
+            </value>
+        <remarks>
+            Choose the appropriate preferred vocabulary based on your scenario. 
+            The preferred vocabularies are "body-dimension-measurement-names" 
+            and "body-dimension-measurement-names-pediatrics".
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -73,7 +107,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BodyDimension.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -82,9 +116,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the body dimension data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.BodyDimension" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            If the first node in <paramref name="typeSpecificXml" /> is not
+            a "body-dimension" node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -93,15 +135,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BodyDimension.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets the representation of a body dimension instance. 
+            </summary>
+        <returns>
+            A string representation of the body dimension instance. 
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,13 +157,15 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.BodyDimension.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -127,15 +175,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BodyDimension.Value" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.Length</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the value of this measurement.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.Length" /> instance representing the value of 
+            this measurement.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="When">
@@ -144,15 +200,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.BodyDimension.When" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the date and time of the body dimension measurement.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> instance representing the date 
+            and time.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -161,7 +225,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.BodyDimension.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -170,9 +234,20 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the body dimension data to. 
+            </param>
+        <summary>
+            Writes the body dimension data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.BodyDimension.When" />, <see cref="P:Microsoft.Health.ItemTypes.BodyDimension.MeasurementName" /> or <see cref="P:Microsoft.Health.ItemTypes.BodyDimension.Value" />
+            is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

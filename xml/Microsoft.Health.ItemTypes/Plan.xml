@@ -4,15 +4,21 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Plan" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents a health record item type that encapsulates a plan
+            helping a user address a particular aspect of their health.
+            </summary>
+    <remarks>
+            Applications should not interact with this data type directly.
+            Instead, they should use the ActionPlan methods in the HealthVault REST APIs.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +27,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Plan.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Plan" /> 
+            class with default values
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,7 +44,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Plan.#ctor(System.String,Microsoft.Health.ItemTypes.ActionPlans.PlanCategory,Microsoft.Health.ItemTypes.ActionPlans.PlanStatus,System.Collections.Generic.List{Microsoft.Health.ItemTypes.ActionPlans.PlanObjective})" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
@@ -48,7 +57,9 @@
         <param name="category">To be added.</param>
         <param name="status">To be added.</param>
         <param name="objectives">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Plan" /> class
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -58,15 +69,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Plan.Category" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ActionPlans.PlanCategory</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The plan category.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter has value Unknown.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Description">
@@ -75,15 +91,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Plan.Description" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The plan description.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Applications typically display this string and would pass in a value
+            in the user's display language.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter is empty or whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -92,15 +116,26 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Plan.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The plan name.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Applications typically display this string and would pass in a value
+            in the user's display language.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter is empty or whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Objectives">
@@ -109,13 +144,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Plan.Objectives" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.List&lt;Microsoft.Health.ItemTypes.ActionPlans.PlanObjective&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The objectives to be achieved by following the plan.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -126,7 +163,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Plan.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -136,7 +173,9 @@
       </Parameters>
       <Docs>
         <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.Plan" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -146,15 +185,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Plan.Status" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ActionPlans.PlanStatus</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The plan status.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter has value Unknown.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -163,15 +207,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Plan.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+             Gets a string representation of the insight.
+             </summary>
+        <returns>
+             A string representing the insight.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -181,13 +229,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.Plan.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -197,7 +250,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Plan.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -207,7 +260,9 @@
       </Parameters>
       <Docs>
         <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>
+            Writes the item data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

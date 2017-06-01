@@ -4,15 +4,31 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.SnpItem" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+             A SNP test result item.
+             </summary>
+    <remarks>
+             Within the comma-separated data, each SNP is encoded as follows:
+             
+             [refSNP id],[strand orientation],[result],[assay id],[start position],[end position]
+             
+             Where:
+             refSNP id: Reference SNP identifier from NCBI dbSNP database.
+              strand orientation: "+" encodes top, "-" encodes bottom.
+              result: the result of the test.
+              assay id: Platform dependent probe set id.
+              start position: Start position on the chromosome.
+              end position: End position on the chromosome.
+              
+             Example: rs1891906,-,GT, SNP_C-315533, 940106, 940107
+             </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +37,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.SnpItem.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.ItemTypes.SnpItem" /> type with default values. 
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,7 +53,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.SnpItem.#ctor(System.String,System.String,System.String,System.String,System.Int32,System.Int32)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="referenceSnpId" Type="System.String" />
@@ -46,13 +64,15 @@
         <Parameter Name="endPosition" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="referenceSnpId">To be added.</param>
-        <param name="strandOrientation">To be added.</param>
-        <param name="result">To be added.</param>
-        <param name="assayId">To be added.</param>
-        <param name="startPosition">To be added.</param>
-        <param name="endPosition">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="referenceSnpId">Reference SNP Id (rs).</param>
+        <param name="strandOrientation">The orientation of the strand. </param>
+        <param name="result">The result of the SNP test. </param>
+        <param name="assayId">The platform dependent probe set id. </param>
+        <param name="startPosition">The start position on the chromosome. </param>
+        <param name="endPosition">The end position on the chromosome. </param>
+        <summary>
+            Creates an instance of the <see cref="T:Microsoft.Health.ItemTypes.SnpItem" /> type with the specified values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -62,13 +82,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.SnpItem.AssayId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the assay ID.  
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -79,13 +101,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.SnpItem.EndPosition" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the end Position.  
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -96,15 +120,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.SnpItem.ReferenceSnpId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the Reference SNP ID of the result. 
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            For example, rs132342. 
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Result">
@@ -113,15 +141,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.SnpItem.Result" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the result of the SNP test.  
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            For example, AA, AT. Each letter correspond to one copy of 
+            the specified SNP is the customer's genome, since each of us has two 
+            copies of each gene under normal circumstance.  
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="StartPosition">
@@ -130,13 +164,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.SnpItem.StartPosition" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the start position.  
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -147,15 +183,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.SnpItem.StrandOrientation" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the orientation of the strand.  
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The value can be either + or -.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -164,14 +204,16 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.SnpItem.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a string representation of the snp result item. 
+            </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>

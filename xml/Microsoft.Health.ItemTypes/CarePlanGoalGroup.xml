@@ -4,15 +4,20 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.CarePlanGoalGroup" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+             Goal groups are used to group related measurement goals together.
+             </summary>
+    <remarks>
+             For example, blood pressure has two individual measurement goals (systolic and diastolic) but are grouped 
+             together under blood pressure.
+             </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +26,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CarePlanGoalGroup.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.CarePlanGoalGroup" /> class with default values.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,17 +42,28 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CarePlanGoalGroup.#ctor(Microsoft.Health.ItemTypes.CodableValue,System.Collections.ObjectModel.Collection{Microsoft.Health.ItemTypes.CarePlanGoal})" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="Microsoft.Health.ItemTypes.CodableValue" />
         <Parameter Name="goals" Type="System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.CarePlanGoal&gt;" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <param name="goals">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">
+             Name of the goal group.
+             </param>
+        <param name="goals">
+             List of care plan goals associated with this goal group.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.CarePlanGoalGroup" /> class
+             specifying mandatory values.
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="name" /> is <b>null</b>.
+             If <paramref name="goals" /> is <b>null</b>.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="Description">
@@ -54,15 +72,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CarePlanGoalGroup.Description" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets description of the goal group.
+             </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+             If there is no information about description the value should be set to <b>null</b>.
+             </remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="value" /> contains only whitespace.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="Goals">
@@ -71,13 +96,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CarePlanGoalGroup.Goals" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.CarePlanGoal&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets list of care plan goals associated with this goal group.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -88,15 +115,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CarePlanGoalGroup.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets name of the goal group.
+             </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+             If there is no information about name the value should be set to <b>null</b>.
+             </remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="value" /> parameter is <b>null</b>.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -105,7 +139,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CarePlanGoalGroup.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -114,9 +148,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator">
+             The XML to get the CarePlanGoalGroup data from.
+             </param>
+        <summary>
+             Populates this <see cref="T:Microsoft.Health.ItemTypes.CarePlanGoalGroup" /> instance from the data in the specified XML.
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="navigator" /> parameter is <b>null</b>.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -125,15 +166,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CarePlanGoalGroup.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+             Gets a string representation of the CarePlanGoalGroup.
+             </summary>
+        <returns>
+             A string representation of the CarePlanGoalGroup.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -143,7 +188,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CarePlanGoalGroup.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -153,10 +198,28 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+             The name of the outer node for the medical image study series.
+             </param>
+        <param name="writer">
+             The XML writer into which the CarePlanGoalGroup should be
+             written.
+             </param>
+        <summary>
+             Writes the XML representation of the CarePlanGoalGroup into
+             the specified XML writer.
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+             </exception>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="writer" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+             If <see cref="P:Microsoft.Health.ItemTypes.CarePlanGoalGroup.Name" /> is <b>null</b>.
+             If <see cref="P:Microsoft.Health.ItemTypes.CarePlanGoalGroup.Goals" /> is <b>null</b>.
+             </exception>
       </Docs>
     </Member>
   </Members>

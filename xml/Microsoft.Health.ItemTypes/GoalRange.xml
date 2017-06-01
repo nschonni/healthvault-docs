@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.GoalRange" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+             This represents a goal range associated with a goal.
+             </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.GoalRange.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.GoalRange" /> class with default values.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,15 +39,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.GoalRange.#ctor(Microsoft.Health.ItemTypes.CodableValue)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="Microsoft.Health.ItemTypes.CodableValue" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">
+             The name of the goal range.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.GoalRange" /> class
+             specifying mandatory values.
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="name" /> is <b>null</b>.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="Description">
@@ -52,15 +64,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.GoalRange.Description" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets a description for the goal range allows more detailed information about the range.
+             </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+             This information could for instance be included in tooltips when hovering over a graph.
+             If there is no information about description the value should be set to <b>null</b>.
+             </remarks>
+        <exception cref="T:System.ArgumentException">
+             The <paramref name="value" /> contains only whitespace.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="Maximum">
@@ -69,15 +89,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.GoalRange.Maximum" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.GeneralMeasurement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets maximum value of the range.
+             </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+             For ranges less than a specified value with no minimum, specify a maximum but no minimum.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="Minimum">
@@ -86,15 +110,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.GoalRange.Minimum" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.GeneralMeasurement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets minimum value of the range.
+             </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+             For ranges greater than a specified value with no maximum, specify a minimum but no maximum.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -103,15 +131,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.GoalRange.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets or sets the name of the goal range.
+             </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+             If there is no information about name the value should be set to <b>null</b>.
+             </remarks>
+        <exception cref="T:System.ArgumentNullException">
+             The <paramref name="value" /> parameter is <b>null</b>.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -120,7 +155,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.GoalRange.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -129,9 +164,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator">
+             The XML to get the GoalRange data from.
+             </param>
+        <summary>
+             Populates this <see cref="T:Microsoft.Health.ItemTypes.GoalRange" /> instance from the data in the specified XML.
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="navigator" /> parameter is <b>null</b>.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -140,15 +182,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.GoalRange.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+             Gets a string representation of the GoalRange.
+             </summary>
+        <returns>
+             A string representation of the GoalRange.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -158,7 +204,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.GoalRange.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -168,10 +214,27 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+             The name of the outer node for the medical image study series.
+             </param>
+        <param name="writer">
+             The XML writer into which the GoalRange should be
+             written.
+             </param>
+        <summary>
+             Writes the XML representation of the GoalRange into
+             the specified XML writer.
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+             </exception>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="writer" /> parameter is <b>null</b>.
+             </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+             If <see cref="P:Microsoft.Health.ItemTypes.GoalRange.Name" /> is <b>null</b>.
+             </exception>
       </Docs>
     </Member>
   </Members>

@@ -4,15 +4,23 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Events.NotificationHandler" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            A class to make processing event notifications simpler.
+            </summary>
+    <remarks>
+            To use this class, create an instance and then hook a delegate to the
+            event the application is interested in. Then, call the <see cref="M:Microsoft.Health.Events.NotificationHandler.ProcessNotificationXml(System.String)" />
+            method and pass in the notication XML from the HealthVault service. The
+            method will parse the XML, find the notifications in it, and fire the 
+            appropriate event. 
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,7 +29,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.NotificationHandler.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -35,7 +43,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Events.NotificationHandler.ProcessNotificationXml(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -44,9 +52,17 @@
         <Parameter Name="notificationXml" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="notificationXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="notificationXml">The notification XML from the HealthVault service.</param>
+        <summary>
+            Parses the notification XML from the HealthVault service and dispatches to event handlers.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="notificationXml" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="notificationXml" /> does not contain a notifications node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="RecordChanged">
@@ -55,14 +71,19 @@
       <MemberSignature Language="DocId" Value="E:Microsoft.Health.Events.NotificationHandler.RecordChanged" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.EventHandler&lt;Microsoft.Health.Events.HealthRecordItemChangedEventArgs&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            The record changed event.
+            </summary>
+        <remarks>
+            This event is called when the <see cref="M:Microsoft.Health.Events.NotificationHandler.ProcessNotificationXml(System.String)" /> method is called and the 
+            XML that is passed to it contains record changed notifications.
+            </remarks>
       </Docs>
     </Member>
   </Members>

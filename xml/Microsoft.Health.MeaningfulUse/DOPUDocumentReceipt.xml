@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.MeaningfulUse.DOPUDocumentReceipt" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Provides DOPU document receipt information for Meaningful Use Timely Access Report.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,15 +23,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.MeaningfulUse.DOPUDocumentReceipt.#ctor(System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="source" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="source">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="source">
+            The source that added the DOPU package to HealthVault.
+            This is either the application id or domain of the email sender if data came from Direct channel.
+            </param>
+        <summary>
+            Constructor for DOPUDocumentReceipt.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="source" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="AvailableDate">
@@ -38,14 +48,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.MeaningfulUse.DOPUDocumentReceipt.AvailableDate" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets the date the DOPU package associated with this report entry was made available in HealthVault.
+            </summary>
+        <value>
+            The date the DOPU package associated with this report entry was made available in HealthVault.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -55,14 +69,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.MeaningfulUse.DOPUDocumentReceipt.PackageId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+             Gets the identifier of the DOPU package associated with this report entry.
+             </summary>
+        <value>
+             A string representing the identifier of the package which
+             is returned to the application from the call to CreateConnectPackage.
+             </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -72,14 +91,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.MeaningfulUse.DOPUDocumentReceipt.Source" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the contributing source of this package.
+            </summary>
+        <value>
+            A string representing the unique identifier of the application that added the data
+            or the domain of the sender if data was contributed via Direct channel.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -4,7 +4,7 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.CachedServiceInfoProvider" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -15,8 +15,13 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+             A cached provider for service info retrieved from the HealthVault web-service.
+             </summary>
+    <remarks>
+             This provider will cache the service information it obtains from Platform for
+             a configured or specified period of time. 
+             </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -25,12 +30,18 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.CachedServiceInfoProvider.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Initializes a new instance of the provider using the expiration period
+            provided through configuration and retrieving the full service info response.
+            </summary>
+        <remarks>
+            The expiration period is the value of the
+            <see cref="P:Microsoft.Health.HealthApplicationConfiguration.ServiceInfoDefaultCacheTtl" /> configuration.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -39,15 +50,26 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.CachedServiceInfoProvider.#ctor(Microsoft.Health.ServiceInfoSections)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="responseSections" Type="Microsoft.Health.ServiceInfoSections" />
       </Parameters>
       <Docs>
-        <param name="responseSections">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="responseSections">
+            The categories of information to be populated in the
+            <see cref="T:Microsoft.Health.ServiceInfo" /> instance, represented as the result of XOR'ing the
+            desired categories.
+            </param>
+        <summary>
+            Initializes a new instance of the provider using the expiration period
+            provided through configuration and retrieving the service information
+            for the specified response sections.
+            </summary>
+        <remarks>
+            The expiration period is the value of the
+            <see cref="P:Microsoft.Health.HealthApplicationConfiguration.ServiceInfoDefaultCacheTtl" /> configuration.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -56,14 +78,20 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.CachedServiceInfoProvider.#ctor(System.TimeSpan)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="timeToLive" Type="System.TimeSpan" />
       </Parameters>
       <Docs>
-        <param name="timeToLive">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="timeToLive">
+            Period of time before the cached instance of service info is considered expired, and a new copy is obtained
+            from the HealthVault web-service.
+            </param>
+        <summary>
+            Initializes a new instance of the provider with a specified expiration period and
+            retrieving the full service info response.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,14 +101,20 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.CachedServiceInfoProvider.#ctor(System.Uri)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="healthServiceUrl" Type="System.Uri" />
       </Parameters>
       <Docs>
-        <param name="healthServiceUrl">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="healthServiceUrl">
+            The URL for the HealthVault web-service to use to retrieve the service information.
+            </param>
+        <summary>
+            Initializes a new instance of the provider using the expiration period
+            provided through configuration and retrieving the full service info response
+            using the specified HealthVault web-service URL.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -90,16 +124,26 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.CachedServiceInfoProvider.#ctor(Microsoft.Health.ServiceInfoSections,System.TimeSpan)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="responseSections" Type="Microsoft.Health.ServiceInfoSections" />
         <Parameter Name="timeToLive" Type="System.TimeSpan" />
       </Parameters>
       <Docs>
-        <param name="responseSections">To be added.</param>
-        <param name="timeToLive">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="responseSections">
+            The categories of information to be populated in the
+            <see cref="T:Microsoft.Health.ServiceInfo" /> instance, represented as the result of XOR'ing the
+            desired categories.
+            </param>
+        <param name="timeToLive">
+            Period of time before the cached instance of service info is considered expired, and a new copy is obtained
+            from the HealthVault web-service.
+            </param>
+        <summary>
+            Initializes a new instance of the provider with a specified expiration period and
+            retrieving the service information for the specified response sections.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -109,7 +153,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.CachedServiceInfoProvider.#ctor(Microsoft.Health.ServiceInfoSections,System.TimeSpan,System.Uri)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="responseSections" Type="Microsoft.Health.ServiceInfoSections" />
@@ -117,10 +161,23 @@
         <Parameter Name="healthServiceUrl" Type="System.Uri" />
       </Parameters>
       <Docs>
-        <param name="responseSections">To be added.</param>
-        <param name="timeToLive">To be added.</param>
-        <param name="healthServiceUrl">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="responseSections">
+            The categories of information to be populated in the
+            <see cref="T:Microsoft.Health.ServiceInfo" /> instance, represented as the result of XOR'ing the
+            desired categories.
+            </param>
+        <param name="timeToLive">
+            Period of time before the cached instance of service info is considered expired, and a new copy is obtained
+            from the HealthVault web-service.
+            </param>
+        <param name="healthServiceUrl">
+            The URL for of the HealthVault web-service to use to retrieve the service information.
+            </param>
+        <summary>
+            Initializes a new instance of the provider with a specified expiration period and
+            retrieving the service information for the specified response sections using the
+            specified HealthVault web-service URL.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -130,16 +187,22 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.CachedServiceInfoProvider.GetServiceInfo" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ServiceInfo</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>
+            Returns the service information retrieved from the HealthVault web-service.
+            </summary>
+        <returns>
+            Service information retrieved from the HealthVault web-service.
+            </returns>
+        <remarks>
+            Calls to this method are thread-safe.
+            </remarks>
       </Docs>
     </Member>
   </Members>

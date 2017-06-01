@@ -4,15 +4,31 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthServiceConnection" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Simplifies access to the HealthVault service. This class is 
+            abstract.
+            </summary>
+    <remarks>
+            A connection must be made to the HealthVault service to access the
+            web methods that the service exposes. The class does not maintain
+            an open connection to the service. It uses XML over HTTP to 
+            make requests and receive responses from the service. The connection
+            just maintains the data necessary to make the request.
+            <br /><br />
+            You cannot directly instantiate this abstract class. Instead, instantiate 
+            an instance of <see cref="T:Microsoft.Health.ApplicationConnection" /> or 
+            <see cref="T:Microsoft.Health.AuthenticatedConnection" /> to communicate with the Microsoft 
+            HealthVault service. 
+            </remarks>
+    <altmember cref="T:Microsoft.Health.AuthenticatedConnection" />
+    <altmember cref="T:Microsoft.Health.ApplicationConnection" />
   </Docs>
   <Members>
     <Member MemberName="ApplicationId">
@@ -21,13 +37,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceConnection.ApplicationId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the calling application's ID.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -38,15 +56,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceConnection.AuthenticationToken" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the authorization token to be used in all requests for this user.
+            </summary>
+        <value>
+            A base64 encoded string that represents the person ID, application 
+            ID, expiration, and group membership of the person and application 
+            requesting access to HealthVault.
+            </value>
+        <remarks>
+            The authorization token can be retrieved using the 
+            <see cref="M:Microsoft.Health.Authentication.Credential.CreateAuthenticatedSessionToken(Microsoft.Health.HealthServiceConnection,System.Guid)" /> web method from 
+            HealthVault or by calling the HealthVault Shell authentication web page.
+            <br /><br /></remarks>
       </Docs>
     </Member>
     <Member MemberName="CancelAllRequests">
@@ -55,15 +83,26 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceConnection.CancelAllRequests" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Cancels any pending request to HealthVault that was initiated with this connection 
+            instance and prevents any new requests from being made.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Setting this property to true will cancel any requests that was started using this 
+            connection and will prevent new requests from being made.
+            It is up to the caller to start the request on another thread. Cancelling will cause
+            a HealthServiceRequestCancelledException to be thrown on the thread the request was
+            executed on.
+            <br /><br />
+            If you want to start reusing the connection set the property to false.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="CreateRequest">
@@ -72,7 +111,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceConnection.CreateRequest(System.String,System.Int32)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthServiceRequest</ReturnType>
@@ -82,11 +121,29 @@
         <Parameter Name="methodVersion" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="methodName">To be added.</param>
-        <param name="methodVersion">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="methodName">
+            The name of the method of the web-service to call.
+            </param>
+        <param name="methodVersion">
+            The version of the method to call.
+            </param>
+        <summary>
+            Provides a wrapper around the XML request for the web service.
+            </summary>
+        <returns>
+            A <see cref="T:Microsoft.Health.HealthServiceRequest" /> that acts as a
+            wrapper to XML request for the HealthVault web-service.
+            </returns>
+        <remarks>
+            This method skips the object model provided by the other
+            methods of this class and acts as a simple wrapper around the XML 
+            request for the web service. The caller must provide the parameters 
+            in the correct format for the called method and in order to parse 
+            the response data.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="methodName" /> parameter is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Credential">
@@ -95,15 +152,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceConnection.Credential" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.Authentication.Credential</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the application credential that is used to access 
+            HealthVault.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Culture">
@@ -112,14 +175,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceConnection.Culture" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Globalization.CultureInfo</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the language to be sent to the server when making
+            requests.
+            </summary>
+        <value>
+            A CultureInfo representing the language.
+            </value>
+        <value>
+            A CultureInfo representing the language.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -129,16 +200,39 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceConnection.GetServiceDefinition" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ServiceInfo</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets information about the HealthVault service.
+            </summary>
+        <returns>
+            A <see cref="T:Microsoft.Health.ServiceInfo" /> instance that contains the service version, SDK
+            assemblies versions and URLs, method information, and so on.
+            </returns>
+        <remarks>
+            Gets the latest information about the HealthVault service. This 
+            includes:<br />
+            - The version of the service.<br />
+            - The SDK assembly URLs.<br />
+            - The SDK assembly versions.<br />
+            - The SDK documentation URL.<br />
+            - The URL to the HealthVault Shell.<br />
+            - The schema definition for the HealthVault method's request and 
+              response.<br />
+            - The common schema definitions for types that the HealthVault methods
+              use.<br />
+            - Information about all available HealthVault instances.<br /></remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
+        <exception cref="T:System.UriFormatException">
+            One or more URL strings returned by HealthVault is invalid.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetServiceDefinition">
@@ -147,7 +241,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceConnection.GetServiceDefinition(Microsoft.Health.ServiceInfoSections)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ServiceInfo</ReturnType>
@@ -156,10 +250,42 @@
         <Parameter Name="responseSections" Type="Microsoft.Health.ServiceInfoSections" />
       </Parameters>
       <Docs>
-        <param name="responseSections">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="responseSections">
+            The categories of information to be populated in the <see cref="T:Microsoft.Health.ServiceInfo" />
+            instance, represented as the result of XOR'ing the desired categories.
+            </param>
+        <summary>
+            Gets information about the HealthVault service corresponding to the specified
+            categories.
+            </summary>
+        <returns>
+            A <see cref="T:Microsoft.Health.ServiceInfo" /> instance that contains some or all of the service version,
+            SDK assemblies versions and URLs, method information, and so on, depending on which
+            information categories were specified.
+            </returns>
+        <remarks>
+            Gets the latest information about the HealthVault service. Depending on the specified
+            <paramref name="responseSections" />, this will include some or all of:<br />
+            - The version of the service.<br />
+            - The SDK assembly URLs.<br />
+            - The SDK assembly versions.<br />
+            - The SDK documentation URL.<br />
+            - The URL to the HealthVault Shell.<br />
+            - The schema definition for the HealthVault method's request and 
+              response.<br />
+            - The common schema definitions for types that the HealthVault methods
+              use.<br />
+            - Information about all available HealthVault instances.<br />
+            
+            Retrieving only the sections you need will give a faster response time than
+            downloading the full response.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
+        <exception cref="T:System.UriFormatException">
+            One or more URL strings returned by HealthVault is invalid.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetServiceDefinition">
@@ -168,7 +294,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceConnection.GetServiceDefinition(System.DateTime)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ServiceInfo</ReturnType>
@@ -177,10 +303,40 @@
         <Parameter Name="lastUpdatedTime" Type="System.DateTime" />
       </Parameters>
       <Docs>
-        <param name="lastUpdatedTime">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="lastUpdatedTime">
+            The time of the last update to an existing cached copy of <see cref="T:Microsoft.Health.ServiceInfo" />.
+            </param>
+        <summary>
+            Gets information about the HealthVault service only if it has been updated since
+            the specified update time.
+            </summary>
+        <returns>
+            If there were updates to the service information since the specified <paramref name="lastUpdatedTime" />,
+            a <see cref="T:Microsoft.Health.ServiceInfo" /> instance that contains the service version, SDK
+            assemblies versions and URLs, method information, and so on.  Otherwise, if there were no updates,
+            returns <b>null</b>.
+            </returns>
+        <remarks>
+            Gets the latest information about the HealthVault service, if there were updates
+            since the specified <paramref name="lastUpdatedTime" />.  If there were no updates
+            the method returns <b>null</b>.
+            This includes:<br />
+            - The version of the service.<br />
+            - The SDK assembly URLs.<br />
+            - The SDK assembly versions.<br />
+            - The SDK documentation URL.<br />
+            - The URL to the HealthVault Shell.<br />
+            - The schema definition for the HealthVault method's request and 
+              response.<br />
+            - The common schema definitions for types that the HealthVault methods
+              use.<br />
+            - Information about all available HealthVault instances.<br /></remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
+        <exception cref="T:System.UriFormatException">
+            One or more URL strings returned by HealthVault is invalid.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetServiceDefinition">
@@ -189,7 +345,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceConnection.GetServiceDefinition(Microsoft.Health.ServiceInfoSections,System.DateTime)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ServiceInfo</ReturnType>
@@ -199,11 +355,51 @@
         <Parameter Name="lastUpdatedTime" Type="System.DateTime" />
       </Parameters>
       <Docs>
-        <param name="responseSections">To be added.</param>
-        <param name="lastUpdatedTime">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="responseSections">
+            The categories of information to be populated in the <see cref="T:Microsoft.Health.ServiceInfo" />
+            instance, represented as the result of XOR'ing the desired categories.
+            </param>
+        <param name="lastUpdatedTime">
+            The time of the last update to an existing cached copy of <see cref="T:Microsoft.Health.ServiceInfo" />.
+            </param>
+        <summary>
+            Gets information about the HealthVault service corresponding to the specified
+            categories if the requested information has been updated since the specified
+            update time.
+            </summary>
+        <returns>
+            If there were updates to the service information since the specified <paramref name="lastUpdatedTime" />,
+            a <see cref="T:Microsoft.Health.ServiceInfo" /> instance that contains some or all of the service version,
+            SDK  assemblies versions and URLs, method information, and so on, depending on which
+            information categories were specified.  Otherwise, if there were no updates, returns
+            <b>null</b>.
+            </returns>
+        <remarks>
+            Gets the latest information about the HealthVault service, if there were updates
+            since the specified <paramref name="lastUpdatedTime" />.  If there were no updates
+            the method returns <b>null</b>.
+            Depending on the specified
+            <paramref name="responseSections" />, this will include some or all of:<br />
+            - The version of the service.<br />
+            - The SDK assembly URLs.<br />
+            - The SDK assembly versions.<br />
+            - The SDK documentation URL.<br />
+            - The URL to the HealthVault Shell.<br />
+            - The schema definition for the HealthVault method's request and 
+              response.<br />
+            - The common schema definitions for types that the HealthVault methods
+              use.<br />
+            - Information about all available HealthVault instances.<br />
+            
+            Retrieving only the sections you need will give a faster response time than
+            downloading the full response.
+            </remarks>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The HealthVault service returned an error.
+            </exception>
+        <exception cref="T:System.UriFormatException">
+            One or more URL strings returned by HealthVault is invalid.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="RequestCompressionMethod">
@@ -212,14 +408,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceConnection.RequestCompressionMethod" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the request compression method for this connection.
+            </summary>
+        <value>
+            A string representing the request compression method.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -229,13 +429,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceConnection.RequestTimeoutSeconds" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the request timeout in seconds.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -246,13 +448,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceConnection.RequestTimeToLive" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the request time-to-live in seconds.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -263,14 +467,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceConnection.RequestUrl" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets the HealthVault web-service URL.
+            </summary>
+        <value>
+            An instance of Uri representing the HealthVault web-service URL.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -280,14 +488,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceConnection.ResponseCompressionMethods" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the comma-separated response compression methods.
+            </summary>
+        <value>
+            A string representing the response compression methods.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -297,13 +509,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceConnection.ServiceInstance" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthServiceInstance</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the HealthVault web-service instance associated with this connection.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -314,15 +528,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceConnection.WebProxy" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.IWebProxy</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the proxy to use with this instance of
+            <see cref="T:Microsoft.Health.HealthServiceConnection" />. 
+            </summary>
+        <value>
+            An instance of <see cref="T:System.Net.IWebProxy" />.
+            </value>
+        <remarks>
+            The default setting is to use <see cref="P:System.Net.WebRequest.DefaultWebProxy" />.
+            To disable proxy usage, set this property to <b>null</b>.
+            </remarks>
       </Docs>
     </Member>
   </Members>

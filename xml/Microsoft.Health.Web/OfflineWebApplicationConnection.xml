@@ -4,15 +4,28 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Web.OfflineWebApplicationConnection" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ApplicationConnection</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents a connection for an application to HealthVault for 
+            operations that are performed when a user is offline using the 
+            permissions granted by the user to the application. 
+            </summary>
+    <remarks>
+            A connection must be made to HealthVault to access the
+            Web methods that the service exposes. This class does not maintain
+            an open connection to the service.  It uses XML over HTTP to 
+            to make requests and receive responses from the service. The connection
+            just maintains the data necessary to make the request.
+            <br /><br />
+            For operations that require the user to be online, use the 
+            <see cref="T:Microsoft.Health.AuthenticatedConnection" /> class.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +34,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.OfflineWebApplicationConnection.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.OfflineWebApplicationConnection" /> 
+            class with default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,14 +51,20 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.OfflineWebApplicationConnection.#ctor(System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="offlinePersonId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="offlinePersonId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="offlinePersonId">
+            The unique identifier of the offline person who granted permissions 
+            to the application to perform operations.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.OfflineWebApplicationConnection" /> 
+            class with the specified person identification.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -52,16 +74,24 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.OfflineWebApplicationConnection.#ctor(Microsoft.Health.HealthServiceInstance,System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="serviceInstance" Type="Microsoft.Health.HealthServiceInstance" />
         <Parameter Name="offlinePersonId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="serviceInstance">To be added.</param>
-        <param name="offlinePersonId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <param name="offlinePersonId">
+            The unique identifier of the offline person who granted permissions 
+            to the application to perform operations.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.OfflineWebApplicationConnection" /> 
+            class using the specified HealthVault web-service instance and person identification.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -71,17 +101,30 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.OfflineWebApplicationConnection.#ctor(Microsoft.Health.Web.Authentication.WebApplicationCredential,System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="credential" Type="Microsoft.Health.Web.Authentication.WebApplicationCredential" />
         <Parameter Name="offlinePersonId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="credential">To be added.</param>
-        <param name="offlinePersonId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="credential">
+            The HealthVault application credential used to authenticate 
+            the connection.
+            </param>
+        <param name="offlinePersonId">
+            The unique identifier of the offline person who granted permissions 
+            to the application to perform operations.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.OfflineWebApplicationConnection" /> 
+            class with the specified credential and person identification.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:Microsoft.Health.InvalidConfigurationException">
+            If the web or application configuration file does not contain 
+            configuration entries for "ApplicationID" or "HealthServiceUrl".
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -90,7 +133,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.OfflineWebApplicationConnection.#ctor(Microsoft.Health.Web.Authentication.WebApplicationCredential,Microsoft.Health.HealthServiceInstance,System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="credential" Type="Microsoft.Health.Web.Authentication.WebApplicationCredential" />
@@ -98,11 +141,26 @@
         <Parameter Name="offlinePersonId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="credential">To be added.</param>
-        <param name="serviceInstance">To be added.</param>
-        <param name="offlinePersonId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="credential">
+            The HealthVault application credential used to authenticate 
+            the connection.
+            </param>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <param name="offlinePersonId">
+            The unique identifier of the offline person who granted permissions 
+            to the application to perform operations.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.OfflineWebApplicationConnection" /> 
+            class with the specified credential, HealthVault web-service instance, and person identification.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:Microsoft.Health.InvalidConfigurationException">
+            If the web or application configuration file does not contain 
+            configuration entries for "ApplicationID" or "HealthServiceUrl".
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -111,7 +169,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.OfflineWebApplicationConnection.#ctor(System.Guid,Microsoft.Health.HealthServiceInstance,System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="callingApplicationId" Type="System.Guid" />
@@ -119,11 +177,25 @@
         <Parameter Name="offlinePersonId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="callingApplicationId">To be added.</param>
-        <param name="serviceInstance">To be added.</param>
-        <param name="offlinePersonId">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="callingApplicationId">
+            The HealthVault application identifier.
+            </param>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <param name="offlinePersonId">
+            The unique identifier of the offline person who granted permissions 
+            to the application to perform operations.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.OfflineWebApplicationConnection" /> 
+            class with the specified application, HealthVault web-service instance, and 
+            person identification.
+            </summary>
+        <remarks>
+            If <paramref name="serviceInstance" /> is <b>null</b>, the URL for the configured
+            default HealthVault web-service instance is used.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -132,7 +204,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.OfflineWebApplicationConnection.#ctor(System.Guid,System.String,System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="callingApplicationId" Type="System.Guid" />
@@ -140,11 +212,29 @@
         <Parameter Name="offlinePersonId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="callingApplicationId">To be added.</param>
-        <param name="healthServiceUrl">To be added.</param>
-        <param name="offlinePersonId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="callingApplicationId">
+            The HealthVault application identifier.
+            </param>
+        <param name="healthServiceUrl">
+            The URL of the HealthVault service. If an application does not add "/wildcat.ashx" at the end of 
+            the URL, the constructor will add it automatically.
+            </param>
+        <param name="offlinePersonId">
+            The unique identifier of the offline person who granted permissions 
+            to the application to perform operations.
+            </param>
+        <summary>
+            Creates an instance of the class for the specified application,
+            and HealthVault URL.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="healthServiceUrl" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.UriFormatException">
+            The <paramref name="healthServiceUrl" /> property is not properly 
+            formatted.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -153,7 +243,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.OfflineWebApplicationConnection.#ctor(System.Guid,System.Uri,System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="callingApplicationId" Type="System.Guid" />
@@ -161,11 +251,30 @@
         <Parameter Name="offlinePersonId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="callingApplicationId">To be added.</param>
-        <param name="healthServiceUrl">To be added.</param>
-        <param name="offlinePersonId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="callingApplicationId">
+            The HealthVault application identifier.
+            </param>
+        <param name="healthServiceUrl">
+            The URL of the HealthVault service. If an application does not add "/wildcat.ashx" at the end of 
+            the URL, the constructor will add it automatically.
+            </param>
+        <param name="offlinePersonId">
+            The unique identifier of the offline person who granted permissions 
+            to the application to perform operations.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.OfflineWebApplicationConnection" /> 
+            class with the specified application, HealthVault service URL, and 
+            person identification.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="healthServiceUrl" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.UriFormatException">
+            The <paramref name="healthServiceUrl" /> property is not properly 
+            formatted.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -174,7 +283,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.OfflineWebApplicationConnection.#ctor(Microsoft.Health.Web.Authentication.WebApplicationCredential,System.Guid,Microsoft.Health.HealthServiceInstance,System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="credential" Type="Microsoft.Health.Web.Authentication.WebApplicationCredential" />
@@ -183,12 +292,29 @@
         <Parameter Name="offlinePersonId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="credential">To be added.</param>
-        <param name="callingApplicationId">To be added.</param>
-        <param name="serviceInstance">To be added.</param>
-        <param name="offlinePersonId">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="credential">
+            The HealthVault application credential used to authenticate
+            the connection.
+            </param>
+        <param name="callingApplicationId">
+            The HealthVault application identifier.
+            </param>
+        <param name="serviceInstance">
+            The HealthVault web-service instance.
+            </param>
+        <param name="offlinePersonId">
+            The unique identifier of the offline person who granted permissions 
+            to the application to perform operations.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.OfflineWebApplicationConnection" /> 
+            class with the specified credential, application, HealthVault
+            web-service instance, and person identification.
+            </summary>
+        <remarks>
+            If <paramref name="serviceInstance" /> is <b>null</b>, the URL for the configured
+            default HealthVault web-service instance is used.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -197,7 +323,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.OfflineWebApplicationConnection.#ctor(Microsoft.Health.Web.Authentication.WebApplicationCredential,System.Guid,System.String,System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="credential" Type="Microsoft.Health.Web.Authentication.WebApplicationCredential" />
@@ -206,12 +332,34 @@
         <Parameter Name="offlinePersonId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="credential">To be added.</param>
-        <param name="callingApplicationId">To be added.</param>
-        <param name="healthServiceUrl">To be added.</param>
-        <param name="offlinePersonId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="credential">
+            The HealthVault application credential used to authenticate
+            the connection.
+            </param>
+        <param name="callingApplicationId">
+            The HealthVault application identifier.
+            </param>
+        <param name="healthServiceUrl">
+            The URL of the HealthVault service. If an application does not add "/wildcat.ashx" at the end of 
+            the URL, the constructor will add it automatically.
+            </param>
+        <param name="offlinePersonId">
+            The unique identifier of the offline person who granted permissions 
+            to the application to perform operations.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.OfflineWebApplicationConnection" /> 
+            class with the specified credential, application, string-formatted 
+            HealthVault service URL, and person identification.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="healthServiceUrl" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.UriFormatException">
+            The <paramref name="healthServiceUrl" /> parameter is not a properly 
+            formatted URL.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -220,7 +368,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.OfflineWebApplicationConnection.#ctor(Microsoft.Health.Web.Authentication.WebApplicationCredential,System.Guid,System.Uri,System.Guid)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="credential" Type="Microsoft.Health.Web.Authentication.WebApplicationCredential" />
@@ -229,12 +377,33 @@
         <Parameter Name="offlinePersonId" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="credential">To be added.</param>
-        <param name="callingApplicationId">To be added.</param>
-        <param name="healthServiceUrl">To be added.</param>
-        <param name="offlinePersonId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="credential">
+            The HealthVault application credential used to authenticate the connection.
+            </param>
+        <param name="callingApplicationId">
+            The HealthVault application identifier.
+            </param>
+        <param name="healthServiceUrl">
+            The URL of the HealthVault service. If an application does not add "/wildcat.ashx" at the end of 
+            the URL, the constructor will add it automatically.
+            </param>
+        <param name="offlinePersonId">
+            The unique identifier of the offline person who granted permissions 
+            to the application to perform operations.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.Web.OfflineWebApplicationConnection" /> 
+            class with the specified credential, application, HealthVault 
+            service URL, and person identification.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="healthServiceUrl" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:System.UriFormatException">
+            The <paramref name="healthServiceUrl" /> property is not properly 
+            formatted.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Authenticate">
@@ -243,15 +412,34 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.OfflineWebApplicationConnection.Authenticate" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Authenticates the application with HealthVault.
+            </summary>
+        <remarks>
+            It is not necessary to explicitly call this method before calling
+            any of the methods that access the service. Those methods will 
+            call this method if the user has not already been authenticated. 
+            This method is provided as a convenience to allow for separate 
+            error handling for authorization errors.
+            </remarks>
+        <exception cref="T:System.Security.SecurityException">
+            The caller does not have permission to connect to the requested
+            URI or a URI that the request is redirected to.
+            </exception>
+        <exception cref="T:System.UriFormatException">
+            The authorization URL specified to the constructor is not a 
+            valid URI.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            The authorization was not returned in the response from the server.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetAllApplicationSettings">
@@ -260,15 +448,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.OfflineWebApplicationConnection.GetAllApplicationSettings" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ApplicationSettings</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets the application settings for the current application and person.
+            </summary>
+        <returns>
+            A complete set of application settings including the XML, selected record ID, etc.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -278,16 +470,24 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.OfflineWebApplicationConnection.GetApplicationSettings" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XPath.IXPathNavigable</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the application settings for the current application and
+            person.
+            </summary>
+        <returns>
+            The application settings XML.
+            </returns>
+        <remarks>
+            This might be <b>null</b> if no application settings have been 
+            stored for the application or user.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="OfflinePersonId">
@@ -296,15 +496,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Web.OfflineWebApplicationConnection.OfflinePersonId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the unique identifier of the offline person who granted 
+            permissions to the calling application to perform certain 
+            operations.
+            </summary>
+        <value>
+            A GUID representing the offline person.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> is <see cref="F:System.Guid.Empty" />.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="SetApplicationSettings">
@@ -313,7 +522,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Web.OfflineWebApplicationConnection.SetApplicationSettings(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -322,9 +531,17 @@
         <Parameter Name="applicationSettings" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="applicationSettings">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="applicationSettings">
+            The application settings XML.
+            </param>
+        <summary>
+            Sets the application settings for the current application and
+            person.
+            </summary>
+        <remarks>
+            This might be <b>null</b> if no application settings have been stored
+            for the application or user.
+            </remarks>
       </Docs>
     </Member>
   </Members>

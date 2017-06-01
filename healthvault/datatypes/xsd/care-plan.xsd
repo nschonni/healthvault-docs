@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns:this="urn:com.microsoft.wc.thing.care-plan" targetNamespace="urn:com.microsoft.wc.thing.care-plan" xmlns="http://www.w3.org/2001/XMLSchema">
+    <import namespace="urn:com.microsoft.wc.thing.types" schemaLocation="base.xsd" />
+    <import namespace="urn:com.microsoft.wc.dates" schemaLocation="dates.xsd" />
+
+    <annotation>
+        <documentation>
+            <type-id>415c95e0-0533-4d9c-ac73-91dc5031186c</type-id>
+            <type-name>Care plan</type-name>
+            <summary>
+                A care plan containing tasks and goals.
+            </summary>
+            <remarks>
+                The care plan contains tasks and goals.
+            </remarks>
+            <seealso-thing-type-version-id>162dd12d-9859-4a66-b75f-96760d67072b</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>dad8bb47-9ad0-4f09-a020-0ff051d1d0f7</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>609319bf-35cc-40a4-b9d7-1b329679baaa</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>b7925180-d69e-48fa-ae1d-cb3748ca170e</seealso-thing-type-version-id>
+        </documentation>
+    </annotation>
+
+    <complexType name="care-team">
+        <annotation>
+            <documentation>
+                <summary>
+                    Team of people associated with the care plan.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="person" type="t:person" minOccurs="1" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            List of contact information.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="care-plan-task-recurrence">
+        <annotation>
+            <documentation>
+                <summary>
+                    Care plan task recurrence representation.
+                </summary>
+                <remarks>
+                    For recurrence rules that cannot be expressed using iCalendar recurrence format, use interval and times-in-interval fields.
+                    Ex: Two times in a week.
+                </remarks>
+            </documentation>
+        </annotation>
+        <choice>
+            <element name="ical-recurrence" type="t:stringnznw">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            iCalendar format for recurrence specification as per RFC 2445.
+                        </summary>
+                        <remarks>
+                            Section 4.3.10 of RFC 2445.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <sequence>
+                <element name="interval" type="t:codable-value">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Recurrence interval. For ex: day, month, year etc.
+                            </summary>
+                            <preferred-vocabulary>recurrence-intervals</preferred-vocabulary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="times-in-interval" type="t:positiveInt">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The number of times the task occurs in the interval.
+                            </summary>
+                            <remarks>
+                                Ex: Two times in a week would be stored as interval = week, times-in-interval = 2
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </choice>
+    </complexType>
+
+    <complexType name="care-plan-task">
+        <annotation>
+            <documentation>
+                <summary>
+                    A task defines an action to be performed by the user.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="name" type="t:codable-value">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Name of the task.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="description" type="t:stringnznw" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Description of the task.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="start-date" type="d:approx-date-time" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Date the user starts tracking the task.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="end-date" type="d:approx-date-time" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Date the user stops tracking the task.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="target-completion-date" type="d:approx-date-time" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Date the user intends to complete the task.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="sequence-number" type="t:nonNegativeInt" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Sequence number associated with the task.
+                        </summary>
+                        <remarks>
+                            Sequence number could be used to decide the order in which the tasks should be performed.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="associated-type-info" type="this:associated-type-info" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Specifies HealthVault type information related to this task.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="recurrence" type="this:care-plan-task-recurrence" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Recurrence of the task.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="reference-id" type="t:stringnznw" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            An unique id to distinguish one task from another.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="care-plan-tasks">
+        <annotation>
+            <documentation>
+                <summary>
+                    List of care plan tasks.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="task" type="this:care-plan-task" minOccurs="1" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            List of care plan tasks.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="associated-type-info">
+        <annotation>
+            <documentation>
+                <summary>
+                    The HealthVault thing type associated with the goal or task.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="thing-type-version-id" type="t:guid">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The version id of the HealthVault type associated with this goal or task.
+                        </summary>
+                        <remarks>
+                            Thing type version id is used to specify measurements relevant for this goal or task.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="thing-type-value-xpath" type="t:stringnznw" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            XPath expression for the value field associated with this goal or task in the thing type.
+                        </summary>
+                        <remarks>
+                            Thing type value XPath could be used to specify which element in a thing type defined by
+                            the thing-type-version-id can be used to find the measurements. The XPath can also include 
+                            a condition such as steps greater than 1000.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="thing-type-display-xpath" type="t:stringnznw" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            XPath expression for the display field associated with this goal or task in the thing type.
+                        </summary>
+                        <remarks>
+                            Thing type display XPath should point to a "display-value" element in the thing XML for the type defined by
+                            the thing-type-version-id.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    
+    <complexType name="goal-range">
+        <annotation>
+            <documentation>
+                <summary>
+                    This represents a goal range associated with a goal.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="name" type="t:codable-value">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The name of the goal range.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="description" type="t:stringnznw" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A description for the goal range allows more detailed information about the range.              
+                        </summary>
+                        <remarks>
+                            This information could for instance be included in tooltips when hovering over a graph.
+                        </remarks>            
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="minimum" type="t:general-measurement" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Minimum value of the range.
+                        </summary>
+                        <remarks>
+                            For ranges greater than a specified value with no maximum,
+                            specify a minimum but no maximum.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="maximum" type="t:general-measurement" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Maximum value of the range.
+                        </summary>
+                        <remarks>
+                            For ranges less than a specified value with no minimum,
+                            specify a maximum but no minimum.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    
+    <complexType name="goal-recurrence">
+        <annotation>
+            <documentation>
+                <summary>
+                    This sub-type allows specifying recurrence for Goals.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="interval" type="t:codable-value">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Specifies the recurrence interval of the goal. For example, day, week, year, etc.
+                        </summary>
+                        <preferred-vocabulary>recurrence-intervals</preferred-vocabulary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="times-in-interval" type="t:positiveInt">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Specifies the number of times the goal's target is intended to be achieved during the interval.
+                        </summary>
+                        <remarks>
+                            For example, the goal "exercise for 30 minutes, 4 times per week" would be represented as:
+                            an interval of a "week", a times-in-interval of 4, and a goal target of 30 minutes.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="care-plan-goal">
+        <annotation>
+            <documentation>
+                <summary>
+                    A goal defines a target for a measurement.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="name" type="t:codable-value">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Name of the goal.
+                        </summary>
+                        <remarks>
+                            Example: average blood-glucose for the last seven days
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="description" type="t:stringnznw" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Description of the goal.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="start-date" type="d:approx-date-time" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Date the user starts tracking the goal.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="end-date" type="d:approx-date-time" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Date the user stops tracking the goal.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="target-completion-date" type="d:approx-date-time" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Date the user intends to complete the goal.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="associated-type-info" type="this:associated-type-info" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Specifies HealthVault type information related to this goal.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="target-range" type="this:goal-range" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The target range for the goal.
+                        </summary>
+                        <remarks>
+                            This represents the ideal range for a goal, for example, the ideal weight, or the ideal blood pressure.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="goal-additional-ranges" type="this:goal-range" minOccurs="0" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Allows specifying additional ranges for the goal.
+                        </summary>
+                        <remarks>
+                            For example, in a blood pressure goal, it may be useful to include the 'hypertensive' range in addition 
+                            to theideal range.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="recurrence" type="this:goal-recurrence" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            This field allows defining recurrence for goals.
+                        </summary>
+                        <remarks>
+                            A goal can be defined to be achieved every specific interval. Example, walking 70000 steps in a week.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="reference-id" type="t:stringnznw" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            An unique id to distinguish one goal from another.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="care-plan-goals">
+        <annotation>
+            <documentation>
+                <summary>
+                    List of care plan goals.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="goal" type="this:care-plan-goal" minOccurs="1" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            List of care plan goals.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="care-plan-goal-group">
+        <annotation>
+            <documentation>
+                <summary>
+                    Goal groups are used to group related measurement goals together.
+                    For example, blood pressure has two individual measurement goals (systolic and diastolic) but are grouped together under
+                    blood pressure.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="name" type="t:codable-value">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Name of the goal group.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="description" type="t:stringnznw" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Description of the goal group.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="goals" type="this:care-plan-goals">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            List of care plan goals associated with this goal group.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="care-plan-goal-groups">
+        <annotation>
+            <documentation>
+                <summary>
+                    List of care plan goal groups.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="goal-group" type="this:care-plan-goal-group" minOccurs="1" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            List of care plan goal groups.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <element name="care-plan">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Information related to a care plan.
+                    </summary>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="name" type="t:stringnznw">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Name of the care plan.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="start-date" type="d:approx-date-time" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Start date of the care plan.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                
+                <element name="end-date" type="d:approx-date-time" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                End date of the care plan.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="status" type="t:codable-value" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Status of the care plan.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="care-team" type="this:care-team" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                List of person contacts associated with the care plan.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="care-plan-manager" type="t:person" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Person managing the care plan.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="tasks" type="this:care-plan-tasks" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                List of tasks associated with the care plan.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="goal-groups" type="this:care-plan-goal-groups" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                List of goals associated with the care plan.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

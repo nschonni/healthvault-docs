@@ -4,15 +4,20 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Old.Sample" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes.Old</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents a single sample of a measurement or data point.
+            </summary>
+    <remarks>
+            A sample is a single measurement within a larger activity. For instance,
+            the a single heart rate reading during an aerobic activity.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +26,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.Sample.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.Sample" /> class with no value.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,15 +42,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.Sample.#ctor(System.Double)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="timeOffset" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="timeOffset">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="timeOffset">
+            The time offset in seconds from the start of the sample set.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.Sample" /> class with the 
+            specified time offset.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="timeOffset" /> parameter is less than zero.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -52,17 +67,30 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.Sample.#ctor(System.Double,System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="timeOffset" Type="System.Double" />
         <Parameter Name="value" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="timeOffset">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="timeOffset">
+            The time offset in seconds from the start of the sample set.
+            </param>
+        <param name="value">
+            The value.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.Sample" /> class with the 
+            specified time offset and value.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="timeOffset" /> parameter is less than zero.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Note">
@@ -71,15 +99,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.Sample.Note" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets a description of the sample.
+            </summary>
+        <value>
+            A string representing the description.
+            </value>
+        <remarks>
+            If the value is <b>null</b>, the note will not be saved.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="value" /> contains only whitespace.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -88,7 +125,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.Sample.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -97,9 +134,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator"> 
+            The XML node representing the measurement.
+            </param>
+        <summary> 
+            Populates the data for the measurement from the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="TimeOffset">
@@ -108,15 +152,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.Sample.TimeOffset" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Double</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the time offset in seconds from the start of the
+            sample set.
+            </summary>
+        <value>
+            A number representing the time offset, in seconds.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is negative.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Value">
@@ -125,15 +177,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Old.Sample.Value" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the value of the sample.
+            </summary>
+        <value>
+            A string representing the value of the sample.
+            </value>
+        <remarks>
+            A sample value can consist of a single integer or a double, as for
+            a heart rate sample or speed sample. It can also be a more complex
+            value such as longitude and latitude for position. The format of the
+            value depends on the sample type.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -142,7 +203,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Old.Sample.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -152,10 +213,22 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the outer element for the sample.
+            </param>
+        <param name="writer"> 
+            The XmlWriter to write the sample to.
+            </param>
+        <summary> 
+            Writes the sample to the specified XML writer.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

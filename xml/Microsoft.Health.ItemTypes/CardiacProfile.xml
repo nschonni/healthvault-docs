@@ -4,14 +4,17 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.CardiacProfile" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents a health record item type that encapsulates a person's 
+            cardiac profile at a single point in time.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +24,18 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CardiacProfile.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.CardiacProfile" /> class with default values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> 
+            method is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,15 +44,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CardiacProfile.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="when" Type="Microsoft.Health.ItemTypes.HealthServiceDateTime" />
       </Parameters>
       <Docs>
-        <param name="when">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="when">
+            The date/time when the cardiac profile was take.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.CardiacProfile" /> class 
+            with the specified date and time.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="when" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="HasDiabetesBeenDiagnosed">
@@ -52,14 +69,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CardiacProfile.HasDiabetesBeenDiagnosed" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets whether diabetes has been diagnosed for the person.
+            </summary>
+        <value>
+            True if diabetes has been diagnosed for the person, false if not, 
+            or null if unknown.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -69,14 +91,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CardiacProfile.HasFamilyHeartDiseaseHistory" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets whether heart disease has been diagnosed for anyone
+            in the person's family.
+            </summary>
+        <value>
+            True if heart disease has been diagnosed for anyone in the person's
+            family, false if not, or null if unknown.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -86,14 +114,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CardiacProfile.HasFamilyStrokeHistory" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets whether stroke has been diagnosed for anyone
+            in the person's family.
+            </summary>
+        <value>
+            True if stroke has been diagnosed for anyone in the person's
+            family, false if not, or null if unknown.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -103,14 +137,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CardiacProfile.HasPersonalHeartDiseaseHistory" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets whether the person has been diagnosed with heart disease.
+            </summary>
+        <value>
+            True if the person has been diagnosed with heart disease, 
+            false if not, or null if unknown.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -120,14 +159,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CardiacProfile.HasPersonalStrokeHistory" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets whether the person has been diagnosed with a stroke.
+            </summary>
+        <value>
+            True if the person has been diagnosed with a stroke, false if not, 
+            or null if unknown.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -137,14 +181,19 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CardiacProfile.HasRenalFailureBeenDiagnosed" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets whether renal failure has been diagnosed for the person.
+            </summary>
+        <value>
+            True if renal failure has been diagnosed for the person, false if not, 
+            or null if unknown.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -154,14 +203,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CardiacProfile.IsOnHypertensionDiet" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets whether the person is on a hypertension specific
+            diet.
+            </summary>
+        <value>
+            True if the person is on a hypertension diet, false if not, or null
+            if unknown.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -171,14 +226,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CardiacProfile.IsOnHypertensionMedication" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets whether the person is on a hypertension specific
+            medication.
+            </summary>
+        <value>
+            True if the person is on hypertension medication, false if not, or null
+            if unknown.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -188,7 +249,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CardiacProfile.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -197,9 +258,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the cardiac profile data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.CardiacProfile" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            a cardiac-profile node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -208,15 +277,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CardiacProfile.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the cardiac profile item.
+            </summary>
+        <returns>
+            A string representation of the cardiac profile item.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -226,13 +299,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.CardiacProfile.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -242,15 +320,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.CardiacProfile.When" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.HealthServiceDateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the date/time when the cardiac profile was taken.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime" /> representing the date. 
+            The default value is the current year, month, and day.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -259,7 +345,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.CardiacProfile.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -268,9 +354,16 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the cardiac profile data to.
+            </param>
+        <summary>
+            Writes the cardiac profile data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

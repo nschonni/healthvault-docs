@@ -4,7 +4,7 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthRecordFilter" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -16,8 +16,14 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Defines a filter for use with <see cref="T:Microsoft.Health.HealthRecordSearcher" />
+            searches.
+            </summary>
+    <remarks>
+            This class generates the XML for a single filter group for querying 
+            health record items with the "GetThings" method.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -26,11 +32,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordFilter.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.HealthRecordFilter" /> 
+            class using default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -40,7 +49,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordFilter.#ctor(System.Guid[])" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="typeIds" Type="System.Guid[]">
@@ -52,8 +61,14 @@
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="typeIds">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeIds">
+            The unique item type identifiers limiting the scope of the search to
+            only the specified item types.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.HealthRecordFilter" /> 
+            class with the specified unique item type identifiers as filters.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,15 +78,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordFilter.#ctor(System.Int32)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="maxItemsReturned" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="maxItemsReturned">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="maxItemsReturned">
+            The maximum number of items to return that match the filter.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.HealthRecordFilter" /> 
+            class with the specified maximum number of items to return.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="maxItemsReturned" /> parameter is negative.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -80,15 +103,27 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordFilter.#ctor(System.String)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="name">
+            The name of the filter.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.HealthRecordFilter" /> 
+            class with the specified name.
+            </summary>
+        <remarks>
+            The name is used to distinguish results matching this filter as
+            opposed to results matching other filters when multiple filters 
+            are applied to the same search.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="name" /> parameter is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -97,17 +132,34 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordFilter.#ctor(System.String,System.Int32)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
         <Parameter Name="maxItemsReturned" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <param name="maxItemsReturned">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="name">
+            The name of the filter.
+            </param>
+        <param name="maxItemsReturned">
+            The maximum number of items to return that match the filter.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.HealthRecordFilter" /> 
+            class with the specified name and maximum number of items to return.
+            </summary>
+        <remarks>
+            The name is used to distinguish results matching this filter as
+            opposed to results matching other filters when multiple filters 
+            are applied to the same search.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="name" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="maxItemsReturned" /> parameter is negative.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ClientItemIds">
@@ -116,15 +168,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.ClientItemIds" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the client assigned IDs identifying health record items for 
+            the search filter.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Each specified ID is AND'd with any other filter parameter. The 
+            filter limits the search to the specified health record items.
+            It is illegal to specify more than one of ItemIds, ClientItemIds or ItemKeys in a 
+            single filter.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="CreatedApplication">
@@ -133,15 +193,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.CreatedApplication" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the search filter to filter on the application that
+            created the health record item.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If this property has not been set, Guid.Empty is returned.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="CreatedDateMax">
@@ -150,15 +215,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.CreatedDateMax" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the maximum date the item was created.
+            </summary>
+        <value>
+            The DateTime in UTC of the maximum date a item was created.
+            </value>
+        <remarks>
+            If this property has not been set, DateTime.MinValue is returned.
+            <br /><br />
+            The application is responsible for converting from local time to 
+            UTC  if applicable.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="CreatedDateMin">
@@ -167,15 +241,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.CreatedDateMin" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the minimum date the item was created.
+            </summary>
+        <value>
+            The DateTime in UTC of the minimum date a item was created.
+            </value>
+        <remarks>
+            If this property has not been set, DateTime.MaxValue is returned.
+            <br /><br />
+            The application is responsible for converting from local time to 
+            UTC, if applicable.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="CreatedPerson">
@@ -184,15 +267,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.CreatedPerson" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the search filter to filter on the person who
+            created the health record item.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If this property has not been set, Guid.Empty is returned.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="CurrentVersionOnly">
@@ -201,14 +289,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.CurrentVersionOnly" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets a value indicating whether to return only the flag 
+            specifying the current versions of the health record items that 
+            satisfy the filter restrictions. 
+            </summary>
+        <value>
+          <b>true</b> to return only current versions of health record items;
+            <b>false</b> to return all versions of the health record items that 
+            satisfy the filter restrictions. 
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -218,15 +314,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.EffectiveDateMax" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the maximum date the item was pertains to.
+            </summary>
+        <value>
+            The DateTime in UTC of the maximum effective date of a item.
+            </value>
+        <remarks>
+            If this property has not been set, DateTime.MinValue is returned.
+            <br /><br />
+            The application is responsible for converting from local time to 
+            UTC, if applicable.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="EffectiveDateMin">
@@ -235,15 +340,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.EffectiveDateMin" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the minimum date the item pertains to.
+            </summary>
+        <value>
+            The DateTime in UTC of the minimum effective date of a item.
+            </value>
+        <remarks>
+            If this property has not been set, DateTime.MaxValue is returned.
+            <br /><br />
+            The application is responsible for converting from local time to 
+            UTC, if applicable.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Intentions">
@@ -252,15 +366,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.Intentions" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemRetrievalIntentions</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            The usage intentions for items that will be retrieved in
+            this filter group.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If not set, the default value will be
+            <see cref="F:Microsoft.Health.ItemRetrievalIntentions.Unspecified" />.
+            This property is reserved for future use.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ItemIds">
@@ -269,15 +390,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.ItemIds" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;System.Guid&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the ids identifying health record items for 
+            the search filter.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Each specified ID is AND'd with any other filter parameter. The 
+            filter limits the search to the specified health record items.
+            It is illegal to specify both ItemIds and ItemKeys in a single
+            filter.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ItemKeys">
@@ -286,15 +415,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.ItemKeys" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Health.HealthRecordItemKey&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the keys uniquely identifying health record items for 
+            the search filter.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Each specified ItemKey is AND'd with any other filter parameter. The 
+            filter limits the search to the specified health record items.
+            It is illegal to specify more than one of ItemIds, ClientItemIds or ItemKeys in a 
+            single filter.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="MaxFullItemsReturnedPerRequest">
@@ -303,15 +440,32 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.MaxFullItemsReturnedPerRequest" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the maximum number of full health record items returned per request to
+            HealthVault.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            By default HealthVault will only return a certain number of "full" health record items
+            for any query. It then returns the "keys" for the remaining items that matched the
+            query which can then be queried for by ID. <see cref="T:Microsoft.Health.HealthRecordItemCollection" />
+            automatically manages this paging for you. However, if you want further control over
+            the count of full items retrieved on each request, 
+            <see cref="P:Microsoft.Health.HealthRecordFilter.MaxFullItemsReturnedPerRequest" /> can be set to optimize for smaller sets
+            of data. For example, let's say the data being retrieved is being displayed in a
+            GridView and the results are shown 10 items per page.  Rather than get the default
+            number of full things, you can request 10 full items per request.  Then only if the
+            user clicks to the second page would you need to get the next 10 items.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> is set to less than zero.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="MaxItemsReturned">
@@ -320,15 +474,22 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.MaxItemsReturned" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the maximum number of health record items to return.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The default value returns all items that match the filter.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> is set to less than zero.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -337,15 +498,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the name of the filter.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The name is used to distinguish results matching this filter as
+            opposed to results matching other filters when multiple filters 
+            are applied to the same search.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="OrderByClauses">
@@ -354,15 +524,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.OrderByClauses" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Health.HealthRecordItemsOrderByClause&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+             Gets a collection of the order by clauses which orders the data returned from GetThings request.
+             </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+             Currently only one order by clause is supported per request.
+             Multiple clauses may be supported in the future.
+            
+             If an order by clause is present, then only things of the type
+             specified in the order by clause will be returned, even if additional
+             type IDs are listed in the filter spec.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="States">
@@ -371,14 +550,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.States" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthRecordItemStates</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets a set of flags representing the health record item  
+            states to search for.
+            </summary>
+        <value>
+            The set of flags. If not specified, health record items with state 
+            <see cref="F:Microsoft.Health.HealthRecordItemState.Active" />  
+            are returned.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -388,15 +574,20 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthRecordFilter.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the instance.
+            </summary>
+        <returns>
+            The XML that is used as the group portion of the
+            XML request for a "GetThings" method call.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -406,15 +597,26 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.TypeIds" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IList&lt;System.Guid&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a collection of the unique item type identifiers to search
+            for.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Each health record item is associated with a type through a
+            type identifier. If set, these values are combined in an OR 
+            operation. The group is then combined in an AND operation with 
+            any other filter value in the search for matching health record 
+            items. This AND operation excludes ItemId as a filter value, 
+            because ItemId results are obtained by an OR operation.
+            To add a type ID, use the Add method of the returned collection.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="UpdatedApplication">
@@ -423,15 +625,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.UpdatedApplication" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the search filter to filter on the application that
+            last updated the health record item.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If this property is not set, Guid.Empty is returned.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="UpdatedDateMax">
@@ -440,15 +647,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.UpdatedDateMax" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the maximum date of a returned updated item to return.
+            </summary>
+        <value>
+            The DateTime in UTC of the maximum date of an updated item 
+            to return.
+            </value>
+        <remarks>
+            If this property is not set, DateTime.MinValue is returned.
+            <br /><br />
+            The application is responsible for converting from local time to 
+            UTC, if applicable.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="UpdatedDateMin">
@@ -457,15 +674,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.UpdatedDateMin" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the minimum date of an updated item to return.
+            </summary>
+        <value>
+            The DateTime in UTC of the minimum date of an updated item to
+            return.
+            </value>
+        <remarks>
+            If this property is not set, DateTime.MaxValue is returned.
+            <br /><br />
+            The application is responsible for converting from local time to 
+            UTC, if applicable.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="UpdatedEndDateMax">
@@ -474,15 +701,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.UpdatedEndDateMax" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the maximum updated end date of the item.
+            </summary>
+        <value>
+            The DateTime of the maximum updated end date of a item.
+            </value>
+        <remarks>
+            If this property has not been set, DateTime.MinValue is returned.
+            <br /><br />
+            The application is responsible for converting from local time to 
+            UTC, if applicable.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="UpdatedEndDateMin">
@@ -491,15 +727,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.UpdatedEndDateMin" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the minimum updated end date of the item.
+            </summary>
+        <value>
+            The DateTime of the minimum updated end date of a item.
+            </value>
+        <remarks>
+            If this property has not been set, DateTime.MaxValue is returned.
+            <br /><br />
+            The application is responsible for converting from local time to 
+            UTC, if applicable.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="UpdatedPerson">
@@ -508,15 +753,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.UpdatedPerson" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the search filter to filter on the person who
+            last updated the health record item.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            If the property is not set, Guid.Empty is returned.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="View">
@@ -525,15 +775,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.View" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthRecordView</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the view for the filter group.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The default view retrieves the "Core" and data
+            sections ("Xml").
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="XPath">
@@ -542,15 +800,27 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthRecordFilter.XPath" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+             Gets or sets the search filter to filter on the existence
+             of data in an XML (structured data) item.
+             </summary>
+        <value>
+             A string representing the filter.
+             </value>
+        <remarks>
+             The HealthVault XPath Explorer can be used to create these XPath queries.
+            
+             If this property has not been set, <b>null</b> is returned.
+             <br /><br />
+             This can only be an existence check. It cannot be used for 
+             calculations or to return only specific values.
+             </remarks>
       </Docs>
     </Member>
   </Members>

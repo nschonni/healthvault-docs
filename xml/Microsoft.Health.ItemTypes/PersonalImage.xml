@@ -4,15 +4,19 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.PersonalImage" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents a personal image associated with the health record.
+            </summary>
+    <remarks>
+            There can be only one personal image for each health record.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,12 +25,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PersonalImage.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.PersonalImage" /> class with 
+            default values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -35,7 +46,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PersonalImage.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -44,8 +55,12 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the personal image data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.PersonalImage" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -55,16 +70,28 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PersonalImage.ReadImage" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IO.Stream</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>
+            Reads the image from the <see cref="T:Microsoft.Health.Blob" /> 
+            as a stream.
+            </summary>
+        <returns>
+            A Stream containing the image bytes. It is the caller's 
+            responsibility to close this stream.
+            May return null if the blob payload is not requested or the personal
+            image has no data...
+            </returns>
+        <remarks>
+            An application must explicitly request that the blob information is returned
+            when querying for an personal image. It can do this by asking for the BlobPayload section
+            in the Sections property of the <see cref="T:Microsoft.Health.HealthRecordView" /> class (filter.View).
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="TypeId">
@@ -73,13 +100,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.PersonalImage.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,7 +121,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PersonalImage.WriteImage(System.IO.Stream,System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -99,10 +131,28 @@
         <Parameter Name="mimeType" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="imageStream">To be added.</param>
-        <param name="mimeType">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="imageStream">
+            The stream from which to retrieve the image bytes.
+            </param>
+        <param name="mimeType">
+            The mime type for the image.
+            </param>
+        <summary>
+            Writes the image from the byte stream into the BlobStore  
+            of the item.
+            </summary>
+        <remarks>
+            The image is streamed in using the <see cref="T:Microsoft.Health.BlobStore" /> for this item.
+            <br />
+            This method does not close the stream.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="imageStream" /> parameter is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="imageStream" /> parameter length is greater than
+            <see cref="F:System.Int32.MaxValue" />.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -111,7 +161,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.PersonalImage.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -120,8 +170,12 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the file data to.
+            </param>
+        <summary>
+            Writes the file data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -4,14 +4,17 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthServiceLocation" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Provides methods that retrieve URLs of important locations for the 
+            HealthVault service.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,7 +24,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceLocation.GetHealthServiceShellUrl(Microsoft.Health.ShellRedirectParameters)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -30,10 +33,20 @@
         <Parameter Name="redirectParameters" Type="Microsoft.Health.ShellRedirectParameters" />
       </Parameters>
       <Docs>
-        <param name="redirectParameters">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="redirectParameters">
+            Parameters used to contruct the redirect URL.
+            </param>
+        <summary>
+            Constructs a URL to be redirected to via the HealthVault service Shell
+            URL redirector, given the specified redirect parameters.
+            </summary>
+        <returns>
+            The constructed URL.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.UriFormatException">
+            The specified parameters construct an invalid URL.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetHealthServiceShellUrl">
@@ -42,7 +55,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceLocation.GetHealthServiceShellUrl(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -51,10 +64,25 @@
         <Parameter Name="targetLocation" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="targetLocation">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="targetLocation">
+            A known constant indicating the internal HealthVault 
+            service Shell location to redirect to.
+            See <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface</a>.
+            </param>
+        <summary>
+            Constructs a URL to be redirected to via the HealthVault service Shell
+            URL redirector, given the specified location.
+            </summary>
+        <returns>
+            The constructed URL.
+            </returns>
+        <remarks>
+            The <paramref name="targetLocation" /> is passed as the target 
+            parameter value to the redirector URL.
+            </remarks>
+        <exception cref="T:System.UriFormatException">
+            The specific target location constructs an improper URL.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetHealthServiceShellUrl">
@@ -63,7 +91,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceLocation.GetHealthServiceShellUrl(System.String,System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -73,11 +101,32 @@
         <Parameter Name="targetQuery" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="targetLocation">To be added.</param>
-        <param name="targetQuery">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="targetLocation">
+            A known constant indicating the internal HealthVault 
+            service Shell location to redirect to.
+            See <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface</a>.
+            </param>
+        <param name="targetQuery">
+            The query string value to pass to the URL to which redirection is 
+            taking place.
+            </param>
+        <summary>
+            Constructs a URL to be redirected to via the HealthVault service
+            Shell URL redirector, given the specified location and query.
+            </summary>
+        <returns>
+            The constructed URL.
+            </returns>
+        <remarks>
+            The <paramref name="targetLocation" /> is passed as the target 
+            parameter value to the redirector URL.
+            The <paramref name="targetQuery" /> is URL-encoded and 
+            passed to the redirector URL as the target query string parameter 
+            value.
+            </remarks>
+        <exception cref="T:System.UriFormatException">
+            The specific target location constructs an improper URL.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetHealthServiceShellUrl">
@@ -86,7 +135,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceLocation.GetHealthServiceShellUrl(System.Uri,System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -96,11 +145,28 @@
         <Parameter Name="targetLocation" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="shellUrl">To be added.</param>
-        <param name="targetLocation">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="shellUrl">
+            The HealthVault Shell redirector URL.
+            </param>
+        <param name="targetLocation">
+            A known constant indicating the internal HealthVault 
+            service Shell location to redirect to.
+            See <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface</a>.
+            </param>
+        <summary>
+            Constructs a URL to be redirected to via the HealthVault service Shell
+            URL redirector, given the specified location.
+            </summary>
+        <returns>
+            The constructed URL.
+            </returns>
+        <remarks>
+            The <paramref name="targetLocation" /> is passed as the target 
+            parameter value to the redirector URL.
+            </remarks>
+        <exception cref="T:System.UriFormatException">
+            The specific target location constructs an improper URL.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetHealthServiceShellUrl">
@@ -109,7 +175,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.HealthServiceLocation.GetHealthServiceShellUrl(System.Uri,System.String,System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -120,12 +186,35 @@
         <Parameter Name="targetQuery" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="shellUrl">To be added.</param>
-        <param name="targetLocation">To be added.</param>
-        <param name="targetQuery">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="shellUrl">
+            The HealthVault Shell redirector URL.
+            </param>
+        <param name="targetLocation">
+            A known constant indicating the internal HealthVault 
+            service Shell location to redirect to.
+            See <a href="http://msdn.microsoft.com/en-us/library/ff803620.aspx">Shell redirect interface</a>.
+            </param>
+        <param name="targetQuery">
+            The query string value to pass to the URL to which redirection is 
+            taking place.
+            </param>
+        <summary>
+            Constructs a URL to be redirected to via the HealthVault service
+            Shell URL redirector, given the specified location and query.
+            </summary>
+        <returns>
+            The constructed URL.
+            </returns>
+        <remarks>
+            The <paramref name="targetLocation" /> is passed as the target 
+            parameter value to the redirector URL.
+            The <paramref name="targetQuery" /> is URL-encoded and 
+            passed to the redirector URL as the target query string parameter 
+            value.
+            </remarks>
+        <exception cref="T:System.UriFormatException">
+            The specific target location constructs an improper URL.
+            </exception>
       </Docs>
     </Member>
   </Members>

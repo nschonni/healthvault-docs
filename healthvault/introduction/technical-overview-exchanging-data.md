@@ -18,8 +18,8 @@ HealthVault provides an XML-based web service API with two methods for reading a
 
 In the .NET SDK this functionality can be found in the following classes:
 
--   [Microsoft.Health.HealthRecordAccessor](/healthvault/sdks/dotnet/microsoft.health.healthrecordaccessor.yml) class for reading and writing data.
--   [Microsoft.Health.HealthRecordSearcher](/healthvault/sdks/dotnet/microsoft.health.healthrecordsearcher.yml) class for more advanced data querying capabilities.
+-   [Microsoft.Health.HealthRecordAccessor](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.healthrecordaccessor) class for reading and writing data.
+-   [Microsoft.Health.HealthRecordSearcher](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.healthrecordsearcher) class for more advanced data querying capabilities.
 
 HealthVault also offers a REST API for certain scenarios. More information about the HealthVault REST API is available here: 
 - [HealthVault REST API](/healthvault/apis/v1.0-preview)
@@ -29,8 +29,8 @@ Polling for changes
 
 The service API provides a method called GetUpdatedRecordsForApplication. This method returns a list of records that have changed since a specified date. The application can then query each record to determine the changes. In the .NET SDK:
 
--   [Microsoft.Health.HealthVaultPlatform.GetUpdatedRecordsForApplication](/healthvault/sdks/dotnet/microsoft.health.healthvaultplatform.getupdatedrecordsforapplication.yml)
--   [Microsoft.Health.ApplicationConnection.GetUpdatedRecordsForApplication](/healthvault/sdks/dotnet/microsoft.health.applicationconnection.getupdatedrecordsforapplication.yml)
+-   [Microsoft.Health.HealthVaultPlatform.GetUpdatedRecordsForApplication](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.healthvaultplatform.getupdatedrecordsforapplication)
+-   [Microsoft.Health.ApplicationConnection.GetUpdatedRecordsForApplication](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.applicationconnection.getupdatedrecordsforapplication)
 
 Eventing
 --------

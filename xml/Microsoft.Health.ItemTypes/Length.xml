@@ -4,7 +4,7 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Length" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.Measurement&lt;System.Double&gt;</BaseTypeName>
@@ -14,8 +14,16 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Represents a length value and display.
+            </summary>
+    <remarks>
+            In HealthVault, lengths have values and display values. All values are
+            stored in a base unit of meters. An application can take a length
+            value using any scale the application chooses and can store the 
+            user-entered value as the display value, but the length value must be 
+            converted to meters to be stored in HealthVault.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -24,11 +32,13 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Length.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Length" /> class with empty values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -38,14 +48,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Length.#ctor(System.Double)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="meters" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="meters">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="meters">
+            The length in meters.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Length" /> class with the 
+            specified value in meters.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -55,16 +70,28 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Length.#ctor(System.Double,Microsoft.Health.ItemTypes.DisplayValue)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="meters" Type="System.Double" />
         <Parameter Name="displayValue" Type="Microsoft.Health.ItemTypes.DisplayValue" />
       </Parameters>
       <Docs>
-        <param name="meters">To be added.</param>
-        <param name="displayValue">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="meters">
+            The length in meters.
+            </param>
+        <param name="displayValue">
+            The display value of the length. This should contain the
+            exact length as entered by the user even if it uses some
+            other unit of measure besides meters. The display value
+            <see cref="P:Microsoft.Health.ItemTypes.DisplayValue.Units" /> and 
+            <see cref="P:Microsoft.Health.ItemTypes.DisplayValue.UnitsCode" /> 
+            represents the unit of measure for the user-entered value.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Length" /> class with the 
+            specified value in meters and optional display value.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -74,7 +101,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Length.AssertMeasurementValue(System.Double)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -83,9 +110,16 @@
         <Parameter Name="value" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="value">
+            The length measurement.
+            </param>
+        <summary>
+            Verifies that the value is a legal length value in meters.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is less than or equal to zero.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetValueString">
@@ -94,7 +128,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Length.GetValueString(System.Double)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -104,8 +138,12 @@
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the length in the base units.
+            </summary>
+        <returns>
+            The length as a string in the base units.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -115,15 +153,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Length.Meters" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Double</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the value of the length in meters.
+            </summary>
+        <value>
+            A number representing the length.
+            </value>
+        <remarks>
+            The value must be in meters. The <see cref="T:Microsoft.Health.ItemTypes.DisplayValue" /> can
+            be used to store the user-entered value in a scale other than
+            metric.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseValueXml">
@@ -132,7 +178,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Length.ParseValueXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -141,8 +187,12 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator"> 
+            The XML node representing the length.
+            </param>
+        <summary> 
+            Populates the data for the length from the XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -152,7 +202,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Length.WriteValueXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -161,8 +211,12 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer"> 
+            The XmlWriter to write the length to.
+            </param>
+        <summary> 
+            Writes the length to the specified XML writer.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

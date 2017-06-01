@@ -4,7 +4,7 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.ApproximateTime" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
@@ -18,8 +18,13 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary> 
+            An approximation of a time.
+            </summary>
+    <remarks>
+            An approximation of a time must have an hour and minute and can 
+            also optionally have seconds specified.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -28,11 +33,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApproximateTime.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ApproximateTime" /> class 
+            with default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -42,17 +50,29 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApproximateTime.#ctor(System.Int32,System.Int32)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="hour" Type="System.Int32" />
         <Parameter Name="minute" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="hour">To be added.</param>
-        <param name="minute">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="hour">
+            The hour between 0 and 23.
+            </param>
+        <param name="minute">
+            The minute between 0 and 59.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ApproximateTime" /> class 
+            with the specified hour and minute.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="hour" /> parameter is less than 0 or greater
+            than 23, or the <paramref name="minute" /> parameter is less than 0 or
+            greater than 59.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -61,7 +81,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApproximateTime.#ctor(System.Int32,System.Int32,System.Int32)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="hour" Type="System.Int32" />
@@ -69,11 +89,26 @@
         <Parameter Name="second" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="hour">To be added.</param>
-        <param name="minute">To be added.</param>
-        <param name="second">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="hour">
+            The hour between 0 and 23.
+            </param>
+        <param name="minute">
+            The minute between 0 and 59.
+            </param>
+        <param name="second">
+            The second between 0 and 59.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ApproximateTime" /> class 
+            with the specified hour, minute, and second.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="hour" /> parameter is less than 0 or greater
+            than 23, or the <paramref name="minute" /> or <paramref name="second" /> 
+            parameter is less than 0 or
+            greater than 59.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -82,7 +117,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApproximateTime.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="hour" Type="System.Int32" />
@@ -91,12 +126,30 @@
         <Parameter Name="millisecond" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="hour">To be added.</param>
-        <param name="minute">To be added.</param>
-        <param name="second">To be added.</param>
-        <param name="millisecond">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="hour">
+             The hour between 0 and 23.
+             </param>
+        <param name="minute">
+             The minute between 0 and 59.
+             </param>
+        <param name="second">
+             The second between 0 and 59.
+             </param>
+        <param name="millisecond">
+             The millisecond between 0 and 999.
+             </param>
+        <summary>
+             Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.ApproximateTime" /> class 
+             with the specified hour, minute, second, and millisecond.
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+             The <paramref name="hour" /> parameter is less than 0 or greater
+             than 23, or the <paramref name="minute" />, or <paramref name="second" /> 
+             parameter is less than 0 or
+             greater than 59, or <paramref name="millisecond" /> parameter is less than 0
+             or greater than 999.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="CompareTo">
@@ -105,7 +158,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApproximateTime.CompareTo(Microsoft.Health.ItemTypes.ApproximateTime)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -114,10 +167,23 @@
         <Parameter Name="other" Type="Microsoft.Health.ItemTypes.ApproximateTime" />
       </Parameters>
       <Docs>
-        <param name="other">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="other">
+            The time to be compared.
+            </param>
+        <summary>
+            Compares the specified object to this ApproximateDate object.
+            </summary>
+        <returns>
+            A 32-bit signed integer that indicates the relative order of the 
+            objects being compared. 
+            </returns>
+        <remarks>
+            If the result is less than zero, the 
+            instance is less than <paramref name="other" />. If the result is zero
+            the instance is equal to <paramref name="other" />. If the result is
+            greater than zero, the instance is greater than 
+            <paramref name="other" />.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="CompareTo">
@@ -126,7 +192,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApproximateTime.CompareTo(System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -135,10 +201,30 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="obj">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="obj">
+            The object to be compared.
+            </param>
+        <summary>
+            Compares the specified object to this ApproximateTime object.
+            </summary>
+        <returns>
+            An integer representing the object order.
+            </returns>
+        <returns>
+            A 32-bit signed integer that indicates the relative order of the 
+            objects being compared. 
+            </returns>
+        <remarks>
+            If the result is less than zero, the 
+            instance is less than <paramref name="obj" />. If the result is zero
+            the instance is equal to <paramref name="obj" />. If the result is
+            greater than zero, the instance is greater than 
+            <paramref name="obj" />.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="obj" /> parameter is not an <see cref="T:Microsoft.Health.ItemTypes.ApproximateTime" />
+            object.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Equals">
@@ -147,7 +233,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApproximateTime.Equals(System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -156,10 +242,26 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="obj">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="obj">
+            The object to be compared.
+            </param>
+        <summary>
+            Gets a value indicating whether the specified object is equal to this object.
+            </summary>
+        <returns>
+          <b>true</b> if the <paramref name="obj" /> is a 
+            <see cref="T:Microsoft.Health.ItemTypes.ApproximateTime" /> object and the hour, minute, 
+            second, and millisecond exactly match; otherwise, <b>false</b>. 
+            </returns>
+        <remarks>
+            If an <see cref="T:Microsoft.Health.ItemTypes.ApproximateDate" /> is less specific than the other 
+            <see cref="T:Microsoft.Health.ItemTypes.ApproximateDate" />, the less specific one is considered less than 
+            the more specific one, assuming that the current data is equal.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="obj" /> parameter is not an <see cref="T:Microsoft.Health.ItemTypes.ApproximateTime" />
+            object.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetHashCode">
@@ -168,15 +270,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApproximateTime.GetHashCode" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            See the base class documentation.
+            </summary>
+        <returns>
+            See the base class documentation.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -186,15 +292,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ApproximateTime.HasValue" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets a boolean indicating whether this ApproximateTime has a value in it.
+            </summary>
+        <value>
+            True if there is a value.
+            </value>
+        <remarks>
+            ApproximateTime instances are initialized into state without a value, but the Hour and Minute
+            properties must still return numbers in that case. This property is used to tell the 
+            difference between an ApproximateTime that has no value and one where the hour and minute
+            have been set to zero (ie 12:00 AM).
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Hour">
@@ -203,15 +318,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ApproximateTime.Hour" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the hour of the time approximation.
+            </summary>
+        <value>
+            An integer representing the hour.
+            </value>
+        <remarks>
+            This value defaults to the current hour.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is less than 0 or greater than 23
+            when setting.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Millisecond">
@@ -220,15 +345,26 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ApproximateTime.Millisecond" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the milliseconds of the time approximation.
+            </summary>
+        <value>
+            An integer representing the milliseconds.
+            </value>
+        <remarks>
+            If the number of milliseconds is unknown, the value can be set to <b>null</b>. 
+            This value defaults to <b>null</b>.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is less than 0 or greater than 999
+            when setting.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Minute">
@@ -237,15 +373,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ApproximateTime.Minute" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the minute of the time approximation.
+            </summary>
+        <value>
+            An integer representing the minute.
+            </value>
+        <remarks>
+            This value defaults to the current minute.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is less than 0 or greater than 59
+            when setting.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Now">
@@ -254,13 +400,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ApproximateTime.Now" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.ApproximateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the current time including the hour, minute, and second.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -271,7 +419,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApproximateTime.op_Equality(Microsoft.Health.ItemTypes.ApproximateTime,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -281,11 +429,25 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="time">To be added.</param>
-        <param name="obj">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="time">
+            The time object to be compared.
+            </param>
+        <param name="obj">
+            The second object to be compared.
+            </param>
+        <summary>
+            Gets a value indicating whether the specified object is equal to 
+            the specified time.
+            </summary>
+        <returns>
+          <b>true</b> if <paramref name="time" /> has the hour, minute, 
+            second, and millisecond exactly match; otherwise, <b>false</b>.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="obj" /> parameter is not an 
+            <see cref="T:Microsoft.Health.ItemTypes.ApproximateTime" /> object.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="op_GreaterThan">
@@ -294,7 +456,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApproximateTime.op_GreaterThan(Microsoft.Health.ItemTypes.ApproximateTime,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -304,11 +466,30 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="time">To be added.</param>
-        <param name="obj">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="time">
+            The time object to be compared.
+            </param>
+        <param name="obj">
+            The second object to be compared.
+            </param>
+        <summary>
+            Gets a value indicating whether the specified time is greater than the specified
+            object.
+            </summary>
+        <returns>
+          <b>true</b> if <paramref name="time" /> has the hour, minute, 
+            second, and millisecond greater than that of 
+            <paramref name="obj" />.
+            </returns>
+        <remarks>
+            If an <see cref="T:Microsoft.Health.ItemTypes.ApproximateDate" /> is less specific than the other 
+            <see cref="T:Microsoft.Health.ItemTypes.ApproximateDate" />, the less specific one is considered less than 
+            the more specific one, assuming that the current data is equal.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="obj" /> parameter is not an 
+            <see cref="T:Microsoft.Health.ItemTypes.ApproximateTime" /> object.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="op_Inequality">
@@ -317,7 +498,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApproximateTime.op_Inequality(Microsoft.Health.ItemTypes.ApproximateTime,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -327,11 +508,29 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="time">To be added.</param>
-        <param name="obj">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="time">
+            The time object to be compared.
+            </param>
+        <param name="obj">
+            The second object to be compared.
+            </param>
+        <summary>
+            Gets a value indicating whether the specified object is not equal 
+            to the specified
+            time.
+            </summary>
+        <returns>
+          <b>false</b> if <paramref name="time" /> has the hour, minute, 
+            second, and millisecond exactly match.        
+            </returns>
+        <remarks>
+            If an <see cref="T:Microsoft.Health.ItemTypes.ApproximateDate" /> is less specific than the other 
+            <see cref="T:Microsoft.Health.ItemTypes.ApproximateDate" />, the less specific one is considered less than 
+            the more specific one, assuming that the current data is equal.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="obj" /> parameter is not an <see cref="T:Microsoft.Health.ItemTypes.ApproximateTime" /> object.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="op_LessThan">
@@ -340,7 +539,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApproximateTime.op_LessThan(Microsoft.Health.ItemTypes.ApproximateTime,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -350,11 +549,30 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="time">To be added.</param>
-        <param name="obj">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="time">
+            The time object to be compared.
+            </param>
+        <param name="obj">
+            The second object to be compared.
+            </param>
+        <summary>
+            Gets a value indicating whether the specified time is less than the specified
+            object.
+            </summary>
+        <returns>
+          <b>true</b> if <paramref name="time" /> has the hour, minute, 
+            second, and millisecond less than that of 
+            <paramref name="obj" />.       
+            </returns>
+        <remarks>
+            If an <see cref="T:Microsoft.Health.ItemTypes.ApproximateDate" /> is less specific than the other 
+            <see cref="T:Microsoft.Health.ItemTypes.ApproximateDate" />, the less specific one is considered less than 
+            the more specific one, assuming that the current data is equal.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="obj" /> parameter is not an 
+            <see cref="T:Microsoft.Health.ItemTypes.ApproximateTime" /> object.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -363,7 +581,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApproximateTime.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -372,9 +590,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator"> 
+            The XML node representing the approximate time.
+            </param>
+        <summary> 
+            Populates the data for the approximate time from the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Second">
@@ -383,15 +608,26 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.ApproximateTime.Second" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the seconds of the time approximation.
+            </summary>
+        <value>
+            An integer representing the second.
+            </value>
+        <remarks>
+            If the number of seconds is unknown, the value can be set to 
+            <b>null</b>. This value defaults to <b>null</b>.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is less than 0 or greater than 59
+            when setting.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -400,15 +636,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApproximateTime.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the time.
+            </summary>
+        <returns>
+            A string representation of the time.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -418,7 +658,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.ApproximateTime.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -428,10 +668,22 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the outer element for the approximate time.
+            </param>
+        <param name="writer"> 
+            The XmlWriter to write the approximate time to.
+            </param>
+        <summary> 
+            Writes the approximate time to the specified XML writer.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer" /> parameter is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

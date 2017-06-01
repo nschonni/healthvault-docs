@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.LabTestResultGroup" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+             A set of lab test results.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,11 +23,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.LabTestResultGroup.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.LabTestResultGroup" /> 
+            class with default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,15 +40,23 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.LabTestResultGroup.#ctor(Microsoft.Health.ItemTypes.CodableValue)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="groupName" Type="Microsoft.Health.ItemTypes.CodableValue" />
       </Parameters>
       <Docs>
-        <param name="groupName">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="groupName"> 
+            The name of this set of tests.
+            </param>
+        <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.LabTestResultGroup" /> 
+            class with group name.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="groupName" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GroupName">
@@ -52,15 +65,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabTestResultGroup.GroupName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the name of this set of tests.  
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="value" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="LaboratoryName">
@@ -69,15 +87,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabTestResultGroup.LaboratoryName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.Organization</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the information about the laboratory which performed 
+            this set of tests.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Laboratory name should be set to <b>null</b> if it is unknown.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -86,7 +109,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.LabTestResultGroup.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -95,9 +118,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator">
+            The XML to get the lab test results group type data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.LabTestResultGroup" /> instance from the data in the XML. 
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="navigator" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Results">
@@ -106,13 +136,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabTestResultGroup.Results" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.LabTestResultDetails&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a set of results for this group.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -123,15 +155,20 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabTestResultGroup.Status" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the overall status of this group and the sub group tests.  
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The status can be incomplete, pending, processing, etc. It should be 
+            set to <b>null</b> if it is unknown. 
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="SubGroups">
@@ -140,13 +177,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.LabTestResultGroup.SubGroups" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.ItemTypes.LabTestResultGroup&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets lab test result sub groups.  
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -157,15 +196,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.LabTestResultGroup.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+             Gets a string representation of the lab test results group type item.
+             </summary>
+        <returns>
+             A string representation of the lab test results group type item.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -175,7 +218,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.LabTestResultGroup.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -185,10 +228,25 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+             The name of the node to write XML output. 
+             </param>
+        <param name="writer">
+             The XmlWriter to write the lab test results group type data to.
+             </param>
+        <summary>
+             Writes the lab test results group type data to the specified XmlWriter.
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="nodeName" /> parameter is <b> null </b> or empty.
+             </exception>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="writer" /> parameter is <b> null </b>.
+             </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+             If <see cref="P:Microsoft.Health.ItemTypes.LabTestResultGroup.GroupName" /> parameter is <b> null</b>.
+             </exception>
       </Docs>
     </Member>
   </Members>

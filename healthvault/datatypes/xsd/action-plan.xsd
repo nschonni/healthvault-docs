@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:this="urn:com.microsoft.wc.thing.actionplan" targetNamespace="urn:com.microsoft.wc.thing.actionplan">
+    <import namespace="urn:com.microsoft.wc.thing.types" schemaLocation="base.xsd"/>
+    <import namespace="urn:com.microsoft.wc.dates" schemaLocation="dates.xsd"/>
+    <annotation>
+        <documentation>
+            <type-id>10291bcd-6c33-4297-86df-167fedefd6d8</type-id>
+            <type-name>Action plan (deprecated)</type-name>
+            <version>1</version>
+            <wrapper-class-name>ActionPlanWrapper</wrapper-class-name>
+            <wrapper-class-fwlink/>
+            <summary>
+                A single action plan related object.
+            </summary>
+            <remarks>
+                This class is deprecated. Applications should interact with action plan data
+                through the action plan methods in the HealthVault REST APIs.
+                new types.
+            </remarks>
+        </documentation>
+    </annotation>
+    <complexType name="HeaderItem">
+        <annotation>
+            <documentation>
+                <summary>
+                    An item of header information.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="name" type="t:stringnznw">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The name of the header item.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="value" type="t:stringnznw">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The value of the header item.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <element name="action-plan">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Defines action plan for a user, including plan, task, and tracking.
+                    </summary>
+                    <remarks>
+                        The action plan entity is stored in "value" blob as base64 encoded json format.
+
+                        The data stored is intended to be a generic way for multiple types of entities related to action plan, such as plan, task and task tracking.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="headers" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A collection of header information associated with this entity.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                    <complexType>
+                        <sequence>
+                            <element name="header" type="this:HeaderItem" minOccurs="0" maxOccurs="unbounded"/>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="type" type="string" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Full type name of wrapped object.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="value" type="t:stringnznw" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Base 64 encoded json serialization of action plan entity.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

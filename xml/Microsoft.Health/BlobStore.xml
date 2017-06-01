@@ -4,7 +4,7 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.BlobStore" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -21,8 +21,15 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            A collection of the BLOBs associated with a health record item.
+            </summary>
+    <remarks>
+            The <see cref="T:Microsoft.Health.BlobStore" /> is a dictionary that is read-only but allows removal of 
+            <see cref="T:Microsoft.Health.Blob" /> instances. 
+            To add <see cref="T:Microsoft.Health.Blob" /> instances to the dictionary use the 
+            <see cref="M:Microsoft.Health.BlobStore.NewBlob(System.String,System.String)" /> method.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName="Add">
@@ -31,7 +38,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.Add(Microsoft.Health.Blob)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -41,8 +48,12 @@
       </Parameters>
       <Docs>
         <param name="blob">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Not supported.
+            </summary>
+        <remarks>
+            Use the <see cref="M:Microsoft.Health.BlobStore.NewBlob(System.String,System.String)" /> method instead.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Add">
@@ -51,7 +62,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.Add(System.String,Microsoft.Health.Blob)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -63,8 +74,12 @@
       <Docs>
         <param name="key">To be added.</param>
         <param name="blob">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Not supported.
+            </summary>
+        <remarks>
+            Use the <see cref="M:Microsoft.Health.BlobStore.NewBlob(System.String,System.String)" /> method instead.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Clear">
@@ -73,14 +88,16 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.Clear" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Clears all Blob instances from the BlobStore.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -90,7 +107,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.Contains(Microsoft.Health.Blob)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -99,10 +116,19 @@
         <Parameter Name="blob" Type="Microsoft.Health.Blob" />
       </Parameters>
       <Docs>
-        <param name="blob">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="blob">
+            The Blob instance to locate in the BlobStore.
+            </param>
+        <summary>
+            Determines whether the BlobStore contains the specified Blob instance.
+            </summary>
+        <returns>
+            True if the Blob instance is in the store or false otherwise.
+            </returns>
+        <remarks>
+            This implementation is a reference comparison and does not equate Blob instances
+            with the same name.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="ContainsKey">
@@ -111,7 +137,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.ContainsKey(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -120,10 +146,18 @@
         <Parameter Name="key" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="key">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="key">
+            The key to locate in the BlobStore.
+            </param>
+        <summary>
+            Determines whether the BlobStore contains a Blob with the specified key.
+            </summary>
+        <returns>
+            True if the BlobStore contains a Blob with the key; otherwise, false.
+            </returns>
+        <remarks>
+            This is a case-sensitive comparison.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Count">
@@ -132,13 +166,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.BlobStore.Count" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the count of BLOBs associated with the health record item.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -149,7 +185,7 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.BlobStore.Item(System.String)" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.Blob</ReturnType>
@@ -158,9 +194,16 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <param name="name">
+            The name of the BLOB to retrieve for the item. A null key indicates the "default" BLOB.
+            </param>
+        <summary>
+            Gets the BLOB with the specified name.
+            </summary>
+        <value>
+            The BLOB with the specified name or <b>null</b> if no BLOB with the specified name 
+            exists.
+            </value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -170,13 +213,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.BlobStore.Keys" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.ICollection&lt;System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets an ICollection&lt;string&gt; containing the Blob names in the BlobStore.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -187,7 +232,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.NewBlob(System.String,System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.Blob</ReturnType>
@@ -197,11 +242,26 @@
         <Parameter Name="contentType" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="blobName">To be added.</param>
-        <param name="contentType">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="blobName">
+            The name of the BLOB. It can be <see cref="F:System.String.Empty" /> but cannot be <b>null</b>.
+            </param>
+        <param name="contentType">
+            The content type of the BLOB.
+            </param>
+        <summary>
+            Creates a BLOB in the store with the specified name, content type, and encoding.
+            </summary>
+        <returns>
+            The <see cref="T:Microsoft.Health.Blob" /> instance that was created in the store.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="blobName" /> or <paramref name="contentType" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            If a Blob with the same name already exists in the store. To update an existing Blob,
+            remove the existing Blob and create a new one.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="NewBlob">
@@ -210,7 +270,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.NewBlob(System.String,System.String,Microsoft.Health.BlobHashInfo,System.Uri)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.Blob</ReturnType>
@@ -222,13 +282,39 @@
         <Parameter Name="blobUrl" Type="System.Uri" />
       </Parameters>
       <Docs>
-        <param name="blobName">To be added.</param>
-        <param name="contentType">To be added.</param>
-        <param name="hashInfo">To be added.</param>
-        <param name="blobUrl">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="blobName">
+            The name of the BLOB. It can be <see cref="F:System.String.Empty" /> but cannot be <b>null</b>.
+            </param>
+        <param name="contentType">
+            The content type of the BLOB.
+            </param>
+        <param name="hashInfo">
+            The hash information for the BLOB.
+            </param>
+        <param name="blobUrl">
+            The HealthVault URL of the BLOB.
+            </param>
+        <summary>
+            Recreates a BLOB in the store to allow for restarting multiple BLOB uploads on a
+            <see cref="T:Microsoft.Health.HealthRecordItem" />.
+            </summary>
+        <returns>
+            The <see cref="T:Microsoft.Health.Blob" /> instance that was recreated in the store.
+            </returns>
+        <remarks>
+            This overload is intended to allow the caller to recover from issues that may arise 
+            while uploading large BLOBs or many BLOBs for a <see cref="T:Microsoft.Health.HealthRecordItem" />.
+            If you have a large amount of data to upload, you can periodically save the state of
+            the Blob instance (and BlobStream if necessary) and then use this method to recreate
+            that same Blob instance in the store.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="blobName" /> or <paramref name="contentType" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            If a Blob with the same name already exists in the store. To update an existing Blob,
+            remove the existing Blob and create a new one.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Remove">
@@ -237,7 +323,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.Remove(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -246,9 +332,15 @@
         <Parameter Name="key" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="key">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="key">
+            The name of the Blob to remove.
+            </param>
+        <summary>
+            Removes the Blob with the specified name from the BlobStore.
+            </summary>
+        <returns>
+            True if the Blob is successfully removed; otherwise, false.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -258,7 +350,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.System#Collections#Generic#ICollection&lt;System#Collections#Generic#KeyValuePair&lt;System#String,Microsoft#Health#Blob&gt;&gt;#Add(System.Collections.Generic.KeyValuePair{System.String,Microsoft.Health.Blob})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -267,8 +359,11 @@
         <Parameter Name="item" Type="System.Collections.Generic.KeyValuePair&lt;System.String,Microsoft.Health.Blob&gt;" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="item">
+        </param>
+        <summary>
+            Not supported.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -278,7 +373,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.System#Collections#Generic#ICollection&lt;System#Collections#Generic#KeyValuePair&lt;System#String,Microsoft#Health#Blob&gt;&gt;#Contains(System.Collections.Generic.KeyValuePair{System.String,Microsoft.Health.Blob})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -287,9 +382,15 @@
         <Parameter Name="item" Type="System.Collections.Generic.KeyValuePair&lt;System.String,Microsoft.Health.Blob&gt;" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="item">
+            The Blob to locate in the BlobStore.
+            </param>
+        <summary>
+            Determines whether the BlobStore contains the specified item.
+            </summary>
+        <returns>
+            True if <paramref name="item" /> is found in the BlobStore; otherwise, false.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -299,7 +400,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.System#Collections#Generic#ICollection&lt;System#Collections#Generic#KeyValuePair&lt;System#String,Microsoft#Health#Blob&gt;&gt;#CopyTo(System.Collections.Generic.KeyValuePair{System.String,Microsoft.Health.Blob}[],System.Int32)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -309,9 +410,17 @@
         <Parameter Name="arrayIndex" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="array">To be added.</param>
-        <param name="arrayIndex">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="array">
+            The one-dimensional <see cref="T:System.Array" /> that is the destination of the Blobs copied from
+            the BlobStore. The <see cref="T:System.Array" /> must have zero-based indexing.
+            </param>
+        <param name="arrayIndex">
+            The zero-based index in <paramref name="array" /> at which copying begins.
+            </param>
+        <summary>
+            Copies the elements of the BlobStore to an <see cref="T:System.Array" />, starting at a 
+            particular <see cref="T:System.Array" /> index.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -321,15 +430,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.BlobStore.System#Collections#Generic#ICollection&lt;System#Collections#Generic#KeyValuePair&lt;System#String,Microsoft#Health#Blob&gt;&gt;#IsReadOnly" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a value indicating whether the BlobStore is read-only.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The BlobStore cannot be added to through the Add methods. Instead the
+            <see cref="M:Microsoft.Health.BlobStore.NewBlob(System.String,System.String)" /> method must be used. However, the <see cref="M:Microsoft.Health.BlobStore.Clear" /> and 
+            <see cref="M:Microsoft.Health.BlobStore.Remove(System.String)" /> methods are available.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.String,Microsoft.Health.Blob&gt;&gt;.Remove">
@@ -338,7 +453,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.System#Collections#Generic#ICollection&lt;System#Collections#Generic#KeyValuePair&lt;System#String,Microsoft#Health#Blob&gt;&gt;#Remove(System.Collections.Generic.KeyValuePair{System.String,Microsoft.Health.Blob})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -347,8 +462,12 @@
         <Parameter Name="item" Type="System.Collections.Generic.KeyValuePair&lt;System.String,Microsoft.Health.Blob&gt;" />
       </Parameters>
       <Docs>
-        <param name="item">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="item">
+            The Blob instance to remove.
+            </param>
+        <summary>
+            Removes the first occurrence of a specific Blob from the BlobStore.
+            </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -359,15 +478,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.System#Collections#Generic#IEnumerable&lt;System#Collections#Generic#KeyValuePair&lt;System#String,Microsoft#Health#Blob&gt;&gt;#GetEnumerator" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePair&lt;System.String,Microsoft.Health.Blob&gt;&gt;</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+        <returns>
+            An <see cref="T:System.Collections.Generic.IEnumerator`1" /> object that can be used to iterate through the collection.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -377,15 +500,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.System#Collections#IEnumerable#GetEnumerator" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.IEnumerator</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+        <returns>
+            An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -395,7 +522,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.TryGetValue(System.String,Microsoft.Health.Blob@)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -405,10 +532,20 @@
         <Parameter Name="value" Type="Microsoft.Health.Blob&amp;" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="key">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="key">
+            The key whose value to get.
+            </param>
+        <param name="value">
+            When this method returns, the value associated with the specified key, if the key is found;
+            otherwise, the default value for the type of the value parameter. This parameter is passed
+            uninitialized.
+            </param>
+        <summary>
+            Gets the value associated with the specified key.
+            </summary>
+        <returns>
+            True if a Blob with the specified name exists in the BlobStore; otherwise, false.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -418,13 +555,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.BlobStore.Values" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.ICollection&lt;Microsoft.Health.Blob&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets an ICollection&lt;Blob&gt; containing the values in the BlobStore.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -435,7 +574,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.Write(System.String,System.String,System.IO.Stream)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -446,11 +585,29 @@
         <Parameter Name="stream" Type="System.IO.Stream" />
       </Parameters>
       <Docs>
-        <param name="blobName">To be added.</param>
-        <param name="contentType">To be added.</param>
-        <param name="stream">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="blobName">
+            The name of the BLOB. It can be <see cref="F:System.String.Empty" /> but cannot be <b>null</b>.
+            </param>
+        <param name="contentType">
+            The content type of the BLOB.
+            </param>
+        <param name="stream">
+            The stream to get the bytes from to write to the blob.
+            </param>
+        <summary>
+            Writes the bytes from the specified stream.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="contentType" /> is <b>null</b> or empty.
+            </exception>
+        <exception cref="ArgumentNullException">
+            If <paramref name="stream" /> or <paramref name="blobName" /> 
+            is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If there is an error writing the data to HealthVault.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteInline">
@@ -459,7 +616,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.BlobStore.WriteInline(System.String,System.String,System.Byte[])" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -470,11 +627,28 @@
         <Parameter Name="bytes" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="blobName">To be added.</param>
-        <param name="contentType">To be added.</param>
-        <param name="bytes">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="blobName">
+            The name of the BLOB. It can be <see cref="F:System.String.Empty" /> but cannot be <b>null</b>.
+            </param>
+        <param name="contentType">
+            The content type of the BLOB.
+            </param>
+        <param name="bytes">
+            The bytes to write to the blob.
+            </param>
+        <summary>
+            Writes the specified bytes to the blob.
+            </summary>
+        <remarks>
+            This is limited to about 3.5MB of data. Use <see cref="M:Microsoft.Health.Blob.GetWriterStream" /> to write
+            more data.
+            </remarks>
+        <exception cref="ArgumentNullException">
+            If <paramref name="bytes" /> or <paramref name="blobName" />is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="contentType" /> is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
   </Members>

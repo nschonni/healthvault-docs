@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns:this="urn:com.microsoft.wc.thing.task-tracking-entry" targetNamespace="urn:com.microsoft.wc.thing.task-tracking-entry" xmlns="http://www.w3.org/2001/XMLSchema">
+    <import namespace="urn:com.microsoft.wc.thing.types" schemaLocation="base.xsd" />
+    <import namespace="urn:com.microsoft.wc.dates" schemaLocation="dates.xsd" />
+    
+    <annotation>
+        <documentation>
+            <type-id>b54a6e00-c1fb-4e22-8694-0a4ae94e8cb6</type-id>
+            <type-name>Task tracking entry</type-name>
+            <summary>
+                Represents a single occasion on which the user performed a task, was supposed to perform a
+                task, or completed a task by performing all required occurrences.
+            </summary>
+            <remarks>
+                Applications should not interact with this data type directly via GetThings, PutThings, etc.
+                Instead, they should use the ActionPlan methods in the HealthVault REST APIs.
+            </remarks>
+            <effective-date-element>tracking-time</effective-date-element>
+            <seealso-thing-type-version-id>504d6c08-68f9-4e07-8699-5fb55678f13d</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>6184d61f-4846-4219-b675-b61de85860d1</seealso-thing-type-version-id>
+        </documentation>
+    </annotation>
+
+    <simpleType name="task-tracking-status">
+        <annotation>
+            <documentation>
+                <summary>
+                    The task adherence or completion status represented by this tracking entry.
+                </summary>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Occurrence">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The user performed a task at the required time.
+                        </summary>
+                        <remarks>
+                            For example, if the task is to exercise for thirty minutes three times
+                            a week, then every time the user completes a thirty-minute exercise
+                            session a TaskOccurrence with status Occurrence will be logged.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Completion">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The user completed a task by performing all required occurrences.
+                        </summary>
+                        <remarks>
+                            For example, if the task is to exercise for thirty minutes three times
+                            a week, then when the user completes all three exercise sessions a
+                            TaskOccurrence with status Completion will be logged.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="OutOfWindow">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The user performed a task, but not at the required time, so it doesn't count
+                            toward task completion.
+                        </summary>
+                        <remarks>
+                            For example, if the task is to take medication at 10:00 plus/minus fifteen
+                            minutes, and the user takes medication at 12:00, a TaskOccurrence with status
+                            OutOfWindow will be logged.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="NonOccurrence">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The user failed to perform the task.
+                        </summary>
+                        <remarks>
+                            For example, if the user forgot to take their medication or didn't exercise, 
+                            the application can optionally record this as a TaskOccurrence with status
+                            NonOccurrence.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="task-tracking-type">
+        <annotation>
+            <documentation>
+                <summary>
+                    The method by which the tracking entry was triggered.
+                </summary>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Manual">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            This tracking entry was triggered by a manual action from the user.
+                        </summary>
+                        <remarks>
+                            For example, the user may have pressed a button in the application to
+                            indicate that they performed the task.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Auto">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            This tracking entry was triggered by a change in the user's HealthVault data.
+                        </summary>
+                        <remarks>
+                            For example, if the task is to measure blood pressure, and a blood pressure
+                            measurement is uploaded from the user's blood pressure monitor, it can
+                            automatically trigger a task tracking entry.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    
+    <element name="task-tracking-entry">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Represents a single occasion on which the user performed (or was supposed to perform) a task.
+                    </summary>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="tracking-time" type="d:date-time">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                When the entry was recorded.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="tracking-type" type="this:task-tracking-type">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The method by which the tracking entry was triggered.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="tracking-status" type="this:task-tracking-status">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The task adherence or completion status represented by this
+                                tracking entry.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="occurrence-start-time" type="d:date-time" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                When the occurrence window began.
+                            </summary>
+                            <remarks>
+                                This field should be null if the tracking status is Completion or OutOfWindow.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="occurrence-end-time" type="d:date-time" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                When the occurrence window ended.
+                            </summary>
+                            <remarks>
+                                This field should be null if the tracking status is Completion or OutOfWindow.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="completion-start-time" type="d:date-time">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                When the completion window began.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="completion-end-time" type="d:date-time">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                When the completion window ended.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

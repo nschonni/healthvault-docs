@@ -4,14 +4,16 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.File" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.HealthRecordItem</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Represents information about a file.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,12 +23,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.File.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.File" /> class with default 
+            values.
+            </summary>
+        <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)" /> method 
+            is called.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -35,17 +44,30 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.File.#ctor(System.String,System.Int64)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="System.String" />
         <Parameter Name="size" Type="System.Int64" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <param name="size">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">
+            The name of the file.
+            </param>
+        <param name="size">
+            The file size in bytes.
+            </param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.File" /> class with the 
+            specified name and size.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="name" /> parameter is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="size" /> parameter is negative or zero.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Content">
@@ -54,13 +76,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.File.Content" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the content of the file item.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -71,13 +95,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.File.ContentStream" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IO.Stream</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a stream to read the file contents.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -88,15 +114,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.File.ContentType" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the type of content contained in the file.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue" /> representing the file content type.
+            </value>
+        <remarks>
+            Set the value to <b>null</b> if the content type should not be stored.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="CreateFromFilePath">
@@ -105,7 +137,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.File.CreateFromFilePath(System.String,Microsoft.Health.ItemTypes.CodableValue)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.File</ReturnType>
@@ -115,11 +147,57 @@
         <Parameter Name="contentType" Type="Microsoft.Health.ItemTypes.CodableValue" />
       </Parameters>
       <Docs>
-        <param name="path">To be added.</param>
-        <param name="contentType">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="path">
+            The path of the file to associate with this <see cref="T:Microsoft.Health.ItemTypes.File" /> instance.
+            </param>
+        <param name="contentType">
+            The content type of the file. This is usually something like "image/jpg", "application/csv",
+            or other mime type.
+            </param>
+        <summary>
+            Creates a <see cref="T:Microsoft.Health.ItemTypes.File" /> item instance using the specified file path and content
+            type.
+            </summary>
+        <returns>
+            A new instance of the <see cref="T:Microsoft.Health.ItemTypes.File" /> health record item with data populated from the
+            specified file path.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="path" /> is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="contentType" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:System.IO.PathTooLongException">
+            The specified path, file name, or both exceed the system-defined maximum length. 
+            For example, on Windows-based platforms, paths must be less than 248 characters, 
+            and file names must be less than 260 characters. 
+            </exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+            The specified path is invalid (for example, it is on an unmapped drive). 
+            </exception>
+        <exception cref="T:System.IO.IOException">
+            An I/O error occurred while opening the file. 
+            </exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="path" /> specified a file that is read-only.
+            -or- 
+            This operation is not supported on the current platform.
+            -or- 
+            path specified a directory.
+            -or- 
+            The caller does not have the required permission. 
+            </exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+            The file specified in <paramref name="path" /> was not found. 
+            </exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" /> is in an invalid format. 
+            </exception>
+        <exception cref="T:System.Security.SecurityException">
+            The caller does not have the required permission. 
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="CreateFromStream">
@@ -128,7 +206,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.File.CreateFromStream(Microsoft.Health.HealthRecordAccessor,System.IO.Stream,System.String,Microsoft.Health.ItemTypes.CodableValue)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.File</ReturnType>
@@ -140,13 +218,38 @@
         <Parameter Name="contentType" Type="Microsoft.Health.ItemTypes.CodableValue" />
       </Parameters>
       <Docs>
-        <param name="record">To be added.</param>
-        <param name="stream">To be added.</param>
-        <param name="name">To be added.</param>
-        <param name="contentType">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="record">
+            The record to stream the data to.
+            </param>
+        <param name="stream">
+            The stream containing the data to associate with this <see cref="T:Microsoft.Health.ItemTypes.File" /> instance.
+            </param>
+        <param name="name">
+            The name of the file instance.
+            </param>
+        <param name="contentType">
+            The content type of the file. This is usually something like "image/jpg", "application/csv",
+            or other mime type.
+            </param>
+        <summary>
+            Creates a <see cref="T:Microsoft.Health.ItemTypes.File" /> item instance using the specified stream and content
+            type.
+            </summary>
+        <returns>
+            A new instance of the <see cref="T:Microsoft.Health.ItemTypes.File" /> health record item with data populated from the
+            specified stream.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="name" /> is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="record" />, <paramref name="stream" />, or 
+            <paramref name="contentType" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If a failure occurs streaming the data to HealthVault.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -155,15 +258,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.File.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets or sets the name of the file including the extension if
+            available.
+            </summary>
+        <value>
+            A string representing the file name.
+            </value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="value" /> parameter is <b>null</b> or empty on set.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -172,7 +283,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.File.ParseXml(System.Xml.XPath.IXPathNavigable)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -181,9 +292,17 @@
         <Parameter Name="typeSpecificXml" Type="System.Xml.XPath.IXPathNavigable" />
       </Parameters>
       <Docs>
-        <param name="typeSpecificXml">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="typeSpecificXml">
+            The XML to get the file data from.
+            </param>
+        <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.File" /> instance from the data in the XML.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml" /> is not
+            a file node.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="SetContent">
@@ -192,7 +311,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.File.SetContent(System.String,Microsoft.Health.ItemTypes.CodableValue)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -202,10 +321,51 @@
         <Parameter Name="contentType" Type="Microsoft.Health.ItemTypes.CodableValue" />
       </Parameters>
       <Docs>
-        <param name="path">To be added.</param>
-        <param name="contentType">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="path">
+            The path of the file to associate with this <see cref="T:Microsoft.Health.ItemTypes.File" /> instance.
+            </param>
+        <param name="contentType">
+            The content type of the file.
+            </param>
+        <summary>
+            Sets the content of the file instance using the specified file.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="path" /> is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="contentType" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:System.IO.PathTooLongException">
+            The specified path, file name, or both exceed the system-defined maximum length. 
+            For example, on Windows-based platforms, paths must be less than 248 characters, 
+            and file names must be less than 260 characters. 
+            </exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+            The specified path is invalid (for example, it is on an unmapped drive). 
+            </exception>
+        <exception cref="T:System.IO.IOException">
+            An I/O error occurred while opening the file. 
+            </exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="path" /> specified a file that is read-only.
+            -or- 
+            This operation is not supported on the current platform.
+            -or- 
+            path specified a directory.
+            -or- 
+            The caller does not have the required permission. 
+            </exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+            The file specified in <paramref name="path" /> was not found. 
+            </exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" /> is in an invalid format. 
+            </exception>
+        <exception cref="T:System.Security.SecurityException">
+            The caller does not have the required permission. 
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="SetContent">
@@ -214,7 +374,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.File.SetContent(Microsoft.Health.HealthRecordAccessor,System.IO.Stream,System.String,Microsoft.Health.ItemTypes.CodableValue)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -226,12 +386,31 @@
         <Parameter Name="contentType" Type="Microsoft.Health.ItemTypes.CodableValue" />
       </Parameters>
       <Docs>
-        <param name="record">To be added.</param>
-        <param name="stream">To be added.</param>
-        <param name="name">To be added.</param>
-        <param name="contentType">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="record">
+            The record to stream the data to.
+            </param>
+        <param name="stream">
+            The stream containing the data to associate with this <see cref="T:Microsoft.Health.ItemTypes.File" /> instance.
+            </param>
+        <param name="name">
+            The name of the file instance.
+            </param>
+        <param name="contentType">
+            The content type of the file.
+            </param>
+        <summary>
+            Sets the content of the file instance using the specified stream.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="name" /> is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="record" />, <paramref name="stream" /> or <paramref name="contentType" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If a failure occurs streaming the data to HealthVault.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Size">
@@ -240,15 +419,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.File.Size" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets or sets the file size.
+            </summary>
+        <value>
+            An integer representing the file size.
+            </value>
+        <remarks>
+            This property must be set before the item is created or updated.
+            </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value" /> parameter is less than or equal to zero.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -257,15 +445,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.File.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Gets a string representation of the file item.
+            </summary>
+        <returns>
+            A string representation of the file item.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -275,13 +467,18 @@
       <MemberSignature Language="DocId" Value="F:Microsoft.Health.ItemTypes.File.TypeId" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+        <returns>
+            A GUID.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -291,7 +488,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.File.WriteXml(System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -300,9 +497,16 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="writer">
+            The XmlWriter to write the file data to.
+            </param>
+        <summary>
+            Writes the file data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

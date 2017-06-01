@@ -4,14 +4,17 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.HealthServiceResponseData" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Contains the response information from the HealthVault service after
+            processing a request.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,15 +24,23 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceResponseData.Code" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthServiceStatusCode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the status code of the response.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.HealthServiceStatusCode" /> value.
+            </value>
+        <remarks>
+            Any code other than <see cref="F:Microsoft.Health.HealthServiceStatusCode.Ok" /> indicates
+            an error. Use the <see cref="P:Microsoft.Health.HealthServiceResponseData.Error" /> property
+            to get more information about the error.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="CodeId">
@@ -38,15 +49,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceResponseData.CodeId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the integer identifier of the status code in the HealthVault
+            response.
+            </summary>
+        <value>
+            An integer representing the status code ID.
+            </value>
+        <remarks>
+            Use this property when the SDK is out of sync with the HealthVault 
+            status code set. You can look up the actual integer value of the 
+            status code for further investigation.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Error">
@@ -55,15 +75,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceResponseData.Error" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.HealthServiceResponseError</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the information about an error that occurred while processing
+            the request.
+            </summary>
+        <value>
+            A <see cref="T:Microsoft.Health.HealthServiceResponseError" />.
+            </value>
+        <remarks>
+            This property is <b>null</b> if 
+            <see cref="P:Microsoft.Health.HealthServiceResponseData.Code" /> returns 
+            <see cref="F:Microsoft.Health.HealthServiceStatusCode.Ok" />.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="InfoNavigator">
@@ -72,13 +101,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceResponseData.InfoNavigator" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XPath.XPathNavigator</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the info section of the response XML.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -89,13 +120,15 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceResponseData.InfoReader" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlReader</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets the info section of the response XML.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -106,15 +139,21 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.HealthServiceResponseData.ResponseHeaders" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.WebHeaderCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the headers of the response.
+            </summary>
+        <value>
+            A WebHeaderCollection representing the the response headers.
+            </value>
+        <remarks>
+            Use this property to examine HealthVault response headers which include information such as request proxy'ing.
+            </remarks>
       </Docs>
     </Member>
   </Members>

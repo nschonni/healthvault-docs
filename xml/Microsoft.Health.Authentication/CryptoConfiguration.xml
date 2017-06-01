@@ -4,14 +4,17 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.Authentication.CryptoConfiguration" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>
+            Provides access to both application-level settings and 
+            methods to both specify and construct cryptographic primitives.
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -21,16 +24,21 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Authentication.CryptoConfiguration.CreateHashAlgorithm" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.HashAlgorithm</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Creates a new hash algorithm with default values.
+            </summary>
+        <returns>
+            An instance of <see cref="P:Microsoft.Health.Authentication.CryptoConfiguration.HashAlgorithmName" />.
+            </returns>
         <remarks>To be added.</remarks>
+        <altmember cref="P:Microsoft.Health.Authentication.CryptoConfiguration.HashAlgorithmName" />
       </Docs>
     </Member>
     <Member MemberName="CreateHashAlgorithm">
@@ -39,7 +47,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Authentication.CryptoConfiguration.CreateHashAlgorithm(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.HashAlgorithm</ReturnType>
@@ -48,10 +56,21 @@
         <Parameter Name="algorithmName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="algorithmName">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="algorithmName">
+            The well-known algorithm name that specifies the Hash Message 
+            Authentication Code (HMAC) primitive.
+            </param>
+        <summary>
+            Creates a new hash algorithm based on the specified 
+            <paramref name="algorithmName" />.
+            </summary>
+        <returns>
+            A new hash algorithm of type <paramref name="algorithmName" />.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="algorithmName" /> parameter is not supported.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="CreateHmac">
@@ -60,7 +79,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Authentication.CryptoConfiguration.CreateHmac(System.Byte[])" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.HMAC</ReturnType>
@@ -69,10 +88,22 @@
         <Parameter Name="keyMaterial" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="keyMaterial">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="keyMaterial">
+            The provided key material to be used as the HMAC key.
+            </param>
+        <summary>
+            Creates a new Hash Message Authentication Code (HMAC) based on 
+            the current key.
+            </summary>
+        <returns>
+            A new HMAC instance using <see cref="P:Microsoft.Health.Authentication.CryptoConfiguration.HmacAlgorithmName" /> 
+            and the provided <paramref name="keyMaterial" />.  
+            </returns>
         <remarks>To be added.</remarks>
+        <altmember cref="P:Microsoft.Health.Authentication.CryptoConfiguration.HmacAlgorithmName" />
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="keyMaterial" /> parameter is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="CreateHmac">
@@ -81,7 +112,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Authentication.CryptoConfiguration.CreateHmac(System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.HMAC</ReturnType>
@@ -90,10 +121,25 @@
         <Parameter Name="algorithmName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="algorithmName">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="algorithmName">
+            The well-known algorithm name which specifies the HMAC primitive.
+            </param>
+        <summary>
+            Creates a new Hash Message Authentication Code (HMAC) instance 
+            based on the specified <paramref name="algorithmName" />.
+            </summary>
+        <returns>
+            A new HMAC instance of type <paramref name="algorithmName" />.
+            </returns>
+        <remarks>
+            Since this method does not take user-specified keyMaterial,
+            the caller must set the key after this call and before using the 
+            HMAC algorithm.
+            </remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="algorithmName" /> parameter is <b>null</b> or empty.
+            The <paramref name="algorithmName" /> parameter is not of type HMAC.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="CreateHmac">
@@ -102,7 +148,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Authentication.CryptoConfiguration.CreateHmac(System.String,System.Byte[])" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.HMAC</ReturnType>
@@ -112,11 +158,26 @@
         <Parameter Name="keyMaterial" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="algorithmName">To be added.</param>
-        <param name="keyMaterial">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="algorithmName">
+            The well-known algorithm name that specifies the HMAC primitive.
+            </param>
+        <param name="keyMaterial">
+            The provided key material to be used as the HMAC key.
+            </param>
+        <summary>
+            Creates a new Hash Message Authentication Code (HMAC) instance 
+            using the specified <paramref name="algorithmName" /> and 
+            <paramref name="keyMaterial" />.
+            </summary>
+        <returns>
+            A new HMAC instance.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="algorithmName" /> parameter is <b>null</b> or empty.
+            The <paramref name="algorithmName" /> parameter is not of type HMAC.
+            The <paramref name="keyMaterial" /> parameter is <b>null</b> or empty.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="CreateSymmetricAlgorithm">
@@ -125,7 +186,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Authentication.CryptoConfiguration.CreateSymmetricAlgorithm(System.String,System.Byte[])" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.SymmetricAlgorithm</ReturnType>
@@ -135,11 +196,26 @@
         <Parameter Name="keyMaterial" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="algorithmName">To be added.</param>
-        <param name="keyMaterial">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="algorithmName">
+            The well-known algorithm name that specifies the symmetric 
+            algorithm primitive.
+            </param>
+        <param name="keyMaterial">
+            The provided key material to be used as the Hash Message 
+            Authentication Code (HMAC) key.
+            </param>
+        <summary>
+            Constructs a symmetric key algorithm based on the specified 
+            <paramref name="algorithmName" /> and <paramref name="keyMaterial" />.
+            </summary>
+        <returns>
+            A new symmetric key of type <paramref name="algorithmName" />.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            The <paramref name="algorithmName" /> parameter is not supported,
+            or the <paramref name="keyMaterial" /> parameter is invalid.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="CryptoServiceProviderName">
@@ -148,14 +224,18 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Authentication.CryptoConfiguration.CryptoServiceProviderName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>
+            Gets the name of the crypto service provider for the currently
+            running operating system version.
+            
+            </summary>
+        <value />
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -165,15 +245,19 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.Authentication.CryptoConfiguration.GenerateHmacSharedSecret" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>
+            Generates an HMAC shared secret for the default HMAC algorithm.
+             </summary>
+        <returns>
+            A byte array representing the HMAC shared secret.
+            </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -183,15 +267,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Authentication.CryptoConfiguration.HashAlgorithmName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the preferred application-wide hash algorithm name.
+            </summary>
+        <value>
+            A string representing the algorithm name.
+            </value>
+        <remarks>
+            The application-wide algorithm name can be specified in the 
+            configuration, but if it is not, then a default value is used.  
+            This algorithm name can be used to construct a hash primitive using
+            <see cref="M:Microsoft.Health.Authentication.CryptoConfiguration.CreateHashAlgorithm(System.String)" />.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="HmacAlgorithmName">
@@ -200,15 +293,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Authentication.CryptoConfiguration.HmacAlgorithmName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the preferred application-wide Hash Message Authentication Code 
+            (HMAC) algorithm name.
+            </summary>
+        <value>
+            The HMAC algorithm name.
+            </value>
+        <remarks>
+            The application-wide algorithm name may be specified in the 
+            configuration, but if it is not, then a default value is used.  
+            This algorithm name can be used to construct an HMAC primitive 
+            using <see cref="M:Microsoft.Health.Authentication.CryptoConfiguration.CreateHmac(System.String)" />.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="SignatureAlgorithmName">
@@ -217,15 +320,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Authentication.CryptoConfiguration.SignatureAlgorithmName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the preferred application-wide signature algorithm name.
+            </summary>
+        <value>
+            A string representing the signature algorithm name.
+            </value>
+        <remarks>
+            The application-wide algorithm name can be specified in the 
+            configuration, but if it is not, then a default value is used.  
+            The signature signing algorithm is currently RSA. The RSA algorithm
+            name is prepended to the default 
+            <seealso cref="P:Microsoft.Health.Authentication.CryptoConfiguration.SignatureHashAlgorithmName" />.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="SignatureHashAlgorithmName">
@@ -234,15 +347,25 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Authentication.CryptoConfiguration.SignatureHashAlgorithmName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the preferred application-wide hash algorithm name for 
+            computing digests to be used for signature generation.
+            </summary>
+        <value>
+            A string representing the algorithm name.
+            </value>
+        <remarks>
+            The application-wide algorithm name can be specified in the 
+            configuration, but if it is not, then a default value is used.  
+            This algorithm name can be used to construct a hash primitive using
+            <see cref="M:Microsoft.Health.Authentication.CryptoConfiguration.CreateHashAlgorithm(System.String)" />.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="SymmetricAlgorithmName">
@@ -251,15 +374,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.Authentication.CryptoConfiguration.SymmetricAlgorithmName" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+            Gets the preferred application-wide symmetric algorithm name.
+            </summary>
+        <value>
+            A string representing the default symmetric algorithm name.
+            </value>
+        <remarks>
+            The application-wide algorithm name can be specified in the 
+            configuration, but if it is not, then a default value is used.  
+            The symmetric algorithm name can be used to construct a
+            symmetric algorithm via <see cref="M:Microsoft.Health.Authentication.CryptoConfiguration.CreateSymmetricAlgorithm(System.String,System.Byte[])" />.
+            </remarks>
       </Docs>
     </Member>
   </Members>

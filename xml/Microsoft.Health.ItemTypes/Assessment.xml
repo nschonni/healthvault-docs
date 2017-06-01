@@ -4,15 +4,19 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.ItemTypes.Assessment" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health.ItemTypes</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.Health.ItemTypes.HealthRecordItemData</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Defines a result from a health assessment containing the name and value of the assessed area.
+            </summary>
+    <remarks>
+            See <see cref="T:Microsoft.Health.ItemTypes.HealthAssessment" /> for more information.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -21,11 +25,14 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Assessment.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Constructs a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Assessment" /> class 
+            with default values.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -35,17 +42,27 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Assessment.#ctor(Microsoft.Health.ItemTypes.CodableValue,Microsoft.Health.ItemTypes.CodableValue)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="name" Type="Microsoft.Health.ItemTypes.CodableValue" />
         <Parameter Name="value" Type="Microsoft.Health.ItemTypes.CodableValue" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">
+            The name of the assessed area. See <see cref="P:Microsoft.Health.ItemTypes.Assessment.Name" /> for more information.
+            </param>
+        <param name="value">
+            The calculated value of the assessed area. See <see cref="P:Microsoft.Health.ItemTypes.Assessment.Value" /> for more information.
+            </param>
+        <summary>
+            Constructs a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Assessment" /> class 
+            with name and value.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="name" /> or <paramref name="value" /> is <b> null </b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="Group">
@@ -54,15 +71,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Assessment.Group" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the additional information that can be used to help organize the
+            results.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The group is used to specify which group a specific result is in. 
+            For example, the supporting assessments that follow a main assessment are coded
+            to indicate that they are supporting by specifying the "supporting" code.
+            The preferred vocabulary for route is "health-assessment-groups".
+            Contact the HealthVault team to help define the preferred vocabulary.
+            </remarks>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -71,15 +97,24 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Assessment.Name" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the name of the assessed area.  
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            Examples: Heart attack risk, high blood pressure.
+            The preferred vocabulary for route is "health-assessment-name".
+            Contact the HealthVault team to help define the preferred vocabulary.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="Name" /> is <b>null</b>. 
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="ParseXml">
@@ -88,7 +123,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Assessment.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -97,9 +132,16 @@
         <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="navigator">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="navigator">
+             The XML to get the assessment data from.
+             </param>
+        <summary>
+             Populates this <see cref="T:Microsoft.Health.ItemTypes.Assessment" /> instance from the data in the XML. 
+             </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+             If <paramref name="navigator" /> is <b> null </b>.
+             </exception>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -108,14 +150,16 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Assessment.ToString" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets a string of the name or description of the assessment.
+            </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -126,15 +170,26 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.Health.ItemTypes.Assessment.Value" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Health.ItemTypes.CodableValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>
+            Gets or sets the calculated value of the assessed area.
+            </summary>
         <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <remarks>
+            The value may be coded using a specific set of values. 
+            Example: Low/Medium/High risk.
+            A list of vocabularies may be found in the preferred vocabulary 
+            "health-assessment-value-sets". 
+            Contact the HealthVault team to help define the preferred vocabulary.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="value" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="WriteXml">
@@ -143,7 +198,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.ItemTypes.Assessment.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -153,10 +208,25 @@
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="nodeName">To be added.</param>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="nodeName">
+            The name of the outer node for the assessment item.
+            </param>
+        <param name="writer">
+            The XmlWriter to write the assessment data to.
+            </param>
+        <summary>
+            Writes the assessment data to the specified XmlWriter.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="nodeName" /> is <b> null </b> or empty.
+            </exception>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer" /> is <b> null </b>.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.Assessment.Name" /> or <see cref="P:Microsoft.Health.ItemTypes.Assessment.Value" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
   </Members>

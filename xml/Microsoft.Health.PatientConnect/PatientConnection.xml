@@ -4,15 +4,32 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.Health.PatientConnect.PatientConnection" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Health</AssemblyName>
-    <AssemblyVersion>2.63.0.0</AssemblyVersion>
+    <AssemblyVersion>2.64.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+            Methods for accessing the patient connection APIs of HealthVault.
+            </summary>
+    <remarks>
+            Some HealthVault applications maintain some of their own data storage but need a way to
+            link their account/person identifier to a HealthVault identifier. The application can do
+            this by calling <see cref="M:Microsoft.Health.PatientConnect.PatientConnection.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.Uri,System.String)" /> and passing the application's 
+            identifier and some information that is specific to the user. The user can then go to 
+            HealthVault Shell and validate the connection with their appropriate health record. The
+            application can then query for all validated connections (usually on a daily basis) by
+            calling <see cref="M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)" />
+            or <see cref="M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection,System.DateTime)" /> 
+            which returns instances of <see cref="T:Microsoft.Health.PatientConnect.ValidatedPatientConnection" />.
+            <br /><br />
+            Validated connect requests are removed by HealthVault after 90 days. It is advised 
+            that applications call <see cref="M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)" />
+            or <see cref="M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection,System.DateTime)" /> 
+            daily or weekly to ensure that all validated connect requests are retrieved.
+            </remarks>
   </Docs>
   <Members>
     <Member MemberName="Create">
@@ -21,7 +38,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PatientConnect.PatientConnection.Create(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String,System.String,System.Uri,System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -35,15 +52,52 @@
         <Parameter Name="applicationPatientId" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="friendlyName">To be added.</param>
-        <param name="securityQuestion">To be added.</param>
-        <param name="securityAnswer">To be added.</param>
-        <param name="callbackUrl">To be added.</param>
-        <param name="applicationPatientId">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="connection">
+            The application connection to HealthVault. The application ID in the connection is used
+            when making the patient connection.
+            </param>
+        <param name="friendlyName">
+            A friendly name for the patient connection which will be shown to the user when they
+            go to HealthVault Shell to validate the connection.
+            </param>
+        <param name="securityQuestion">
+            A question (usually provided by the patient) to which the patient must provide the 
+            answer when they go to validate the connection in the HealthVault Shell.
+            </param>
+        <param name="securityAnswer">
+            The answer to the <paramref name="securityQuestion" /> which the patient must use
+            when validating the connection in HealthVault Shell. The answer is case-insensitive but
+            otherwise must match exactly. In most cases it is recommended that this is a single 
+            word to prevent entry problems when validating the connection.
+            </param>
+        <param name="callbackUrl">
+            Not yet implemented. May be null.
+            </param>
+        <param name="applicationPatientId">
+            The application specific identifier for the user. This identifier is used to uniquely
+            identify the user in the application data storage whereas the HealthVault person ID is
+            used to identify the person in HealthVault.
+            </param>
+        <summary>
+            Asks HealthVault to create a pending patient connection for the application specified
+            by the connection with the specified user specific parameters.
+            </summary>
+        <returns>
+            A token that the application must give to the patient to use when validating the
+            connection request.
+            </returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="connection" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="friendlyName" />, <paramref name="securityQuestion" />,
+            <paramref name="securityAnswer" />, or <paramref name="applicationPatientId" /> is
+            <b>null</b> or empty.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If an error occurs when contacting HealthVault.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="DeletePending">
@@ -52,7 +106,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PatientConnect.PatientConnection.DeletePending(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -62,10 +116,27 @@
         <Parameter Name="applicationPatientId" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="applicationPatientId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="connection">
+            The connection to HealthVault to use for this operation. 
+            </param>
+        <param name="applicationPatientId">
+            The application's identifier for the user which was used to create the connection 
+            request.
+            </param>
+        <summary>
+            Deletes a request for a connection that has been made by the calling application but
+            has not been validated by the user.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="connection" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="applicationPatientId" /> is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If an error occurs when contacting HealthVault.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetValidatedConnections">
@@ -74,7 +145,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.PatientConnect.ValidatedPatientConnection&gt;</ReturnType>
@@ -83,10 +154,24 @@
         <Parameter Name="connection" Type="Microsoft.Health.Web.OfflineWebApplicationConnection" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="connection">
+            The application's connection to HealthVault.
+            </param>
+        <summary>
+            Gets the connections for the application that people have accepted.
+            </summary>
+        <returns>
+            A collection of the connections that people have accepted.
+            </returns>
+        <remarks>
+            Validated connect requests are removed by HealthVault after 90 days. It is advised 
+            that applications call <see cref="M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)" />
+            or <see cref="M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection,System.DateTime)" /> 
+            daily or weekly to ensure that all validated connect requests are retrieved.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="connection" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="GetValidatedConnections">
@@ -95,7 +180,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection,System.DateTime)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ObjectModel.Collection&lt;Microsoft.Health.PatientConnect.ValidatedPatientConnection&gt;</ReturnType>
@@ -105,11 +190,29 @@
         <Parameter Name="validatedSince" Type="System.DateTime" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="validatedSince">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="connection">
+            The application's connection to HealthVault.
+            </param>
+        <param name="validatedSince">
+            Connections that have been validated since this date will be returned. The date passed
+            should be in UTC time.
+            </param>
+        <summary>
+            Gets the connections for the application that people have accepted since the specified
+            date.
+            </summary>
+        <returns>
+            A collection of the connections that people have accepted.
+            </returns>
+        <remarks>
+            Validated connect requests are removed by HealthVault after 90 days. It is advised 
+            that applications call <see cref="M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection)" />
+            or <see cref="M:Microsoft.Health.PatientConnect.PatientConnection.GetValidatedConnections(Microsoft.Health.Web.OfflineWebApplicationConnection,System.DateTime)" /> 
+            daily or weekly to ensure that all validated connect requests are retrieved.
+            </remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="connection" /> is <b>null</b>.
+            </exception>
       </Docs>
     </Member>
     <Member MemberName="UpdateApplicationPatientId">
@@ -118,7 +221,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.Health.PatientConnect.PatientConnection.UpdateApplicationPatientId(Microsoft.Health.Web.OfflineWebApplicationConnection,System.String,System.String)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>2.63.0.0</AssemblyVersion>
+        <AssemblyVersion>2.64.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -129,11 +232,29 @@
         <Parameter Name="newApplicationPatientId" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="connection">To be added.</param>
-        <param name="oldApplicationPatientId">To be added.</param>
-        <param name="newApplicationPatientId">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="connection">
+            The HealthVault connection to use for the operation.
+            </param>
+        <param name="oldApplicationPatientId">
+            The application patient identifier that was used to make the initial connection request.
+            </param>
+        <param name="newApplicationPatientId">
+            The new application patient identifier.
+            </param>
+        <summary>
+            Updates an existing pending patient connection with a new application patient identifier.
+            </summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+            If <paramref name="connection" /> is <b>null</b>.
+            </exception>
+        <exception cref="T:System.ArgumentException">
+            If <paramref name="oldApplicationPatientId" /> or <paramref name="newApplicationPatientId" />
+            is <b>null</b> or empty.
+            </exception>
+        <exception cref="T:Microsoft.Health.HealthServiceException">
+            If an error occurs when contacting HealthVault.
+            </exception>
       </Docs>
     </Member>
   </Members>
