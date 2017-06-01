@@ -44,7 +44,7 @@ To access a patient’s record, the patient must provide consent to a registered
     2.  On the app details screen, select the “Methods” tab, check the “Application requires access to REST APIs” and “Application requires access to onboarding APIs” options, and click “Save”.
         <img src="/healthvault/images/IC867985.png" title="Configuring app to send email" alt="Configuring app to send email" id="img1" /> 
 
-5. To have your organization information available to APIs, visit the Organization tab in ACC to add your organization information such as organization name which can then be referenced in .
+5. To have your organization information available to APIs, visit the Organization tab in ACC to add your organization information such as organization name.
 
 ## Adding authorization rules
 

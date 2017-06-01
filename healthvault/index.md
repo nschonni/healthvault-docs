@@ -327,6 +327,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                     <a href="https://www.nuget.org/packages/Microsoft.HealthVault.Client">Get the Client SDK</a>
                                                 </h3>
                                                 <p><a href="https://www.nuget.org/packages/Microsoft.HealthVault.Web">Get the Web SDK</a></p>
+                                                <p><a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.healthvault">API reference</a></p>
                                                 <p><a href="https://github.com/Microsoft/healthvault-samples/tree/master/dotNETStandard">Get samples</a>
                                             </div>
                                         </div>
