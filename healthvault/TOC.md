@@ -80,7 +80,6 @@
 ### [Batching Queries](/healthvault/concepts/xml-api/batching-queries)
 ### [Subscribing To Events](/healthvault/concepts/xml-api/subscribing-to-events)
 ### [Tracking Data Items](/healthvault/concepts/xml-api/tracking-data-items)
-### [Method and Data Type Schemas](/healthvault/concepts/xml-api/method-and-data-type-schemas)
 ### [HealthVault eventing](/healthvault/concepts/xml-api/healthvault-eventing)
 ### [Status Codes](/healthvault/concepts/xml-api/status-codes)
 ### [Request-Response Tracing](/healthvault/concepts/xml-api/request-response-tracing)

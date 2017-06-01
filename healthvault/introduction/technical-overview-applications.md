@@ -38,7 +38,7 @@ The go-live process is series of steps to validate and approve an application. T
 
 Learn more with the <a href="/healthvault/publishing/go-live" id="Introduction_14442_20">go-live guide</a>.
 
-Next, read about <a href="/healthvault/inroduction/technical-overview-permissions" id="Introduction_14442_16">application permissions</a>.
+Next, read about <a href="/healthvault/introduction/technical-overview-permissions" id="Introduction_14442_16">application permissions</a>.
 
 <span id="singleColInThreeColLayout"></span>
 
