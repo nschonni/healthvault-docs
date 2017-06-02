@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Cholesterol](https://go.microsoft.com/fwlink/?LinkID=136074)
+- [Microsoft.Health.ItemTypes.CholesterolProfileV2](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.cholesterolprofilev2)
+- [Microsoft.HealthVault.ItemTypes.CholesterolProfileV2](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.cholesterolprofilev2)
 
 ## Related data types
 

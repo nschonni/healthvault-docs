@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Body composition](https://go.microsoft.com/fwlink/?LinkID=136062)
+- [Microsoft.Health.ItemTypes.BodyComposition](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.bodycomposition)
+- [Microsoft.HealthVault.ItemTypes.BodyComposition](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.bodycomposition)
 
 ## Related data types
 

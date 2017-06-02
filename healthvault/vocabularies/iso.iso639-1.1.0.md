@@ -15,6 +15,8 @@ Version|1.0
 
 ## Examples
 
+Only the first 100 items are displayed. 
+
 ID|Name
 ---|--- 
 ab|Abkhazian 
@@ -116,89 +118,4 @@ lb|Letzeburgesch; Luxembourgish
 li|Limburgan; Limburger; Limburgish 
 ln|Lingala 
 lt|Lithuanian 
-lu|Luba-Katanga 
-mk|Macedonian 
-mg|Malagasy 
-ms|Malay 
-ml|Malayalam 
-mt|Maltese 
-gv|Manx 
-mi|Maori 
-mr|Marathi 
-mh|Marshallese 
-mo|Moldovan 
-mn|Mongolian 
-na|Nauru 
-nv|Navajo; Navaho 
-nd|Ndebele, North 
-nr|Ndebele, South 
-ng|Ndonga 
-ne|Nepali 
-se|Northern Sami 
-no|Norwegian 
-nb|Norwegian Bokmål; Bokmål, Norwegian 
-nn|Norwegian Nynorsk; Nynorsk, Norwegian 
-oc|Occitan (Post 1500); Provençal 
-oj|Ojibwa 
-or|Odia 
-om|Oromo 
-os|Ossetian; Ossetic 
-pi|Pali 
-pa|Panjabi; Punjabi 
-fa|Persian 
-pl|Polish 
-pt|Portuguese 
-ps|Pushto 
-qu|Quechua 
-rm|Raeto-Romance 
-ro|Romanian 
-rn|Rundi 
-ru|Russian 
-sm|Samoan 
-sg|Sango 
-sa|Sanskrit 
-sc|Sardinian 
-sr|Serbian 
-sn|Shona 
-ii|Yi 
-sd|Sindhi 
-si|Sinhala; Sinhalese 
-sk|Slovak 
-sl|Slovenian 
-so|Somali 
-st|Sotho, Southern 
-es|Spanish; Castilian 
-su|Sundanese 
-sw|Swahili 
-ss|Swati 
-sv|Swedish 
-tl|Tagalog 
-ty|Tahitian 
-tg|Tajik 
-ta|Tamil 
-tt|Tatar 
-te|Telugu 
-th|Thai 
-bo|Tibetan 
-ti|Tigrinya 
-to|Tonga (Tonga Islands) 
-ts|Tsonga 
-tn|Tswana 
-tr|Turkish 
-tk|Turkmen 
-tw|Twi 
-ug|Uighur; Uyghur 
-uk|Ukrainian 
-ur|Urdu 
-uz|Uzbek 
-ve|Venda 
-vi|Vietnamese 
-vo|Volapük 
-wa|Walloon 
-cy|Welsh 
-wo|Wolof 
-xh|Xhosa 
-yi|Yiddish 
-yo|Yoruba 
-za|Zhuang; Chuang 
-zu|Zulu
+lu|Luba-Katanga

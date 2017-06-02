@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Immunization](https://go.microsoft.com/fwlink/?LinkID=136479)
+- [Microsoft.Health.ItemTypes.Immunization](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.immunization)
+- [Microsoft.HealthVault.ItemTypes.Immunization](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.immunization)
 
 ## Related data types
 

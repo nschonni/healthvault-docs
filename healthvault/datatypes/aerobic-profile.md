@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Aerobic profile](https://go.microsoft.com/fwlink/?LinkID=136029)
+- [Microsoft.Health.ItemTypes.AerobicProfile](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.aerobicprofile)
+- [Microsoft.HealthVault.ItemTypes.AerobicProfile](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.aerobicprofile)
 
 ## Related data types
 

@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Medication](https://go.microsoft.com/fwlink/?LinkID=136191)
+- [Microsoft.Health.ItemTypes.Medication](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.medication)
+- [Microsoft.HealthVault.ItemTypes.Medication](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.medication)
 
 ## Related data types
 

@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Blood glucose](https://go.microsoft.com/fwlink/?LinkID=136053)
+- [Microsoft.Health.ItemTypes.BloodGlucose](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.bloodglucose)
+- [Microsoft.HealthVault.ItemTypes.BloodGlucose](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.bloodglucose)
 
 ## Related data types
 

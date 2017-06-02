@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [App-specific information](https://go.microsoft.com/fwlink/?LinkID=136038)
+- [Microsoft.Health.ItemTypes.ApplicationSpecific](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.applicationspecific)
+- [Microsoft.HealthVault.ItemTypes.ApplicationSpecific](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.applicationspecific)
 
 ## Details
 Applications are responsible for using the format-appid and format-tag to guarantee uniques of the data format.

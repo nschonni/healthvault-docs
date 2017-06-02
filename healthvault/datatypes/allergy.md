@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Allergy](https://go.microsoft.com/fwlink/?LinkID=136035)
+- [Microsoft.Health.ItemTypes.Allergy](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.allergy)
+- [Microsoft.HealthVault.ItemTypes.Allergy](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.allergy)
 
 ## Related data types
 

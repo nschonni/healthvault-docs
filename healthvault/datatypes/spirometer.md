@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Spirometer reading](https://go.microsoft.com/fwlink/?LinkID=136236)
+- [Microsoft.Health.ItemTypes.Spirometer](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.spirometer)
+- [Microsoft.HealthVault.ItemTypes.Spirometer](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.spirometer)
 
 ## Details
 Note: Please use the peak flow type instead of this type.

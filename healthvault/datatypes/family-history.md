@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Family history](https://go.microsoft.com/fwlink/?LinkID=136125)
+- [Microsoft.Health.ItemTypes.FamilyHistory](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.familyhistory)
+- [Microsoft.HealthVault.ItemTypes.FamilyHistory](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.familyhistory)
 
 ## Details
 Stores a condition that a relative of the record-owner has.

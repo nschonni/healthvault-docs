@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Microbiology lab test result](https://go.microsoft.com/fwlink/?LinkID=136197)
+- [Microsoft.Health.ItemTypes.MicrobiologyLabResults](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.microbiologylabresults)
+- [Microsoft.HealthVault.ItemTypes.MicrobiologyLabResults](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.microbiologylabresults)
 
 ## Related data types
 

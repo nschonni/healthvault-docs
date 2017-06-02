@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Vital signs](https://go.microsoft.com/fwlink/?LinkID=136239)
+- [Microsoft.Health.ItemTypes.VitalSigns](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.vitalsigns)
+- [Microsoft.HealthVault.ItemTypes.VitalSigns](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.vitalsigns)
 
 ## Related data types
 

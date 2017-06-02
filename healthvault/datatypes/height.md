@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Height](https://go.microsoft.com/fwlink/?LinkID=136158)
+- [Microsoft.Health.ItemTypes.Height](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.height)
+- [Microsoft.HealthVault.ItemTypes.Height](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.height)
 
 ## Related data types
 

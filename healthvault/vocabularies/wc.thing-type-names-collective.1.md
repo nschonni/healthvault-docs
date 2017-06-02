@@ -1,5 +1,5 @@
 ---
-uid: HV_D599D2A1-323F-4855-8CC5-399211D19927
+uid: HV_d599d2a1-323f-4855-8cc5-399211d19927
 title: thing-type-names-collective
 ---
 

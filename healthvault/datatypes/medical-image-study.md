@@ -16,6 +16,10 @@ singleton|False
 allow-readonly|False
 effective date XPath|No effective date XPath
 
+## .NET reference
+- [Microsoft.Health.ItemTypes.MedicalImageStudy](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.medicalimagestudy)
+- [Microsoft.HealthVault.ItemTypes.MedicalImageStudy](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.medicalimagestudy)
+
 ## Related articles
 
 - [HealthVault medical imaging](http://go.microsoft.com/fwlink/?LinkId=513251)

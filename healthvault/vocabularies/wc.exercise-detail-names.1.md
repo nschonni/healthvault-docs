@@ -51,6 +51,8 @@ AverageAltitude_meters|Average altitude
 MaximumAltitude_meters|Maximum altitude 
 ElevationGain_meters|Elevation gain 
 ElevationLoss_meters|Elevation loss 
+Floors_climbed|Floors Climbed 
+Floors_descended|Floors Descended 
 Steps_count|Steps 
 AerobicSteps_count|Aerobic steps 
 AerobicStepDuration_minutes|Aerobic step duration 

@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Family history condition](https://go.microsoft.com/fwlink/?LinkID=136128)
+- [Microsoft.Health.ItemTypes.FamilyHistoryCondition](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.familyhistorycondition)
+- [Microsoft.HealthVault.ItemTypes.FamilyHistoryCondition](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.familyhistorycondition)
 
 ## Related data types
 

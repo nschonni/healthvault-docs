@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Healthcare proxy](https://go.microsoft.com/fwlink/?LinkID=136152)
+- [Microsoft.Health.ItemTypes.HealthcareProxy](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.healthcareproxy)
+- [Microsoft.HealthVault.ItemTypes.HealthcareProxy](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.healthcareproxy)
 
 ## Related data types
 

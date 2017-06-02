@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Group membership](https://go.microsoft.com/fwlink/?LinkID=136140)
+- [Microsoft.Health.ItemTypes.GroupMembership](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.groupmembership)
+- [Microsoft.HealthVault.ItemTypes.GroupMembership](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.groupmembership)
 
 ## Related data types
 

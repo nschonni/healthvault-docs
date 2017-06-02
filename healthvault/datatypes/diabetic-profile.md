@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Diabetic profile](https://go.microsoft.com/fwlink/?LinkID=136101)
+- [Microsoft.Health.ItemTypes.DiabeticProfile](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.diabeticprofile)
+- [Microsoft.HealthVault.ItemTypes.DiabeticProfile](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.diabeticprofile)
 
 ## Related data types
 

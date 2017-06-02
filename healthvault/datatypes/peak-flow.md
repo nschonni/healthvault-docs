@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Peak flow](https://go.microsoft.com/fwlink/?LinkID=136203)
+- [Microsoft.Health.ItemTypes.PeakFlow](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.peakflow)
+- [Microsoft.HealthVault.ItemTypes.PeakFlow](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.peakflow)
 
 ## Related data types
 

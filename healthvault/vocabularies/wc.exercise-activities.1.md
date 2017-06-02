@@ -15,6 +15,8 @@ Version|1
 
 ## Examples
 
+Only the first 100 items are displayed. 
+
 ID|Name
 ---|--- 
 Aerobics|Aerobics 
@@ -116,68 +118,4 @@ RodeoSports|Rodeo sports
 Rollerblading|Rollerblading 
 RollerSkating|Roller skating 
 RollerSkiing|Roller skiing 
-RopeJumping|Rope jumping 
-RopesCourse|Ropes course 
-Rowing|Rowing 
-RowingMachine|Rowing machine 
-Rugby|Rugby 
-Running|Running 
-Sailing|Sailing 
-Scooter|Scooter 
-ScubaDiving|Scuba diving 
-Shooting|Shooting 
-Shuffleboard|Shuffleboard 
-Skateboarding|Skateboarding 
-Skating|Ice skating 
-Skiing|Skiing 
-SkiJumping|Ski jumping 
-SkiMachine|Skiing machine 
-SkinDiving|Skin diving 
-SkyDiving|Sky diving 
-Sledding|Sledding 
-SlideBoard|Slide board 
-Snorkeling|Snorkeling 
-Snowboarding|Snowboarding 
-Snowmobiling|Snowmobiling 
-SnowShoeing|Snow shoeing 
-SnowShoveling|Snow shoveling 
-Soccer|Soccer 
-Softball|Softball 
-Spinning|Spinning 
-Squash|Squash 
-StairClimbing|Stair climbing 
-StairMachine|Stair machine 
-StepAerobics|Step aerobics 
-Stepper|Stepper 
-Stretching|Stretching 
-Surfing|Surfing 
-Swimming|Swimming 
-TableTennis|Table tennis / Ping pong 
-Taekwondo|Taekwondo 
-TaiChi|Tai chi 
-Tennis|Tennis 
-Track&Field|Track & Field 
-Trampoline|Trampoline 
-Treadmill|Treadmill 
-Ultimate|Ultimate 
-Unicycling|Unicycling 
-Volleyball|Volleyball 
-Walking|Walking 
-Wallyball|Wallyball 
-WaterAerobics|Water aerobics 
-WaterPolo|Water polo 
-Waterskiing|Water-skiing 
-WaterVolleyball|Water volleyball 
-WeightLifting|Weight lifting 
-WiiFit|Wii Fit 
-Windsurfing|Windsurfing 
-WorkoutVideo|Workout video 
-Wrestling|Wrestling 
-XboxFitness|Xbox Fitness 
-YardWork|Yard work 
-Yoga|Yoga 
-Rafting|Rafting 
-Triathlon|Triathlon 
-Duathlon|Duathlon 
-General|General exercise 
-Zumba|Zumba
+RopeJumping|Rope jumping

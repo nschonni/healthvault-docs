@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Insulin injection](https://go.microsoft.com/fwlink/?LinkID=136170)
+- [Microsoft.Health.ItemTypes.InsulinInjection](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.insulininjection)
+- [Microsoft.HealthVault.ItemTypes.InsulinInjection](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.insulininjection)
 
 ## Related data types
 

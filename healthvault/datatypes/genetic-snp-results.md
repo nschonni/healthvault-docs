@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Genetic SNP result](https://go.microsoft.com/fwlink/?LinkID=136137)
+- [Microsoft.Health.ItemTypes.GeneticSnpResults](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.geneticsnpresults)
+- [Microsoft.HealthVault.ItemTypes.GeneticSnpResults](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.geneticsnpresults)
 
 ## Details
 The SNP data is stored in the other-data section of the object, and must be fetched by specifying HealthItemRecordSections.OtherData. <br /> The format of the other-data section is the HealthVault comma-separated format. <br /> Within the comma-separated data, each SNP is encoded as follows: <br /> [refSNP id],[strand orientation],[result],[assay id],[start position],[end position] <br /> Where: refSNP id: identifier from NCBI dbSNP database. strand orientation: "+" encodes top, "-" encodes bottom. result: the result of the test. assay id: Platform-dependent id. start position: Start position on the chromosome. end position: End position on the chromosome. <br /> Example: rs1891906,-,GT,SNP_C-315533,940106,940107

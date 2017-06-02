@@ -20,6 +20,7 @@ ID|Name
 BPM|Beats per minute (BPM) 
 Celsius|Celsius 
 Count|Count 
+Floors|Floors 
 kJ|kilo Joules (kJ) 
 m-per-s|Meters per second 
 Meters|Meters 

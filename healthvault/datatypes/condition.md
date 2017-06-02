@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Condition](https://go.microsoft.com/fwlink/?LinkID=136080)
+- [Microsoft.Health.ItemTypes.Condition](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.condition)
+- [Microsoft.HealthVault.ItemTypes.Condition](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.condition)
 
 ## Related data types
 

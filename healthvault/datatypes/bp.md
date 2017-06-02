@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Blood pressure](https://go.microsoft.com/fwlink/?LinkID=136059)
+- [Microsoft.Health.ItemTypes.BloodPressure](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.bloodpressure)
+- [Microsoft.HealthVault.ItemTypes.BloodPressure](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.bloodpressure)
 
 ## Related data types
 

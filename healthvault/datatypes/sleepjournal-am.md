@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Sleep session](https://go.microsoft.com/fwlink/?LinkID=136233)
+- [Microsoft.Health.ItemTypes.SleepJournalAM](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.sleepjournalam)
+- [Microsoft.HealthVault.ItemTypes.SleepJournalAM](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.sleepjournalam)
 
 ## Related data types
 

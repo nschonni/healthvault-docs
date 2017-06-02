@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Body dimension](https://go.microsoft.com/fwlink/?LinkID=136065)
+- [Microsoft.Health.ItemTypes.BodyDimension](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.bodydimension)
+- [Microsoft.HealthVault.ItemTypes.BodyDimension](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.bodydimension)
 
 ## Related data types
 
