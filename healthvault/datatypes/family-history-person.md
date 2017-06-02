@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Family history person](https://go.microsoft.com/fwlink/?LinkID=136131)
+- [Microsoft.Health.ItemTypes.FamilyHistoryPerson](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.familyhistoryperson)
+- [Microsoft.HealthVault.ItemTypes.FamilyHistoryPerson](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.familyhistoryperson)
 
 ## Related data types
 

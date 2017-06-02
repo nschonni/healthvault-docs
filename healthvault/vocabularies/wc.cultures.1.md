@@ -15,6 +15,8 @@ Version|1
 
 ## Examples
 
+Only the first 100 items are displayed. 
+
 ID|Name
 ---|--- 
 af-ZA|Afrikaans (Suid-Afrika) 
@@ -116,14 +118,4 @@ tn-ZA|Setswana (Aforika Borwa)
 tr-TR|Türkçe (Türkiye) 
 tt-RU|Татар (Россия) 
 ug-CN|ئۇيغۇرچە (جۇڭخۇا خەلق جۇمھۇرىيىتى) 
-uk-UA|українська (Україна) 
-ur-PK|اُردو (پاکستان) 
-uz-Latn-UZ|O'zbekcha (O'zbekiston Respublikasi) 
-vi-VN|Tiếng Việt (Việt Nam) 
-wo-SN|Wolof (Senegaal) 
-xh-ZA|isiXhosa (uMzantsi Afrika) 
-yo-NG|Yoruba (Nigeria) 
-zh-CN|中文(中华人民共和国) 
-zh-HK|中文(香港特別行政區) 
-zh-TW|中文(台灣) 
-zu-ZA|isiZulu (iNingizimu Afrika)
+uk-UA|українська (Україна)

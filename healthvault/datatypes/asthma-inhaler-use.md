@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Asthma inhaler usage](https://go.microsoft.com/fwlink/?LinkID=136047)
+- [Microsoft.Health.ItemTypes.AsthmaInhalerUse](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.asthmainhaleruse)
+- [Microsoft.HealthVault.ItemTypes.AsthmaInhalerUse](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.asthmainhaleruse)
 
 ## Related data types
 

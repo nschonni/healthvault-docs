@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Life goal](https://go.microsoft.com/fwlink/?LinkID=136179)
+- [Microsoft.Health.ItemTypes.LifeGoal](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.lifegoal)
+- [Microsoft.HealthVault.ItemTypes.LifeGoal](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.lifegoal)
 
 ## Related data types
 

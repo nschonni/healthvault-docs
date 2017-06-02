@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Heart rate](https://go.microsoft.com/fwlink/?LinkID=136155)
+- [Microsoft.Health.ItemTypes.HeartRate](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.heartrate)
+- [Microsoft.HealthVault.ItemTypes.HeartRate](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.heartrate)
 
 ## Related data types
 

@@ -15,6 +15,8 @@ Version|2.3 09_2008
 
 ## Examples
 
+Only the first 100 items are displayed. 
+
 ID|Name
 ---|--- 
 54|adenovirus vaccine, type 4, live, oral 
@@ -116,30 +118,4 @@ ID|Name
 9|tetanus and diphtheria toxoids, adsorbed for adult use 
 115|tetanus toxoid, reduced diphtheria toxoid, and acellular pertussis vaccine, adsorbed 
 35|tetanus toxoid, adsorbed 
-112|tetanus toxoid, NOS 
-77|tick-borne encephalitis vaccine 
-13|tetanus immune globulin 
-95|tuberculin skin test; old tuberculin, multipuncture device 
-96|tuberculin skin test; purified protein derivative solution, intradermal 
-97|tuberculin skin test; purified protein derivative, multipuncture device 
-98|tuberculin skin test; NOS 
-78|tularemia vaccine 
-91|typhoid vaccine, NOS 
-25|typhoid vaccine, live, oral 
-41|typhoid vaccine, parenteral, other than acetone-killed, dried 
-53|typhoid vaccine, parenteral, acetone-killed, dried (U.S. military) 
-101|typhoid Vi capsular polysaccharide vaccine 
-75|vaccinia (smallpox) vaccine 
-105|vaccinia (smallpox) vaccine, diluted 
-79|vaccinia immune globulin 
-21|varicella virus vaccine 
-81|Venezuelan equine encephalitis, inactivated 
-80|Venezuelan equine encephalitis, live, attenuated 
-92|Venezuelan equine encephalitis vaccine, NOS 
-36|varicella zoster immune globulin 
-117|varicella zoster immune globulin (Investigational New Drug) 
-37|yellow fever vaccine 
-121|zoster vaccine, live 
-998|no vaccine administered 
-999|unknown vaccine or immune globulin 
-99|RESERVED - do not use
+112|tetanus toxoid, NOS

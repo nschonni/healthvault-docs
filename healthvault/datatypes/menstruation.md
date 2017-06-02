@@ -16,6 +16,10 @@ singleton|False
 allow-readonly|False
 effective date XPath|No effective date XPath
 
+## .NET reference
+- [Microsoft.Health.ItemTypes.Menstruation](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.menstruation)
+- [Microsoft.HealthVault.ItemTypes.Menstruation](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.menstruation)
+
 ## Related data types
 
 - [Pregnancy](xref:HV_46d485cf-2b84-429d-9159-83152ba801f4)

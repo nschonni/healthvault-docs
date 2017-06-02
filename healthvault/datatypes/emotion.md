@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Emotional state](https://go.microsoft.com/fwlink/?LinkID=136110)
+- [Microsoft.Health.ItemTypes.Emotion](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.emotion)
+- [Microsoft.HealthVault.ItemTypes.Emotion](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.emotion)
 
 ## Related data types
 

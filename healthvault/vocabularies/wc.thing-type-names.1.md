@@ -15,6 +15,8 @@ Version|1
 
 ## Examples
 
+Only the first 100 items are displayed. 
+
 ID|Name
 ---|--- 
 txtNameaerobic|Aerobic exercise session 
@@ -116,18 +118,4 @@ txtNamehealth-goal|Health goal
 txtNameeducation-document|Education document (preview) 
 txtNamemydata-education-file|Education - MyData file (preview) 
 txtNamesif-student-academic-record|Education - SIF student academic record (preview) 
-txtNamemeal-definition|Meal definition 
-txtNamedefibrillator-episode|Defibrillator episode 
-txtNameambient-temperature|Ambient temperature 
-txtNamegsr|Galvanic skin response 
-txtHRV|Heart-rate variability 
-txtLocation|Location 
-txtSkinMoisture|Skin moisture 
-txtSkinTemperature|Skin temperature 
-txtUltraVioletExposure|Ultraviolet exposure 
-txtNamemenstruation|Menstruation 
-txtNameInsight|Insight 
-txtNameActionplan|Action plan (deprecated) 
-txtNamePlan|Plan 
-txtNameTask|Task 
-txtNameTaskTrackingEntry|Task tracking entry
+txtNamemeal-definition|Meal definition

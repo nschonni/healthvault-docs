@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Password-protected package](https://go.microsoft.com/fwlink/?LinkID=136200)
+- [Microsoft.Health.ItemTypes.PasswordProtectedPackage](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.passwordprotectedpackage)
+- [Microsoft.HealthVault.ItemTypes.PasswordProtectedPackage](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.passwordprotectedpackage)
 
 ## Details
 A package that contains a pkcs5v2 encrypted blob.

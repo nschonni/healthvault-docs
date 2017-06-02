@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Pregnancy](https://go.microsoft.com/fwlink/?LinkID=136215)
+- [Microsoft.Health.ItemTypes.Pregnancy](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.pregnancy)
+- [Microsoft.HealthVault.ItemTypes.Pregnancy](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.pregnancy)
 
 ## Details
 A record of a pregnancy and delivery.

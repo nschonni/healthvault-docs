@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Calorie guideline](https://go.microsoft.com/fwlink/?LinkID=136068)
+- [Microsoft.Health.ItemTypes.CalorieGuideline](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.calorieguideline)
+- [Microsoft.HealthVault.ItemTypes.CalorieGuideline](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.calorieguideline)
 
 ## Related data types
 

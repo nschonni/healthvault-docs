@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Web link](https://go.microsoft.com/fwlink/?LinkID=136182)
+- [Microsoft.Health.ItemTypes.Link](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.link)
+- [Microsoft.HealthVault.ItemTypes.Link](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.link)
 
 ## Details
 A link to a web page.

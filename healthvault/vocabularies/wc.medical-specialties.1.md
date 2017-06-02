@@ -15,6 +15,8 @@ Version|1
 
 ## Examples
 
+Only the first 100 items are displayed. 
+
 ID|Name
 ---|--- 
 AR|Abdominal Radiology 
@@ -116,62 +118,4 @@ NC|Nuclear Cardiology
 NM|Nuclear Medicine 
 NR|Nuclear Radiology 
 NTR|Nutrition 
-OBS|Obstetrics 
-OBG|Obstetrics and Gynecology 
-OM|Occupational Medicine 
-OPH|Ophthalmology 
-OMF|Oral and Maxillofacial Surgery 
-ORS|Orthopedic Surgery 
-OSS|Orthopedic Surgery Of The Spine 
-OTR|Orthopedic Trauma 
-OFA|Orthopedics - Foot and Ankle 
-OMM|Osteopathic Manipulative Medicine 
-OS|Other Specialty 
-OTO|Otolaryngology 
-OT|Otology 
-APM|Pain Management 
-PMR|Pain Management (Physical Medicine and Rehabilitation) 
-PMD|Pain Medicine 
-PLM|Palliative Medicine 
-PDA|Pediatric Allergy 
-PAN|Pediatric Anesthesiology 
-PDC|Pediatric Cardiology 
-PCS|Pediatric Cardiothoracic Surgery 
-CCP|Pediatric Critical Care Medicine 
-PDD|Pediatric Dermatology 
-PE|Pediatric Emergency Medicine - Emergency Medicine 
-PEM|Pediatric Emergency Medicine - Pediatrics 
-PDE|Pediatric Endocrinology 
-PG|Pediatric Gastroenterology 
-PHO|Pediatric Hematology-Oncology 
-PDI|Pediatric Infectious Diseases 
-PN|Pediatric Nephrology 
-PO|Pediatric Ophthalmology 
-PDO|Pediatric Otolaryngology 
-PP|Pediatric Pathology 
-PDP|Pediatric Pulmonology 
-PDR|Pediatric Radiology 
-PRM|Pediatric Rehabilitation Medicine 
-PPR|Pediatric Rheumatology 
-NSP|Pediatric Surgery - Neurology 
-PDS|Pediatric Surgery - Surgery 
-UP|Pediatric Urology 
-PD|Pediatrics 
-OP|Pediatrics Orthopedics 
-PHM|Pharmaceutical Medicine 
-PM|Physical Medicine and Rehabilitation 
-PS|Plastic Surgery 
-PSH|Plastic Surgery Within The Head and Neck 
-PRO|Proctology 
-P|Psychiatry 
-PYA|Psychoanalysis 
-PHP|Public Health and General Preventive Medicine 
-PCC|Pulmonary Critical Care Medicine 
-PUD|Pulmonary Diseases 
-RO|Radiation Oncology 
-RP|Radiological Physics 
-R|Radiology 
-REN|Reproductive Endocrinology 
-RHU|Rheumatology 
-SP|Selective Pathology 
-SM|Sleep Medicine
+OBS|Obstetrics

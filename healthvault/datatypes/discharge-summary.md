@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Discharge summary](https://go.microsoft.com/fwlink/?LinkID=136104)
+- [Microsoft.Health.ItemTypes.DischargeSummary](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.dischargesummary)
+- [Microsoft.HealthVault.ItemTypes.DischargeSummary](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.dischargesummary)
 
 ## Related data types
 

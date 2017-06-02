@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Explanation of benefits (EOB)](https://go.microsoft.com/fwlink/?LinkID=183393)
+- [Microsoft.Health.ItemTypes.ExplanationOfBenefits](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.explanationofbenefits)
+- [Microsoft.HealthVault.ItemTypes.ExplanationOfBenefits](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.explanationofbenefits)
 
 ## Related data types
 

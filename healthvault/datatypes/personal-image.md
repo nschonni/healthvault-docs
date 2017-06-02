@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Personal picture](https://go.microsoft.com/fwlink/?LinkID=136212)
+- [Microsoft.Health.ItemTypes.PersonalImage](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.personalimage)
+- [Microsoft.HealthVault.ItemTypes.PersonalImage](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.personalimage)
 
 ## Related data types
 

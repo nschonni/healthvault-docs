@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Insurance plan](https://go.microsoft.com/fwlink/?LinkID=136173)
+- [Microsoft.Health.ItemTypes.Payer](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.payer)
+- [Microsoft.HealthVault.ItemTypes.Payer](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.payer)
 
 ## Related data types
 

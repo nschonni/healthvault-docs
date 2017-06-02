@@ -16,6 +16,10 @@ singleton|False
 allow-readonly|False
 effective date XPath|No effective date XPath
 
+## .NET reference
+- [Microsoft.Health.ItemTypes.MealDefinition](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.mealdefinition)
+- [Microsoft.HealthVault.ItemTypes.MealDefinition](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.mealdefinition)
+
 ## Related data types
 
 - [Daily dietary intake](xref:HV_9c29c6b9-f40e-44ff-b24e-fba6f3074638)

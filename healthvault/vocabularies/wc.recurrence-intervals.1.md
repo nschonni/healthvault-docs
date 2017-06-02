@@ -1,5 +1,5 @@
 ---
-uid: HV_04C4621A-D97A-4328-B398-AF547ABE02AC
+uid: HV_04c4621a-d97a-4328-b398-af547abe02ac
 title: recurrence-intervals
 ---
 

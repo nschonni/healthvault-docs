@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Daily medication usage](https://go.microsoft.com/fwlink/?LinkID=136092)
+- [Microsoft.Health.ItemTypes.DailyMedicationUsage](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.dailymedicationusage)
+- [Microsoft.HealthVault.ItemTypes.DailyMedicationUsage](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.dailymedicationusage)
 
 ## Related data types
 

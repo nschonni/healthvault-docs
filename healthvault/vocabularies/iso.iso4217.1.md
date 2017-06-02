@@ -15,6 +15,8 @@ Version|1
 
 ## Examples
 
+Only the first 100 items are displayed. 
+
 ID|Name
 ---|--- 
 AED|UAE Dirham 
@@ -116,71 +118,4 @@ MKD|Denar
 MMK|Kyat 
 MNT|Tugrik 
 MOP|Pataca 
-MRO|Ouguiya 
-MUR|Mauritius Rupee 
-MVR|Rufiyaa 
-MWK|Kwacha 
-MXN|Mexican Peso 
-MXV|Mexican Unidad de Inversion (UDI) 
-MYR|Malaysian Ringgit 
-MZN|Metical 
-NAD|Namibia Dollar 
-NGN|Naira 
-NIO|Cordoba Oro 
-NOK|Norwegian Krone 
-NPR|Nepalese Rupee 
-NZD|New Zealand Dollar 
-OMR|Rial Omani 
-PAB|Balboa 
-PEN|Nuevo Sol 
-PGK|Kina 
-PHP|Philippine Peso 
-PKR|Pakistan Rupee 
-PLN|Zloty 
-PYG|Guarani 
-QAR|Qatari Rial 
-RON|New Leu 
-RSD|Serbian Dinar 
-RUB|Russian Ruble 
-RWF|Rwanda Franc 
-SAR|Saudi Riyal 
-SBD|Solomon Islands Dollar 
-SCR|Seychelles Rupee 
-SDG|Sudanese Pound 
-SEK|Swedish Krona 
-SGD|Singapore Dollar 
-SHP|Saint Helena Pound 
-SLL|Leone 
-SOS|Somali Shilling 
-SRD|Surinam Dollar 
-STD|Dobra 
-SVC|El Salvador Colon 
-SYP|Syrian Pound 
-SZL|Lilangeni 
-THB|Baht 
-TJS|Somoni 
-TMT|Manat 
-TND|Tunisian Dinar 
-TOP|Pa'anga 
-TRY|Turkish Lira 
-TTD|Trinidad and Tobago Dollar 
-TWD|New Taiwan Dollar 
-TZS|Tanzanian Shilling 
-UAH|Hryvnia 
-UGX|Uganda Shilling 
-USD|US Dollar 
-UYI|Uruguay Peso en Unidades Indexadas 
-UYU|Peso Uruguayo 
-UZS|Uzbekistan Sum 
-VEF|Bolivar Fuerte 
-VND|Dong 
-VUV|Vatu 
-WST|Tala 
-XAF|CFA Franc BEAC 
-XCD|East Caribbean Dollar 
-XOF|CFA Franc BCEAO 
-XPF|CFP Franc 
-YER|Yemeni Rial 
-ZAR|Rand 
-ZMK|Zambian Kwacha 
-ZWL|Zimbabwe Dollar
+MRO|Ouguiya

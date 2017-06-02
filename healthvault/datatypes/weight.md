@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Weight](https://go.microsoft.com/fwlink/?LinkID=136248)
+- [Microsoft.Health.ItemTypes.Weight](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.weight)
+- [Microsoft.HealthVault.ItemTypes.Weight](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.weight)
 
 ## Related data types
 

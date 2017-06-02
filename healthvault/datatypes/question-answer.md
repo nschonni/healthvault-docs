@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Question and answer](https://go.microsoft.com/fwlink/?LinkID=136221)
+- [Microsoft.Health.ItemTypes.QuestionAnswer](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.questionanswer)
+- [Microsoft.HealthVault.ItemTypes.QuestionAnswer](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.questionanswer)
 
 ## Details
 A question that was asked and the answers given.

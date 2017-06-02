@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Health assessment](https://go.microsoft.com/fwlink/?LinkID=136149)
+- [Microsoft.Health.ItemTypes.HealthAssessment](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.healthassessment)
+- [Microsoft.HealthVault.ItemTypes.HealthAssessment](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.healthassessment)
 
 ## Details
 Examples of health assessment include high blood pressure assessment and diabetes assessment.

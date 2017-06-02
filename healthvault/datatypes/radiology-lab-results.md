@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Radiology result](https://go.microsoft.com/fwlink/?LinkID=136224)
+- [Microsoft.Health.ItemTypes.RadiologyLabResults](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.radiologylabresults)
+- [Microsoft.HealthVault.ItemTypes.RadiologyLabResults](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.radiologylabresults)
 
 ## Related data types
 

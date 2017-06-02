@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Aerobic exercise session](https://go.microsoft.com/fwlink/?LinkID=136026)
+- [Microsoft.Health.ItemTypes.AerobicSession](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.aerobicsession)
+- [Microsoft.HealthVault.ItemTypes.AerobicSession](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.aerobicsession)
 
 ## Related data types
 

@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Appointment](https://go.microsoft.com/fwlink/?LinkID=136041)
+- [Microsoft.Health.ItemTypes.Appointment](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.appointment)
+- [Microsoft.HealthVault.ItemTypes.Appointment](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.appointment)
 
 ## Related data types
 

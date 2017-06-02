@@ -16,40 +16,31 @@ Function Debug($text) {
 ### Parsing ###
 
 Function Get-Vocabularies($vocabRoot) {
-    $vocabs = @{}
-    Get-ChildItem $vocabRoot -Filter *.en.xml | %{$vocabs[$_.Name.Substring(0, ($_.Name.Length - 7))] = $_}
+    $script:vocabularies = New-Object System.Collections.Generic.List[System.Object]
+
+    Add-Type -Path .\lib\vocabloader\HealthVault.VocabLoader.dll
+    $vocabs = [HealthVault.VocabLoader.Loader]::Load($vocabRoot, $vocabRoot, "en-US")
+    $script:typeNameDictionary = @{}
+    $dictionaryIdToKeep = "8080b228-5b99-40f5-8ac2-fd5daefc3495"
 
     Debug "Found $($vocabs.Keys.Count) vocabularies"
 
-    $script:typeNameDictionary = @{}
-    $dictionaryIdToKeep = "8080b228-5b99-40f5-8ac2-fd5daefc3495"
-    $script:vocabularies = New-Object System.Collections.Generic.List[System.Object]
     foreach ($key in $vocabs.Keys) {
-        [xml]$xml = Get-Content $vocabs[$key].FullName
-        $vocab = @{}
-        $vocab.FilenamePrefix = $key
-        $vocab.Name = $xml.vocab.name
-        $vocab.Family = $xml.vocab.Family
-        $vocab.Version = $xml.vocab.version
-        $vocab.Id = $xml.vocab.id
-
-        # Many of the disp-text nodes in the dictionaries have comments, which causes Powershell to
-        # return an xml node instead of the string so get it through .SelectSingleNode first and then get #text.
-        $vocab.Values = $xml.vocab.items.vi | ?{$_} | %{@{"Value" = $_.'code-val';"DisplayText" = (Clean-AndTrim $_.SelectSingleNode('disp-text').'#text' $true);"Id" = $_.'disp-text-id'}}
-
-        if ($dictionaryIdToKeep -eq $vocab.Id) {
-            foreach ($v in $vocab.Values) {
-                $script:typeNameDictionary[$v.Id] = $v
-            }
-        }
-
-        $preexisting = $script:vocabularies | ?{$_.Id -eq $vocab.Id} | Select-Object -First 1
-        if ($preexisting) {
-            Debug "Multiple vocabs with ID == $($vocab.Id)"
-            $preexisting.Values += $vocab.Values
-        }
-        else {
+        if ($key) {
+            $vocab = @{}
+            $vocab.FileNamePrefix = "$($key.family).$($key.name).$($key.version)"
+            $vocab.Name = $key.name
+            $vocab.Family = $key.family
+            $vocab.Version = $key.version
+            $vocab.Id = $key.referenceId
+            $vocab.Values = $vocabs[$key] | %{@{"Value" = $_.codeval; "DisplayText" = (Clean-AndTrim $_.display.text $true); "Id" = $_.displayTextId.ToString()}}
             $script:vocabularies.Add($vocab)
+            
+            if ($dictionaryIdToKeep -eq $vocab.Id) {
+                foreach ($v in $vocab.Values) {
+                    $script:typeNameDictionary[$v.Id] = $v
+                }
+            }
         }
     }
 
@@ -1071,9 +1062,18 @@ title: $($vocab.Name)
 )
 
 ## Examples$(
+    if ($vocab.Values.Count -gt 100) {
+        "`n`nOnly the first 100 items are displayed."
+    }
     md-TableHeader "ID","Name"
+    $i = 0
     foreach ($item in $vocab.Values) {
+        if ($i -eq 100) {
+            break;
+        }
+        
         md-TableRow $item.Value,$item.DisplayText
+        $i++
     }
 )
 "@

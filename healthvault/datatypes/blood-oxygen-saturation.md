@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Blood oxygen saturation](https://go.microsoft.com/fwlink/?LinkID=136056)
+- [Microsoft.Health.ItemTypes.BloodOxygenSaturation](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.bloodoxygensaturation)
+- [Microsoft.HealthVault.ItemTypes.BloodOxygenSaturation](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.bloodoxygensaturation)
 
 ## Related data types
 

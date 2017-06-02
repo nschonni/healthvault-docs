@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Lab results](https://go.microsoft.com/fwlink/?LinkID=136176)
+- [Microsoft.Health.ItemTypes.LabTestResults](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.labtestresults)
+- [Microsoft.HealthVault.ItemTypes.LabTestResults](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.labtestresults)
 
 ## Related data types
 

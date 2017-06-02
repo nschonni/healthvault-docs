@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Encounter](https://go.microsoft.com/fwlink/?LinkID=136113)
+- [Microsoft.Health.ItemTypes.Encounter](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.encounter)
+- [Microsoft.HealthVault.ItemTypes.Encounter](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.encounter)
 
 ## Related data types
 

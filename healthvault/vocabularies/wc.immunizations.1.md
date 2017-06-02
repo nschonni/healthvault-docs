@@ -15,6 +15,8 @@ Version|1
 
 ## Examples
 
+Only the first 100 items are displayed. 
+
 ID|Name
 ---|--- 
 adenovirus, type 4|adenovirus vaccine, type 4, live, oral 
@@ -116,13 +118,4 @@ tularemia vaccine|tularemia vaccine
 typhoid, oral|typhoid vaccine, live, oral 
 typhoid, parenteral, AKD (U.S. Military)|typhoid vaccine, parenteral, acetone-killed, dried (U.S. Military) 
 typhoid, ViCPs|typhoid Vi capsular polysaccharide vaccine 
-vaccinia (smallpox)|vaccinia (smallpox) vaccine 
-vaccinia (smallpox) diluted|vaccinia (smallpox) vaccine, diluted 
-typhoid, NOS|typhoid vaccine, NOS 
-vaccinia immune globulin|vaccinia immune globulin 
-varicella|varicella virus vaccine 
-VEE, inactivated|Venezuelan equine encephalitis, inactivated 
-VEE, live|Venezuelan equine encephalitis, live, attenuated 
-VEE, NOS|Venezuelan equine encephalitis, NOS 
-VZIG|varicella zoster immune globulin 
-yellow fever|yellow fever vaccine
+vaccinia (smallpox)|vaccinia (smallpox) vaccine
