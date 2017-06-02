@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Medical annotation](https://go.microsoft.com/fwlink/?LinkID=136185)
+- [Microsoft.Health.ItemTypes.Annotation](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.annotation)
+- [Microsoft.HealthVault.ItemTypes.Annotation](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.annotation)
 
 ## Details
 This thing type describes the medical annotation results of a person.

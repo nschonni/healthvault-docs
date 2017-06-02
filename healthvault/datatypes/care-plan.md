@@ -81,7 +81,7 @@ goal-groups|[care-plan-goal-groups](#care-plan-goal-groups)|0|1|List of goals as
 > Name|Type|Min occurs|Max occurs|Summary|Remarks|Preferred Vocabulary
 > ---|---|---|---|---|---|---
 > ical-recurrence|[stringnznw](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#stringnznw)|1|1|iCalendar format for recurrence specification as per RFC 2445.|Section 4.3.10 of RFC 2445.|
-> interval|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|1|1|Recurrence interval. For ex: day, month, year etc.||[recurrence-intervals](xref:HV_04C4621A-D97A-4328-B398-AF547ABE02AC)
+> interval|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|1|1|Recurrence interval. For ex: day, month, year etc.||[recurrence-intervals](xref:HV_04c4621a-d97a-4328-b398-af547abe02ac)
 > times-in-interval|[positiveInt](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#positiveInt)|1|1|The number of times the task occurs in the interval.|Ex: Two times in a week would be stored as interval = week, times-in-interval = 2|
 >
 >
@@ -175,7 +175,7 @@ goal-groups|[care-plan-goal-groups](#care-plan-goal-groups)|0|1|List of goals as
 >
 > Name|Type|Min occurs|Max occurs|Summary|Remarks|Preferred Vocabulary
 > ---|---|---|---|---|---|---
-> interval|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|1|1|Specifies the recurrence interval of the goal. For example, day, week, year, etc.||[recurrence-intervals](xref:HV_04C4621A-D97A-4328-B398-AF547ABE02AC)
+> interval|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|1|1|Specifies the recurrence interval of the goal. For example, day, week, year, etc.||[recurrence-intervals](xref:HV_04c4621a-d97a-4328-b398-af547abe02ac)
 > times-in-interval|[positiveInt](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#positiveInt)|1|1|Specifies the number of times the goal's target is intended to be achieved during the interval.|For example, the goal "exercise for 30 minutes, 4 times per week" would be represented as: an interval of a "week", a times-in-interval of 4, and a goal target of 30 minutes.|
 >
 >

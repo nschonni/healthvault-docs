@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Respiratory profile](https://go.microsoft.com/fwlink/?LinkID=136227)
+- [Microsoft.Health.ItemTypes.RespiratoryProfile](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.respiratoryprofile)
+- [Microsoft.HealthVault.ItemTypes.RespiratoryProfile](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.respiratoryprofile)
 
 ## Related data types
 

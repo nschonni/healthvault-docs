@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Medical device](https://go.microsoft.com/fwlink/?LinkID=136095)
+- [Microsoft.Health.ItemTypes.Device](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.device)
+- [Microsoft.HealthVault.ItemTypes.Device](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.device)
 
 ## Related data types
 

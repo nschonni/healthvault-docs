@@ -1,0 +1,121 @@
+---
+uid: HV_a84e69b5-cdef-4721-aec4-7b8a494ecd43
+title: SnomedAllergies
+---
+
+# SnomedAllergies
+
+## Overview
+
+Property|Value
+---|--- 
+Name|SnomedAllergies 
+Family|Snomed 
+Version|Jan2008
+
+## Examples
+
+Only the first 100 items are displayed. 
+
+ID|Name
+---|--- 
+1824008|Allergic gastritis (disorder) 
+4448006|Allergic headache (disorder) 
+8326008|Acute allergic mucoid otitis media (disorder) 
+12761008|Acute photoallergic dermatitis (disorder) 
+16935003|Allergic arthritis (disorder) 
+17161007|Laboratory animal dander allergy (disorder) [Ambiguous] 
+21148002|Allergic purpura (disorder) 
+27040004|Experimental allergic encephalomyelitis (disorder) 
+30668009|Allergy-sensitivity to fungi syndrome (disorder) 
+32295003|Allergic ileitis (disorder) 
+40175007|Allergic dermatitis due to bite of Ctenocephalides felis (disorder) 
+40178009|Allergic urticaria (disorder) 
+47838002|Allergic neuropathy (disorder) 
+50776006|Allergic encephalomyelitis (disorder) 
+59275002|Acute allergic serous otitis media (disorder) 
+61582004|Allergic rhinitis (disorder) 
+70369002|Seasonal allergic rhinitis (disorder) [Ambiguous] 
+74069000|Allergic drug reaction (disorder) 
+74455006|Bovine allergic alveolitis (disorder) 
+78079005|Allergic contact dermatitis due to excretions (disorder) 
+78145006|Intrinsic allergic eczema (disorder) 
+80346008|Photoallergic drug eruption (disorder) 
+84234002|Equine allergic pneumonitis (disorder) 
+84479000|Allergic inhalant dermatitis (disorder) 
+89099002|Chronic allergic bronchitis (disorder) 
+91924004|Allergic gingivitis (disorder) 
+91925003|Allergic rhinitis due to animals (disorder) 
+91926002|Allergic rhinitis due to grass pollens (disorder) 
+91927006|Allergic rhinitis due to tree pollens (disorder) 
+91928001|Allergic rhinitis due to weed pollens (disorder) 
+91929009|Allergy to anti-infective agent (disorder) 
+91930004|Allergy to eggs (disorder) 
+91931000|Allergy to erythromycin (disorder) 
+91932007|Allergy to fruit (disorder) 
+91933002|Allergy to macrolide antibiotic (disorder) 
+91934008|Allergy to nuts (disorder) 
+91935009|Allergy to peanuts (disorder) 
+91936005|Allergy to penicillin (disorder) 
+91937001|Allergy to seafood (disorder) 
+91938006|Allergy to strawberries (disorder) 
+91939003|Allergy to sulfonamides (disorder) 
+91940001|Allergy to walnuts (disorder) 
+93447004|Eosinophilic nonallergic rhinitis (disorder) 
+111209006|Photoallergic dermatitis (disorder) 
+115664001|Photoallergy (disorder) 
+188336009|Laboratory animal dander allergy (disorder) 
+191308006|Allergic purpura NOS (disorder) 
+194261004|Allergic otitis media NOS (disorder) 
+197024006|Allergic enterocolitis (disorder) 
+197026008|Allergic gastroenteritis NOS (disorder) 
+200842003|Allergic contact dermatitis due to adhesives (disorder) 
+200843008|Allergic contact dermatitis due to cosmetics (disorder) 
+200844002|Allergic contact dermatitis due to drugs in contact with the skin (disorder) 
+200845001|Allergic contact dermatitis due to dyes (disorder) 
+200846000|Allergic contact dermatitis due to other chemical products (disorder) 
+200847009|Allergic contact dermatitis due to food in contact with the skin (disorder) 
+1945002|Allergic asthma with stated cause (disorder) 
+7143003|Canine allergic bronchitis (disorder) 
+17365008|Allergic pneumonia (disorder) 
+17866004|Acute allergic sanguinous otitis media (disorder) 
+21719001|Allergic rhinitis due to pollen (disorder) 
+22231002|Allergic enteritis (disorder) 
+22775002|Allergic vulvitis (disorder) 
+25887009|Allergic sigmoiditis (disorder) 
+26006005|Allergic gastroenteritis (disorder) 
+26045000|Chronic allergic conjunctivitis (disorder) 
+26169004|Allergic otitis media (disorder) 
+30304000|Allergic colitis (disorder) 
+30352005|Allergic-infective asthma (disorder) 
+37471005|Extrinsic allergic alveolitis (disorder) 
+37981002|Allergic bronchopulmonary aspergillosis (disorder) 
+45309006|Allergic contact dermatitis due to secretions (disorder) 
+48269007|Allergic parotitis (disorder) 
+49237006|Allergic diarrhea (disorder) 
+52332009|Gastrointestinal food allergy (disorder) 
+57302007|Allergic reaction, due to correct medicinal substance properly administered (disorder) 
+60967006|Allergic vaginitis (disorder) 
+64249002|Allergic eosinophilia (disorder) 
+68165003|Non allergic purpura (disorder) 
+70884002|Allergic encephalitis (disorder) 
+71958004|Chronic allergic otitis media (disorder) 
+72681001|Allergic jejunitis (disorder) 
+82275008|Allergic granulomatosis angiitis (disorder) 
+87641005|Feline allergic bronchitis (disorder) 
+91178003|Allergic dermatitis due to bite of Ctenocephalides canis (disorder) 
+105978008|Extrinsic allergic respiratory disease (disorder) 
+106190000|Allergic state (disorder) 
+127072000|Allergic disorder (disorder) 
+131147004|Latex allergy response (disorder) 
+195663004|Allergic pharyngitis (disorder) 
+195821000|Allergic rhinitis NOS (disorder) 
+195988005|Other allergic alveolitis (disorder) 
+195991005|Other allergic alveolitis NOS (disorder) 
+195992003|Allergic alveolitis and pneumonitis NOS (disorder) 
+195993008|Allergic extrinsic alveolitis NOS (disorder) 
+196218004|[X]Other seasonal allergic rhinitis (disorder) 
+196219007|[X]Other allergic rhinitis (disorder) 
+201963008|Allergic arthritis of unspecified site (disorder) 
+201964002|Allergic arthritis of the shoulder region (disorder) 
+201965001|Allergic arthritis of the upper arm (disorder)

@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Application data reference](https://go.microsoft.com/fwlink/?LinkID=151810)
+- [Microsoft.Health.ItemTypes.ApplicationDataReference](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.applicationdatareference)
+- [Microsoft.HealthVault.ItemTypes.ApplicationDataReference](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.applicationdatareference)
 
 ## Details
 Information that can be used by an application to render content from another application.

@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Procedure](https://go.microsoft.com/fwlink/?LinkID=136218)
+- [Microsoft.Health.ItemTypes.ProcedureV1](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.procedurev1)
+- [Microsoft.HealthVault.ItemTypes.ProcedureV1](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.procedurev1)
 
 ## Related data types
 

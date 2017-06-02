@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Contraindication](https://go.microsoft.com/fwlink/?LinkID=136086)
+- [Microsoft.Health.ItemTypes.Contraindication](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.contraindication)
+- [Microsoft.HealthVault.ItemTypes.Contraindication](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.contraindication)
 
 ## Related data types
 

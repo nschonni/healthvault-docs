@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [PAP session](https://go.microsoft.com/fwlink/?LinkID=182965)
+- [Microsoft.Health.ItemTypes.PAPSession](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.papsession)
+- [Microsoft.HealthVault.ItemTypes.PAPSession](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.papsession)
 
 ## Related data types
 

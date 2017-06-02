@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Basic demographic information](https://go.microsoft.com/fwlink/?LinkID=136050)
+- [Microsoft.Health.ItemTypes.Basic](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.basic)
+- [Microsoft.HealthVault.ItemTypes.Basic](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.basic)
 
 ## Related data types
 

@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Cardiac profile](https://go.microsoft.com/fwlink/?LinkID=136071)
+- [Microsoft.Health.ItemTypes.CardiacProfile](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.cardiacprofile)
+- [Microsoft.HealthVault.ItemTypes.CardiacProfile](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.cardiacprofile)
 
 ## Related data types
 

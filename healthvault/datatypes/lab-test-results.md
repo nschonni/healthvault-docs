@@ -16,6 +16,10 @@ singleton|False
 allow-readonly|False
 effective date XPath|No effective date XPath
 
+## .NET reference
+- [Microsoft.Health.ItemTypes.LabTestResults](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.labtestresults)
+- [Microsoft.HealthVault.ItemTypes.LabTestResults](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.labtestresults)
+
 ## Related data types
 
 - [Blood glucose](xref:HV_879e7c04-4e8a-4707-9ad3-b054df467ce4)

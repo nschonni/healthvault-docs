@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Advance directive](https://go.microsoft.com/fwlink/?LinkID=136023)
+- [Microsoft.Health.ItemTypes.Directive](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.directive)
+- [Microsoft.HealthVault.ItemTypes.Directive](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.directive)
 
 ## Related data types
 

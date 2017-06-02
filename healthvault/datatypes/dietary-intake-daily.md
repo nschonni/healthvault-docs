@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Daily dietary intake](https://go.microsoft.com/fwlink/?LinkID=136089)
+- [Microsoft.Health.ItemTypes.DietaryDailyIntake](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.dietarydailyintake)
+- [Microsoft.HealthVault.ItemTypes.DietaryDailyIntake](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.dietarydailyintake)
 
 ## Related data types
 

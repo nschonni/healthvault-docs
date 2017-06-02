@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [HbA1C](https://go.microsoft.com/fwlink/?LinkID=136146)
+- [Microsoft.Health.ItemTypes.HbA1C](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.hba1c)
+- [Microsoft.HealthVault.ItemTypes.HbA1C](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.hba1c)
 
 ## Details
 HbA1c is a test that measures the amount of glycosylated hemoglobin in your blood.

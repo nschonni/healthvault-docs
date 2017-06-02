@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Contact](https://go.microsoft.com/fwlink/?LinkID=136107)
+- [Microsoft.Health.ItemTypes.Person](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.person)
+- [Microsoft.HealthVault.ItemTypes.Person](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.person)
 
 ## Related data types
 

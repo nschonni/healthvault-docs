@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Family history](https://go.microsoft.com/fwlink/?LinkID=136335)
+- [Microsoft.Health.ItemTypes.FamilyHistoryV1](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.familyhistoryv1)
+- [Microsoft.HealthVault.ItemTypes.FamilyHistoryV1](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.familyhistoryv1)
 
 ## Details
 Note: Please use the new version of this data type instead of this version. <br /> This thing type describes the family history of a person.

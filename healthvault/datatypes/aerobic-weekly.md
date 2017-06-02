@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Weekly aerobic exercise goal](https://go.microsoft.com/fwlink/?LinkID=136242)
+- [Microsoft.Health.ItemTypes.AerobicWeeklyGoal](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.aerobicweeklygoal)
+- [Microsoft.HealthVault.ItemTypes.AerobicWeeklyGoal](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.aerobicweeklygoal)
 
 ## Related data types
 

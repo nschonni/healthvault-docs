@@ -15,6 +15,8 @@ Version|24
 
 ## Examples
 
+Only the first 100 items are displayed. 
+
 ID|Name
 ---|--- 
 203|Protein 
@@ -116,50 +118,4 @@ ID|Name
 617|18:1 undifferentiated 
 618|18:2 undifferentiated 
 619|18:3 undifferentiated 
-620|20:4 undifferentiated 
-621|22:6 n-3 (DHA) 
-624|22:0 
-625|14:1 
-626|16:1 undifferentiated 
-627|18:4 
-628|20:1 
-629|20:5 n-3 (EPA) 
-630|22:1 undifferentiated 
-631|22:5 n-3 (DPA) 
-636|Phytosterols 
-638|Stigmasterol 
-639|Campesterol 
-641|Beta-sitosterol 
-645|Fatty acids, total monounsaturated 
-646|Fatty acids, total polyunsaturated 
-652|15:0 
-653|17:0 
-654|24:0 
-662|16:1 t 
-663|18:1 t 
-664|22:1 t 
-665|18:2 t not further defined 
-666|18:2 i 
-669|18:2 t,t 
-670|18:2 CLAs 
-671|24:1 c 
-672|20:2 n-6 c,c 
-673|16:1 c 
-674|18:1 c 
-675|18:2 n-6 c,c 
-676|22:1 c 
-685|18:3 n-6 c,c,c 
-687|17:1 
-689|20:3 undifferentiated 
-693|Fatty acids, total trans-monoenoic 
-695|Fatty acids, total trans-polyenoic 
-696|13:0 
-697|15:1 
-851|18:3 n-3 c,c,c (ALA) 
-852|20:3 n-3 
-853|20:3 n-6 
-855|20:4 n-6 
-856|18:3i 
-857|21:5 
-858|22:4 
-859|18:1-11t (18:1t n-7)
+620|20:4 undifferentiated

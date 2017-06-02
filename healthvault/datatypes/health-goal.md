@@ -95,7 +95,7 @@ recurrence|[goal-recurrence](#goal-recurrence)|0|1|This field allows defining re
 >
 > Name|Type|Min occurs|Max occurs|Summary|Remarks|Preferred Vocabulary
 > ---|---|---|---|---|---|---
-> interval|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|1|1|Specifies the recurrence interval of the goal. For example, day, week, year, etc.||[recurrence-intervals](xref:HV_04C4621A-D97A-4328-B398-AF547ABE02AC)
+> interval|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|1|1|Specifies the recurrence interval of the goal. For example, day, week, year, etc.||[recurrence-intervals](xref:HV_04c4621a-d97a-4328-b398-af547abe02ac)
 > times-in-interval|[positiveInt](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#positiveInt)|1|1|Specifies the number of times the goal's target is intended to be achieved during the interval.|For example, the goal "exercise for 30 minutes, 4 times per week" would be represented as: an interval of a "week", a times-in-interval of 4, and a goal target of 30 minutes.|
 >
 >

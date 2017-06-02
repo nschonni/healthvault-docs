@@ -16,6 +16,10 @@ singleton|False
 allow-readonly|False
 effective date XPath|No effective date XPath
 
+## .NET reference
+- [Microsoft.Health.ItemTypes.Insight](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.insight)
+- [Microsoft.HealthVault.ItemTypes.Insight](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.insight)
+
 ## Details
 A single instance of health insight.
 

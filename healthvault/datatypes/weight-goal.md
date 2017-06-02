@@ -17,7 +17,8 @@ allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Weight goal](https://go.microsoft.com/fwlink/?LinkID=136245)
+- [Microsoft.Health.ItemTypes.WeightGoal](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.weightgoal)
+- [Microsoft.HealthVault.ItemTypes.WeightGoal](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.weightgoal)
 
 ## Related data types
 

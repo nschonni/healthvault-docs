@@ -16,6 +16,10 @@ singleton|False
 allow-readonly|False
 effective date XPath|No effective date XPath
 
+## .NET reference
+- [Microsoft.Health.ItemTypes.ActionPlanWrapper](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.actionplanwrapper)
+- [Microsoft.HealthVault.ItemTypes.ActionPlanWrapper](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.actionplanwrapper)
+
 ## Details
 This class is deprecated. Applications should interact with action plan data through the action plan methods in the HealthVault REST APIs. new types.
 
