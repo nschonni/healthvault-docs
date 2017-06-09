@@ -327,7 +327,7 @@ Example - string predicates
 
 ```xpath
  /thing/data-xml/medication/name/text[. = "Aspirin"]
- /thing/data-xml/medication/name/text[@myattribute = "value" 
+ /thing/data-xml/medication/name/text[@myattribute = "value"]
 ```
 
 Example - numeric predicates
