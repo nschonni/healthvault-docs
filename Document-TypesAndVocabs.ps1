@@ -113,7 +113,7 @@ Function Get-ThingTypeInfos($typeXmlRoot, $xsdRoot, $filenamePattern = '*') {
 
 Function Parse-XmlInfo($typeXmlItem) {
     $info = @{}
-    [xml]$xml = Get-Content $typeXmlItem.FullName
+    [xml]$xml = Get-Content -Encoding UTF8 $typeXmlItem.FullName
     $type = $xml.'thing-type'
 
     $info.Name = $script:typeNameDictionary[$type.name.'string-token-id'].DisplayText
@@ -179,7 +179,7 @@ Function Combine-ThingInfo($xmlInfo, $xsdInfo) {
 
 Function Parse-XsdInfo($xsdItem, $backupId) {
     $info = @{}
-    $xsdRaw = Get-Content $xsdItem.FullName
+    $xsdRaw = Get-Content -Encoding UTF8 $xsdItem.FullName
     $xsd = [xml]$xsdRaw
 
     $script:inlineTypes = New-Object System.Collections.Generic.List[System.Object]
