@@ -326,13 +326,16 @@ Compound queries and predicates other than those described above are not optimiz
 Example - string predicates
 
 ```xpath
- /thing/data-xml/medication/name/text[. = "Aspirin"]/thing/data-xml/medication/name/text[@myattribute = "value"] 
+ /thing/data-xml/medication/name/text[. = "Aspirin"]
+ /thing/data-xml/medication/name/text[@myattribute = "value"]
 ```
 
 Example - numeric predicates
 
 ```xpath
-/thing/data-xml/weight/value/kg[. = 150]/thing/data-xml/weight/value/kg[. > 150]/thing/data-xml/weight/value/kg[. < 150] 
+/thing/data-xml/weight/value/kg[. = 150]
+/thing/data-xml/weight/value/kg[. > 150]
+/thing/data-xml/weight/value/kg[. < 150] 
 ```
 
 Full and partial things
