@@ -48,7 +48,7 @@ To test your multi-instance application in PPE:
 
 3.  Begin the authorization process by first redirecting to Shell.
 
-4.  In Shell, create a new account and specify **Germany** as the account country, or sign-in with an existing account that exists in the UK PPE.
+4.  In Shell, create a new account and specify **Germany** as the account country/region, or sign-in with an existing account that exists in the UK PPE.
 
 5.  Continue until you reach the app-auth page. Select the records to authorize, and click to authorize.
 
@@ -56,7 +56,7 @@ To test your multi-instance application in PPE:
 
 7.  Next, verify reading or writing data from the record that was just authorized to ensure the application can connect to the instance.
 
-8.  Repeat from step 3, except specify **United States** in step 4 as the account country when signing up for a new account, or sign-in with an existing account in the US PPE instance.
+8.  Repeat from step 3, except specify **United States** in step 4 as the account country/region when signing up for a new account, or sign-in with an existing account in the US PPE instance.
 
 Multi-instance apps in Production
 ---------------------------------

@@ -42,13 +42,13 @@ HealthVault uses a set of mapping rules to determine the instance where a new us
 
 When a new user signs-up for HealthVault, and selects:
 
--   US or US territories as the account country, the account is created in the US instance.
+-   US or US territories as the account country/region, the account is created in the US instance.
 
--   Any other country HealthVault supports, the account is created in the EU instance.
+-   Any other country/region HealthVault supports, the account is created in the EU instance.
 
-    For the list of countries HealthVault does not support, see [HealthVault territories](/healthvault/publishing/territories).
+    For the list of countries/regions HealthVault does not support, see [HealthVault territories](/healthvault/publishing/territories).
 
-The user can start the sign-up process in any instance, but will be redirected to the instance determined by the rules above for account creation. For example, if the user starts in the EU instance and selects US as the account country, the user will be redirected to the US instance where the account will be created.
+The user can start the sign-up process in any instance, but will be redirected to the instance determined by the rules above for account creation. For example, if the user starts in the EU instance and selects US as the account country/region, the user will be redirected to the US instance where the account will be created.
 
 Accounts cannot be migrated between instances.
 
@@ -59,7 +59,7 @@ Users can sign-in to any HealthVault instance and will be redirected to the inst
 Applications within the HealthVault global architecture
 -------------------------------------------------------
 
-The above describes how users are mapped to instances within the HealthVault global architecture. As part of this mapping, users can be redirected to a different instance than the one they started from when signing-up or signing-in. The same is true if the user came to HealthVault from an application. For example, an app might send the user to the US instance Shell to complete the authorization process, where the user initiates the new account flow and selects Netherland as the account country. The user will be redirected to the EU instance where the account will be created, and the user can complete the app authorization process in the EU instance. Similarly, if the user signs-in and the account already exists in the EU instance, the user completes the app authorization process in the EU instance.
+The above describes how users are mapped to instances within the HealthVault global architecture. As part of this mapping, users can be redirected to a different instance than the one they started from when signing-up or signing-in. The same is true if the user came to HealthVault from an application. For example, an app might send the user to the US instance Shell to complete the authorization process, where the user initiates the new account flow and selects Netherland as the account country/region. The user will be redirected to the EU instance where the account will be created, and the user can complete the app authorization process in the EU instance. Similarly, if the user signs-in and the account already exists in the EU instance, the user completes the app authorization process in the EU instance.
 
 Generalizing this, any of the Shell redirect interface targets that require the user to sign-up or sign-in, can redirect the user to a different instance than the instance where the user started, that is, the instance to which the app originally sent the user.
 
@@ -122,16 +122,16 @@ Mobile or SODA applications that run on devices and mobile platforms access data
 
 Applications that use the [Patient Connect](/healthvault/concepts/connectivity/patient-connect) model to establish authorization with users also typically involve an in-person encounter and a notification to the user with a link to a specific HealthVault instance where a connect request is waiting for the user to pick-up. Similar to DOPU packages, with Patient Connect, the application must determine the destination instance for the connect request at the time the request is created. It is not possible for a Patient Connect request to be stored in one instance and to be picked-up by a user with an account in a different instance.
 
-DOPU and Patient Connect applications can choose the destination instance for packages and connect requests based on the target population of the application and the user's country. For example, a US-based hospital that largely serves a region-specific population of the US will likely choose to drop-off packages and connect requests in the US instance only.
+DOPU and Patient Connect applications can choose the destination instance for packages and connect requests based on the target population of the application and the user's country/region. For example, a US-based hospital that largely serves a region-specific population of the US will likely choose to drop-off packages and connect requests in the US instance only.
 
-On the other hand, a hospital that caters to medical tourism and serves patients from around the world can determine the destination instance for a package or connect request based on the user's country. For a visit with a US patient, the application would choose the US instance as the destination so the US-based patient can pick-up the package or connection request. For a visit with a EU patient, the application would choose the EU instance as the destination for the package or connect request.
+On the other hand, a hospital that caters to medical tourism and serves patients from around the world can determine the destination instance for a package or connect request based on the user's country/region. For a visit with a US patient, the application would choose the US instance as the destination so the US-based patient can pick-up the package or connection request. For a visit with a EU patient, the application would choose the EU instance as the destination for the package or connect request.
 
-HealthVault provides the [SelectInstance](https://developer.healthvault.com/Methods/Overview?Name=SelectInstance&Version=1) request to help applications make this determination. The method takes the user's country as the request input, and returns the instanceID for the HealthVault instance where users from this country are mapped.
+HealthVault provides the [SelectInstance](https://developer.healthvault.com/Methods/Overview?Name=SelectInstance&Version=1) request to help applications make this determination. The method takes the user's country/region as the request input, and returns the instanceID for the HealthVault instance where users from this country/region are mapped.
 
 Cross-instance record sharing
 -----------------------------
 
-HealthVault allows records to be shared between people who have accounts in the same instance. HealthVault does not allow records to be shared between accounts in different instances. While this presents some limitations, such as when families distributed around the world want to share records with one another, the mainline case is sharing records between people in the same instance. HealthVault may in the future provide a mechanism to allow records to be shared across instances. In the meantime, to share records between individuals with HealthVault accounts in different instances, the user accepting the sharing invite can create a new HealthVault account in the same instance where the shared record is stored. To do this, when this user signs-up for a new account, he would specify the same country as the record sharer's country (or any other account country that maps to this instance).
+HealthVault allows records to be shared between people who have accounts in the same instance. HealthVault does not allow records to be shared between accounts in different instances. While this presents some limitations, such as when families distributed around the world want to share records with one another, the mainline case is sharing records between people in the same instance. HealthVault may in the future provide a mechanism to allow records to be shared across instances. In the meantime, to share records between individuals with HealthVault accounts in different instances, the user accepting the sharing invite can create a new HealthVault account in the same instance where the shared record is stored. To do this, when this user signs-up for a new account, he would specify the same country/region as the record sharer's country/region (or any other account country/region that maps to this instance).
 
 Eventing
 --------
