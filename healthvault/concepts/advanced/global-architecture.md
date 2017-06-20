@@ -46,7 +46,7 @@ When a new user signs-up for HealthVault, and selects:
 
 -   Any other country/region HealthVault supports, the account is created in the EU instance.
 
-    For the list of countries HealthVault does not support, see [HealthVault territories](/healthvault/publishing/territories).
+    For the list of countries/regions HealthVault does not support, see [HealthVault territories](/healthvault/publishing/territories).
 
 The user can start the sign-up process in any instance, but will be redirected to the instance determined by the rules above for account creation. For example, if the user starts in the EU instance and selects US as the account country/region, the user will be redirected to the US instance where the account will be created.
 
