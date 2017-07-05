@@ -1,5 +1,5 @@
 ---
-title: Remote monitoring
+title: Remote Monitoring
 author: rouellam
 ms.author: roumen
 ms.date: 04/17/2017
@@ -8,7 +8,7 @@ ms.prod: healthvault
 description: Learn how to implement remote monitoring scenarios around action plans and goals
 ---
 
-Remote monitoring
+Remote Monitoring
 =================
 The remote monitoring framework APIs lets HealthVault partners improve engagement between providers and patients through a number of scenarios such as action plans and goals.
 
@@ -16,7 +16,7 @@ Action Plans and goals are currently in Preview, and Microsoft is accepting feed
 
 Action Plan APIs
 ----------------
-Action Plan APIs lets HealthVault partners improve engagement between providers and patients by allowing providers to create, assign and update care plans for their patients. Patients follow the care plans and track their adherence by leveraging one of many supported apps and devices. Providers can monitor patient adherence to the tasks in their plans as well as progress towards broader health goals.
+Action Plan APIs let HealthVault partners improve engagement between providers and patients by allowing providers to create, assign and update care plans for their patients. Patients follow the care plans and track their adherence by leveraging one of many supported apps and devices. Providers can monitor patient adherence to the tasks in their plans as well as progress towards broader health goals.
 
 ### Creating, assigning, and updating Action Plans
 
