@@ -21,7 +21,7 @@
              <br /><br />
              Applications that implement a thing extension should
              derive from this class and register their extension by calling
-             <see cref="M:Microsoft.HealthVault.Thing.ItemTypeManager.RegisterExtensionHandler(System.String,System.Type)" />.
+             <see cref="M:Microsoft.HealthVault.Thing.IThingTypeRegistrar.RegisterExtensionHandler(System.String,System.Type)" />.
              Whenever the HealthVault SDK reads an extension with the specified
              extension source an instance of the derived ThingExtension will be
              created and it's <see cref="M:Microsoft.HealthVault.Thing.ThingExtension.ParseXml(System.Xml.XPath.IXPathNavigable)" />
@@ -176,7 +176,7 @@
         <remarks>
              The source is used to identify the extension. To register a class
              as a handler for a specific extension source see
-             <see cref="M:Microsoft.HealthVault.Thing.ItemTypeManager.RegisterExtensionHandler(System.String,System.Type)" />.
+             <see cref="!:ItemTypeManager.RegisterExtensionHandler(string, Type)" />.
              </remarks>
         <exception cref="T:System.ArgumentException">
              If <paramref name="value" /> is null or empty.
