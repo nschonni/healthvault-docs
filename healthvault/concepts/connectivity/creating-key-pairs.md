@@ -35,8 +35,8 @@ To create the private/public key pair:
 
     ```powershell
     function Create-HealthVaultCert([guid]$applicationID) {
-        $cert = New-SelfSignedCertificate -DnsName "WildcatApp-$applicationID" -CertStoreLocation "cert:\\LocalMachine\My" -HashAlgorithm "SHA256" -Provider'Microsoft Enhanced RSA and AES Cryptographic Provider'    
-        Export-Certificate -Cert $cert -FilePath$env:USERPROFILE\Downloads\${applicationID}.cer    
+        $cert = New-SelfSignedCertificate -DnsName "WildcatApp-$applicationID" -CertStoreLocation "cert:\\LocalMachine\My" -HashAlgorithm "SHA256" -Provider 'Microsoft Enhanced RSA and AES Cryptographic Provider'    
+        Export-Certificate -Cert $cert -FilePath $env:USERPROFILE\Downloads\${applicationID}.cer    
         Set-ReadPermissionsForCert $cert
     }
     function Set-ReadPermissionsForCert([System.Security.Cryptography.X509Certificates.X509Certificate]$Cert, [string]$Username = $env:USERNAME) {
@@ -44,7 +44,7 @@ To create the private/public key pair:
         $fullPath =$keyPath+$Cert.PrivateKey.CspKeyContainerInfo.UniqueKeyContainerName
         $acl = Get-Acl -Path $fullPath    
         $permission = $Username,"Read","Allow"    
-        $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule$permission    
+        $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule $permission    
         $acl.AddAccessRule($accessRule)     
         Set-Acl $fullPath $acl
     } 
