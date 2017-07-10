@@ -27,23 +27,23 @@ The timeline API provides information for users to see their tasks and how they 
 
 Below are some examples of timeline returns.
 
-**Basic case**
-In the most basic case, there is no task change in the given time range and the return consists of a single timeline snapshot.
+#### Basic case
+In the most basic case, there is no change in schedules or completion metrics in the given time range and the return consists of a single timeline snapshot.
 
 For a request from Monday through Friday, the return will have a list of tasks and each task will have it's descriptors and snapshot.
 
--   For a daily task (see Figure 1), the snapshot will consist of 5 schedules (M, Tu, W, Th, F), 2 associated occurrences (Tu, Th) and completion metrics.
+-   For a daily task, the snapshot will consist of 5 schedules (M, Tu, W, Th, F), 2 associated occurrences (Tu, Th) and completion metrics.
 
 <img src="/healthvault/images/timeline_figure1.png" title="Figure 1: Basic example for a daily task" alt="Figure 1" id="HVActionPlans_fig07" /> 
 
--   For a weekly task (see Figure 2), the snapshot buffers to the start of the week and so will consist of 6 schedules (Su, M, Tu, W, Th, F), 3 associated occurrences (Su, Tu, Th) and completion metrics.
+-   For a weekly task, the snapshot buffers to the start of the week and so will consist of 6 schedules (Su, M, Tu, W, Th, F), 3 associated occurrences (Su, Tu, Th) and completion metrics.
 
 <img src="/healthvault/images/timeline_figure2.png" title="Figure 2: Basic example for a weekly task" alt="Figure 2" id="HVActionPlans_fig08" /> 
 
-**Change in schedule or task type**
-If there is a change to the schedule or completion metrics over the query range, the return consists of multiple snapshots for each change.
+#### Change in schedule or task type
+If there is a change to the schedule or completion metrics over the query range, the return consists of multiple snapshots, one for each change.
 
-For a request from Monday through Friday, the return will have a list of tasks. Figure 3 shows an example of a task which had a schedule change within the requested time range:
+For a request from Monday through Friday, the return will have a list of tasks. The below figure shows an example of a task which had a schedule change within the requested time range:
 
 <img src="/healthvault/images/timeline_figure3.png" title="Figure 3: Example of a task with a change in schedule within the requested time range" alt="Figure 3" id="HVActionPlans_fig09" /> 
 
