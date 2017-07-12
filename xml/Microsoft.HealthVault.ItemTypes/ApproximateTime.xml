@@ -1,10 +1,10 @@
 <Type Name="ApproximateTime" FullName="Microsoft.HealthVault.ItemTypes.ApproximateTime">
-  <TypeSignature Language="C#" Value="public class ApproximateTime : Microsoft.HealthVault.ItemTypes.ItemBase, IComparable, IComparable&lt;Microsoft.HealthVault.ItemTypes.ApproximateTime&gt;" />
-  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ApproximateTime extends Microsoft.HealthVault.ItemTypes.ItemBase implements class System.IComparable, class System.IComparable`1&lt;class Microsoft.HealthVault.ItemTypes.ApproximateTime&gt;" />
+  <TypeSignature Language="C#" Value="public class ApproximateTime : Microsoft.HealthVault.ItemTypes.ItemBase, IComparable, IComparable&lt;Microsoft.HealthVault.ItemTypes.ApproximateTime&gt;, IComparable&lt;NodaTime.LocalTime&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ApproximateTime extends Microsoft.HealthVault.ItemTypes.ItemBase implements class System.IComparable, class System.IComparable`1&lt;class Microsoft.HealthVault.ItemTypes.ApproximateTime&gt;, class System.IComparable`1&lt;valuetype NodaTime.LocalTime&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.ItemTypes.ApproximateTime" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.HealthVault</AssemblyName>
-    <AssemblyVersion>1.65.0.0</AssemblyVersion>
+    <AssemblyVersion>1.66.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.HealthVault.ItemTypes.ItemBase</BaseTypeName>
@@ -15,6 +15,9 @@
     </Interface>
     <Interface>
       <InterfaceName>System.IComparable&lt;Microsoft.HealthVault.ItemTypes.ApproximateTime&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IComparable&lt;NodaTime.LocalTime&gt;</InterfaceName>
     </Interface>
   </Interfaces>
   <Docs>
@@ -33,7 +36,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -45,12 +48,31 @@
       </Docs>
     </Member>
     <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApproximateTime (NodaTime.LocalTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype NodaTime.LocalTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.#ctor(NodaTime.LocalTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="time" Type="NodaTime.LocalTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">The time to copy from.</param>
+        <summary>
+            Creates a new instance of the <see cref="T:Microsoft.HealthVault.ItemTypes.ApproximateTime" /> class from the given local time.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ApproximateTime (int hour, int minute);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 hour, int32 minute) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.#ctor(System.Int32,System.Int32)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="hour" Type="System.Int32" />
@@ -81,7 +103,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.#ctor(System.Int32,System.Int32,System.Int32)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="hour" Type="System.Int32" />
@@ -117,7 +139,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="hour" Type="System.Int32" />
@@ -158,7 +180,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.CompareTo(Microsoft.HealthVault.ItemTypes.ApproximateTime)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -187,18 +209,18 @@
       </Docs>
     </Member>
     <Member MemberName="CompareTo">
-      <MemberSignature Language="C#" Value="public int CompareTo (DateTime other);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 CompareTo(valuetype System.DateTime other) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.CompareTo(System.DateTime)" />
+      <MemberSignature Language="C#" Value="public int CompareTo (NodaTime.LocalTime other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(valuetype NodaTime.LocalTime other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.CompareTo(NodaTime.LocalTime)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="other" Type="System.DateTime" />
+        <Parameter Name="other" Type="NodaTime.LocalTime" />
       </Parameters>
       <Docs>
         <param name="other">
@@ -224,7 +246,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.CompareTo(System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -265,7 +287,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.Equals(System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -302,7 +324,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.GetHashCode" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -322,7 +344,7 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.ApproximateTime.HasValue" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -348,7 +370,7 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.ApproximateTime.Hour" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -375,7 +397,7 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.ApproximateTime.Millisecond" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
@@ -403,7 +425,7 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.ApproximateTime.Minute" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -424,32 +446,13 @@
              </exception>
       </Docs>
     </Member>
-    <Member MemberName="Now">
-      <MemberSignature Language="C#" Value="public static Microsoft.HealthVault.ItemTypes.ApproximateTime Now { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property class Microsoft.HealthVault.ItemTypes.ApproximateTime Now" />
-      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.ApproximateTime.Now" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Microsoft.HealthVault.ItemTypes.ApproximateTime</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
-             Gets the current time including the hour, minute, and second.
-             </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
     <Member MemberName="op_Equality">
       <MemberSignature Language="C#" Value="public static bool op_Equality (Microsoft.HealthVault.ItemTypes.ApproximateTime time, object obj);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class Microsoft.HealthVault.ItemTypes.ApproximateTime time, object obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.op_Equality(Microsoft.HealthVault.ItemTypes.ApproximateTime,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -486,7 +489,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.op_GreaterThan(Microsoft.HealthVault.ItemTypes.ApproximateTime,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -528,7 +531,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.op_Inequality(Microsoft.HealthVault.ItemTypes.ApproximateTime,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -569,7 +572,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.op_LessThan(Microsoft.HealthVault.ItemTypes.ApproximateTime,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -611,7 +614,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -638,7 +641,7 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.ApproximateTime.Second" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
@@ -666,7 +669,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.ApproximateTime.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

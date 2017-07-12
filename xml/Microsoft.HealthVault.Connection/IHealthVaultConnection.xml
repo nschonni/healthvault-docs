@@ -1,12 +1,16 @@
 <Type Name="IHealthVaultConnection" FullName="Microsoft.HealthVault.Connection.IHealthVaultConnection">
-  <TypeSignature Language="C#" Value="public interface IHealthVaultConnection" />
-  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IHealthVaultConnection" />
+  <TypeSignature Language="C#" Value="public interface IHealthVaultConnection : Microsoft.HealthVault.Rest.IHealthVaultRestAuthorizer" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IHealthVaultConnection implements class Microsoft.HealthVault.Rest.IHealthVaultRestAuthorizer" />
   <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.Connection.IHealthVaultConnection" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.HealthVault</AssemblyName>
-    <AssemblyVersion>1.65.0.0</AssemblyVersion>
+    <AssemblyVersion>1.66.0.0</AssemblyVersion>
   </AssemblyInfo>
-  <Interfaces />
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.HealthVault.Rest.IHealthVaultRestAuthorizer</InterfaceName>
+    </Interface>
+  </Interfaces>
   <Docs>
     <summary>
             Represents a connection for an application to the HealthVault service
@@ -21,7 +25,7 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Connection.IHealthVaultConnection.ApplicationId" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Nullable&lt;System.Guid&gt;</ReturnType>
@@ -42,7 +46,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Connection.IHealthVaultConnection.AuthenticateAsync" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -62,7 +66,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Connection.IHealthVaultConnection.CreatePersonClient" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.HealthVault.Clients.IPersonClient</ReturnType>
@@ -84,7 +88,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Connection.IHealthVaultConnection.CreatePlatformClient" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.HealthVault.Clients.IPlatformClient</ReturnType>
@@ -100,33 +104,13 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <Member MemberName="CreateRestClient">
-      <MemberSignature Language="C#" Value="public Microsoft.HealthVault.Clients.IHealthVaultRestClient CreateRestClient ();" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.HealthVault.Clients.IHealthVaultRestClient CreateRestClient() cil managed" />
-      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Connection.IHealthVaultConnection.CreateRestClient" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>Microsoft.HealthVault.Clients.IHealthVaultRestClient</ReturnType>
-      </ReturnValue>
-      <Parameters />
-      <Docs>
-        <summary>
-            Creates a new rest client for communicating with HealthVault
-            </summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
     <Member MemberName="CreateThingClient">
       <MemberSignature Language="C#" Value="public Microsoft.HealthVault.Clients.IThingClient CreateThingClient ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.HealthVault.Clients.IThingClient CreateThingClient() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Connection.IHealthVaultConnection.CreateThingClient" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.HealthVault.Clients.IThingClient</ReturnType>
@@ -148,7 +132,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Connection.IHealthVaultConnection.CreateVocabularyClient" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.HealthVault.Clients.IVocabularyClient</ReturnType>
@@ -170,7 +154,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Connection.IHealthVaultConnection.ExecuteAsync(Microsoft.HealthVault.HealthVaultMethods,System.Int32,System.String,System.Nullable{System.Guid},System.Nullable{System.Guid})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.HealthVault.Transport.HealthServiceResponseData&gt;</ReturnType>
@@ -202,7 +186,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Connection.IHealthVaultConnection.GetPersonInfoAsync" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.HealthVault.Person.PersonInfo&gt;</ReturnType>
@@ -222,7 +206,7 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Connection.IHealthVaultConnection.SessionCredential" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.HealthVault.Connection.SessionCredential</ReturnType>
