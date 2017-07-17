@@ -111,3 +111,6 @@
 # Reference
 ## [DataTypes](datatypes/toc.md)
 ## [Vocabularies](vocabularies/toc.md)
+## [REST API]
+### [1.0-rc](/healthvault/apis/1.0-rc)
+### [2.0-preview](/healthvault/apis/2.0-preview)
