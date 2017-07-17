@@ -1,5 +1,5 @@
 # Microsoft HealthVault Documentation
-The markup and publishing content used to generate the [HealthVault documentation](https://review.docs.microsoft.com/en-us/healthvault).
+The markup and publishing content used to generate the [HealthVault documentation](http://docs.microsoft.com/healthvault).
 
 ## Legal Notices
 Microsoft and any contributors grant you a license to the Microsoft documentation and other content
