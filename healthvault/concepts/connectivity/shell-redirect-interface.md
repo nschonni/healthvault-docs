@@ -909,7 +909,7 @@ The application should validate the user information before sending it to the Sh
 <p>^([\w-+\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,48}|[0-9]{1,3})(\]?)$</p></td>
 </tr>
 <tr class="even">
-<td><p>Account country</p></td>
+<td><p>Account country/region</p></td>
 <td><p>Account.CountryCode</p></td>
 <td><p>Required when CreateAccountAndRecord=True.</p>
 <p>ISO country/region code (2 characters) from ISO 3166 vocabulary.</p></td>

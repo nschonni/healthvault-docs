@@ -75,7 +75,7 @@ See [Microsoft HealthVault and Data Protection Requirements](http://download.mic
 
 ### Is HealthVault available outside of the United States?
 
-Yes! HealthVault is now available nearly worldwide and is adding new languages often. To explore opportunities for a specific country or region, you can explore HealthVault’s <a href="/healthvault/publishing/territories" id="PageContent_14117_3">territory information</a> or inquire [here](https://www.healthvault.com/inquiry/business) and our International Business Development Team will be notified of your request.
+Yes! HealthVault is now available nearly worldwide and is adding new languages often. To explore opportunities for a specific country/region, you can explore HealthVault’s <a href="/healthvault/publishing/territories" id="PageContent_14117_3">territory information</a> or inquire [here](https://www.healthvault.com/inquiry/business) and our International Business Development Team will be notified of your request.
 
 ### What Marketing support does HealthVault offer?
 
