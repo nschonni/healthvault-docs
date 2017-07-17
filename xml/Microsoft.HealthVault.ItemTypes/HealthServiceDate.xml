@@ -1,10 +1,10 @@
 <Type Name="HealthServiceDate" FullName="Microsoft.HealthVault.ItemTypes.HealthServiceDate">
-  <TypeSignature Language="C#" Value="public class HealthServiceDate : Microsoft.HealthVault.ItemTypes.ItemBase, IComparable, IComparable&lt;DateTime&gt;, IComparable&lt;Microsoft.HealthVault.ItemTypes.HealthServiceDate&gt;" />
-  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HealthServiceDate extends Microsoft.HealthVault.ItemTypes.ItemBase implements class System.IComparable, class System.IComparable`1&lt;class Microsoft.HealthVault.ItemTypes.HealthServiceDate&gt;, class System.IComparable`1&lt;valuetype System.DateTime&gt;" />
+  <TypeSignature Language="C#" Value="public class HealthServiceDate : Microsoft.HealthVault.ItemTypes.ItemBase, IComparable, IComparable&lt;Microsoft.HealthVault.ItemTypes.HealthServiceDate&gt;, IComparable&lt;NodaTime.LocalDate&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HealthServiceDate extends Microsoft.HealthVault.ItemTypes.ItemBase implements class System.IComparable, class System.IComparable`1&lt;class Microsoft.HealthVault.ItemTypes.HealthServiceDate&gt;, class System.IComparable`1&lt;valuetype NodaTime.LocalDate&gt;" />
   <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.ItemTypes.HealthServiceDate" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.HealthVault</AssemblyName>
-    <AssemblyVersion>1.65.0.0</AssemblyVersion>
+    <AssemblyVersion>1.66.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Microsoft.HealthVault.ItemTypes.ItemBase</BaseTypeName>
@@ -17,7 +17,7 @@
       <InterfaceName>System.IComparable&lt;Microsoft.HealthVault.ItemTypes.HealthServiceDate&gt;</InterfaceName>
     </Interface>
     <Interface>
-      <InterfaceName>System.IComparable&lt;System.DateTime&gt;</InterfaceName>
+      <InterfaceName>System.IComparable&lt;NodaTime.LocalDate&gt;</InterfaceName>
     </Interface>
   </Interfaces>
   <Docs>
@@ -25,8 +25,7 @@
              Represents a HealthVault date.
              </summary>
     <remarks>
-             A HealthVault date differs from a <see cref="T:System.DateTime" /> in
-             that it pertains to dates only, not times. The year, month, and day
+             A HealthVault date pertains to dates only, not times. The year, month, and day
              must be specified.
              </remarks>
   </Docs>
@@ -37,7 +36,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.HealthServiceDate.#ctor" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -54,7 +53,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.HealthServiceDate.#ctor(System.Int32,System.Int32,System.Int32)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="year" Type="System.Int32" />
@@ -89,7 +88,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.HealthServiceDate.CompareTo(Microsoft.HealthVault.ItemTypes.HealthServiceDate)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -116,18 +115,18 @@
       </Docs>
     </Member>
     <Member MemberName="CompareTo">
-      <MemberSignature Language="C#" Value="public int CompareTo (DateTime other);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(valuetype System.DateTime other) cil managed" />
-      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.HealthServiceDate.CompareTo(System.DateTime)" />
+      <MemberSignature Language="C#" Value="public int CompareTo (NodaTime.LocalDate other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(valuetype NodaTime.LocalDate other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.HealthServiceDate.CompareTo(NodaTime.LocalDate)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="other" Type="System.DateTime" />
+        <Parameter Name="other" Type="NodaTime.LocalDate" />
       </Parameters>
       <Docs>
         <param name="other">
@@ -153,7 +152,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.HealthServiceDate.CompareTo(System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -179,7 +178,7 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">
              The <paramref name="obj" /> parameter is not a <see cref="T:Microsoft.HealthVault.ItemTypes.HealthServiceDate" />
-             or <see cref="T:System.DateTime" /> object.
+             or <see cref="T:NodaTime.LocalDate" /> object.
              </exception>
       </Docs>
     </Member>
@@ -189,7 +188,7 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.HealthServiceDate.Day" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -215,7 +214,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.HealthServiceDate.Equals(System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -249,7 +248,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.HealthServiceDate.GetHashCode" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -269,7 +268,7 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.HealthServiceDate.Month" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -295,7 +294,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.HealthServiceDate.op_Equality(Microsoft.HealthVault.ItemTypes.HealthServiceDate,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -333,7 +332,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.HealthServiceDate.op_GreaterThan(Microsoft.HealthVault.ItemTypes.HealthServiceDate,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -370,7 +369,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.HealthServiceDate.op_Inequality(Microsoft.HealthVault.ItemTypes.HealthServiceDate,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -407,7 +406,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.HealthServiceDate.op_LessThan(Microsoft.HealthVault.ItemTypes.HealthServiceDate,System.Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -444,7 +443,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.HealthServiceDate.ParseXml(System.Xml.XPath.XPathNavigator)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -471,7 +470,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.ItemTypes.HealthServiceDate.WriteXml(System.String,System.Xml.XmlWriter)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -505,7 +504,7 @@
       <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.ItemTypes.HealthServiceDate.Year" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>

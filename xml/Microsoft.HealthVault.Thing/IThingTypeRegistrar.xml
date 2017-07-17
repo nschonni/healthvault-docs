@@ -1,0 +1,147 @@
+<Type Name="IThingTypeRegistrar" FullName="Microsoft.HealthVault.Thing.IThingTypeRegistrar">
+  <TypeSignature Language="C#" Value="public interface IThingTypeRegistrar" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IThingTypeRegistrar" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.Thing.IThingTypeRegistrar" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.66.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Allows applications to register custom thing types
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="RegisterApplicationSpecificHandler">
+      <MemberSignature Language="C#" Value="public void RegisterApplicationSpecificHandler (string applicationId, string subtypeTag, Type applicationSpecificHandlerClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RegisterApplicationSpecificHandler(string applicationId, string subtypeTag, class System.Type applicationSpecificHandlerClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.IThingTypeRegistrar.RegisterApplicationSpecificHandler(System.String,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="applicationId" Type="System.String" />
+        <Parameter Name="subtypeTag" Type="System.String" />
+        <Parameter Name="applicationSpecificHandlerClass" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="applicationId">The application identifier for the application specific data that the specified type will handle.</param>
+        <param name="subtypeTag">The subtype tag for the application specific data that the specified type will handle.</param>
+        <param name="applicationSpecificHandlerClass">
+            The .NET type that handles parsing of the application specific data for the specified application ID and subtype tag. 
+            The applicationSpecificHandler class should extend ApplicationSpecific type
+            </param>
+        <summary>
+            Registers a class as the handler for the application specific health record thing type with the specific subtype tag.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisteredAppSpecificHandlers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;string,System.Collections.Generic.Dictionary&lt;string,Type&gt;&gt; RegisteredAppSpecificHandlers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;string, class System.Collections.Generic.Dictionary`2&lt;string, class System.Type&gt;&gt; RegisteredAppSpecificHandlers" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.IThingTypeRegistrar.RegisteredAppSpecificHandlers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.Collections.Generic.Dictionary&lt;System.String,System.Type&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Get a collection of all the registered application specific handlers
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisteredExtensionHandlers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;string,Type&gt; RegisteredExtensionHandlers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;string, class System.Type&gt; RegisteredExtensionHandlers" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.IThingTypeRegistrar.RegisteredExtensionHandlers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.Type&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Get a collection of all the registered extension type handlers
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisteredTypeHandlers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;Guid,Type&gt; RegisteredTypeHandlers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;valuetype System.Guid, class System.Type&gt; RegisteredTypeHandlers" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.IThingTypeRegistrar.RegisteredTypeHandlers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.Guid,System.Type&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Get a collection of all the default thing types known in the system
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisteredTypeHandlersByClassName">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;string,Guid&gt; RegisteredTypeHandlersByClassName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;string, valuetype System.Guid&gt; RegisteredTypeHandlersByClassName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.HealthVault.Thing.IThingTypeRegistrar.RegisteredTypeHandlersByClassName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.Guid&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Get a collection of all the default thing types with type as the key
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterExtensionHandler">
+      <MemberSignature Language="C#" Value="public void RegisterExtensionHandler (string extensionSource, Type thingExtensionClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RegisterExtensionHandler(string extensionSource, class System.Type thingExtensionClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Thing.IThingTypeRegistrar.RegisterExtensionHandler(System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extensionSource" Type="System.String" />
+        <Parameter Name="thingExtensionClass" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="extensionSource">The unique identifier for the source of the item extension</param>
+        <param name="thingExtensionClass">The class that implements the thing extension. It must be public, derive from ThingExtension, and have a default constructor.</param>
+        <summary>
+            Registers a handler for thing extension data
+            </summary>
+        <remarks>Allows overwriting the existing deserializer</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
