@@ -470,7 +470,7 @@ For instance, a weight-value type is used for the weight thing type as well as t
 > city|string|1|1|The city portion of the address.|
 > state|string|0|1|The state or province portion of the address.|
 > postcode|string|1|1|The postal code portion of the address.|The postal code should adhere to the standard for the locale in which the address resides.
-> country|string|1|1|The country portion of the address.|This should be a string representation of the country as defined by the user. It is not used for processing so it doesn't have to be an ISO-3166 code. For example, a person could refer to the United States of America as "US", "USA", "United States", or "United States of America".
+> country|string|1|1|The country/region portion of the address.|This should be a string representation of the country/region as defined by the user. It is not used for processing so it doesn't have to be an ISO-3166 code. For example, a person could refer to the United States of America as "US", "USA", "United States", or "United States of America".
 > county|string|0|1|The county portion of the address.|The county should adhere to the standard for the locale in which the address resides.
 >
 >
