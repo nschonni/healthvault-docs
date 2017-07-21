@@ -10,7 +10,7 @@ description: Walkthrough of how to create a certificate for HealthVault
 
 # Creating a certificate (public/private key pair) for HealthVault
 
-A HealthVault application uses a private key to encrypt the first handshake message that it sends to the platform service.  HealthVault then uses a public key to verify the sender.  The public key must be registered with HealthVault through the [Application Configuration Center](https://config.healthvault-ppe.com).  The private key is securely stored by the application and is never shared with HealthVault.
+A HealthVault application uses a private key to encrypt the first handshake message that it sends to the platform service.  HealthVault then uses a public key to verify the sender.  The public key must be registered with HealthVault through the [Application Configuration Center](https://config.healthvault-ppe.com).  The private key is securely stored by the application and is never shared with HealthVault.
 
 Best practices
 --------------
@@ -34,20 +34,20 @@ To create the private/public key pair:
     2.  Paste the following content into PowerShell, replacing “Insert your ApplicationID here” with the ApplicationID you received from HealthVault’s Application Configuration Center.
 
     ```powershell
-    function Create-HealthVaultCert([guid]$applicationID) {
-        $cert = New-SelfSignedCertificate -DnsName "WildcatApp-$applicationID" -CertStoreLocation "cert:\\LocalMachine\My" -HashAlgorithm "SHA256" -Provider 'Microsoft Enhanced RSA and AES Cryptographic Provider'    
-        Export-Certificate -Cert $cert -FilePath $env:USERPROFILE\Downloads\${applicationID}.cer    
+    function Create-HealthVaultCert([guid]$applicationID) {
+        $cert = New-SelfSignedCertificate -DnsName "WildcatApp-$applicationID" -CertStoreLocation "cert:\\LocalMachine\My" -HashAlgorithm "SHA256" -Provider 'Microsoft Enhanced RSA and AES Cryptographic Provider'
+        Export-Certificate -Cert $cert -FilePath $env:USERPROFILE\Downloads\${applicationID}.cer
         Set-ReadPermissionsForCert $cert
     }
-    function Set-ReadPermissionsForCert([System.Security.Cryptography.X509Certificates.X509Certificate]$Cert, [string]$Username = $env:USERNAME) {
-        $keyPath = "C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys\"    
+    function Set-ReadPermissionsForCert([System.Security.Cryptography.X509Certificates.X509Certificate]$Cert, [string]$Username = $env:USERNAME) {
+        $keyPath = "C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys\"
         $fullPath =$keyPath+$Cert.PrivateKey.CspKeyContainerInfo.UniqueKeyContainerName
-        $acl = Get-Acl -Path $fullPath    
-        $permission = $Username,"Read","Allow"    
-        $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule $permission    
-        $acl.AddAccessRule($accessRule)     
+        $acl = Get-Acl -Path $fullPath
+        $permission = $Username,"Read","Allow"
+        $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule $permission
+        $acl.AddAccessRule($accessRule)
         Set-Acl $fullPath $acl
-    } 
+    }
     #Edit the string below to specify the appropriate ApplicationID you received from the Application Configuration Center
     Create-HealthVaultCert("Insert Your ApplicationID Here")
     ```
