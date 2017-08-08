@@ -16,7 +16,8 @@
 ## [Invite Patients](/healthvault/getting-started/invite-patients)
 
 # Scenarios
-## [Remote monitoring](/healthvault/scenarios/remote-monitoring)
+## [Remote Monitoring](/healthvault/scenarios/remote-monitoring)
+### [Remote Monitoring Preview APIs](/healthvault/scenarios/remote-monitoring-preview-apis)
 ## [Meaningful Use](/healthvault/scenarios/meaningful-use)
 ## [Emergency Preparedness](/healthvault/scenarios/emergency-preparedness)
 
@@ -109,4 +110,4 @@
 
 # Reference
 ## [DataTypes](datatypes/toc.md)
-## [Vocabularies](vocabularies/toc.md)
+## [Vocabularies](vocabularies/toc.md) 

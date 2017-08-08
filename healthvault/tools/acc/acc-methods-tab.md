@@ -30,6 +30,6 @@ Some of the optional methods may require additional review by the HealthVault te
 * **Application requires access to Eventing methods** Optional. HealthVault Eventing is a framework that enables HealthVault applications to subscribe to and receive notification of selected events that occur within the HealthVault platform. This method selection will enable your HealthVault application to consume the HealthVault evening feature. For more information about eventing, see [HealthVault eventing](/healthvault/concepts/xml-api/healthvault-eventing).
 
 * **Application requires access to send e-mail through HealthVault** Optional. This method allows your application to send email to HealthVault account owners through the HealthVault platform. When this is selected, the Domain sending e-mail is required. This item may require additional review.
-* **Application requires access to REST APIs** Optional. This allows your application to call the REST endpoints described in the [HealthVault REST API](/healthvault/apis/v1.0-preview)
+* **Application requires access to REST APIs** Optional. This allows your application to call the REST endpoints described in the [HealthVault REST API](https://docs.microsoft.com/en-us/rest/healthvault/)
 
 * **Application requires access to onboarding APIs** Optional. This allows your application to send invitation messages to end-users via the Onboarding API.

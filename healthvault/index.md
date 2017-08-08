@@ -345,7 +345,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="/healthvault/apis/v1.0-preview">Reference</a>
+                                                    <a href="https://docs.microsoft.com/rest/healthvault/">Reference</a>
 
                                                 </h3>
                                             </div>
