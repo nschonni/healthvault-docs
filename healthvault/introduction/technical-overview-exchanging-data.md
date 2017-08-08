@@ -22,7 +22,7 @@ In the .NET SDK this functionality can be found in the following classes:
 -   [Microsoft.Health.HealthRecordSearcher](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.healthrecordsearcher) class for more advanced data querying capabilities.
 
 HealthVault also offers a REST API for certain scenarios. More information about the HealthVault REST API is available here: 
-- [HealthVault REST API](/healthvault/apis/v1.0-preview)
+- [HealthVault REST API](https://docs.microsoft.com/en-us/rest/healthvault/)
 
 Polling for changes
 -------------------
