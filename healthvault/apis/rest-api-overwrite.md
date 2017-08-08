@@ -19,11 +19,6 @@ Request Headers:
 x-ms-version: 1.0-preview
 ```
 
-### API Versions
-* [1.0-rc](/healthvault/apis/v1.0-preview) (*recommended*)
-* [2.0-preview](/healthvault/apis/2.0-preview)
-* [1.0-preview](/healthvault/apis/v1.0-preview) (deprecated)
-
 > [!NOTE] 
 > API versions marked -preview or -rc indicate preview versions of the API. Breaking changes may occur on preview versions of the API. 
 
@@ -51,39 +46,6 @@ Request Headers:
 x-ms-version: 1.0-preview
 ```
 
-### API Versions
-* [1.0-rc](/healthvault/apis/1.0-rc) (*recommended*)
-* [2.0-preview](/healthvault/apis/2.0-preview)
-* [1.0-preview](/healthvault/apis/v1.0-preview) (deprecated)
-
 > [!NOTE] 
 > API versions marked -preview or -rc indicate preview versions of the API. Breaking changes may occur on preview versions of the API. 
 
----
-uid: data.ppe.microsofthealth.net/HealthVault REST API/1.0-rc
----
-
-#HealthVault REST API
-
-HealthVault offers a REST API for a select set of scenarios. If your scenario is not covered in the documentation below, you may need to use the [HealthVault XML API](/healthvault/concepts/xml-api/) and an appropriate SDK. 
-
-## v1.0-rc Scenarios
-* **Onboarding** - Invite patients to join onboard into your Action Plans
-* **Action Plans** - Administrate Action Plans for onboarded patients and monitor adherence
-* **Goals** - Set health goals for onboarded patients
-
-## API Versions
-HealthVault requires that clients specify the version of the REST API that they are retrieving using the *x-ms-version* header. For example:
-
-```
-Request Headers:
-x-ms-version: 1.0-preview
-```
-
-### API Versions
-* [1.0-rc](/healthvault/apis/v1.0-preview) (*recommended*)
-* [2.0-preview](/healthvault/apis/2.0-preview)
-* [1.0-preview](/healthvault/apis/v1.0-preview) (deprecated)
-
-> [!NOTE] 
-> API versions marked -preview or -rc indicate preview versions of the API. Breaking changes may occur on preview versions of the API. 
