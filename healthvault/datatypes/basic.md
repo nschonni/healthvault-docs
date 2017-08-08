@@ -44,7 +44,7 @@ Name|Type|Min occurs|Max occurs|Summary|Remarks
 gender|[gender](#gender)|0|1||
 birthyear|[birthyear](#birthyear)|0|1||
 country|[country](#country)|0|1||
-postcode|string|0|1|The country specific postal code.|
+postcode|string|0|1|The country/region specific postal code.|
 city|string|0|1|The city of residence.|
 state|string|0|1|The state or province of residence.|
 firstdow|[firstdow](#firstdow)|0|1||
@@ -102,7 +102,7 @@ language|[language](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#language)|0|unb
 >
 > ### country
 >
-> The country of residence as an ISO-3166 two character code.
+> The country/region of residence as an ISO-3166 two character code.
 >
 > ### Restriction
 >

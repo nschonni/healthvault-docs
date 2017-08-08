@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Framework Name="healthvaultweb-1.65.20615.4-preview">
+  <Namespace Name="Microsoft.HealthVault.Web.Attributes">
+    <Type Name="Microsoft.HealthVault.Web.Attributes.RequireSignInAttribute" Id="T:Microsoft.HealthVault.Web.Attributes.RequireSignInAttribute">
+      <Member Id="M:Microsoft.HealthVault.Web.Attributes.RequireSignInAttribute.#ctor" />
+      <Member Id="M:Microsoft.HealthVault.Web.Attributes.RequireSignInAttribute.HandleUnauthorizedRequest(System.Web.Mvc.AuthorizationContext)" />
+      <Member Id="M:Microsoft.HealthVault.Web.Attributes.RequireSignInAttribute.OnException(System.Web.Mvc.ExceptionContext)" />
+    </Type>
+    <Type Name="Microsoft.HealthVault.Web.Attributes.SignOutAttribute" Id="T:Microsoft.HealthVault.Web.Attributes.SignOutAttribute">
+      <Member Id="M:Microsoft.HealthVault.Web.Attributes.SignOutAttribute.#ctor" />
+      <Member Id="M:Microsoft.HealthVault.Web.Attributes.SignOutAttribute.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)" />
+    </Type>
+  </Namespace>
+  <Namespace Name="Microsoft.HealthVault.Web">
+    <Type Name="Microsoft.HealthVault.Web.AuthenticationModule" Id="T:Microsoft.HealthVault.Web.AuthenticationModule">
+      <Member Id="M:Microsoft.HealthVault.Web.AuthenticationModule.#ctor" />
+      <Member Id="M:Microsoft.HealthVault.Web.AuthenticationModule.Dispose" />
+      <Member Id="M:Microsoft.HealthVault.Web.AuthenticationModule.Init(System.Web.HttpApplication)" />
+    </Type>
+    <Type Name="Microsoft.HealthVault.Web.WebHealthVaultFactory" Id="T:Microsoft.HealthVault.Web.WebHealthVaultFactory">
+      <Member Id="M:Microsoft.HealthVault.Web.WebHealthVaultFactory.#ctor" />
+      <Member Id="M:Microsoft.HealthVault.Web.WebHealthVaultFactory.CreateOfflineConnectionAsync(System.String,System.String,Microsoft.HealthVault.Connection.SessionCredential)" />
+      <Member Id="M:Microsoft.HealthVault.Web.WebHealthVaultFactory.CreateWebConnectionAsync" />
+    </Type>
+  </Namespace>
+  <Namespace Name="Microsoft.HealthVault.Web.Configuration">
+    <Type Name="Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration" Id="T:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration">
+      <Member Id="F:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.LogOnRequired" />
+      <Member Id="F:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.NoLogOnRequired" />
+      <Member Id="M:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.#ctor" />
+      <Member Id="P:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.ActionUrlRedirectOverride" />
+      <Member Id="P:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.AllowedRedirectSites" />
+      <Member Id="P:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.ApplicationCertificateFileName" />
+      <Member Id="P:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.ApplicationCertificatePassword" />
+      <Member Id="P:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.CertSubject" />
+      <Member Id="P:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.CookieDomain" />
+      <Member Id="P:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.CookieEncryptionKey" />
+      <Member Id="P:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.CookieName" />
+      <Member Id="P:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.CookiePath" />
+      <Member Id="P:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.CookieTimeoutDuration" />
+      <Member Id="P:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.IsSignupCodeRequired" />
+      <Member Id="P:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.UseAspSession" />
+      <Member Id="P:Microsoft.HealthVault.Web.Configuration.WebHealthVaultConfiguration.UseSslForSecurity" />
+    </Type>
+  </Namespace>
+  <Namespace Name="Microsoft.HealthVault.Web.Connection">
+    <Type Name="Microsoft.HealthVault.Web.Connection.IOfflineHealthVaultConnection" Id="T:Microsoft.HealthVault.Web.Connection.IOfflineHealthVaultConnection">
+      <Member Id="P:Microsoft.HealthVault.Web.Connection.IOfflineHealthVaultConnection.OfflinePersonId" />
+    </Type>
+    <Type Name="Microsoft.HealthVault.Web.Connection.IWebHealthVaultConnection" Id="T:Microsoft.HealthVault.Web.Connection.IWebHealthVaultConnection">
+      <Member Id="P:Microsoft.HealthVault.Web.Connection.IWebHealthVaultConnection.UserAuthToken" />
+    </Type>
+  </Namespace>
+  <Namespace Name="Microsoft.HealthVault.Web.Controllers">
+    <Type Name="Microsoft.HealthVault.Web.Controllers.HealthVaultActionRedirectController" Id="T:Microsoft.HealthVault.Web.Controllers.HealthVaultActionRedirectController">
+      <Member Id="M:Microsoft.HealthVault.Web.Controllers.HealthVaultActionRedirectController.#ctor" />
+      <Member Id="M:Microsoft.HealthVault.Web.Controllers.HealthVaultActionRedirectController.Index(System.String,System.String)" />
+    </Type>
+  </Namespace>
+  <Namespace Name="Microsoft.HealthVault.Web.Exceptions">
+    <Type Name="Microsoft.HealthVault.Web.Exceptions.UserNotFoundException" Id="T:Microsoft.HealthVault.Web.Exceptions.UserNotFoundException">
+      <Member Id="M:Microsoft.HealthVault.Web.Exceptions.UserNotFoundException.#ctor(System.String)" />
+      <Member Id="M:Microsoft.HealthVault.Web.Exceptions.UserNotFoundException.#ctor(System.String,System.Exception)" />
+    </Type>
+  </Namespace>
+</Framework>

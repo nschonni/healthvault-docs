@@ -4,7 +4,7 @@
   <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.Clients.IVocabularyClient" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.HealthVault</AssemblyName>
-    <AssemblyVersion>1.65.0.0</AssemblyVersion>
+    <AssemblyVersion>1.66.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces>
     <Interface>
@@ -24,7 +24,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IVocabularyClient.GetVocabulariesAsync(System.Collections.Generic.IList{Microsoft.HealthVault.Vocabulary.VocabularyKey},System.Boolean)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Collections.Generic.IList&lt;Microsoft.HealthVault.Vocabulary.Vocabulary&gt;&gt;</ReturnType>
@@ -57,16 +57,16 @@
         <exception cref="T:Microsoft.HealthVault.Exceptions.HealthServiceException">
             There is an error in the server request.
             <br></br>
-            -Or- 
+            -Or-
             <br></br>
             One of the requested vocabularies is not found on the server.
             <br></br>
-            -Or- 
+            -Or-
             <br></br>
-            One of the requested vocabularies does not contain representations 
+            One of the requested vocabularies does not contain representations
             for its items for the specified culture
             <br></br>
-            -Or- 
+            -Or-
             <br></br>
             There is an error loading the vocabularies.
             </exception>
@@ -78,7 +78,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IVocabularyClient.GetVocabularyAsync(Microsoft.HealthVault.Vocabulary.VocabularyKey,System.Boolean)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.HealthVault.Vocabulary.Vocabulary&gt;</ReturnType>
@@ -109,16 +109,16 @@
         <exception cref="T:Microsoft.HealthVault.Exceptions.HealthServiceException">
             There is an error in the server request.
             <br></br>
-            -Or- 
+            -Or-
             <br></br>
             The requested vocabulary is not found on the server.
             <br></br>
-            -Or- 
+            -Or-
             <br></br>
-            The requested vocabulary does not contain representations 
+            The requested vocabulary does not contain representations
             for its items for the specified culture
             <br></br>
-            -Or- 
+            -Or-
             <br></br>
             There is an error loading the vocabulary.
             </exception>
@@ -130,7 +130,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IVocabularyClient.GetVocabularyKeysAsync" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Collections.Generic.IReadOnlyCollection&lt;Microsoft.HealthVault.Vocabulary.VocabularyKey&gt;&gt;</ReturnType>
@@ -138,12 +138,12 @@
       <Parameters />
       <Docs>
         <summary>
-            Retrieves a collection of key information for identifying and 
-            describing the vocabularies in the system.
-            </summary>
+             Retrieves a collection of key information for identifying and
+             describing the vocabularies in the system.
+             </summary>
         <returns>
-            A collection of keys identifying the vocabularies in the system.
-            </returns>
+             A collection of keys identifying the vocabularies in the system.
+             </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -153,7 +153,7 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IVocabularyClient.SearchVocabularyAsync(System.String,Microsoft.HealthVault.Vocabulary.VocabularySearchType,System.Nullable{System.Int32})" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
-        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+        <AssemblyVersion>1.66.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Collections.ObjectModel.ReadOnlyCollection&lt;Microsoft.HealthVault.Vocabulary.VocabularyKey&gt;&gt;</ReturnType>
@@ -165,52 +165,52 @@
       </Parameters>
       <Docs>
         <param name="searchValue">
-                The search string to use.
-            </param>
+                 The search string to use.
+             </param>
         <param name="searchType">
-                The type of search to perform.
-            </param>
+                 The type of search to perform.
+             </param>
         <param name="maxResults">
-                The maximum number of results to return. If null, all matching results 
-                are returned, up to a maximum number defined by the service config 
-                value with key maxResultsPerVocabularyRetrieval.
-            </param>
+                 The maximum number of results to return. If null, all matching results
+                 are returned, up to a maximum number defined by the service config
+                 value with key maxResultsPerVocabularyRetrieval.
+             </param>
         <summary>
-            Searches a specific vocabulary and retrieves the matching vocabulary items.
-            </summary>
+             Searches a specific vocabulary and retrieves the matching vocabulary items.
+             </summary>
         <returns>
-            A <see cref="T:Microsoft.HealthVault.Vocabulary.VocabularyItemCollection" /> populated with entries matching 
-            the search criteria.
-            </returns>
+             A <see cref="T:Microsoft.HealthVault.Vocabulary.VocabularyItemCollection" /> populated with entries matching
+             the search criteria.
+             </returns>
         <remarks>
-            This method does text search matching of display text and abbreviation text
-            for the culture defined by the <see cref="!:HealthServiceConnection.Culture" />. 
-            The <paramref name="searchValue" /> is a string of characters in the specified 
-            culture. 
-            </remarks>
+             This method does text search matching of display text and abbreviation text
+             for the culture defined by the <see cref="!:HealthServiceConnection.Culture" />.
+             The <paramref name="searchValue" /> is a string of characters in the specified
+             culture.
+             </remarks>
         <exception cref="T:System.ArgumentException">
-            If <paramref name="searchValue" /> is <b>null</b> or empty or greater 
-            than <b>255</b> characters.
-            <br></br>
-            -Or-
-            <br></br>
-            if <paramref name="searchType" /> is not a known 
-            <see cref="T:Microsoft.HealthVault.Vocabulary.VocabularySearchType" /> value.        
-            <br></br>
-            -Or-
-            <br></br>
-            when <paramref name="maxResults" /> is defined but has a value less than 1.        
-            </exception>
+             If <paramref name="searchValue" /> is <b>null</b> or empty or greater
+             than <b>255</b> characters.
+             <br></br>
+             -Or-
+             <br></br>
+             if <paramref name="searchType" /> is not a known
+             <see cref="T:Microsoft.HealthVault.Vocabulary.VocabularySearchType" /> value.
+             <br></br>
+             -Or-
+             <br></br>
+             when <paramref name="maxResults" /> is defined but has a value less than 1.
+             </exception>
         <exception cref="T:Microsoft.HealthVault.Exceptions.HealthServiceException">
-            There is an error in the server request.         
-            <br></br>
-            -Or-        
-            <br></br>
-            The requested vocabulary is not found on the server.
-            <br></br>
-            -Or- 
-            The requested search culture is not supported. 
-            </exception>
+             There is an error in the server request.
+             <br></br>
+             -Or-
+             <br></br>
+             The requested vocabulary is not found on the server.
+             <br></br>
+             -Or-
+             The requested search culture is not supported.
+             </exception>
       </Docs>
     </Member>
   </Members>
