@@ -46,11 +46,6 @@ Request Headers:
 x-ms-version: 1.0-preview
 ```
 
-### API Versions
-* [1.0-rc](/healthvault/apis/1.0-rc) (*recommended*)
-* [2.0-preview](/healthvault/apis/2.0-preview)
-* [1.0-preview](/healthvault/apis/v1.0-preview) (deprecated)
-
 > [!NOTE] 
 > API versions marked -preview or -rc indicate preview versions of the API. Breaking changes may occur on preview versions of the API. 
 
