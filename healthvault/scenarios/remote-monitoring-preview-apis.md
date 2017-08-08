@@ -52,3 +52,6 @@ The return will consist of two snapshots:
 -   Snapshot 2 will return 6 schedules (Su, M, Tu, W, Th, F), 3 associated occurrences (Su, M, Tu) and completion metrics.
 
 For more information on consuming the API, please see the [HealthVault REST API](https://go.microsoft.com/fwlink/?linkid=839407) documentation.
+
+### Allowing users to manually track occurrences
+The manual tracking API allows creation of an interface for users to manually track a task occurrence at a specific date and time. It also provides the ability to update or delete an occurrence. For more information, please see the [HealthVault REST API](https://go.microsoft.com/fwlink/?linkid=839407) documentation.
