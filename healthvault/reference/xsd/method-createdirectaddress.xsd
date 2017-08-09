@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema xmlns:wc-types="urn:com.microsoft.wc.types" 
+    xmlns="http://www.w3.org/2001/XMLSchema" 
+    xmlns:wc-direct="urn:com.microsoft.wc.direct"
+    xmlns:this="urn:com.microsoft.wc.methods.CreateDirectAddress" 
+    targetNamespace="urn:com.microsoft.wc.methods.CreateDirectAddress">
+	<!--
+
+        METHOD-CREATEDIRECTADDRESS.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for CreateDirectAddress method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.direct"
+        schemaLocation="direct.xsd" />
+
+	<annotation>
+		<documentation>
+			<summary>
+                Create a new direct address for the record.
+            </summary>
+			<errors>
+                <error id="DUPLICATE_DIRECT_ADDRESS">
+                    If the direct address is already in use.
+                </error>
+                <error id="INVALID_DIRECT_ADDRESS">
+                    If the direct address does not use a valid domain.
+                </error>
+                <error id="MAX_DIRECT_ADDRESSES_EXCEEDED">
+                    If the number of allowable addresses for the record
+                    has been exceeded.
+                </error>
+			</errors>
+			<method-visibility>Private</method-visibility>
+		</documentation>
+	</annotation>
+
+	<!-- CreateDirectAddress - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+	<element name="info">
+		<complexType>
+			<annotation>
+				<documentation>
+					<summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+					<remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+				</documentation>
+			</annotation>
+			<sequence>
+                <element name="direct-address" type="wc-direct:DirectAddress"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

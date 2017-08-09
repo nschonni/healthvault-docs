@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.CreateAccountWithTicket"
+    xmlns:this="urn:com.microsoft.wc.methods.CreateAccountWithTicket"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-CREATEACCOUNTWITHTICKET.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for CreateAccountWithTicket method
+
+    -->
+
+    <import
+          namespace="urn:com.microsoft.wc.types"
+          schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Create a HealthVault account utilizing and MSA ticket for 
+                user authentication.
+            </summary>
+            <method-visibility>Private</method-visibility>
+            <version>1</version>
+            <errors>
+                <error id="INVALID_AGE">
+                    If the user's age violates the age policy of this instance.
+                </error>
+                <error id="DUPLICATE_CREDENTIAL">
+                    If an account already exists for the user.
+                </error>
+                <error id="ACCESS_DENIED">
+                    If the ticket is not valid.
+                </error>
+            </errors>
+        </documentation>
+    </annotation>
+
+    <complexType name="PersonInfo">
+        <annotation>
+            <documentation>
+                <summary>
+                    The account information for the new user.
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="name" type="wc-types:string255">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The full name of the user.
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="record-display-name" 
+                     type="wc-types:string255"
+                     minOccurs="0"> 
+                <annotation>
+                    <documentation>
+                        <summary>
+                            This ui display name for the user's  self record.
+                        </summary>
+
+                        <remarks>
+                            This field is usually set to the user's first name.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="birthdate" type="dateTime">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The new user's date of birth.
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="contact-email" type="wc-types:EmailAddress">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The new user's contact email.
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="is-newsletter-subscriber" type="boolean">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Flag indicating whether or not to subscribe the new user
+                            to the newsletter.
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>          
+
+            <element name="preferred-culture" type="wc-types:Culture">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The user's preferred culture for use with
+                            comparisons, collation, currency, dates, etc.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="preferred-uiculture" type="wc-types:Culture"
+                     minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The user's preferred UI culture for use with
+                            selecting the language that the application should
+                            use when showing text and images to the user.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="location"
+                     type="wc-types:Location"
+                     minOccurs="0"
+                     maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The location of the person to be used as a default when creating new records.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>            
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="msa-ticket" type="wc-types:string2048nw">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The authentication ticket created by Microsoft Account (MSA).
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="person-info" type="this:PersonInfo">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The new user's account information.
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>
+

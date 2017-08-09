@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.RemoveEntityManager"
+    xmlns:this="urn:com.microsoft.wc.methods.RemoveEntityManager"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+  <!--
+
+        METHOD-REMOVEEntityMANAGER.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for RemoveEntityManager method
+
+    -->
+
+  <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd" />
+
+  <annotation>
+    <documentation>
+      <summary>
+        Remove a person from the list of managers who can manage the specified entity.
+      </summary>
+      <remarks>
+        This method is intended for administration purposes only and should not be granted
+        to partner applications.
+      </remarks>
+      <method-visibility>Private</method-visibility>
+    </documentation>
+  </annotation>
+
+  <!-- RemoveEntityManager - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <element name="info">
+    <complexType>
+      <annotation>
+        <documentation>
+          <summary>
+            The element of the request that contains the method
+            specific parameters.
+          </summary>
+          <remarks>
+            All requests contain the info element to pass parameters
+            that are specific to each method. If the method does not
+            define an info element, the method does not take any
+            parameters.
+          </remarks>
+        </documentation>
+      </annotation>
+      <sequence>
+        <choice>
+          <element name="person-id" type="wc-types:guid">
+            <annotation>
+              <documentation>
+                <summary>
+                  The real person id to remove from the list of managers that can manage the application.
+                </summary>
+              </documentation>
+            </annotation>
+          </element>
+          <element name="email-address" type="wc-types:EmailAddress">
+            <annotation>
+              <documentation>
+                <summary>
+                  E-mail address to send invite to.
+                </summary>
+              </documentation>
+            </annotation>
+          </element>
+        </choice>
+        <element name="entity-id" type="wc-types:guid">
+          <annotation>
+            <documentation>
+              <summary>
+                The id of the entity.
+              </summary>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="entity-type" type="int" minOccurs="1">
+          <annotation>
+            <documentation>
+              <summary>
+                The entity type this application id is suppose to be for.
+              </summary>
+            </documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.AddAppLocationsPrivileged"
+    xmlns:wc-location="urn:com.microsoft.wc.location"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-ADDAPPLOCATIONSPRIVILEGED.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for AddAppLocationsPrivileged method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.location"
+        schemaLocation="location.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Adds supported location info for an application.   
+            </summary>
+            <remarks>
+            </remarks>
+            <method-visibility>Private</method-visibility>
+            <version>1</version>
+            <errors>
+                <error id="INVALID_XML">
+                    If valid application-id are not provided.
+                </error>
+                <error id="INVALID_APP">
+                    If an application is not active or it doesn't exist.
+                </error>
+            </errors>
+        </documentation>
+    </annotation>
+
+    <!-- AddAppLocationsPrivileged - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+          <sequence>
+            <element name="app-supported-record-locations" type="wc-location:AppSupportedRecordLocations"
+                     minOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The list of all the record locations supported by an application.
+                        </summary>
+                    </documentation>
+                </annotation>  
+            </element>
+          </sequence>
+        </complexType>
+    </element>
+
+</schema>   
+        

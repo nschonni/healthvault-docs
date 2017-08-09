@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetAppLocationsPrivileged"
+    xmlns:this="urn:com.microsoft.wc.methods.GetAppLocationsPrivileged"
+    xmlns:wc-location="urn:com.microsoft.wc.location"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETAPPLOCATIONSPRIVILEGED.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetAppLocationsPrivileged method
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.location"
+        schemaLocation="location.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Retrieves the complete set of application supported record
+                location info for the specified application(s).
+            </summary>
+            <remarks>
+                This method is intended for administration purposes only and should not be granted
+                to partner applications.
+            </remarks>
+            <method-visibility>Private</method-visibility>
+            <version>1</version>
+            <errors>
+                <error id="INVALID_APP">
+                    If an application doesn't exist.
+                </error>
+            </errors>
+        </documentation>
+    </annotation>
+
+    <!-- GetAppLocationsPrivileged -->
+
+    <complexType name="AppIdList">
+        <annotation>
+            <documentation>
+                <summary>
+                    The list of app Ids.
+                </summary>
+            </documentation>
+        </annotation>
+        <choice>
+            <element name="app-id" type="wc-types:guid"
+                     minOccurs="1" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The list of application IDs that are used as search criteria.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="app-identifier">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Identifies an application by ID and migration source instance.
+                        </summary>
+                    </documentation>
+                </annotation>
+                <complexType>
+                    <sequence>
+                        <element name="app-id" type="wc-types:guid">
+                            <annotation>
+                                <documentation>
+                                    <summary>
+                                        The list of application IDs that are used as search criteria.
+                                    </summary>
+                                </documentation>
+                            </annotation>
+                        </element>
+                        <element name="migration-source-instance" type="wc-types:string255nw" minOccurs="0" maxOccurs="1">
+                            <annotation>
+                                <documentation>
+                                    <summary>
+                                        The instance specific configuration to request the application supported locations for.
+                                    </summary>
+                                </documentation>
+                            </annotation>
+                        </element>
+                    </sequence>
+                </complexType>
+            </element>
+        </choice>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="app-ids" type="this:AppIdList">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The list of application IDs that are used as search criteria to return
+                                all the application supported record locations.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

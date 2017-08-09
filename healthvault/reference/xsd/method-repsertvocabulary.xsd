@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.RepsertVocabulary"
+    xmlns:this="urn:com.microsoft.wc.methods.RepsertVocabulary"
+    xmlns:vocab="urn:com.microsoft.wc.vocab-config" 
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-RepsertVocabulary.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for RepsertVocabulary method response
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.vocab-config"
+        schemaLocation="vocab-config.xsd" />
+    
+    <annotation>
+        <documentation>
+            <summary>
+                This method adds or replaces vocabulary information in the HealthVault service.
+            </summary>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+
+    <!-- RepsertVocabulary - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="culture-code" type="wc-types:string10nw">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The culture code of the vocabulary being added or updated.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="vocab" type="vocab:Vocab">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The vocabulary definition.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

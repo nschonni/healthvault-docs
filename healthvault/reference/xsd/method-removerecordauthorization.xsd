@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.RemoveRecordAuthorization"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-REMOVERECORDAUTHORIZATION.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for RemoveRecordAuthorization method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- - - - - - - - - - - RemoveRecordAuthorization - - - - - - - - - - - -->
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <choice>
+                    <!-- custodians: provide person-id where available,
+                    To give up access to the record, set the person-id to the
+                    self person id. If this custodian is the last
+                    custodian for this record, then the call will fail with
+                    CANNOT_REMOVE_LAST_CUSTODIAN.
+                    non-custodians: To give up access to the record, set the 
+                    person-id to the self person id. -->
+                    <element name="person-id" type="wc-types:guid" >
+                        <annotation>
+                            <documentation>
+                                <summary>
+
+                                </summary>
+
+                                <remarks>
+
+                                </remarks>
+                            </documentation>
+                        </annotation>
+                    </element>
+
+                    <!-- custodians only: provide email-address when you don't 
+                    have person-id coz the person hasn't accepted the auth, 
+                    but you want to remove it anyway -->
+                    <element name="email-address" type="wc-types:EmailAddress" >
+                        <annotation>
+                            <documentation>
+                                <summary>
+
+                                </summary>
+
+                                <remarks>
+
+                                </remarks>
+                            </documentation>
+                        </annotation>
+                    </element>
+
+                    <!-- custodians and non-custodians: provide application-id
+                    when you want remove the application's access to the record.
+                    -->
+                    <element name="application-id" type="wc-types:guid" >
+                        <annotation>
+                            <documentation>
+                                <summary>
+
+                                </summary>
+
+                                <remarks>
+
+                                </remarks>
+                            </documentation>
+                        </annotation>
+                    </element>
+
+                </choice>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

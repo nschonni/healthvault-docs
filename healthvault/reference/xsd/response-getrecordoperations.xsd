@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2008 (http://www.altova.com) by Eric Gunnerson (MICROSOFT CORPORATION) -->
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema 
+    xmlns:wc-types="urn:com.microsoft.wc.types" 
+    xmlns:wc-thing="urn:com.microsoft.wc.thing" 
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetRecordOperations"
+    xmlns="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetRecordOperations">
+
+    <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd"/>
+    <import namespace="urn:com.microsoft.wc.thing" schemaLocation="thing.xsd"/>
+    
+    <annotation>
+        <documentation>
+            <summary>
+            </summary>
+            <method-visibility>Public</method-visibility>
+            <errors>
+
+            </errors>
+        </documentation>
+    </annotation>
+    
+    <!-- GetRecordOperations - - - - - -  - - - - - - - - - - - - - - -->
+
+    <simpleType name="Operation">
+        <annotation>
+            <documentation>
+                <summary>
+                    The type of operation that occurred on the record.
+                </summary>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Create">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The operation created the thing.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Update">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The operation updated the thing or restored a deleted thing.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Delete">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The operation deleted or permanently deleted the thing.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    
+    <complexType name="RecordOperation">
+        <annotation>
+            <documentation>
+                <summary>
+                    An operation that occurred on the record.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="operation" type="this:Operation">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The type of operation that occurred on the record.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="sequence-number" type="long">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The sequence number of the operation on the record.
+                        </summary>
+                        <remarks>
+                            The sequence number is a record relative number that increases with
+                            each operation that is performed on the record. Multiple things may be
+                            operated upon in the same operation so multiple things may have the same
+                            sequence operation number.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="thing-id" type="wc-thing:ThingKey">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The identifier of the thing on which the operation occurred.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="type-id" type="wc-types:guid">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The type identifier for the thing that was operated upon.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="eff-date" type="dateTime" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The effective date of the thing.
+                        </summary>
+                        <remarks>
+                            The effective date is used to indicate the date that the thing occurred on. For
+                            example, the date exercise occurred on or a medication was taken.
+                            
+                            The effective date will not be present for deleted things.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="updated-end-date" type="dateTime" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Updated end date of the thing instance.
+                        </summary>
+                        <remarks>
+                            Updated end date is used to end the relevancy of a Thing. For example,
+                            end date on a condition will mean that the condition is no longer relevant
+                            for the user after that date. Some types we can automatically populate
+                            updated end date from type specific data in data-xml. For such types, if updated
+                            end date is not specified on thing xml, it will be derived from data-xml element
+                            but if present its value will be always used.
+                            Any date greater than '9999-12-31T00:00:00Z' will clear the updated-end-date value.
+                            
+                            The updated end date will not be present for deleted things.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="RecordOperations">
+        <annotation>
+            <documentation>
+                <summary>
+                    A list of the operations that have occurred since the specified record operation
+                    sequence number in the request in ascending order by sequence number.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="record-operation" type="this:RecordOperation" minOccurs="1" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            An operation that occurred on the record.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the response that contains the method
+                        specific return value(s).
+                    </summary>
+                    <remarks>
+                        All response schemas contain the info element which
+                        contain the return value of the method. If the method
+                        does not define an info element, the method has no
+                        return value.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="latest-record-operation-sequence-number" type="long">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The most current record operation sequence number of the record when this
+                                call was made.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="operations" type="this:RecordOperations" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A list of the operations that have occurred since the specified record operation
+                                sequence number in the request.
+                            </summary>
+                            <remarks>
+                                The operations are returned by sequence number in ascending order. It is possible to 
+                                receive a delete operation for which the application does not receive a create operation. 
+                                This occurrs when a thing is created and permanently deleted between calls to GetRecordOperations
+                                by the application.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

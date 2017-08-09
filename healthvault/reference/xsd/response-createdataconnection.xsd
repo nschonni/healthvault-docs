@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.CreateDataConnection"
+    xmlns:wc-types="urn:com.microsoft.wc.types"    
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+        RESPONSE-CreateDataConnection.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for CreateDataConnection response
+    -->
+
+  <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd" />
+  
+  <annotation>
+    <documentation>
+      <summary>
+        Specifies the schema for the CreateDataConnection method response.
+      </summary>
+    </documentation>
+  </annotation>
+  
+
+  <!-- CreateDataConnectionResponse -->
+  
+  
+  <element name="info">
+    <complexType>
+      <annotation>
+        <documentation>
+          <summary>
+            The element of the request that contains the method
+            specific parameters.
+          </summary>
+          
+          <remarks>
+            All requests contain the info element to pass parameters
+            that are specific to each method. If the method does not
+            define an info element, the method does not take any
+            parameters.
+          </remarks>
+        </documentation>
+      </annotation>
+      <sequence>
+      
+        <element name="connection-id" type="wc-types:positiveLong" minOccurs="1" maxOccurs="1" >
+          <annotation>
+            <documentation>
+              <summary>
+                Data connection id.
+              </summary>        
+            </documentation>
+          </annotation>
+        </element>
+        
+      </sequence>
+    </complexType>
+  </element>
+</schema>

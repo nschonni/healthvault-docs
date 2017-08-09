@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetApplication"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetApplication"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-app="urn:com.microsoft.wc.application"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETAPPLICATION.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetApplication method
+
+    -->
+
+    <import
+      namespace="urn:com.microsoft.wc.types"
+      schemaLocation="types.xsd" />
+
+    <import
+      namespace="urn:com.microsoft.wc.auth"
+      schemaLocation="auth.xsd" />
+
+    <import
+      namespace="urn:com.microsoft.wc.application"
+      schemaLocation="application-configuration.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- info - - - - - -  - - - - - - - - - - - - - - -->
+  <complexType name="Application">
+    <annotation>
+      <documentation>
+        <summary>
+          The extended application data.
+        </summary>
+      </documentation>
+    </annotation>
+    <complexContent>
+      <extension base="wc-app:AppWithLogos">
+        <sequence>
+          <element name="eprep-welcome" type="wc-app:StatementInfo" minOccurs="0" maxOccurs="1">
+            <annotation>
+              <documentation>
+                <summary>
+                  The welcome message to display when starting the emergency preparedness flow.
+                </summary>
+                <remarks>
+                  Represented as a base64 encoded string and its corresponding content type.
+                </remarks>
+              </documentation>
+            </annotation>
+          </element>
+          <element name="eprep-description" type="wc-app:StatementInfo" minOccurs="0" maxOccurs="1">
+            <annotation>
+              <documentation>
+                <summary>
+                  The introductory description text to display when starting the emergency preparedness flow.
+                </summary>
+                <remarks>
+                  Represented as a base64 encoded string and its corresponding content type.
+                </remarks>
+              </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+    <complexType name="Apps">
+        <annotation>
+            <documentation>
+                <summary>
+                  Collection of applications.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+          <element name="application" type ="this:Application" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="apps" type="this:Apps">
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

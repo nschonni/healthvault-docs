@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.CreatePersistentToken"
+    xmlns:this="urn:com.microsoft.wc.methods.CreatePersistentToken"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-auth="urn:com.microsoft.wc.auth"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+    METHOD-CreatePersistentToken.XSD
+    Microsoft HealthVault
+
+    Platform API: Info schema for CreatePersistentToken method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+    <import
+        namespace="urn:com.microsoft.wc.auth"
+        schemaLocation="auth.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Creates a persistent token from a simple credential supplied
+                by the shell.
+            </summary>
+
+            <remarks>
+                The persistent tokens retrieved are then used as sub-credentials
+                during subsequent CreateAuthenticatedSessionToken calls.
+                That is, the persistent tokens themselves only serve as a means
+                to construct a fully authenticated session.
+            </remarks>
+            <version>1,2</version>
+        </documentation>
+    </annotation>
+
+    <!-- CreatePersistentToken - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <!-- this is a scoped down wc-types:Credential -->
+    <complexType name="Credential">
+        <annotation>
+            <documentation>
+                <summary>
+                    Provides a simple credential that the platform will then
+                    authenticate and issue a credential token from.
+                </summary>
+
+                <remarks>
+                    A simple credential is one that only contains enough information
+                    to authenticate the user, and does not imply anything
+                    about the session it will be used for.
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <choice>
+                <element name="simple-encrypted"
+                    type="wc-types:stringnz">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A simple credential encrypted for use in subsequent method calls.
+                            </summary>
+
+                            <remarks>
+                                This opaque credential is returned by the create credential calls.
+                                It represents the original authenticating credential.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="simple-userpass"
+                    type="wc-auth:UserPassCred">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A simple credential consisting of username and password.
+                            </summary>
+
+                            <remarks>
+                                Both the username and password are in plaintext.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="federating"
+                    type="wc-auth:FederatingCred">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A simple credential consisting of a federating
+                                token, which will be used to derive a new
+                                credential token for the specified application.
+                            </summary>
+
+                            <remarks>
+                                The federating credential is provided by the shell.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="simple-passport"
+                    type="wc-auth:SimplePassportCredential">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A credential consisting of a token containing the
+                                PUID from a Microsoft Passport login.
+                            </summary>
+
+                            <remarks>
+                                The PUID can be provided by the Shell or a smart
+                                client application.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="simple-openid"
+                    type="wc-auth:SimpleOpenIdCredential">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Represents the confirmed claimed id of a user who
+                                has been authenticated to an Open Id Provider.
+                            </summary>
+
+                            <remarks>
+                                Authentication is performed to an Open Id Provider through
+                                Shell which passes it to platform for verification
+                                against a HealthVault account.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="simple-facebook"
+                    type="wc-auth:SimpleFacebookCredential">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Represents the confirmed user-id of an user who
+                                has been authenticated to Facebook.
+                            </summary>
+
+                            <remarks>
+                                Authentication is performed through Shell which
+                                passes it to platform for verification
+                                against a HealthVault account.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="auth-session-credential"
+                    type="wc-auth:AuthSessionCredential">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A credential for a auth session containing a
+                                sub-credential with the user's authentication.
+                            </summary>
+
+                        </documentation>
+                    </annotation>
+                </element>
+ 
+                <element name="msa-with-ticket" type="wc-auth:MSACredentialWithTicket">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A credential for verifying identity with MSA.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>     
+            </choice>
+            <element name="second-factor-credential" type="wc-auth:SecondFactorCredential"
+                minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Credential for two factor authentication.
+                        </summary>
+                        <remarks>
+                            This credential is optional.  If the account requires two factor
+                            authentication, the this credential must be passed.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <!-- CreatePersistentToken - - - - - - - - - - - - - - - - - - - - - - - -->
+    <complexType name="AuthTokenInfo">
+        <annotation>
+            <documentation>
+                <summary>
+                    Enables a caller to specify which applications to create
+                    credential tokens for and the authenticating credential
+                    itself.
+                </summary>
+
+                <remarks>
+                    Multiple applications can specified for a single credential.
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="app-id" type="wc-types:AppInfo"
+                minOccurs="1" maxOccurs="2">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The applications to create credential tokens for.
+                        </summary>
+
+                        <remarks>
+                            Each application will be issued a unique token.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="credential"
+                type="this:Credential">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The authenticating credential.
+                        </summary>
+
+                        <remarks>
+                            In order to issue credential tokens for applications,
+                            the credential must successfully be authenticated.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Parameters for CreatePersistentToken.
+                    </summary>
+
+                    <remarks>
+                        Persistent tokens are needed for establishing 
+                        a subsequent authenticated session via a call
+                        to CreateAuthenticatedSessionToken.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="auth-info"
+                    type="this:AuthTokenInfo">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Enables a caller to specify which applications to create
+                                persistent tokens for and the authenticating credential
+                                itself.
+                            </summary>
+
+                            <remarks>
+                                Multiple applications can specified for a single credential.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>
+
+

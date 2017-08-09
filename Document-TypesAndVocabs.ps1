@@ -2,9 +2,11 @@ PARAM(
     $OutDir,
     $TypeXmlDir,
     $XsdDir,
+    $WebXsdDir,
     $VocabDir,
     [switch]$Debug,
-    [switch]$Overwrite
+    [switch]$Overwrite,
+    [switch]$Help
 )
 
 Function Debug($text) {
@@ -12,6 +14,123 @@ Function Debug($text) {
         Write-Host $text
     }
 }
+
+Function SaveXsdIdByName($id, $name, $ns, $version) {
+    if (!$script:xsdIdsByTypeName.ContainsKey($name)) {
+        $script:xsdIdsByTypeName[$name] = @{}
+    }
+
+    if (!$version) {
+        $version = 1
+    }
+    
+    $info = $script:xsdIdsByTypeName[$name]
+    if (!$info.ContainsKey($ns)) {
+        $item = @{}
+        $item.Id = $id
+        $item.Version = $version
+        $info[$ns] = $item
+    }
+    else {
+        $item = $info[$ns]
+        if ("$version" -gt "$($item.Version)") {
+            $item.Id = $id
+            $item.Version = $version
+        }
+    }
+}
+
+Function GetXsdIdByName($name, $ns) {
+    if ($name) {
+        $info = $script:xsdIdsByTypeName[$name]
+        if ($info) {
+            if ($ns) {
+                if ($info[$ns]) {
+                    return $info[$ns].Id
+                }
+            }
+            elseif ($info.Values.Count -gt 0) {
+                return ($info.Values | Select-Object -First 1).Id
+            }
+        }
+    }
+
+    return $null
+}
+
+$script:commonXsds = @(
+    "types.xsd",
+    "dates.xsd",
+    "auth.xsd",
+    "application-configuration.xsd",
+    "vocab.xsd",
+    "location.xsd",
+    "thing.xsd",
+    "subscription.xsd",
+    "Meaningful-Use.xsd",
+    "record.xsd",
+    "directory.xsd",
+    "notification.xsd")
+
+$script:excludedXsds = @(
+    "*deprecated*",
+    "*POCD*",
+    "datatypes*",
+    "voc.*",
+    "xml.*",
+    "NarrativeBlock.*")
+
+# Method xsds are a little messy and public/private attributes are inconsistent, hence the static list.
+$script:includedMethods = @(
+    "*addapplication*",
+    "*allocatepackageid*",
+    "*associatealternateid*",
+    "*authorizeapplication*",
+    "*beginputblob*",
+    "*beginputconnectpackageblob*",
+    "*createauthenticatedsessiontoken*",
+    "*createconnectpackage*",
+    "*createconnectrequest*",
+    "*deletependingconnectpackage*",
+    "*deletependingconnectrequest*",
+    "*disassociatealternateid*",
+    "*getalternateids*",
+    "*getapplicationinfo*",
+    "*getapplicationsettings*",
+    "*getauthorizedconnectrequests*",
+    "*getauthorizedpeople.xsd",
+    "*getauthorizedrecords*",
+    "*geteventsubscriptions*",
+    "*getmeaningfulusetimelyaccessreport*",
+    "*getmeaningfulusevdtreport*",
+    "*getpeopleforrecord*",
+    "*getpersonandrecordforalternateid*",
+    "*getpersoninfo.xsd",
+    "*getrecordoperations*",
+    "*getservicedefinition*",
+    "*getthings*",
+    "*getthingtype*",
+    "*getupdatedrecordsforapplication*",
+    "*getvalidgroupmembership*",
+    "*getvocabulary*",
+    "*newapplicationcreationinfo*",
+    "*newsignupcode*",
+    "*overwritethings*",
+    "*putthings*",
+    "*querypermissions*",
+    "*removeapplicationrecordauthorization*",
+    "*removethings*",
+    "*searchvocabulary*",
+    "*selectinstance*",
+    "*sendinsecuremessage*",
+    "*sendinsecuremessagefromapplication*",
+    "*setapplicationsettings*",
+    "*subscribetoevent*",
+    "*unsubscribetoevent*",
+    "*updateapplication*",
+    "*updateeventsubscription*",
+    "*updateexternalid*"
+)
 
 ### Parsing ###
 
@@ -28,7 +147,7 @@ Function Get-Vocabularies($vocabRoot) {
     foreach ($key in $vocabs.Keys) {
         if ($key) {
             $vocab = @{}
-            $vocab.FileNamePrefix = "$($key.family).$($key.name).$($key.version)"
+            $vocab.FilenamePrefix = "$($key.family).$($key.name).$($key.version)"
             $vocab.Name = $key.name
             $vocab.Family = $key.family
             $vocab.Version = $key.version
@@ -47,11 +166,25 @@ Function Get-Vocabularies($vocabRoot) {
     Debug "Vocabularies parsed: $($script:vocabularies.Count)"
 }
 
-Function Get-ThingTypeInfos($typeXmlRoot, $xsdRoot, $filenamePattern = '*') {
+Function Get-ThingTypeInfos($typeXmlRoot, $xsdRoot, $webXsdRoot, $filenamePattern = '*') {
     $xmlItems = @{}
     $xsdItems = @{}
-    Get-ChildItem $typeXmlRoot -Filter "$filenamePattern.type.xml" | %{ $xmlItems.Add($_.Name.Substring(0, ($_.Name.Length - 9)), $_) }
-    Get-ChildItem $xsdRoot -Filter "$filenamePattern.xsd" | %{ $xsdItems.Add($_.Name.Substring(0, ($_.Name.Length - 4)), $_) }
+    $commonXsdItems = @{}
+    $methodItems = @{}
+    $responseItems = @{}
+
+    # Get files, indexed by object name.
+    Get-ChildItem $typeXmlRoot\* -Include ("$filenamePattern.type.xml") -Exclude $script:excludedXsds | %{ $xmlItems.Add($_.Name.Substring(0, ($_.Name.Length - 9)), $_) }
+    Get-ChildItem $xsdRoot\* -Include ("$filenamePattern.xsd") -Exclude $script:excludedXsds | %{ $xsdItems.Add($_.Name.Substring(0, ($_.Name.Length - 4)), $_) }
+    Get-ChildItem $webXsdRoot\* -Include $script:commonXsds | %{ $commonXsdItems.Add($_.Name.Substring(0, ($_.Name.Length - 4)), $_) }
+    Get-ChildItem $webXsdRoot\* -Include $script:includedMethods -Exclude ("*privileged*") | %{
+        if ($_.Name.StartsWith("method-")) {
+            $methodItems.Add($_.Name.Substring(7, $_.Name.Length - 11), $_)
+        }
+        elseif ($_.Name.StartsWith("response-")) {
+            $responseItems.Add($_.Name.Substring(9, $_.Name.Length - 13), $_)
+        }
+    }
 
     Debug "Found $($xmlItems.Keys.Count) ThingType xml files"
     Debug "Found $($xsdItems.Keys.Count) ThingType xsd files`n"
@@ -60,15 +193,16 @@ Function Get-ThingTypeInfos($typeXmlRoot, $xsdRoot, $filenamePattern = '*') {
     $failed = New-Object System.Collections.Generic.List[System.Object]
     $script:xsdIdsByTypeName = @{}
     $script:thingTypes = @{}
+    $script:methods = @{}
     foreach ($typeName in $xmlItems.Keys) {
         if ($xsdItems.ContainsKey($typeName)) {
             try {
                 $xmlInfo = Parse-XmlInfo $xmlItems[$typeName]
                 $xsdInfo = Parse-XsdInfo $xsdItems[$typeName] $xmlInfo.ThingTypeId
-                $combined = Combine-ThingInfo $xmlInfo $xsdInfo
+                $combined = Combine-ThingInfo $xmlInfo $xsdInfo $xmlItems[$typeName].BaseName
                 $script:thingTypes.Add($combined.ThingTypeId, $combined)
                 if ($combined.Name -and $combined.ThingTypeId) {
-                    $script:xsdIdsByTypeName[$combined.Name] = $combined.ThingTypeId
+                    SaveXsdIdByName $combined.ThingTypeId $combined.Name $combined.Namespace $combined.Version
                 }
             }
             catch [Exception] {
@@ -83,10 +217,34 @@ Function Get-ThingTypeInfos($typeXmlRoot, $xsdRoot, $filenamePattern = '*') {
         }
     }
 
-    foreach ($typeName in $xsdItems.Keys)
-    {
+    foreach ($typeName in $xsdItems.Keys) {
         if  (!$xmlItems.ContainsKey($typeName)) {
             $mismatched.Add($xsdItems[$typeName])
+        }
+    }
+
+    foreach ($typeName in $commonXsdItems.Keys) {
+        $combined = Combine-ThingInfo $null (Parse-XsdInfo $commonXsdItems[$typeName] $null $typeName) $commonXsdItems[$typeName].BaseName
+        $script:thingTypes.Add($combined.ThingTypeId, $combined)
+        if ($combined.Name -and $combined.ThingTypeId) {
+            SaveXsdIdByName $combined.ThingTypeId $combined.Name $combined.Namespace $combined.Version
+        }
+    }
+
+    foreach ($method in $methodItems.Keys) {
+        $request =  Parse-Method $methodItems[$method]
+        $response = Parse-Method $responseItems[$method]
+        if ($request -or $response) {
+            $script:methods[$method] = @{ "Name"=$method; "Request"=$request; "Response"=$response }
+        }
+    }
+
+    foreach ($method in $responseItems.Keys) {
+        if (!($methodItems.ContainsKey($method))) {
+            $response = Parse-Method $responseItems[$method]
+            if ($response) {
+                $script:methods[$method] = @{ "Name"=$method; "Request"=$null; "Response"=$response }
+            }
         }
     }
 
@@ -109,6 +267,16 @@ Function Get-ThingTypeInfos($typeXmlRoot, $xsdRoot, $filenamePattern = '*') {
     }
 
     Debug "DataTypes parsed: $($script:thingTypes.Values.Count)"
+}
+
+Function Parse-Method($file) {
+    if ($file) {
+        $method = Combine-ThingInfo $null (Parse-XsdInfo $file $null $file.Name) $file.BaseName
+        $method.File = $file
+        if ($method.Visibility -ne "Private") {
+            return $method
+        }
+    }
 }
 
 Function Parse-XmlInfo($typeXmlItem) {
@@ -134,11 +302,17 @@ Function Parse-XmlInfo($typeXmlItem) {
     $info
 }
 
-Function Combine-ThingInfo($xmlInfo, $xsdInfo) {
+# Regex below captures the NAME from "method-NAME.xsd" or "response-NAME.xsd" (with or without the .xsd), without stripping out the version numbers we see sometimes.
+Function Combine-ThingInfo($xmlInfo, $xsdInfo, $fileBaseName) {
     $thing = @{}
-    $thing.ThingTypeId = if ($xsdInfo.ThingTypeId) {$xsdInfo.ThingTypeId} else {$xmlInfo.ThingTypeId}
-    $thing.Name = if ($xmlInfo.Name) {$xmlInfo.Name} else {$xsdInfo.Name}
-    $thing.Version = if ($xmlInfo.Version) {$xmlInfo.Version} else {1}
+    $thing.ThingTypeId = if ($xsdInfo.ThingTypeId) {$xsdInfo.ThingTypeId}
+                         elseif ($xmlInfo.ThingTypeId) {$xmlInfo.ThingTypeId}
+    $thing.Name = if ($xmlInfo.Name) {$xmlInfo.Name}
+                  elseif ($xsdInfo.Name) {$xsdInfo.Name}
+                  else {$xsdInfo.NamespaceTail}
+    $thing.Version = if ($xmlInfo.Version) {$xmlInfo.Version}
+                     elseif ($xsdInfo.Version) {$xsdInfo.Version}
+                     else {1}
     $thing.Xsd = $xsdInfo.Raw
     $thing.Remarks = $xsdInfo.Remarks
     $thing.Summary = $xsdInfo.Summary
@@ -147,7 +321,9 @@ Function Combine-ThingInfo($xmlInfo, $xsdInfo) {
     $thing.IsImmutable = $xmlInfo.IsImmutable
     $thing.AllowReadOnly = $xmlInfo.AllowReadOnly
     $thing.EffectiveDateXPath = $xmlInfo.EffectiveDateXPath
-    $thing.FilenamePrefix = $xmlInfo.FilenamePrefix
+    $thing.FilenamePrefix = if ($xmlInfo.FilenamePrefix) {$xmlInfo.FilenamePrefix} else {$fileBaseName}
+    $thing.Namespace = $xsdInfo.Namespace
+    $thing.Visibility = $xsdInfo.Visibility
 
     $guids = @($xsdInfo.RelatedDataTypeGuids | ?{$_})
     if ($guids.Count -gt 0) {
@@ -177,7 +353,7 @@ Function Combine-ThingInfo($xmlInfo, $xsdInfo) {
     return $thing
 }
 
-Function Parse-XsdInfo($xsdItem, $backupId) {
+Function Parse-XsdInfo($xsdItem, $backupId, $fileBaseName) {
     $info = @{}
     $xsdRaw = Get-Content -Encoding UTF8 $xsdItem.FullName
     $xsd = [xml]$xsdRaw
@@ -186,17 +362,27 @@ Function Parse-XsdInfo($xsdItem, $backupId) {
     $script:currentNamespace = $xsd.schema.targetNamespace
     $script:currentSchemaAttributes = $xsd.schema.Attributes
 
-    #$info.Raw = Pretty-Xml $xsd
     Add-Documentation $info $xsd.schema
     $documentation = $xsd.schema.annotation.documentation
+    $script:currentVersion = if ($documentation.Version) {$documentation.Version} else {1}
     $info.Name = $documentation.'type-name'
-    $info.ThingTypeId = if ($documentation.'type-id') {$documentation.'type-id'} else {$backupId}
+    $info.ThingTypeId = if ($documentation.'type-id') {$documentation.'type-id'}
+                         elseif ($fileBaseName -match "(?:(?:method)|(?:response))\-(.*)(?:\.xsd)") {"File_$($Matches[1])"}
+                         elseif ($fileBaseName) {"File_$fileBaseName"}
+                         else {$backupId}
     $info.RelatedDataTypeGuids = @($documentation.'seealso-thing-type-version-id' | ?{$_})
+    $info.Version = $documentation.version
+    $info.Visibility = $documentation.'method-visibility'
+    if ($script:currentNamespace) {
+        $ns = $script:currentNamespace.Split(':')
+        $ns = $ns[$ns.Count - 1].Split('.')
+        $info.NamespaceTail = $ns[$ns.Count - 1]
+        $info.Namespace = $script:currentNamespace
+    }
 
     $script:currentTypeId = $info.ThingTypeId
 
-    $classInfo = @{"Name" = $documentation.'type-name'; "ClassName" = $documentation.'wrapper-class-name'}
-    $info.DotNetClassInfo = $classInfo
+    $info.DotNetClassInfo = Parse-DotNetClassInfo $documentation
 
     $info.RelatedLinks = @($documentation.'related-links'.'related-link' | ?{$_} | %{@{"Text" = (Clean-AndTrim $_.text);"Link" = (Clean-AndTrim $_.link)}})
 
@@ -206,13 +392,56 @@ Function Parse-XsdInfo($xsdItem, $backupId) {
     $script:inlineTypes.Add($info.Types)
     $info.Types | %{
         if ($_.Name -and $script:currentTypeId) {
-            $script:xsdIdsByTypeName[$_.Name] = $script:currentTypeId
+            SaveXsdIdByName $script:currentTypeId $_.Name $info.Namespace $info.Version
+            #$script:xsdIdsByTypeName[$_.Name] = $script:currentTypeId
         }
     }
 
     $info.Elements = @($xsd.schema.element | ?{$_} | Parse-SchemaElement)
 
     $info
+}
+
+Function Parse-DotNetClassInfo($documentation) {
+    
+    $classInfo = @{}
+    $classInfo.Name = $documentation.'type-name'
+    $classInfo.ClassName = $documentation.'wrapper-class-name'
+    $classInfo.IsOld = $false
+    if ($classInfo.ClassName) {
+        $dotNet = $null
+        $dotNetStandard = $null
+        try {
+            $uri = "https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.$($classInfo.ClassName.ToLower())"
+            Invoke-WebRequest -Uri $uri -Method Head | Out-Null
+            $dotNet = "`n- $(md-Link "Microsoft.Health.ItemTypes.$($classInfo.ClassName)" $uri)"
+        }
+        catch [System.Exception] {
+            try {
+                $uri = "https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.old.$($classInfo.ClassName.ToLower())"
+                Invoke-WebRequest -Uri $uri -Method Head | Out-Null
+                $dotNet = "`n- $(md-Link "Microsoft.Health.ItemTypes.Old.$($classInfo.ClassName)" $uri)"
+                $classInfo.IsOld = $true
+            }
+            catch [System.Exception] {
+                # no-op
+            }
+        }
+        
+        try {
+            $uri = "https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.$($classInfo.ClassName.ToLower())"
+            Invoke-WebRequest -Uri $uri -Method Head | Out-Null
+            $dotNetStandard = "`n- $(md-Link "Microsoft.HealthVault.ItemTypes.$($classInfo.ClassName)" $uri)"
+        }
+        catch [System.Exception] {
+            # no-op
+        }
+
+        $classInfo.DotNetLink = $dotNet
+        $classInfo.DotNetStandardLink = $dotNetStandard
+    }
+
+    $classInfo
 }
 
 Function Parse-SchemaElement {
@@ -233,12 +462,12 @@ Function Parse-SchemaElement {
                 $el.InlineType = $inlineType
                 $script:inlineTypes.Add($inlineType)
                 if ($inlineType.Name -and $script:currentTypeId) {
-                    $script:xsdIdsByTypeName[$inlineType.Name] = $script:currentTypeId
+                    SaveXsdIdByName $script:currentTypeId $inlineType.Name $script:currentNamespace $script:currentVersion
                 }
             }
 
             if ($el.Name -and $script:currentTypeId) {
-                $script:xsdIdsByTypeName[$el.Name] = $script:currentTypeId
+                SaveXsdIdByName $script:currentTypeId $el.Name $script:currentNamespace $script:currentVersion
             }
 
             $el
@@ -303,7 +532,7 @@ Function Parse-SequenceElement($item) {
             $el.InlineType = $inlineType
             $script:inlineTypes.Add($inlineType)
             if ($inlineType.Name -and $script:currentTypeId) {
-                $script:xsdIdsByTypeName[$inlineType.Name] = $script:currentTypeId
+                SaveXsdIdByName $script:currentTypeId $inlineType.Name $script:currentNamespace $script:currentVersion
             }
         }
 
@@ -356,7 +585,9 @@ Function Parse-Restriction($item) {
     if ($item) {
         $re = @{}
         Add-Documentation $re $item
-        $re.BaseTypeName = $item.base
+        $type = Parse-TypeWithNamespace $item.base
+        $re.BaseTypeName = $type.Name
+        $re.BaseTypeNamespace = $type.FullNamespace
         $re.MinInclusive = $item.minInclusive.value
         $re.MaxInclusive = $item.maxInclusive.value
         $re.Attributes = @($item.attribute | ?{$_} | Parse-Attribute)
@@ -388,7 +619,9 @@ Function Parse-Extension($item) {
 
     $ex = @{}
     Add-Documentation $ex $ext
-    $ex.BaseType = $ext.base
+    $type = Parse-TypeWithNamespace $ext.base
+    $ex.BaseType = $type.Name
+    $ex.BaseTypeNamespace = $type.FullNamespace
     $ex.Attributes = @($ext.attribute | ?{$_} | Parse-Attribute)
     $ex.Sequence = @($ext.sequence | ?{$_} | Parse-SequenceItems)
     $ex.Choice = Parse-SequenceChoice $ext.choice
@@ -414,8 +647,12 @@ Function Is-ValidRestrictionFacet($item) {
     )
 }
 
-Function Is-CurrentNamespace($namespace) {
-    return $script:currentNamespace -eq $script:currentSchemaAttributes.GetNamedItem("xmlns:${namespace}").'#text'
+Function Is-CurrentNamespace($xmlns) {
+    return $script:currentNamespace -eq (XmlnsToNamespace $xmlns)
+}
+
+Function XmlnsToNamespace($xmlns) {
+    return $script:currentSchemaAttributes.GetNamedItem("xmlns:${xmlns}").'#text'
 }
 
 Function Parse-TypeWithNamespace($item) {
@@ -433,6 +670,8 @@ Function Parse-TypeWithNamespace($item) {
             $inline = @($script:inlineTypes | ?{$_} | ?{$_.Name -eq $type.Name})
             $type.InlineType = $inline[0]
         }
+
+        $type.FullNamespace = XmlnsToNamespace $type.Namespace
     }
 
     $type
@@ -490,7 +729,7 @@ Function Clean-AndTrim($text, $keepNewlines = $false) {
     if ($text) {
         $temp = $text.Trim()
         if ($keepNewLines) {
-            $temp = $text.Trim() -replace '\n','<br/>'
+            $temp = $temp -replace '\n','<br/>'
         }
 
         $temp -replace '\s+',' ' -replace ' xmlns="[^"]*"',''
@@ -545,9 +784,10 @@ Function md-XrefLinkById($id) {
     }
 }
 
-Function md-XrefLinkByName($typeName) {
-    if ($typeName -and $script:xsdIdsByTypeName.ContainsKey($typeName)) {
-        md-XrefLink $typeName "$($script:xsdIdsByTypeName[$typeName])#$typeName"
+Function md-XrefLinkByName($typeName, $namespace) {
+    $id = GetXsdIdByName $typeName $namespace
+    if ($typeName -and $id) {
+        md-XrefLink $typeName "$id#$typeName"
     }
     else {
         $typeName
@@ -577,8 +817,8 @@ Function New-DataTypeMarkDown($thingTypeInfo, $samplesDir) {
     $overview = New-DataTypeOverview $thingTypeInfo
     $details = New-DataTypeDetails $thingTypeInfo
     $transforms = $null
-    $example = New-DataTypeExample $thingTypeInfo $samplesDir
-    $schema = New-DataTypeSchema $thingTypeInfo.FilenamePrefix
+    $example = New-DataTypeExample $thingTypeInfo $samplesDir $thingTypeInfo.DotNetClassInfo.IsOld
+    $schema = New-DataTypeSchema $thingTypeInfo.FilenamePrefix $thingTypeInfo.DotNetClassInfo.IsOld
     $relatedInfo = New-DataTypeRelatedInfo $thingTypeInfo
 
     return @"
@@ -598,21 +838,23 @@ ${schema}
 "@
 }
 
-Function New-DataTypeSchema($filename) {
+Function New-DataTypeSchema($filename, $isOld, $type) {
+    $old = if ($isOld) {'../'}
     @"
-`n## XSD schema
-$(md-Link "!$(md-Link "Download" "/healthvault/images/download.png")Download" "xsd/${filename}.xsd")
-[!code-xml$(md-Link 'XSD schema' "xsd/${filename}.xsd")]
+`n##$(if ($type) {" $type"}) XSD schema
+$(md-Link "!$(md-Link "Download" "/$OutDir/images/download.png")Download" "../${old}xsd/${filename}.xsd")
+[!code-xml$(md-Link 'XSD schema' "../${old}xsd/${filename}.xsd")]
 
 "@
 }
 
-Function New-DataTypeExample($thingTypeInfo, $samplesDir) {
+Function New-DataTypeExample($thingTypeInfo, $samplesDir, $isOld) {
+    $old = if ($isOld) {'../'}
     $sampleFile = $($thingTypeInfo.ThingTypeId) + ".xml"
     if (Test-Path "$samplesDir\$sampleFile") {
 @"
 `n## Example
-[!code-xml$(md-Link 'Example' "sample-xml/$sampleFile")]
+[!code-xml$(md-Link 'Example' "../${old}sample-xml/$sampleFile")]
 
 "@
     }
@@ -643,15 +885,9 @@ ${relatedArticles}
 }
 
 Function New-DotNetReference($thingTypeInfo) {
-    if ($thingTypeInfo.DotNetClassInfo -and
-        $thingTypeInfo.DotNetClassInfo.Name -and
-        $thingTypeInfo.DotNetClassInfo.ClassName) {
-        return @"
-`n## .NET reference
-- $(md-Link "Microsoft.Health.ItemTypes.$($thingTypeInfo.DotNetClassInfo.ClassName)" "https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.$($thingTypeInfo.DotNetClassInfo.ClassName.ToLower())")
-- $(md-Link "Microsoft.HealthVault.ItemTypes.$($thingTypeInfo.DotNetClassInfo.ClassName)" "https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.$($thingTypeInfo.DotNetClassInfo.ClassName.ToLower())")
-
-"@
+    if ($thingTypeInfo.DotNetClassInfo.DotNetLink -or $thingTypeInfo.DotNetClassInfo.DotNetStandardLink) {
+        # The links already include newlines
+        return "`n## .NET reference$($thingTypeInfo.DotNetClassInfo.DotNetLink)$($thingTypeInfo.DotNetClassInfo.DotNetStandardLink)`n"
     }
 }
 Function New-RelatedDataTypes($thingTypeInfo) {
@@ -914,7 +1150,7 @@ Function Get-ElementLink($item, $inlines) {
                 $link = md-XrefLinkById $customType.ThingTypeId
             }
             else {
-                $link = md-XrefLinkByName $name
+                $link = md-XrefLinkByName $name $item.Type.FullNamespace
             }
         }
     }
@@ -958,7 +1194,7 @@ Function New-SchemaRestriction($restriction) {
         }
 
         if ($restriction.BaseTypeName) {
-            "`nBase type: $(md-XrefLinkByName $restriction.BaseTypeName)`n"
+            "`nBase type: $(md-XrefLinkByName $restriction.BaseTypeName $restriction.BaseTypeNamespace)`n"
         }
 
         New-VocabBlock $restriction
@@ -1010,7 +1246,7 @@ Function New-SchemaExtension($schemaType) {
             "`n$($ex.Remarks)`n"
         }
 
-        "`nBase type: $(md-XrefLinkByName $ex.BaseType)`n"
+        "`nBase type: $(md-XrefLinkByName $ex.BaseType $ex.BaseTypeNamespace)`n"
 
         New-VocabBlock $schemaType
         
@@ -1079,11 +1315,138 @@ title: $($vocab.Name)
 "@
 }
 
-#End Vocabulary Markdown ###
+### End Vocabulary Markdown ###
+
+### Method Markdown ###
+
+Function New-MethodMarkdown($method) {
+    $title = if ($method.Request) {$method.Request.Name} else {$method.Response.Name}
+    $id = if ($method.Request) {$method.Request.ThingTypeId} else {$method.Response.ThingTypeId}
+    $overview = New-MethodOverview $method
+    $requestSchema = if ($method.Request) {New-DataTypeSchema $method.Request.File.BaseName $false "Request"}
+    $responseSchema = if ($method.Response) {New-DataTypeSchema $method.Response.File.BaseName $false "Response"}
+
+    return @"
+---
+uid: HV_${id}
+title: ${title}
+---
+
+# ${title}
+
+${overview}
+${requestSchema}
+${responseSchema}
+"@
+}
+
+Function New-MethodOverview($method) {
+    @"
+
+$(if ($method.Request) {New-MethodDetails $method.Request "Request"})
+$(if ($method.Response) {New-MethodDetails $method.Response "Response"})
+
+"@
+}
+
+Function New-MethodDetails($info, $sectionName) {
+    $script:currentTypes = $info.Types
+    $elements = $info.Elements | New-DataTypeDetailsElements
+    $types = $info.Types | New-DataTypeDetailsTypes
+
+    return @"
+
+## ${sectionName} Overview
+
+$($info.Summary)
+
+$($info.Description)
+
+## ${sectionName} Details
+
+${elements}
+${types}
+
+"@
+}
+
+### End Method Markdown
+
+### File Helpers ###
+
+$refPath = "$OutDir\reference"
+$xsdPath = "$refPath\xsd"
+$dtPath = "$refPath\datatypes"
+$dtOldPath = "$dtPath\old"
+$methodPath = "$refPath\methods"
+$vocPath = "$refPath\vocabularies"
 
 #Cleans end-of-line whitespace and ensures we have a max of 2 newlines in a row
 Function Clean-NewLines($content) {
     $content -replace '[^\S\n]+\n',"`n" -replace '(\s*[\n]\s*){3,}',"`n`n"
+}
+
+Function md-VocabLink($vocab, $ignoreVersion) {
+    $name = $vocab.Name
+    if ($vocab.Version -ne 1 -and !$ignoreVersion) {
+        $name += " v$($vocab.Version)"
+    }
+
+    $path = "/$($vocPath -replace "\\","/")/$($vocab.FilenamePrefix)"
+
+    md-Link $name $path
+}
+
+Function md-ThingLink($thing, $ignoreVersion) {
+    $filePath = if ($thing.DotNetClassInfo.IsOld) {$dtOldPath} else {$dtPath}
+    $path = "/$($filePath -replace "\\","/")/$($thing.FilenamePrefix)"
+    $name = $thing.Name
+    if ($thing.Version -ne 1 -and !$ignoreVersion) {
+        $name += " v$($thing.Version)"
+    }
+
+    md-Link $name $path
+}
+
+Function md-MethodLink($method, $ignoreVersion) {
+    $name = if ($method.Request) {$method.Request.Name} else {$method.Response.Name}
+    $version = if ($method.Request) {$method.Request.Version} else {$method.Response.Version}
+    if ($name -match "(\D+)\d+") {
+        $name = $matches[1]
+    }
+
+    if ($version -ne 1 -and !$ignoreVersion) {
+        $name += " v$version"
+    }
+
+    $path = "/$($methodPath -replace "\\","/")/$($method.Name)"
+    
+    md-Link $name $path
+}
+
+### End File Helpers ###
+
+if ($Help -or !$TypeXmlDir -or !$XsdDir -or !$WebXsdDir -or !$VocabDir) {
+    Write-Host @'
+Usage: Document-TypesAndVocabs.ps1 $OutDir $TypeXmlDir $XsdDir $WebXsdDir $VocabDir [-Overwrite] [-Debug] [-Help]
+
+Parameters:
+ $OutDir      Target location for markdown files, including the directories:
+                OutDir\reference\datatypes,
+                OutDir\reference\xsd,
+                OutDir\reference\methods, and
+                OutDir\reference\vocabularies
+ $TypeXmlDir  Source directory for Thing type xml files
+ $XsdDir      Source directory for Thing type xsd files
+ $WebXsdDir   Source directory for method and shared type xsd files
+ $VocabDir    Source directory for vocabularies
+ -Overwrite   Adds -Force switch when creating markdown directories and files
+ -Debug       Writes debug output to the console
+ -Help        Writes this usage message to the console
+
+'@
+
+    return
 }
 
 if (!(Test-Path $TypeXmlDir)) {
@@ -1094,37 +1457,101 @@ if (!(Test-Path $XsdDir)) {
     throw "Could not find XSD directory: $XsdDir"
 }
 
-if (!(Test-Path $vocabDir)) {
-    throw "Could not find property dictionary: $vocabDir"
+if (!(Test-Path $WebXsdDir)) {
+    throw "Could not find property dictionary: $WebXsdDir"
 }
 
-$dirTemp = New-Item -ItemType Directory $OutDir -Force:$Overwrite
-$dirTemp = New-Item -ItemType Directory "$OutDir\datatypes" -Force:$Overwrite
-$dirTemp = New-Item -ItemType Directory "$OutDir\datatypes\xsd" -Force:$Overwrite
-$dirTemp = New-Item -ItemType Directory "$OutDir\vocabularies" -Force:$Overwrite
-
-if ($overwrite) {
-    del "$OutDir\datatypes\*.md"
-    del "$OutDir\datatypes\xsd\*.xsd"
-    del "$OutDir\vocabularies\*.md"
+if (!(Test-Path $VocabDir)) {
+    throw "Could not find property dictionary: $VocabDir"
 }
 
-Get-Vocabularies $vocabDir
+New-Item -ItemType Directory $OutDir -Force:$Overwrite | Out-Null
+New-Item -ItemType Directory $refPath -Force:$Overwrite | Out-Null
+New-Item -ItemType Directory $dtPath -Force:$Overwrite | Out-Null
+New-Item -ItemType Directory "$dtOldPath" -Force:$Overwrite | Out-Null
+New-Item -ItemType Directory $xsdPath -Force:$Overwrite | Out-Null
+New-Item -ItemType Directory $methodPath -Force:$Overwrite | Out-Null
+New-Item -ItemType Directory $vocPath -Force:$Overwrite | Out-Null
+
+if ($Overwrite) {
+    del "$dtPath\*.md"
+    del "$dtOldPath\*.md"
+    del "$xsdPath\*.xsd"
+    del "$vocPath\*.md"
+    del "$methodPath\*.md"
+}
+
+Get-Vocabularies $VocabDir
 foreach ($vocab in $script:vocabularies) {
-    $itemTemp = New-Item -ItemType File "$OutDir\vocabularies\$($vocab.FilenamePrefix).md" -Value (New-VocabularyMarkdown $vocab) -Force:$Overwrite
+    New-Item -ItemType File "$vocPath\$($vocab.FilenamePrefix).md" -Value (New-VocabularyMarkdown $vocab) -Force:$Overwrite | Out-Null
 }
 
-$tocVocab = ($script:vocabularies | Sort-Object {$_.Name -as [string]} | %{"# $(md-Link "$($_.Name)$(if ($_.Version -ne 1) {" v$($_.Version)"})" "/healthvault/vocabularies/$($_.FilenamePrefix)")`n"}) -join ''
-$itemTemp = New-Item -ItemType File "$OutDir\vocabularies\toc.md" -Value $tocVocab -Force:$Overwrite
+$sortedVocabs = $script:vocabularies | Sort-Object {$_.Name -as [string]}
+$indexVocab = "# Vocabularies$(md-TableHeader "Name","Family","Version")$($sortedVocabs | %{md-TableRow (md-VocabLink $_ $true),$_.Family,$_.Version})"
+New-Item -ItemType File "$vocPath\index.md" -Value $indexVocab -Force:$Overwrite | Out-Null
 Debug "Vocabulary serialization complete.`n"
 
-Get-ThingTypeInfos $TypeXmlDir $XsdDir
+Get-ChildItem $XsdDir\*.xsd -Exclude $script:excludedXsds | %{ Copy-Item $_ $xsdPath }
+Get-ChildItem $WebXsdDir\* -Include ($script:commonXsds + ("method-*.xsd","response-*.xsd")) | %{ Copy-Item $_ $xsdPath }
+
+Get-ThingTypeInfos $TypeXmlDir $XsdDir $WebXsdDir
 foreach ($thingInfo in $script:thingTypes.Values) {
-    Copy-Item "$xsdDir\$($thingInfo.FilenamePrefix).xsd" "$Outdir\datatypes\xsd"
-    $markdown = Clean-NewLines (New-DataTypeMarkDown $thingInfo "$Outdir\datatypes\sample-xml")
-    $itemTemp = New-Item -ItemType File "$OutDir\datatypes\$($thingInfo.FilenamePrefix).md" -Value $markdown -Force:$Overwrite
+    $markdown = Clean-NewLines (New-DataTypeMarkDown $thingInfo "$refPath\sample-xml")
+    $destPath = if ($thingInfo.DotNetClassInfo.IsOld) {$dtOldPath} else {$dtPath}
+    New-Item -ItemType File "$destPath\$($thingInfo.FilenamePrefix).md" -Value $markdown -Force:$Overwrite | Out-Null
 }
 
-$tocThings = ($script:thingTypes.Values | Sort-Object {$_.Version -as [string]} | Sort-Object {$_.Name -as [string]} | %{"# $(md-Link "$($_.Name)$(if ($_.Version -ne 1) {" v$($_.Version)"})" "/healthvault/datatypes/$($_.FilenamePrefix)")`n"}) -join ''
-$itemTemp = New-Item -ItemType File "$OutDir\datatypes\toc.md" -Value $tocThings -Force:$Overwrite
+$sortedThings = $script:thingTypes.Values | Where-Object{!$_.DotNetClassInfo.IsOld} | Sort-Object {$_.Version -as [string]} | Sort-Object {$_.Name -as [string]}
+$sortedOldThings = $script:thingTypes.Values | Where-Object{$_.DotNetClassInfo.IsOld} | Sort-Object {$_.Version -as [string]} | Sort-Object {$_.Name -as [string]}
+$indexThings = "# DataTypes`n" +
+                (md-Link "Old DataTypes" "old/") +
+                (md-TableHeader "Name","Version","ID","Description") +
+                ($sortedThings | %{md-TableRow (md-ThingLink $_ $true),$_.Version,$_.ThingTypeId,$_.Summary})
+$indexOldThings = "# Old DataTypes$(md-TableHeader "Name","Version","ID","Description")$($sortedOldThings | %{md-TableRow (md-ThingLink $_ $true),$_.Version,$_.ThingTypeId,$_.Summary})"
+New-Item -ItemType File "$dtPath\index.md" -Value $indexThings -Force:$Overwrite | Out-Null
+New-Item -ItemType File "$dtOldPath\index.md" -Value $indexOldThings -Force:$Overwrite | Out-Null
 Debug "DataType serialization complete."
+
+foreach ($method in $script:methods.Values) {
+    $markdown = Clean-NewLines (New-MethodMarkdown $method)
+    New-Item -ItemType File "$methodPath\$($method.Name).md" -Value $markdown -Force:$Overwrite | Out-Null
+}
+
+$sortedMethods = $script:methods.Values | Sort-Object {$_.Name -as [string]}
+$indexMethods = "# Methods" +
+                (md-TableHeader "Name","Version","Description") +
+                ($sortedMethods | %{
+                    $version = if ($_.Request) {$_.Request.Version} else {$_.Response.Version}
+                    $summary = if ($_.Request) {$_.Request.Summary} else {$_.Response.Summary}
+                    md-TableRow (md-MethodLink $_ $true),$version,$summary
+                })
+New-Item -ItemType File "$methodPath\index.md" -Value $indexMethods -Force:$Overwrite | Out-Null
+Debug "Method serialization complete."
+
+$tocThings = ($sortedThings | %{"## $(md-ThingLink $_)"}) -join "`n"
+$tocOldThings = ($sortedOldThings | %{"### $(md-ThingLink $_)"}) -join "`n"
+$tocMethods = ($sortedMethods | %{"## $(md-MethodLink $_)"}) -join "`n"
+$tocVocab = ($sortedVocabs | %{"## $(md-VocabLink $_)"}) -join "`n"
+
+$tocRef = @"
+# [DataTypes](/$($dtPath -replace "\\","/")/)
+## [Old](/$($dtOldPath -replace "\\","/")/)
+${tocOldThings}
+${tocThings}
+# [Methods](/$($methodPath -replace "\\","/")/)
+${tocMethods}
+# [Vocabularies](/$($vocPath -replace "\\","/")/)
+${tocVocab}
+"@
+$indexRef = @"
+# Reference
+
+[DataTypes](/$($dtPath -replace "\\","/")/)
+
+[Methods](/$($methodPath -replace "\\","/")/)
+
+[Vocabularies](/$($vocPath -replace "\\","/")/)
+"@
+
+New-Item -ItemType File "$refPath\toc.md" -Value $tocRef -Force:$Overwrite | Out-Null
+New-Item -ItemType File "$refPath\index.md" -Value $indexRef -Force:$Overwrite | Out-Null

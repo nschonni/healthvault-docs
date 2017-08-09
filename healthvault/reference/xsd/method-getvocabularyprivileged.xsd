@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetVocabularyPrivileged"
+    xmlns:this="urn:com.microsoft.wc.methods.GetVocabularyPrivileged"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETVOCABULARYPRIVILEGED.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetVocabularyPrivileged method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Retrieves vocabulary information from the HealthVault dictionary.
+            </summary>
+
+            <remarks>
+                This method is intended for administration purposes only and should not be granted
+                to partner applications.
+            </remarks>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+                        If no parameters are specified below, the vocabulary IDs, family, name, and
+                        version will be returned.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="id" type="wc-types:guid" minOccurs="0" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The ID(s) of the vocabularies to get the configuration
+                                information for.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="culture-code" type="wc-types:string10nw" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                If specified, only the vocabulary entries for the specified culture
+                                will be returned.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

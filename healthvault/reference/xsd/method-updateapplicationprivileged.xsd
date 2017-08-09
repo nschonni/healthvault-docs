@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.UpdateApplicationPrivileged"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-auth="urn:com.microsoft.wc.auth" 
+    xmlns:wc-app="urn:com.microsoft.wc.application"
+    xmlns:wc-app-config="urn:com.microsoft.wc.app-config" 
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-UPDATEAPPLICATIONPRIVILEGED.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for UpdateApplicationPrivileged method
+
+    -->
+
+    <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd" />
+    <import namespace="urn:com.microsoft.wc.auth" schemaLocation="auth.xsd" />
+    <import namespace="urn:com.microsoft.wc.application" schemaLocation="application-configuration.xsd" />
+    <import namespace="urn:com.microsoft.wc.app-config" schemaLocation="app-config.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Updates an application configuration.
+            </summary>
+            <method-visibility>Private</method-visibility>
+            <errors>
+                <error id="ACCESS_DENIED">
+                    If the calling application doesn't have permission to update applications, or
+                    to update the application with the passed in id.
+                </error>
+                <error id="INVALID_APP">
+                    If the application id specified cannot be found.
+                </error>
+                <error id="INVALID_PUBLIC_KEY">
+                    If the provided public key hexadecimal string cannot be converted to a
+                    X509 Certificate.
+                </error>
+                <error id="INVALID_XML">
+                    If the action-url parameter and at least one of the privacy-statement and
+                    terms-of-use parameters are not provided or the action-url is not a valid
+                    URI.
+                </error>
+                <error id="INVALID_APPAUTH">
+                    If either the online or offline base authorization is a super set of the
+                    calling application's online or offline base authorization.
+                </error>
+                <error id="INVALID_METHOD">
+                    The supplied methods exceed those allowed by the master application.
+                </error>
+                <error id="INVALID_MEANINGFULUSE_SOURCE">
+                    If meaningful-use-sources parameter contains one or more invalid sources that are not a subset of master application's ceiling.
+                </error>
+                <error id="DUPLICATE_MEANINGFULUSE_SOURCE">
+                    If meaningful-use-sources or meaningful-use-sources-ceiling parameters contain duplicate sources from
+                    another application.
+                </error>
+            </errors>
+        </documentation>
+    </annotation>
+
+    <!-- UpdateApplication - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="app-info" type="wc-app-config:AppConfig">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The application configuration information.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

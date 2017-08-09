@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.QueryPersons2"
+    xmlns:this="urn:com.microsoft.wc.methods.response.QueryPersons2"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-person="urn:com.microsoft.wc.person"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-QUERYPERSONS2.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for QueryPersons2 method response
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <import
+       namespace="urn:com.microsoft.wc.person"
+       schemaLocation="person-configuration.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- QueryPersons2 - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <complexType name="QueryPersonInfos">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="query-person-info"
+                type="wc-person:QueryPersonInfo"
+                 minOccurs="0" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="query-person-infos"
+                     type="this:QueryPersonInfos" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+              <element name="query-persons-cursor" type="wc-types:stringnz" minOccurs="0">
+                <annotation>
+                  <documentation>
+                    <summary>
+                      If paging has occurred, this will be returned as a key for next retrieval item.
+                    </summary>
+                  </documentation>
+                </annotation>
+              </element>
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetThingTypePrivileged"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetThingTypePrivileged"
+    xmlns:thing-type="urn:com.microsoft.wc.methods.ThingType" 
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-GetThingTypePrivileged.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetThingTypePrivileged method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+    <import
+        namespace="urn:com.microsoft.wc.methods.ThingType"
+        schemaLocation="thing-type.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                This gets the completed thing type definition in the HealthVault service including
+                data like string token IDs that are not returned to non-administrative applications.
+            </summary>
+            <remarks>
+                This method includes the schema, transforms, and other metadata about a thing
+                type.
+            </remarks>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    <!-- GetThingTypePrivileged - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="thing-type" type="thing-type:ThingType" minOccurs="0" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Definition for the type.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

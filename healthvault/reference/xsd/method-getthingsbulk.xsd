@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema 
+    targetNamespace="urn:com.microsoft.wc.methods.GetThingsBulk"
+    xmlns:this="urn:com.microsoft.wc.methods.GetThingsBulk" 
+    xmlns:wc-types="urn:com.microsoft.wc.types" 
+    xmlns:wc-thing="urn:com.microsoft.wc.thing"
+    xmlns:wc-method-getthingsbulk="urn:com.microsoft.wc.methods.GetThingsBulk"
+    xmlns="http://www.w3.org/2001/XMLSchema">
+
+    <!--
+
+        METHOD-GETTHINGSBULK.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetThingsBULK method
+
+    -->
+    <import 
+        namespace="urn:com.microsoft.wc.types" 
+        schemaLocation="types.xsd"/>
+
+    <import 
+        namespace="urn:com.microsoft.wc.thing" 
+        schemaLocation="thing.xsd"/>
+
+    <annotation>
+        <documentation>
+            <summary>
+                Fetches things in bulk across multiple records and thing types.
+            </summary>
+            <remarks>
+                This method will be used by internal apps to fetch things in bulk from 
+                multiple records per call. This method is App Only authentication tier. 
+                App has to pass a collection of tuples containing Version stamp, Record Id 
+                and Thing type Id. All the things which app has right permissions for will be 
+                returned. Otherwise, that tuple will be ignored.
+            </remarks>
+            <method-visibility>Private</method-visibility>
+            <version>1</version>            
+        </documentation>
+    </annotation>
+    <complexType name = "ThingInfoDetails">
+        <annotation>
+            <documentation>
+                <summary>
+                    Single tuple containing Version stamp, Record Id and Thing type Id.
+                </summary>
+            </documentation>            
+        </annotation>
+        <sequence>
+            <element name="record-id" type="wc-types:guid" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Unique Id of the Record that owns the Thing.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="version-stamp" type="wc-types:guid" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Unique Id of the Thing version that needs to be extracted.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="thing-type-id" type="wc-types:guid" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Type Id of the Thing's data type.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>          
+        </sequence>
+    </complexType>
+    <complexType name="RequestedThings">
+        <annotation>
+            <documentation>
+                <summary>
+                    Collection of Thing details for fetching data.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="requested-thing" type="this:ThingInfoDetails" minOccurs="1" maxOccurs="250">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Each thing details.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="requesting-app-id" type="wc-types:guid" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Unique Id of the application which is requesting the Things.
+                            </summary>
+                            <remarks>
+                                It has to be a valid HealthVault Application. The application itself cannot 
+                                directly call this method. Data will be fetched by an internal app and published to the 
+                                application's data store.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="requested-things" type="this:RequestedThings" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Collection of Record-VersionStamp-ThingType Ids to fetch Things
+                            </summary>
+                        </documentation>                        
+                    </annotation>                   
+                </element>              
+            </sequence>
+        </complexType>
+    </element>
+</schema>

@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetThingOperatorHistory"
+    xmlns:this="urn:com.microsoft.wc.methods.GetThingOperatorHistory"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETTHINGOPERATOR.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetThingOperatorHistory method
+
+    -->
+
+    <import
+          namespace="urn:com.microsoft.wc.types"
+          schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- GETTHINGOPERATOR - - - - - - - - - - - - - - - - - - - - - - - - -->
+    
+    <simpleType name ="ThingOperatorType">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="person">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="application">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    
+    <complexType name ="ThingOperatorSectionSpec">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="operator-type" 
+                     type="this:ThingOperatorType" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            
+                        </summary>
+
+                        <remarks>
+                            
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="date-min" type="dateTime" 
+                     minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            
+                        </summary>
+
+                        <remarks>
+                            
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name ="date-max" type="dateTime" 
+                     minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            
+                        </summary>
+
+                        <remarks>
+                            
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name ="max-results" type ="nonNegativeInteger" 
+                     minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            
+                        </summary>
+
+                        <remarks>
+                            
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            
+        </sequence>
+    </complexType>
+    
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="section" 
+                         type="this:ThingOperatorSectionSpec" 
+                         minOccurs ="1" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+            </sequence>
+        </complexType>
+    </element>
+</schema>
+

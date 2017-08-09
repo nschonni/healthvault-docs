@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetSpecialAccountInfo"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetSpecialAccountInfo"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-GETSPECIALACCOUNTINFO.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetSpecialAccountInfo method response
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Gets the information about the special account(s) of the specified type in the
+                system.
+            </summary>
+
+            <remarks>
+                This method is used to retrieve information about admin and CSR (customer service
+                representative) accounts in the system.
+            </remarks>
+            <errors>
+                <error id="ACCESS_DENIED">
+                    If the authenticated person or the application does not
+                    have method-level access rights to the method.
+                </error>
+            </errors>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    <!-- GetSpecialAccountInfo - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <complexType name="AccountInfo">
+        <annotation>
+            <documentation>
+                <summary>
+                    Information about a special account in HealthVault.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="person-id" type="wc-types:guid">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The application unique identifier for the person associated with the
+                            special account.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="name" type="wc-types:string255">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The name of the person associated with the special account.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="username" type="wc-types:LoginName" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The name the special account uses to login.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="contact-email" type="wc-types:EmailAddress" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The email address of the person associated with the special account.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="date-created" type="dateTime" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The date the account was created.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="methods" type="string">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The mask of the methods the special account can call.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the response that contains the method
+                        specific return value(s).
+                    </summary>
+
+                    <remarks>
+                        All response schemas contain the info element which 
+                        contain the return value of the method. If the method 
+                        does not define an info element, the method has no
+                        return value.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="account-info" type="this:AccountInfo" 
+                         minOccurs="0" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Information about a special account in the system.
+                            </summary>
+
+                            <remarks>
+                                Information about the special account in the system, including
+                                their name, contact email, and method mask.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

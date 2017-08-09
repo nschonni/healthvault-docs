@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.QueryDrugList"
+    xmlns:this="urn:com.microsoft.wc.methods.response.QueryDrugList"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-thing="urn:com.microsoft.wc.thing"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-QUERYDRUGLIST.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for QueryDrugList method response
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- Drug Information -->
+
+    <complexType name="DrugInfo">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="clinical-name" type="string">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+            <element name="branded-equivalents"
+                     type="this:BrandedEquivalents"
+                     minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+        </sequence>
+    </complexType>
+
+    <complexType name="BrandedDrugInfo">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="name" type="string">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+            <element name="ndc-codes"
+                     type="this:NdcCodes"
+                     minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+        </sequence>
+    </complexType>
+
+    <complexType name="Drugs">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="drug" type="this:DrugInfo"
+                  minOccurs="1" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+        </sequence>
+    </complexType>
+
+    <complexType name="BrandedEquivalents">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="branded-drug"
+                     type="this:BrandedDrugInfo"
+                     minOccurs="1" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+        </sequence>
+    </complexType>
+
+    <complexType name="NdcCodes">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="code-id" type="string"
+                  minOccurs="1" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+        </sequence>
+    </complexType>
+
+    <complexType name="ApproximateMatches">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="match" type="string"
+                  minOccurs="1" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+        </sequence>
+    </complexType>
+
+    <!-- QueryDrugList  - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <choice>
+                <element name="drugs" type="this:Drugs"
+                    minOccurs="0" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+
+                <element name="matches"
+                         type="this:ApproximateMatches"
+                         minOccurs="0" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+
+            </choice>
+        </complexType>
+    </element>
+</schema>

@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.SetApplicationState"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-SETAPPLICATIONSTATE.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for SetApplicationState method
+
+    -->
+
+    <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Changes the state of an application to the one specified.
+            </summary>
+            <method-visibility>Private</method-visibility>
+            <errors>
+                <error id="ACCESS_DENIED">
+                    If the calling application doesn't have permission to set application state, or
+                    the calling person doesn't have permission to change the state of the specified
+                    application.
+                </error>
+                <error id="INVALID_APP">
+                    If the application id specified cannot be found.
+                </error>
+                <error id="INVALID_XML">
+                    If the state specified is not a valid state.
+                </error>
+            </errors>
+        </documentation>
+    </annotation>
+
+    <!-- SetApplicationState - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="app-id" type="wc-types:guid">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The unique application identifier.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="state" type="positiveInteger">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The new state of the application.
+                            </summary>
+                            <remarks>
+                                Currently supported states include:
+                                1 = active
+                                2 = needs verification
+                                3 = suspended
+                                4 = deleted
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="migration-source-instance" type="wc-types:string255nw" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                If the application was migrated from an instance to HVSS which also contained
+                                the same application migrated from another instance, this value will contain
+                                the instance from which this configuration was migrated.
+                            </summary>
+
+                            <remarks>
+                                This element must be passed when changing the application state if multiple configurations
+                                for the application exist.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

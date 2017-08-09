@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.PutThingsPrivileged"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-thing="urn:com.microsoft.wc.thing"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-PUTTHINGSPRIVILEGED.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for PutThingsPrivileged method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.thing"
+        schemaLocation="thing.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                This method allows a Thing to be created or updated by a specified application 
+                identifier.
+            </summary>
+
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    <!-- PutThingsPrivileged - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="impersonated-application-id" type="wc-types:guid">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The application id that will be accountable for the thing creation
+                                or update.
+                            </summary>
+
+                            <remarks>
+                                This method was designed to use by Shell for the Drop-off pick-up
+                                scenario to ensure the audit trail remained in tact for the 
+                                application that created the package.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="package-source" type="wc-types:string300nw" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The source of the package, obtained from the
+                                ValidateConnectRequest call.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="package-created-date" type="dateTime" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The date the package was dropped off, obtained
+                                from the ValidateConnectRequest call.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="auto-reconcile" type="boolean" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Flag indicating whether the Thing must
+								be auto-reconciled.  If absent or false,
+								the authorized records setting will be used.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="thing" type="wc-thing:Thing"
+                    minOccurs="1" maxOccurs="unbounded" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The thing to be created or updated.
+                            </summary>
+
+                            <remarks>
+                                If the thing-id exists, then the previous thing is updated. 
+                                If thing-id is not provided, then a new thing is created.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

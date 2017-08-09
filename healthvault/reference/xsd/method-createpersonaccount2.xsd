@@ -1,0 +1,453 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.CreatePersonAccount2"
+    xmlns:this="urn:com.microsoft.wc.methods.CreatePersonAccount2"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-auth="urn:com.microsoft.wc.auth"
+    xmlns:wc-person="urn:com.microsoft.wc.person"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-CREATEPERSONACCOUNT.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for CreatePersonAccount method
+
+    -->
+
+    <import
+          namespace="urn:com.microsoft.wc.types"
+          schemaLocation="types.xsd" />
+    <import
+          namespace="urn:com.microsoft.wc.auth"
+          schemaLocation="auth.xsd"  />
+    <import
+          namespace="urn:com.microsoft.wc.person"
+          schemaLocation="person-configuration.xsd"  />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+            <version>2</version>
+            <errors>
+                <error id="ACCESS_DENIED">
+                    If the calling application doesn't have permission to create accounts.
+                </error>
+                <error id="DUPLICATE_CREDENTIAL_FOUND">
+                    If an account with one of the specified credentials exists already,
+                    possibly on a different HealthVault instance.
+                </error>
+            </errors>        
+        </documentation>
+    </annotation>
+
+    <!-- CreatePersonAccount - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <complexType name="PrimaryCredential">
+        <annotation>
+            <documentation>
+                <summary>
+                    The primary set of credentials for the account that is
+                    being created.
+                </summary>
+
+                <remarks>
+                    When an account is created a set of credentials must be
+                    associated with the account. These credentials allow the
+                    person to logon and if desired associate other credentials
+                    with the account.
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <choice>
+                <element name="simple-encrypted"
+                        type="wc-types:stringnz">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                              A simple credential encrypted.
+                            </summary>
+
+                            <remarks>
+                              This opaque credential is returned by the create credential calls.
+                              It represents the original authenticating credential.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="simple-userpass" type="wc-auth:UserPassCred">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The credential consists of a username and password.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="simple-passport"
+                         type="wc-auth:SimplePassportCredential">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The credential consists of a PUID obtained from the
+                                Microsoft Passport (Windows Live ID) service.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="simple-openid"
+                         type="wc-auth:SimpleOpenIdCredential">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The credential consists of an open id claimed
+                                identifier.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="simple-facebook"
+                         type="wc-auth:SimpleFacebookCredential">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The credential consists of an user-id from the Facebook 
+                                service.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </choice>
+            <element name="credential-name" type="wc-types:string128"
+                    minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The credential name is used to identify
+                            the credential to the end user.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="Credentials">
+        <annotation>
+            <documentation>
+                <summary>
+                    A List of credentials associated with the account 
+                    upon creation.
+                </summary>
+
+                <remarks>
+                    When an account is created a set of credentials must be
+                    associated with the account. These credentials allow the
+                    person to logon and if desired associate other credentials
+                    with the account.
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="credential-info" type="wc-auth:NewCredInfo"
+                     minOccurs="1" maxOccurs="2">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The credentialinfo consists of a credential, name and meta data. 
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    
+    <complexType name="PersonInfo">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="name" type="wc-types:string255">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="contact-email" type="wc-types:EmailAddress">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="contact-email-validated" type="boolean">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="is-newsletter-subscriber" type="boolean">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>          
+
+            <element name="primary-credential" type="this:PrimaryCredential"
+                     minOccurs="0" maxOccurs="1">
+              <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+                            This element will be removed in future. Its left here 
+                            for backward compatibility. 
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="credentials" type="this:Credentials"
+                   minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A list of credentials.
+                        </summary>
+
+                        <remarks>
+                        
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="referrer-app-id" type="wc-types:guid" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            
+                        </summary>
+
+                        <remarks>
+                            
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+            <element name="preferred-culture" type="wc-types:Culture"
+                     minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The user's preferred culture for use with
+                            comparisons, collation, currency, dates, etc.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="preferred-uiculture" type="wc-types:Culture"
+                     minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The user's preferred UI culture for use with
+                            selecting the language that the application should
+                            use when showing text and images to the user.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="preferred-timezone" type="int"
+                     minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The time zone code for the user's preferred time
+                            zone.
+                        </summary>
+                        <remarks>
+                            The time zone code must match a value of a time
+                            zone in the "time-zone" vocabulary. The "time-zone"
+                            vocabulary can be used to get localized names and
+                            abbreviations for the time zones.<br/><br/>
+                            If the preferred-timezone isn't specified, then
+                            PST is assumed as the default.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="signup-code" type="wc-types:string25nw"
+                     minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The signup code that allows a user in a restricted
+                            location to create an account.
+                        </summary>
+
+                        <remarks>
+                            The signup code must have been previously retrieved
+                            from HealthVault via methods such as
+                            CreateConnectRequest, CreateConnectPackage,
+                            AllocatePackageId, and NewSignupCode.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name ="security-contact" type ="wc-person:SecurityContactInfo" 
+                     minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The contact information to be used to inform the person, in event of a
+                            significant incident such as a security breach.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="is-health-statement-subscriber" type="boolean" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                           Indicates whether or not a person is a health statement subscriber.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="is-eprep-user" type="boolean" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Indicates whether or not a person is an emergency profile user.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="is-wmgmt-user" type="boolean" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Indicates whether or not a person is a weight management user.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="location"
+                     type="wc-types:Location"
+                     minOccurs="0"
+                     maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The location of the person to be used as a default when creating new records.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="is-msh-paired" type="boolean" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Indicates whether or not a person is paired with an MSH user.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="person-info" type="this:PersonInfo">
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>
+
