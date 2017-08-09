@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetMeaningfulUseTimelyAccessReport"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetMeaningfulUseTimelyAccessReport"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-GETMEANINGFULUSETIMELYACCESSReport.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetMeaningfulUseTimelyAccessReport method
+
+    -->
+
+    <import
+      namespace="urn:com.microsoft.wc.types"
+      schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Specifies the schema for the GetMeaningfulUseTimelyAccessReport method response.
+            </summary>
+
+            <remarks>
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- GetMeaningfulUseTimelyAccessReport - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <complexType name="Document">
+        <annotation>
+            <documentation>
+                <summary>
+                    A Meaningful Use document receipt.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="available-date" type="dateTime" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Specifies the available date of the document to the user.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+        <attribute name="patient-id" type="wc-types:stringnz" use="required">
+            <annotation>
+                <documentation>
+                    <summary>
+                        Patient unique identifier associated with the document.
+                    </summary>
+
+                    <remarks>
+                        Extracted from documents such as CCDA.
+                    </remarks>
+                </documentation>
+            </annotation>
+        </attribute>
+        <attribute name="organization-id" type="wc-types:stringnz" use="optional">
+            <annotation>
+                <documentation>
+                    <summary>
+                        Organizer's unique identifier associated with the activity.
+                    </summary>
+
+                    <remarks>
+                        Extracted from documents such as CCDA.
+                    </remarks>
+                </documentation>
+            </annotation>
+        </attribute>
+        <attribute name="event-date" type="dateTime" use="required">
+            <annotation>
+                <documentation>
+                    <summary>
+                        Service event date associated with the document.
+                    </summary>
+
+                    <remarks>
+                        Extracted from documents such as CCDA.
+                        If ambulatory vists, this represents the visit date.  For inpatient, this represents the discharge date.
+                    </remarks>
+                </documentation>
+            </annotation>
+        </attribute>
+    </complexType>
+
+    <complexType name="DopuDocument">
+        <annotation>
+            <documentation>
+                <summary>
+                    A Meaningful Use DOPU document activity.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="available-date" type="dateTime" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Specifies the available date of the document to the user.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+        <attribute name="package-id" type="wc-types:stringnz" use="required">
+            <annotation>
+                <documentation>
+                    <summary>
+                        Package id.
+                    </summary>
+
+                    <remarks>
+                        This value is the package id returned when calling CreateConnectPackage or CreateConnectPackage2 method.
+                    </remarks>
+                </documentation>
+            </annotation>
+        </attribute>
+    </complexType>
+
+    <complexType name="Documents">
+        <annotation>
+            <documentation>
+                <summary>
+                    A list of qualified Meaningful Use document receipts associated with specified source.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="document-receipt" type="this:Document" minOccurs="1" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A Meaningful Use document receipt.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="DopuDocuments">
+        <annotation>
+            <documentation>
+                <summary>
+                    A list of qualified Meaningful Use DOPU package receipts associated with specified source.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="dopu-document-receipt" type="this:DopuDocument" minOccurs="1" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A Meaningful Use DOPU document receipt.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="DocumentSource">
+        <annotation>
+            <documentation>
+                <summary>
+                    A Meaningful Use source.
+                </summary>
+
+                <remarks>
+                    Source is either the id of the application that contributed to the data or the email domain of the Direct sender.
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <choice>
+                <element name="document-receipts" type="this:Documents" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A list of qualified Meaningful Use document receipts associated with specified source.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="dopu-document-receipts" type="this:DopuDocuments" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A list of qualified Meaningful Use DOPU document receipts associated with specified source.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </choice>
+        </sequence>
+        <attribute name="id" type="wc-types:stringnz" use="required">
+            <annotation>
+                <documentation>
+                    <summary>
+                        Source identifier.
+                    </summary>
+
+                    <remarks>
+                        Source is either the id of the application that contributed to the data or the email domain of the Direct sender.
+                    </remarks>
+                </documentation>
+            </annotation>
+        </attribute>
+    </complexType>
+
+    <complexType name="Sources">
+        <annotation>
+            <documentation>
+                <summary>
+                    A list of sources.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="source" type="this:DocumentSource" minOccurs="0" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A list of qualified Meaningful Use document receipts associated with specified source.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Contains the response of the GetMeaningfulUseTimelyAccessReport method request.
+                    </summary>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="sources" type="this:Sources" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A list of qualified Meaningful Use document receipts associated with specified sources.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="cursor" type="wc-types:stringnz" minOccurs="0" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                If paging has occurred, this will be returned as a key for the next retrieval item.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

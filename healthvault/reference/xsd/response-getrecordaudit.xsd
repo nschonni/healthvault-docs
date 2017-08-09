@@ -1,0 +1,541 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetRecordAudit"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetRecordAudit"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-app="urn:com.microsoft.wc.application"
+    xmlns:wc-person="urn:com.microsoft.wc.person"
+    xmlns:wc-thing="urn:com.microsoft.wc.thing" 
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETRECORDAUDIT.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetRecordAudit methods
+
+    -->
+
+    <import
+      namespace="urn:com.microsoft.wc.types"
+      schemaLocation="types.xsd" />
+
+    <import
+      namespace="urn:com.microsoft.wc.application"
+      schemaLocation="application-configuration.xsd" />
+
+    <import
+          namespace="urn:com.microsoft.wc.person"
+          schemaLocation="person-configuration.xsd" />
+    
+    <import
+          namespace="urn:com.microsoft.wc.thing"
+          schemaLocation="thing.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- GetRecordAudit - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <simpleType name="RecordAuditActionType">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="CreateRecord">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="UpdateRecord">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="DeleteRecord">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="UndeleteRecord">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CreateRecordAuthorization">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="AcceptRecordAuthorization">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="RejectRecordAuthorization">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="UpdateRecordAuthorization">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="RemoveRecordAuthorization">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ReadRecordInformation">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ScrubRecord">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ScrubPersonAuthorization">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="PermanentlyDeleteThings">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="RecordNotificationChangedEventSent">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="AddEmergencyAccessCode">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="RemoveEmergencyAccessCode">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="EmergencyAccessReadRecordInfo">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="DataSyncCompleted">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A data connection sync has completed successfully.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="DataSyncCompletedWithErrors">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A data connection sync has completed with errors.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+
+    <complexType name="Change">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="field" type="string" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+            <any minOccurs="0" maxOccurs="unbounded"
+                      namespace="##any" processContents="skip">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </any>
+        </sequence>
+    </complexType>
+
+    <complexType name="Changes">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="change"
+                     type="this:Change"
+                     minOccurs="0" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+        </sequence>
+    </complexType>
+
+    <complexType name="RecordAudit">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="record-id" type="wc-types:guid" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+
+            <element name="person-id" type="wc-types:guid" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+
+            <element name="application-id" type="wc-types:guid" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+
+            <element name="impersonating-person-id"
+                     type="wc-types:guid" minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+
+            <element name="record-audit-action"
+                     type="this:RecordAuditActionType" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="thing-access-avenue" type="wc-thing:AccessAvenue"  
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="open-query-id" type="wc-types:guid"  
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="updated-date" type="dateTime" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+
+            <element name="changes"
+                     type="this:Changes" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="record-audit"
+                         type="this:RecordAudit"
+                         minOccurs="0" maxOccurs="unbounded" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+
+                <element name="partial-person-info" type="wc-person:PartialPersonInfo"
+                         minOccurs ="0" maxOccurs="unbounded" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+
+                <element name="application" type ="wc-app:App"
+                         minOccurs="0" maxOccurs="unbounded" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

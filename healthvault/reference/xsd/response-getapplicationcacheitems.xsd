@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetApplicationCacheItems"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetApplicationCacheItems"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema">
+    <!--
+
+        RESPONSE-GETAPPLICATIONCACHEITEMS.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetApplicationCacheItems method response
+
+    -->
+    <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd"/>
+    <annotation>
+        <documentation>
+            <summary>
+                Cache data and information for the requested cache items that
+                were successfully retrieved.
+            </summary>
+        </documentation>
+    </annotation>
+
+    <!-- GetApplicationCacheItems - - - - - -  - - - - - - - - - - - - - - -->
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the response that contains the method
+                        specific return value(s).
+                    </summary>
+                    <remarks>
+                        All response schemas contain the info element which
+                        contain the return value of the method. If the method
+                        does not define an info element, the method has no
+                        return value.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="item" type="this:CacheItemRetrieved" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="CacheItemRetrieved">
+        <annotation>
+            <documentation>
+                <summary>
+                    A retrieved cache item.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="data" type="this:CacheItemDataRetrieved" />
+        </sequence>
+        <attribute name="key" type="wc-types:stringnz256" use="required" />
+    </complexType>
+
+    <complexType name="CacheItemDataRetrieved">
+        <annotation>
+            <documentation>
+                <summary>
+                    The cache value for the retrieved item, encoded in Base64.
+                </summary>
+                <remarks>
+                    The version-id attribute can be used to perform future
+                    put or remove operations with optimistic concurrency control.
+                </remarks>
+            </documentation>
+        </annotation>
+        <simpleContent>
+            <extension base="base64Binary">
+                <attribute name="version-id" use="required" type="wc-types:stringnz256" />
+            </extension>
+        </simpleContent>
+    </complexType>
+</schema>

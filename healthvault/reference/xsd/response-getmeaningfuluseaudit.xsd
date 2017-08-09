@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetMeaningfulUseAudit"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetMeaningfulUseAudit"
+    xmlns:wc-types="urn:com.microsoft.wc.types" 
+    xmlns:wc-meaningfulUse="urn:com.microsoft.wc.MeaningfulUse"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-GETMEANINGFULUSEAUDIT.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetMeaningfulUseAudit method
+
+    -->
+
+    <import
+      namespace="urn:com.microsoft.wc.MeaningfulUse"
+      schemaLocation="meaningful-use.xsd" />
+
+    <import
+      namespace="urn:com.microsoft.wc.types"
+      schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Specifies the schema for the GetMeaningfulUseAudit method response.
+            </summary>
+
+            <remarks>
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- GetMeaningfulUseAudit - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <complexType name="MeaningfulUseAudit">
+        <annotation>
+            <documentation>
+                <summary>
+                    A Meaningful Use audit.
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="record-id" type="wc-types:guid" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The identifier for the record that was audited.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="person-id" type="wc-types:guid" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The identifier for the person who performed the audit action.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="application-id" type="wc-types:guid" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The identifier for the application who performed the audit action.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="action" type="wc-meaningfulUse:Action" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The type of audit action: view, download, or transmit.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="date" type="dateTime" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The date the audit occurred.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    
+    <complexType name="MeaningfulUseAudits">
+        <annotation>
+            <documentation>
+                <summary>
+                    A list of Meaningful Use audits.
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="audit" type="this:MeaningfulUseAudit"
+                     minOccurs="1" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A Meaningul Use audit.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    
+    <complexType name="Person">
+        <annotation>
+            <documentation>
+                <summary>
+                </summary>
+                <remarks>
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+                <element name="person-id" type="wc-types:guid" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The person's ID.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            <element name="name" type="wc-types:string255">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The person's display name.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    
+    <complexType name="People">
+        <annotation>
+            <documentation>
+                <summary>
+                    A list of person IDs mapped to display names.
+                </summary>
+                <remarks>
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="person" type="this:Person"
+                     minOccurs="1" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A person's display name.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    
+    <complexType name="Application">
+        <annotation>
+            <documentation>
+                <summary>
+                </summary>
+                <remarks>
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+                <element name="application-id" type="wc-types:guid" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The application ID.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="name" type="wc-types:CultureSpecificString255"
+                         minOccurs="0" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The app's display name.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+        </sequence>
+    </complexType>
+    
+    <complexType name="Applications">
+        <annotation>
+            <documentation>
+                <summary>
+                    A list of app IDs mapped to culture specific names.
+                </summary>
+                <remarks>
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="application" type="this:Application"
+                     minOccurs="1" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A app's set of culture specific names.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Contains the response of the GetMeaningfulUse method request.
+                    </summary>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="audits" type="this:MeaningfulUseAudits"
+                         minOccurs="0" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A list of Meaningful Use audits.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="people" type="this:People" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The display names of all people associated with the audits being returned.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="applications" type="this:Applications" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The culture specific names of all apps associated with the audits being returned.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="cursor" type="wc-types:stringnz"
+                         minOccurs="0" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                If paging has occurred, this will be returned as a key for the next retrieval item.  
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

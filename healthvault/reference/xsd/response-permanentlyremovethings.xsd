@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.PermanentlyRemoveThings"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-PERMANENTLYREMOVETHINGS.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for PermanentlyRemoveThings method response
+
+    -->
+
+    <annotation>
+        <documentation>
+            <summary>
+                The count of things that were permanently removed.
+            </summary>
+            <method-visibility>Private</method-visibility>
+            <errors>
+                <error id="INVALID_RECORD_STATE">
+                    If the record is locked for maintenance or the record state is not active.
+                </error>
+                <error id="INVALID_THING">
+                    If a thing does not exist.
+                </error>
+                <error id="BATCH_LIMIT_EXCEEDED">
+                    If the number of things specified exceeds the maximum limit.
+                </error>
+                <error id="VERSION_STAMP_MISMATCH">
+                    If the version-stamp of a thing-id is not the current version of the thing.
+                </error>
+            </errors>
+        </documentation>
+    </annotation>
+
+    <!-- PermanentlyRemoveThings - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the response that contains the method
+                        specific return value(s).
+                    </summary>
+
+                    <remarks>
+                        All response schemas contain the info element which
+                        contain the return value of the method. If the method
+                        does not defined an info element, the method has no
+                        return value.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="deleted-count" type="int">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The count of things that were permanently removed.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

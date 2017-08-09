@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.InvokeDataConnectionSync"
+    xmlns:wc-types="urn:com.microsoft.wc.types"    
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+        METHOD-InvokeDataConnectionSync.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for InvokeDataConnectionSync method
+    -->
+
+  <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd" />
+  
+  <annotation>
+    <documentation>
+      <summary>
+        Schedules a refresh for a data connection.
+      </summary>
+      <method-visibility>Private</method-visibility>
+      <errors>
+        <error id="DATA_CONNECTION_NOT_FOUND">
+            Data connection for the connection-id not found.
+        </error>
+      </errors>
+    </documentation>
+  </annotation>
+  
+
+  <!-- InvokeDataConnectionSync -->
+  
+  <element name="info">
+    <complexType>
+      <annotation>
+        <documentation>
+          <summary>
+            The element of the request that contains the method
+            specific parameters.
+          </summary>
+
+          <remarks>
+            All requests contain the info element to pass parameters
+            that are specific to each method. If the method does not
+            define an info element, the method does not take any
+            parameters.
+          </remarks>
+        </documentation>
+      </annotation>
+      <sequence>      
+        <element name="connection-id" type="wc-types:positiveLong" minOccurs="1" maxOccurs="1" >
+          <annotation>
+            <documentation>
+              <summary>
+                Id for the data connection that needs to be refreshed/synced.
+              </summary>    
+            </documentation>
+          </annotation>
+        </element>      
+      </sequence>
+    </complexType>
+  </element>
+</schema>

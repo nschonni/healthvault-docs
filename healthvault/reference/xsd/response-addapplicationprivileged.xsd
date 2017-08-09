@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.AddApplicationPrivileged"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-ADDAPPLICATIONPRIVILEGED.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for AddApplicationPrivileged method response
+
+    -->
+
+    <import
+      namespace="urn:com.microsoft.wc.types"
+      schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                The id of the added application.
+            </summary>
+            <method-visibility>Private</method-visibility>
+            <errors>
+                <error id="ACCESS_DENIED">
+                    If the calling application doesn't have permission to add applications.
+                </error>
+                <error id="INVALID_PUBLIC_KEY">
+                    If the provided public key hexadecimal string cannot be converted to a 
+                    X509 Certificate.
+                </error>
+                <error id="INVALID_XML">
+                    If the action-url parameter and at least one of the privacy-statement and 
+                    terms-of-use parameters are not provided or the action-url is not a valid URI.
+                </error>
+                <error id="INVALID_APPAUTH">
+                    If either the online or offline base authorization is a super set of the
+                    calling application's online or offline base authorization.
+                </error>
+                <error id="INVALID_METHOD">
+                    The supplied methods exceed those allowed by the master application.
+                </error>
+                <error id="INVALID_MEANINGFULUSE_SOURCE">
+                    If meaningful-use-sources parameter contains one or more invalid sources that are not a subset of master application's ceiling.
+                </error>
+                <error id="DUPLICATE_MEANINGFULUSE_SOURCE">
+                    If meaningful-use-sources or meaningful-use-sources-ceiling parameters contain duplicate sources from
+                    another application.
+                </error>
+            </errors>
+        </documentation>
+    </annotation>
+
+    <!-- AddApplication - - - - - -  - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the response that contains the method
+                        specific return value(s).
+                    </summary>
+
+                    <remarks>
+                        All response schemas contain the info element which
+                        contain the return value of the method. If the method
+                        does not define an info element, the method has no
+                        return value.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="id" type="wc-types:guid">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The id of the added application as a GUID.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

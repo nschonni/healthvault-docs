@@ -1,0 +1,110 @@
+﻿<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.SelectInstancePrivileged"
+    xmlns:this="urn:com.microsoft.wc.methods.SelectInstancePrivileged"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-auth="urn:com.microsoft.wc.auth"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-SelectInstancePrivileged.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for SelectInstancePrivileged method
+
+    -->
+
+    <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd" />
+    <import namespace="urn:com.microsoft.wc.auth" schemaLocation="auth.xsd"/>
+
+    <annotation>
+        <documentation>
+            <summary>
+                Schema for the SelectInstancePrivileged method request.
+            </summary>
+            <remarks>
+                The SelectInstancePrivileged method takes up to two parameters: a user's preferred
+                account location, and an application ID. All two parameters are required.
+
+                The method uses the location to return the ID for the HealthVault instance where a 
+                new account should be created. If app ID is specified, the method will only return 
+                the selected instance if the app supports it.
+
+                If a suitable instance cannot be found for the specified parameters, no instance
+                is returned. This can happen, for example, if:
+                - the account location is not supported by HealthVault
+                - the selected instance is not supported by the specified app
+            </remarks>
+            <method-visibility>Private</method-visibility>
+            <errors>
+                <error id="INVALID_APP">
+                    If no app can be found with the specified ID.
+                </error>
+            </errors>
+        </documentation>
+    </annotation>
+
+    <!-- - - - - - - - - - - SelectInstancePrivileged - - - - - - - - - - - -->
+
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                        
+                        In this method, the location is a required parameter.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="preferred-location"
+                            type="wc-types:Location">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The user's preferred geographical location.
+                            </summary>
+                            <remarks>
+                                This parameter determines what instance should be used to
+                                store a new HealthVault account. If there is a location
+                                associated with the credential that will be used for
+                                the new HealthVault account, that location should be used.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="app-id"
+                            type="wc-types:guid"
+                            minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The identifier for the application against which to filter
+                                the selected instance.
+                            </summary>
+                            <remarks>
+                                If an app ID is specified, the instance ID that would be
+                                returned for the specified location is compared against 
+                                the app's supported instances. If it is not one of the app's
+                                supported instances, no instance ID is returned.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

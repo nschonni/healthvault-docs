@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.CreateAuthenticationTokensWithTicket"
+    xmlns:this="urn:com.microsoft.wc.methods.CreateAuthenticationTokensWithTicket"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-CREATEAUTHENTICATIONTOKENSWITHTICKET.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for CreateAuthenticationTokensWithTicket method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Returns user authentication token, application authentication token,
+                and GetPersonInfo.
+            </summary>
+            <method-visibility>Private</method-visibility>
+            <version>1</version>
+            <errors>
+                <error id="CREDENTIAL_NOT_FOUND">
+                    If a credential for the ticket is not found.
+                </error>
+                <error id="INVALID_PERSON">
+                    If the user is not authorized for the application.
+                </error>
+                <error id="ACCESS_DENIED">
+                    If the ticket is not valid.
+                </error>
+            </errors>
+            <related-links>
+                <related-link>
+                    <text>
+                        HealthVault mobile
+                    </text>
+                    <link>
+                        https://go.microsoft.com/fwlink/?LinkId=513252
+                    </link>
+                </related-link>
+            </related-links>
+        </documentation>
+    </annotation>
+
+    <!-- CreateAuthenticationTokensWithTicket - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <!-- this is a scoped down wc-types:Credential -->
+    <complexType name="Credential">
+        <annotation>
+            <documentation>
+                <summary>
+                    Credential in which the authenticated session
+                    will be in the context of.
+                </summary>
+
+                <remarks>
+                    The credential serves two purposes.  First,
+                    it must be verified as valid.  Once verified,
+                    the credential provides the authentication context
+                    for the session.
+                </remarks>
+            </documentation>
+        </annotation>
+        <choice>
+            <element name="appserver2"
+                type="this:AppServerCred">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Web application server credential.
+                        </summary>
+
+                        <remarks>
+                            The credential is a signed request showing 
+                            proof-of-posession of the application-specific 
+                            private key.  This credential may be used to
+                            establish two modes of authentication. First,
+                            it may be used to create an trusted anonymous session
+                            in the context of the application.  Secondly,
+                            it may be used to create a trusted session in 
+                            the context of a specified user.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </choice>
+    </complexType>
+
+    <complexType name="AppServerCred">
+        <annotation>
+            <documentation>
+                <summary>
+                    Application server credential that is used when an application
+                    is identifying itself for subsequent calls to Microsoft
+                    HealthVault.
+                </summary>
+
+                <remarks>
+                    This credential type requires that the content element
+                    be signed using the application's private key.
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <!-- signature computed over cred parameters using app key -->
+            <choice>
+                <element name="hmacSig" type="this:HmacSig">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                An Hmac signature of the content section.
+                            </summary>
+                            <remarks>
+                                The signature is generated using the the application's
+                                shared key.  The key was previously generated via
+                                the NewApplicationCreationInfo call.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </choice>
+
+            <!-- app server cred parameters -->
+            <element name="content"
+                type="this:AppServerCredInfo" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The application's credential information.
+                        </summary>
+
+                        <remarks>
+                            This section is signed by the application's private
+                            key.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+        </sequence>
+    </complexType>
+
+    <simpleType name="hmac">
+        <annotation>
+            <documentation>
+                <summary>
+                    Names of valid hmac algorithms
+                </summary>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="HMACSHA256">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            SHA256 HMAC implementation
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+
+    <complexType name="AppServerCredInfo">
+        <annotation>
+            <documentation>
+                <summary>
+                    
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="app-id" type="wc-types:guid">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The application id of the app to authenticate.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="hmac" type="this:hmac">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The hmac algorithm name that will be used to 
+                            hmac subsequent requests.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="signing-time" type="dateTime">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The time this request was signed.  HealthVault
+                            will reject requests signed too far in the past.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+
+    <!-- CreateAuthenticatedSessionToken - - - - - - - - - - - - - - - - - - - - - - - -->
+    <complexType name="AuthTokenInfo">
+        <annotation>
+            <documentation>
+                <summary>
+                    Parameters for creating an authenticated session token.
+                </summary>
+
+                <remarks>
+                    The caller must provide the application information as well
+                    as the user credential for which the session will be in 
+                    the context of.
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="app-id" type="wc-types:guid">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Application identifier for the authenticated session.
+                        </summary>
+
+                        <remarks>
+                            In order for a session to be created,
+                            the user must grant access to the application to 
+                            run in the context of the user.  If permission
+                            has not been granted, this will result in a
+                            access denied error.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="credential"
+                type="this:Credential">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Credential in which the authenticated session
+                            will be in the context of.
+                        </summary>
+
+                        <remarks>
+                            The credential serves two purposes.  First,
+                            it must be verified as valid.  Once verified,
+                            the credential provides the authentication context
+                            for the session.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+        </sequence>
+    </complexType>
+
+    <complexType name="HmacSig">
+        <simpleContent>
+            <extension base="wc-types:string512">
+                <attribute name="algName"
+                    type="this:hmac" use="required">
+                </attribute>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Creates both an application token and a user token for the
+                        calling parameters.  This method also returns the user's
+                        PersonInfo. 
+                    </summary>
+
+                    <remarks>
+                        The authenticated session is in the context
+                        of the provided credential and the application.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                 <element name="msa-ticket" type="wc-types:string2048nw">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The authentication ticket created by Microsoft Account (MSA).
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="auth-info"
+                    type="this:AuthTokenInfo">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Parameters for creating an application authenticated session token.
+                            </summary>
+
+                            <remarks>
+                                The caller must provide the application information 
+                                for token use context. 
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+       
+            </sequence>
+        </complexType>
+    </element>
+</schema>   
+        

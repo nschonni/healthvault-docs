@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetAppSpecificPseudoId"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetAppSpecificPseudoId"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-GETAPPSPECIFICPSEUDOID.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetAppSpecificPseudoId method response
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <complexType name="ConvertedPseudoRecordId">
+        <annotation>
+            <documentation>
+                <summary>
+                    The converted pseudo id with information about the record. 
+                </summary>
+
+                <remarks>
+                    
+                </remarks>
+            </documentation>
+        </annotation>
+        <simpleContent>
+            <extension base="wc-types:guid" >
+                <attribute name="other-app-pseudo-id" type="wc-types:guid" 
+                           use="required">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The pseudo id that was converted.                              
+                            </summary>
+
+                            <remarks>
+                                
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </attribute>
+
+                <attribute name="record-state" type="wc-types:RecordState" 
+                           use="required">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The record state of the real record. 
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </attribute>
+
+                <attribute name="auth-expires" type="dateTime" 
+                           use="required">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The datetime when authorization to the 
+                                real record expires. 
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </attribute>
+                
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="pseudo-record-id" 
+                         type="this:ConvertedPseudoRecordId" 
+                         minOccurs="0" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+                                The number of converted pseudo record ids is
+                                the number of pseudo record ids successfully 
+                                converted from the request.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.AddMeaningfulUseAudit"
+    xmlns:this="urn:com.microsoft.wc.methods.AddMeaningfulUseAudit"
+    xmlns:wc-meaningfulUse="urn:com.microsoft.wc.MeaningfulUse"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+  <!--
+
+        METHOD-ADDMEANINGFULUSEAUDIT.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for AddMeaningfulUseAudit method
+
+    -->
+
+  <import
+      namespace="urn:com.microsoft.wc.MeaningfulUse"
+      schemaLocation="meaningful-use.xsd" />
+  
+  <annotation>
+    <documentation>
+      <summary>
+        Adds Meaningful Use audits for a patient.
+      </summary>
+
+      <remarks>
+      </remarks>
+      <method-visibility>Private</method-visibility>
+      <errors>
+        <error id="INVALID_DATETIME">
+            If an audit date is too far in the past or future.
+        </error>
+      </errors>
+    </documentation>
+  </annotation>
+
+  <!-- AddMeaningfulUseAudit - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  
+  <complexType name="MeaningfulUseAudit">
+    <annotation>
+      <documentation>
+        <summary>
+          A Meaningful Use audit for a patient.
+        </summary>
+        <remarks>
+        </remarks>
+      </documentation>
+    </annotation>
+    <sequence>
+      <element name="action" type="wc-meaningfulUse:Action" >
+          <annotation>
+            <documentation>
+              <summary>
+                The type of audit action: view, download, or transmit.
+              </summary>
+
+              <remarks>
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+      <element name="date" type="dateTime" minOccurs="0" >
+          <annotation>
+            <documentation>
+              <summary>
+                The date the action occurred.
+              </summary>
+
+              <remarks>
+                If date is too far in the past or future, the method 
+                returns INVALID_DATE and no audits are added.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+    </sequence>
+  </complexType>
+  
+  <element name="info">
+    <complexType>
+      <annotation>
+        <documentation>
+          <summary>
+            The element of the request that contains the method
+            specific parameters.
+          </summary>
+
+          <remarks>
+            All requests contain the info element to pass parameters
+            that are specific to each method. If the method does not
+            define an info element, the method does not take any
+            parameters.
+          </remarks>
+        </documentation>
+      </annotation>
+      <sequence>
+        <element name="audit"
+                 type="this:MeaningfulUseAudit" minOccurs="1" maxOccurs="unbounded" >
+          <annotation>
+            <documentation>
+              <summary>
+                A Meaningful Use audit for a patient.
+              </summary>
+
+              <remarks>
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

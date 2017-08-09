@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetMeaningfulUseVDTReportPrivileged"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetMeaningfulUseVDTReportPrivileged"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-meaningfulUse="urn:com.microsoft.wc.MeaningfulUse"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-GETMEANINGFULUSEVDTREPORTPRIVILEGED.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetMeaningfulUseVDTReportPrivileged method
+
+    -->
+
+    <import
+      namespace="urn:com.microsoft.wc.types"
+      schemaLocation="types.xsd" />
+
+    <import
+    namespace="urn:com.microsoft.wc.MeaningfulUse"
+    schemaLocation="meaningful-use.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Specifies the schema for the GetMeaningfulUseVDTReportPrivileged method response.
+            </summary>
+
+            <remarks>
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- GetMeaningfulUseVDTReportPrivileged - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Contains the response of the GetMeaningfulUseVDTReport method request.
+                    </summary>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="text-data" type="wc-meaningfulUse:DataTextFormat" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Report data in flat delimited text format.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="cursor" type="wc-types:stringnz" minOccurs="0" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                If paging has occurred, this will be returned as a key for the next retrieval item.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

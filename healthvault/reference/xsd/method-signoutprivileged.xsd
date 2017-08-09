@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.SignOutPrivileged"
+    xmlns:this="urn:com.microsoft.wc.methods.SignOutPrivileged"
+    xmlns:wc-thing="urn:com.microsoft.wc.thing"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-SIGNOUTPRIVILEGED.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for SignOutPrivileged method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+            </summary>
+
+            <remarks>
+            </remarks>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    <!-- SignOutPrivileged - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="user-auth-tokens" minOccurs="1" maxOccurs="1">
+                    <complexType>
+                        <sequence>
+                            <element name="user-auth-token" type="wc-types:string1024nw" minOccurs="1" maxOccurs="unbounded">
+                                <annotation>
+                                    <documentation>
+                                        <summary>
+                                            The tokens to expire.
+                                        </summary>
+                                    </documentation>
+                                </annotation>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="perform-federated-sign-out" minOccurs="0" maxOccurs="1" type="boolean">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                If set to true, tokens for apps that require federated sign out will
+                                also be invalidated.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

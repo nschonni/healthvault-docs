@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetMeaningfulUseVDTReport"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetMeaningfulUseVDTReport"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-GETMEANINGFULUSEVDTReport.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetMeaningfulUseVDTReport method
+
+    -->
+
+    <import
+      namespace="urn:com.microsoft.wc.types"
+      schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Specifies the schema for the GetMeaningfulUseVDTReport method response.
+            </summary>
+
+            <remarks>
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- GetMeaningfulUseVDTReport - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <complexType name="Activity">
+        <annotation>
+            <documentation>
+                <summary>
+                    A Meaningful Use activity.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence />
+        <attribute name="patient-id" type="wc-types:stringnz" use="required">
+            <annotation>
+                <documentation>
+                    <summary>
+                        Patient unique identifier associated with the activity.
+                    </summary>
+
+                    <remarks>
+                        Extracted from documents such as CCDA.
+                    </remarks>
+                </documentation>
+            </annotation>
+        </attribute>
+        <attribute name="organization-id" type="wc-types:stringnz" use="optional">
+            <annotation>
+                <documentation>
+                    <summary>
+                        Organizations's unique identifier associated with the activity.
+                    </summary>
+
+                    <remarks>
+                        Extracted from documents such as CCDA.
+                    </remarks>
+                </documentation>
+            </annotation>
+        </attribute>
+    </complexType>
+
+    <complexType name="Activities">
+        <annotation>
+            <documentation>
+                <summary>
+                    A list of qualified Meaningful Use activities associated with specified source.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="activity" type="this:Activity"
+                     minOccurs="1" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A Meaningful Use activity.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="Source">
+        <annotation>
+            <documentation>
+                <summary>
+                    A Meaningful Use source.
+                </summary>
+
+                <remarks>
+                    Source is either the id of the application that contributed to the data or the email domain of the Direct sender.
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="patient-activities" type="this:Activities" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A list of qualified Meaningful Use activities associated with specified source.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+        <attribute name="id" type="wc-types:stringnz" use="required">
+            <annotation>
+                <documentation>
+                    <summary>
+                        Source identifier.
+                    </summary>
+
+                    <remarks>
+                        Source is either the id of the application that contributed to the data or the email domain of the Direct sender.
+                    </remarks>
+                </documentation>
+            </annotation>
+        </attribute>
+    </complexType>
+
+    <complexType name="Sources">
+        <annotation>
+            <documentation>
+                <summary>
+                    A list of sources.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="source" type="this:Source"
+                     minOccurs="0" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A list of qualified Meaningful Use activities associated with specified source.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Contains the response of the GetMeaningfulUseVDTReport method request.
+                    </summary>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="sources" type="this:Sources" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A list of qualified Meaningful Use activities associated with specified sources.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="cursor" type="wc-types:stringnz"
+                         minOccurs="0" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                If paging has occurred, this will be returned as a key for the next retrieval item.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

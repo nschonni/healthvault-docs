@@ -1,0 +1,845 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.AuthorizeRecord"
+    xmlns:this="urn:com.microsoft.wc.methods.AuthorizeRecord"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-auth="urn:com.microsoft.wc.auth"
+    xmlns:wc-app="urn:com.microsoft.wc.application"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+  <!--
+
+        METHOD-AUTHORIZERECORD.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for AuthorizeRecord method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+    <import
+        namespace="urn:com.microsoft.wc.auth"
+        schemaLocation="auth.xsd" />
+    <import
+        namespace="urn:com.microsoft.wc.application"
+        schemaLocation="application-configuration.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- AuthorizeRecord- - - - - - - - - - - - - - - - - - - - - - - - -->
+  
+    <complexType name="UserInitiatedCreationUsingEmail">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="email-address" type="wc-types:EmailAddress">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="grantee-name" type="wc-types:string255">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="email-text" type="wc-types:string1024" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="expires-date" type="dateTime">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="is-primary" type="boolean">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="can-access-audit" type="boolean">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="auth-xml" type="wc-auth:AuthXml">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="display-name" type="wc-types:string255" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="rel-id" type="int">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="requesting-application-id" type="wc-types:guid"
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The unique identifier for the application asking to
+                            share the record.
+                        </summary>
+
+                        <remarks>
+                            If this element is present, the requesting application id
+                            will be stored with the sharing invite.  The application id
+                            can be used to present customized experiences such as a 
+                            customized sharing page and branded sharing email.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element> 
+
+            <element name="pin" type="wc-types:string32"
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A pin for added security when sharing a record.
+                        </summary>
+
+                        <remarks>
+                           If this element is present, users attempting to
+                           accept the sharing invitation will be required to
+                           enter a pin.  The user entered pin must match the
+                           stored pin to successfully accept the invitation.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element> 
+
+            <element name="invitation-expires-date" type="dateTime"
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The date this invitation expires.
+                        </summary>
+
+                        <remarks>
+                           If this element is present, it represents the date after which
+                           the invitation will no longer be valid.  If this element is not
+                           present, a default expiration will be assigned.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element> 
+        </sequence>
+    </complexType>
+
+    <complexType name="ResendAuthorizationEmail">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="email-address" type="wc-types:EmailAddress">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="email-text" type="wc-types:stringz1024" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A brief text to include in the email.
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="pin" type="wc-types:string32"
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A pin for added security when sharing a record.
+                        </summary>
+
+                        <remarks>
+                           If this element is present, users attempting to
+                           accept the sharing invitation will be required to
+                           enter a pin.  The user entered pin must match the
+                           stored pin to successfully accept the invitation.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element> 
+
+            <element name="expires-date" type="dateTime"
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The date this invitation expires.
+                        </summary>
+
+                        <remarks>
+                           If this element is present, it represents the date after which
+                           the invitation will no longer be valid.  If this element is not
+                           present, a default expiration will be assigned.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element> 
+        </sequence>
+    </complexType>
+
+    <complexType name="AppBehestCreation2">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+
+        <sequence>
+            <element name="application-id" type="wc-types:guid">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="person-online-auth-xml" type="wc-auth:AuthXml">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="person-offline-auth-xml" type="wc-auth:AuthXml"
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="auto-reconcile-documents" type="boolean"
+                     minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Determines if documents like CCR/CCD will be auto-reconciled
+                            by the platform.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="can-bulk-extract" type="boolean" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Has the record consented to the current app for bulk data extraction.
+                        </summary>
+                        <remarks>
+                            If not returned, the value is unspecified for the record.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <!-- no expiration date, our workflow doesn't allow for that,
+            if needed this can be set later via UpdateByCustodian -->
+            <!-- no is-primary, coz an app can never be primary -->
+            <!-- no can-access-audit, apps cannot access audit data -->
+            <!-- no display name, our workflow doesn't allow for that, if needed
+            this can be set later via UpdateByCustodian -->
+            <!-- no rel-id, coz relationship is implicitly Application -->
+        </sequence>
+    </complexType>
+
+    <complexType name="UpdateByCustodian">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <choice>
+                <!-- provide person-id where available - by default -->
+                <element name="person-id" type="wc-types:guid">
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <!-- provide email-address when you don't have person-id coz the
+                   person hasn't accepted the auth, but you want to update it -->
+                <element name="email-address" type="wc-types:EmailAddress">
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <!-- update app authorization to the record as grated by this
+                custodian. -->
+                <element name="application-id" type="wc-types:guid" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            
+                        </summary>
+
+                        <remarks>
+                            
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            </choice>
+            <element name="expires-date" type="dateTime" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="is-primary" type="boolean" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="can-access-audit" type="boolean" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <!-- if person-online-auth-xml is present, but empty, then it is
+            interpreted as GRANTING ALL online access. -->
+            <element name="person-online-auth-xml" type="wc-auth:AuthXml" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <!-- person-offline-auth-xml is applicable only if application-id is
+            not Guid.Empty (all-zeros). If present, but empty, then it is
+            interpreted as REMOVING the application's offline access. -->
+            <element name="person-offline-auth-xml" type="wc-auth:AuthXml" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="display-name" type="wc-types:stringz255" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="rel-id" type="int" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="auto-reconcile-documents" type="boolean"
+                     minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Determines if documents like CCR/CCD will be auto-reconciled
+                            by the platform.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="can-bulk-extract" type="boolean" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Has the record consented to the current app for bulk data extraction.
+                        </summary>
+                        <remarks>
+                            If not returned, the value is unspecified for the record.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+        </sequence>
+    </complexType>
+
+    <complexType name="UpdateByNonCustodian">
+        <sequence>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <!-- if application-id is Guid.Empty (all zeros), then the only
+            other element that may be specified is display-name, since that's
+            the only piece of info for a non-custodian's default record access
+            that the non-custodian himself / herself can edit. -->
+            <element name="application-id" type="wc-types:guid">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="expires-date" type="dateTime" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <!-- if person-online-auth-xml is present, but empty, then it is
+            interpreted as GRANTING ALL offline access. -->
+            <element name="person-online-auth-xml" type="wc-auth:AuthXml" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <!-- if person-offline-auth-xml is present, but empty, then it is
+            interpreted as REMOVING offline access. -->
+            <element name="person-offline-auth-xml" type="wc-auth:AuthXml" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="display-name" type="wc-types:stringz255" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="rel-id" type="int" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="auto-reconcile-documents" type="boolean"
+                     minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Determines if documents like CCR/CCD will be auto-reconciled
+                            by the platform.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="can-bulk-extract" type="boolean" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Has the record consented to the current app for bulk data extraction.
+                        </summary>
+                        <remarks>
+                            If not returned, the value is unspecified for the record.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <choice>
+                    <element name="user-initiated-creation-using-email"
+                        type="this:UserInitiatedCreationUsingEmail">
+                        <annotation>
+                            <documentation>
+                                <summary>
+
+                                </summary>
+
+                                <remarks>
+
+                                </remarks>
+                            </documentation>
+                        </annotation>
+                    </element>
+
+                    <element name="resend-authorization-email"
+                        type="this:ResendAuthorizationEmail">
+                        <annotation>
+                            <documentation>
+                                <summary>
+
+                                </summary>
+
+                                <remarks>
+
+                                </remarks>
+                            </documentation>
+                        </annotation>
+                    </element>
+
+                    <element name="app-behest-creation2"
+                        type="this:AppBehestCreation2">
+                        <annotation>
+                            <documentation>
+                                <summary>
+
+                                </summary>
+
+                                <remarks>
+
+                                </remarks>
+                            </documentation>
+                        </annotation>
+                    </element>
+
+                    <element name="update-by-custodian"
+                        type="this:UpdateByCustodian">
+                        <annotation>
+                            <documentation>
+                                <summary>
+
+                                </summary>
+
+                                <remarks>
+
+                                </remarks>
+                            </documentation>
+                        </annotation>
+                    </element>
+
+                    <element name="update-by-non-custodian"
+                        type="this:UpdateByNonCustodian">
+                        <annotation>
+                            <documentation>
+                                <summary>
+
+                                </summary>
+
+                                <remarks>
+
+                                </remarks>
+                            </documentation>
+                        </annotation>
+                    </element>
+
+                </choice>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.RejectRecordAuthorization"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-REJECTRECORDAUTHORIZATION.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for RejectRecordAuthorization method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- - - - - - - - - - - RejectRecordAuthorization - - - - - - - - - - - -->
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="record-id" type="wc-types:guid" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="email-address" type="wc-types:EmailAddress" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="record-authorization-token"
+                    type="wc-types:base64" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="pin" type="wc-types:string32"
+                    minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                An optional pin for added security when sharing a record.
+                            </summary>
+
+                            <remarks>
+                                Pin is not required to reject the invitation. We do not check 
+                                if the pin matches the original pin.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element> 
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

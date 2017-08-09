@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.QueryPersons2"
+    xmlns:this="urn:com.microsoft.wc.methods.QueryPersons2"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-person="urn:com.microsoft.wc.person"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-QueryPersons2.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for QueryPersons2 method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <import
+      namespace="urn:com.microsoft.wc.person"
+      schemaLocation="person-configuration.xsd" />
+
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+  <!-- QueryPersons2 - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <complexType name="QueryPersonsStateSpec">
+    <annotation>
+      <documentation>
+        <summary>
+          Specifies the states of person.
+        </summary>
+        <remarks>
+          The persons state spec element specifies more than one 
+          state to query for a person.
+        </remarks>
+      </documentation>
+    </annotation>
+    <sequence>
+      <element name="person-state" type="wc-person:PersonState"
+          minOccurs="1" maxOccurs="unbounded">
+        <annotation>
+          <documentation>
+            <summary>
+            </summary>
+          </documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+
+  <complexType name="QueryPersonsFilterSpec">
+      <annotation>
+          <documentation>
+              <summary>
+                  Schema for specifying filters on retrieving query person information.
+              </summary>
+              <remarks>
+                  The list of persons can be queried by one of the specified filter groups.
+              </remarks>
+          </documentation>
+      </annotation>
+      <sequence>
+          <choice>
+              <element name="id-match" type="wc-types:guid" >
+                  <annotation>
+                      <documentation>
+                          <summary>
+                              The person ID for this person.
+                          </summary>
+                          <remarks>
+                          </remarks>
+                      </documentation>
+                  </annotation>
+              </element>
+              <element name="contact-email-match" type="wc-types:EmailAddress" >
+                  <annotation>
+                      <documentation>
+                          <summary>
+                              The contact email of this person.
+                          </summary>
+                          <remarks>
+                          </remarks>
+                      </documentation>
+                  </annotation>
+              </element>
+              <element name="credential-id-match" type="wc-types:string128nw" >
+                  <annotation>
+                      <documentation>
+                          <summary>
+                              The credential key of this person.
+                          </summary>
+                          <remarks>
+                          </remarks>
+                      </documentation>
+                  </annotation>
+              </element>
+              <element name="health-statement-last-sent-date-max" type="dateTime" >
+                  <annotation>
+                      <documentation>
+                          <summary>
+                              The maximum date a health statement was last sent for this person.
+                          </summary>
+                          <remarks>
+                          </remarks>
+                      </documentation>
+                  </annotation>
+              </element>
+          </choice>
+          <element name="person-states" type="this:QueryPersonsStateSpec" minOccurs="0">
+              <annotation>
+                  <documentation>
+                      <summary>
+                          The multiple state filters of this person.
+                      </summary>
+                      <remarks>
+                          The default state is active in the query person when
+                          person-states element is not specified.
+                      </remarks>
+                  </documentation>
+              </annotation>
+          </element>
+      </sequence>
+  </complexType>
+
+  <simpleType name="QueryPersonsSectionSpec">
+      <annotation>
+          <documentation>
+              <summary>
+                  Allows sections of the person info to be specified.
+              </summary>
+          </documentation>
+      </annotation>
+      <restriction base="string">
+          <enumeration value="records">
+              <annotation>
+                  <documentation>
+                      <summary>
+                          Specifies the records section of the person info.
+                      </summary>
+                      <remarks>
+                          The records section includes the list of records associated with a person.
+                      </remarks>
+                  </documentation>
+              </annotation>
+          </enumeration>
+          <enumeration value="appSettings">
+              <annotation>
+                  <documentation>
+                      <summary>
+                          Specifies the application settings.
+                      </summary>
+                      <remarks>
+                          The application settings associated with a person.
+                      </remarks>
+                  </documentation>
+              </annotation>
+          </enumeration>
+          <enumeration value="internalInfo">
+              <annotation>
+                  <documentation>
+                      <summary>
+                          Specifies internal info such as subscriber flag, security context and email settings.
+                      </summary>
+                      <remarks>
+                          The internal info such as subscriber flag, security context and email settings.
+                      </remarks>
+                  </documentation>
+              </annotation>
+          </enumeration>
+          <enumeration value="credentialInfo">
+              <annotation>
+                  <documentation>
+                      <summary>
+                          Specifies list of credentials used by a person.
+                      </summary>
+                      <remarks>
+                          Specifies credential info such as credential name, credential key and creation date.
+                      </remarks>
+                  </documentation>
+              </annotation>
+          </enumeration>
+      </restriction>
+  </simpleType>
+
+  <complexType name="QueryPersonsViewSpec">
+    <annotation>
+      <documentation>
+        <summary>
+          Specifies how the results are returned.
+        </summary>
+        <remarks>
+          The section element specifies the sections of query person info that could be returned. 
+          By default the method returns basic person info such as name and person id.
+        </remarks>
+      </documentation>
+    </annotation>
+    <sequence>
+      <element name="section" type="this:QueryPersonsSectionSpec"
+          minOccurs="1" maxOccurs="unbounded">
+        <annotation>
+          <documentation>
+            <summary>
+              Specifies the sections to be retrieved.
+            </summary>
+          </documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                      Query persons method version 2. 
+                    </summary>
+                    <remarks>
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+              <element name="query-persons-filter" type="this:QueryPersonsFilterSpec" minOccurs="1">
+                <annotation>
+                  <documentation>
+                    <summary>
+                      Search filter used to retrieve qualified person info entries.
+                    </summary>
+                    <remarks>                      
+                    </remarks>
+                  </documentation>
+                </annotation>
+              </element>
+              <element name="query-persons-view" type="this:QueryPersonsViewSpec" minOccurs="0">
+                <annotation>
+                  <documentation>
+                    <summary>
+                      Specifies a view for the results.
+                    </summary>
+                  </documentation>
+                </annotation>
+              </element>
+
+              <element name="max-items-per-page" type="positiveInteger" minOccurs="0">
+                <annotation>
+                  <documentation>
+                    <summary>
+                      This specifies the maximum number of items to return on a given page.
+                    </summary>
+                  </documentation>
+                </annotation>
+              </element>
+              <element name="query-persons-cursor" type="wc-types:stringnz" minOccurs="0">
+                <annotation>
+                  <documentation>
+                    <summary>
+                      If paging has occurred, this will be passed back in from the original request response
+                      as a key for next retrieval page of items.
+                    </summary>
+                    <remarks>                      
+                    </remarks>
+                  </documentation>
+                </annotation>
+              </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.RestoreThings"
+    xmlns:this="urn:com.microsoft.wc.methods.RestoreThings"
+    xmlns:wc-thing="urn:com.microsoft.wc.thing"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-RESTORETHINGS.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for RestoreThings method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.thing"
+        schemaLocation="thing.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                This method restores deleted things from a record.
+            </summary>
+            <method-visibility>Private</method-visibility>
+            <errors>
+                <error id="INVALID_RECORD_STATE">
+                    If the record is locked for maintenance or the record state is not active.
+                </error>
+                <error id="INVALID_THING">
+                    If a thing does not exist or if a thing is of a singleton type that already
+                    has an active thing.
+                </error>
+                <error id="INVALID_THING_STATE">
+                    If a thing is not in a deleted state.
+                </error>
+                <error id="VERSION_STAMP_MISMATCH">
+                    If the version-stamp of a thing-id is not the current version of the thing.
+                </error>
+            </errors>
+        </documentation>
+    </annotation>
+
+    <!-- RestoreThings - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <complexType name="ThingIdList">
+        <annotation>
+            <documentation>
+                <summary>
+                    The list of keys of the things to be restored.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="thing-id" type="wc-thing:ThingKey" minOccurs="1" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The key of the thing to be restored.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="thing-ids" type="this:ThingIdList">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The list identifying the specific things to be restored.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

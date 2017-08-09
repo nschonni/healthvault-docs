@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.IsValidHealthVaultAccount"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+  <!--
+
+        METHOD-ISVALIDHEALTHVAULTACCOUNT.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for IsValidHealthVaultAccount method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                The response for the IsValidHealthVaultAccount method.
+            </summary>
+        </documentation>
+    </annotation>
+
+    <!-- info - - - - - -  - - - - - - - - - - - - - - -->
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                    </summary>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="account-status" type="boolean">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                True if a valid account exists, otherwise false.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+				<element name="selected-instance"
+						type="wc-types:Instance"
+						minOccurs="0">
+					<annotation>
+						<documentation>
+							<summary>
+								The unique identifier for the instance that handles the
+								the specified location that was passed in.
+							</summary>
+							<remarks>
+								There are a set of countries that HealthVault does not support. If one of those
+								countries are passed in, the result will not contain a selected-instance-id element.
+							</remarks>
+						</documentation>
+					</annotation>
+				</element>
+                <element name="account-info">
+                    <complexType>
+                        <sequence>
+                            <element name="first-name" type="wc-types:stringz128" minOccurs="0"/>
+                            <element name="last-name" type="wc-types:stringz128" minOccurs="0"/>
+                            <element name="contact-email" type="wc-types:EmailAddress" minOccurs="0"/>
+                            <element name="birthdate" type="dateTime"/>
+                            <element name="gender" type="wc-types:stringz16" minOccurs="0"/>
+                            <element name="country" type="wc-types:stringz16" minOccurs="0"/>
+                            <element name="postal-code" type="wc-types:stringz64" minOccurs="0"/>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
+

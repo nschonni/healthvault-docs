@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.RemoveAuthorizationOfPersonFromApplication"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-REMOVEAUTHORIZATIONOFPERSONFROMAPPLICATION.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for RemoveAuthorizationOfPersonFromApplication method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Schema for RemoveAuthorizationOfPersonFromApplication method request.
+            </summary>
+            <remarks>
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- RemoveAuthorizationOfPersonFromApplication - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="application-id" type="wc-types:guid">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                ID of the application that the person is currently authorized to use.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

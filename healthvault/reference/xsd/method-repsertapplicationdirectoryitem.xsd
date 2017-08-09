@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.RepsertApplicationDirectoryItem"
+    xmlns:this="urn:com.microsoft.wc.methods.RepsertApplicationDirectoryItem" 
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:directory="urn:com.microsoft.wc.directory"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+  <!--
+
+        METHOD-REPSERTAPPLICATIONDIRECTORYITEM.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for RepsertApplicationDirectoryItem method
+
+    -->
+
+  <import
+      namespace="urn:com.microsoft.wc.types"
+      schemaLocation="types.xsd" />
+
+  <import
+      namespace="urn:com.microsoft.wc.directory"
+      schemaLocation="directory.xsd" />
+
+  <import
+     namespace="urn:com.microsoft.wc.methods.response.GetApplicationDirectory"
+     schemaLocation="response-getapplicationdirectory.xsd" />
+
+  <annotation>
+    <documentation>
+      <summary>
+        Creates or updates information for HealthVault application directory item.
+      </summary>
+
+      <remarks>
+      </remarks>
+      <method-visibility>Private</method-visibility>
+    </documentation>
+  </annotation>
+
+  <!-- RepsertApplicationDirectoryItem - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  
+  <element name="info">
+    <complexType>
+      <annotation>
+        <documentation>
+          <summary>
+            The element of the request that contains the method
+            specific parameters.
+          </summary>
+
+          <remarks>
+            All requests contain the info element to pass parameters
+            that are specific to each method. If the method does not
+            define an info element, the method does not take any
+            parameters.
+          </remarks>
+        </documentation>
+      </annotation>
+      <sequence>
+        <element name="application-directory-item" type="directory:ApplicationDirectoryItem"
+                 minOccurs="1">
+          <annotation>
+            <documentation>
+              <summary>
+                Directory item
+              </summary>
+
+              <remarks>
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+
+      </sequence>
+    </complexType>
+  </element>
+</schema>

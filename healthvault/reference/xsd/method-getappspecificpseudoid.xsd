@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetAppSpecificPseudoId"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETAPPSPECIFICPSEUDOID.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetAppSpecificPseudoId method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- GetAppSpecificPseudoId - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="other-app-pseudo-record-id" type="wc-types:guid" 
+                         minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                This is the pseudo record id to convert to the 
+                                pseudo record id of the calling application.
+                            </summary>
+
+                            <remarks>
+                                In the future the occurrances of this element will
+                                be unbounded, which will allow the caller to convert 
+                                multiple pseudo record ids in a single request.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetApplication"
+    xmlns:this="urn:com.microsoft.wc.methods.GetApplication"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETAPPLICATION.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetApplication method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- GetApp - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <complexType name="NameMatchFilter">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="name-match" type="string" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            
+                        </summary>
+
+                        <remarks>
+                            
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="show-published-apps-only" type="boolean" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            
+                        </summary>
+
+                        <remarks>
+                            
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <!-- All elements are OR'd together in the query-->
+                <element name="name-match-filter" 
+                         type="this:NameMatchFilter" 
+                         minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            
+                        </summary>
+
+                        <remarks>
+                            
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            
+                <element name="id" type="wc-types:guid" 
+                         minOccurs="0" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            
+                        </summary>
+
+                        <remarks>
+                            
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="all-languages" type="boolean"
+                     minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The all-languages parameter determines how many of instances
+                            of culture specific values are returned.
+                        </summary>
+                        <remarks>
+                            If true, all values are returned.
+                            If false, the value with the best matching language is returned.
+                            For example, the name property of the application info
+                            may be localized into multiple languages.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+        </complexType>
+    </element>
+</schema>

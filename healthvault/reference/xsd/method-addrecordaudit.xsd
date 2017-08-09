@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.AddRecordAudit"
+    xmlns:this="urn:com.microsoft.wc.methods.AddRecordAudit"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-ADDRECORDAUDIT.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for AddRecordAudit method
+
+  -->
+    
+    <annotation>
+        <documentation>
+            <summary>
+                Adds an audit entry for the record.
+            </summary>
+
+            <remarks>
+            </remarks>
+            <method-visibility>Private</method-visibility>
+            <version>1</version>
+            <errors>
+                <error id="ACCESS_DENIED">
+                    If the calling application doesn't have access to the record.
+                </error>
+            </errors>
+        </documentation>
+    </annotation>
+
+    <!-- AddRecordAudit - - - - - - - - - - - - - - - - - - - - - -->
+
+    <simpleType name="RecordAuditActionType">
+        <annotation>
+            <documentation>
+                <summary>
+                </summary>
+
+                <remarks>
+                </remarks>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="AddEmergencyAccessCode">
+                <annotation>
+                    <documentation>
+                        <summary>
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="RemoveEmergencyAccessCode">
+                <annotation>
+                    <documentation>
+                        <summary>
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="EmergencyAccessReadRecordInfo">
+                <annotation>
+                    <documentation>
+                        <summary>
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="DataSyncCompleted">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A data connection sync has completed successfully.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="DataSyncCompletedWithErrors">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A data connection sync has completed with errors.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+
+    <complexType name="RecordAudit">
+        <annotation>
+            <documentation>
+                <summary>
+                </summary>
+
+                <remarks>
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="record-audit-action"
+                     type="this:RecordAuditActionType" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                        </summary>
+
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="record-audit-message" type="string"
+                     minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                        </summary>
+
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                    </summary>
+
+                    <remarks>
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="record-audit"
+                         type="this:RecordAudit"
+                         minOccurs="1" maxOccurs="unbounded" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                            </summary>
+
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

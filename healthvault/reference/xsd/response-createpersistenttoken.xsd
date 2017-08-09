@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.CreatePersistentToken"
+    xmlns:this="urn:com.microsoft.wc.methods.response.CreatePersistentToken"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-auth="urn:com.microsoft.wc.auth"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-CreatePersistentToken.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for CreatePersistentToken method response
+
+    -->
+
+    <import
+          namespace="urn:com.microsoft.wc.types"
+          schemaLocation="types.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.auth"
+        schemaLocation="auth.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Creates persistent tokens for applications in the context of a 
+                user.
+            </summary>
+
+            <remarks>
+                Callers may request multiple persistent tokens for, one for each
+                applications in the same request. 
+                Partial failures are possible, where persistent tokens for only 
+                some of the applications in the request, are available and the 
+                rest could not be created. 
+                The entire request cannot fail in such a circumstance as the 
+                applications with valid persistent tokens need them. 
+                Hence we return the absence reason instead of the auth tokens 
+                for the application ids for whom auth tokens could not be 
+                created. 
+                The request is considered a success as long as a persistent 
+                token could be created for atleast one application id.   
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <simpleType name="AuthTokenAbsenceReason">
+        <annotation>
+            <documentation>
+                <summary>
+                    Reasons why a persistent token was not returned.
+                </summary>
+
+                <remarks>
+                    Depending upon the reason, there may be user-actionable
+                    events that would enable the request to succeed.
+                </remarks>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="PersonNotAuthorizedForApp">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The person is not authorized to run the specified 
+                            application.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CredentialNotFound">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The credential was not found.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SecondFactorAuthenticationRequired">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Second Factor Authentication Required
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+
+    <complexType name="AppAuthTokenAbsenceReason">
+        <annotation>
+            <documentation>
+                <summary>
+                    Reasons why a persistent token was not returned.
+                </summary>
+
+                <remarks>
+                    Depending upon the reason, there may be user-actionable
+                    events that would enable the request to succeed.
+                </remarks>
+            </documentation>
+        </annotation>
+        <simpleContent>
+            <extension base="this:AuthTokenAbsenceReason">
+                <attribute name="app-id" type="wc-types:guid" use="required">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The reason the request failed.
+                            </summary>
+
+                            <remarks>
+                                See the specific absence reasons for 
+                                user-actionable details.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </attribute>
+
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <element name="info">
+        <annotation>
+            <documentation>
+                <summary>
+                    The response for the request to create an authenticated
+                    session token.
+                </summary>
+
+                <remarks>
+                    When a token is requested, if the request is a success then
+                    there will be a token.  Otherwise, there will be an absence
+                    reason.
+                </remarks>
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <choice
+                     minOccurs="1" maxOccurs="unbounded">
+                    <element name="token"
+                             type="wc-auth:Token">
+                        <annotation>
+                            <documentation>
+                                <summary>
+                                  The persistent token.
+                                </summary>
+
+                                <remarks>
+                                  The token has a limited time-to-live.  When
+                                  the token expires, requests will fail with
+                                  access denied.
+                                  If there is no token, then there must be an
+                                  absence reason.
+                                </remarks>
+                            </documentation>
+                        </annotation>
+                    </element>
+
+                    <element name ="token-absence-reason"
+                             type="this:AppAuthTokenAbsenceReason" >
+                        <annotation>
+                            <documentation>
+                                <summary>
+                                  The reason the token could not be created.
+                                </summary>
+
+                                <remarks>
+                                  If the token can be created, then there will
+                                  be no absence reason.
+                                </remarks>
+                            </documentation>
+                        </annotation>
+                    </element>
+                </choice>
+                <element name="authenticating-token"
+                             type="wc-auth:AuthenticatingToken"
+                             minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                              An encrypted token representing the original credentials
+                              presented for authenticating to HealthVault.
+                            </summary>
+                            <remarks>
+                              Two tokens are returned from CreateCredentialToken.  This token
+                              represents the original credentials presented to HealthVault
+                              to authenticate a user.  It will not authenticate the user
+                              in subsequent HealthVault requests.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="second-factor-credential" type="wc-auth:SecondFactorCredential"
+                    minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A credential for a two factor challenge.
+                            </summary>
+                            <remarks>
+                                If the account requires two factor authentication but only a primary
+                                credential was passed into the call, this credential should be used
+                                for the second factor.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

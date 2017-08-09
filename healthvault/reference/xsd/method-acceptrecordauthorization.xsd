@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.AcceptRecordAuthorization"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+  <!--
+
+        METHOD-ACCEPTRECORDAUTHORIZATION.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for AcceptRecordAuthorization method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Schema for the AcceptRecordAuthorization method request.
+            </summary>
+            <remarks>
+                The AcceptRecordAuthorization method accepts the authorization for a record.
+            </remarks>
+        </documentation>
+    </annotation>
+    
+<!-- - - - - - - - - - - AcceptRecordAuthorization - - - - - - - - - - - -->
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="record-id" type="wc-types:guid">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The id of the record the authorization was accepted for. 
+                            </summary>
+                            <remarks>
+                                This is a pseudo record id that is dependent on the application to be used. 
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="email-address" type="wc-types:EmailAddress">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Not currently used.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="record-authorization-token"
+                    type="wc-types:base64">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The base64 encoded authorization token that represents the authorization to be granted.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="pin" type="wc-types:string32"
+                    minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                An optional pin for added security when sharing a record.
+                            </summary>
+
+                            <remarks>
+                                The user entered pin must match the stored pin to 
+                                successfully accept the invitation.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element> 
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

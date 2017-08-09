@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.RemoveApplicationCacheItems"
+    xmlns:this="urn:com.microsoft.wc.methods.RemoveApplicationCacheItems"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-RMOVEAPPLICATIONCACHEITEMS.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for RemoveApplicationCacheItems method
+
+    -->
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Removes all or specified items from the application cache.  If no
+                cache item is specified, all items from the application cache will
+                be removed.
+            </summary>
+            <remarks>
+                A matching cache item key for each successfully removed specified item will
+                be included in the response.
+                
+                When no items are specified to clear the application cache, the response
+                will be empty.
+                    
+                If an item with a matching key does not exist, no item is removed
+                and therefore no matching cache item key will be included in the
+                response.
+            </remarks>
+            <errors>
+                <error id="APPLICATION_CACHE_REQUEST_DUPLICATE_KEY">
+                    A cache item key was specified more than once in the request.
+                </error>
+            </errors>
+            <method-visibility>Private</method-visibility>
+            <version>1</version>
+        </documentation>
+    </annotation>
+
+    <!-- RemoveApplicationCacheItems - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="item-key" type="wc-types:stringnz256" minOccurs="0" maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+</schema>
