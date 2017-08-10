@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetDirectAddressesPrivileged"
+    xmlns:wc-direct="urn:com.microsoft.wc.direct"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetDirectAddressesPrivileged"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-GETDIRECTADDRESSESPRIVILEGED.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetDirectAddressesPrivileged method response
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.direct"
+        schemaLocation="direct.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Return any direct addresses associated with the record.
+            </summary>
+            <remarks>
+                Each record can be associated with 0 .. n direct addresses.
+            </remarks>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    <!-- GetDirectAddressesPrivileged - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the response that contains the method
+                        specific return value(s).
+                    </summary>
+
+                    <remarks>
+                        All response schemas contain the info element which 
+                        contain the return value of the method. If the method 
+                        does not define an info element, the method has no
+                        return value.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="direct-address-list" type="wc-direct:DirectAddressList">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The container element for the address list.
+                            </summary>
+
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

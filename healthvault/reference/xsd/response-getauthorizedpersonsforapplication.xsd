@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetAuthorizedPersonsForApplication"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema">
+
+    <!--
+
+        RESPONSE-GETAUTHORIZEDPERSONSFORAPPLICATION.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetAuthorizedPersonsForApplication 
+        method response
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Schema for the GetAuthorizedPersonsForApplication method response.
+            </summary>
+            <remarks>
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- GetAuthorizedPersonsForApplication - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element that contains the method
+                        specific response.
+                    </summary>
+                    <remarks>
+                        All responses contain the info element to return data
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not expect any
+                        data for the response.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="person-id" type="wc-types:guid"
+                        minOccurs ="0" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                List of person ids that the application is authorized for.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

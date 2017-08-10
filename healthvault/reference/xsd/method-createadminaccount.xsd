@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.CreateAdminAccount"
+    xmlns:this="urn:com.microsoft.wc.methods.CreateAdminAccount"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-auth="urn:com.microsoft.wc.auth"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-CREATEADMINACCOUNT.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for CreateAdminAccount method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+    <import
+        namespace="urn:com.microsoft.wc.auth"
+        schemaLocation="auth.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Creates an administrative account for the HealthVault service.
+            </summary>
+
+            <remarks>
+                Administrative accounts can be given permission to manage thing types, vocabularies,
+                and other administrative accounts.
+            </remarks>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    <!-- CreateAdminAccount - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <complexType name="PersonInfo">
+        <annotation>
+            <documentation>
+                <summary>
+                    Information about the person for which the admin account is being created.
+                </summary>
+
+                <remarks>
+                    Note, we will assume that the email address for admins is correctly entered and
+                    does not need validation.
+                    Admin accounts can only use HV username/passwords and cannot use Live ID, OpenID
+                    or any other authentication mechanism that HealthVault may interop with.
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="name" type="wc-types:string255">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The person's name.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="contact-email" type="wc-types:EmailAddress">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The person's email address.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="primary-credential"
+                type="wc-auth:SimpleUserPassCredential">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The credentials the admin will use to logon.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+            <element name="methods" type="wc-types:stringnz">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A comma separated list of the methods the admin can call.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="person-info" type="this:PersonInfo">
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>
+

@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetRecordAudit"
+    xmlns:this="urn:com.microsoft.wc.methods.GetRecordAudit"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:record-audit-response="urn:com.microsoft.wc.methods.response.GetRecordAudit"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETRECORDAUDIT.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetRecordAudit method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.methods.response.GetRecordAudit"
+        schemaLocation="response-getrecordaudit.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+    
+    <simpleType name="AuditTypeToFetch">
+        <annotation>
+            <documentation>
+                <summary>
+                    Representation of the type of record audits that can be
+                    fetched.
+                </summary>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Write">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Fetch record write audits.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Read">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Fetch record read audits.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    
+    <complexType name="AuditTypesToFetch">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="audit-type" 
+                     type="this:AuditTypeToFetch" 
+                     minOccurs="1" maxOccurs="2">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    
+    <complexType name="AuditActionsToFetch">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="audit-action"
+                    type="record-audit-response:RecordAuditActionType"
+                    minOccurs="1" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    
+    <!-- - - - - - - - - - - GetRecordAudit - - - - - - - - - - - -->
+    <element name="info">
+        <complexType>
+            
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            
+            <sequence>
+                <element name="person-id"
+                         type="wc-types:guid"
+                         minOccurs="0" maxOccurs="unbounded" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="application-id"
+                        type="wc-types:guid"
+                        minOccurs="0" maxOccurs="unbounded" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="date-min" type="dateTime"
+                         minOccurs="0" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name ="date-max" type="dateTime"
+                         minOccurs="0" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name ="audit-types" 
+                         type="this:AuditTypesToFetch"
+                         minOccurs="0" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+                                When absent the system assume 
+                                AuditTypeToFetch.Write.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name ="audit-actions"
+                         type="this:AuditActionsToFetch"
+                         minOccurs="0" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+                                When absent, we use only audit-types filter.
+                                If specified, we apply both audit-types AND audit-actions filters.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

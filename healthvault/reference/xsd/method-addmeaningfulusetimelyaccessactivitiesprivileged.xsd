@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.AddMeaningfulUseTimelyAccessActivitiesPrivileged"
+    xmlns:this="urn:com.microsoft.wc.methods.AddMeaningfulUseTimelyAccessActivitiesPrivileged"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-thing="urn:com.microsoft.wc.thing"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-ADDMEANINGFULUSETIMELYACCESSACTIVITIESPrivileged.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for AddMeaningfulUseTimelyAccessActivitiesPrivileged method
+
+    -->
+
+    <import
+     namespace="urn:com.microsoft.wc.types"
+     schemaLocation="types.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.thing"
+        schemaLocation="thing.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+            </summary>
+
+            <remarks>
+            </remarks>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    <!-- AddMeaningfulUseTimelyAccessActivities - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <complexType name="activities">
+        <annotation>
+            <documentation>
+                <summary>
+                    A Meaningful Use timely access activity.
+                </summary>
+                <remarks>
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="thing" type="wc-thing:Thing2" minOccurs="1" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The thing to be counted for timely access measure.
+                        </summary>
+
+                        <remarks>
+                            This method always inserts a new activity, cannot do updates.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="activities" type="this:activities" minOccurs="1" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The thing to be counted for meaningful use timely access measure.
+                            </summary>
+
+                            <remarks>
+                                This method always inserts a new activity, cannot do updates.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="source" type="wc-types:string300nw" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The source of the data.
+                            </summary>
+
+                            <remarks>
+                                If not provided, the calling application is considered the source.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

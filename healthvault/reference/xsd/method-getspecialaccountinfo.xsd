@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetSpecialAccountInfo"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETSPECIALACCOUNTINFO.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetSpecialAccountInfo method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Gets basic information about the specified type of special account(s).
+            </summary>
+
+            <remarks>
+                This method will retrieve account information for any of the "special" accounts
+                in the system by specifying the bit value of the account type you want to retrieve
+                information for. For example, to retrieve information about the admin accounts
+                in the system, you would pass 1 as the special account type.
+            </remarks>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    <!-- GetSpecialAccountInfo - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method 
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any 
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <choice>
+                <element name="account-type" type="nonNegativeInteger">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Tells the method the account type to fetch information for.
+                            </summary>
+
+                            <remarks>
+                                Information for all accounts of the specified type(s) are returned.
+                                1 = Admin accounts
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="person-id" type="wc-types:guid">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Gets the special account specified by the unique person identifier.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="username" type="wc-types:LoginName">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Get the special account specified by the user's login name.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </choice>
+        </complexType>
+    </element>
+
+</schema>

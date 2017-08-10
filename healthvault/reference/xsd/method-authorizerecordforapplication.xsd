@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.AuthorizeRecordForApplication"
+    xmlns:this="urn:com.microsoft.wc.methods.AuthorizeRecordForApplication"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-auth="urn:com.microsoft.wc.auth"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+  <!--
+
+        METHOD-AUTHORIZERECORDFORAPPLICATION.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for AuthorizeRecordForApplication method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+    <import
+        namespace="urn:com.microsoft.wc.auth"
+        schemaLocation="auth.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- AuthorizeRecordForApplication- - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <complexType name="Credential">
+        <annotation>
+            <documentation>
+                <summary>
+                    Provides a simple credential that the platform will then
+                    authenticate and act on.
+                </summary>
+
+                <remarks>
+                    A simple credential is one that only contains enough information
+                    to authenticate the user, and does not imply anything
+                    about the session it will be used for.
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="simple-encrypted"
+                type="wc-types:stringnz">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A simple credential encrypted for use in subsequent method calls.
+                        </summary>
+
+                        <remarks>
+                            This opaque credential is returned by the create credential calls.
+                            It represents the original authenticating credential.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="AppSelfCreation">
+        <annotation>
+            <documentation>
+                <summary>
+                    Authorization parameters for an app authorizing itself to a user's record.
+                </summary>
+            </documentation>
+        </annotation>
+
+        <sequence>
+            <element name="person-online-auth-xml" type="wc-auth:AuthXml">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Authorization rules for online access
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="person-offline-auth-xml" type="wc-auth:AuthXml"
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Authorization rules for offline access
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="auto-reconcile-documents" type="boolean"
+                     minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Determines if documents like CCR/CCD will be auto-reconciled
+                            by the platform.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="credential" type="this:Credential">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The authenticating credential.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="record-id" type="wc-types:guid" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The id of the record to be authorized to the app.
+                            </summary>
+
+                            <remarks>
+                                If the record id is not specified, the service
+                                will automatically choose a self-record for the user.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="app-self-creation" type="this:AppSelfCreation">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Authorization parameters for an app authorizing itself to a user's record.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.PutApplicationCacheItems"
+    xmlns:this="urn:com.microsoft.wc.methods.response.PutApplicationCacheItems"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema">
+    <!--
+
+        RESPONSE-PUTAPPLICATIONCACHEITEMS.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for PutApplicationCacheItems method response
+
+    -->
+    <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd"/>
+    <annotation>
+        <documentation>
+            <summary>
+                Contains the key of each cache item that was successfully inserted
+                or updated.
+            </summary>
+        </documentation>
+    </annotation>
+
+    <!-- PutApplicationCacheItems - - - - - -  - - - - - - - - - - - - - - -->
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the response that contains the method
+                        specific return value(s).
+                    </summary>
+                    <remarks>
+                        All response schemas contain the info element which
+                        contain the return value of the method. If the method
+                        does not define an info element, the method has no
+                        return value.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="item-key" type="this:CacheItemKey" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="CacheItemKey">
+        <annotation>
+            <documentation>
+                <summary>
+                    The key of a cache item that was successfully inserted or
+                    updated.
+                </summary>
+                <remarks>
+                    The data-version-id attribute can be used to perform future
+                    put or remove operations with optimistic concurrency control.
+                </remarks>
+            </documentation>
+        </annotation>
+        <simpleContent>
+            <extension base="wc-types:stringnz256">
+                <attribute name="data-version-id" use="required" type="wc-types:stringnz256" />
+            </extension>
+        </simpleContent>
+    </complexType>
+</schema>

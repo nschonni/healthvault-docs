@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetClaims"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetClaims"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-auth="urn:com.microsoft.wc.auth"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-GetClaims.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetClaims method response
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.auth"
+        schemaLocation="auth.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Schema for the GetClaims method response.
+            </summary>
+            <remarks>
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- - - - - - - - - - - GetClaims - - - - - - - - - -->
+
+    <complexType name="MethodList">
+        <sequence>
+            <element name="method" type="wc-types:stringnznw" minOccurs="1" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+
+    <complexType name="AppRecordAuth">
+        <sequence>
+            <element name="person-online-auth-xml" type="wc-auth:AuthXml" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Online auth rules allowed for the app on the given person and record.
+                        </summary>
+                        <remarks>
+                            This will be omitted if there is no person or record context or if the app
+                            does not have access to the record.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="person-offline-auth-xml" type="wc-auth:AuthXml" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Offline auth rules allowed for the app on the given person and record.
+                        </summary>
+                        <remarks>
+                            This will be omitted if there is no person or record context or if the app
+                            does not have access to the record.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="MshPairingInfo">
+        <sequence>
+            <element name="msh-user-id" type="wc-types:stringnznw">
+                <annotation>
+                    <documentation>
+                        <summary>The Microsoft Health account ID (i.e. ODS ID).</summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="associated-credential" type="wc-auth:MshAssociatedCredential">
+                <annotation>
+                    <documentation>
+                        <summary>The credential used for pairing.</summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element that contains the method
+                        specific response.
+                    </summary>
+                    <remarks>
+                        All responses contain the info element to return data
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not expect any
+                        data for the response.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="application-id" type="wc-types:guid">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The application ID.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="methods" type="this:MethodList" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                List of methods that the app can call.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="app-record-auth" type="this:AppRecordAuth" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Authorization info for the app for the record.
+                            </summary>
+                            <remarks>
+                                This will be omitted if there is no person or record context.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="msh-pairing-info" type="this:MshPairingInfo" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                MSH-HV pairing info.
+                            </summary>
+                            <remarks>
+                                This will be omitted if there is no person context or if the user doesn't have
+                                a complete MSH pairing.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

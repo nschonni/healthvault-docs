@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.RemoveAdminAccount"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-REMOVEADMINACCOUNT.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for RemoveAdminAccount method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Removes the specified administrator account.
+            </summary>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    <!-- RemoveAdminAccount - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method 
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any 
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="person-id" type="wc-types:guid">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The unique identifier for the admin account to be removed.
+                            </summary>
+
+                            <remarks>
+                                Note, only admin accounts can be removed this way.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

@@ -16,7 +16,8 @@
 ## [Invite Patients](/healthvault/getting-started/invite-patients)
 
 # Scenarios
-## [Remote monitoring](/healthvault/scenarios/remote-monitoring)
+## [Remote Monitoring](/healthvault/scenarios/remote-monitoring)
+### [Remote Monitoring Preview APIs](/healthvault/scenarios/remote-monitoring-preview-apis)
 ## [Meaningful Use](/healthvault/scenarios/meaningful-use)
 ## [Emergency Preparedness](/healthvault/scenarios/emergency-preparedness)
 
@@ -107,6 +108,4 @@
 #### [ACC Online and Offline Rules Tab](/healthvault/tools/acc/acc-online-and-offline-rules-tab)
 #### [ACC Public Certs Tab](/healthvault/tools/acc/acc-public-certs-tab)
 
-# Reference
-## [DataTypes](datatypes/toc.md)
-## [Vocabularies](vocabularies/toc.md)
+# [Reference](reference/toc.md)

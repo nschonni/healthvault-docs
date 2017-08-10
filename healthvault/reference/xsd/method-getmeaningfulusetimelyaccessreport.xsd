@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetMeaningfulUseTimelyAccessReport"
+    xmlns:this="urn:com.microsoft.wc.methods.GetMeaningfulUseTimelyAccessReport"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-meaningfuluse="urn:com.microsoft.wc.MeaningfulUse"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETMEANINGFULUSETIMELYACCESSREPORT.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetMeaningfulUseTimelyAccessReport method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.MeaningfulUse"
+        schemaLocation="Meaningful-Use.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Gets the Meaningful Use Timely Access Report for an application.
+            </summary>
+
+            <remarks>
+                The Timely Access Report gives applications information to determine if they meet the Meaningful Use Stage 2 measure for timely patient access to information.
+                For ambulatory settings, the measure states "More than 50 percent of all unique patients seen by the EP during the EHR reporting period are provided timely
+                (available to the patient within 4 business days after the information is available to the EP)
+                online access to their health information subject to the EP's discretion to withhold certain information".
+                For the inpatient settings, the measure states "More than 50 percent of all patients who are discharged from the
+                Inpatient or emergency department (POS 21 or 23) of an eligible hospital or CAH have their information available online
+                within 36 hours of discharge". (For more information regarding this measure see "View, download, and transmit to a 3rd party" in
+                the Meaningful Use Stage 2 Reference Grid found here: https://www.healthit.gov/policy-researchers-implementers/meaningful-use-stage-2.)
+
+                For regular documents, HealthVault returns an entry in the report for each CCDA document received by the data source having an event date
+                (which is the visit date for ambulatory settings, and the discharge date for inpatient settings) within the specified
+                reporting period filter. Each entry consists of the date the document was made available to the patient in HealthVault, the event date,
+                and the patient ID as specified in the CCDA document. The application can use this information to help calculate the percentage value of the measure.
+
+                For DOPU, HealthVault returns an entry in the report for each CCDA document received by the data source using DOPU.
+                The entries are filtered to those that were made available to HealthVault within the specified available date range filter.
+                Each entry consists of the date the document was made available to the patient in HealthVault, and the identifier of the DOPU package that was made available to the patient.
+                The application can use this information to help calculate the percentage value of the measure.
+
+                Note that HealthVault does not know the full list of patients seen by the provider and does not apply any logic to determine whether patients
+                had access to the data within the timeframe specified by the measure. To calculate the percentage for this measure, the application must take into
+                account the total number of unique patients seen or discharged within the desired reporting period, and for each patient determine if the data was made
+                available to them within the measure's specified timeframe.
+            </remarks>
+            <method-visibility>Public</method-visibility>
+            <errors>
+                <error id="INVALID_XML">
+                    If the cursor parameter is not in the correct format.
+                </error>
+            </errors>
+            <related-links>
+                <related-link>
+                    <text>
+                        Meaningful Use with HealthVault
+                    </text>
+                    <link>
+                        https://go.microsoft.com/fwlink/?LinkId=513254
+                    </link>
+                </related-link>
+            </related-links>
+        </documentation>
+    </annotation>
+
+    <!-- GetMeaningfulUseTimelyAccessReport - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <choice>
+                    <element name="document-filter" type="wc-meaningfuluse:DocumentFilter" >
+                        <annotation>
+                            <documentation>
+                                <summary>
+                                    Specifies the filter for document receipt report data.
+                                </summary>
+                            </documentation>
+                        </annotation>
+                    </element>
+                    <element name="dopu-document-filter" type="wc-meaningfuluse:DopuDocumentFilter" >
+                        <annotation>
+                            <documentation>
+                                <summary>
+                                    Specifies the filter for DOPU document receipt report data.
+                                </summary>
+                            </documentation>
+                        </annotation>
+                    </element>
+                </choice>
+                <element name="max-items-per-page" type="positiveInteger" minOccurs="0" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The maximum number of items to return on a given page.
+                            </summary>
+                            <remarks>
+                                If unspecified, this value will default to MaxMeaningfulUseReportItemsPerRetrieval.
+                                If specified value is larger than the MaxMeaningfulUseReportItemsPerRetrieval value, MaxMeaningfulUseReportItemsPerRetrieval value will be used.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="cursor" type="wc-types:stringnz" minOccurs="0" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                If paging has occurred, this will be passed back in from the original request response
+                                as a key for next retrieval page of items.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

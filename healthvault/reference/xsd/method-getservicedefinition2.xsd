@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetServiceDefinition2"
+    xmlns:this="urn:com.microsoft.wc.methods.GetServiceDefinition2"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETSERVICEDEFINITION2.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetServiceDefinition2 method
+
+    -->
+    
+    <annotation>
+        <documentation>
+            <summary>
+                This method is used to get information about
+                Microsoft HealthVault and its related features.
+            </summary>
+
+            <remarks>
+
+            </remarks>
+            <method-visibility>Public</method-visibility>
+            <related-links>
+                <related-link>
+                    <text>
+                        HealthVault global architecture
+                    </text>
+                    <link>
+                        https://go.microsoft.com/fwlink/?LinkId=513250
+                    </link>
+                </related-link>
+            </related-links>
+        </documentation>
+    </annotation>
+    
+    <simpleType name="ResponseSection">
+        <annotation>
+            <documentation>
+                <summary>
+                    Indicates which sections of the GetServiceDefinition
+                    response to return.
+                </summary>
+                <remarks>
+                    "platform" indicates that the platform node
+                    should be returned.
+                    
+                    "shell" indicates that the shell node should
+                    be returned.
+                    
+                    "topology" indicates that the instances node, representing
+                    the topology of the global HealthVault ecosystem, should
+                    be returned.
+                    
+                    "xml-over-http-methods" indicates that lists of XML methods
+                    and schemas should be returned.
+                    
+                    "meaningful-use" indicates that configuration values related
+                    to Meaningful Use should be returned.
+                </remarks>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="platform"/>
+            <enumeration value="shell"/>
+            <enumeration value="topology"/>
+            <enumeration value="xml-over-http-methods"/>
+            <enumeration value="meaningful-use"/>
+        </restriction>
+    </simpleType>
+    
+    <complexType name="ResponseSections">
+        <annotation>
+            <documentation>
+                <summary>
+                    Indicates which sections of the GetServiceDefinition
+                    response to return.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="section" type="this:ResponseSection"
+                     minOccurs="1" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Represents one content section to returhn.
+                        </summary>
+                    </documentation>
+                </annotation>
+             </element>
+        </sequence>
+    </complexType>
+    
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="updated-date" type="dateTime" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Allows the caller to tell the server to only respond if there
+                                have been changes made to the service definition since the
+                                date/time specified.
+                            </summary>
+                            <remarks>
+                                This parameter is typically used by callers who cache the results
+                                of the response. You can poll for service definition updates 
+                                periodically, passing in the timestamp returned by the last call
+                                to the method that returned a nonempty response. The server
+								will determine if any updates have occurred since that timestamp
+								and only return a nonempty response if so. Note, there may be
+								slight variations between servers depending on when each server
+								was updated with the new data. This variation may differ in a
+								number of minutes but under normal conditions will be less than
+								an hour.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="response-sections" type="this:ResponseSections" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Indicates which sections of the GetServiceDefinition response
+                                to return.
+                            </summary>
+                            <remarks>
+                                If this element is omitted, the full response
+                                will be returned. Otherwise, if a category name is
+                                included in the list of response sections, the
+                                corresponding node or nodes will be included in the
+                                response.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

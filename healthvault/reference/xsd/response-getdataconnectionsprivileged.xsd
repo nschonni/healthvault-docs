@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetDataConnectionsPrivileged"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetDataConnectionsPrivileged"
+    xmlns:wc-dataConnection="urn:com.microsoft.wc.DataConnection"
+    xmlns:wc-types="urn:com.microsoft.wc.types"    
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+        RESPONSE-GetDataConnectionsPrivileged.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetDataConnectionsPrivileged response
+    -->
+
+  <import namespace="urn:com.microsoft.wc.DataConnection" schemaLocation="data-connection.xsd" />
+  <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd" />
+  
+  <annotation>
+    <documentation>
+      <summary>
+        Specifies the schema for the GetDataConnectionsPrivileged method response.
+      </summary>
+    </documentation>
+  </annotation>
+  
+
+  <!-- GetDataConnectionsPrivilegedResponse -->
+  
+  <complexType name="DataConnection">
+        <annotation>
+            <documentation>
+                <summary>
+                    Connection data.
+                </summary>                                
+            </documentation>
+        </annotation>
+        <sequence>
+        
+            <element name="connection-id" type="wc-types:positiveLong" minOccurs="1" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Data connection id.
+                        </summary>        
+                    </documentation>
+                </annotation>
+            </element>
+        
+            <element name="source-id" type="wc-types:guid" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Data source id.
+                        </summary>                        
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="credentials" type="wc-dataConnection:Credentials" minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Credentials for the connection.
+                        </summary>           
+                    </documentation>
+                </annotation>
+            </element>     
+            
+            <element name="properties" type="wc-dataConnection:Properties" minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Optional properties for the data connection.
+                        </summary>           
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="date-created" type="dateTime" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Date when the connection was created.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="date-updated" type="dateTime" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Date when the connection was last updated.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="status" type="wc-dataConnection:DataConnectionStatus" minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Connection status.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="refresh-task" type="this:RefreshTask" minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                          The refresh task for the connection.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="refresh-history" type="this:RefreshHistory" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The refresh history for the connection.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+  </complexType>
+  
+
+  <complexType name="RefreshTask">
+    <annotation>
+      <documentation>
+        <summary>
+          The refresh task for the connection.
+        </summary>
+      </documentation>
+    </annotation>
+    <sequence>
+
+      <element name="next-run-at" type="dateTime" minOccurs="0" maxOccurs="1">
+        <annotation>
+          <documentation>
+            <summary>
+              The next time this connection is scheduled to refresh at.
+              Will not be returned if null.
+            </summary>
+          </documentation>
+        </annotation>
+      </element>
+
+      <element name="started-at" type="dateTime" minOccurs="0" maxOccurs="1">
+        <annotation>
+          <documentation>
+            <summary>
+              The time the connection sync/refresh was invoked/started.
+              Will not be returned if null.
+            </summary>
+          </documentation>
+        </annotation>
+      </element>
+
+    </sequence>
+  </complexType>
+  
+  
+  <complexType name="RefreshHistory">
+        <annotation>
+            <documentation>
+                <summary>
+                    The refresh history for the connection.
+                </summary>                                
+            </documentation>
+        </annotation>
+        <sequence>
+        
+            <element name="first-run-at" type="dateTime" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The first time this connection was refreshed.
+                            Will not be returned if null.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="last-run-at" type="dateTime" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The last time this connection was refreshed.
+                            Will not be returned if null.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="last-items-pulled-at" type="dateTime" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Last time a refresh task successfully got data back from the source.
+                            Will not be returned if null.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="last-item-count" type="int" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Number of items uploaded the last time connection was refreshed. Can be 0.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="total-item-count" type="int" minOccurs="1" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Total number of items uploaded. Can be 0.
+                        </summary>           
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="error-message" type="string" minOccurs="0" maxOccurs="1" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Last known error message.
+                            Will not be returned if null.
+                        </summary>           
+                    </documentation>
+                </annotation>
+            </element>            
+            
+        </sequence>
+  </complexType>
+  
+  
+  <complexType name="DataConnections">
+        <annotation>
+            <documentation>
+                <summary>
+                    Data connection list.
+                </summary>                                
+            </documentation>
+        </annotation>
+        <sequence>
+        
+            <element name="data-connection" type="this:DataConnection" minOccurs="0" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Data connection.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            
+        </sequence>
+  </complexType>
+  
+  
+  <element name="info">
+    <complexType>
+      <annotation>
+        <documentation>
+          <summary>
+            The element of the request that contains the method
+            specific parameters.
+          </summary>
+          
+          <remarks>
+            All requests contain the info element to pass parameters
+            that are specific to each method. If the method does not
+            define an info element, the method does not take any
+            parameters.
+          </remarks>
+        </documentation>
+      </annotation>
+      <sequence>
+      
+        <element name="data-connection-list" type="this:DataConnections" minOccurs="1" maxOccurs="1" >
+          <annotation>
+            <documentation>
+              <summary>
+                Data connection list.
+              </summary>        
+            </documentation>
+          </annotation>
+        </element>
+        
+      </sequence>
+    </complexType>
+  </element>
+</schema>

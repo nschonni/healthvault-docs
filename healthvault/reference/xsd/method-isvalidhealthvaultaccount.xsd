@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.IsValidHealthVaultAccount"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+    METHOD-ISVALIDHEALTHVAULTACCOUNT.XSD
+    Microsoft HealthVault
+
+    Platform API: Info schema for IsValidHealthVaultAccount method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+	<annotation>
+		<documentation>
+            <summary>
+                Determines if an account exists for the
+                supplied MSA Ticket.
+            </summary>
+			<method-visibility>Private</method-visibility>
+			<version>1</version>
+			<errors>
+				<error id="ACCESS_DENIED">
+					If the ticket is not valid.
+				</error>
+			</errors>
+		</documentation>
+	</annotation>
+
+    <element name="info">
+        <complexType>
+            <sequence>
+                <element name="msa-ticket" type="wc-types:string2048nw">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The authentication ticket created by Microsoft Account (MSA).
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+  
+</schema>

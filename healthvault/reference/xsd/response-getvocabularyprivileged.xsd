@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetVocabularyPrivileged"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetVocabularyPrivileged"
+    xmlns:vocab="urn:com.microsoft.wc.vocab-config" 
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-GETVOCABULARYPRIVILEGED.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetVocabularyPrivileged response
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.vocab-config"
+        schemaLocation="vocab-config.xsd" />
+    
+    <annotation>
+        <documentation>
+            <summary>
+                This gets vocabulary configuration information from the dictionary in the 
+                HealthVault service.
+            </summary>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+
+    <!-- GetVocabularyPrivileged - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <choice>
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Either the identifiers or the definition will be returned for any
+                                one request based on the parameters.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                    
+                    <element name="key" type="vocab:VocabDefinition" minOccurs="0" maxOccurs="unbounded">
+                        <annotation>
+                            <documentation>
+                                <summary>
+                                    The unique identifier of the binary content.
+                                </summary>
+                            </documentation>
+                        </annotation>
+                    </element>
+                    
+                    <element name="vocab" type="vocab:Vocab"
+                             minOccurs="0" maxOccurs="unbounded">
+                        <annotation>
+                            <documentation>
+                                <summary>
+                                    The vocabulary definition.
+                                </summary>
+                            </documentation>
+                        </annotation>
+                    </element>
+                </choice>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

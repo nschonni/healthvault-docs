@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetThingTypePrivileged"
+    xmlns:this="urn:com.microsoft.wc.methods.GetThingTypePrivileged"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETTHINGTYPEPrivileged.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetThingTypePrivileged method
+
+    -->
+
+    <import
+          namespace="urn:com.microsoft.wc.types"
+          schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                This method is used to get information about supported thing types 
+            </summary>
+
+            <remarks>
+
+            </remarks>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    <!-- GETTHINGTYPEPrivileged - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="id"
+                         type="wc-types:guid"
+                         minOccurs="0" maxOccurs="unbounded" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The unique identifiers of the types to return information about.
+                            </summary>
+                            <remarks>
+                                Optional parameter. If a list of thing-types is provided, 
+                                information about those thing types are returned.
+                                If a list is not provided, then a list of all supported
+                                thing types is returned. 
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

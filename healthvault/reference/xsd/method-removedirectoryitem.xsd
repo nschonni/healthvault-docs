@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.RemoveDirectoryItem"
+    xmlns:this="urn:com.microsoft.wc.methods.RemoveDirectoryItem"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-REMOVEDIRECTORYITEM.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for RemoveDirectoryItem method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Removes a directory item
+            </summary>
+
+            <remarks>
+            </remarks>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    <!-- RemoveDirectoryItem - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="directory-id" type="wc-types:guid" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The unique id of the directory item to delete.
+                            </summary>
+
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="directory-type" type="int" minOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The directory type.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="migration-source-instance" type="wc-types:string255nw" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                If the directory entry was migrated from an instance to HVSS which also contained
+                                the same directory entry migrated from another instance, this value will contain
+                                the instance from which this configuration was migrated.
+                            </summary>
+
+                            <remarks>
+                                This element must be passed when removing a directory entry when multiple exist
+                                with the same directory-id.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

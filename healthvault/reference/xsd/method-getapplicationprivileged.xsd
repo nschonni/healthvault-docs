@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetApplicationPrivileged"
+    xmlns:this="urn:com.microsoft.wc.methods.GetApplicationPrivileged"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETAPPLICATIONPRIVILEGED.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetApplicationPrivileged method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Retrieves the complete set of configuration information for the specified 
+                application(s).
+            </summary>
+
+            <remarks>
+                This method is intended for administration purposes only and should not be granted
+                to partner applications.
+            </remarks>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    <complexType name="NameMatchFilter">
+        <annotation>
+            <documentation>
+                <summary>
+                    The filter that restricts the returning application with specified pattern in the name.
+                </summary>
+                <remarks></remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="name-match" type="string" >
+               <annotation>
+                    <documentation>
+                        <summary>The string pattern that is used to match application name.</summary>
+                        <remarks>e.g. max will match MaxEmail application, it is case insensitive.</remarks>
+                   </documentation>
+               </annotation>
+           </element>
+           <element name="show-published-apps-only" type="boolean" >
+               <annotation>
+                   <documentation>
+                       <summary>
+                           The flag to indicates whether the search should be restricted to published application 
+                           only.
+                       </summary>
+                       <remarks>If the value is true, only published application will be returned.</remarks>
+                   </documentation>
+               </annotation>
+           </element>
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="name-match-filter"
+                         type="this:NameMatchFilter"
+                         minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The filter that limits the returning applications with a specified 
+                                pattern in the name.
+                            </summary>
+                            <remarks>1</remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="id" type="wc-types:guid" minOccurs="0" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The application ID(s) of the application(s) to get the configuration
+                                information for.
+                            </summary>
+
+                            <remarks>
+                                The application information for the specified applications will be
+                                retrieved. If no IDs are specified, all application information will
+                                be returned.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="all-languages" type="boolean"
+                        minOccurs="0" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The all-languages parameter determines how many of instances
+                                of culture specific values are returned.
+                            </summary>
+                            <remarks>
+                                If true, all values are returned.
+                                If false, the value with the best matching language is returned.
+                                For example, the name property of the application info
+                                may be localized into multiple languages.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="all-migration-sources" type="boolean"
+                        minOccurs="0" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Determines if all configurations from all migration sources are
+                                returned if present.
+                            </summary>
+                            <remarks>
+                                Normally the method will return only a single application configuration
+                                by using the global configuration (null migration-source-instance) or by
+                                matching the calling instance. If this parameter is true, all configurations
+                                for the instance are returned and are differentiated by the "migration-source-instance"
+                                attribute on the application element.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

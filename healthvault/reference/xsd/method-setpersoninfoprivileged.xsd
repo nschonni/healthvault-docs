@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.SetPersonInfoPrivileged"
+    xmlns:wc-types="urn:com.microsoft.wc.types" 
+    xmlns:wc-person="urn:com.microsoft.wc.person"    
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-SETPERSONINFOPRIVILEGED.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for SetPersonInfoPrivileged method
+
+  -->
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+    <import
+          namespace="urn:com.microsoft.wc.person"
+          schemaLocation="person-configuration.xsd"  />
+    
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- SetPersonInfoPrivileged - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="is-newsletter-subscriber" type="boolean">
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="preferred-culture" type="wc-types:Culture"
+                    minOccurs="0" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The user's preferred culture for use with
+                                comparisons, collation, currency, dates, etc.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="preferred-uiculture" type="wc-types:Culture"
+                    minOccurs="0" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The user's preferred UI culture for use with
+                                selecting the language that the application should
+                                use when showing text and images to the user.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="preferred-timezone" type="int"
+                    minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The time zone code for the user's preferred time
+                                zone.
+                            </summary>
+                            <remarks>
+                                The time zone code must match a value of a time
+                                zone in the "time-zone" vocubulary. The "time-zone"
+                                vocabulary can be used to get localized names and
+                                abbreviations for the time zones.<br/><br/>
+                                If the preferred-timezone isn't specified, then
+                                PST is assumed as the default.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name ="security-contact" type ="wc-person:SecurityContactInfo"
+                         minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The contact information to be used to inform the person, in event of a
+                                significant incident such as a security breach.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="is-health-statement-subscriber" type="boolean" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                               Indicates whether or not a person is a health statement subscriber.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="health-statement-last-sent-date" type="dateTime" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The last time a health statement was sent for this person.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="is-eprep-user" type="boolean" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Indicates whether or not a person is an emergency profile user.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                
+                <element name="is-wmgmt-user" type="boolean" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Indicates whether or not a person is a weight management user.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="version-stamp" type="string" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The update version stamp for this person's data being passed in to avoid overwriting newer updates.
+                                If version stamp is missing, person's updates are always saved.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="location" type="wc-types:Location" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The default location to be used for this account whenever a record is created.
+                            </summary>
+                            <remarks>
+                                This is more of a hint to Shell to use as the default selection. In general the 
+                                caller should always pass an explicit location to CreateRecord.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.MeaningfulUse"
+    xmlns:this="urn:com.microsoft.wc.MeaningfulUse"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        MeaningfulUse.XSD
+        Microsoft HealthVault
+
+        Platform API: Meaningful Use shared types
+
+    -->
+
+    <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd" />
+
+    <simpleType name="Action">
+        <annotation>
+            <documentation>
+                <summary>
+                    A list of acceptable Meaningful Use actions a user can perform on their health information.
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="None">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The user has performed no trackable meaningful use action on their health information.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="View">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The user has performed "View" action on their health information.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Download">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The user has performed "Download" action on their health information.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Transmit">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The user has performed "Transmit" action on their health information.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+
+    <complexType name="DateFilter">
+        <annotation>
+            <documentation>
+                <summary>
+                    Specifies date filters for the report data to be returned.
+                </summary>
+                <remarks>
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="min-date" type="dateTime" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The minimum date.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="max-date" type="dateTime" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The maximum date.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="DocumentFilter">
+        <annotation>
+            <documentation>
+                <summary>
+                    Specifies filters for the report data to be returned.
+                </summary>
+                <remarks>
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="reporting-period" type="this:DateFilter" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Specifies the reporting period date range.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="DopuDocumentFilter">
+        <annotation>
+            <documentation>
+                <summary>
+                    Specifies filters for the DOPU report data to be returned.
+                </summary>
+                <remarks>
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="available-date-filter" type="this:DateFilter" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Specifies the available date range.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="Filters">
+        <annotation>
+            <documentation>
+                <summary>
+                    Specifies filters for the report data to be returned.
+                </summary>
+                <remarks>
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="reporting-period" type="this:DateFilter" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Specifies the reporting period date range.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="DataTextFormat">
+        <annotation>
+            <documentation>
+                <summary>
+                    Meaningful use report data in delimited text format.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="column-definition" type="string">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Report data columns header row.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="data" type="string">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Report data in flat delimited text format.
+                        </summary>
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetPairingByMshId"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETPAIRINGBYMSHID.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for the GetPairingByMshId method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Gets the MSH-HV pairing information associated with the MSH user ID.
+            </summary>
+        </documentation>
+    </annotation>
+
+    <element name="info">
+        <complexType>
+            <sequence>
+                <element name="msh-user-id" type="wc-types:stringnwz64">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The Microsoft Health user ID.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>
+

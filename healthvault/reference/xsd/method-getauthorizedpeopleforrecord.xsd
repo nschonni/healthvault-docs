@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetAuthorizedPeopleForRecord"
+    xmlns:this="urn:com.microsoft.wc.methods.GetAuthorizedPeopleForRecord"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETAUTHORIZEDPEOPLEFORRECORD.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetAuthorizedPeopleForRecord method
+
+    -->
+
+    <annotation>
+        <documentation>
+            <summary>
+                Gets a list of authorized persons and applications for a record.
+            </summary>            
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    <!-- GetAuthorizedPeopleForRecord - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <simpleType name="RecordAuthorizationsResponseSection">
+        <annotation>
+            <documentation>
+                <summary>
+                    Indicates which sections of the GetAuthorizedPeopleForRecord
+                    response to return.
+                </summary>                
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="None">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Default value for RecordAuthorizationsResponseSection.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>          
+            <enumeration value="Core">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The response will include authorized apps and people info.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="PseudoIds">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The response will include pseudo-person-id and pseudo-record-id
+                            in the authorized apps info.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>            
+        </restriction>
+    </simpleType>
+    
+    <complexType name="ResponseSections">
+        <annotation>
+            <documentation>
+                <summary>
+                    Indicates which sections of the GetAuthorizedPeopleForRecord
+                    response to return.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="section" type="this:RecordAuthorizationsResponseSection" minOccurs="1" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Represents a content section to include in response.
+                        </summary>
+                    </documentation>
+                </annotation>
+             </element>
+        </sequence>
+    </complexType>
+    
+    
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method 
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any 
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="response-sections" type="this:ResponseSections" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Indicates which sections of the GetAuthorizedPeopleForRecord 
+                                response to return.
+                            </summary>
+                            <remarks>
+                                If this element is omitted, the full response
+                                will be returned. Otherwise, if a category name is
+                                included in the list of response sections, the
+                                corresponding node or nodes will be included in the
+                                response.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>          
+            </sequence>            
+        </complexType>
+    </element>
+
+</schema>
