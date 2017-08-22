@@ -166,6 +166,7 @@
 ## [PutThings](/healthvault/reference/methods/putthings)
 ## [PutThings v2](/healthvault/reference/methods/putthings2)
 ## [QueryPermissions](/healthvault/reference/methods/querypermissions)
+## [RemoveApplicationRecordAuthorization](/healthvault/reference/methods/removeapplicationrecordauthorization)
 ## [RemoveThings](/healthvault/reference/methods/removethings)
 ## [SearchVocabulary](/healthvault/reference/methods/searchvocabulary)
 ## [SelectInstance](/healthvault/reference/methods/selectinstance)

@@ -25,8 +25,6 @@ Name|Type|Min occurs|Max occurs|Summary|Remarks
 ---|---|---|---|---|---
 alternate-id|[string255nw](xref:HV_File_types#string255nw)|1|1|The alternate id to search for.|
 
-## Response Overview
-
 ## Response Details
 
 <a name='info'></a>

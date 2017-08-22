@@ -45,6 +45,7 @@ Name|Version|Description
 [PutThings](/healthvault/reference/methods/putthings)|1|Creates or updates one or more things. 
 [PutThings](/healthvault/reference/methods/putthings2)|2|Creates or updates one or more things. 
 [QueryPermissions](/healthvault/reference/methods/querypermissions)|1|Gets the permissions the authenticated person has for the specified thing type for the specified record. 
+[RemoveApplicationRecordAuthorization](/healthvault/reference/methods/removeapplicationrecordauthorization)|1| 
 [RemoveThings](/healthvault/reference/methods/removethings)|1|Deletes things from a record. 
 [SearchVocabulary](/healthvault/reference/methods/searchvocabulary)|1|Searches a vocabulary and retrieves code items that match a given search criteria. 
 [SelectInstance](/healthvault/reference/methods/selectinstance)|1|Gets the HealthVault instance that supports a specified geographic location. 
