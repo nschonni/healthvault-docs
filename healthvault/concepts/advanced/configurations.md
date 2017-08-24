@@ -1,4 +1,4 @@
----
+﻿---
 title: Global instances
 author: jhutchings1
 ms.author: justhu
@@ -36,7 +36,7 @@ US HealthVault instance
 |----|----|----|
 | Shell Production URL | <https://account.healthvault.com> | The Shell URL where HealthVault users in the US sign in to HealthVault. | 
 | Platform Production URL | <https://platform.healthvault.com/platform> | The HealthVault platform service URL for the US instance. | 
-| Platform Production IP range | 65.55.221.0/24, 134.170.145.0/24 | The IP range for the US HealthVault platform. | 
+| Platform Production IP | 157.55.140.171 | The IP address for the US HealthVault platform. | 
 | Application Configuration Center (ACC) | <https://config.healthvault-ppe.com/> | The ACC URL for creating and managing apps in all instances | 
 
 EU HealthVault instance
