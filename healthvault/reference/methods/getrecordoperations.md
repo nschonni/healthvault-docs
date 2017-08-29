@@ -25,8 +25,6 @@ Name|Type|Min occurs|Max occurs|Summary|Remarks
 ---|---|---|---|---|---
 record-operation-sequence-number|long|1|1|The sequence number from which to retrieve all operations that have occurred on the record.|
 
-## Response Overview
-
 ## Response Details
 
 <a name='info'></a>

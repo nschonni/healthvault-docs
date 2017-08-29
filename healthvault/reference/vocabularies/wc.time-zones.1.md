@@ -54,7 +54,7 @@ ID|Name
 1262|Sydney, New South Wales, most locations 
 1079|Aruba, Aruba 
 1181|Baku, Azerbaijan 
-1297|Sarajevo, Bosnia and Herzegowina 
+1297|Sarajevo, Bosnia and Herzegovina 
 1081|Barbados, Barbados 
 1189|Dacca, Bangladesh 
 1269|Brussels, Belgium 
@@ -99,7 +99,7 @@ ID|Name
 1164|Mountain Time, Yellowknife, Northwest Territories 
 1314|Cocos, Cocos (Keeling) Islands 
 1030|Bangui, Central African Republic 
-1034|Brazzaville, Congo 
+1034|Brazzaville, Republic of the Congo 
 1310|Zurich, Switzerland 
 1024|Abidjan, Republic of Côte d'Ivoire 
 1351|Rarotonga, Cook Islands 

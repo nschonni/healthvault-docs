@@ -5,8 +5,6 @@ title: GetAlternateIds
 
 # GetAlternateIds
 
-## Request Overview
-
 ## Request Details
 
 <a name='info'></a>
@@ -16,8 +14,6 @@ title: GetAlternateIds
 The element of the request that contains the method specific parameters.
 
 All requests contain the info element to pass parameters that are specific to each method. If the method does not define an info element, the method does not take any parameters.
-
-## Response Overview
 
 ## Response Details
 

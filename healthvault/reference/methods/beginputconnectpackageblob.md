@@ -5,8 +5,6 @@ title: BeginPutConnectPackageBlob
 
 # BeginPutConnectPackageBlob
 
-## Response Overview
-
 ## Response Details
 
 <a name='info'></a>

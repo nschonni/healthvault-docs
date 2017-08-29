@@ -82,6 +82,7 @@ $script:excludedXsds = @(
 
 # Method xsds are a little messy and public/private attributes are inconsistent, hence the static list.
 $script:includedMethods = @(
+    "*any.xsd",
     "*addapplication*",
     "*allocatepackageid*",
     "*associatealternateid*",
@@ -118,7 +119,6 @@ $script:includedMethods = @(
     "*overwritethings*",
     "*putthings*",
     "*querypermissions*",
-    "*removeapplicationrecordauthorization*",
     "*removethings*",
     "*searchvocabulary*",
     "*selectinstance*",
@@ -235,7 +235,8 @@ Function Get-ThingTypeInfos($typeXmlRoot, $xsdRoot, $webXsdRoot, $filenamePatter
         $request =  Parse-Method $methodItems[$method]
         $response = Parse-Method $responseItems[$method]
         if ($request -or $response) {
-            $script:methods[$method] = @{ "Name"=$method; "Request"=$request; "Response"=$response }
+            $name = if ($method -eq "any") {"removeapplicationrecordauthorization"} else {$method}
+            $script:methods[$method] = @{ "Name"=$name; "Request"=$request; "Response"=$response }
         }
     }
 
@@ -243,7 +244,8 @@ Function Get-ThingTypeInfos($typeXmlRoot, $xsdRoot, $webXsdRoot, $filenamePatter
         if (!($methodItems.ContainsKey($method))) {
             $response = Parse-Method $responseItems[$method]
             if ($response) {
-                $script:methods[$method] = @{ "Name"=$method; "Request"=$null; "Response"=$response }
+                $name = if ($method -eq "any") {"removeapplicationrecordauthorization"} else {$method}
+                $script:methods[$method] = @{ "Name"=$name; "Request"=$null; "Response"=$response }
             }
         }
     }
@@ -324,6 +326,11 @@ Function Combine-ThingInfo($xmlInfo, $xsdInfo, $fileBaseName) {
     $thing.FilenamePrefix = if ($xmlInfo.FilenamePrefix) {$xmlInfo.FilenamePrefix} else {$fileBaseName}
     $thing.Namespace = $xsdInfo.Namespace
     $thing.Visibility = $xsdInfo.Visibility
+
+    # Special case
+    if ($thing.Name -eq "any") {
+        $thing.Name = "RemoveApplicationRecordAuthorization"
+    }
 
     $guids = @($xsdInfo.RelatedDataTypeGuids | ?{$_})
     if ($guids.Count -gt 0) {
@@ -1353,14 +1360,12 @@ Function New-MethodDetails($info, $sectionName) {
     $script:currentTypes = $info.Types
     $elements = $info.Elements | New-DataTypeDetailsElements
     $types = $info.Types | New-DataTypeDetailsTypes
+    $hasSummary = $info.Summary -or $info.Description
+    $overview = "## $sectionName Overview`n`n$($info.Summary)`n`n$($info.Description)"
 
     return @"
 
-## ${sectionName} Overview
-
-$($info.Summary)
-
-$($info.Description)
+$(if ($hasSummary) {$overview})
 
 ## ${sectionName} Details
 
