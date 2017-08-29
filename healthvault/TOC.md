@@ -90,6 +90,7 @@
 ###[Global architecture](/healthvault/concepts/advanced/global-architecture)
 ###[Global instances](/healthvault/concepts/advanced/configurations)
 ###[Master and child applications](/healthvault/concepts/advanced/master-and-child-applications)
+### [Azure deployment](/healthvault/concepts/advanced/azure-deployment)
 ###[Multi-instance applications](/healthvault/concepts/advanced/multi-instance-applications)
 ## [Device Driver Kit](/healthvault/concepts/device-driver-kit/device-overview)
 ### [Device WPD Overview](/healthvault/concepts/device-driver-kit/device-wpd-overview)
