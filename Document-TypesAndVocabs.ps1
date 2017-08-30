@@ -595,6 +595,7 @@ Function Parse-Restriction($item) {
         $type = Parse-TypeWithNamespace $item.base
         $re.BaseTypeName = $type.Name
         $re.BaseTypeNamespace = $type.FullNamespace
+        $re.BackupNamespace = $type.BackupNamespace
         $re.MinInclusive = $item.minInclusive.value
         $re.MaxInclusive = $item.maxInclusive.value
         $re.Attributes = @($item.attribute | ?{$_} | Parse-Attribute)
@@ -629,6 +630,7 @@ Function Parse-Extension($item) {
     $type = Parse-TypeWithNamespace $ext.base
     $ex.BaseType = $type.Name
     $ex.BaseTypeNamespace = $type.FullNamespace
+    $ex.BackupNamespace = $type.BackupNamespace
     $ex.Attributes = @($ext.attribute | ?{$_} | Parse-Attribute)
     $ex.Sequence = @($ext.sequence | ?{$_} | Parse-SequenceItems)
     $ex.Choice = Parse-SequenceChoice $ext.choice
@@ -666,6 +668,7 @@ Function Parse-TypeWithNamespace($item) {
     $type = @{}
     $type.Original = $item
     $parts = $item -split ':'
+    $type.BackupNamespace = $script:currentNamespace
 
     if ($parts.Count -eq 1) {
         $type.Name = $item
@@ -791,9 +794,13 @@ Function md-XrefLinkById($id) {
     }
 }
 
-Function md-XrefLinkByName($typeName, $namespace) {
-    $id = GetXsdIdByName $typeName $namespace
-    if ($typeName -and $id) {
+Function md-XrefLinkByName($typeName, $namespace, $backupNamespace) {
+    $id = GetXsdIdByName $typeName $(if ($namespace){$namespace}else{$backupNamespace})
+    if (!$id -and !$namespace) {
+        $id = GetXsdIdByName $typeName
+    }
+
+    if ($id) {
         md-XrefLink $typeName "$id#$typeName"
     }
     else {
@@ -1157,7 +1164,7 @@ Function Get-ElementLink($item, $inlines) {
                 $link = md-XrefLinkById $customType.ThingTypeId
             }
             else {
-                $link = md-XrefLinkByName $name $item.Type.FullNamespace
+                $link = md-XrefLinkByName $name $item.Type.FullNamespace $item.Type.BackupNamespace
             }
         }
     }
@@ -1201,7 +1208,7 @@ Function New-SchemaRestriction($restriction) {
         }
 
         if ($restriction.BaseTypeName) {
-            "`nBase type: $(md-XrefLinkByName $restriction.BaseTypeName $restriction.BaseTypeNamespace)`n"
+            "`nBase type: $(md-XrefLinkByName $restriction.BaseTypeName $restriction.BaseTypeNamespace $restriction.BackupNamespace)`n"
         }
 
         New-VocabBlock $restriction
@@ -1253,7 +1260,7 @@ Function New-SchemaExtension($schemaType) {
             "`n$($ex.Remarks)`n"
         }
 
-        "`nBase type: $(md-XrefLinkByName $ex.BaseType $ex.BaseTypeNamespace)`n"
+        "`nBase type: $(md-XrefLinkByName $ex.BaseType $ex.BaseTypeNamespace $ex.BackupNamespace)`n"
 
         New-VocabBlock $schemaType
         

@@ -393,7 +393,7 @@ effective date XPath|No effective date XPath
 >
 > ### Extension
 >
-> Base type: [URL](xref:HV_File_types#URL)
+> Base type: [URL](xref:HV_1ed1cba6-9530-44a3-b7b5-e8219690ebcf#URL)
 >
 > ### Attributes
 >
