@@ -1,9 +1,10 @@
-<Type Name="IPlatformClient" FullName="Microsoft.HealthVault.Clients.IPlatformClient">
+﻿<Type Name="IPlatformClient" FullName="Microsoft.HealthVault.Clients.IPlatformClient">
   <TypeSignature Language="C#" Value="public interface IPlatformClient : Microsoft.HealthVault.Clients.IClient" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPlatformClient implements class Microsoft.HealthVault.Clients.IClient" />
   <TypeSignature Language="DocId" Value="T:Microsoft.HealthVault.Clients.IPlatformClient" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.HealthVault</AssemblyName>
+    <AssemblyVersion>1.65.0.0</AssemblyVersion>
     <AssemblyVersion>1.66.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces>
@@ -24,7 +25,9 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IPlatformClient.GetAuthorizedPeople" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
         <AssemblyVersion>1.66.0.0</AssemblyVersion>
+        <AssemblyName>Microsoft.HealthVault</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Threading.Tasks.Task&lt;Microsoft.HealthVault.Person.PersonInfo&gt;&gt;</ReturnType>
@@ -54,7 +57,9 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IPlatformClient.GetAuthorizedPeople(Microsoft.HealthVault.Person.GetAuthorizedPeopleSettings)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
         <AssemblyVersion>1.66.0.0</AssemblyVersion>
+        <AssemblyName>Microsoft.HealthVault</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Threading.Tasks.Task&lt;Microsoft.HealthVault.Person.PersonInfo&gt;&gt;</ReturnType>
@@ -96,6 +101,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.66.0.0</AssemblyVersion>
+        <AssemblyName>Microsoft.HealthVault</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Collections.Generic.IDictionary&lt;System.Guid,Microsoft.HealthVault.Thing.ThingTypeDefinition&gt;&gt;</ReturnType>
@@ -147,13 +153,74 @@
              </exception>
       </Docs>
     </Member>
+    <Member MemberName="GetHealthRecordItemTypeDefinitionAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Collections.Generic.IDictionary&lt;Guid,Microsoft.HealthVault.Thing.ThingTypeDefinition&gt;&gt; GetHealthRecordItemTypeDefinitionAsync (System.Collections.Generic.IList&lt;Guid&gt; typeIds, Microsoft.HealthVault.Thing.ThingTypeSections sections, System.Collections.Generic.IList&lt;string&gt; imageTypes, Nullable&lt;DateTime&gt; lastClientRefreshDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class System.Collections.Generic.IDictionary`2&lt;valuetype System.Guid, class Microsoft.HealthVault.Thing.ThingTypeDefinition&gt;&gt; GetHealthRecordItemTypeDefinitionAsync(class System.Collections.Generic.IList`1&lt;valuetype System.Guid&gt; typeIds, valuetype Microsoft.HealthVault.Thing.ThingTypeSections sections, class System.Collections.Generic.IList`1&lt;string&gt; imageTypes, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; lastClientRefreshDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IPlatformClient.GetHealthRecordItemTypeDefinitionAsync(System.Collections.Generic.IList{System.Guid},Microsoft.HealthVault.Thing.ThingTypeSections,System.Collections.Generic.IList{System.String},System.Nullable{System.DateTime})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.HealthVault</AssemblyName>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Collections.Generic.IDictionary&lt;System.Guid,Microsoft.HealthVault.Thing.ThingTypeDefinition&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeIds" Type="System.Collections.Generic.IList&lt;System.Guid&gt;" />
+        <Parameter Name="sections" Type="Microsoft.HealthVault.Thing.ThingTypeSections" />
+        <Parameter Name="imageTypes" Type="System.Collections.Generic.IList&lt;System.String&gt;" />
+        <Parameter Name="lastClientRefreshDate" Type="System.Nullable&lt;System.DateTime&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="typeIds">
+             A collection of health item type IDs whose details are being requested. Null
+             indicates that all health item types should be returned.
+             </param>
+        <param name="sections">
+             A collection of ThingTypeSections enumeration values that indicate the type
+             of details to be returned for the specified health item records(s).
+             </param>
+        <param name="imageTypes">
+             A collection of strings that identify which health item record images should be
+             retrieved.
+            
+             This requests an image of the specified mime type should be returned. For example,
+             to request a GIF image, "image/gif" should be specified. For icons, "image/vnd.microsoft.icon"
+             should be specified. Note, not all health item records will have all image types and
+             some may not have any images at all.
+            
+             If '*' is specified, all image types will be returned.
+             </param>
+        <param name="lastClientRefreshDate">
+             A <see cref="T:System.DateTime" /> instance that specifies the time of the last refresh
+             made by the client.
+             </param>
+        <summary>
+             Gets the definitions for one or more thing type definitions
+             supported by HealthVault.
+             </summary>
+        <returns>
+             The type definitions for the specified types, or empty if the
+             <paramref name="typeIds" /> parameter does not represent a known unique
+             type identifier.
+             </returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+             If <paramref name="typeIds" /> is <b>non null</b> and empty, or
+             <paramref name="typeIds" /> is <b>non null</b> and member in <paramref name="typeIds" /> is
+             <see cref="F:System.Guid.Empty" />.
+             </exception>
+      </Docs>
+    </Member>
     <Member MemberName="GetServiceDefinitionAsync">
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;Microsoft.HealthVault.PlatformInformation.ServiceInfo&gt; GetServiceDefinitionAsync ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.HealthVault.PlatformInformation.ServiceInfo&gt; GetServiceDefinitionAsync() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IPlatformClient.GetServiceDefinitionAsync" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
         <AssemblyVersion>1.66.0.0</AssemblyVersion>
+        <AssemblyName>Microsoft.HealthVault</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.HealthVault.PlatformInformation.ServiceInfo&gt;</ReturnType>
@@ -194,7 +261,9 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IPlatformClient.GetServiceDefinitionAsync(Microsoft.HealthVault.PlatformInformation.ServiceInfoSections)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
         <AssemblyVersion>1.66.0.0</AssemblyVersion>
+        <AssemblyName>Microsoft.HealthVault</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.HealthVault.PlatformInformation.ServiceInfo&gt;</ReturnType>
@@ -248,6 +317,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.66.0.0</AssemblyVersion>
+        <AssemblyName>Microsoft.HealthVault</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.HealthVault.PlatformInformation.ServiceInfo&gt;</ReturnType>
@@ -293,12 +363,65 @@
       </Docs>
     </Member>
     <Member MemberName="GetServiceDefinitionAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;Microsoft.HealthVault.PlatformInformation.ServiceInfo&gt; GetServiceDefinitionAsync (DateTime lastUpdatedTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.HealthVault.PlatformInformation.ServiceInfo&gt; GetServiceDefinitionAsync(valuetype System.DateTime lastUpdatedTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IPlatformClient.GetServiceDefinitionAsync(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.HealthVault</AssemblyName>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.HealthVault.PlatformInformation.ServiceInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lastUpdatedTime" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="lastUpdatedTime">
+             The time of the last update to an existing cached copy of <see cref="T:Microsoft.HealthVault.PlatformInformation.ServiceInfo" />.
+             </param>
+        <summary>
+             Gets information about the HealthVault service only if it has been updated since
+             the specified update time.
+             </summary>
+        <returns>
+             If there were updates to the service information since the specified <paramref name="lastUpdatedTime" />,
+             a <see cref="T:Microsoft.HealthVault.PlatformInformation.ServiceInfo" /> instance that contains the service version, SDK
+             assemblies versions and URLs, method information, and so on.  Otherwise, if there were no updates,
+             returns <b>null</b>.
+             </returns>
+        <remarks>
+             Gets the latest information about the HealthVault service, if there were updates
+             since the specified <paramref name="lastUpdatedTime" />.  If there were no updates
+             the method returns <b>null</b>.
+             This includes:<br />
+             - The version of the service.<br />
+             - The SDK assembly URLs.<br />
+             - The SDK assembly versions.<br />
+             - The SDK documentation URL.<br />
+             - The URL to the HealthVault Shell.<br />
+             - The schema definition for the HealthVault method's request and
+               response.<br />
+             - The common schema definitions for types that the HealthVault methods
+               use.<br />
+             - Information about all available HealthVault instances.<br /></remarks>
+        <exception cref="T:Microsoft.HealthVault.Exceptions.HealthServiceException">
+             The HealthVault service returned an error.
+             </exception>
+        <exception cref="T:System.UriFormatException">
+             One or more URL strings returned by HealthVault is invalid.
+             </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetServiceDefinitionAsync">
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;Microsoft.HealthVault.PlatformInformation.ServiceInfo&gt; GetServiceDefinitionAsync (Microsoft.HealthVault.PlatformInformation.ServiceInfoSections responseSections, NodaTime.Instant lastUpdatedTime);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.HealthVault.PlatformInformation.ServiceInfo&gt; GetServiceDefinitionAsync(valuetype Microsoft.HealthVault.PlatformInformation.ServiceInfoSections responseSections, valuetype NodaTime.Instant lastUpdatedTime) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IPlatformClient.GetServiceDefinitionAsync(Microsoft.HealthVault.PlatformInformation.ServiceInfoSections,NodaTime.Instant)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.66.0.0</AssemblyVersion>
+        <AssemblyName>Microsoft.HealthVault</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.HealthVault.PlatformInformation.ServiceInfo&gt;</ReturnType>
@@ -355,13 +478,79 @@
              </exception>
       </Docs>
     </Member>
+    <Member MemberName="GetServiceDefinitionAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;Microsoft.HealthVault.PlatformInformation.ServiceInfo&gt; GetServiceDefinitionAsync (Microsoft.HealthVault.PlatformInformation.ServiceInfoSections responseSections, DateTime lastUpdatedTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.HealthVault.PlatformInformation.ServiceInfo&gt; GetServiceDefinitionAsync(valuetype Microsoft.HealthVault.PlatformInformation.ServiceInfoSections responseSections, valuetype System.DateTime lastUpdatedTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IPlatformClient.GetServiceDefinitionAsync(Microsoft.HealthVault.PlatformInformation.ServiceInfoSections,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.HealthVault</AssemblyName>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.HealthVault.PlatformInformation.ServiceInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="responseSections" Type="Microsoft.HealthVault.PlatformInformation.ServiceInfoSections" />
+        <Parameter Name="lastUpdatedTime" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="responseSections">
+             A bitmask of one or more <see cref="T:Microsoft.HealthVault.PlatformInformation.ServiceInfoSections" /> which specify the
+             categories of information to be populated in the <see cref="T:Microsoft.HealthVault.PlatformInformation.ServiceInfo" />.
+             </param>
+        <param name="lastUpdatedTime">
+             The time of the last update to an existing cached copy of <see cref="T:Microsoft.HealthVault.PlatformInformation.ServiceInfo" />.
+             </param>
+        <summary>
+             Gets information about the HealthVault service corresponding to the specified
+             categories if the requested information has been updated since the specified
+             update time.
+             </summary>
+        <returns>
+             If there were updates to the service information since the specified <paramref name="lastUpdatedTime" />,
+             a <see cref="T:Microsoft.HealthVault.PlatformInformation.ServiceInfo" /> instance that contains some or all of the service version,
+             SDK  assemblies versions and URLs, method information, and so on, depending on which
+             information categories were specified.  Otherwise, if there were no updates, returns
+             <b>null</b>.
+             </returns>
+        <remarks>
+             Gets the latest information about the HealthVault service, if there were updates
+             since the specified <paramref name="lastUpdatedTime" />.  If there were no updates
+             the method returns <b>null</b>.
+             Depending on the specified
+             <paramref name="responseSections" />, this will include some or all of:<br />
+             - The version of the service.<br />
+             - The SDK assembly URLs.<br />
+             - The SDK assembly versions.<br />
+             - The SDK documentation URL.<br />
+             - The URL to the HealthVault Shell.<br />
+             - The schema definition for the HealthVault method's request and
+               response.<br />
+             - The common schema definitions for types that the HealthVault methods
+               use.<br />
+             - Information about all available HealthVault instances.<br />
+            
+             Retrieving only the sections you need will give a faster response time than
+             downloading the full response.
+             </remarks>
+        <exception cref="T:Microsoft.HealthVault.Exceptions.HealthServiceException">
+             The HealthVault service returned an error.
+             </exception>
+        <exception cref="T:System.UriFormatException">
+             One or more URL strings returned by HealthVault is invalid.
+             </exception>
+      </Docs>
+    </Member>
     <Member MemberName="NewApplicationCreationInfoAsync">
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;Microsoft.HealthVault.PlatformInformation.ApplicationCreationInfo&gt; NewApplicationCreationInfoAsync ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;class Microsoft.HealthVault.PlatformInformation.ApplicationCreationInfo&gt; NewApplicationCreationInfoAsync() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IPlatformClient.NewApplicationCreationInfoAsync" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
         <AssemblyVersion>1.66.0.0</AssemblyVersion>
+        <AssemblyName>Microsoft.HealthVault</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.HealthVault.PlatformInformation.ApplicationCreationInfo&gt;</ReturnType>
@@ -381,7 +570,9 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IPlatformClient.RemoveApplicationRecordAuthorizationAsync(System.Guid)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
         <AssemblyVersion>1.66.0.0</AssemblyVersion>
+        <AssemblyName>Microsoft.HealthVault</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -404,7 +595,9 @@
       <MemberSignature Language="DocId" Value="M:Microsoft.HealthVault.Clients.IPlatformClient.SelectInstanceAsync(Microsoft.HealthVault.Application.Location)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
+        <AssemblyVersion>1.65.0.0</AssemblyVersion>
         <AssemblyVersion>1.66.0.0</AssemblyVersion>
+        <AssemblyName>Microsoft.HealthVault</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;Microsoft.HealthVault.PlatformInformation.HealthServiceInstance&gt;</ReturnType>
