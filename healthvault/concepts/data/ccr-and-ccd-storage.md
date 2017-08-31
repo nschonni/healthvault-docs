@@ -13,7 +13,7 @@ Storing CCR and CCD Data in HealthVault
 
 Both the Continuity of Care Record ([CCR](http://www.centerforhit.org/online/chit/home/project-ctr/astm.html)) and the Continuity of Care Document ([CCD](http://www.hl7.org/documentcenter/public/pressreleases/20070212.pdf)) are designed as ways of passing information between entities. For example, when a patient leaves the hospital, information can be passed to their primary care physician through one of these types. These types are examples of XML types (see [What Data Type Should I Use?](http://blogs.msdn.com/ericgu/archive/2007/10/30/what-data-type-should-i-use.aspx)), which simply means that they are types as far as the HealthVault platform is concerned (that is, they have an XML schema and thing type associated with them), but they don't have a client type (that is, a type derived from HealthRecordItem) in the .NET API.
 
-To operate with such types, you need to use the HealthRecordItem type directly. To do so, you need to know the GUID associated with each type. You get the GUIDs from the [Thing Types Reference](http://developer.healthvault.com/types/types.aspx) page and encode them using the following:
+To operate with such types, you need to use the HealthRecordItem type directly. To do so, you need to know the GUID associated with each type. You get the GUIDs from the [Thing Types Reference](/healthvault/reference/datatypes) page and encode them using the following:
 
 ```c#
       

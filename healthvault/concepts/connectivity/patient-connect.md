@@ -82,7 +82,7 @@ A typical Patient Connect connection is made in the following way.
 
 ### Platform XML methods
 
-See the [HealthVault method browser](http://developer.healthvault.com/methods/methods.aspx) for more information on each XML request.
+See the [HealthVault method browser](/healthvault/reference/methods) for more information on each XML request.
 
 <table>
 <colgroup>

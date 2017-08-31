@@ -45,7 +45,4 @@ Next, read about <a href="technical-overview-applications" id="Introduction_1410
 -   <a href="technical-overview-connectivity" id="RightRailLinkListSection_14104_15">4. Connectivity</a>
 -   <a href="technical-overview-exchanging-data" id="RightRailLinkListSection_14104_16">5. Exchanging data</a>
 
-See also
-
--   <a href="https://developer.healthvault.com/pages/types/types.aspx" id="RightRailLinkListSection_14104_17">Data types browser</a>
 

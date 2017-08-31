@@ -18,13 +18,12 @@ A HealthVault-integrated application is permitted to call the production service
 
 -   The developer configures an application entry in the [Application Configuration Center (ACC)](https://config.healthvault-ppe.com).
 -   The developer builds and tests the application against the PPE (pre-production) environment (<https://www.healthvault-ppe.com>).
--   The developer refers to documentation on this site and the [Developer Tools Portal](https://developer.healthvault.com) to build the application.
 -   The developer initiates the <a href="/healthvault/publishing/go-live" id="Introduction_14442_17">go-live process</a> to move the configuration entry to production.
 
 Development tools
 -----------------
 
-HealthVault provides an XML-based web service API.  Interactive technical documentation can be found on the HealthVault [developer tools portal](https://developer.healthvault.com). However, most applications will use a software development kit (SDK) instead of the native XML API.  HealthVault <a href="https://msdn.microsoft.com/en-US/HealthVault/dn798744" id="Introduction_14442_21">supports a variety of SDKs</a> for common platforms such as .NET and Windows 8 RT. An SDK makes it easier to execute scenarios such as uploading large chunks of data.
+HealthVault provides an XML-based web service API.  Interactive technical documentation can be found on this site. However, most applications will use a software development kit (SDK) instead of the native XML API.  HealthVault <a href="/healthvault/index#pivot=sdkstools">supports a variety of SDKs</a> for common platforms such as .NET and Windows 8 RT. An SDK makes it easier to execute scenarios such as uploading large chunks of data.
 
 Go-live process
 ---------------
@@ -53,4 +52,3 @@ Next, read about <a href="/healthvault/introduction/technical-overview-permissio
 See also
 
 -   <a href="https://config.healthvault-ppe.com" id="RightRailLinkListSection_14442_9">Application Configuration Center</a>
--   <a href="https://developer.healthvault.com" id="RightRailLinkListSection_14442_18">Developer tools portal</a>

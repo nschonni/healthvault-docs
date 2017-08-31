@@ -143,7 +143,7 @@ Multiple packages are allowed for a given external ID, but a package cannot be u
 Package data
 ------------
 
-The data in a DOPU package is an encrypted list of HealthVault items. It is encapsulated in the [Password Protected Package](http://developer.healthvault.com/pages/types/type.aspx?id=c9287326-bb43-4194-858c-8b60768f000f) type, which consists of metadata about the encryption algorithm and an inline blob that is the encrypted data itself.
+The data in a DOPU package is an encrypted list of HealthVault items. It is encapsulated in the [Password Protected Package](https://docs.microsoft.com/en-us/healthvault/reference/datatypes/password-protected-package) type, which consists of metadata about the encryption algorithm and an inline blob that is the encrypted data itself.
 
 The unencrypted data should be a sequence of thing XMLs of any HealthVault data type. Items can also contain inline or streamed blobs, but items with streamed blobs cannot be <a href="/healthvault/concepts/data/digital-signatures" id="PageContent_14092_5">digitally signed</a> inside a DOPU package.
 
@@ -224,7 +224,7 @@ Supported encryption algorithms:
 </tbody>
 </table>
 
-You need to provide the following information as part of the [Password Protected Package](http://developer.healthvault.com/pages/types/type.aspx?id=c9287326-bb43-4194-858c-8b60768f000f) type when creating the DOPU package:
+You need to provide the following information as part of the [Password Protected Package](https://docs.microsoft.com/en-us/healthvault/reference/datatypes/password-protected-package) type when creating the DOPU package:
 
 <table>
 <colgroup>

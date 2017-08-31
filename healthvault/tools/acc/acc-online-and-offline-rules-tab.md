@@ -30,6 +30,6 @@ By default, your application is configured with online access to the Application
 
 * **Data Types** Here you can find the list of data types available in HealthVault. You can select the data types which you want to have access user’s health record where it is used by your application. If you hover through the help for each data type then you can see the Type ID (GUID) and the brief summary corresponding to that data type. An addition information – the HealthVault .NET SDK type name will be displayed for data types having multiple versions.
 
-  To uncheck all the data types you have chosen, click >Uncheck All. For more information about each data type, see [List of all thing types](http://developer.healthvault.com/types/types.aspx).
+  To uncheck all the data types you have chosen, click >Uncheck All. For more information about each data type, see [List of all thing types](/healthvault/reference/datatypes/).
 
   We recommend choosing the latest HealthVault Data Types for your application. The highest version of a data type is listed on the top among its different versions. Medication and Lab Test Results are examples for data types which are having more than one version in HealthVault.
