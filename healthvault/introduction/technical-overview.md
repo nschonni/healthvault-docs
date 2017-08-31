@@ -39,10 +39,10 @@ Next, read about <a href="technical-overview-applications" id="Introduction_1410
 
 #### Technical overview
 
--   <a href="technical-overview" id="RightRailLinkListSection_14104_13"><strong>1. Terminology</strong></a>
--   <a href="technical-overview-applications" id="RightRailLinkListSection_14104_19">2. Applications</a>
--   <a href="technical-overview-permissions" id="RightRailLinkListSection_14104_14">3. Permissions</a>
--   <a href="technical-overview-connectivity" id="RightRailLinkListSection_14104_15">4. Connectivity</a>
--   <a href="technical-overview-exchanging-data" id="RightRailLinkListSection_14104_16">5. Exchanging data</a>
+-   <a href="/healthvault/introduction/technical-overview" id="RightRailLinkListSection_14104_13"><strong>1. Terminology</strong></a>
+-   <a href="/healthvault/introduction/technical-overview-applications" id="RightRailLinkListSection_14104_19">2. Applications</a>
+-   <a href="/healthvault/introduction/technical-overview-permissions" id="RightRailLinkListSection_14104_14">3. Permissions</a>
+-   <a href="/healthvault/introduction/technical-overview-connectivity" id="RightRailLinkListSection_14104_15">4. Connectivity</a>
+-   <a href="/healthvault/introduction/technical-overview-exchanging-data" id="RightRailLinkListSection_14104_16">5. Exchanging data</a>
 
 

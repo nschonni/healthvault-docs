@@ -54,4 +54,4 @@ foreach (HealthRecordItem ccd in ccdItems) 
     
 ```
 
-This is a simple form of support for these data types. For more information about creating a CCR from individual data items in HealthVault, or storing CCR data as individual items in HealthVault, see <a href="ccr-data" id="PageContent_14116_2">Using CCR Data in HealthVault</a>.
+This is a simple form of support for these data types. For more information about creating a CCR from individual data items in HealthVault, or storing CCR data as individual items in HealthVault, see <a href="/healthvault/concapts/data/ccr-data" id="PageContent_14116_2">Using CCR Data in HealthVault</a>.

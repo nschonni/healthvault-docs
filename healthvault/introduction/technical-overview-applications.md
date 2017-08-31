@@ -43,11 +43,11 @@ Next, read about <a href="/healthvault/introduction/technical-overview-permissio
 
 ### Technical Overview
 
--   <a href="technical-overview" id="RightRailLinkListSection_14442_10">1. Terminology</a>
--   <a href="technical-overview-applications" id="RightRailLinkListSection_14442_11">2. Applications</a>
--   <a href="technical-overview-permissions" id="RightRailLinkListSection_14442_12">3. Permissions</a>
--   <a href="technical-overview-connectivity" id="RightRailLinkListSection_14442_13">4. Connectivity</a>
--   <a href="technical-overview-exchanging-data" id="RightRailLinkListSection_14442_14">5. Exchanging data</a>
+-   <a href="/healthvault/introduction/technical-overview" id="RightRailLinkListSection_14442_10">1. Terminology</a>
+-   <a href="/healthvault/introduction/technical-overview-applications" id="RightRailLinkListSection_14442_11">2. Applications</a>
+-   <a href="/healthvault/introduction/technical-overview-permissions" id="RightRailLinkListSection_14442_12">3. Permissions</a>
+-   <a href="/healthvault/introduction/technical-overview-connectivity" id="RightRailLinkListSection_14442_13">4. Connectivity</a>
+-   <a href="/healthvault/introduction/technical-overview-exchanging-data" id="RightRailLinkListSection_14442_14">5. Exchanging data</a>
 
 See also
 
