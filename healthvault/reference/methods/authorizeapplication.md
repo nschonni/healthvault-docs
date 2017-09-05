@@ -5,8 +5,6 @@ title: AuthorizeApplication
 
 # AuthorizeApplication
 
-## Request Overview
-
 ## Request Details
 
 <a name='info'></a>

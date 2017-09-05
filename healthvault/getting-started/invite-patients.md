@@ -16,7 +16,7 @@ The process to generate and send invitation codes is:
 
 1.  Create an offline web application connection.
 2.  Authenticate the connection. This uses the certificate you registered earlier to establish trust.
-3.  Generate an invitation code using the [Onboarding REST API](https://developer.healthvault.com/Api).
+3.  Generate an invitation code using the [Onboarding REST API](https://docs.microsoft.com/en-us/rest/api/v1.0-rc/data.ppe.microsofthealth.net/Onboarding).
 4.  Send the invitation code to your participant using email or another mechanism.
 
 Once users receive their invitation, they will be invited to download the HealthVault Insights app, sign-up/sign-in to HealthVault and give consent to your application's request to access specific health data. Once consent is received, your application will have access to user’s consented data.

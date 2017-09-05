@@ -82,6 +82,7 @@ $script:excludedXsds = @(
 
 # Method xsds are a little messy and public/private attributes are inconsistent, hence the static list.
 $script:includedMethods = @(
+    "*any.xsd",
     "*addapplication*",
     "*allocatepackageid*",
     "*associatealternateid*",
@@ -118,7 +119,6 @@ $script:includedMethods = @(
     "*overwritethings*",
     "*putthings*",
     "*querypermissions*",
-    "*removeapplicationrecordauthorization*",
     "*removethings*",
     "*searchvocabulary*",
     "*selectinstance*",
@@ -235,7 +235,8 @@ Function Get-ThingTypeInfos($typeXmlRoot, $xsdRoot, $webXsdRoot, $filenamePatter
         $request =  Parse-Method $methodItems[$method]
         $response = Parse-Method $responseItems[$method]
         if ($request -or $response) {
-            $script:methods[$method] = @{ "Name"=$method; "Request"=$request; "Response"=$response }
+            $name = if ($method -eq "any") {"removeapplicationrecordauthorization"} else {$method}
+            $script:methods[$method] = @{ "Name"=$name; "Request"=$request; "Response"=$response }
         }
     }
 
@@ -243,7 +244,8 @@ Function Get-ThingTypeInfos($typeXmlRoot, $xsdRoot, $webXsdRoot, $filenamePatter
         if (!($methodItems.ContainsKey($method))) {
             $response = Parse-Method $responseItems[$method]
             if ($response) {
-                $script:methods[$method] = @{ "Name"=$method; "Request"=$null; "Response"=$response }
+                $name = if ($method -eq "any") {"removeapplicationrecordauthorization"} else {$method}
+                $script:methods[$method] = @{ "Name"=$name; "Request"=$null; "Response"=$response }
             }
         }
     }
@@ -324,6 +326,11 @@ Function Combine-ThingInfo($xmlInfo, $xsdInfo, $fileBaseName) {
     $thing.FilenamePrefix = if ($xmlInfo.FilenamePrefix) {$xmlInfo.FilenamePrefix} else {$fileBaseName}
     $thing.Namespace = $xsdInfo.Namespace
     $thing.Visibility = $xsdInfo.Visibility
+
+    # Special case
+    if ($thing.Name -eq "any") {
+        $thing.Name = "RemoveApplicationRecordAuthorization"
+    }
 
     $guids = @($xsdInfo.RelatedDataTypeGuids | ?{$_})
     if ($guids.Count -gt 0) {
@@ -588,6 +595,7 @@ Function Parse-Restriction($item) {
         $type = Parse-TypeWithNamespace $item.base
         $re.BaseTypeName = $type.Name
         $re.BaseTypeNamespace = $type.FullNamespace
+        $re.BackupNamespace = $type.BackupNamespace
         $re.MinInclusive = $item.minInclusive.value
         $re.MaxInclusive = $item.maxInclusive.value
         $re.Attributes = @($item.attribute | ?{$_} | Parse-Attribute)
@@ -622,6 +630,7 @@ Function Parse-Extension($item) {
     $type = Parse-TypeWithNamespace $ext.base
     $ex.BaseType = $type.Name
     $ex.BaseTypeNamespace = $type.FullNamespace
+    $ex.BackupNamespace = $type.BackupNamespace
     $ex.Attributes = @($ext.attribute | ?{$_} | Parse-Attribute)
     $ex.Sequence = @($ext.sequence | ?{$_} | Parse-SequenceItems)
     $ex.Choice = Parse-SequenceChoice $ext.choice
@@ -659,6 +668,7 @@ Function Parse-TypeWithNamespace($item) {
     $type = @{}
     $type.Original = $item
     $parts = $item -split ':'
+    $type.BackupNamespace = $script:currentNamespace
 
     if ($parts.Count -eq 1) {
         $type.Name = $item
@@ -784,9 +794,13 @@ Function md-XrefLinkById($id) {
     }
 }
 
-Function md-XrefLinkByName($typeName, $namespace) {
-    $id = GetXsdIdByName $typeName $namespace
-    if ($typeName -and $id) {
+Function md-XrefLinkByName($typeName, $namespace, $backupNamespace) {
+    $id = GetXsdIdByName $typeName $(if ($namespace){$namespace}else{$backupNamespace})
+    if (!$id -and !$namespace) {
+        $id = GetXsdIdByName $typeName
+    }
+
+    if ($id) {
         md-XrefLink $typeName "$id#$typeName"
     }
     else {
@@ -1150,7 +1164,7 @@ Function Get-ElementLink($item, $inlines) {
                 $link = md-XrefLinkById $customType.ThingTypeId
             }
             else {
-                $link = md-XrefLinkByName $name $item.Type.FullNamespace
+                $link = md-XrefLinkByName $name $item.Type.FullNamespace $item.Type.BackupNamespace
             }
         }
     }
@@ -1194,7 +1208,7 @@ Function New-SchemaRestriction($restriction) {
         }
 
         if ($restriction.BaseTypeName) {
-            "`nBase type: $(md-XrefLinkByName $restriction.BaseTypeName $restriction.BaseTypeNamespace)`n"
+            "`nBase type: $(md-XrefLinkByName $restriction.BaseTypeName $restriction.BaseTypeNamespace $restriction.BackupNamespace)`n"
         }
 
         New-VocabBlock $restriction
@@ -1246,7 +1260,7 @@ Function New-SchemaExtension($schemaType) {
             "`n$($ex.Remarks)`n"
         }
 
-        "`nBase type: $(md-XrefLinkByName $ex.BaseType $ex.BaseTypeNamespace)`n"
+        "`nBase type: $(md-XrefLinkByName $ex.BaseType $ex.BaseTypeNamespace $ex.BackupNamespace)`n"
 
         New-VocabBlock $schemaType
         
@@ -1353,14 +1367,12 @@ Function New-MethodDetails($info, $sectionName) {
     $script:currentTypes = $info.Types
     $elements = $info.Elements | New-DataTypeDetailsElements
     $types = $info.Types | New-DataTypeDetailsTypes
+    $hasSummary = $info.Summary -or $info.Description
+    $overview = "## $sectionName Overview`n`n$($info.Summary)`n`n$($info.Description)"
 
     return @"
 
-## ${sectionName} Overview
-
-$($info.Summary)
-
-$($info.Description)
+$(if ($hasSummary) {$overview})
 
 ## ${sectionName} Details
 
