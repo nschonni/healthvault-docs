@@ -137,7 +137,7 @@ An attempt to specify the read-only flag for a type that does not support it wil
 Updated end date handling
 -------------------------
 
-When data is read-only, applications may still want to provide a way for a user to update the end date status of an item. To support this, all HealthVault data types now include an **updated-end-date** field that is always writable, even if the item is read-only. This is useful for example for a **Medication** thing instance when the user wants to indicate they are no longer taking the medication, or for a **Condition** thing instance when the user wants to indicate they no longer have the condition. The **updated-end-date** field is the recommended place to store end date information on all data types. For more information, see  <a href="active-and-inactive-status" id="PageContent_14096_6">HealthVault item status</a><span style="FONT-SIZE: 0.75em; LINE-HEIGHT: 1.5">.</span>
+When data is read-only, applications may still want to provide a way for a user to update the end date status of an item. To support this, all HealthVault data types now include an **updated-end-date** field that is always writable, even if the item is read-only. This is useful for example for a **Medication** thing instance when the user wants to indicate they are no longer taking the medication, or for a **Condition** thing instance when the user wants to indicate they no longer have the condition. The **updated-end-date** field is the recommended place to store end date information on all data types. For more information, see  <a href="active-and-inactive-status.md" id="PageContent_14096_6">HealthVault item status</a><span style="FONT-SIZE: 0.75em; LINE-HEIGHT: 1.5">.</span>
 
 Related items
 -------------
@@ -180,7 +180,7 @@ There are two approaches that can be used for relating items where some of the i
 Reconciliation
 --------------
 
-Reconciliation is the process by which clinical documents such as Continuity of Care Record (CCR) and Continuity of Care Document (CCD) documents in HealthVault can be used to create HealthVault items based on the data they contain. For more information, see [Using CCR Data in HealthVault](ccr-data).
+Reconciliation is the process by which clinical documents such as Continuity of Care Record (CCR) and Continuity of Care Document (CCD) documents in HealthVault can be used to create HealthVault items based on the data they contain. For more information, see [Using CCR Data in HealthVault](ccr-data.md).
 
 By default, the individual items reconciled from a clinical document are not read-only. To specify that the reconciled items should be read-only, set the read-only flag on the clinical document thing when creating it in HealthVault. All items reconciled from the document will be read-only.
 

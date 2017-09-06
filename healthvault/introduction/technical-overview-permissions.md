@@ -11,7 +11,7 @@ description: Get a quick overview of how HealthVault handles permissions and aut
 Technical overview: permissions
 ===============================
 
-This page assumes you understand <a href="technical-overview" id="PageContent_14105_2">core terminology</a> and HealthVault <a href="technical-overview-applications" id="Introduction_14105_19">applications</a>.
+This page assumes you understand <a href="technical-overview.md" id="PageContent_14105_2">core terminology</a> and HealthVault <a href="technical-overview-applications.md" id="Introduction_14105_19">applications</a>.
 
 Overview
 --------
@@ -37,14 +37,14 @@ Putting it together
 
 An application declares the data types and operations that it will perform against a health record. The end-user will review the requested permissions and determine whether to grant the application access to the record.
 
-Next, learn about <a href="technical-overview-connectivity" id="PageContent_14105_8">connection options</a> to the HealthVault service.
+Next, learn about <a href="technical-overview-connectivity.md" id="PageContent_14105_8">connection options</a> to the HealthVault service.
 
 <span id="singleColInThreeColLayout"></span>
 
 #### Technical overview
 
--   <a href="technical-overview" id="RightRailLinkListSection_14105_9">1. Terminology</a>
--   <a href="technical-overview-applications" id="RightRailLinkListSection_14105_20">2. Applications</a>
--   <a href="technical-overview-permissions" id="RightRailLinkListSection_14105_10">3. Permissions</a>
--   <a href="technical-overview-connectivity" id="RightRailLinkListSection_14105_11">4. Connectivity</a>
--   <a href="technical-overview-exchanging-data" id="RightRailLinkListSection_14105_12">5. Exchanging data</a>
+-   <a href="technical-overview.md" id="RightRailLinkListSection_14105_9">1. Terminology</a>
+-   <a href="technical-overview-applications.md" id="RightRailLinkListSection_14105_20">2. Applications</a>
+-   <a href="technical-overview-permissions.md" id="RightRailLinkListSection_14105_10">3. Permissions</a>
+-   <a href="technical-overview-connectivity.md" id="RightRailLinkListSection_14105_11">4. Connectivity</a>
+-   <a href="technical-overview-exchanging-data.md" id="RightRailLinkListSection_14105_12">5. Exchanging data</a>

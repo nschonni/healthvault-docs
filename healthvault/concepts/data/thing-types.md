@@ -129,12 +129,12 @@ The **flags** element contains a bit field. The bits represent characteristics o
 <tr class="even">
 <td><p>Downversioned</p></td>
 <td><p>0x2</p></td>
-<td><p>When a type has been versioned, and the requesting application supports only an older version, HealthVault automatically transforms the data to the version supported by the application before returning it. When this happens the <span class="parameter">down-versioned</span> flag is set, to let the application know that some alteration to the data occurred and that the application might not be able to update the instance. For more information, see <a href="thing-type-versioning" id="PageContent_14093_3">Thing Type Versioning</a>.</p></td>
+<td><p>When a type has been versioned, and the requesting application supports only an older version, HealthVault automatically transforms the data to the version supported by the application before returning it. When this happens the <span class="parameter">down-versioned</span> flag is set, to let the application know that some alteration to the data occurred and that the application might not be able to update the instance. For more information, see <a href="thing-type-versioning.md" id="PageContent_14093_3">Thing Type Versioning</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Upversioned</p></td>
 <td><p>0x4</p></td>
-<td><p>When a type has been versioned and the requesting application supports only the newer version, HealthVault automatically transforms the data to the version supported by the application before returning it. When this happens, the <span class="parameter">up-versioned</span> flag is set, to let the application know that some alteration to the data occurred and that the application might not be able to update the instance. <span style="TEXT-ALIGN: center">For more information, see </span><a href="thing-type-versioning" id="PageContent_14093_4">Thing Type Versioning</a><span style="TEXT-ALIGN: center">.</span></p></td>
+<td><p>When a type has been versioned and the requesting application supports only the newer version, HealthVault automatically transforms the data to the version supported by the application before returning it. When this happens, the <span class="parameter">up-versioned</span> flag is set, to let the application know that some alteration to the data occurred and that the application might not be able to update the instance. <span style="TEXT-ALIGN: center">For more information, see </span><a href="thing-type-versioning.md" id="PageContent_14093_4">Thing Type Versioning</a><span style="TEXT-ALIGN: center">.</span></p></td>
 </tr>
 <tr class="even">
 <td><p>HiddenFromEPrep</p></td>
@@ -293,7 +293,7 @@ Applications should parse and store the tags as comma-separated values. Apps sho
 
 This is a free-form XML section. If the thing type that most closely matches your needs is missing a data field that you require, you can add that data in the extension.
 
-For example, the HealthVault blood pressure type contains systolic, diastolic, and pulse fields but it does not contain a field to indicate whether the person was sitting, lying down, or standing. An extension could be created to hold this data. Wherever possible an application should use HealthVault-defined subtypes such as codable-value, general-measurement, date-time, and so on. For more information about subtypes, see <a href="common-data-types" id="PageContent_14093_5">common thing data</a>.
+For example, the HealthVault blood pressure type contains systolic, diastolic, and pulse fields but it does not contain a field to indicate whether the person was sitting, lying down, or standing. An extension could be created to hold this data. Wherever possible an application should use HealthVault-defined subtypes such as codable-value, general-measurement, date-time, and so on. For more information about subtypes, see <a href="common-data-types.md" id="PageContent_14093_5">common thing data</a>.
 
 Multiple extensions can be provided for each instance, and extensions are available to all applications that have access to the instance. Each extension is identified by a source field and optionally a version as well. The source should be a URI that uniquely identifies the extension, similar to how .xsd files uniquely identify XML schemas using URIs.
 

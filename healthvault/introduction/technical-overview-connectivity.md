@@ -85,14 +85,14 @@ Putting it together
 
 HealthVault supports multiple connection methods for different types of application scenarios.
 
-Next, learn about <a href="technical-overview-exchanging-data" id="Introduction_14106_22">reading and writing data</a>.
+Next, learn about <a href="technical-overview-exchanging-data.md" id="Introduction_14106_22">reading and writing data</a>.
 
 <span id="singleColInThreeColLayout"></span>
 
 #### Technical overview
 
--   <a href="technical-overview" id="RightRailLinkListSection_14106_8">1. Terminology</a>
--   <a href="technical-overview-applications" id="RightRailLinkListSection_14106_23">2. Applications</a>
--   <a href="technical-overview-permissions" id="RightRailLinkListSection_14106_12">3. Permissions</a>
--   <a href="technical-overview-connectivity" id="RightRailLinkListSection_14106_9">4. Connectivity</a>
--   <a href="technical-overview-exchanging-data" id="RightRailLinkListSection_14106_13">5. Exchanging data</a>
+-   <a href="technical-overview.md" id="RightRailLinkListSection_14106_8">1. Terminology</a>
+-   <a href="technical-overview-applications.md" id="RightRailLinkListSection_14106_23">2. Applications</a>
+-   <a href="technical-overview-permissions.md" id="RightRailLinkListSection_14106_12">3. Permissions</a>
+-   <a href="technical-overview-connectivity.md" id="RightRailLinkListSection_14106_9">4. Connectivity</a>
+-   <a href="technical-overview-exchanging-data.md" id="RightRailLinkListSection_14106_13">5. Exchanging data</a>

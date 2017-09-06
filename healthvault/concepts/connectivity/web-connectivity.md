@@ -90,7 +90,7 @@ Use the APPAUTH target to direct a user to HealthVault Shell to:
 
 -   change option selections if your application has one or more optional authorization rules
 
-For more information, see the APPAUTH redirect target of the <a href="shell-redirect-interface" id="PageContent_14079_4">Shell Redirect Interface</a>.
+For more information, see the APPAUTH redirect target of the <a href="shell-redirect-interface.md" id="PageContent_14079_4">Shell Redirect Interface</a>.
 
 Application-initiated account and record creation
 -------------------------------------------------

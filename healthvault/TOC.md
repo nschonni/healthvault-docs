@@ -51,7 +51,7 @@
 ###[Optional authorizations](/healthvault/concepts/authorization/optional-authorization)
 
 ## [Data](/healthvault/concepts/data/)
-### [Thing Type Schema](/healthvault/concepts/data/thing-type-schema)
+### [Thing Type Schema](/healthvault/concepts/data/thing-types)
 ### [Downloading Type Schemas](/healthvault/concepts/data/downloading-type-schemas)
 ### [Thing Type Versioning](/healthvault/concepts/data/thing-type-versioning)
 ### [Version Stamps](/healthvault/concepts/data/version-stamps)

@@ -1,5 +1,5 @@
 # DataTypes
-[Old DataTypes](old/)
+[Old DataTypes](old/index.md)
 
 Name|Version|ID|Description
 ---|---|---|---

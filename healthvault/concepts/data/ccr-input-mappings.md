@@ -18,11 +18,11 @@ The logic behind each transform is described below. In order to improve the read
 
 1.  **Value mappings**. Each "Map values" statement is followed by one or more table rows, each of which describes a direct mapping of a specific element in a CCR onto an element in a HealthVault type. Mappings described in adjacent rows should be applied together, and in the sequence indicated.
     Each row contains the following elements:
-    1.  **CCR**. The element in the CCR whose value is used to populate the HealthVault item, or a function (see below) whose return value will be used. Note that the [IsConcept](https://msdn.microsoft.com/en-us/healthvault/ee663894) functions use the element label groups defined in the "Import Text" columns in <a href="ccr-vocabularies" id="PageContent_14114_2">HealthVault CCR Vocabularies</a> to identify CCR elements that may use alternate names for a given concept.
+    1.  **CCR**. The element in the CCR whose value is used to populate the HealthVault item, or a function (see below) whose return value will be used. Note that the [IsConcept](https://msdn.microsoft.com/en-us/healthvault/ee663894) functions use the element label groups defined in the "Import Text" columns in <a href="ccr-vocabularies.md" id="PageContent_14114_2">HealthVault CCR Vocabularies</a> to identify CCR elements that may use alternate names for a given concept.
     2.  **HealthVault**. The HealthVault item whose value will be set.
     3.  **Conversion** (optional.) The first row specifies the type-id of the relevant HealthVault type. In subsequent rows, it may specify a simple type conversion (such as Boolean), an externally defined conversion (such as the ISO-8601 date standard), or a named conversion defined elsewhere in this document.
 2.  **Scope**. Each line that is not a table row is indented to indicate the scope of loops and conditional elements within the transform logic.
-3.  **Procedures**. Some sections of the transform logic are described as procedure or function calls. Each call referenced in the following mappings is described as pseudocode in <a href="ccr-input-functions" id="PageContent_14114_3">HealthVault CCR Input Functions</a>.
+3.  **Procedures**. Some sections of the transform logic are described as procedure or function calls. Each call referenced in the following mappings is described as pseudocode in <a href="ccr-input-functions.md" id="PageContent_14114_3">HealthVault CCR Input Functions</a>.
 4.  **Required elements**. Some transforms require that specific elements in the input data be present and not empty. Those elements are indicated with ***bold italic*** text in the corresponding cells in the mapping tables. If any required values cannot be processed for any reason, the transform will not create the output type.
 
 Date Types
@@ -139,7 +139,7 @@ Date Types
  
 |                                                                                              |               |     |
 |----------------------------------------------------------------------------------------------|---------------|-----|
-| [Concat](ccr-input-functions#Concat)(./Age/Value,./Age/Units/Unit, ' ') | ./descriptive |     |
+| [Concat](ccr-input-functions.md#Concat)(./Age/Value,./Age/Units/Unit, ' ') | ./descriptive |     |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
@@ -386,7 +386,7 @@ Actors
  
 |                                                                                              |                                                                   |     |
 |----------------------------------------------------------------------------------------------|-------------------------------------------------------------------|-----|
-| [PersonNameTypeToString](ccr-input-functions#PersonNameTypeToString)(.) | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./full</span> |     |
+| [PersonNameTypeToString](ccr-input-functions.md#PersonNameTypeToString)(.) | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./full</span> |     |
 | ./Title                                                                                      | ./title/text                                                      |     |
 | ./Given                                                                                      | ./first                                                           |     |
 | ./Middle                                                                                     | ./middle                                                          |     |
@@ -407,7 +407,7 @@ Actors
 |                                                                                                                                         |                                                                      |     |
 |-----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|-----|
 | ./Type/Text                                                                                                                             | ./description                                                        |     |
-| [IsConcept](ccr-input-functions#IsConcept)(./Priority, <span style="FONT-STYLE: italic">"priority-primary"</span>) | ./is-primary                                                         |     |
+| [IsConcept](ccr-input-functions.md#IsConcept)(./Priority, <span style="FONT-STYLE: italic">"priority-primary"</span>) | ./is-primary                                                         |     |
 | ./Value                                                                                                                                 | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./address</span> |     |
 
 <span style="FONT-WEIGHT: bold">Note:</span> Elements listed in <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">bold italic</span> text are required by the HealthVault mapping transform. If any required values cannot be processed, the transform will not create the type.
@@ -424,7 +424,7 @@ Actors
 |                                                                                                                                         |                                                                     |     |
 |-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|-----|
 | ./Type/Text                                                                                                                             | ./description                                                       |     |
-| [IsConcept](ccr-input-functions#IsConcept)(./Priority, <span style="FONT-STYLE: italic">"priority-primary"</span>) | ./is-primary                                                        |     |
+| [IsConcept](ccr-input-functions.md#IsConcept)(./Priority, <span style="FONT-STYLE: italic">"priority-primary"</span>) | ./is-primary                                                        |     |
 | ./Value                                                                                                                                 | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./number</span> |     |
 
 <span style="FONT-WEIGHT: bold">Note:</span> Elements listed in <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">bold italic</span> text are required by the HealthVault mapping transform. If any required values cannot be processed, the transform will not create the type.
@@ -441,7 +441,7 @@ Actors
 |                                                                                                                                         |                                                                          |     |
 |-----------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|-----|
 | ./Type/Text                                                                                                                             | ./description                                                            |     |
-| [IsConcept](ccr-input-functions#IsConcept)(./Priority, <span style="FONT-STYLE: italic">"priority-primary"</span>) | ./is-primary                                                             |     |
+| [IsConcept](ccr-input-functions.md#IsConcept)(./Priority, <span style="FONT-STYLE: italic">"priority-primary"</span>) | ./is-primary                                                             |     |
 | ./Line1                                                                                                                                 | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./street\[1\]</span> |     |
 | ./Line2                                                                                                                                 | ./street\[2\]                                                            |     |
 | ./City                                                                                                                                  | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./city</span>        |     |
@@ -513,7 +513,7 @@ Actors
  
 |                                                                                                                          |                         |                                          |
 |--------------------------------------------------------------------------------------------------------------------------|-------------------------|------------------------------------------|
-| [Concat](ccr-input-functions#Concat)(./Specialty/Text, <span style="FONT-STYLE: italic">";"</span>) | ./professional-training |                                          |
+| [Concat](ccr-input-functions.md#Concat)(./Specialty/Text, <span style="FONT-STYLE: italic">";"</span>) | ./professional-training |                                          |
 | ./Relation\[1\]                                                                                                          | ./type                  | CodedDescriptionType =&gt; codable-value |
 | .                                                                                                                        | ./contact               | Actor =&gt; contact                      |
 
@@ -548,7 +548,7 @@ Common
 | <span style="FONT-WEIGHT: bold">CCRCodedDataObjectType</span> | <span style="FONT-WEIGHT: bold">common</span> |            |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Source)
-$Sources = [Concat](ccr-input-functions#Concat)($Source, [SourceTypeToString](ccr-input-functions#SourceTypeToString)(.), <span style="FONT-STYLE: italic">"\\n\\n"</span>)
+$Sources = [Concat](ccr-input-functions.md#Concat)($Source, [SourceTypeToString](ccr-input-functions.md#SourceTypeToString)(.), <span style="FONT-STYLE: italic">"\\n\\n"</span>)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
 |          |          |     |
@@ -556,14 +556,14 @@ $Sources = [Concat](ccr-input-functions#Concat)($Source, [SourceTypeToString](cc
 | $Sources | ./source |     |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Comments/Comment)
-$Comments = [Concat](ccr-input-functions#Concat)($Comments, ./Description/Text, <span style="FONT-STYLE: italic">"\\n\\n"</span>)
+$Comments = [Concat](ccr-input-functions.md#Concat)($Comments, ./Description/Text, <span style="FONT-STYLE: italic">"\\n\\n"</span>)
 <span style="FONT-WEIGHT: bold">ForEach</span>(./References/Reference)
-$References = [Concat](ccr-input-functions#Concat)($References, [ReferenceTypeToString](ccr-input-functions#ReferenceTypeToString)(.), <span style="FONT-STYLE: italic">"\\n\\n"</span>)
+$References = [Concat](ccr-input-functions.md#Concat)($References, [ReferenceTypeToString](ccr-input-functions.md#ReferenceTypeToString)(.), <span style="FONT-STYLE: italic">"\\n\\n"</span>)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
 |                                                                                                                                                |                   |     |
 |------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|-----|
-| [Concat](ccr-input-functions#Concat)($Comments, $References, <span style="FONT-STYLE: italic">"\[References\]\\n"</span>) | ./note            |     |
+| [Concat](ccr-input-functions.md#Concat)($Comments, $References, <span style="FONT-STYLE: italic">"\[References\]\\n"</span>) | ./note            |     |
 | ./CCRDataObjectID                                                                                                                              | ./client-thing-id |     |
 
 <span style="FONT-WEIGHT: bold">Note:</span> Elements listed in <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">bold italic</span> text are required by the HealthVault mapping transform. If any required values cannot be processed, the transform will not create the type.
@@ -610,7 +610,7 @@ $FamilyHistories = ./FamilyHistory/FamilyProblemHistory
 |-----|-----|----------------------------------------|
 | .   | .   | FamilyHistoryType =&gt; family-history |
 
-$Allergies = ./Alerts/Alert\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"allergy"</span>)\]
+$Allergies = ./Alerts/Alert\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"allergy"</span>)\]
 <span style="FONT-WEIGHT: bold">ForEach</span>($Allergies)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -644,7 +644,7 @@ $Results = ./VitalSigns/Result
 
 $Results = ./Results/Result
 <span style="FONT-WEIGHT: bold">ForEach</span>($Results)
-<span style="FONT-WEIGHT: bold">If IsConcept</span>(./Description/Text, <span style="FONT-STYLE: italic">"result-discharge-summary"</span>) or <span style="FONT-WEIGHT: bold">If Exists</span>(./IDs\[ [IsConcept](ccr-input-functions#IsConcept)(./ID, <span style="FONT-STYLE: italic">"02ef57a2-a620-425a-8e92-a301542cca54"</span>)\])
+<span style="FONT-WEIGHT: bold">If IsConcept</span>(./Description/Text, <span style="FONT-STYLE: italic">"result-discharge-summary"</span>) or <span style="FONT-WEIGHT: bold">If Exists</span>(./IDs\[ [IsConcept](ccr-input-functions.md#IsConcept)(./ID, <span style="FONT-STYLE: italic">"02ef57a2-a620-425a-8e92-a301542cca54"</span>)\])
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
 |     |                     |                                    |
@@ -703,7 +703,7 @@ $Encounters = ./Encounters/Encounter
  
 |                                                                                            |                                                                        |     |
 |--------------------------------------------------------------------------------------------|------------------------------------------------------------------------|-----|
-| [ActorToString](ccr-input-functions#ActorToString)(./PaymentProvider) | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./plan-name</span> |     |
+| [ActorToString](ccr-input-functions.md#ActorToString)(./PaymentProvider) | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./plan-name</span> |     |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
@@ -717,21 +717,21 @@ $Encounters = ./Encounters/Encounter
 |                                                                                                                                                                   |                   |                                          |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|------------------------------------------|
 | ./Type                                                                                                                                                            | ./coverage-type   | CodedDescriptionType =&gt; codable-value |
-| ./IDs\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"payer-carrier-id"</span>)\]\[1\]/ID        | ./carrier-id      |                                          |
-| ./IDs\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"payer-group-number"</span>)\]\[1\]/ID      | ./group-num       |                                          |
-| ./IDs\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"payer-plan-code"</span>)\]\[1\]/ID         | ./plan-code       |                                          |
-| ./IDs\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"payer-subscriber-number"</span>)\]\[1\]/ID | ./subscriber-id   |                                          |
-| [ActorToString](ccr-input-functions#ActorToString)(./Subscriber)                                                                             | ./subscriber-name |                                          |
+| ./IDs\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"payer-carrier-id"</span>)\]\[1\]/ID        | ./carrier-id      |                                          |
+| ./IDs\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"payer-group-number"</span>)\]\[1\]/ID      | ./group-num       |                                          |
+| ./IDs\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"payer-plan-code"</span>)\]\[1\]/ID         | ./plan-code       |                                          |
+| ./IDs\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"payer-subscriber-number"</span>)\]\[1\]/ID | ./subscriber-id   |                                          |
+| [ActorToString](ccr-input-functions.md#ActorToString)(./Subscriber)                                                                             | ./subscriber-name |                                          |
 
-$Actor = [ResolveActor](ccr-input-functions#ResolveActor)(./Subscriber)
+$Actor = [ResolveActor](ccr-input-functions.md#ResolveActor)(./Subscriber)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
 |                                                                                                                                                                     |                   |                                     |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|-------------------------------------|
 | $Actor/Person/DateOfBirth                                                                                                                                           | ./subscriber-dob  | DateTimeType =&gt; date-time        |
-| [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"payer-primary-health-insurance"</span>)              | ./is-primary      | boolean                             |
-| ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"payer-benefit-stop-date"</span>)\]\[1\] | ./expiration-date | DateTimeType =&gt; date-time        |
-| [ResolveActor](ccr-input-functions#ResolveActor)(./PaymentProvider)                                                                            | ./contact         | Actor =&gt; contact                 |
+| [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"payer-primary-health-insurance"</span>)              | ./is-primary      | boolean                             |
+| ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"payer-benefit-stop-date"</span>)\]\[1\] | ./expiration-date | DateTimeType =&gt; date-time        |
+| [ResolveActor](ccr-input-functions.md#ResolveActor)(./PaymentProvider)                                                                            | ./contact         | Actor =&gt; contact                 |
 | .                                                                                                                                                                   | ../common         | CCRCodedDataObjectType =&gt; common |
 
 <span style="FONT-WEIGHT: bold">Note:</span> Elements listed in <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">bold italic</span> text are required by the HealthVault mapping transform. If any required values cannot be processed, the transform will not create the type.
@@ -743,7 +743,7 @@ $Actor = [ResolveActor](ccr-input-functions#ResolveActor)(./Subscriber)
 |---------------------------------------------------------|--------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">AdvanceDirective</span> | <span style="FONT-WEIGHT: bold">directive</span> | <span style="FONT-WEIGHT: bold">type-id = 822a5e5a-14f1-4d06-b92f-8f3f1b05218f</span> |
 
-$DateTime = ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"directive-start-date"</span>)\]\[1\]
+$DateTime = ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"directive-start-date"</span>)\]\[1\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -758,7 +758,7 @@ $DateTime = ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text,
 |---------------------------------------------------|-------------------------------------------------------------------------------------|-----|
 | <span style="FONT-STYLE: italic">"Unknown"</span> | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./start-date/descriptive</span> |     |
 
-$DateTime = ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"directive-stop-date"</span>)\]\[1\]
+$DateTime = ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"directive-stop-date"</span>)\]\[1\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -778,9 +778,9 @@ $DateTime = ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text,
 |                                                                                                                                                                                   |                                   |                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|-------------------------------------|
 | ./Description/Text                                                                                                                                                                | ./description                     |                                     |
-| [Concat](ccr-input-functions#Concat)(./Type/Text, ./Status/Text, <span style="FONT-STYLE: italic">";"</span>)                                                | ./additional-instructions         |                                     |
+| [Concat](ccr-input-functions.md#Concat)(./Type/Text, ./Status/Text, <span style="FONT-STYLE: italic">";"</span>)                                                | ./additional-instructions         |                                     |
 | <span style="FONT-WEIGHT: bold">FindActorInSources</span>(./Source, <span style="FONT-STYLE: italic">"directive-treating-physician"</span>)                                       | ./attending-physician             | Actor =&gt; person                  |
-| ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"directive-verified-treating-physician"</span>)\]\[1\] | ./attending-physician-endorsement | DateTimeType =&gt; date-time        |
+| ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"directive-verified-treating-physician"</span>)\]\[1\] | ./attending-physician-endorsement | DateTimeType =&gt; date-time        |
 | .                                                                                                                                                                                 | ../common                         | CCRCodedDataObjectType =&gt; common |
 
 <span style="FONT-WEIGHT: bold">Note:</span> Elements listed in <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">bold italic</span> text are required by the HealthVault mapping transform. If any required values cannot be processed, the transform will not create the type.
@@ -810,7 +810,7 @@ $DateTime = ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text,
  
 |                                                                                                                                                                |              |                                     |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|-------------------------------------|
-| ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">problem-onset-date"</span>)\]\[1\] | ./onset-date | DateTimeType =&gt; approx-date-time |
+| ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">problem-onset-date"</span>)\]\[1\] | ./onset-date | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -830,7 +830,7 @@ $DateTime = ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text,
  
 |                                                                                                                                                               |             |                                     |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------------------------|
-| ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">problem-stop-date"</span>)\]\[1\] | ./stop-date | DateTimeType =&gt; approx-date-time |
+| ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">problem-stop-date"</span>)\]\[1\] | ./stop-date | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -850,7 +850,7 @@ $DateTime = ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text,
 <span style="FONT-WEIGHT: bold">Remarks:</span> If there are multiple family members, then HealthVault will create a seperate family-history object for each of them containing all of the associated conditions. If there are only problems, then HealthVault will create a single family-history object containing all of the problems.
 <span style="FONT-WEIGHT: bold">If Exists</span>(./FamilyMember)
 <span style="FONT-WEIGHT: bold">ForEach</span>(./FamilyMember)
-$Actor = [ResolveActor](ccr-input-functions#ResolveActor)(./ActorID)
+$Actor = [ResolveActor](ccr-input-functions.md#ResolveActor)(./ActorID)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
 |                                                                        |                                                                                                   |                                          |
@@ -866,7 +866,7 @@ $Actor = [ResolveActor](ccr-input-functions#ResolveActor)(./ActorID)
 |---------------|--------------------------------------------------------------------------------------------|------------------------------------------|
 | ./Description | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./family-history/condition/name</span> | CodedDescriptionType =&gt; codable-value |
 
-$OnsetDate = ./Episodes/Episode\[ [IsConcept](ccr-input-functions#IsConcept)(./DateTime, <span style="FONT-STYLE: italic">"problem-onset-date"</span>)\]\[1\]
+$OnsetDate = ./Episodes/Episode\[ [IsConcept](ccr-input-functions.md#IsConcept)(./DateTime, <span style="FONT-STYLE: italic">"problem-onset-date"</span>)\]\[1\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($OnsetDate)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -879,13 +879,13 @@ $OnsetDate = ./Episodes/Episode\[ [IsConcept](ccr-input-functions#IsConcept)(./D
  
 |                                                                                                                                                              |                                       |                                |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|--------------------------------|
-| ../DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./DateTime, <span style="FONT-STYLE: italic">"problem-onset-date"</span>)\[1\] | ./family-history/condition/onset-date | DateTimeType =&gt; approx-date |
+| ../DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./DateTime, <span style="FONT-STYLE: italic">"problem-onset-date"</span>)\[1\] | ./family-history/condition/onset-date | DateTimeType =&gt; approx-date |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
 |                                                                                                                                                                     |                                            |                            |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|----------------------------|
-| [Concat](ccr-input-functions#Concat)(./Episodes/Frequency/Value, ./Episodes/Frequency/Units/Unit, <span style="FONT-STYLE: italic">" "</span>) | ./family-history/condition/occurrence/text |                            |
+| [Concat](ccr-input-functions.md#Concat)(./Episodes/Frequency/Value, ./Episodes/Frequency/Units/Unit, <span style="FONT-STYLE: italic">" "</span>) | ./family-history/condition/occurrence/text |                            |
 | ./Episodes/Frequency/Code\[1\]                                                                                                                                      | ./family-history/condition/occurrence/code | CodeType =&gt; coded-value |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
@@ -902,7 +902,7 @@ $OnsetDate = ./Episodes/Episode\[ [IsConcept](ccr-input-functions#IsConcept)(./D
 |---------------|--------------------------------------------------------------------------------------------|------------------------------------------|
 | ./Description | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./family-history/condition/name</span> | CodedDescriptionType =&gt; codable-value |
 
-$OnsetDate = ./Episodes/Episode\[ [IsConcept](ccr-input-functions#IsConcept)(./DateTime, <span style="FONT-STYLE: italic">"problem-onset-date"</span>)\]\[1\]
+$OnsetDate = ./Episodes/Episode\[ [IsConcept](ccr-input-functions.md#IsConcept)(./DateTime, <span style="FONT-STYLE: italic">"problem-onset-date"</span>)\]\[1\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($OnsetDate)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -915,13 +915,13 @@ $OnsetDate = ./Episodes/Episode\[ [IsConcept](ccr-input-functions#IsConcept)(./D
  
 |                                                                                                                                                              |                                       |                                |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|--------------------------------|
-| ../DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./DateTime, <span style="FONT-STYLE: italic">"problem-onset-date"</span>)\[1\] | ./family-history/condition/onset-date | DateTimeType =&gt; approx-date |
+| ../DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./DateTime, <span style="FONT-STYLE: italic">"problem-onset-date"</span>)\[1\] | ./family-history/condition/onset-date | DateTimeType =&gt; approx-date |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
 |                                                                                                                             |                                            |                            |
 |-----------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|----------------------------|
-| [Concat](ccr-input-functions#Concat)(./Episodes/Frequency/Value, ./Episodes/Frequency/Units/Unit, ' ') | ./family-history/condition/occurrence/text |                            |
+| [Concat](ccr-input-functions.md#Concat)(./Episodes/Frequency/Value, ./Episodes/Frequency/Units/Unit, ' ') | ./family-history/condition/occurrence/text |                            |
 | ./Episodes/Frequency/Code\[1\]                                                                                              | ./family-history/condition/occurrence/code | CodeType =&gt; coded-value |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
@@ -981,7 +981,7 @@ $EnvAgent = ./Agent/EnvironmentalAgents/EnvironmentalAgent\[1\]
  
 |                                                                                                                                                                |                  |                                     |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|-------------------------------------|
-| ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"allergy-start-date"</span>)\]\[1\] | ./first-observed | DateTimeType =&gt; approx-date-time |
+| ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"allergy-start-date"</span>)\]\[1\] | ./first-observed | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>($Product)
 <span style="FONT-WEIGHT: bold">Map values:</span>
@@ -1049,7 +1049,7 @@ $Direction = ./Product\[1\]/Directions\[1\]/Direction\[1\]
 | $Direction/Indication\[1\]/Description | ./indication | CodedDescriptionType =&gt; codable-value |
 
 <span style="FONT-WEIGHT: bold">Else If Exists</span>($Direction/Indication\[1\]/InternalCCRLink)
-$Problem = [ResolveLink](ccr-input-functions#ResolveLink)($Direction/Indication\[1\]/InternalCCRLink)
+$Problem = [ResolveLink](ccr-input-functions.md#ResolveLink)($Direction/Indication\[1\]/InternalCCRLink)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
 |                      |              |                                          |
@@ -1060,8 +1060,8 @@ $Problem = [ResolveLink](ccr-input-functions#ResolveLink)($Direction/Indication\
  
 |                                                                                                                                                                   |                     |                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|-------------------------------------|
-| ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">medication-start-date"</span>)\]\[1\] | ./date-started      | DateTimeType =&gt; approx-date-time |
-| ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">medication-stop-date"</span>)\]\[1\]  | ./date-discontinued | DateTimeType =&gt; approx-date-time |
+| ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">medication-start-date"</span>)\]\[1\] | ./date-started      | DateTimeType =&gt; approx-date-time |
+| ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">medication-stop-date"</span>)\]\[1\]  | ./date-discontinued | DateTimeType =&gt; approx-date-time |
 | .                                                                                                                                                                 | ./prescription      | Medication =&gt; prescription       |
 | .                                                                                                                                                                 | ../common           | CCRCodedDataObjectType =&gt; common |
 
@@ -1093,7 +1093,7 @@ $Actor <span style="FONT-WEIGHT: bold">= FindActorInSources</span>(./Source, <sp
  
 |                                                                                                                                                                          |                     |                                          |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|------------------------------------------|
-| ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">medication-prescription-date"</span>)\]\[1\] | ./date-prescribed   | DateTimeType =&gt; approx-date-time      |
+| ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">medication-prescription-date"</span>)\]\[1\] | ./date-prescribed   | DateTimeType =&gt; approx-date-time      |
 | ./Quantity\[1\]                                                                                                                                                          | ./amount-prescribed | MeasureType =&gt; general-measurement    |
 | ./Refills/Refill\[1\]/Number\[1\]                                                                                                                                        | ./refills           |                                          |
 | ./PatientInstructions/Instruction\[1\]                                                                                                                                   | ./instructions      | CodedDescriptionType =&gt; codable-value |
@@ -1114,9 +1114,9 @@ $Product = ./Product\[1\]
 |                                                                                                                                                                   |                                                                   |                                          |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|------------------------------------------|
 | $Product/ProductName                                                                                                                                              | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./name</span> | CodedDescriptionType =&gt; codable-value |
-| ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">immunization-date"</span>)\]\[1\]     | ./administration-date                                             | DateTimeType =&gt; approx-date-time      |
-| [ActorToString](ccr-input-functions#ActorToString)($Product/Manufacturer)                                                                    | ./manufacturer/text                                               |                                          |
-| ./IDs\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"immunization-lot-number"</span>)\]\[1\]/ID | ./lot                                                             |                                          |
+| ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">immunization-date"</span>)\]\[1\]     | ./administration-date                                             | DateTimeType =&gt; approx-date-time      |
+| [ActorToString](ccr-input-functions.md#ActorToString)($Product/Manufacturer)                                                                    | ./manufacturer/text                                               |                                          |
+| ./IDs\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"immunization-lot-number"</span>)\]\[1\]/ID | ./lot                                                             |                                          |
 | ./Directions\[1\]/Direction\[1\]/Route\[1\]                                                                                                                       | ./route                                                           | CodedDescriptionType =&gt; codable-value |
 | ./SeriesNumber                                                                                                                                                    | ./sequence                                                        |                                          |
 | ./Directions\[1\]/Direction\[1\]/Site\[1\]                                                                                                                        | ./anatomic-surface                                                | CodedDescriptionType =&gt; codable-value |
@@ -1141,12 +1141,12 @@ $Product = ./Product\[1\]
 | .                                                                                                                                                            | ./cholesterol-profile     | ResultType =&gt; cholesterol-profile   |
 | .                                                                                                                                                            | ./peak-flow               | ResultType =&gt; peak-flow             |
 | .                                                                                                                                                            | ./exercise                | ResultType =&gt; exercise              |
-| ./Test\[ [IsConcept](ccr-input-functions#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"height"</span>)\]             | ./height                  | TestType =&gt; height                  |
-| ./Test\[ [IsConcept](ccr-input-functions#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"weight"</span>)\]             | ./weight                  | TestType =&gt; weight                  |
-| ./Test\[ [IsConcept](ccr-input-functions#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"blood-glucose"</span>)\]      | ./blood-glucose           | TestType =&gt; blood-glucose           |
-| ./Test\[ [IsConcept](ccr-input-functions#IsConcept)(./Description, <span style="FONT-STYLE: italic">"blood-oxygen-saturation"</span>)\] | ./blood-oxygen-saturation | TestType =&gt; blood-oxygen-saturation |
+| ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"height"</span>)\]             | ./height                  | TestType =&gt; height                  |
+| ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"weight"</span>)\]             | ./weight                  | TestType =&gt; weight                  |
+| ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"blood-glucose"</span>)\]      | ./blood-glucose           | TestType =&gt; blood-glucose           |
+| ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description, <span style="FONT-STYLE: italic">"blood-oxygen-saturation"</span>)\] | ./blood-oxygen-saturation | TestType =&gt; blood-oxygen-saturation |
 
-<span style="FONT-WEIGHT: bold">If IsConcept</span>(./Type, <span style="FONT-STYLE: italic">"radiology-lab-results"</span>) or [IsConcept](ccr-input-functions#IsConcept)(./Description, <span style="FONT-STYLE: italic">"radiology-lab-results"</span>)
+<span style="FONT-WEIGHT: bold">If IsConcept</span>(./Type, <span style="FONT-STYLE: italic">"radiology-lab-results"</span>) or [IsConcept](ccr-input-functions.md#IsConcept)(./Description, <span style="FONT-STYLE: italic">"radiology-lab-results"</span>)
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Test)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -1170,7 +1170,7 @@ $Product = ./Product\[1\]
 |---------------------------------------------------|----------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">ResultType</span> | <span style="FONT-WEIGHT: bold">vital-signs</span> | <span style="FONT-WEIGHT: bold">type-id = 73822612-C15F-4B49-9E65-6AF369E55C65</span> |
 
-$DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
+$DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -1198,7 +1198,7 @@ $DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(., <span style="FONT-
  
 |                                                                                                                                                     |              |     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------|--------------|-----|
-| [Concat](ccr-input-functions#Concat)(./TestResult/Value, ./TestResult/Units/Unit, <span style="FONT-STYLE: italic">" "</span>) | ./text-value |     |
+| [Concat](ccr-input-functions.md#Concat)(./TestResult/Value, ./TestResult/Units/Unit, <span style="FONT-STYLE: italic">" "</span>) | ./text-value |     |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
@@ -1228,7 +1228,7 @@ $DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(., <span style="FONT-
 |---------------------------------------------------|-------------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">ResultType</span> | <span style="FONT-WEIGHT: bold">blood-pressure</span> | <span style="FONT-WEIGHT: bold">type-id = ca3c57f4-f4c1-4e15-be67-0a3caf5414ed</span> |
 
-$DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
+$DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
 $Systolic = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/Text, <span style="FONT-STYLE: italic">"blood-pressure-systolic"</span>)\]\[1\]
 $Diastolic = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/Text, <span style="FONT-STYLE: italic">"blood-pressure-diastolic"</span>)\]\[1\]
 $Pulse = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/Text, <span style="FONT-STYLE: italic">"blood-pressure-pulse"</span>)\]\[1\]
@@ -1252,7 +1252,7 @@ $Pulse = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/
 |---------------------------------------------------|------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">ResultType</span> | <span style="FONT-WEIGHT: bold">cholesterol-profile</span> | <span style="FONT-WEIGHT: bold">type-id = 796C186F-B874-471c-8468-3EEFF73BF66E</span> |
 
-$DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
+$DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
 $LDL = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/Text, <span style="FONT-STYLE: italic">"cholesterol-ldl"</span>)\]\[1\]
 $HDL = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/Text, <span style="FONT-STYLE: italic">"cholesterol-hdl"</span>)\]\[1\]
 $Total = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/Text, <span style="FONT-STYLE: italic">"cholesterol-total"</span>)\]\[1\]
@@ -1278,10 +1278,10 @@ $Trig = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/T
 |---------------------------------------------------|--------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">ResultType</span> | <span style="FONT-WEIGHT: bold">peak-flow</span> | <span style="FONT-WEIGHT: bold">type-id = 5d8419af-90f0-4875-a370-0f881c18f6b3</span> |
 
-$DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
-$PEF = ./Test\[ [IsConcept](ccr-input-functions#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"pef"</span>)\]\[1\]
+$DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
+$PEF = ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"pef"</span>)\]\[1\]
 $FEV1 = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/Text, <span style="FONT-STYLE: italic">"fev1"</span>)\]\[1\]
-$FEV6 = ./Test\[ [IsConcept](ccr-input-functions#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"fev6"</span>)\]\[1\]
+$FEV6 = ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"fev6"</span>)\]\[1\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime and ($PEF or $FEV1 or $FEV6))
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -1289,7 +1289,7 @@ $FEV6 = ./Test\[ [IsConcept](ccr-input-functions#IsConcept)(./Description/Text, 
 |-----------|-------------------------------------------------------------------|-------------------------------------|
 | $DateTime | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./when</span> | DateTimeType =&gt; approx-date-time |
 
-<span style="FONT-WEIGHT: bold">If IsPositiveDouble</span>($PEF/TestResult/Value) and [IsConcept](ccr-input-functions#IsConcept)($PEF/TestResult/Units/Unit, <span style="FONT-STYLE: italic">"liters-per-second"</span>)
+<span style="FONT-WEIGHT: bold">If IsPositiveDouble</span>($PEF/TestResult/Value) and [IsConcept](ccr-input-functions.md#IsConcept)($PEF/TestResult/Units/Unit, <span style="FONT-STYLE: italic">"liters-per-second"</span>)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
 |                       |                         |                                  |
@@ -1297,7 +1297,7 @@ $FEV6 = ./Test\[ [IsConcept](ccr-input-functions#IsConcept)(./Description/Text, 
 | $PEF/TestResult/Value | ./pef/liters-per-second |                                  |
 | $PEF/TestResult       | ./pef/display           | MeasureGroup =&gt; display-value |
 
-<span style="FONT-WEIGHT: bold">If IsPositiveDouble</span>($FEV1/TestResult/Value) and [IsConcept](ccr-input-functions#IsConcept)($FEV1/TestResult/Units/Unit, <span style="FONT-STYLE: italic">"liters"</span>)
+<span style="FONT-WEIGHT: bold">If IsPositiveDouble</span>($FEV1/TestResult/Value) and [IsConcept](ccr-input-functions.md#IsConcept)($FEV1/TestResult/Units/Unit, <span style="FONT-STYLE: italic">"liters"</span>)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
 |                        |                |                                  |
@@ -1328,10 +1328,10 @@ $FEV6 = ./Test\[ [IsConcept](ccr-input-functions#IsConcept)(./Description/Text, 
 |---------------------------------------------------|-------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">ResultType</span> | <span style="FONT-WEIGHT: bold">exercise</span> | <span style="FONT-WEIGHT: bold">type-id = 85a21ddb-db20-4c65-8d30-33c899ccf612</span> |
 
-$DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
-$Distance = ./Test\[ [IsConcept](ccr-input-functions#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"exercise-distance"</span>)\]\[1\]
+$DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
+$Distance = ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"exercise-distance"</span>)\]\[1\]
 $Duration = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/Text, <span style="FONT-STYLE: italic">"exercise-duration"</span>)\]\[1\]
-$Details = ./Test\[ [IsConcept](ccr-input-functions#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"exercise-details"</span>)\]
+$Details = ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"exercise-details"</span>)\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime and ($Distance or $Duration or $Details) and ./Description)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -1366,7 +1366,7 @@ $Details = ./Test\[ [IsConcept](ccr-input-functions#IsConcept)(./Description/Tex
 |---------------------------------------------------|----------------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">ResultType</span> | <span style="FONT-WEIGHT: bold">discharge-summary</span> | <span style="FONT-WEIGHT: bold">type-id = 02ef57a2-a620-425a-8e92-a301542cca54</span> |
 
-$DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.,<span style="FONT-STYLE: italic">"discharge-summary-create-date"</span>)
+$DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.,<span style="FONT-STYLE: italic">"discharge-summary-create-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -1380,12 +1380,12 @@ $DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.,<span style="FONT-S
  
 |                                                                                                                                                                                     |                                  |                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|-------------------------------------|
-| [ResolveComment](ccr-input-functions#ResolveComment)(<span style="FONT-STYLE: italic">"discharge-summary-comment"</span>)                                      | ./text                           |                                     |
+| [ResolveComment](ccr-input-functions.md#ResolveComment)(<span style="FONT-STYLE: italic">"discharge-summary-comment"</span>)                                      | ./text                           |                                     |
 | <span style="FONT-WEIGHT: bold">FindActorInSources</span>(./Source, <span style="FONT-STYLE: italic">"discharge-summary-primary-provider"</span>)                                   | ./primary-provider               | Actor =&gt; person                  |
-| ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"discharge-summary-primary-endorsement"</span>)\]\[1\]   | ./primary-provider-endorsement   | DateTimeType =&gt; date-time        |
+| ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"discharge-summary-primary-endorsement"</span>)\]\[1\]   | ./primary-provider-endorsement   | DateTimeType =&gt; date-time        |
 | <span style="FONT-WEIGHT: bold">FindActorInSources</span>(./Source, <span style="FONT-STYLE: italic">"discharge-summary-secondary-provider"</span>)                                 | ./secondary-provider             | Actor =&gt; person                  |
-| ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"discharge-summary-secondary-endorsement"</span>)\]\[1\] | ./secondary-provider-endorsement | DateTimeType =&gt; date-time        |
-| ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"discharge-summary-discharge-date"</span>)\]\[1\]        | ./discharge-date-time            | DateTimeType =&gt; approx-date-time |
+| ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"discharge-summary-secondary-endorsement"</span>)\]\[1\] | ./secondary-provider-endorsement | DateTimeType =&gt; date-time        |
+| ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"discharge-summary-discharge-date"</span>)\]\[1\]        | ./discharge-date-time            | DateTimeType =&gt; approx-date-time |
 | <span style="FONT-WEIGHT: bold">FindActorInSources</span>(./Source, <span style="FONT-STYLE: italic">"discharge-summary-principal-procedure-physician"</span>)                      | ./principal-procedure-physician  | Actor =&gt; person                  |
 | .                                                                                                                                                                                   | ../common                        | CCRCodedDataObjectType =&gt; common |
 
@@ -1398,7 +1398,7 @@ $DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.,<span style="FONT-S
 |-------------------------------------------------|-----------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">TestType</span> | <span style="FONT-WEIGHT: bold">height</span> | <span style="FONT-WEIGHT: bold">type-id = 40750a6a-89b2-455c-bd8d-b420a4cb500b</span> |
 
-$DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
+$DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime))
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -1418,7 +1418,7 @@ $DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.., <span style="FONT
 |-------------------------------------------------|-----------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">TestType</span> | <span style="FONT-WEIGHT: bold">weight</span> | <span style="FONT-WEIGHT: bold">type-id = 3d34d87e-7fc1-4153-800f-f56592cb0d17</span> |
 
-$DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
+$DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -1438,7 +1438,7 @@ $DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.., <span style="FONT
 |-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">TestType</span> | <span style="FONT-WEIGHT: bold">blood-glucose</span> | <span style="FONT-WEIGHT: bold">type-id = 879e7c04-4e8a-4707-9ad3-b054df467ce4</span> |
 
-$DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
+$DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -1459,7 +1459,7 @@ $DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.., <span style="FONT
 |-------------------------------------------------|--------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">TestType</span> | <span style="FONT-WEIGHT: bold">radiology-lab-results</span> | <span style="FONT-WEIGHT: bold">type-id = e4911bd3-61bf-4e10-ae78-9c574b888b8f</span> |
 
-$DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
+$DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -1485,7 +1485,7 @@ $Value = <span style="FONT-WEIGHT: bold">Concat(</span>./TestResult/Value, ./Tes
 |-------------------------------------------------|----------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">TestType</span> | <span style="FONT-WEIGHT: bold">blood-oxygen-saturation</span> | <span style="FONT-WEIGHT: bold">type-id = 3a54f95f-03d8-4f62-815f-f691fc94a500</span> |
 
-$DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
+$DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -1521,7 +1521,7 @@ $DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.., <span style="FONT
  
 |                                                                                                                                                                                  |        |                                     |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|-------------------------------------|
-| [GetDateTime](ccr-input-functions#GetDateTime)(./, <span style="FONT-STYLE: italic">"result-collection-date"</span><span style="FONT-WEIGHT: bold">)</span> | ./when | DateTimeType =&gt; approx-date-time |
+| [GetDateTime](ccr-input-functions.md#GetDateTime)(./, <span style="FONT-STYLE: italic">"result-collection-date"</span><span style="FONT-WEIGHT: bold">)</span> | ./when | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./Description)
 <span style="FONT-WEIGHT: bold">Map values:</span>
@@ -1554,7 +1554,7 @@ $DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.., <span style="FONT
  
 |                                                                                                                                                               |              |                                     |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|-------------------------------------|
-| [FindActorInSource](ccr-input-functions#FindActorInSource)(./Source, <span style="FONT-STYLE: italic">"result-ordering-provider"</span>) | ./ordered-by | Actor =&gt; Organization            |
+| [FindActorInSource](ccr-input-functions.md#FindActorInSource)(./Source, <span style="FONT-STYLE: italic">"result-ordering-provider"</span>) | ./ordered-by | Actor =&gt; Organization            |
 | .                                                                                                                                                             | ../common    | CCRCodedDataObjectType =&gt; common |
 
 <span style="FONT-WEIGHT: bold">Note:</span> Elements listed in <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">bold italic</span> text are required by the HealthVault mapping transform. If any required values cannot be processed, the transform will not create the type.
@@ -1651,7 +1651,7 @@ $DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.., <span style="FONT
  
 |                                                                                                                                                            |        |                                     |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|-------------------------------------|
-| ./DateTime\[ [IsConcept](ccr-input-functions#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">procedure-date"</span>)\]\[1\] | ./when | DateTimeType =&gt; approx-date-time |
+| ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">procedure-date"</span>)\]\[1\] | ./when | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -1659,8 +1659,8 @@ $DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.., <span style="FONT
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|------------------------------------------|
 | ./Description                                                                                                                                                                           | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./name</span> | CodedDescriptionType =&gt; codable-value |
 | ./Site\[1\]                                                                                                                                                                             | ./anatomic-location                                               | CodedDescriptionType =&gt; codable-value |
-| [ResolveActorInRole](ccr-input-functions#ResolveActorInRole)(./Practitioners/Practitioner, <span style="FONT-STYLE: italic">"procedure-primary-provider"</span>)   | ./primary-provider                                                | Actor =&gt; person                       |
-| [ResolveActorInRole](ccr-input-functions#ResolveActorInRole)(./Practitioners/Practitioner, <span style="FONT-STYLE: italic">"procedure-secondary-provider"</span>) | ./secondary-provider                                              | Actor =&gt; person                       |
+| [ResolveActorInRole](ccr-input-functions.md#ResolveActorInRole)(./Practitioners/Practitioner, <span style="FONT-STYLE: italic">"procedure-primary-provider"</span>)   | ./primary-provider                                                | Actor =&gt; person                       |
+| [ResolveActorInRole](ccr-input-functions.md#ResolveActorInRole)(./Practitioners/Practitioner, <span style="FONT-STYLE: italic">"procedure-secondary-provider"</span>) | ./secondary-provider                                              | Actor =&gt; person                       |
 | .                                                                                                                                                                                       | ../common                                                         | CCRCodedDataObjectType =&gt; common      |
 
 <span style="FONT-WEIGHT: bold">Note:</span> Elements listed in <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">bold italic</span> text are required by the HealthVault mapping transform. If any required values cannot be processed, the transform will not create the type.
@@ -1676,15 +1676,15 @@ $DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.., <span style="FONT
  
 |                                                                                                                                  |                       |                                          |
 |----------------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------------------------------|
-| [GetDateTime](ccr-input-functions#GetDateTime)(., "<span style="FONT-STYLE: italic">encounter-date"</span>) | ./when                | DateTimeType =&gt; date-time             |
+| [GetDateTime](ccr-input-functions.md#GetDateTime)(., "<span style="FONT-STYLE: italic">encounter-date"</span>) | ./when                | DateTimeType =&gt; date-time             |
 | ./Type                                                                                                                           | ./type                | CodedDescriptionType =&gt; codable-value |
 | ./Description/Text                                                                                                               | ./reason              |                                          |
 | ./Duration\[1\]/DateTime/DateTimeRange/BeginRange                                                                                | ./duration/start-date | DateTimeType =&gt; approx-date-time      |
 | ./Duration\[1\]/DateTime/DateTimeRange/EndRange                                                                                  | ./duration/end-date   | DateTimeType =&gt; approx-date-time      |
-| [ResolveActor](ccr-input-functions#ResolveActor)(./Locations/Location\[1\]/Actor/ActorID)                   | ./facility            | Actor =&gt; Organization                 |
+| [ResolveActor](ccr-input-functions.md#ResolveActor)(./Locations/Location\[1\]/Actor/ActorID)                   | ./facility            | Actor =&gt; Organization                 |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Practitioners/Practitioner)
-$Practitioners = [Concat](ccr-input-functions#Concat)($Practitioners, ., <span style="FONT-STYLE: italic">"\\n\\n"</span>)
+$Practitioners = [Concat](ccr-input-functions.md#Concat)($Practitioners, ., <span style="FONT-STYLE: italic">"\\n\\n"</span>)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
 |     |           |                                     |
@@ -1707,7 +1707,7 @@ $Practitioners = [Concat](ccr-input-functions#Concat)($Practitioners, ., <span s
 |--------------------------------------------------|----------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">Encounter</span> | <span style="FONT-WEIGHT: bold">appointment</span> | <span style="FONT-WEIGHT: bold">type-id = 4b18aeb6-5f01-444c-8c70-dbf13a2f510b</span> |
 
-$DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.,<span style="FONT-STYLE: italic">"appointment-date"</span>)
+$DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.,<span style="FONT-STYLE: italic">"appointment-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -1718,7 +1718,7 @@ $DateTime = [GetDateTime](ccr-input-functions#GetDateTime)(.,<span style="FONT-S
 | ./Duration\[1\]/DateTime/DateTimeRange/EndRange   | ./duration/end-date                                               | DateTimeType =&gt; approx-date-time      |
 | ./Description                                     | ./service                                                         | CodedDescriptionType =&gt; codable-value |
 
-$Practitioner = [ResolveActor](ccr-input-functions#ResolveActor)(./Practitioners/Practitioner\[1\]/ActorID)
+$Practitioner = [ResolveActor](ccr-input-functions.md#ResolveActor)(./Practitioners/Practitioner\[1\]/ActorID)
 <span style="FONT-WEIGHT: bold">If Exists</span>($Practitioner/Person)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  
@@ -1733,7 +1733,7 @@ $Practitioner = [ResolveActor](ccr-input-functions#ResolveActor)(./Practitioners
 |---------------------------------------------------|--------------------|-----|
 | <span style="FONT-STYLE: italic">"Unknown"</span> | ./clinic/name/full |     |
 
-$Location = [ResolveActor](ccr-input-functions#ResolveActor)(./Locations/Location\[1\]/Actor/ActorID)
+$Location = [ResolveActor](ccr-input-functions.md#ResolveActor)(./Locations/Location\[1\]/Actor/ActorID)
 <span style="FONT-WEIGHT: bold">If Exists</span>($Location)
 <span style="FONT-WEIGHT: bold">Map values:</span>
  

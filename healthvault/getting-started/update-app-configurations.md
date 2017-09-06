@@ -9,7 +9,7 @@ description: Learn how to apply a configuration to your HealthVault app
 ---
 
 # Update the configuration of a HealthVault app
-You should have already configured an app using the [Application Configuration Center](https://go.microsoft.com/fwlink/?linkid=838954). If you haven't please read [configuring a new app in ACC](configuring-new-app-acc) for more information. 
+You should have already configured an app using the [Application Configuration Center](https://go.microsoft.com/fwlink/?linkid=838954). If you haven't please read [configuring a new app in ACC](configuring-new-app-acc.md) for more information. 
 
 ## Samples
 If you're starting from one of the HealthVault samples published to GitHub, each of these is configured with a PowerShell script which allows you to easily configure the ApplicationID and environments (as needed). Open a PowerShell console, navigate to the folder you chose for your local repository, then navigate to the project root folder and run the following command, specifying your ApplicationID below.

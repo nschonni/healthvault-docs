@@ -18,7 +18,7 @@ Both import and export transforms are aslo available for applications to use thr
 Input mappings: Creating HealthVault items from CCR data
 --------------------------------------------------------
 
-The HealthVault input transforms determine the ways in which CCR data is used to populate individual HealthVault data items. They are described in detail in <a href="ccr-input-mappings" id="PageContent_14108_5">HealthVault CCR Input Mappings</a>.
+The HealthVault input transforms determine the ways in which CCR data is used to populate individual HealthVault data items. They are described in detail in <a href="ccr-input-mappings.md" id="PageContent_14108_5">HealthVault CCR Input Mappings</a>.
 
 ### Descriptions
 
@@ -36,16 +36,16 @@ The conversion specifies the way in which the value is processed before it is st
 
 There are some sections of application logic that are used by more than one transform, or by a single transform in more than one way. For convenience, both the transform pseudocode and the mapping value descriptions refer to those sections as if they were procedure or function calls.
 
-<a href="ccr-input-functions" id="PageContent_14108_3">HealthVault CCR Input Functions</a> provides pseudocode descriptions of the functions and procedures referred to in the input mapping descriptions.
+<a href="ccr-input-functions.md" id="PageContent_14108_3">HealthVault CCR Input Functions</a> provides pseudocode descriptions of the functions and procedures referred to in the input mapping descriptions.
 
 ### Vocabularies
 
-The transforms treat some CCR element names as if they are equivalent, based on an underlying concept that corresponds to an element in a HealthVault type. Both the pseudocode and the value descriptions refer to these element groups using the [IsConcept](https://msdn.microsoft.com/en-us/healthvault/ee663894.aspx) functions. The Vocabulary\[\] arrays used by IsConcept are defined in the "Import Text" column for the associated concept in <a href="ccr-vocabularies" id="PageContent_14108_2">HealthVault CCR Vocabularies</a>.
+The transforms treat some CCR element names as if they are equivalent, based on an underlying concept that corresponds to an element in a HealthVault type. Both the pseudocode and the value descriptions refer to these element groups using the [IsConcept](https://msdn.microsoft.com/en-us/healthvault/ee663894.aspx) functions. The Vocabulary\[\] arrays used by IsConcept are defined in the "Import Text" column for the associated concept in <a href="ccr-vocabularies.md" id="PageContent_14108_2">HealthVault CCR Vocabularies</a>.
 
 Output mappings: Exporting HealthVault items to CCR
 ---------------------------------------------------
 
-The HealthVault output transforms determine the ways in which data from individual HealthVault items are used to create a CCR. They are described in detail in <a href="ccr-output-mappings" id="PageContent_14108_6">HealthVault CCR Output Mappings</a>.
+The HealthVault output transforms determine the ways in which data from individual HealthVault items are used to create a CCR. They are described in detail in <a href="ccr-output-mappings.md" id="PageContent_14108_6">HealthVault CCR Output Mappings</a>.
 
 ### Descriptions
 
@@ -53,8 +53,8 @@ The output descriptions are similar to the input descriptions, except that the v
 
 ### Procedures
 
-<a href="ccr-output-functions" id="PageContent_14108_4">HealthVault CCR Output Functions</a>  provides pseudocode descriptions of the functions and procedures referred to in the input mapping descriptions.
+<a href="ccr-output-functions.md" id="PageContent_14108_4">HealthVault CCR Output Functions</a>  provides pseudocode descriptions of the functions and procedures referred to in the input mapping descriptions.
 
 ### Vocabularies
 
-The output transforms always use the same label to refer to a given concept when it is written to a CCR. That value is defined in the "Output Text" column for the concept in <a href="ccr-vocabularies" id="PageContent_14108_2">HealthVault CCR Vocabularies</a>.
+The output transforms always use the same label to refer to a given concept when it is written to a CCR. That value is defined in the "Output Text" column for the concept in <a href="ccr-vocabularies.md" id="PageContent_14108_2">HealthVault CCR Vocabularies</a>.

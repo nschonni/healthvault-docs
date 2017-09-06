@@ -12,14 +12,14 @@ description: Overview of how a single app can switch between global instances ba
 
 The HealthVault global architecture is comprised of a number of instances distributed around the world each serving a broad population of users. This document provides an overview of building applications that connect to multiple instances within the HealthVault global architecture.
 
-For detailed information about the architecture, see <a href="global-architecture" id="PageContent_13993_4">global architecture</a>.
+For detailed information about the architecture, see <a href="global-architecture.md" id="PageContent_13993_4">global architecture</a>.
 
 Multi-instance apps in PPE
 --------------------------
 
 HealthVault PPE is setup with two instances to allow developers to test multi-instance scenarios. The two instances have the same user mapping rules as the production US and UK instances, and are referred to as the US PPE instance and the UK PPE instance.
 
-Each PPE instance includes a version of the HealthVault [Application Configuration Center (ACC)](configurations).
+Each PPE instance includes a version of the HealthVault [Application Configuration Center (ACC)](configurations.md).
 
 Provisioning a multi-instance app
 To provision a multi-instance app in PPE:
@@ -35,7 +35,7 @@ Many of the HealthVault SDKs provide built-in support for building multi-instanc
 
 If you are using a HealthVault SDK that supports the HealthVault global architecture, then normally, your application will be multi-instance aware by following the earlier provisioning steps and following the respective SDK standard app development model.
 
-If you are not using a HealthVault SDK with global architecture support but would like to build a multi-instance app, you can read <a href="global-architecture" id="PageContent_13993_10">global architecture</a> to learn the architecture and build your own mechanism to connect to multiple instances.
+If you are not using a HealthVault SDK with global architecture support but would like to build a multi-instance app, you can read <a href="global-architecture.md" id="PageContent_13993_10">global architecture</a> to learn the architecture and build your own mechanism to connect to multiple instances.
 
 Testing a multi-instance app
 ----------------------------

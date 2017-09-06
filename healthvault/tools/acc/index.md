@@ -14,13 +14,13 @@ The HealthVault [Application Configuration Center (ACC)](https://config.healthva
 
 For more information on the features provided in ACC, see the following topics.
 
--   [Home Tab](acc-home-tab) 
--   [Information Tab](acc-information-tab) 
--   [Methods Tab](acc-methods-tab) 
--   [Online and Offline Rules Tab](acc-online-and-offline-rules-tab) 
--   [Public Certs Tab](acc-public-certs-tab) 
--   [Localize Tab](acc-localize-tab) 
--   [Admins Tab](acc-admins-tab) 
--   [Misc Tab](acc-misc-tab) 
--   [Create or Edit an Application Directory Page](acc-create-or-edit-an-application-directory-page) 
--   [Create or Edit a Device Directory Page](acc-create-or-edit-a-device-directory-page) 
+-   [Home Tab](acc-home-tab.md)
+-   [Information Tab](acc-information-tab.md)
+-   [Methods Tab](acc-methods-tab.md)
+-   [Online and Offline Rules Tab](acc-online-and-offline-rules-tab.md)
+-   [Public Certs Tab](acc-public-certs-tab.md)
+-   [Localize Tab](acc-localize-tab.md)
+-   [Admins Tab](acc-admins-tab.md)
+-   [Misc Tab](acc-misc-tab.md)
+-   [Create or Edit an Application Directory Page](acc-create-or-edit-an-application-directory-page.md)
+-   [Create or Edit a Device Directory Page](acc-create-or-edit-a-device-directory-page.md)
