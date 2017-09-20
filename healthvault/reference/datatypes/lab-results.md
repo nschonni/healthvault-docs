@@ -83,7 +83,7 @@ ordered-by|[Organization](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#Organizat
 > clinical-code|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|0|1|The clinical code for the laboratory test.||[LOINC](xref:HV_dd56c2b6-cbdd-4588-af7c-ae26df0521e3)
 > value|[lab-test-result-value-type](#lab-test-result-value-type)|0|1|A clinical value within a laboratory result.|This type is define a clinical value within a laboratory result, including value, unit, reference and toxic ranges.|
 > status|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|0|1|The status of the laboratory result.|Examples of status include complete and pending.|[lab-status](xref:HV_3ab6ab27-a536-4209-b098-644b8dd835bb)
-> note|string|0|1|A note that augments the laboratory result.|There are two scenarios in which a note is typically added: A note may provide additional information about interpreting the result beyond what is stored in the ranges associated with the value. Or, a note may be use to provide the textual result of a lab test that does not have a measured value. Formatting: Notes may come from systems that require a line-based approach to textual display. To support this, applications should render the spaces and newlines in the note, and use a fixed-width font. The form transform for this type shows one way to do this.|[lab-status](xref:HV_3ab6ab27-a536-4209-b098-644b8dd835bb)
+> note|string|0|1|A note that augments the laboratory result.|There are two scenarios in which a note is typically added: A note may provide additional information about interpreting the result beyond what is stored in the ranges associated with the value. Or, a note may be use to provide the textual result of a lab test that does not have a measured value. Formatting: Notes may come from systems that require a line-based approach to textual display. To support this, applications should render the spaces and newlines in the note, and use a fixed-width font. The form transform for this type shows one way to do this.|
 >
 >
 
@@ -103,7 +103,7 @@ ordered-by|[Organization](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#Organizat
 > ---|---|---|---|---|---|---
 > measurement|[general-measurement](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#general-measurement)|1|1|The value of the laboratory result.||Contact the HealthVault team to help define this vocabulary.
 > ranges|[test-result-range](#test-result-range)|0|unbounded|Ranges that are associated with this result.|Each test result can contain multiple ranges that are useful to interpret the result value. <br /> Examples include reference range and therapeutic range.|
-> flag|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|0|unbounded|Flag for laboratory results.|Example values are normal, critical, high and low.|lab-results-flag
+> flag|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|0|unbounded|Flag for laboratory results.|Example values are normal, critical, high and low.|[lab-results-flag](xref:HV_d1c10af5-c237-40ed-9a9c-318361bb8a5a)
 >
 >
 
