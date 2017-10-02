@@ -53,8 +53,8 @@ adverse-event|string|0|1|A description of any adverse event to the immunization.
 consent|string|0|1|The consent description for the immunization.||
 
 ## Example
-[!code-xml[Example](../../sample-xml/3d817dbe-af42-4a9d-a553-d1298b4d08fc.xml)]
+[!code-xml[Example](../sample-xml/3d817dbe-af42-4a9d-a553-d1298b4d08fc.xml)]
 
 ## XSD schema
-[![Download](/healthvault/images/download.png)Download](../../xsd/immunization.1.xsd)
-[!code-xml[XSD schema](../../xsd/immunization.1.xsd)]
+[![Download](/healthvault/images/download.png)Download](../xsd/immunization.1.xsd)
+[!code-xml[XSD schema](../xsd/immunization.1.xsd)]

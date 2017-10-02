@@ -46,8 +46,8 @@ session-samples|[aerobic-session-samples](xref:HV_3e730686-781f-4616-aa0d-817bba
 lap-session|[aerobic-lap-session](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#aerobic-lap-session)|0|unbounded|The information about the lap within an aerobic session.|
 
 ## Example
-[!code-xml[Example](../../sample-xml/90dbf000-fc55-4b92-b4a1-da45c36ad8bb.xml)]
+[!code-xml[Example](../sample-xml/90dbf000-fc55-4b92-b4a1-da45c36ad8bb.xml)]
 
 ## XSD schema
-[![Download](/healthvault/images/download.png)Download](../../xsd/aerobic.xsd)
-[!code-xml[XSD schema](../../xsd/aerobic.xsd)]
+[![Download](/healthvault/images/download.png)Download](../xsd/aerobic.xsd)
+[!code-xml[XSD schema](../xsd/aerobic.xsd)]

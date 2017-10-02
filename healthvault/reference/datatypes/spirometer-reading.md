@@ -69,8 +69,8 @@ MVV|[flow-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#flow-value)|0|1|Th
 >
 
 ## Example
-[!code-xml[Example](../../sample-xml/921588d1-27bf-423c-8e55-650d2fedb3e0.xml)]
+[!code-xml[Example](../sample-xml/921588d1-27bf-423c-8e55-650d2fedb3e0.xml)]
 
 ## XSD schema
-[![Download](/healthvault/images/download.png)Download](../../xsd/spirometer.xsd)
-[!code-xml[XSD schema](../../xsd/spirometer.xsd)]
+[![Download](/healthvault/images/download.png)Download](../xsd/spirometer.xsd)
+[!code-xml[XSD schema](../xsd/spirometer.xsd)]

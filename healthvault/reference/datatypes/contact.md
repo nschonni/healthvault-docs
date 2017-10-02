@@ -1,49 +1,51 @@
 ---
-uid: HV_162dd12d-9859-4a66-b75f-96760d67072b
-title: Personal contact information
+uid: HV_25c94a9f-9d3d-4576-96dc-6791178a8143
+title: Contact
 ---
 
-# Personal contact information
+# Contact
 
 ## Overview
 
 Property|Value
 ---|---
-id|162dd12d-9859-4a66-b75f-96760d67072b
-name|Personal contact information
+id|25c94a9f-9d3d-4576-96dc-6791178a8143
+name|Contact
 immutable|False
-singleton|True
+singleton|False
 allow-readonly|False
 effective date XPath|No effective date XPath
 
 ## .NET reference
-- [Microsoft.Health.ItemTypes.Contact](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.contact)
-- [Microsoft.HealthVault.ItemTypes.Contact](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.contact)
+- [Microsoft.Health.ItemTypes.Person](https://docs.microsoft.com/dotnet/api/microsoft.health.itemtypes.person)
+- [Microsoft.HealthVault.ItemTypes.Person](https://docs.microsoft.com/dotnet/api/microsoft.healthvault.itemtypes.person)
 
 ## Related data types
 
-- [Basic demographic information](xref:HV_3b3e6b16-eb69-483c-8d7e-dfe116ae6092)
-- [Care plan](xref:HV_415c95e0-0533-4d9c-ac73-91dc5031186c)
-- [Contact](xref:HV_25c94a9f-9d3d-4576-96dc-6791178a8143)
-- [Personal demographic information](xref:HV_92ba621e-66b3-4a01-bd73-74844aed4f5b)
+- [Appointment](xref:HV_4B18AEB6-5F01-444C-8C70-DBF13A2F510B)
+- [Personal contact information](xref:HV_162dd12d-9859-4a66-b75f-96760d67072b)
+- [Healthcare proxy](xref:HV_7EA47715-CBA4-47F0-99D2-EB0A9FB4A85C)
+- [Insurance plan](xref:HV_9366440c-ec81-4b89-b231-308a4c4d70ed)
+
+## Related articles
+
+- [Emergency Preparedness](http://go.microsoft.com/fwlink/?LinkId=513260)
 
 ## Details
-This data should not be confused with the 'person' type which is contact information for an emergency contact or someone else related to the health record.
+A contact may be an emergency contact, contact information for a doctor, lawyer, etc.
 
-<a name='contact'></a>
+<a name='person'></a>
 
-### Root element: contact
+### Root element: person
 
-This is the contact information for the person owning a health record in Microsoft HealthVault.
+Information related to a contact.
 
-This data should not be confused with the 'person' type which is contact information for an emergency contact or someone else related to the health record.
+A contact may be an emergency contact, contact information for a doctor, lawyer, etc.
+ Type: t:person
 
-### Element sequence
-
-Name|Type|Min occurs|Max occurs|Summary|Remarks
----|---|---|---|---|---
-contact|[Contact](xref:HV_25c94a9f-9d3d-4576-96dc-6791178a8143)|1|1|Contact information for the person owning the health record in Microsoft HealthVault.|
+## Example
+[!code-xml[Example](../sample-xml/25c94a9f-9d3d-4576-96dc-6791178a8143.xml)]
 
 ## XSD schema
-[![Download](/healthvault/images/download.png)Download](../xsd/contact.xsd)
-[!code-xml[XSD schema](../xsd/contact.xsd)]
+[![Download](/healthvault/images/download.png)Download](../xsd/person.xsd)
+[!code-xml[XSD schema](../xsd/person.xsd)]
