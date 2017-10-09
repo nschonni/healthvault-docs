@@ -73,6 +73,8 @@
 #### [CCR Vocabularies](/healthvault/concepts/data/ccr-vocabularies)
 ### [Medical Imaging](/healthvault/concepts/data/medical-imaging)
 #### [Medical Imaging Sample Application](/healthvault/concepts/data/medical-imaging-sample-application)
+### Troubleshooting
+#### [Request-Response Tracing](/healthvault/concepts/data/request-response-tracing)
 
 ## [XML API](/healthvault/concepts/xml-api/)
 ### [Querying Data](/healthvault/concepts/xml-api/querying-data)
@@ -81,9 +83,7 @@
 ### [Batching Queries](/healthvault/concepts/xml-api/batching-queries)
 ### [Subscribing To Events](/healthvault/concepts/xml-api/subscribing-to-events)
 ### [Tracking Data Items](/healthvault/concepts/xml-api/tracking-data-items)
-### [HealthVault eventing](/healthvault/concepts/xml-api/healthvault-eventing)
 ### [Status Codes](/healthvault/concepts/xml-api/status-codes)
-### [Request-Response Tracing](/healthvault/concepts/xml-api/request-response-tracing)
 
 ## [Advanced](/healthvault/concepts/advanced/)
 ###[Alternate user identifiers](/healthvault/concepts/advanced/alternate-user-identifiers)
