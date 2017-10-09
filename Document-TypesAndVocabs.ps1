@@ -831,8 +831,8 @@ Function New-DataTypeMarkDown($thingTypeInfo, $samplesDir) {
     $overview = New-DataTypeOverview $thingTypeInfo
     $details = New-DataTypeDetails $thingTypeInfo
     $transforms = $null
-    $example = New-DataTypeExample $thingTypeInfo $samplesDir $thingTypeInfo.DotNetClassInfo.IsOld
-    $schema = New-DataTypeSchema $thingTypeInfo.FilenamePrefix $thingTypeInfo.DotNetClassInfo.IsOld
+    $example = New-DataTypeExample $thingTypeInfo $samplesDir
+    $schema = New-DataTypeSchema $thingTypeInfo.FilenamePrefix
     $relatedInfo = New-DataTypeRelatedInfo $thingTypeInfo
 
     return @"
@@ -852,23 +852,21 @@ ${schema}
 "@
 }
 
-Function New-DataTypeSchema($filename, $isOld, $type) {
-    $old = if ($isOld) {'../'}
+Function New-DataTypeSchema($filename, $type) {
     @"
 `n##$(if ($type) {" $type"}) XSD schema
-$(md-Link "!$(md-Link "Download" "/$OutDir/images/download.png")Download" "../${old}xsd/${filename}.xsd")
-[!code-xml$(md-Link 'XSD schema' "../${old}xsd/${filename}.xsd")]
+$(md-Link "!$(md-Link "Download" "/$OutDir/images/download.png")Download" "../xsd/${filename}.xsd")
+[!code-xml$(md-Link 'XSD schema' "../xsd/${filename}.xsd")]
 
 "@
 }
 
-Function New-DataTypeExample($thingTypeInfo, $samplesDir, $isOld) {
-    $old = if ($isOld) {'../'}
+Function New-DataTypeExample($thingTypeInfo, $samplesDir) {
     $sampleFile = $($thingTypeInfo.ThingTypeId) + ".xml"
     if (Test-Path "$samplesDir\$sampleFile") {
 @"
 `n## Example
-[!code-xml$(md-Link 'Example' "../${old}sample-xml/$sampleFile")]
+[!code-xml$(md-Link 'Example' "../sample-xml/$sampleFile")]
 
 "@
     }
@@ -1337,8 +1335,8 @@ Function New-MethodMarkdown($method) {
     $title = if ($method.Request) {$method.Request.Name} else {$method.Response.Name}
     $id = if ($method.Request) {$method.Request.ThingTypeId} else {$method.Response.ThingTypeId}
     $overview = New-MethodOverview $method
-    $requestSchema = if ($method.Request) {New-DataTypeSchema $method.Request.File.BaseName $false "Request"}
-    $responseSchema = if ($method.Response) {New-DataTypeSchema $method.Response.File.BaseName $false "Response"}
+    $requestSchema = if ($method.Request) {New-DataTypeSchema $method.Request.File.BaseName "Request"}
+    $responseSchema = if ($method.Response) {New-DataTypeSchema $method.Response.File.BaseName "Response"}
 
     return @"
 ---
@@ -1389,7 +1387,6 @@ ${types}
 $refPath = "$OutDir\reference"
 $xsdPath = "$refPath\xsd"
 $dtPath = "$refPath\datatypes"
-$dtOldPath = "$dtPath\old"
 $methodPath = "$refPath\methods"
 $vocPath = "$refPath\vocabularies"
 
@@ -1410,11 +1407,14 @@ Function md-VocabLink($vocab, $ignoreVersion) {
 }
 
 Function md-ThingLink($thing, $ignoreVersion) {
-    $filePath = if ($thing.DotNetClassInfo.IsOld) {$dtOldPath} else {$dtPath}
-    $path = "/$($filePath -replace "\\","/")/$($thing.FilenamePrefix)"
+    $path = "/$($dtPath -replace "\\","/")/$($thing.MarkdownFilename)"
     $name = $thing.Name
-    if ($thing.Version -ne 1 -and !$ignoreVersion) {
-        $name += " v$($thing.Version)"
+    if (!$ignoreVersion) {
+        $allVersionsOfItem = Get-ThingsWithSameName $name
+        $highestVersion = $allVersionsOfItem | Sort-Object {$_.Version} | Select-Object -Last 1
+        if ($thing.Version -ne $highestVersion.Version) {
+            $name += " v$($thing.Version)"
+        }
     }
 
     md-Link $name $path
@@ -1434,6 +1434,21 @@ Function md-MethodLink($method, $ignoreVersion) {
     $path = "/$($methodPath -replace "\\","/")/$($method.Name)"
     
     md-Link $name $path
+}
+
+Function FormatFileName($name, $version) {
+    $allVersionsOfItem = Get-ThingsWithSameName $name
+    $formattedName = $name.ToLowerInvariant() -replace "[\-&\s]+","-"
+    $highestVersion = $allVersionsOfItem | Sort-Object {$_.Version} | Select-Object -Last 1
+    if ($version -ne $highestVersion.Version) {
+        $formattedName += ".$version"
+    }
+
+    [System.Web.HttpUtility]::UrlEncode($formattedName)
+}
+
+Function Get-ThingsWithSameName($name) {
+    $script:thingTypes.Values | Where-Object {$_.Name -eq $name}
 }
 
 ### End File Helpers ###
@@ -1480,17 +1495,23 @@ if (!(Test-Path $VocabDir)) {
 New-Item -ItemType Directory $OutDir -Force:$Overwrite | Out-Null
 New-Item -ItemType Directory $refPath -Force:$Overwrite | Out-Null
 New-Item -ItemType Directory $dtPath -Force:$Overwrite | Out-Null
-New-Item -ItemType Directory "$dtOldPath" -Force:$Overwrite | Out-Null
 New-Item -ItemType Directory $xsdPath -Force:$Overwrite | Out-Null
 New-Item -ItemType Directory $methodPath -Force:$Overwrite | Out-Null
 New-Item -ItemType Directory $vocPath -Force:$Overwrite | Out-Null
 
 if ($Overwrite) {
+    del "$refPath\*.md"
     del "$dtPath\*.md"
-    del "$dtOldPath\*.md"
     del "$xsdPath\*.xsd"
     del "$vocPath\*.md"
     del "$methodPath\*.md"
+}
+
+try {
+    [System.Web.HttpUtility] | Out-Null
+}
+catch {
+    Add-Type -AssemblyName System.Web
 }
 
 Get-Vocabularies $VocabDir
@@ -1509,19 +1530,21 @@ Get-ChildItem $WebXsdDir\* -Include ($script:commonXsds + ("method-*.xsd","respo
 Get-ThingTypeInfos $TypeXmlDir $XsdDir $WebXsdDir
 foreach ($thingInfo in $script:thingTypes.Values) {
     $markdown = Clean-NewLines (New-DataTypeMarkDown $thingInfo "$refPath\sample-xml")
-    $destPath = if ($thingInfo.DotNetClassInfo.IsOld) {$dtOldPath} else {$dtPath}
-    New-Item -ItemType File "$destPath\$($thingInfo.FilenamePrefix).md" -Value $markdown -Force:$Overwrite | Out-Null
+    $filename = FormatFileName $thingInfo.Name $thingInfo.Version
+    $thingInfo.MarkdownFilename = $filename
+    New-Item -ItemType File "$dtPath\$filename.md" -Value $markdown -Force:$Overwrite | Out-Null
 }
 
-$sortedThings = $script:thingTypes.Values | Where-Object{!$_.DotNetClassInfo.IsOld} | Sort-Object {$_.Version -as [string]} | Sort-Object {$_.Name -as [string]}
-$sortedOldThings = $script:thingTypes.Values | Where-Object{$_.DotNetClassInfo.IsOld} | Sort-Object {$_.Version -as [string]} | Sort-Object {$_.Name -as [string]}
-$indexThings = "# DataTypes`n" +
-                (md-Link "Old DataTypes" "old/") +
+$sortedThings = $script:thingTypes.Values | Where-Object{!$_.DotNetClassInfo.IsOld} | Sort-Object @{Expression={$_.Name};Ascending=$true},@{Expression={$_.Version};Descending=$true}
+$sortedOldThings = $script:thingTypes.Values | Where-Object{$_.DotNetClassInfo.IsOld} | Sort-Object @{Expression={$_.Name};Ascending=$true},@{Expression={$_.Version};Descending=$true}
+$indexThings = "# DataTypes" +
                 (md-TableHeader "Name","Version","ID","Description") +
-                ($sortedThings | %{md-TableRow (md-ThingLink $_ $true),$_.Version,$_.ThingTypeId,$_.Summary})
-$indexOldThings = "# Old DataTypes$(md-TableHeader "Name","Version","ID","Description")$($sortedOldThings | %{md-TableRow (md-ThingLink $_ $true),$_.Version,$_.ThingTypeId,$_.Summary})"
+                ($sortedThings | %{md-TableRow (md-ThingLink $_ $true),$_.Version,$_.ThingTypeId,$_.Summary}) +
+                $("`n" + (Drop-Anchor "oldtypes")) +
+                "`n# Old DataTypes" +
+                (md-TableHeader "Name","Version","ID","Description") +
+                ($sortedOldThings | %{md-TableRow (md-ThingLink $_ $true),$_.Version,$_.ThingTypeId,$_.Summary})
 New-Item -ItemType File "$dtPath\index.md" -Value $indexThings -Force:$Overwrite | Out-Null
-New-Item -ItemType File "$dtOldPath\index.md" -Value $indexOldThings -Force:$Overwrite | Out-Null
 Debug "DataType serialization complete."
 
 foreach ($method in $script:methods.Values) {
@@ -1547,7 +1570,7 @@ $tocVocab = ($sortedVocabs | %{"## $(md-VocabLink $_)"}) -join "`n"
 
 $tocRef = @"
 # [DataTypes](/$($dtPath -replace "\\","/")/)
-## [Old](/$($dtOldPath -replace "\\","/")/)
+## [Old](/$($dtPath -replace "\\","/")/#oldtypes)
 ${tocOldThings}
 ${tocThings}
 # [Methods](/$($methodPath -replace "\\","/")/)

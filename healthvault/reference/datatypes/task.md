@@ -40,6 +40,7 @@ short-description|[string128](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#strin
 long-description|[stringnznw](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#stringnznw)|1|1|A more detailed description of the task.|Applications typically display this string and would pass in a value in the user's display language.
 is-reminder-enabled|boolean|0|1|Whether the user should receive a reminder at the task's scheduled time.|
 status|[task-status](#task-status)|1|1|The task status.|
+task-key|[guid](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#guid)|0|1|The key (Guid) that a provider maintains a mapping to upon task creation. This key can later be used to identify like-tasks assigned to multiple users and unify the anonymized task data exported from HealthVault.|
 type|[guid](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#guid)|0|1|For a task whose completion is tied to recording a specific health measurement or other piece of data, this indicates the item type to be recorded.|For example, if the task is to take your blood pressure, this would be the blood pressure type ID.
 schedules|[task-schedules](#task-schedules)|0|1|The schedule of when the task is to be performed.|
 tracking-policy|[task-tracking-policy](#task-tracking-policy)|0|1|The rules for tracking task completion.|

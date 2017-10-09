@@ -96,8 +96,8 @@ prescription-number|string|0|1|Free form prescription number.||
 >
 
 ## Example
-[!code-xml[Example](../../sample-xml/5C5F1223-F63C-4464-870C-3E36BA471DEF.xml)]
+[!code-xml[Example](../sample-xml/5C5F1223-F63C-4464-870C-3E36BA471DEF.xml)]
 
 ## XSD schema
-[![Download](/healthvault/images/download.png)Download](../../xsd/medication.1.xsd)
-[!code-xml[XSD schema](../../xsd/medication.1.xsd)]
+[![Download](/healthvault/images/download.png)Download](../xsd/medication.1.xsd)
+[!code-xml[XSD schema](../xsd/medication.1.xsd)]
