@@ -33,7 +33,7 @@ Thing type
 
 A thing type describes a type of data such as blood pressure or weight. Each thing type has its own schema and properties. For example, the Weight Measurement type defines the date, time, and measurement of body weight.  The Blood Pressure type defines the systolic and diastolic values of a blood pressure measurement. Each thing in a health record is an instance of some thing type.
 
-Next, read about <a href="technical-overview-applications" id="Introduction_14104_18">HealthVault-integrated applications</a> that can access this data.
+Next, read about <a href="technical-overview-applications.md" id="Introduction_14104_18">HealthVault-integrated applications</a> that can access this data.
 
 <span id="singleColInThreeColLayout"></span>
 

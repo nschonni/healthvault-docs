@@ -45,8 +45,8 @@ is-recurring|boolean|0|1|True if condition is recurring.||
 status|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|0|1|The status for the family history entry.||
 
 ## Example
-[!code-xml[Example](../../sample-xml/6D39F894-F7AC-4FCE-AC78-B22693BF96E6.xml)]
+[!code-xml[Example](../sample-xml/6D39F894-F7AC-4FCE-AC78-B22693BF96E6.xml)]
 
 ## XSD schema
-[![Download](/healthvault/images/download.png)Download](../../xsd/family-history.1.xsd)
-[!code-xml[XSD schema](../../xsd/family-history.1.xsd)]
+[![Download](/healthvault/images/download.png)Download](../xsd/family-history.1.xsd)
+[!code-xml[XSD schema](../xsd/family-history.1.xsd)]

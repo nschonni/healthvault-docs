@@ -48,6 +48,11 @@ settling-minutes|[nonNegativeInt](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#n
 awakening|[Awakening](#Awakening)|0|unbounded|The time and duration of each the person awoke during the night.|
 medications|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|0|1|A description of the medications taken before going to bed.|
 wake-state|[wake-state](#wake-state)|1|1||
+times-woken-up|[nonNegativeInt](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#nonNegativeInt)|0|1|The number of times the person woke up at night.|
+average-resting-hr|[nonNegativeInt](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#nonNegativeInt)|0|1|The average resting heart rate of the person.|
+calories-burned|[nonNegativeInt](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#nonNegativeInt)|0|1|The number of calories burned while sleeping.|
+awake-minutes|[nonNegativeInt](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#nonNegativeInt)|0|1|The number of minutes that the person was awake during their sleep session.|
+sleep-phase-summary-group|[SleepPhaseSummaryGroup](#SleepPhaseSummaryGroup)|0|1|A summary of the total amount of time the person spent in each sleep phase. For example, minutes spent in Light, Deep, or REM sleep.|
 
 >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 >
@@ -88,6 +93,41 @@ wake-state|[wake-state](#wake-state)|1|1||
 > ---|---|---|---|---|---
 > when|[time](xref:HV_File_dates#time)|1|1|The time when the person awoke.|
 > minutes|[nonNegativeInt](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#nonNegativeInt)|1|1|The duration the person stayed awake in minutes.|
+>
+>
+
+>[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+>
+> <a name='SleepPhaseSummaryGroup'></a>
+>
+> ### SleepPhaseSummaryGroup
+>
+> A group of sleep phase minutes for this sleep event.
+>
+> ### Element sequence
+>
+> Name|Type|Min occurs|Max occurs|Summary|Remarks
+> ---|---|---|---|---|---
+> sleep-phase-summary|[SleepPhaseSummary](#SleepPhaseSummary)|1|unbounded|The sleep phase minutes definitions for this sleep event.|
+>
+>
+
+>[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+>
+> <a name='SleepPhaseSummary'></a>
+>
+> ### SleepPhaseSummary
+>
+> A summary of the amount of time the person slept in each phase during this sleep event. Each element should represent the total amount of time the person spent in that phase during this sleep event.
+>
+> A sleep phase minutes summary is meant to cover the total sleep time that the user spent in each phase of sleep. For example, the amount of time they spent in deep, light, or rem sleep.
+>
+> ### Element sequence
+>
+> Name|Type|Min occurs|Max occurs|Summary|Remarks
+> ---|---|---|---|---|---
+> phase|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|1|1|The phase of sleep represented by this object. Example values could be light, deep, or REM sleep.|
+> minutes|[nonNegativeInt](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#nonNegativeInt)|1|1|The amount of time that the person spent in this phase during this sleep event.|
 >
 >
 

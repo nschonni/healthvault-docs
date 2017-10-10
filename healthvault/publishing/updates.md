@@ -11,7 +11,7 @@ description: Learn about how to update an application which has been published f
 Updating a HealthVault-integrated application
 =============================================
 
-This guide describes the process of updating an application that has already been deployed using the <a href="go-live" id="PageContent_13986_2">go-live guide</a>.
+This guide describes the process of updating an application that has already been deployed using the <a href="go-live.md" id="PageContent_13986_2">go-live guide</a>.
 
 ### Update steps
 

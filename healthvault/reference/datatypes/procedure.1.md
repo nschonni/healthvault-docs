@@ -46,8 +46,8 @@ anatomic-location|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#c
 secondary-provider|[person](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#person)|0|1|Secondary provider for a medical procedure.|
 
 ## Example
-[!code-xml[Example](../../sample-xml/0A5F9A43-DC88-4E9F-890F-1F9159B76E7B.xml)]
+[!code-xml[Example](../sample-xml/0A5F9A43-DC88-4E9F-890F-1F9159B76E7B.xml)]
 
 ## XSD schema
-[![Download](/healthvault/images/download.png)Download](../../xsd/procedure.1.xsd)
-[!code-xml[XSD schema](../../xsd/procedure.1.xsd)]
+[![Download](/healthvault/images/download.png)Download](../xsd/procedure.1.xsd)
+[!code-xml[XSD schema](../xsd/procedure.1.xsd)]

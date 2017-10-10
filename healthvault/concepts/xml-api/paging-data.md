@@ -18,7 +18,7 @@ Retrieving full and partial results from GetThings
 
 If the result dataset of a **GetThings** request is large, the response may contain some partial things. The response could contain full (complete) data for a subset of the matched things and contain partial data for the rest of the matched things. Partial data includes the item identifier, which can be used to retreive full data for the corresponding thing. Additional **GetThings** requests can then be made to retrieve full data for any remaining partial things.
 
-For more information about **GetThings** requests, see <a href="querying-data" id="PageContent_14099_2">querying data</a>.
+For more information about **GetThings** requests, see <a href="querying-data.md" id="PageContent_14099_2">querying data</a>.
 
 The default number of full items returned in a response is the value of the **MaxFullThingResultsPerGroup** configuration setting, which can be retrieved using the **GetServiceDefinition** request. For the service definition, see the [Method browser](http://go.microsoft.com/?linkid=9810881).
 

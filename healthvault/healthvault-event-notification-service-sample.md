@@ -13,6 +13,6 @@ The sample demonstrates how to use the subscription manager api calls to create,
 <span id="seeAlsoToggle"></span>
 #### Other Resources
 
-<span>[HealthVault Event Notification Service](/healthvault/concepts/xml-api/healthvault-eventing) </span>
+<span>[HealthVault Event Notification Service](/healthvault/concepts/xml-api/subscribing-to-events) </span>
 
 <span>Show:</span> Inherited Protected

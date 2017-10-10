@@ -363,12 +363,9 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>
-                                                    <a href="https://www.github.com/microsoft/hvmobile_vnext">Get the iOS SDK</a>
-                                                </h3>
-                                                <p>
-                                                    <a href="https://github.com/Microsoft/HVMobile_VNext/tree/master/Samples">Get samples</a>
-                                                </p>
+                                                <h3><a href="https://github.com/Microsoft/healthvault-ios-sdk">Get the iOS SDK</a></h3>
+						<p><a href="https://cocoapods.org/pods/HealthVault">View in CocoaPods</a></p>
+                                                <p><a href="https://github.com/Microsoft/healthvault-samples/tree/master/iOS">Get samples</a></p>
                                             </div>
                                         </div>
                                     </div>

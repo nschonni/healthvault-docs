@@ -12,7 +12,7 @@ description: Learn about HealthVault's data storage architecture and key concept
 
 HealthVault stores most data in XML-based items called Things. Things are strongly typed according to the [thing type schema](/healthvault/concepts/data/thing-types). 
 
-Data types like [PersonalImage](personal-images) aren't well represented in XML, however, so HealthVault uses data blobs to store the actual images.  
+Data types like [PersonalImage](personal-images.md) aren't well represented in XML, however, so HealthVault uses data blobs to store the actual images.  
 
 ## Data types
 Learn more about how HealthVault stores data. 

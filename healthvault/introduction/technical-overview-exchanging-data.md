@@ -41,8 +41,8 @@ Alternately, an application can use receive notifications of changes through the
 
 #### Technical overview
 
--   <a href="technical-overview" id="RightRailLinkListSection_14123_7">1. Terminology</a>
--   <a href="technical-overview-applications" id="RightRailLinkListSection_14123_18">2. Applications</a>
--   <a href="technical-overview-permissions" id="RightRailLinkListSection_14123_8">3. Permissions</a>
--   <a href="technical-overview-connectivity" id="RightRailLinkListSection_14123_9">4. Connectivity</a>
--   <a href="technical-overview-exchanging-data" id="RightRailLinkListSection_14123_10">5. Exchanging data</a>
+-   <a href="technical-overview.md" id="RightRailLinkListSection_14123_7">1. Terminology</a>
+-   <a href="technical-overview-applications.md" id="RightRailLinkListSection_14123_18">2. Applications</a>
+-   <a href="technical-overview-permissions.md" id="RightRailLinkListSection_14123_8">3. Permissions</a>
+-   <a href="technical-overview-connectivity.md" id="RightRailLinkListSection_14123_9">4. Connectivity</a>
+-   <a href="technical-overview-exchanging-data.md" id="RightRailLinkListSection_14123_10">5. Exchanging data</a>

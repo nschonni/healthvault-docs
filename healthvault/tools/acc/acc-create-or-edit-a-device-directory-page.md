@@ -12,7 +12,7 @@ ms.prod: healthvault
 Once your device directory listed under the directories on the Home tab, you can edit the directory page accordingly. 
 
 > [!NOTE] 
-> The device directory page supports all of the same configuration options as the [Create or Edit an application directory page](acc-create-or-edit-an-application-directory-page). This article describes only the options which are specific to devices. 
+> The device directory page supports all of the same configuration options as the [Create or Edit an application directory page](acc-create-or-edit-an-application-directory-page.md). This article describes only the options which are specific to devices. 
 
 # Categories
 * Device types – You can choose the type of the device here. For example, Blood Pressure Monitor or ECG Device.

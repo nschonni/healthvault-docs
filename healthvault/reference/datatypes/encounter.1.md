@@ -48,8 +48,8 @@ location|[address](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#address)|0|1|The
 consent-granted|boolean|0|1|Boolean consent for medical encounter.|
 
 ## Example
-[!code-xml[Example](../../sample-xml/3D4BDF01-1B3E-4AFC-B41C-BD3E641A6DA7.xml)]
+[!code-xml[Example](../sample-xml/3D4BDF01-1B3E-4AFC-B41C-BD3E641A6DA7.xml)]
 
 ## XSD schema
-[![Download](/healthvault/images/download.png)Download](../../xsd/encounter-old.xsd)
-[!code-xml[XSD schema](../../xsd/encounter-old.xsd)]
+[![Download](/healthvault/images/download.png)Download](../xsd/encounter-old.xsd)
+[!code-xml[XSD schema](../xsd/encounter-old.xsd)]
