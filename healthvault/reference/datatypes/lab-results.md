@@ -103,7 +103,7 @@ ordered-by|[Organization](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#Organizat
 > ---|---|---|---|---|---|---
 > measurement|[general-measurement](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#general-measurement)|1|1|The value of the laboratory result.||Contact the HealthVault team to help define this vocabulary.
 > ranges|[test-result-range](#test-result-range)|0|unbounded|Ranges that are associated with this result.|Each test result can contain multiple ranges that are useful to interpret the result value. <br /> Examples include reference range and therapeutic range.|
-> flag|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|0|unbounded|Flag for laboratory results.|Example values are normal, critical, high and low.|[lab-results-flag](xref:HV_d1c10af5-c237-40ed-9a9c-318361bb8a5a)
+> flag|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|0|unbounded|Flag for laboratory results.|Example values are normal, critical, high and low.|[lab-result-flag](xref:HV_d1c10af5-c237-40ed-9a9c-318361bb8a5a)
 >
 >
 

@@ -672,7 +672,7 @@ For instance, a weight-value type is used for the weight thing type as well as t
 > reference-range|[double-range](#double-range)|0|1|The reference range for the laboratory result.||
 > toxic-range|[double-range](#double-range)|0|1|The toxic range for the laboratory result.||
 > text-value|string|0|1|Free form text for laboratory results.||
-> flag|[codable-value](#codable-value)|0|unbounded|Flag for laboratory results.|Example values are normal, critical, high and low.|lab-results-flag
+> flag|[codable-value](#codable-value)|0|unbounded|Flag for laboratory results.|Example values are normal, critical, high and low.|[lab-result-flag](xref:HV_d1c10af5-c237-40ed-9a9c-318361bb8a5a)
 >
 >
 

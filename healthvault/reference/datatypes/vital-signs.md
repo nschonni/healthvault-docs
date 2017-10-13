@@ -71,7 +71,7 @@ position|string|0|1|Position of vital sign.|
 > reference-minimum|double|0|1|Reference minimum value.||
 > reference-maximum|double|0|1|Reference maximum value.||
 > text-value|string|0|1|Free form textual content of result.||
-> flag|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|0|1|Flag for result.||lab-results-flag
+> flag|[codable-value](xref:HV_3e730686-781f-4616-aa0d-817bba8eb141#codable-value)|0|1|Flag for result.||[lab-result-flag](xref:HV_d1c10af5-c237-40ed-9a9c-318361bb8a5a)
 >
 >
 
