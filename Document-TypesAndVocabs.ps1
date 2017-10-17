@@ -4,13 +4,13 @@ PARAM(
     $XsdDir,
     $WebXsdDir,
     $VocabDir,
-    [switch]$Debug,
+    [switch]$Verbose,
     [switch]$Overwrite,
     [switch]$Help
 )
 
 Function Debug($text) {
-    if ($Debug) {
+    if ($Verbose) {
         Write-Host $text
     }
 }
