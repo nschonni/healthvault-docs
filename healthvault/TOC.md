@@ -16,8 +16,6 @@
 ## [Invite Patients](/healthvault/getting-started/invite-patients)
 
 # Scenarios
-## [Remote Monitoring](/healthvault/scenarios/remote-monitoring)
-### [Remote Monitoring Preview APIs](/healthvault/scenarios/remote-monitoring-preview-apis)
 ## [Meaningful Use](/healthvault/scenarios/meaningful-use)
 ## [Emergency Preparedness](/healthvault/scenarios/emergency-preparedness)
 

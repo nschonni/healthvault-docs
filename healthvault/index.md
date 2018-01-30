@@ -96,26 +96,7 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                     <li>
                         <a href="#scenarios">Scenarios</a>
                         <ul id="scenarios" class="cardsC">
-                            <li>
-                                <a href="/healthvault/scenarios/remote-monitoring">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img src="/media/hubs/healthvault/healthvault-scenarios-action.svg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Remote monitoring</h3>
-                                                    <p>Use Action Plans Framework to enable remote monitoring of patients</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
+                             <li>
                                 <a href="/healthvault/scenarios/meaningful-use"><div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -308,46 +289,6 @@ description: Learn how to build connected healthcare apps leveraging HealthVault
                                                 <p>
                                                     <a href="https://www.github.com/microsoft/healthvault-samples/">Get samples</a>
                                                 </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="/media/logos/logo_netstandard.svg" alt="" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>
-                                                    <a href="https://www.nuget.org/packages/Microsoft.HealthVault.Client">Get the Client SDK</a>
-                                                </h3>
-                                                <p><a href="https://www.nuget.org/packages/Microsoft.HealthVault.Web">Get the Web SDK</a></p>
-                                                <p><a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.healthvault">API reference</a></p>
-                                                <p><a href="https://github.com/Microsoft/healthvault-samples/tree/master/dotNETStandard">Get samples</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage">
-                                                    <img src="/media/logos/logo_rest.svg" alt="" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <h3>
-                                                    <a href="https://docs.microsoft.com/rest/healthvault/">Reference</a>
-
-                                                </h3>
                                             </div>
                                         </div>
                                     </div>
