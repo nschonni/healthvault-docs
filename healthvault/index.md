@@ -3,6 +3,7 @@ layout: HubPage
 hide_bc: true
 title: Microsoft HealthVault Documentation
 description: Learn how to build connected healthcare apps leveraging HealthVault. 
+ms.topic: hub-page
 ---
 
 <div id="main" class="v2">
