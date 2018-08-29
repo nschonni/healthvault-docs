@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetMeaningfulUseVDTReportPrivileged"
+    xmlns:this="urn:com.microsoft.wc.methods.GetMeaningfulUseVDTReportPrivileged"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-meaningfuluse="urn:com.microsoft.wc.MeaningfulUse"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETMEANINGFULUSEVDTREPORTPRIVILEGED.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetMeaningfulUseVDTReportPrivileged method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <import
+    namespace="urn:com.microsoft.wc.MeaningfulUse"
+    schemaLocation="Meaningful-Use.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Retrieves Meaningful Use VDT Report for an application.
+            </summary>
+
+            <remarks>
+            </remarks>
+            <method-visibility>Private</method-visibility>
+            <errors>
+                <error id="INVALID_XML">
+                    If the cursor parameter is not in the correct format.
+                </error>
+                <error id="INVALID_APP">
+                    If the application id specified cannot be found.
+                </error>
+            </errors>
+        </documentation>
+    </annotation>
+
+    <!-- GetMeaningfulUseVDTReport - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="application-id" type="wc-types:guid">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The application id that the report data will be retrieved for.
+                            </summary>
+
+                            <remarks>
+                                This method was designed to use by internal tools such as ACC or AAE to
+                                retrieve reports on behalf of application.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="filters" type="wc-meaningfuluse:Filters" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Specifies filters for the report data to be returned.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="delimiter" type="wc-types:string1nw">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The delimiter to use to separate column data.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="max-items-per-page" type="positiveInteger" minOccurs="0" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The maximum number of items to return on a given page.
+                            </summary>
+                            <remarks>
+                                If unspecified, this value will default to MaxMeaningfulUseReportItemsPerRetrieval.
+                                If specified value is larger than the MaxMeaningfulUseReportItemsPerRetrieval value, MaxMeaningfulUseReportItemsPerRetrieval value will be used.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="cursor" type="wc-types:stringnz" minOccurs="0" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                If paging has occurred, this will be passed back in from the original request response
+                                as a key for next retrieval page of items.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

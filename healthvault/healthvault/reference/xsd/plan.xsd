@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:this="urn:com.microsoft.wc.thing.plan" targetNamespace="urn:com.microsoft.wc.thing.plan" xmlns="http://www.w3.org/2001/XMLSchema">
+    <import namespace="urn:com.microsoft.wc.thing.types" schemaLocation="base.xsd" />
+    
+    <annotation>
+        <documentation>
+            <type-id>504d6c08-68f9-4e07-8699-5fb55678f13d</type-id>
+            <type-name>Plan</type-name>
+            <summary>
+                A plan helping a user address a particular aspect of their health.
+            </summary>
+            <remarks>
+                Applications should not interact with this data type directly via GetThings, PutThings, etc.
+                Instead, they should use the ActionPlan methods in the HealthVault REST APIs.
+            </remarks>
+            <effective-date-element>when</effective-date-element>
+            <seealso-thing-type-version-id>6184d61f-4846-4219-b675-b61de85860d1</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>b54a6e00-c1fb-4e22-8694-0a4ae94e8cb6</seealso-thing-type-version-id>
+        </documentation>
+    </annotation>
+
+    <complexType name="plan-objective-list">
+        <annotation>
+            <documentation>
+                <summary>
+                    A list of objectives.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="objective" type="this:plan-objective" minOccurs="1" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A single objective.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="plan-objective">
+        <annotation>
+            <documentation>
+                <summary>
+                    An objective to be achieved by following the plan.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="id" type="t:guid">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The objective identifier.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="name" type="t:stringnznw">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The localized name of the objective.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="description" type="t:stringnznw">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The localized description of the objective.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="state" type="this:plan-objective-state">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The objective state.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="outcomes" type="this:plan-outcome-list" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The outcomes used to quantify progress toward the objective.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="plan-outcome-list">
+        <annotation>
+            <documentation>
+                <summary>
+                    A list of outcomes.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="outcome" type="this:plan-outcome" minOccurs="1" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A single outcome.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="plan-outcome">
+        <annotation>
+            <documentation>
+                <summary>
+                    An outcome used to quantify progress toward an objective.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="name" type="t:stringnznw">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The localized outcome name.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="type" type="this:plan-outcome-type">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The outcome type.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <simpleType name="plan-objective-state">
+        <annotation>
+            <documentation>
+                <summary>
+                    The state of an objective.
+                </summary>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Inactive">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            User is not actively working toward this objective.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Active">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            User is actively working toward this objective.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="plan-outcome-type">
+        <annotation>
+            <documentation>
+                <summary>
+                    The outcome type.
+                </summary>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="StepsPerDay">
+                <annotation>
+                    <documentation>
+                        <summary>
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CaloriesPerDay">
+                <annotation>
+                    <documentation>
+                        <summary>
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ExerciseHoursPerWeek">
+                <annotation>
+                    <documentation>
+                        <summary>
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SleepHoursPerNight">
+                <annotation>
+                    <documentation>
+                        <summary>
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MinutesToFallAsleepPerNight">
+                <annotation>
+                    <documentation>
+                        <summary>
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Other">
+                <annotation>
+                    <documentation>
+                        <summary>
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="plan-category">
+        <annotation>
+            <documentation>
+                <summary>
+                    The category of the plan's focus area.
+                </summary>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Health">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Plan focusing on any health condition.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Sleep">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Plan focusing on getting better sleep.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Activity">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Plan focusing on being more physically active.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Stress">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Plan focusing on managing stress.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="plan-status">
+        <annotation>
+            <documentation>
+                <summary>
+                    The plan status.
+                </summary>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Archived">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            User is no longer actively following the plan.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="InProgress">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            User is actively following the plan.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Recommended">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            User has not started following the plan.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Completed">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            User followed the plan through to completion.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+
+    <element name="plan">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The action plan.
+                    </summary>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="name" type="t:stringnznw">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The localized plan name.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="description" type="t:stringnznw" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The localized plan description.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="status" type="this:plan-status">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The plan status.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="category" type="this:plan-category">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The plan category.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="objectives" type="this:plan-objective-list">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The plan objectives.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

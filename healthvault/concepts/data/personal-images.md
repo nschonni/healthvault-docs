@@ -16,35 +16,35 @@ The PersonalImage type encapsulates the picture that represents the person of a 
 ```cs
 using (Stream imageStream = System.IO.File.OpenRead(imageFileName))
 {
-    HealthRecordItemCollection collection = PersonInfo.SelectedRecord.GetItemsByType(
-            PersonalImage.TypeId,
-            HealthRecordItemSections.All);
+    HealthRecordItemCollection collection = PersonInfo.SelectedRecord.GetItemsByType(
+            PersonalImage.TypeId,
+            HealthRecordItemSections.All);
     
-    PersonalImage image = null;
-    if (collection.Count != 0)
-    {
-        image = collection[0] as PersonalImage;
-        using (Stream currentImageStream = image.ReadImage())
-        {
-            byte[] imageBytes = new byte[currentImageStream.Length];
-            currentImageStream.Read( imageBytes, 0, (int)currentImageStream.Length);
-            using (FileStream outputImage = System.IO.File.OpenWrite(outputFileName))
-            {
-                    outputImage.Write(imageBytes, 0, imageBytes.Length);
-            }        
+    PersonalImage image = null;
+    if (collection.Count != 0)
+    {
+        image = collection[0] as PersonalImage;
+        using (Stream currentImageStream = image.ReadImage())
+        {
+            byte[] imageBytes = new byte[currentImageStream.Length];
+            currentImageStream.Read( imageBytes, 0, (int)currentImageStream.Length);
+            using (FileStream outputImage = System.IO.File.OpenWrite(outputFileName))
+            {
+                    outputImage.Write(imageBytes, 0, imageBytes.Length);
+            }        
         }   
     }    
     if (image == null)
-    {        
+    {        
         image = new PersonalImage();
-        image.WriteImage(imageStream, "image/jpg");
-        PersonInfo.SelectedRecord.NewItem(image);
-    }
-    else
-    {
-        image.WriteImage(imageStream, "image/jpg");
-        PersonInfo.SelectedRecord.UpdateItem(image);
-    }
+        image.WriteImage(imageStream, "image/jpg");
+        PersonInfo.SelectedRecord.NewItem(image);
+    }
+    else
+    {
+        image.WriteImage(imageStream, "image/jpg");
+        PersonInfo.SelectedRecord.UpdateItem(image);
+    }
 }
 ```
 

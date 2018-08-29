@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetDataConnectionsPrivileged"
+    xmlns:this="urn:com.microsoft.wc.methods.GetDataConnectionsPrivileged"
+    xmlns:wc-dataConnection="urn:com.microsoft.wc.DataConnection"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+        METHOD-GetDataConnectionsPrivileged.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetDataConnectionsPrivileged method
+    -->
+
+  <import namespace="urn:com.microsoft.wc.DataConnection" schemaLocation="data-connection.xsd" />
+  <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd" />
+  
+  <annotation>
+    <documentation>
+      <summary>
+        Get connection data for a list of data sources.
+      </summary>
+      <method-visibility>Private</method-visibility>
+      <errors>
+        <error id="INVALID_SOURCE_ID">
+            Source is either not active or not a data adapter, cannot create new connection.
+        </error>
+      </errors>        
+    </documentation>
+  </annotation>
+  
+  
+  <!-- GetDataConnectionsPrivileged -->
+    
+  <simpleType name="DataConnectionResultSections">
+        <annotation>
+            <documentation>
+                <summary>
+                    Get data connection result sections.
+                </summary>
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="None">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The response will contain {connection-id, source-id}.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Core">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Core connection data - {date-created, date-updated, status}.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Credentials">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Credentials for the connection.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Properties">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Properties for the connection.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="RefreshTaskInfo">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Refresh Task info for the connection.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="RefreshHistory">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Refresh history for the connection.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </enumeration>            
+        </restriction>
+  </simpleType>
+  
+  <complexType name="ResultSections">
+        <annotation>
+            <documentation>
+                <summary>
+                    Contains a list of all get data connection result sections.
+                </summary>                                
+            </documentation>
+        </annotation>
+        <sequence>        
+            <element name="section" type="this:DataConnectionResultSections" minOccurs="0" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Get data connection result section.
+                        </summary>                        
+                    </documentation>
+                </annotation>
+            </element>                       
+        </sequence>
+  </complexType>
+  
+  
+  <element name="info">
+    <complexType>
+      <annotation>
+        <documentation>
+          <summary>
+            The element of the request that contains the method
+            specific parameters.
+          </summary>
+
+          <remarks>
+            All requests contain the info element to pass parameters
+            that are specific to each method. If the method does not
+            define an info element, the method does not take any
+            parameters.
+          </remarks>
+        </documentation>
+      </annotation>
+      <sequence>
+        <element name="source-id-list" type="wc-types:guids" minOccurs="0" maxOccurs="1">
+          <annotation>
+            <documentation>
+              <summary>
+                Data source id list. 
+                If this list is empty, connection data for all the sources 
+                authorized by the user {personId, recordId} is returned.
+              </summary>                        
+            </documentation>
+          </annotation>
+        </element>
+        <element name="result-sections" type="this:ResultSections" minOccurs="1" maxOccurs="1">
+          <annotation>
+            <documentation>
+              <summary>
+                Data connection result sections
+              </summary>                        
+            </documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

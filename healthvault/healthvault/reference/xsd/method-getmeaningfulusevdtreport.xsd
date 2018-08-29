@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetMeaningfulUseVDTReport"
+    xmlns:this="urn:com.microsoft.wc.methods.GetMeaningfulUseVDTReport"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-meaningfuluse="urn:com.microsoft.wc.MeaningfulUse"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+  <!--
+
+        METHOD-GETMEANINGFULUSEVDTREPORT.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetMeaningfulUseVDTReport method
+
+    -->
+
+  <import
+      namespace="urn:com.microsoft.wc.types"
+      schemaLocation="types.xsd" />
+
+    <import
+    namespace="urn:com.microsoft.wc.MeaningfulUse"
+    schemaLocation="Meaningful-Use.xsd" />
+
+  <annotation>
+    <documentation>
+      <summary>
+        Gets the Meaningful Use VDT Report for an application.
+      </summary>
+
+      <remarks>
+          The View, Download, and Transmit (VDT) Report gives applications information to determine if they meet the Meaningful Use Stage 2 measure
+          for patients taking action on their health information. For ambulatory settings, the measure states
+          "More than 5 percent of all unique patients seen by the EP during the EHR reporting period (or their authorized representatives)
+          view, download or transmit to a third party their health information". For inpatient settings, the measure states
+          "More than 5 percent of all patients who are discharged from the Inpatient or emergency department (POS 21 or 23) of an eligible hospital
+          or CAH (or their authorized representative) view, download or transmit to a third party their information during the EHR reporting period."
+          (For more regarding this measure see "View, download, and transmit to a 3rd party" in the Meaningful Use Stage 2 Reference Grid found here: https://www.healthit.gov/policy-researchers-implementers/meaningful-use-stage-2.)
+
+          HealthVault returns an entry in the report for each patient to which the data source has sent a CCDA document and
+          where the patient has viewed, downloaded, or transmitted to a 3rd party health information from the health record.
+          The entries in the report are filtered such that only those CCDAs having an event date (which is the visit date for ambulatory settings,
+          and the discharge date for inpatient settings) within the specified reporting period filter, will lead to the receiving patient being included in the report.
+          The application can use the patient identifiers in the report to help calculate the percentage value of the measure.
+
+          Note that HealthVault does not know the full list of patients seen by the provider. To calculate the percentage for this measure,
+          the application must take into account the total number of unique patients seen or discharged within the desired reporting period.
+      </remarks>
+      <method-visibility>Public</method-visibility>
+      <errors>
+          <error id="INVALID_XML">
+            If the cursor parameter is not in the correct format.
+          </error>
+          <error id="INVALID_APP">
+            If the application id specified cannot be found.
+          </error>
+      </errors>
+      <related-links>
+          <related-link>
+              <text>
+                Meaningful Use with HealthVault
+              </text>
+              <link>
+                https://go.microsoft.com/fwlink/?LinkId=513254
+              </link>
+          </related-link>
+      </related-links>
+    </documentation>
+  </annotation>
+
+  <!-- GetMeaningfulUseVDTReport - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  
+  <element name="info">
+    <complexType>
+      <annotation>
+        <documentation>
+          <summary>
+            The element of the request that contains the method
+            specific parameters.
+          </summary>
+
+          <remarks>
+              All requests contain the info element to pass parameters
+              that are specific to each method. If the method does not
+              define an info element, the method does not take any
+              parameters.
+          </remarks>
+        </documentation>
+      </annotation>
+      <sequence>
+        <element name="filters" type="wc-meaningfuluse:Filters" >
+          <annotation>
+            <documentation>
+              <summary>
+                Specifies filters for the report data to be returned.
+              </summary>
+              <remarks>
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="max-items-per-page" type="positiveInteger" minOccurs="0" >
+          <annotation>
+            <documentation>
+              <summary>
+                The maximum number of items to return on a given page.
+              </summary>
+              <remarks>
+                  If unspecified, this value will default to MaxMeaningfulUseReportItemsPerRetrieval.
+                  If specified value is larger than the MaxMeaningfulUseReportItemsPerRetrieval value, MaxMeaningfulUseReportItemsPerRetrieval value will be used.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="cursor" type="wc-types:stringnz" minOccurs="0" >
+          <annotation>
+            <documentation>
+              <summary>
+                If paging has occurred, this will be passed back in from the original request response
+                as a key for next retrieval page of items.
+              </summary>
+              <remarks>
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

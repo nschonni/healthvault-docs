@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetThingOperatorHistory"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetThingOperatorHistory"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-app="urn:com.microsoft.wc.application"
+    xmlns:wc-person="urn:com.microsoft.wc.person"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+    METHOD-GETTHINGOPERATOR.XSD
+    Microsoft HealthVault
+
+    Platform API: Info schema for GetThingOperatorHistory method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.application"
+        schemaLocation="application-configuration.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.person"
+        schemaLocation="person-configuration.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- info - - - - - -  - - - - - - - - - - - - - - -->
+
+    <complexType name="Applications">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="application" type ="wc-app:App"
+                minOccurs="0" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+        </sequence>
+    </complexType>
+
+    <complexType name="PartialPersonInfos">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="partial-person-info"
+                type="wc-person:PartialPersonInfo"
+                minOccurs ="0" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+        </sequence>
+    </complexType>
+
+    <complexType name="SectionResult">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="partial-person-infos"
+                type="this:PartialPersonInfos"
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+
+            <element name="applications"
+                type="this:Applications"
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="section-result"
+                    type="this:SectionResult"
+                    minOccurs="1" maxOccurs="unbounded" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns:this="urn:com.microsoft.wc.thing.dietary-intake" targetNamespace="urn:com.microsoft.wc.thing.dietary-intake" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="urn:com.microsoft.wc.thing.types" schemaLocation="base.xsd" />
+  <import namespace="urn:com.microsoft.wc.dates" schemaLocation="dates.xsd" />
+
+  <annotation>
+    <documentation>
+      <type-id>089646a6-7e25-4495-ad15-3e28d4c1a71d</type-id>
+      <type-name>Food and drink</type-name>
+      <summary>
+        The amount of dietary nutrients and minerals consumed.
+      </summary>
+      <seealso-thing-type-version-id>9c29c6b9-f40e-44ff-b24e-fba6f3074638</seealso-thing-type-version-id>
+      <seealso-thing-type-version-id>074e122a-335a-4a47-a63d-00a8f3e79e60</seealso-thing-type-version-id>
+      <effective-date-element>when</effective-date-element>
+    </documentation>
+  </annotation>
+
+  <complexType name="food-energy-value">
+    <sequence>
+      <element name="calories" type="t:nonNegativeDouble">
+        <annotation>
+          <documentation>
+            <summary>
+              The amount of calories consumed.
+            </summary>
+            <remarks>
+              Calories are measured in kilocalories (kCal).
+            </remarks>
+          </documentation>
+        </annotation>
+      </element>
+      <element name="display" type="t:display-value" minOccurs="0">
+        <annotation>
+          <documentation>
+            <summary>
+              A numeric value used for display purposes
+              and tagged with arbitrary units.
+            </summary>
+            <remarks>
+              The display value should be set whenever data is taken
+              directly from the user through UI and it should be
+              used to show data to the user when available.
+            </remarks>
+          </documentation>
+        </annotation>        
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="nutrition-fact">
+    <sequence>
+      <element name="name" type="t:codable-value">
+        <annotation>
+          <documentation>
+            <summary>
+              The name of the nutrient consumed.
+            </summary>
+            <remarks>
+              Example: calcium.
+            </remarks>
+          </documentation>
+        </annotation>
+      </element>
+      <element name="fact" type="t:general-measurement" minOccurs="0">
+        <annotation>
+          <documentation>
+            <summary>
+              The amount of nutrient consumed.
+            </summary>
+            <remarks>
+              Examples include 30 cc, 500 mg, 15 liters, 30 inches, etc.
+            </remarks>
+          </documentation>
+        </annotation>        
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="additional-nutrition-facts">
+    <sequence>
+      <element name="nutrition-fact" type="this:nutrition-fact" minOccurs="1" maxOccurs="unbounded">
+        <annotation>
+          <documentation>
+            <summary>
+              The set of nutrient consumed.
+            </summary>
+          </documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+
+  <complexType name="DietaryIntake">
+      <annotation>
+        <documentation>
+          <summary>
+            The amount of dietary nutrients and minerals consumed.
+          </summary>
+        </documentation>
+      </annotation>
+      <sequence>
+        <element name="food-item" type="t:codable-value">
+          <annotation>
+            <documentation>
+              <summary>
+                Represents the food item that was eaten.
+              </summary>
+              <preferred-vocabulary>usda.food-description.24</preferred-vocabulary>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="serving-size" type="t:codable-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                Represents a serving size.
+              </summary>
+              <remarks>
+                In the USDA food vocab a serving size is defined within the context of a particular food and represents how a food is commonly consumed.
+                For example: cups of strawberries, number of dates, number of table spoons or sticks of butter.
+              </remarks>              
+            </documentation>
+          </annotation>
+        </element>
+        <element name="servings-consumed" type="t:nonNegativeDouble" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                A number representing the number of servings consumed.
+              </summary>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="meal" type="t:codable-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                A textual description of a meal.
+              </summary>
+              <preferred-vocabulary>dietary-intake-meals</preferred-vocabulary>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="when" type="d:date-time" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The date time of consumption.
+              </summary>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="energy" type="this:food-energy-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of food energy consumed.
+              </summary>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="energy-from-fat" type="this:food-energy-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of food energy consumed that came from fat.
+              </summary>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="total-fat" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The total amount of fat consumed.
+              </summary>
+              <remarks>
+                Fat is commonly displayed in grams (g) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="saturated-fat" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of saturated fat consumed.
+              </summary>
+              <remarks>
+                Fat is commonly displayed in grams (g) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="trans-fat" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of trans fat consumed.
+              </summary>
+              <remarks>
+                Fat is commonly displayed in grams (g) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="monounsaturated-fat" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of mono unsaturated fat consumed.
+              </summary>
+              <remarks>
+                Fat is commonly displayed in grams (g) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="polyunsaturated-fat" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of poly unsaturated fat consumed.
+              </summary>
+              <remarks>
+                Fat is commonly displayed in grams (g) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="protein" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of protein consumed.
+              </summary>
+              <remarks>
+                Protein is commonly displayed in grams (g) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="carbohydrates" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of carbohydrates consumed.
+              </summary>
+              <remarks>
+                Carbohydrates are commonly displayed in grams (g) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="dietary-fiber" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of dietary fiber consumed.
+              </summary>
+              <remarks>
+                Dietary fiber is commonly displayed in grams (g) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="sugars" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The total amount of sugars consumed.
+              </summary>
+              <remarks>
+                Suger is commonly displayed in grams (g) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="sodium" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of sodium consumed.
+              </summary>
+              <remarks>
+                Sodium is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="cholesterol" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of cholesterol consumed.
+              </summary>
+              <remarks>
+                Cholesterol is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="calcium" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of calcium consumed.
+              </summary>
+              <remarks>
+                Calcium is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="iron" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of iron consumed.
+              </summary>
+              <remarks>
+                Iron is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="magnesium" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of magnesium consumed.
+              </summary>
+              <remarks>
+                Magnesium is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="phosphorus" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of phosphorus consumed.
+              </summary>
+              <remarks>
+                Phosphorus is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="potassium" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of potassium consumed.
+              </summary>
+              <remarks>
+                Potassium is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="zinc" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of zinc consumed.
+              </summary>
+              <remarks>
+                Zinc is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="vitamin-A-RAE" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                This value is the retinol activity equivalent (RAE) weight of vitamin A consumed.
+              </summary>
+              <remarks>
+                Vitamin A-RAE is commonly displayed in micrograms RAE in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="vitamin-E" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of vitamin E consumed.
+              </summary>
+              <remarks>
+                Vitamin E is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="vitamin-D" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of vitamin D consumed.
+              </summary>
+              <remarks>
+                Vitamin D is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="vitamin-C" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of vitamin C consumed.
+              </summary>
+              <remarks>
+                Vitamin C is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="thiamin" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of thiamin consumed.
+              </summary>
+              <remarks>
+                Thiamin is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="riboflavin" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of riboflavin consumed.
+              </summary>
+              <remarks>
+                Riboflavin is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="niacin" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of niacin consumed.
+              </summary>
+              <remarks>
+                Niacin is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="vitamin-B-6" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of vitamin B-6 consumed.
+              </summary>
+              <remarks>
+                Vitamin B-6 is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="folate-DFE" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                This value is the dietary folate equivalent (DFE) of Folate consumed.
+              </summary>
+              <remarks>
+                Folate is commonly displayed in micrograms DFE in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="vitamin-B-12" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of vitamin B-12 consumed.
+              </summary>
+              <remarks>
+                Vitamin B-12 is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="vitamin-K" type="t:weight-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The amount of vitamin K consumed.
+              </summary>
+              <remarks>
+                Vitamin K is commonly displayed in milligrams (mg) in UI.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="additional-nutrition-facts" type="this:additional-nutrition-facts" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                Allows specifying additional nutritional fact data.
+              </summary>
+              <remarks>
+                For instance, this could contain the amount of caffeine, or the amount of Omega-3 fatty acids consumed.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+    
+    <element name="dietary-intake" type="this:DietaryIntake">
+      <annotation>
+        <documentation>
+          <summary>
+            The amount of dietary nutrients and minerals consumed.
+          </summary>
+        </documentation>
+      </annotation>
+    </element>
+</schema>

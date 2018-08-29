@@ -45,9 +45,9 @@ As mentioned earlier, applications have to determine what kind of access a recor
 ```cs
 HealthRecordItemTypePermission SelectRecordQueryPermission(Guid typeId)
 {
-        List<Guid> items = new List<Guid>();
-        items.Add(typeId);
-        return PersonInfo.SelectedRecord.QueryPermissions(items)[0];
+        List<Guid> items = new List<Guid>();
+        items.Add(typeId);
+        return PersonInfo.SelectedRecord.QueryPermissions(items)[0];
 } 
 ```
 and then called with this code:

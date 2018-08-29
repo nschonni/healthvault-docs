@@ -113,7 +113,7 @@ The following table lists the XPath locations of these fields within CCDA docume
 </tr>
 <tr class="even">
 <td><p>Visit date (ambulatory settings)</p></td>
-<td><p>/ClinicalDocument/documentationOf/serviceEvent[@classCode='PCPR']/effectiveTime&quot;</p></td>
+<td><p>/ClinicalDocument/documentationOf/serviceEvent[<xref href="classCode=" data-throw-if-not-resolved="False" data-raw-source="@classCode="></xref>&#39;PCPR&#39;]/effectiveTime&quot;</p></td>
 </tr>
 <tr class="odd">
 <td><p>Discharge date (inpatient settings)</p></td>
@@ -173,40 +173,40 @@ HealthVault CCDA thing with extension overrides
 
 ```xml
 <info>
-  <thing>
-    <type-id>9c48a2b8-952c-4f5a-935d-f3292326bf54</type-id>
-    <data-xml>
-      <ClinicalDocument
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xmlns="urn:hl7-org:v3"
-          xmlns:cda="urn:hl7-org:v3"
-           xmlns:sdtc="urn:hl7-org:sdtc">
-       ......
-       </ClinicalDocument>
-       <common>
-         <extension source="hv-meaningfuluse">
-           <event-date>2013-09-10T18:12:54Z</event-date>
-           <patient-id>TestPatientId</patient-id>
-         </extension>
-       </common>
-     </data-xml>
-   </thing>
+  <thing>
+    <type-id>9c48a2b8-952c-4f5a-935d-f3292326bf54</type-id>
+    <data-xml>
+      <ClinicalDocument
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="urn:hl7-org:v3"
+          xmlns:cda="urn:hl7-org:v3"
+           xmlns:sdtc="urn:hl7-org:sdtc">
+       ......
+       </ClinicalDocument>
+       <common>
+         <extension source="hv-meaningfuluse">
+           <event-date>2013-09-10T18:12:54Z</event-date>
+           <patient-id>TestPatientId</patient-id>
+         </extension>
+       </common>
+     </data-xml>
+   </thing>
  </info> 
  ```
 The following is a code sample demonstrating how to specify the event date and patient id thing extension overrides in the HealthVault .NET SDK:
 
 ```cs
 HealthRecordItem ccda = new HealthRecordItem(
-        new Guid("9c48a2b8-952c-4f5a-935d-f3292326bf54"),
-         ccdaDocumentData);
+        new Guid("9c48a2b8-952c-4f5a-935d-f3292326bf54"),
+         ccdaDocumentData);
      StringBuilder stringBuilder = new StringBuilder(150);
      string extSource = "hv-meaningfuluse";
      using (XmlWriter writer = XmlWriter.Create(stringBuilder, new XmlWriterSettings() { OmitXmlDeclaration=true }))
      {    
          writer.WriteStartElement("extension");
-         writer.WriteAttributeString("source", extSource);
-         writer.WriteElementString("event-date", "2013-10-30T18:12:54Z");
-         writer.WriteElementString("patient-id", "12345678");    
+         writer.WriteAttributeString("source", extSource);
+         writer.WriteElementString("event-date", "2013-10-30T18:12:54Z");
+         writer.WriteElementString("patient-id", "12345678");    
          writer.WriteEndElement();
      }
      HealthRecordItemExtension ext = new HealthRecordItemExtension(extSource);
@@ -328,26 +328,26 @@ The following is an XML snippet of a request to HealthVault for the VDT report.
 
 ```xml
 <info>
-  <filters>
-    <reporting-period>
-      <min-date>2013-09-11T18:50:49.1216167Z</min-date>
-      <max-date>2013-09-15T18:50:49.1216167Z</max-date>
-    </reporting-period>
-  </filters>
+  <filters>
+    <reporting-period>
+      <min-date>2013-09-11T18:50:49.1216167Z</min-date>
+      <max-date>2013-09-15T18:50:49.1216167Z</max-date>
+    </reporting-period>
+  </filters>
 </info> 
 ```
 The following is an XML snippet of the response from HealthVault with the VDT report.
 
 ```xml
 <wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.GetMeaningfulUseVDTReport">
-  <sources>
-    <source id="AppId">
-      <patient-activities>
-        <activity patient-id="X" />
-        ....
-      </patient-activities>
-    </source>
-  </sources>
+  <sources>
+    <source id="AppId">
+      <patient-activities>
+        <activity patient-id="X" />
+        ....
+      </patient-activities>
+    </source>
+  </sources>
 </wc:info> 
 ```
 A code snippet demonstrating how to retrieve the report when using the HealthVault .NET SDK follows.

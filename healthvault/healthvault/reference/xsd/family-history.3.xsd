@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<schema xmlns:this="urn:com.microsoft.wc.thing.family-history" xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com.microsoft.wc.thing.family-history">
+    <import namespace="urn:com.microsoft.wc.thing.types" schemaLocation="base.xsd"/>
+    <import namespace="urn:com.microsoft.wc.dates" schemaLocation="dates.xsd"/>
+    <annotation>
+        <documentation>
+            <type-id>4a04fcc8-19c1-4d59-a8c7-2031a03f21de</type-id>
+            <type-name>Family history</type-name>
+            <version>3</version>
+            <wrapper-class-name>FamilyHistory</wrapper-class-name>
+            <wrapper-class-fwlink>136125</wrapper-class-fwlink>
+            <sample-xml-fwlink />
+            <data-type-guide-fwlink />
+            <summary>
+                A condition of a relative.
+            </summary>
+            <remarks>
+                Stores a condition that a relative of the record-owner has.
+            </remarks>
+            <seealso-thing-type-version-id>adaf49ad-8e10-49f8-9783-174819e97051</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>7ea7a1f9-880b-4bd4-b593-f5660f20eda8</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>9c48a2b8-952c-4f5a-935d-f3292326bf54</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>1e1ccbfc-a55d-4d91-8940-fa2fbf73c195</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>6705549b-0e3d-474e-bfa7-8197ddd6786a</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>cc23422c-4fba-4a23-b52a-c01d6cd53fdf</seealso-thing-type-version-id>
+        </documentation>
+    </annotation>
+    <complexType name="FamilyHistoryRelative">
+        <annotation>
+            <documentation>
+                <summary>
+                    Information describing a relative.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="relationship" type="t:codable-value">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The relationship of this person to the record owner.
+                        </summary>
+                        <preferred-vocabulary>personal-relationship</preferred-vocabulary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="relative-name" type="t:person" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The name and other information about the relative.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="date-of-birth" type="d:approx-date" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The date of birth for the relative.
+                        </summary>
+                        <remark>
+                        Use with condition/onset-date to determine age of diagnosis. 
+                        </remark>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="date-of-death" type="d:approx-date" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The date of death for the relative. 
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="region-of-origin" type="t:codable-value" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The region of origin the relative. 
+                        </summary>
+                        <preferred-vocabulary>family-history-region-of-origin</preferred-vocabulary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <element name="family-history">
+        <annotation>
+            <documentation>
+                <summary>
+                        A condition of a relative.
+                </summary>
+                <remarks>
+                        Stores a condition that a relative of the record-owner has.
+                        
+                        To create a family tree, use the relationship-types vocabulary
+                        to code both directions of the parent/child relationship between
+                        one family member and another. These codes are stored as
+                        related items for both parent and child data instances.
+
+                        The flexibity of having both condition and relative be optional
+                        allows applications to give the users the ability to just put in
+                        the details they know at the time they want to create the tree.
+                        If they just know the name of the relative, or a particular condition
+                        that’s all it takes to get a new instance started.
+                </remarks>
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="condition" type="t:condition" minOccurs="0" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The condition for the relative.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="relative" type="this:FamilyHistoryRelative" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Information about the relative with this condition.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

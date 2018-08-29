@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetAuthorizedApplicationsForPerson"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETAUTHORIZEDAPPLICATIONSFORPERSON.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetAuthorizedApplicationsForPerson method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Schema for GetAuthorizedApplicationsForPerson method request.
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- GetAuthorizedApplicationsForPerson - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="application-id" type="wc-types:guid" 
+                    minOccurs ="0" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Optional list of application ids. If present, the list of applications that the user is authorized
+                                to use is limited to authorized applications on this list. If this list is absent, all applications 
+                                that the person is authorized to use are returned.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

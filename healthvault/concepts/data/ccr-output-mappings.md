@@ -29,13 +29,13 @@ Date Types
 
 ### date : ExactDateTime
 
- 
+ 
 | HealthVault                                 | CCR                                                  | Conversion |
 |---------------------------------------------|------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">date</span> | <span style="FONT-WEIGHT: bold">ExactDateTime</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |     |                    |
 |-----|-----|--------------------|
 | y   | .   | ConvertTo\_ISO8601 |
@@ -46,13 +46,13 @@ Date Types
 
 ### time : ExactDateTime
 
- 
+ 
 | HealthVault                                 | CCR                                                  | Conversion |
 |---------------------------------------------|------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">time</span> | <span style="FONT-WEIGHT: bold">ExactDateTime</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |     |                    |
 |-----|-----|--------------------|
 | h   | .   | ConvertTo\_ISO8601 |
@@ -63,13 +63,13 @@ Date Types
 
 ### approx-date : ExactDateTime
 
- 
+ 
 | HealthVault                                        | CCR                                                  | Conversion |
 |----------------------------------------------------|------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">approx-date</span> | <span style="FONT-WEIGHT: bold">ExactDateTime</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |     |                    |
 |-----|-----|--------------------|
 | y   | .   | ConvertTo\_ISO8601 |
@@ -80,13 +80,13 @@ Date Types
 
 ### date-time : ExactDateTime
 
- 
+ 
 | HealthVault                                      | CCR                                                  | Conversion |
 |--------------------------------------------------|------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">date-time</span> | <span style="FONT-WEIGHT: bold">ExactDateTime</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |        |     |                          |
 |--------|-----|--------------------------|
 | ./date | .   | date =&gt; ExactDateTime |
@@ -97,13 +97,13 @@ Date Types
 
 ### StructuredApproxDate : ExactDateTime
 
- 
+ 
 | HealthVault                                                 | CCR                                                  | Conversion |
 |-------------------------------------------------------------|------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">StructuredApproxDate</span> | <span style="FONT-WEIGHT: bold">ExactDateTime</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |        |     |                                 |
 |--------|-----|---------------------------------|
 | ./date | .   | approx-date =&gt; ExactDateTime |
@@ -114,14 +114,14 @@ Date Types
 
 ### approx-date-time : ExactDateTime
 
- 
+ 
 | HealthVault                                             | CCR                                                  | Conversion |
 |---------------------------------------------------------|------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">approx-date-time</span> | <span style="FONT-WEIGHT: bold">ExactDateTime</span> |            |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./structured)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |              |                 |                                          |
 |--------------|-----------------|------------------------------------------|
 | ./structured | ./ExactDateTime | StructuredApproxDate =&gt; ExactDateTime |
@@ -130,21 +130,21 @@ Date Types
 
 ### approx-date-time : DateTimeType
 
- 
+ 
 | HealthVault                                             | CCR                                                 | Conversion |
 |---------------------------------------------------------|-----------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">approx-date-time</span> | <span style="FONT-WEIGHT: bold">DateTimeType</span> |            |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./structured)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |              |                 |                                          |
 |--------------|-----------------|------------------------------------------|
 | ./structured | ./ExactDateTime | StructuredApproxDate =&gt; ExactDateTime |
 
 <span style="FONT-WEIGHT: bold">Else If Exists</span>(./descriptive)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |                            |     |
 |---------------|----------------------------|-----|
 | ./descriptive | ./ApproximateDateTime/Text |     |
@@ -153,13 +153,13 @@ Date Types
 
 ### date : DateTimeType
 
- 
+ 
 | HealthVault                                 | CCR                                                 | Conversion |
 |---------------------------------------------|-----------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">date</span> | <span style="FONT-WEIGHT: bold">DateTimeType</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                 |                          |
 |-----|-----------------|--------------------------|
 | .   | ./ExactDateTime | date =&gt; ExactDateTime |
@@ -168,13 +168,13 @@ Date Types
 
 ### date-time : DateTimeType
 
- 
+ 
 | HealthVault                                      | CCR                                                 | Conversion |
 |--------------------------------------------------|-----------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">date-time</span> | <span style="FONT-WEIGHT: bold">DateTimeType</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                 |                               |
 |-----|-----------------|-------------------------------|
 | .   | ./ExactDateTime | date-time =&gt; ExactDateTime |
@@ -186,13 +186,13 @@ Coded Values
 
 ### coded-value : CodeType
 
- 
+ 
 | HealthVault                                        | CCR                                             | Conversion |
 |----------------------------------------------------|-------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">coded-value</span> | <span style="FONT-WEIGHT: bold">CodeType</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |           |                                                                           |     |
 |-----------|---------------------------------------------------------------------------|-----|
 | ./value   | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Value</span>        |     |
@@ -203,20 +203,20 @@ Coded Values
 
 ### codable-value : CodedDescriptionType
 
- 
+ 
 | HealthVault                                          | CCR                                                         | Conversion |
 |------------------------------------------------------|-------------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">codable-value</span> | <span style="FONT-WEIGHT: bold">CodedDescriptionType</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |        |                                                                   |     |
 |--------|-------------------------------------------------------------------|-----|
 | ./text | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Text</span> |     |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./code)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |        |     |
 |-----|--------|-----|
 | .   | ./Code |     |
@@ -225,20 +225,20 @@ Coded Values
 
 ### codable-value : MeasureType
 
- 
+ 
 | HealthVault                                          | CCR                                                | Conversion |
 |------------------------------------------------------|----------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">codable-value</span> | <span style="FONT-WEIGHT: bold">MeasureType</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |        |              |     |
 |--------|--------------|-----|
 | ./text | ./Units/Unit |     |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./units/code)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |              |                            |
 |-----|--------------|----------------------------|
 | .   | ./Units/Code | coded-value =&gt; CodeType |
@@ -250,13 +250,13 @@ Measurements
 
 ### structured-measurement : MeasureType or MeasureGroup
 
- 
+ 
 | HealthVault                                                   | CCR                                                                | Conversion |
 |---------------------------------------------------------------|--------------------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">structured-measurement</span> | <span style="FONT-WEIGHT: bold">MeasureType or MeasureGroup</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |              |                                                                    |     |
 |--------------|--------------------------------------------------------------------|-----|
 | ./value      | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Value</span> |     |
@@ -264,7 +264,7 @@ Measurements
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./units/code)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |              |     |
 |-----|--------------|-----|
 | .   | ./Units/Code |     |
@@ -273,21 +273,21 @@ Measurements
 
 ### general-measurement : MeasureType or MeasureGroup
 
- 
+ 
 | HealthVault                                                | CCR                                                                | Conversion |
 |------------------------------------------------------------|--------------------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">general-measurement</span> | <span style="FONT-WEIGHT: bold">MeasureType or MeasureGroup</span> |            |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./structured)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |              |     |                                          |
 |--------------|-----|------------------------------------------|
 | ./structured | .   | structured-measurement =&gt; MeasureType |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |           |                                                                    |     |
 |-----------|--------------------------------------------------------------------|-----|
 | ./display | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Value</span> |     |
@@ -296,13 +296,13 @@ Measurements
 
 ### display-value : MeasureType or MeasureGroup
 
- 
+ 
 | HealthVault                                          | CCR                                                                | Conversion |
 |------------------------------------------------------|--------------------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">display-value</span> | <span style="FONT-WEIGHT: bold">MeasureType or MeasureGroup</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |          |              |     |
 |----------|--------------|-----|
 | .        | ./Value      |     |
@@ -315,13 +315,13 @@ Persons
 
 ### name : PersonNameType
 
- 
+ 
 | HealthVault                                 | CCR                                                   | Conversion |
 |---------------------------------------------|-------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">name</span> | <span style="FONT-WEIGHT: bold">PersonNameType</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |          |     |
 |---------------|----------|-----|
 | ./first       | ./Given  |     |
@@ -334,13 +334,13 @@ Persons
 
 ### email : CommunicationType
 
- 
+ 
 | HealthVault                                  | CCR                                                      | Conversion |
 |----------------------------------------------|----------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">email</span> | <span style="FONT-WEIGHT: bold">CommunicationType</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |                                                                    |     |
 |---------------|--------------------------------------------------------------------|-----|
 | ./address     | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Value</span> |     |
@@ -348,7 +348,7 @@ Persons
 
 <span style="FONT-WEIGHT: bold">If</span>(./is-primary)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                               |            |     |
 |-------------------------------------------------------------------------------------------------------------------------------|------------|-----|
 | [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)(<span style="FONT-STYLE: italic">"priority-primary"</span>) | ./Priority |     |
@@ -357,13 +357,13 @@ Persons
 
 ### phone : CommunicationType
 
- 
+ 
 | HealthVault                                  | CCR                                                      | Conversion |
 |----------------------------------------------|----------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">phone</span> | <span style="FONT-WEIGHT: bold">CommunicationType</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |                                                                    |     |
 |---------------|--------------------------------------------------------------------|-----|
 | ./number      | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Value</span> |     |
@@ -371,7 +371,7 @@ Persons
 
 <span style="FONT-WEIGHT: bold">If</span>(./is-primary)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                               |            |     |
 |-------------------------------------------------------------------------------------------------------------------------------|------------|-----|
 | [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)(<span style="FONT-STYLE: italic">"priority-primary"</span>) | ./Priority |     |
@@ -380,26 +380,26 @@ Persons
 
 ### address : Actor/Address
 
- 
+ 
 | HealthVault                                    | CCR                                                  | Conversion |
 |------------------------------------------------|------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">address</span> | <span style="FONT-WEIGHT: bold">Actor/Address</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |             |     |
 |---------------|-------------|-----|
 | ./description | ./Type/Text |     |
 
 <span style="FONT-WEIGHT: bold">If</span>(./is-primary)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                               |            |     |
 |-------------------------------------------------------------------------------------------------------------------------------|------------|-----|
 | [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)(<span style="FONT-STYLE: italic">"priority-primary"</span>) | ./Priority |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |              |     |
 |---------------|--------------|-----|
 | ./street\[1\] | ./Line1      |     |
@@ -413,28 +413,28 @@ Persons
 
 ### contact : Actor
 
- 
+ 
 | HealthVault                                    | CCR                                          | Conversion |
 |------------------------------------------------|----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">contact</span> | <span style="FONT-WEIGHT: bold">Actor</span> |            |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./address)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |           |                             |
 |-----|-----------|-----------------------------|
 | .   | ./Address | address =&gt; Actor/Address |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./phone)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |             |                               |
 |-----|-------------|-------------------------------|
 | .   | ./Telephone | phone =&gt; CommunicationType |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./email)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |         |                               |
 |-----|---------|-------------------------------|
 | .   | ./Email | email =&gt; CommunicationType |
@@ -443,13 +443,13 @@ Persons
 
 ### person : Actor
 
- 
+ 
 | HealthVault                                   | CCR                                          | Conversion |
 |-----------------------------------------------|----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">person</span> | <span style="FONT-WEIGHT: bold">Actor</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                         |                           |                                          |
 |-------------------------|---------------------------|------------------------------------------|
 | ./name                  | ./Person/Name/CurrentName | name =&gt; PersonNameType                |
@@ -462,13 +462,13 @@ Persons
 
 ### personal : Actor
 
- 
+ 
 | HealthVault                                     | CCR                                          | Conversion |
 |-------------------------------------------------|----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">personal</span> | <span style="FONT-WEIGHT: bold">Actor</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |             |                           |                              |
 |-------------|---------------------------|------------------------------|
 | ./name      | ./Person/Name/CurrentName | name =&gt; PersonNameType    |
@@ -479,13 +479,13 @@ Persons
 
 ### Organization : Actor
 
- 
+ 
 | HealthVault                                         | CCR                                          | Conversion |
 |-----------------------------------------------------|----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">Organization</span> | <span style="FONT-WEIGHT: bold">Actor</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |           |                     |                                          |
 |-----------|---------------------|------------------------------------------|
 | ./name    | ./Organization/Name |                                          |
@@ -497,13 +497,13 @@ Persons
 
 ### FamilyHistoryRelative : Actor
 
- 
+ 
 | HealthVault                                                  | CCR                                          | Conversion |
 |--------------------------------------------------------------|----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">FamilyHistoryRelative</span> | <span style="FONT-WEIGHT: bold">Actor</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                 |                      |                                          |
 |-----------------|----------------------|------------------------------------------|
 | ./relative-name | .                    | person =&gt; Actor                       |
@@ -517,21 +517,21 @@ Common
 
 ### thing : Source
 
- 
+ 
 | HealthVault                                  | CCR                                           | Conversion |
 |----------------------------------------------|-----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">thing</span> | <span style="FONT-WEIGHT: bold">Source</span> |            |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(../common/source) and <span style="FONT-WEIGHT: bold">If</span>(../common/source != <span style="FONT-STYLE: italic">"Unknown"</span>)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                               |             |     |
 |---------------------------------------------------------------------------------------------------------------|-------------|-----|
 | [CreateCommentFromString](https://msdn.microsoft.com/ee663896.aspx#CreateCommentFromString)(../common/source) | ./CommentID |     |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |                    |     |
 |---------------------------------------------------|--------------------|-----|
 | <span style="FONT-STYLE: italic">"Unknown"</span> | ./Description/Text |     |
@@ -543,13 +543,13 @@ HealthVault Record : ContinuityOfCareRecord
 
 ### HealthVault Record : ContinuityOfCareRecord
 
- 
+ 
 | HealthVault                                               | CCR                                                           | Conversion |
 |-----------------------------------------------------------|---------------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">HealthVault Record</span> | <span style="FONT-WEIGHT: bold">ContinuityOfCareRecord</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                |                                                                                     |     |
 |--------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|-----|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                    | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDocumentObjectID</span>    |     |
@@ -561,7 +561,7 @@ HealthVault Record : ContinuityOfCareRecord
 
 $Personal = /thing\[type-id = <span style="FONT-STYLE: italic">"92ba621e-66b3-4a01-bd73-74844aed4f5b"</span>\]\[1\]/data-xml/personal
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                              |                                                                      |     |
 |----------------------------------------------------------------------------------------------|----------------------------------------------------------------------|-----|
 | [CreatePatientActor](https://msdn.microsoft.com/ee663896.aspx#CreatePatientActor)($Personal) | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Patient</span> |     |
@@ -569,7 +569,7 @@ $Personal = /thing\[type-id = <span style="FONT-STYLE: italic">"92ba621e-66b3-4a
 $Payers = /thing\[type-id = <span style="FONT-STYLE: italic">"9366440c-ec81-4b89-b231-308a4c4d70ed"</span>\]/data-xml/payer
 <span style="FONT-WEIGHT: bold">ForEach</span> ($Payers)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                     |                   |
 |-----|---------------------|-------------------|
 | .   | ./Body/Payers/Payer | payer =&gt; Payer |
@@ -577,7 +577,7 @@ $Payers = /thing\[type-id = <span style="FONT-STYLE: italic">"9366440c-ec81-4b89
 $Directives = /thing\[type-id = <span style="FONT-STYLE: italic">"822a5e5a-14f1-4d06-b92f-8f3f1b05218f"</span>\]/data-xml/directive
 <span style="FONT-WEIGHT: bold">ForEach</span> ($Directives)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                                           |                                  |
 |-----|-------------------------------------------|----------------------------------|
 | .   | ./Body/AdvanceDirectives/AdvanceDirective | directive =&gt; AdvanceDirective |
@@ -585,7 +585,7 @@ $Directives = /thing\[type-id = <span style="FONT-STYLE: italic">"822a5e5a-14f1-
 $Conditions = /thing\[type-id = <span style="FONT-STYLE: italic">"7ea7a1f9-880b-4bd4-b593-f5660f20eda8"</span>\]/data-xml/condition
 <span style="FONT-WEIGHT: bold">ForEach</span> ($Conditions)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                         |                         |
 |-----|-------------------------|-------------------------|
 | .   | ./Body/Problems/Problem | condition =&gt; Problem |
@@ -593,7 +593,7 @@ $Conditions = /thing\[type-id = <span style="FONT-STYLE: italic">"7ea7a1f9-880b-
 $FamilyHistories = /thing\[type-id = <span style="FONT-STYLE: italic">"22826e13-41e1-4ba3-8447-37dadd208fd8"</span>\]/data-xml/family-history
 <span style="FONT-WEIGHT: bold">ForEach</span> ($FamilyHistories)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                                           |                                                |
 |-----|-------------------------------------------|------------------------------------------------|
 | .   | ./Body/FamilyHistory/FamilyProblemHistory | family-history =&gt; FamilyProblemHistory (v2) |
@@ -601,7 +601,7 @@ $FamilyHistories = /thing\[type-id = <span style="FONT-STYLE: italic">"22826e13-
 $FamilyHistories = /thing\[type-id = <span style="FONT-STYLE: italic">"4a04fcc8-19c1-4d59-a8c7-2031a03f21de"</span>\]/data-xml/family-history
 <span style="FONT-WEIGHT: bold">ForEach</span> ($FamilyHistories)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                                           |                                                |
 |-----|-------------------------------------------|------------------------------------------------|
 | .   | ./Body/FamilyHistory/FamilyProblemHistory | family-history =&gt; FamilyProblemHistory (v3) |
@@ -609,7 +609,7 @@ $FamilyHistories = /thing\[type-id = <span style="FONT-STYLE: italic">"4a04fcc8-
 $Allergies = /thing\[type-id = <span style="FONT-STYLE: italic">"52bf9104-2c5e-4f1f-a66d-552ebcc53df7"</span>\]/data-xml/allergy
 <span style="FONT-WEIGHT: bold">ForEach</span> ($Allergies)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                     |                     |
 |-----|---------------------|---------------------|
 | .   | ./Body/Alerts/Alert | allergy =&gt; Alert |
@@ -617,7 +617,7 @@ $Allergies = /thing\[type-id = <span style="FONT-STYLE: italic">"52bf9104-2c5e-4
 $Medications = /thing\[type-id = <span style="FONT-STYLE: italic">"30cafccc-047d-4288-94ef-643571f7919d"</span>\]/data-xml/medication
 <span style="FONT-WEIGHT: bold">ForEach</span> ($Medications)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                               |                             |
 |-----|-------------------------------|-----------------------------|
 | .   | ./Body/Medications/Medication | medication =&gt; Medication |
@@ -625,7 +625,7 @@ $Medications = /thing\[type-id = <span style="FONT-STYLE: italic">"30cafccc-047d
 $Immunizations = /thing\[type-id = <span style="FONT-STYLE: italic">"cd3587b5-b6e1-4565-ab3b-1c3ad45eb04f"</span>\]/data-xml/immunization
 <span style="FONT-WEIGHT: bold">ForEach</span>($Immunzations)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                                   |                                 |
 |-----|-----------------------------------|---------------------------------|
 | .   | ./Body/Immunizations/Immunization | immunization =&gt; Immunization |
@@ -633,7 +633,7 @@ $Immunizations = /thing\[type-id = <span style="FONT-STYLE: italic">"cd3587b5-b6
 $Heights = /thing\[type-id = <span style="FONT-STYLE: italic">"40750a6a-89b2-455c-bd8d-b420a4cb500b"</span>\]/data-xml/height
 <span style="FONT-WEIGHT: bold">ForEach</span> ($Heights)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                          |                     |
 |-----|--------------------------|---------------------|
 | .   | ./Body/VitalSigns/Result | height =&gt; Result |
@@ -641,7 +641,7 @@ $Heights = /thing\[type-id = <span style="FONT-STYLE: italic">"40750a6a-89b2-455
 $Weights = /thing\[type-id = <span style="FONT-STYLE: italic">"3d34d87e-7fc1-4153-800f-f56592cb0d17"</span>\]/data-xml/weight
 <span style="FONT-WEIGHT: bold">ForEach</span> ($Weights)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                          |                     |
 |-----|--------------------------|---------------------|
 | .   | ./Body/VitalSigns/Result | weight =&gt; Result |
@@ -649,7 +649,7 @@ $Weights = /thing\[type-id = <span style="FONT-STYLE: italic">"3d34d87e-7fc1-415
 $BP = /thing\[type-id = <span style="FONT-STYLE: italic">"ca3c57f4-f4c1-4e15-be67-0a3caf5414ed"</span>\]/data-xml/blood-pressure
 <span style="FONT-WEIGHT: bold">ForEach</span> ($BP)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                          |                             |
 |-----|--------------------------|-----------------------------|
 | .   | ./Body/VitalSigns/Result | blood-pressure =&gt; Result |
@@ -657,7 +657,7 @@ $BP = /thing\[type-id = <span style="FONT-STYLE: italic">"ca3c57f4-f4c1-4e15-be6
 $Glucose = /thing\[type-id = <span style="FONT-STYLE: italic">"879e7c04-4e8a-4707-9ad3-b054df467ce4"</span>\]/data-xml/blood-glucose
 <span style="FONT-WEIGHT: bold">ForEach</span> ($Glucose)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                          |                            |
 |-----|--------------------------|----------------------------|
 | .   | ./Body/VitalSigns/Result | blood-glucose =&gt; Result |
@@ -665,7 +665,7 @@ $Glucose = /thing\[type-id = <span style="FONT-STYLE: italic">"879e7c04-4e8a-470
 $Cholesterol = /thing\[type-id = <span style="FONT-STYLE: italic">"796c186f-b874-471c-8468-3eeff73bf66e"</span>\]/data-xml/cholesterol-profile
 <span style="FONT-WEIGHT: bold">ForEach</span> ($Cholesterol)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                          |                          |
 |-----|--------------------------|--------------------------|
 | .   | ./Body/VitalSigns/Result | cholesterol =&gt; Result |
@@ -673,7 +673,7 @@ $Cholesterol = /thing\[type-id = <span style="FONT-STYLE: italic">"796c186f-b874
 $BloodOx = /thing\[type-id = <span style="FONT-STYLE: italic">"3a54f95f-03d8-4f62-815f-f691fc94a500"</span>\]/data-xml/blood-oxygen-saturation
 <span style="FONT-WEIGHT: bold">ForEach</span> ($BloodOx)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                          |                                      |
 |-----|--------------------------|--------------------------------------|
 | .   | ./Body/VitalSigns/Result | blood-oxygen-saturation =&gt; Result |
@@ -681,7 +681,7 @@ $BloodOx = /thing\[type-id = <span style="FONT-STYLE: italic">"3a54f95f-03d8-4f6
 $Exercise = /thing\[type-id = <span style="FONT-STYLE: italic">"85a21ddb-db20-4c65-8d30-33c899ccf612"</span>\]/data-xml/exercise
 <span style="FONT-WEIGHT: bold">ForEach</span> ($Exercise)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                          |                       |
 |-----|--------------------------|-----------------------|
 | .   | ./Body/VitalSigns/Result | exercise =&gt; Result |
@@ -689,7 +689,7 @@ $Exercise = /thing\[type-id = <span style="FONT-STYLE: italic">"85a21ddb-db20-4c
 $PeakFlow = /thing\[type-id = <span style="FONT-STYLE: italic">"5d8419af-90f0-4875-a370-0f881c18f6b3"</span>\]/data-xml/peak-flow
 <span style="FONT-WEIGHT: bold">ForEach</span> ($PeakFlow)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                          |                        |
 |-----|--------------------------|------------------------|
 | .   | ./Body/VitalSigns/Result | peak-flow =&gt; Result |
@@ -697,7 +697,7 @@ $PeakFlow = /thing\[type-id = <span style="FONT-STYLE: italic">"5d8419af-90f0-48
 $Vitals = /thing\[type-id = <span style="FONT-STYLE: italic">"73822612-c15f-4b49-9e65-6af369e55c65"</span>\]/data-xml/vital-signs
 <span style="FONT-WEIGHT: bold">ForEach</span> ($Vitals)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                          |                          |
 |-----|--------------------------|--------------------------|
 | .   | ./Body/VitalSigns/Result | vital-signs =&gt; Result |
@@ -705,7 +705,7 @@ $Vitals = /thing\[type-id = <span style="FONT-STYLE: italic">"73822612-c15f-4b49
 $Results = /thing\[type-id = <span style="FONT-STYLE: italic">"e4911bd3-61bf-4e10-ae78-9c574b888b8f"</span>\]/data-xml/radiology-lab-results
 <span style="FONT-WEIGHT: bold">ForEach</span> ($Results)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                       |                                    |
 |-----|-----------------------|------------------------------------|
 | .   | ./Body/Results/Result | radiology-lab-results =&gt; Result |
@@ -713,7 +713,7 @@ $Results = /thing\[type-id = <span style="FONT-STYLE: italic">"e4911bd3-61bf-4e1
 $Results = /thing\[type-id = <span style="FONT-STYLE: italic">"5800eab5-a8c2-482a-a4d6-f1db25ae08c3"</span>\]/data-xml/lab-test-results
 <span style="FONT-WEIGHT: bold">ForEach</span>($Results/lab-group)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                       |                                          |
 |-----|-----------------------|------------------------------------------|
 | .   | ./Body/Results/Result | lab-test-results-group-type =&gt; Result |
@@ -721,7 +721,7 @@ $Results = /thing\[type-id = <span style="FONT-STYLE: italic">"5800eab5-a8c2-482
 $Results = /thing\[type-id = <span style="FONT-STYLE: italic">"02ef57a2-a620-425a-8e92-a301542cca54"</span>\]/data-xml/discharge-summary
 <span style="FONT-WEIGHT: bold">ForEach</span>($Results)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                       |                                |
 |-----|-----------------------|--------------------------------|
 | .   | ./Body/Results/Result | discharge-summary =&gt; Result |
@@ -729,7 +729,7 @@ $Results = /thing\[type-id = <span style="FONT-STYLE: italic">"02ef57a2-a620-425
 $Procedures = /thing\[type-id = <span style="FONT-STYLE: italic">"df4db479-a1ba-42a2-8714-2b083b88150f"</span>\]/data-xml/procedure
 <span style="FONT-WEIGHT: bold">ForEach</span> ($Procedures)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                             |                           |
 |-----|-----------------------------|---------------------------|
 | .   | ./Body/Procedures/Procedure | procedure =&gt; Procedure |
@@ -737,7 +737,7 @@ $Procedures = /thing\[type-id = <span style="FONT-STYLE: italic">"df4db479-a1ba-
 $Encounters = /thing\[type-id = <span style="FONT-STYLE: italic">"464083cc-13de-4f3e-a189-da8e47d5651b"</span>\]/data-xml/encounter
 <span style="FONT-WEIGHT: bold">ForEach</span> ($Encounters)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                             |                           |
 |-----|-----------------------------|---------------------------|
 | .   | ./Body/Encounters/Encounter | encounter =&gt; Encounter |
@@ -745,7 +745,7 @@ $Encounters = /thing\[type-id = <span style="FONT-STYLE: italic">"464083cc-13de-
 $Appointments = /thing\[type-id = <span style="FONT-STYLE: italic">"4b18aeb6-5f01-444c-8c70-dbf13a2f510b"</span>\]/data-xml/appointment
 <span style="FONT-WEIGHT: bold">ForEach</span> ($Appointments)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                             |                             |
 |-----|-----------------------------|-----------------------------|
 | .   | ./Body/Encounters/Encounter | appointment =&gt; Encounter |
@@ -757,13 +757,13 @@ thing/data-xml : ContinuityOfCareRecord/Body
 
 ### payer : Payer
 
- 
+ 
 | HealthVault                                  | CCR                                          | Conversion |
 |----------------------------------------------|----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">payer</span> | <span style="FONT-WEIGHT: bold">Payer</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                      |                                                                              |                                          |
 |--------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                          | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                                          |
@@ -783,7 +783,7 @@ thing/data-xml : ContinuityOfCareRecord/Body
 
 $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./planName)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                      |                            |                     |
 |----------------------|----------------------------|---------------------|
 | $Actor/ActorObjectID | ./Payment-Provider/ActorID |                     |
@@ -793,13 +793,13 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 ### directive : AdvanceDirective
 
- 
+ 
 | HealthVault                                      | CCR                                                     | Conversion |
 |--------------------------------------------------|---------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">directive</span> | <span style="FONT-WEIGHT: bold">AdvanceDirective</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                    |                                                                              |                                      |
 |----------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|--------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                                        | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                                      |
@@ -821,13 +821,13 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 ### condition : Problem
 
- 
+ 
 | HealthVault                                      | CCR                                            | Conversion |
 |--------------------------------------------------|------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">condition</span> | <span style="FONT-WEIGHT: bold">Problem</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                 |                                                                              |                                          |
 |---------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                     | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                                          |
@@ -846,13 +846,13 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 ### family-history (v2)
 
- 
+ 
 | HealthVault                                                | CCR                                                         | Conversion |
 |------------------------------------------------------------|-------------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">family-history (v2)</span> | <span style="FONT-WEIGHT: bold">FamilyProblemHistory</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                   |                                                                                  |                                          |
 |-----------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|------------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                       | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span>     |                                          |
@@ -870,13 +870,13 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 ### family-history (v3)
 
- 
+ 
 | HealthVault                                                | CCR                                                         | Conversion |
 |------------------------------------------------------------|-------------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">family-history (v3)</span> | <span style="FONT-WEIGHT: bold">FamilyProblemHistory</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                   |                                                                                     |                                          |
 |-----------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|------------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                       | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span>        |                                          |
@@ -888,7 +888,7 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Condition)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                     |                                                                                                            |                                          |
 |---------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|------------------------------------------|
 | ./name                                                                                                              | ./Problem/Description                                                                                      | codable-value =&gt; CodedDescriptionType |
@@ -905,13 +905,13 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 ### allergy : Alerts
 
- 
+ 
 | HealthVault                                    | CCR                                           | Conversion |
 |------------------------------------------------|-----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">allergy</span> | <span style="FONT-WEIGHT: bold">Alerts</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                 |                                                                              |                                          |
 |---------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                     | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                                          |
@@ -927,13 +927,13 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 ### medication : Medication
 
- 
+ 
 | HealthVault                                       | CCR                                               | Conversion |
 |---------------------------------------------------|---------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">medication</span> | <span style="FONT-WEIGHT: bold">Medication</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                              |                                                                              |                                     |
 |----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|-------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                                  | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                                     |
@@ -950,7 +950,7 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./generic-name)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                |                                                                                  |                                          |
 |----------------|----------------------------------------------------------------------------------|------------------------------------------|
 | ./generic-name | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Product/ProductName</span> | codable-value =&gt; CodedDescriptionType |
@@ -958,13 +958,13 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |        |                                                                                  |                                          |
 |--------|----------------------------------------------------------------------------------|------------------------------------------|
 | ./name | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Product/ProductName</span> | codable-value =&gt; CodedDescriptionType |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |                                                                                                                      |                                          |
 |---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|------------------------------------------|
 | ./strength                                        | ./Product/Strength                                                                                                   | general-measurement =&gt; MeasureType    |
@@ -981,13 +981,13 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 ### immunization : Immunization
 
- 
+ 
 | HealthVault                                         | CCR                                                 | Conversion |
 |-----------------------------------------------------|-----------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">immunization</span> | <span style="FONT-WEIGHT: bold">Immunization</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                |                                                                              |                                     |
 |--------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|-------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                    | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                                     |
@@ -996,7 +996,7 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./lot)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                      |                                    |     |
 |--------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|-----|
 | ./lot                                                                                                                                | ./IDs\[1\]/ID                      |     |
@@ -1004,7 +1004,7 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 | <span style="FONT-STYLE: italic">"Unknown"</span>                                                                                    | ./IDs\[1\]/Source/Description/Text |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                      |                                                                     |                                          |
 |--------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|------------------------------------------|
 | .                                                                                                                                    | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Source</span> | thing =&gt; Source                       |
@@ -1020,13 +1020,13 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 ### height : Result
 
- 
+ 
 | HealthVault                                   | CCR                                           | Conversion |
 |-----------------------------------------------|-----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">height</span> | <span style="FONT-WEIGHT: bold">Result</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                                                                                          |                                                                              |                              |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                                                                                                                                              | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                              |
@@ -1039,14 +1039,14 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./value/display)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                 |                                                                              |                                  |
 |-----------------|------------------------------------------------------------------------------|----------------------------------|
 | ./value/display | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test/TestResult</span> | display-value =&gt; MeasureGroup |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                     |                                                                                    |     |
 |---------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|-----|
 | <span style="FONT-WEIGHT: bold">ConvertToInches</span>(./value/m)                                                   | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test/TestResult/Value</span> |     |
@@ -1056,13 +1056,13 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 ### weight : Result
 
- 
+ 
 | HealthVault                                   | CCR                                           | Conversion |
 |-----------------------------------------------|-----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">weight</span> | <span style="FONT-WEIGHT: bold">Result</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                                                                                          |                                                                              |                              |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                                                                                                                                              | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                              |
@@ -1075,14 +1075,14 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 <span style="FONT-WEIGHT: bold">If Exists</span> (./value/display)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                 |                                                                              |                                  |
 |-----------------|------------------------------------------------------------------------------|----------------------------------|
 | ./value/display | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test/TestResult</span> | display-value =&gt; MeasureGroup |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                     |                                                                                    |     |
 |---------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|-----|
 | <span style="FONT-WEIGHT: bold">ConvertToPounds</span>(./value/kg)                                                  | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test/TestResult/Value</span> |     |
@@ -1092,13 +1092,13 @@ $Actor = [CreateActor](https://msdn.microsoft.com/ee663896.aspx#CreateActor)(./p
 
 ### blood-glucose : Result
 
- 
+ 
 | HealthVault                                          | CCR                                           | Conversion |
 |------------------------------------------------------|-----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">blood-glucose</span> | <span style="FONT-WEIGHT: bold">Result</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                     |                                                                              |                              |
 |-------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                         | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                              |
@@ -1113,21 +1113,21 @@ $Description = ./glucose-measurement-type
 <span style="FONT-WEIGHT: bold">Else</span>
 $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)(<span style="FONT-STYLE: italic">"blood-glucose"</span>)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                    |        |     |
 |----------------------------------------------------------------------------------------------------------------------------------------------------|--------|-----|
 | [CreateTestHeader](https://msdn.microsoft.com/ee663896.aspx#CreateTestHeader)(<span style="FONT-STYLE: italic">"Observation",</span> $Description) | ./Test |     |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./value/display)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                 |                                                                              |                                  |
 |-----------------|------------------------------------------------------------------------------|----------------------------------|
 | ./value/display | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test/TestResult</span> | display-value =&gt; MeasureGroup |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                            |                                                                                    |     |
 |----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|-----|
 | <span style="FONT-WEIGHT: bold">ConvertToMgPerDl</span>(./value/mmolPerL)                                                  | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test/TestResult/Value</span> |     |
@@ -1137,13 +1137,13 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 ### blood-oxygen-saturation : Result
 
- 
+ 
 | HealthVault                                                    | CCR                                           | Conversion |
 |----------------------------------------------------------------|-----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">blood-oxygen-saturation</span> | <span style="FONT-WEIGHT: bold">Result</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                                                                                                            |                                                                                    |                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|------------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                                                                                                                                                                | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span>       |                                          |
@@ -1161,13 +1161,13 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 ### radiology-lab-results : Result
 
- 
+ 
 | HealthVault                                                  | CCR                                           | Conversion |
 |--------------------------------------------------------------|-----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">radiology-lab-results</span> | <span style="FONT-WEIGHT: bold">Result</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                       |                                                                              |                              |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                                                           | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                              |
@@ -1181,14 +1181,14 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./result-text)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |                                                                                               |     |
 |---------------|-----------------------------------------------------------------------------------------------|-----|
 | ./result-text | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test/TestResult/Description/Text</span> |     |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |                                                                                               |     |
 |---------------------------------------------------|-----------------------------------------------------------------------------------------------|-----|
 | <span style="FONT-STYLE: italic">"Unknown"</span> | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test/TestResult/Description/Text</span> |     |
@@ -1197,13 +1197,13 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 ### blood-pressure : Result
 
- 
+ 
 | HealthVault                                           | CCR                                           | Conversion |
 |-------------------------------------------------------|-----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">blood-pressure</span> | <span style="FONT-WEIGHT: bold">Result</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                                                                                                            |                                                                                         |                    |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|--------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                                                                                                                                                                | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span>            |                    |
@@ -1223,13 +1223,13 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 ### cholesterol-profile : Result
 
- 
+ 
 | HealthVault                                                | CCR                                           | Conversion |
 |------------------------------------------------------------|-----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">cholesterol-profile</span> | <span style="FONT-WEIGHT: bold">Result</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                                                                                                             |                                                                                         |                    |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|--------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                                                                                                                                                                 | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span>            |                    |
@@ -1251,13 +1251,13 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 ### peak-flow : Result
 
- 
+ 
 | HealthVault                                      | CCR                                           | Conversion |
 |--------------------------------------------------|-----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">peak-flow</span> | <span style="FONT-WEIGHT: bold">Result</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                                                                                       |                                                                              |                              |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                                                                                                                                           | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                              |
@@ -1270,56 +1270,56 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./pef/display)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |                                                                                   |                                  |
 |---------------|-----------------------------------------------------------------------------------|----------------------------------|
 | ./pef/display | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test\[1\]/TestResult</span> | display-value =&gt; MeasureGroup |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                    |                                                                                         |     |
 |--------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----|
 | ./pef/liters-per-second                                                                                            | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test\[1\]/TestResult/Value</span> |     |
 | <span style="FONT-WEIGHT: bold">GetConceptType</span>(<span style="FONT-STYLE: italic">"liters-per-second"</span>) | ./Test\[1\]/TestResult/Units/Unit                                                       |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                                                                                        |             |     |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|-----|
 | [CreateTestHeader](https://msdn.microsoft.com/ee663896.aspx#CreateTestHeader)(<span style="FONT-STYLE: italic">"Observation",</span>[GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)(<span style="FONT-STYLE: italic">"fev1"</span>)) | ./Test\[2\] |     |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./fev1/display)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                |                                                                                   |                                  |
 |----------------|-----------------------------------------------------------------------------------|----------------------------------|
 | ./fev1/display | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test\[2\]/TestResult</span> | display-value =&gt; MeasureGroup |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                         |                                                                                         |     |
 |---------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----|
 | ./fev1/liters                                                                                           | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test\[2\]/TestResult/Value</span> |     |
 | <span style="FONT-WEIGHT: bold">GetConceptType</span>(<span style="FONT-STYLE: italic">"liters"</span>) | ./Test\[2\]/TestResult/Units/Unit                                                       |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                                                                                        |             |     |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|-----|
 | [CreateTestHeader](https://msdn.microsoft.com/ee663896.aspx#CreateTestHeader)(<span style="FONT-STYLE: italic">"Observation",</span>[GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)(<span style="FONT-STYLE: italic">"fev6"</span>)) | ./Test\[3\] |     |
 
 <span style="FONT-WEIGHT: bold">If Exists</span> (./fev6/display)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                |                                                                                   |                                  |
 |----------------|-----------------------------------------------------------------------------------|----------------------------------|
 | ./fev6/display | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test\[3\]/TestResult</span> | display-value =&gt; MeasureGroup |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                         |                                                                                         |     |
 |---------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----|
 | ./fev6/liters                                                                                           | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test\[3\]/TestResult/Value</span> |     |
@@ -1329,13 +1329,13 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 ### exercise : Result
 
- 
+ 
 | HealthVault                                     | CCR                                           | Conversion |
 |-------------------------------------------------|-----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">exercise</span> | <span style="FONT-WEIGHT: bold">Result</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                                                                                         |                                                                              |                                          |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                                                                                                                                             | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                                          |
@@ -1349,27 +1349,27 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./distance/display)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                    |                                                                                   |                                  |
 |--------------------|-----------------------------------------------------------------------------------|----------------------------------|
 | ./distance/display | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test\[1\]/TestResult</span> | display-value =&gt; MeasureGroup |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                         |                                                                                         |     |
 |---------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----|
 | ./distance/m                                                                                            | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test\[1\]/TestResult/Value</span> |     |
 | <span style="FONT-WEIGHT: bold">GetConceptType</span>(<span style="FONT-STYLE: italic">"meters"</span>) | ./Test\[1\]/TestResult/Units/Unit                                                       |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                                                                                         |             |     |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|-----|
 | [CreateTestHeader](https://msdn.microsoft.com/ee663896.aspx#CreateTestHeader)(<span style="FONT-STYLE: italic">"Observation",</span><span style="FONT-WEIGHT: bold">GetConceptType</span>(<span style="FONT-STYLE: italic">"exercise-duration"</span>)) | ./Test\[2\] |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                          |                                                                                         |     |
 |----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----|
 | ./duration                                                                                               | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Test\[2\]/TestResult/Value</span> |     |
@@ -1377,7 +1377,7 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./detail)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                                                                                        |                                                                                    |                                           |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|-------------------------------------------|
 | [CreateTestHeader](https://msdn.microsoft.com/ee663896.aspx#CreateTestHeader)(<span style="FONT-STYLE: italic">"Observation",</span><span style="FONT-WEIGHT: bold">GetConceptType</span>(<span style="FONT-STYLE: italic">"exercise-details"</span>)) | ./Test\[\*\]                                                                       |                                           |
@@ -1388,13 +1388,13 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 ### discharge-summary : Result
 
- 
+ 
 | HealthVault                                              | CCR                                           | Conversion |
 |----------------------------------------------------------|-----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">discharge-summary</span> | <span style="FONT-WEIGHT: bold">Result</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                          |                                                                              |                                     |
 |------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|-------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                              | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                                     |
@@ -1412,20 +1412,20 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./type)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |        |                    |                                          |
 |--------|--------------------|------------------------------------------|
 | ./type | ./Description/Text | codable-value =&gt; CodedDescriptionType |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                           |                    |     |
 |---------------------------------------------------------------------------------------------------------------------------|--------------------|-----|
 | <span style="FONT-WEIGHT: bold">GetConceptType</span>(<span style="FONT-STYLE: italic">"result-discharge-summary"</span>) | ./Description/Text |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                |                                                                          |                    |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|--------------------|
 | .                                                                                                                                                                              | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Source\[1\]</span> | thing =&gt; Source |
@@ -1442,13 +1442,13 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 ### vital-signs : VitalSigns
 
- 
+ 
 | HealthVault                                        | CCR                                               | Conversion |
 |----------------------------------------------------|---------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">vital-signs</span> | <span style="FONT-WEIGHT: bold">VitalSigns</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                     |                                                                              |                              |
 |-------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                         | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                              |
@@ -1460,7 +1460,7 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 | <span style="FONT-WEIGHT: bold">ForEach</span>(./vital-signs-results)                                                               | ./Test                                                                       |                              |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                               |                                                                                    |                                          |
 |-----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|------------------------------------------|
 | [CreateTestHeader](https://msdn.microsoft.com/ee663896.aspx#CreateTestHeader)(<span style="FONT-STYLE: italic">"Observation"</span>, ./title) | ./Test                                                                             |                                          |
@@ -1473,13 +1473,13 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 ### lab-test-results-group-type : Result
 
- 
+ 
 | HealthVault                                                        | CCR                                           | Conversion |
 |--------------------------------------------------------------------|-----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">lab-test-results-group-type</span> | <span style="FONT-WEIGHT: bold">Result</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                     |                                                                              |                                          |
 |-------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                         | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                                          |
@@ -1490,14 +1490,14 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 <span style="FONT-WEIGHT: bold">IfExists</span>(./ordered-by)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                       |                                                                                               |     |
 |---------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|-----|
 | [CreateActorFromOrganization](https://msdn.microsoft.com/ee663896.aspx#CreateActorFromOrganization)(./ordered-by)                     | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Source\[1\]/Actor/ActorID</span>        |     |
 | [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)(<span style="FONT-STYLE: italic">"result-ordering-provider"</span>) | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Source\[1\]/Actor/ActorRole/Text</span> |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                              |                                                                          |                                          |
 |--------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|------------------------------------------|
 | .                                                                                                            | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Source\[2\]</span> | thing =&gt; Source                       |
@@ -1506,14 +1506,14 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./results)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |        |                                 |
 |-----|--------|---------------------------------|
 | .   | ./Test | lab-test-result-type =&gt; Test |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./sub-groups)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |     |                                          |
 |-----|-----|------------------------------------------|
 | .   | ..  | lab-test-results-group-type =&gt; Result |
@@ -1522,13 +1522,13 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 ### lab-test-result-type : TestType
 
- 
+ 
 | HealthVault                                                 | CCR                                             | Conversion |
 |-------------------------------------------------------------|-------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">lab-test-result-type</span> | <span style="FONT-WEIGHT: bold">TestType</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                             |                                                                              |                                     |
 |-----------------------------------------------------------------------------|------------------------------------------------------------------------------|-------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)() | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                                     |
@@ -1537,20 +1537,20 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./clincal-code)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                 |               |                                          |
 |-----------------|---------------|------------------------------------------|
 | ./clinical-code | ./Description | codable-value =&gt; CodedDescriptionType |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |        |                    |     |
 |--------|--------------------|-----|
 | ./name | ./Description/Text |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |                                                                                      |                                           |
 |---------------------------------------------------|--------------------------------------------------------------------------------------|-------------------------------------------|
 | ./status                                          | ./Status                                                                             | codable-value =&gt; CodedDescriptionType  |
@@ -1562,27 +1562,27 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 ### lab-test-result-value-type : TestType
 
- 
+ 
 | HealthVault                                                       | CCR                                             | Conversion |
 |-------------------------------------------------------------------|-------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">lab-test-result-value-type</span> | <span style="FONT-WEIGHT: bold">TestType</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |                                                                         |                                       |
 |---------------|-------------------------------------------------------------------------|---------------------------------------|
 | ./measurement | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./TestResult</span> | general-measurement =&gt; MeasureType |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./flag)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |        |                                          |
 |-----|--------|------------------------------------------|
 | .   | ./Flag | codable-value =&gt; CodedDescriptionType |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./ranges)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |                                                                                         |                                 |
 |---------------------------------------------------|-----------------------------------------------------------------------------------------|---------------------------------|
 | ./text                                            | ./NormalResult/Normal/Value                                                             |                                 |
@@ -1593,13 +1593,13 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 ### procedure : Procedure
 
- 
+ 
 | HealthVault                                      | CCR                                              | Conversion |
 |--------------------------------------------------|--------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">procedure</span> | <span style="FONT-WEIGHT: bold">Procedure</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                           |                                                                              |                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|---------------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                               | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                                             |
@@ -1618,13 +1618,13 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 ### encounter : Encounter
 
- 
+ 
 | HealthVault                                      | CCR                                              | Conversion |
 |--------------------------------------------------|--------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">encounter</span> | <span style="FONT-WEIGHT: bold">Encounter</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                             |                                                                              |                                          |
 |-----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                 | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                                          |
@@ -1634,20 +1634,20 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./reason)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |          |                    |     |
 |----------|--------------------|-----|
 | ./reason | ./Description/Text |     |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |                    |     |
 |---------------------------------------------------|--------------------|-----|
 | <span style="FONT-STYLE: italic">"Unknown"</span> | ./Description/Text |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                 |                                                                     |                                     |
 |-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|-------------------------------------|
 | .                                                                                                               | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Source</span> | thing =&gt; Source                  |
@@ -1660,13 +1660,13 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 ### appointment : Encounter
 
- 
+ 
 | HealthVault                                        | CCR                                              | Conversion |
 |----------------------------------------------------|--------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">appointment</span> | <span style="FONT-WEIGHT: bold">Encounter</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                               |                                                                              |                                          |
 |-------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------------------|
 | [CreateUniqueID](https://msdn.microsoft.com/ee663896.aspx#CreateUniqueID)()                                                   | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./CCRDataObjectID</span> |                                          |
@@ -1676,20 +1676,20 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./service)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |           |                                                                          |                                          |
 |-----------|--------------------------------------------------------------------------|------------------------------------------|
 | ./service | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Description</span> | codable-value =&gt; CodedDescriptionType |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |                                                                               |     |
 |---------------------------------------------------|-------------------------------------------------------------------------------|-----|
 | <span style="FONT-STYLE: italic">"Unknown"</span> | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./Description/Text</span> |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                             |                                                                     |                                          |
 |-------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|------------------------------------------|
 | ./status                                                                                                    | ./Status                                                            | codable-value =&gt; CodedDescriptionType |
@@ -1698,13 +1698,13 @@ $Description = [GetConcept](https://msdn.microsoft.com/ee663896.aspx#GetConcept)
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./clinic/organization)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                        |                                    |     |
 |----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|-----|
 | [CreateOrganizationActorFromString](https://msdn.microsoft.com/ee663896.aspx#CreateOrganizationActorFromString)(./clinic/organization) | ./Locations/Location/Actor/ActorID |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                   |                                                        |                                     |
 |---------------------------------------------------------------------------------------------------|--------------------------------------------------------|-------------------------------------|
 | [CreateActorFromPerson](https://msdn.microsoft.com/ee663896.aspx#CreateActorFromPerson)(./clinic) | ./Practitioners/Practitioner/ActorID                   |                                     |

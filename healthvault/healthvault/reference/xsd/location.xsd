@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.location"
+    xmlns:this="urn:com.microsoft.wc.location"
+    xmlns:wc-types="urn:com.microsoft.wc.types" 
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        LOCATION.XSD
+        Microsoft HealthVault
+
+        Platform API: Representation of Location types
+
+    -->
+
+    <import
+      namespace="urn:com.microsoft.wc.types"
+      schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Schema for types representing location information supported for a given
+                health record, application or device.
+            </summary>
+
+            <remarks>
+                Location is specified by a country and a state or province. A supported location can be for all locations
+                or a subset of locations for storing user's health data. 
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <complexType name="SupportedLocationList">
+        <annotation>
+            <documentation>
+                <summary>
+                    A list of supported locations.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="location" type="wc-types:Location" minOccurs="0" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A location supported by a device, application, or record.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="all-locations" type="boolean" fixed="true" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Support all locations for the HealthVault instance.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    
+    <complexType name="AppSupportedRecordLocation">
+        <annotation>
+            <documentation>
+                <summary>
+                    Information about a specific record location supported for the application.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="app-id" type="wc-types:guid">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The unique identifier for the application within the HealthVault ecosystem.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <choice>
+                <element name="location" type="wc-types:Location">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A location supported by a device, application, or record.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="all-locations" type="boolean" fixed="true">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Support all locations for the HealthVault instance.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </choice>
+
+            <element name="warning-msg" type="wc-types:CultureSpecificString"
+                 minOccurs="0"  maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+	                      <summary>
+                            Warning message for using the application for records stored in the specified 
+                            location.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="migration-source-instance" type="wc-types:string255nw" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            If the application was migrated from an instance to HVSS which also contained
+                            the same application migrated from another instance, this value differentiates
+                            between the two configurations.
+                        </summary>
+
+                        <remarks>
+                            This element should only be present for the APIs that are used to manage application
+                            configuration like AddAppSupportedLocations and RemoveAppSupportedLocations.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    
+    <complexType name="AppSupportedRecordLocations">
+        <annotation>
+            <documentation>
+                <summary>
+                    The list of application supported record locations.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="app-supported-record-location" type="this:AppSupportedRecordLocation" 
+                     minOccurs="0" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The list of application supported record locations.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="SupportedInstanceList">
+        <annotation>
+            <documentation>
+                <summary>
+                    A list of supported HealthVault instances.
+                </summary>
+                <remarks>
+                    Either the support-all-instances attribute must be true or at least
+                    one instance ID must be specified. If the support-all-instances attribute
+                    is true, then instance IDs are ignored because the app automatically
+                    supports all available instances.
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="instance-id" type="wc-types:string255nw" minOccurs="0" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            A supported HealthVault instance ID.
+                        </summary>
+                        <remarks>
+                            If support-all-instances is false or unspecified, then at least one
+                            instance ID must be specified.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+        <attribute name="support-all-instances" type="boolean" use="optional">
+            <annotation>
+                <documentation>
+                    <summary>
+                        Indicates that app automatically supports all currently
+                        available instances and any instances to be added in the future.
+                    </summary>
+                    <remarks>
+                        If support-all-instances is true, then any instance-id elements
+                        are ignored.
+                    </remarks>
+                </documentation>
+            </annotation>
+        </attribute>
+    </complexType>
+</schema>

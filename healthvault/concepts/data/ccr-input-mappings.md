@@ -30,13 +30,13 @@ Date Types
 
 ### ExactDateTime : date
 
- 
+ 
 | CCR                                                  | HealthVault                                 | Conversion |
 |------------------------------------------------------|---------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">ExactDateTime</span> | <span style="FONT-WEIGHT: bold">date</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                                                              |            |
 |-----|--------------------------------------------------------------|------------|
 | .   | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">y</span> | ISO-8601/Y |
@@ -47,13 +47,13 @@ Date Types
 
 ### ExactDateTime : time
 
- 
+ 
 | CCR                                                  | HealthVault                                 | Conversion |
 |------------------------------------------------------|---------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">ExactDateTime</span> | <span style="FONT-WEIGHT: bold">time</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                                                              |            |
 |-----|--------------------------------------------------------------|------------|
 | .   | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">h</span> | ISO-8601/h |
@@ -64,13 +64,13 @@ Date Types
 
 ### ExactDateTime : approx-date
 
- 
+ 
 | CCR                                                  | HealthVault                                        | Conversion |
 |------------------------------------------------------|----------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">ExactDateTime</span> | <span style="FONT-WEIGHT: bold">approx-date</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                                                              |            |
 |-----|--------------------------------------------------------------|------------|
 | .   | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">y</span> | ISO-8601/Y |
@@ -81,13 +81,13 @@ Date Types
 
 ### ExactDateTime : StructuredApproxDate
 
- 
+ 
 | CCR                                                  | HealthVault                                                 | Conversion |
 |------------------------------------------------------|-------------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">ExactDateTime</span> | <span style="FONT-WEIGHT: bold">StructuredApproxDate</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                                                                   |                                 |
 |-----|-------------------------------------------------------------------|---------------------------------|
 | .   | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./date</span> | ExactDateTime =&gt; approx-date |
@@ -98,13 +98,13 @@ Date Types
 
 ### ExactDateTime : date-time
 
- 
+ 
 | CCR                                                  | HealthVault                                      | Conversion |
 |------------------------------------------------------|--------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">ExactDateTime</span> | <span style="FONT-WEIGHT: bold">date-time</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                                                                   |                          |
 |-----|-------------------------------------------------------------------|--------------------------|
 | .   | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./date</span> | ExactDateTime =&gt; date |
@@ -115,35 +115,35 @@ Date Types
 
 ### DateTimeType : approx-date-time
 
- 
+ 
 | CCR                                                 | HealthVault                                             | Conversion |
 |-----------------------------------------------------|---------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">DateTimeType</span> | <span style="FONT-WEIGHT: bold">approx-date-time</span> |            |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                 |              |                                          |
 |-----------------|--------------|------------------------------------------|
 | ./ExactDateTime | ./structured | ExactDateTime =&gt; StructuredApproxDate |
 
 <span style="FONT-WEIGHT: bold">Else If Exists</span>(./ApproximateDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                            |               |     |
 |----------------------------|---------------|-----|
 | ./ApproximateDateTime/Text | ./descriptive |     |
 
 <span style="FONT-WEIGHT: bold">Else If Exists</span>(./Age)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                              |               |     |
 |----------------------------------------------------------------------------------------------|---------------|-----|
 | [Concat](ccr-input-functions.md#Concat)(./Age/Value,./Age/Units/Unit, ' ') | ./descriptive |     |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |               |     |
 |---------------------------------------------------|---------------|-----|
 | <span style="FONT-STYLE: italic">"Unknown"</span> | ./descriptive |     |
@@ -152,14 +152,14 @@ Date Types
 
 ### DateTimeType : approx-date
 
- 
+ 
 | CCR                                                 | HealthVault                                        | Conversion |
 |-----------------------------------------------------|----------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">DateTimeType</span> | <span style="FONT-WEIGHT: bold">approx-date</span> |            |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                 |     |                                 |
 |-----------------|-----|---------------------------------|
 | ./ExactDateTime | .   | ExactDateTime =&gt; approx-date |
@@ -168,14 +168,14 @@ Date Types
 
 ### DateTimeType : date
 
- 
+ 
 | CCR                                                 | HealthVault                                 | Conversion |
 |-----------------------------------------------------|---------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">DateTimeType</span> | <span style="FONT-WEIGHT: bold">date</span> |            |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                 |     |                          |
 |-----------------|-----|--------------------------|
 | ./ExactDateTime | .   | ExactDateTime =&gt; date |
@@ -184,14 +184,14 @@ Date Types
 
 ### DateTimeType : date-time
 
- 
+ 
 | CCR                                                 | HealthVault                                      | Conversion |
 |-----------------------------------------------------|--------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">DateTimeType</span> | <span style="FONT-WEIGHT: bold">date-time</span> |            |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                 |     |                               |
 |-----------------|-----|-------------------------------|
 | ./ExactDateTime | .   | ExactDateTime =&gt; date-time |
@@ -203,13 +203,13 @@ Coded Types
 
 ### CodeType : coded-value
 
- 
+ 
 | CCR                                             | HealthVault                                        | Conversion |
 |-------------------------------------------------|----------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">CodeType</span> | <span style="FONT-WEIGHT: bold">coded-value</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                |                                                                    |     |
 |----------------|--------------------------------------------------------------------|-----|
 | ./Value        | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./value</span> |     |
@@ -220,35 +220,35 @@ Coded Types
 
 ### CodedDescriptionType : codable-value
 
- 
+ 
 | CCR                                                         | HealthVault                                          | Conversion |
 |-------------------------------------------------------------|------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">CodedDescriptionType</span> | <span style="FONT-WEIGHT: bold">codable-value</span> |            |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./Text)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |        |                                                                   |     |
 |--------|-------------------------------------------------------------------|-----|
 | ./Text | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./text</span> |     |
 
 <span style="FONT-WEIGHT: bold">If Not Exists</span>(./Text) and <span style="FONT-WEIGHT: bold">If Exists</span>(./Code\[1\])
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                   |                                                                   |     |
 |-------------------|-------------------------------------------------------------------|-----|
 | ./Code\[1\]/Value | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./text</span> |     |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                  |                                                                   |     |
 |--------------------------------------------------|-------------------------------------------------------------------|-----|
 | <span style="FONT-STYLE: italic">"Unkown"</span> | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./text</span> |     |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Code)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |        |                            |
 |-----|--------|----------------------------|
 | .   | ./code | CodeType =&gt; coded-value |
@@ -260,20 +260,20 @@ Measure Types
 
 ### MeasureType or MeasureGroup : codable-value
 
- 
+ 
 | CCR                                                                | HealthVault                                          | Conversion |
 |--------------------------------------------------------------------|------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">MeasureType or MeasureGroup</span> | <span style="FONT-WEIGHT: bold">codable-value</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |              |                                                                   |     |
 |--------------|-------------------------------------------------------------------|-----|
 | ./Units/Unit | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./text</span> |     |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Units/Code)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |        |                            |
 |-----|--------|----------------------------|
 | .   | ./code | CodeType =&gt; coded-value |
@@ -282,14 +282,14 @@ Measure Types
 
 ### MeasureType or MeasureGroup : structured-measurement
 
- 
+ 
 | CCR                                                                | HealthVault                                                   | Conversion |
 |--------------------------------------------------------------------|---------------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">MeasureType or MeasureGroup</span> | <span style="FONT-WEIGHT: bold">structured-measurement</span> |            |
 
 <span style="FONT-WEIGHT: bold">If IsNumber</span>(./Value)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |         |                                                                    |                                 |
 |---------|--------------------------------------------------------------------|---------------------------------|
 | ./Value | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./value</span> |                                 |
@@ -299,21 +299,21 @@ Measure Types
 
 ### MeasureType or MeasureGroup : general-measurement
 
- 
+ 
 | CCR                                                                | HealthVault                                                | Conversion |
 |--------------------------------------------------------------------|------------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">MeasureType or MeasureGroup</span> | <span style="FONT-WEIGHT: bold">general-measurement</span> |            |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./Value)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |         |                                                                      |     |
 |---------|----------------------------------------------------------------------|-----|
 | ./Value | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./display</span> |     |
 
 <span style="FONT-WEIGHT: bold">If IsNumber</span>(./Value)and <span style="FONT-WEIGHT: bold">If Exists</span>(./Units)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |              |                                          |
 |-----|--------------|------------------------------------------|
 | .   | ./structured | MeasureType =&gt; structured-measurement |
@@ -322,13 +322,13 @@ Measure Types
 
 ### MeasureType or MeasureGroup : display-value
 
- 
+ 
 | CCR                                                                | HealthVault                                          | Conversion |
 |--------------------------------------------------------------------|------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">MeasureType or MeasureGroup</span> | <span style="FONT-WEIGHT: bold">display-value</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |              |                                                                             |     |
 |--------------|-----------------------------------------------------------------------------|-----|
 | ./Value      | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./display</span>        |     |
@@ -338,34 +338,34 @@ Measure Types
 
 ### TestResultType : general-measurement
 
- 
+ 
 | CCR                                                   | HealthVault                                                | Conversion |
 |-------------------------------------------------------|------------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">TestResultType</span> | <span style="FONT-WEIGHT: bold">general-measurement</span> |            |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./Value)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |         |                                                                      |     |
 |---------|----------------------------------------------------------------------|-----|
 | ./Value | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./display</span> |     |
 
 <span style="FONT-WEIGHT: bold">Else If Exists(</span>./Description/Text<span style="FONT-WEIGHT: bold">)</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                    |                                                                      |     |
 |--------------------|----------------------------------------------------------------------|-----|
 | ./Description/Text | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./display</span> |     |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |                                                                      |     |
 |---------------------------------------------------|----------------------------------------------------------------------|-----|
 | <span style="FONT-STYLE: italic">"Unknown"</span> | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./display</span> |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |     |                                          |
 |-----|-----|------------------------------------------|
 | .   | .   | MeasureType =&gt; structured-measurement |
@@ -377,13 +377,13 @@ Actors
 
 ### PersonNameType : name
 
- 
+ 
 | CCR                                                   | HealthVault                                 | Conversion |
 |-------------------------------------------------------|---------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">PersonNameType</span> | <span style="FONT-WEIGHT: bold">name</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                              |                                                                   |     |
 |----------------------------------------------------------------------------------------------|-------------------------------------------------------------------|-----|
 | [PersonNameTypeToString](ccr-input-functions.md#PersonNameTypeToString)(.) | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./full</span> |     |
@@ -397,13 +397,13 @@ Actors
 
 ### CommunicationType : email
 
- 
+ 
 | CCR                                                      | HealthVault                                  | Conversion |
 |----------------------------------------------------------|----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">CommunicationType</span> | <span style="FONT-WEIGHT: bold">email</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                         |                                                                      |     |
 |-----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|-----|
 | ./Type/Text                                                                                                                             | ./description                                                        |     |
@@ -414,13 +414,13 @@ Actors
 
 ### CommunicationType : phone
 
- 
+ 
 | CCR                                                      | HealthVault                                  | Conversion |
 |----------------------------------------------------------|----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">CommunicationType</span> | <span style="FONT-WEIGHT: bold">phone</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                         |                                                                     |     |
 |-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|-----|
 | ./Type/Text                                                                                                                             | ./description                                                       |     |
@@ -431,13 +431,13 @@ Actors
 
 ### Actor : address
 
- 
+ 
 | CCR                                          | HealthVault                                    | Conversion |
 |----------------------------------------------|------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">Actor</span> | <span style="FONT-WEIGHT: bold">address</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                         |                                                                          |     |
 |-----------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|-----|
 | ./Type/Text                                                                                                                             | ./description                                                            |     |
@@ -453,28 +453,28 @@ Actors
 
 ### Actor : contact
 
- 
+ 
 | CCR                                          | HealthVault                                    | Conversion |
 |----------------------------------------------|------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">Actor</span> | <span style="FONT-WEIGHT: bold">contact</span> |            |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Address)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |           |                     |
 |-----|-----------|---------------------|
 | .   | ./address | Actor =&gt; address |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Telephone)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |         |                               |
 |-----|---------|-------------------------------|
 | .   | ./phone | CommunicationType =&gt; phone |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./EMail)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |         |                               |
 |-----|---------|-------------------------------|
 | .   | ./email | CommunicationType =&gt; email |
@@ -483,34 +483,34 @@ Actors
 
 ### Actor : person
 
- 
+ 
 | CCR                                          | HealthVault                                   | Conversion |
 |----------------------------------------------|-----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">Actor</span> | <span style="FONT-WEIGHT: bold">person</span> |            |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./Person/Name/CurrentName)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                           |                                                                   |                           |
 |---------------------------|-------------------------------------------------------------------|---------------------------|
 | ./Person/Name/CurrentName | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./name</span> | PersonNameType =&gt; name |
 
 <span style="FONT-WEIGHT: bold">Else</span> (./Person/Name/BirthName)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                         |                                                                   |                           |
 |-------------------------|-------------------------------------------------------------------|---------------------------|
 | ./Person/Name/BirthName | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./name</span> | PersonNameType =&gt; name |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./Person/Name/DisplayName)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                           |                                                                        |     |
 |---------------------------|------------------------------------------------------------------------|-----|
 | ./Person/Name/DisplayName | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./name/full</span> |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                          |                         |                                          |
 |--------------------------------------------------------------------------------------------------------------------------|-------------------------|------------------------------------------|
 | [Concat](ccr-input-functions.md#Concat)(./Specialty/Text, <span style="FONT-STYLE: italic">";"</span>) | ./professional-training |                                          |
@@ -521,13 +521,13 @@ Actors
 
 ### Actor : Organization
 
- 
+ 
 | CCR                                          | HealthVault                                         | Conversion |
 |----------------------------------------------|-----------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">Actor</span> | <span style="FONT-WEIGHT: bold">Organization</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                     |                                                                   |                                          |
 |---------------------|-------------------------------------------------------------------|------------------------------------------|
 | ./Organization/Name | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./name</span> |                                          |
@@ -542,7 +542,7 @@ Common
 
 ### CCRCodedDataObjectType : common
 
- 
+ 
 | CCR                                                           | HealthVault                                   | Conversion |
 |---------------------------------------------------------------|-----------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">CCRCodedDataObjectType</span> | <span style="FONT-WEIGHT: bold">common</span> |            |
@@ -550,7 +550,7 @@ Common
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Source)
 $Sources = [Concat](ccr-input-functions.md#Concat)($Source, [SourceTypeToString](ccr-input-functions.md#SourceTypeToString)(.), <span style="FONT-STYLE: italic">"\\n\\n"</span>)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |          |          |     |
 |----------|----------|-----|
 | $Sources | ./source |     |
@@ -560,7 +560,7 @@ $Comments = [Concat](ccr-input-functions.md#Concat)($Comments, ./Description/Tex
 <span style="FONT-WEIGHT: bold">ForEach</span>(./References/Reference)
 $References = [Concat](ccr-input-functions.md#Concat)($References, [ReferenceTypeToString](ccr-input-functions.md#ReferenceTypeToString)(.), <span style="FONT-STYLE: italic">"\\n\\n"</span>)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                |                   |     |
 |------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|-----|
 | [Concat](ccr-input-functions.md#Concat)($Comments, $References, <span style="FONT-STYLE: italic">"\[References\]\\n"</span>) | ./note            |     |
@@ -573,7 +573,7 @@ ContinuityOfCareRecord/Body : thing/data-xml
 
 ### ContinuityOfCareRecord/Body : thing/data-xml
 
- 
+ 
 | CCR                                                                | HealthVault                                           | Conversion |
 |--------------------------------------------------------------------|-------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">ContinuityOfCareRecord/Body</span> | <span style="FONT-WEIGHT: bold">thing/data-xml</span> |            |
@@ -581,7 +581,7 @@ ContinuityOfCareRecord/Body : thing/data-xml
 $Payer = ./Payers/Payer
 <span style="FONT-WEIGHT: bold">ForEach</span>($Payer)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |         |                   |
 |-----|---------|-------------------|
 | .   | ./payer | Payer =&gt; payer |
@@ -589,7 +589,7 @@ $Payer = ./Payers/Payer
 $Directives = ./AdvanceDirectives/AdvanceDirective
 <span style="FONT-WEIGHT: bold">ForEach</span>($Directives)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |             |                                  |
 |-----|-------------|----------------------------------|
 | .   | ./directive | AdvanceDirective =&gt; directive |
@@ -597,7 +597,7 @@ $Directives = ./AdvanceDirectives/AdvanceDirective
 $Problems = ./Problems/Problem
 <span style="FONT-WEIGHT: bold">ForEach</span>($Problems)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |             |                         |
 |-----|-------------|-------------------------|
 | .   | ./condition | Problem =&gt; condition |
@@ -605,7 +605,7 @@ $Problems = ./Problems/Problem
 $FamilyHistories = ./FamilyHistory/FamilyProblemHistory
 <span style="FONT-WEIGHT: bold">ForEach</span>($FamilyHistories)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |     |                                        |
 |-----|-----|----------------------------------------|
 | .   | .   | FamilyHistoryType =&gt; family-history |
@@ -613,7 +613,7 @@ $FamilyHistories = ./FamilyHistory/FamilyProblemHistory
 $Allergies = ./Alerts/Alert\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"allergy"</span>)\]
 <span style="FONT-WEIGHT: bold">ForEach</span>($Allergies)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |           |                     |
 |-----|-----------|---------------------|
 | .   | ./allergy | Alert =&gt; allergy |
@@ -621,7 +621,7 @@ $Allergies = ./Alerts/Alert\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Ty
 $Medications = ./Medications/Medication
 <span style="FONT-WEIGHT: bold">ForEach</span>($Medication)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |              |                             |
 |-----|--------------|-----------------------------|
 | .   | ./medication | Medication =&gt; medication |
@@ -629,7 +629,7 @@ $Medications = ./Medications/Medication
 $Immunizations = ./Immunizations/Immunization
 <span style="FONT-WEIGHT: bold">ForEach</span>($Immunizations)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                |                                 |
 |-----|----------------|---------------------------------|
 | .   | ./immunization | Immunization =&gt; immunization |
@@ -637,7 +637,7 @@ $Immunizations = ./Immunizations/Immunization
 $Results = ./VitalSigns/Result
 <span style="FONT-WEIGHT: bold">ForEach</span>($Results)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |     |                               |
 |-----|-----|-------------------------------|
 | .   | .   | ResultType =&gt; Typed things |
@@ -646,21 +646,21 @@ $Results = ./Results/Result
 <span style="FONT-WEIGHT: bold">ForEach</span>($Results)
 <span style="FONT-WEIGHT: bold">If IsConcept</span>(./Description/Text, <span style="FONT-STYLE: italic">"result-discharge-summary"</span>) or <span style="FONT-WEIGHT: bold">If Exists</span>(./IDs\[ [IsConcept](ccr-input-functions.md#IsConcept)(./ID, <span style="FONT-STYLE: italic">"02ef57a2-a620-425a-8e92-a301542cca54"</span>)\])
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                     |                                    |
 |-----|---------------------|------------------------------------|
 | .   | ./discharge-summary | ResultType =&gt; discharge-summary |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                    |                                  |
 |-----|--------------------|----------------------------------|
 | .   | ./lab-test-results | ResultType =&gt; lab-test-result |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>($Results)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |     |                               |
 |-----|-----|-------------------------------|
 | .   | .   | ResultType =&gt; Typed Things |
@@ -668,7 +668,7 @@ $Results = ./Results/Result
 $Procedures = ./Procedures/Procedure
 <span style="FONT-WEIGHT: bold">ForEach</span>($Procedures)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |             |                           |
 |-----|-------------|---------------------------|
 | .   | ./procedure | Procedure =&gt; procedure |
@@ -677,14 +677,14 @@ $Encounters = ./Encounters/Encounter
 <span style="FONT-WEIGHT: bold">ForEach</span>($Encounters)
 <span style="FONT-WEIGHT: bold">If IsConcept</span>(./Status/Text, <span style="FONT-STYLE: italic">"encounter-pending"</span>)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |               |                             |
 |-----|---------------|-----------------------------|
 | .   | ./appointment | Encounter =&gt; appointment |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |             |                           |
 |-----|-------------|---------------------------|
 | .   | ./encounter | Encounter =&gt; encounter |
@@ -693,27 +693,27 @@ $Encounters = ./Encounters/Encounter
 
 ### Payer : payer
 
- 
+ 
 | CCR                                          | HealthVault                                  | Conversion                                                                            |
 |----------------------------------------------|----------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">Payer</span> | <span style="FONT-WEIGHT: bold">payer</span> | <span style="FONT-WEIGHT: bold">type-id = 9366440c-ec81-4b89-b231-308a4c4d70ed</span> |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./PaymentProvider)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                            |                                                                        |     |
 |--------------------------------------------------------------------------------------------|------------------------------------------------------------------------|-----|
 | [ActorToString](ccr-input-functions.md#ActorToString)(./PaymentProvider) | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./plan-name</span> |     |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |                                                                        |     |
 |---------------------------------------------------|------------------------------------------------------------------------|-----|
 | <span style="FONT-STYLE: italic">"Unknown"</span> | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./plan-name</span> |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                   |                   |                                          |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|------------------------------------------|
 | ./Type                                                                                                                                                            | ./coverage-type   | CodedDescriptionType =&gt; codable-value |
@@ -725,7 +725,7 @@ $Encounters = ./Encounters/Encounter
 
 $Actor = [ResolveActor](ccr-input-functions.md#ResolveActor)(./Subscriber)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                     |                   |                                     |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|-------------------------------------|
 | $Actor/Person/DateOfBirth                                                                                                                                           | ./subscriber-dob  | DateTimeType =&gt; date-time        |
@@ -738,7 +738,7 @@ $Actor = [ResolveActor](ccr-input-functions.md#ResolveActor)(./Subscriber)
 
 ### AdvanceDirective : directive
 
- 
+ 
 | CCR                                                     | HealthVault                                      | Conversion                                                                            |
 |---------------------------------------------------------|--------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">AdvanceDirective</span> | <span style="FONT-WEIGHT: bold">directive</span> | <span style="FONT-WEIGHT: bold">type-id = 822a5e5a-14f1-4d06-b92f-8f3f1b05218f</span> |
@@ -746,14 +746,14 @@ $Actor = [ResolveActor](ccr-input-functions.md#ResolveActor)(./Subscriber)
 $DateTime = ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"directive-start-date"</span>)\]\[1\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |           |                                                                         |                                     |
 |-----------|-------------------------------------------------------------------------|-------------------------------------|
 | $DateTime | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./start-date</span> | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |                                                                                     |     |
 |---------------------------------------------------|-------------------------------------------------------------------------------------|-----|
 | <span style="FONT-STYLE: italic">"Unknown"</span> | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./start-date/descriptive</span> |     |
@@ -761,20 +761,20 @@ $DateTime = ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Te
 $DateTime = ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"directive-stop-date"</span>)\]\[1\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |           |                                                                        |                                     |
 |-----------|------------------------------------------------------------------------|-------------------------------------|
 | $DateTime | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./stop-date</span> | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |                                                                                    |     |
 |---------------------------------------------------|------------------------------------------------------------------------------------|-----|
 | <span style="FONT-STYLE: italic">"Unknown"</span> | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./stop-date/descriptive</span> |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                   |                                   |                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|-------------------------------------|
 | ./Description/Text                                                                                                                                                                | ./description                     |                                     |
@@ -787,53 +787,53 @@ $DateTime = ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Te
 
 ### Problem : condition
 
- 
+ 
 | CCR                                            | HealthVault                                      | Conversion                                                                            |
 |------------------------------------------------|--------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">Problem</span> | <span style="FONT-WEIGHT: bold">condition</span> | <span style="FONT-WEIGHT: bold">type-id = 7ea7a1f9-880b-4bd4-b593-f5660f20eda8</span> |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |                                                                   |                                          |
 |---------------|-------------------------------------------------------------------|------------------------------------------|
 | ./Description | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./name</span> | CodedDescriptionType =&gt; codable-value |
 
 <span style="FONT-WEIGHT: bold">If</span>(count(./DateTime)= 1) and <span style="FONT-WEIGHT: bold">If Exists</span>(./DateTime/DateTimeRange)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                     |              |                                     |
 |-------------------------------------|--------------|-------------------------------------|
 | ./DateTime/DateTimeRange/BeginRange | ./onset-date | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                |              |                                     |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|-------------------------------------|
 | ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">problem-onset-date"</span>)\]\[1\] | ./onset-date | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |          |          |                                          |
 |----------|----------|------------------------------------------|
 | ./Status | ./status | CodedDescriptionType =&gt; codable-value |
 
 <span style="FONT-WEIGHT: bold">If</span>(count(./DateTime) = 1) and <span style="FONT-WEIGHT: bold">If Exists</span>(./DateTime/DateTimeRange)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                   |             |                                     |
 |-----------------------------------|-------------|-------------------------------------|
 | ./DateTime/DateTimeRange/EndRange | ./stop-date | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                               |             |                                     |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------------------------|
 | ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">problem-stop-date"</span>)\]\[1\] | ./stop-date | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |           |                                     |
 |-----|-----------|-------------------------------------|
 | .   | ../common | CCRCodedDataObjectType =&gt; common |
@@ -842,7 +842,7 @@ $DateTime = ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Te
 
 ### FamilyProblemHistory : family-history
 
- 
+ 
 | CCR                                                         | HealthVault                                           | Conversion                                                                            |
 |-------------------------------------------------------------|-------------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">FamilyProblemHistory</span> | <span style="FONT-WEIGHT: bold">family-history</span> | <span style="FONT-WEIGHT: bold">type-id = 4a04fcc8-19c1-4d59-a8c7-2031a03f21de</span> |
@@ -852,7 +852,7 @@ $DateTime = ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Te
 <span style="FONT-WEIGHT: bold">ForEach</span>(./FamilyMember)
 $Actor = [ResolveActor](ccr-input-functions.md#ResolveActor)(./ActorID)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                        |                                                                                                   |                                          |
 |------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|------------------------------------------|
 | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./ActorRole</span> | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./family-history/relative/relationship</span> | CodedDescriptionType =&gt; codable-value |
@@ -861,7 +861,7 @@ $Actor = [ResolveActor](ccr-input-functions.md#ResolveActor)(./ActorID)
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Problem)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |                                                                                            |                                          |
 |---------------|--------------------------------------------------------------------------------------------|------------------------------------------|
 | ./Description | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./family-history/condition/name</span> | CodedDescriptionType =&gt; codable-value |
@@ -869,27 +869,27 @@ $Actor = [ResolveActor](ccr-input-functions.md#ResolveActor)(./ActorID)
 $OnsetDate = ./Episodes/Episode\[ [IsConcept](ccr-input-functions.md#IsConcept)(./DateTime, <span style="FONT-STYLE: italic">"problem-onset-date"</span>)\]\[1\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($OnsetDate)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |            |                                       |                                |
 |------------|---------------------------------------|--------------------------------|
 | $OnsetDate | ./family-history/condition/onset-date | DateTimeType =&gt; approx-date |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                              |                                       |                                |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|--------------------------------|
 | ../DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./DateTime, <span style="FONT-STYLE: italic">"problem-onset-date"</span>)\[1\] | ./family-history/condition/onset-date | DateTimeType =&gt; approx-date |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                     |                                            |                            |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|----------------------------|
 | [Concat](ccr-input-functions.md#Concat)(./Episodes/Frequency/Value, ./Episodes/Frequency/Units/Unit, <span style="FONT-STYLE: italic">" "</span>) | ./family-history/condition/occurrence/text |                            |
 | ./Episodes/Frequency/Code\[1\]                                                                                                                                      | ./family-history/condition/occurrence/code | CodeType =&gt; coded-value |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |          |                                     |
 |-----|----------|-------------------------------------|
 | .   | ./common | CCRCodedDataObjectType =&gt; common |
@@ -897,7 +897,7 @@ $OnsetDate = ./Episodes/Episode\[ [IsConcept](ccr-input-functions.md#IsConcept)(
 <span style="FONT-WEIGHT: bold">Else If Exsits</span>(./Problem)
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Problem)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |                                                                                            |                                          |
 |---------------|--------------------------------------------------------------------------------------------|------------------------------------------|
 | ./Description | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./family-history/condition/name</span> | CodedDescriptionType =&gt; codable-value |
@@ -905,27 +905,27 @@ $OnsetDate = ./Episodes/Episode\[ [IsConcept](ccr-input-functions.md#IsConcept)(
 $OnsetDate = ./Episodes/Episode\[ [IsConcept](ccr-input-functions.md#IsConcept)(./DateTime, <span style="FONT-STYLE: italic">"problem-onset-date"</span>)\]\[1\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($OnsetDate)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |            |                                       |                                |
 |------------|---------------------------------------|--------------------------------|
 | $onsetDate | ./family-history/condition/onset-date | DateTimeType =&gt; approx-date |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                              |                                       |                                |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|--------------------------------|
 | ../DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./DateTime, <span style="FONT-STYLE: italic">"problem-onset-date"</span>)\[1\] | ./family-history/condition/onset-date | DateTimeType =&gt; approx-date |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                             |                                            |                            |
 |-----------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|----------------------------|
 | [Concat](ccr-input-functions.md#Concat)(./Episodes/Frequency/Value, ./Episodes/Frequency/Units/Unit, ' ') | ./family-history/condition/occurrence/text |                            |
 | ./Episodes/Frequency/Code\[1\]                                                                                              | ./family-history/condition/occurrence/code | CodeType =&gt; coded-value |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                         |                                     |
 |-----|-------------------------|-------------------------------------|
 | .   | ./family-history/common | CCRCodedDataObjectType =&gt; common |
@@ -934,7 +934,7 @@ $OnsetDate = ./Episodes/Episode\[ [IsConcept](ccr-input-functions.md#IsConcept)(
 
 ### Alert : allergy
 
- 
+ 
 | CCR                                          | HealthVault                                    | Conversion                                                                            |
 |----------------------------------------------|------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">Alert</span> | <span style="FONT-WEIGHT: bold">allergy</span> | <span style="FONT-WEIGHT: bold">type-id = 52bf9104-2c5e-4f1f-a66d-552ebcc53df7</span> |
@@ -943,49 +943,49 @@ $Product = ./Agent/Products/Product\[1\]
 $EnvAgent = ./Agent/EnvironmentalAgents/EnvironmentalAgent\[1\]
 <span style="FONT-WEIGHT: bold">If Exists</span>(./Description)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |                                                                   |                                          |
 |---------------|-------------------------------------------------------------------|------------------------------------------|
 | ./Description | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./name</span> | CodedDescriptionType =&gt; codable-value |
 
 <span style="FONT-WEIGHT: bold">Else If Exists</span>($Product)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                      |                                                                   |                                          |
 |----------------------|-------------------------------------------------------------------|------------------------------------------|
 | $Product/ProductName | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./name</span> | CodedDescriptionType =&gt; codable-value |
 
 <span style="FONT-WEIGHT: bold">Else If Exists</span>($EnvAgent)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                       |                                                                   |     |
 |-----------------------|-------------------------------------------------------------------|-----|
 | $EnvAgent/Description | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./name</span> |     |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./Reaction)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                             |            |                                          |
 |-----------------------------|------------|------------------------------------------|
 | ./Reaction\[1\]/Description | ./reaction | CodedDescriptionType =&gt; codable-value |
 
 <span style="FONT-WEIGHT: bold">If</span>(count(./DateTime) = 1) and <span style="FONT-WEIGHT: bold">If Exists</span>(./DateTime/DateTimeRange)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                          |                  |                                     |
 |------------------------------------------|------------------|-------------------------------------|
 | ./DateTime\[1\]/DateTimeRange/BeginRange | ./first-observed | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                |                  |                                     |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|-------------------------------------|
 | ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, <span style="FONT-STYLE: italic">"allergy-start-date"</span>)\]\[1\] | ./first-observed | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>($Product)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                      |                 |                                          |
 |----------------------|-----------------|------------------------------------------|
 | $Product/Type        | ./allergen-type | CodedDescriptionType =&gt; codable-value |
@@ -993,14 +993,14 @@ $EnvAgent = ./Agent/EnvironmentalAgents/EnvironmentalAgent\[1\]
 
 <span style="FONT-WEIGHT: bold">Else If Exists</span>($EnvAgent)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                       |                 |                                          |
 |-----------------------|-----------------|------------------------------------------|
 | $EnvAgent/Type        | ./allergen-type | CodedDescriptionType =&gt; codable-value |
 | $EnvAgent/Description | ./allergen-code | CodedDescriptionType =&gt; codable-value |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |           |                                     |
 |-----|-----------|-------------------------------------|
 | .   | ../common | CCRCodedDataObjectType =&gt; common |
@@ -1009,7 +1009,7 @@ $EnvAgent = ./Agent/EnvironmentalAgents/EnvironmentalAgent\[1\]
 
 ### Medication : medication
 
- 
+ 
 | CCR                                               | HealthVault                                       | Conversion                                                                           |
 |---------------------------------------------------|---------------------------------------------------|--------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">Medication</span> | <span style="FONT-WEIGHT: bold">medication</span> | <span style="FONT-WEIGHT: bold">type-id =30cafccc-047d-4288-94ef-643571f7919d</span> |
@@ -1019,7 +1019,7 @@ $Direction = ./Product\[1\]/Directions\[1\]/Direction\[1\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($Product)
 <span style="FONT-WEIGHT: bold">If Exists</span>($Product/BrandName)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                      |                                                                   |                                          |
 |----------------------|-------------------------------------------------------------------|------------------------------------------|
 | $Product/BrandName   | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./name</span> | CodedDescriptionType =&gt; codable-value |
@@ -1027,13 +1027,13 @@ $Direction = ./Product\[1\]/Directions\[1\]/Direction\[1\]
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                      |                                                                   |                                          |
 |----------------------|-------------------------------------------------------------------|------------------------------------------|
 | $Product/ProductName | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./name</span> | CodedDescriptionType =&gt; codable-value |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                           |             |                                          |
 |---------------------------|-------------|------------------------------------------|
 | $Direction/Dose\[1\]      | ./dose      | MeasureType =&gt; general-measurement    |
@@ -1043,7 +1043,7 @@ $Direction = ./Product\[1\]/Directions\[1\]/Direction\[1\]
 
 <span style="FONT-WEIGHT: bold">If Exists</span>($Direction/Indication\[1\]/Description)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                        |              |                                          |
 |----------------------------------------|--------------|------------------------------------------|
 | $Direction/Indication\[1\]/Description | ./indication | CodedDescriptionType =&gt; codable-value |
@@ -1051,13 +1051,13 @@ $Direction = ./Product\[1\]/Directions\[1\]/Direction\[1\]
 <span style="FONT-WEIGHT: bold">Else If Exists</span>($Direction/Indication\[1\]/InternalCCRLink)
 $Problem = [ResolveLink](ccr-input-functions.md#ResolveLink)($Direction/Indication\[1\]/InternalCCRLink)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                      |              |                                          |
 |----------------------|--------------|------------------------------------------|
 | $Problem/Description | ./indication | CodedDescriptionType =&gt; codable-value |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                   |                     |                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|-------------------------------------|
 | ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">medication-start-date"</span>)\]\[1\] | ./date-started      | DateTimeType =&gt; approx-date-time |
@@ -1069,7 +1069,7 @@ $Problem = [ResolveLink](ccr-input-functions.md#ResolveLink)($Direction/Indicati
 
 ### Medication : prescription
 
- 
+ 
 | CCR                                               | HealthVault                                         | Conversion |
 |---------------------------------------------------|-----------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">Medication</span> | <span style="FONT-WEIGHT: bold">prescription</span> |            |
@@ -1077,20 +1077,20 @@ $Problem = [ResolveLink](ccr-input-functions.md#ResolveLink)($Direction/Indicati
 $Actor <span style="FONT-WEIGHT: bold">= FindActorInSources</span>(./Source, <span style="FONT-STYLE: italic">"medication-prescribing-clinician"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($Actor)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |        |                                                                            |                    |
 |--------|----------------------------------------------------------------------------|--------------------|
 | $Actor | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./prescribed-by</span> | Actor =&gt; person |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |                                                                                      |     |
 |---------------------------------------------------|--------------------------------------------------------------------------------------|-----|
 | <span style="FONT-STYLE: italic">"Unknown"</span> | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./prescribed-by/name/full</span> |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                          |                     |                                          |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|------------------------------------------|
 | ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">medication-prescription-date"</span>)\]\[1\] | ./date-prescribed   | DateTimeType =&gt; approx-date-time      |
@@ -1102,7 +1102,7 @@ $Actor <span style="FONT-WEIGHT: bold">= FindActorInSources</span>(./Source, <sp
 
 ### Immunization : immunization
 
- 
+ 
 | CCR                                                 | HealthVault                                         | Conversion                                                                            |
 |-----------------------------------------------------|-----------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">Immunization</span> | <span style="FONT-WEIGHT: bold">immunization</span> | <span style="FONT-WEIGHT: bold">type-id = cd3587b5-b6e1-4565-ab3b-1c3ad45eb04f</span> |
@@ -1110,7 +1110,7 @@ $Actor <span style="FONT-WEIGHT: bold">= FindActorInSources</span>(./Source, <sp
 $Product = ./Product\[1\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($Product)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                   |                                                                   |                                          |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|------------------------------------------|
 | $Product/ProductName                                                                                                                                              | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./name</span> | CodedDescriptionType =&gt; codable-value |
@@ -1128,13 +1128,13 @@ $Product = ./Product\[1\]
 
 ### ResultType : Typed Things
 
- 
+ 
 | CCR                                               | HealthVault                                         | Conversion |
 |---------------------------------------------------|-----------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">ResultType</span> | <span style="FONT-WEIGHT: bold">Typed Things</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                              |                           |                                        |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|----------------------------------------|
 | .                                                                                                                                                            | ./blood-pressure          | ResultType =&gt; blood-pressure        |
@@ -1149,14 +1149,14 @@ $Product = ./Product\[1\]
 <span style="FONT-WEIGHT: bold">If IsConcept</span>(./Type, <span style="FONT-STYLE: italic">"radiology-lab-results"</span>) or [IsConcept](ccr-input-functions.md#IsConcept)(./Description, <span style="FONT-STYLE: italic">"radiology-lab-results"</span>)
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Test)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |        |                         |                                      |
 |--------|-------------------------|--------------------------------------|
 | ./Test | ./radiology-lab-results | TestType =&gt; radiology-lab-results |
 
 <span style="FONT-WEIGHT: bold">Remarks:</span> If a Result is in the CCR under VitalSigns and cannot be imported into any of the above types, then HealthVault will fall back to the following generic vital-signs mapping.
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |               |                              |
 |-----|---------------|------------------------------|
 | .   | ./vital-signs | ResultType =&gt; vital-signs |
@@ -1165,7 +1165,7 @@ $Product = ./Product\[1\]
 
 ### ResultType : vital-signs
 
- 
+ 
 | CCR                                               | HealthVault                                        | Conversion                                                                            |
 |---------------------------------------------------|----------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">ResultType</span> | <span style="FONT-WEIGHT: bold">vital-signs</span> | <span style="FONT-WEIGHT: bold">type-id = 73822612-C15F-4B49-9E65-6AF369E55C65</span> |
@@ -1173,21 +1173,21 @@ $Product = ./Product\[1\]
 $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                        |                                                                   |                              |
 |--------------------------------------------------------|-------------------------------------------------------------------|------------------------------|
 | ./DateTime                                             | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./when</span> | DateTimeType =&gt; date-time |
 | <span style="FONT-WEIGHT: bold">ForEach</span>(./Test) | ./vital-signs-results                                             |                              |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |         |                                          |
 |---------------|---------|------------------------------------------|
 | ./Description | ./title | CodedDescriptionType =&gt; codable-value |
 
 <span style="FONT-WEIGHT: bold">If IsNumber</span>(./TestResult/Value)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                    |         |                                 |
 |--------------------|---------|---------------------------------|
 | ./TestResult/Value | ./value | string =&gt; double             |
@@ -1195,26 +1195,26 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(., <span style="FO
 
 <span style="FONT-WEIGHT: bold">Else If Exists</span>(./TestResult/Value)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                     |              |     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------|--------------|-----|
 | [Concat](ccr-input-functions.md#Concat)(./TestResult/Value, ./TestResult/Units/Unit, <span style="FONT-STYLE: italic">" "</span>) | ./text-value |     |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                               |              |                     |
 |-------------------------------|--------------|---------------------|
 | ./TestResult/Description/Text | ./text-value | string =&gt; string |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |             |        |                                          |
 |-------------|--------|------------------------------------------|
 | ./Flag\[1\] | ./flag | CodedDescriptionType =&gt; codable-value |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |           |                                     |
 |-----|-----------|-------------------------------------|
 | .   | ../common | CCRCodedDataObjectType =&gt; common |
@@ -1223,7 +1223,7 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(., <span style="FO
 
 ### ResultType : blood-pressure
 
- 
+ 
 | CCR                                               | HealthVault                                           | Conversion                                                                            |
 |---------------------------------------------------|-------------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">ResultType</span> | <span style="FONT-WEIGHT: bold">blood-pressure</span> | <span style="FONT-WEIGHT: bold">type-id = ca3c57f4-f4c1-4e15-be67-0a3caf5414ed</span> |
@@ -1234,7 +1234,7 @@ $Diastolic = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Descript
 $Pulse = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/Text, <span style="FONT-STYLE: italic">"blood-pressure-pulse"</span>)\]\[1\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime and $Diastolic and $Systolic)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                             |                                                                        |                                     |
 |-----------------------------|------------------------------------------------------------------------|-------------------------------------|
 | $DateTime                   | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./when</span>      | DateTimeType =&gt; date-time        |
@@ -1247,7 +1247,7 @@ $Pulse = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/
 
 ### ResultType : cholesterol-profile
 
- 
+ 
 | CCR                                               | HealthVault                                                | Conversion                                                                            |
 |---------------------------------------------------|------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">ResultType</span> | <span style="FONT-WEIGHT: bold">cholesterol-profile</span> | <span style="FONT-WEIGHT: bold">type-id = 796C186F-B874-471c-8468-3EEFF73BF66E</span> |
@@ -1259,7 +1259,7 @@ $Total = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/
 $Trig = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/Text, <span style="FONT-STYLE: italic">"cholesterol-triglycerides"</span>)\]\[1\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime and ($LDL or $HDL or $Total or $Trig))
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                         |                                                                   |                                     |
 |-------------------------|-------------------------------------------------------------------|-------------------------------------|
 | $DateTime               | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./when</span> | DateTimeType =&gt; date             |
@@ -1273,7 +1273,7 @@ $Trig = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/T
 
 ### ResultType : peak-flow
 
- 
+ 
 | CCR                                               | HealthVault                                      | Conversion                                                                            |
 |---------------------------------------------------|--------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">ResultType</span> | <span style="FONT-WEIGHT: bold">peak-flow</span> | <span style="FONT-WEIGHT: bold">type-id = 5d8419af-90f0-4875-a370-0f881c18f6b3</span> |
@@ -1284,14 +1284,14 @@ $FEV1 = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Description/T
 $FEV6 = ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"fev6"</span>)\]\[1\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime and ($PEF or $FEV1 or $FEV6))
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |           |                                                                   |                                     |
 |-----------|-------------------------------------------------------------------|-------------------------------------|
 | $DateTime | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./when</span> | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">If IsPositiveDouble</span>($PEF/TestResult/Value) and [IsConcept](ccr-input-functions.md#IsConcept)($PEF/TestResult/Units/Unit, <span style="FONT-STYLE: italic">"liters-per-second"</span>)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                       |                         |                                  |
 |-----------------------|-------------------------|----------------------------------|
 | $PEF/TestResult/Value | ./pef/liters-per-second |                                  |
@@ -1299,7 +1299,7 @@ $FEV6 = ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description/Tex
 
 <span style="FONT-WEIGHT: bold">If IsPositiveDouble</span>($FEV1/TestResult/Value) and [IsConcept](ccr-input-functions.md#IsConcept)($FEV1/TestResult/Units/Unit, <span style="FONT-STYLE: italic">"liters"</span>)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                        |                |                                  |
 |------------------------|----------------|----------------------------------|
 | $FEV1/TestResult/Value | ./fev1/liters  |                                  |
@@ -1307,14 +1307,14 @@ $FEV6 = ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description/Tex
 
 <span style="FONT-WEIGHT: bold">If IsPositiveDouble</span>($FEV6/TestResult/Value) and <span style="FONT-WEIGHT: bold">IsConcept(</span>$FEV6/TestResult/Units/Unit, <span style="FONT-STYLE: italic">"liters"</span>)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                        |                |                                  |
 |------------------------|----------------|----------------------------------|
 | $FEV6/TestResult/Value | ./fev6/liters  |                                  |
 | $FEV6/TestResult       | ./fev6/display | MeasureGroup =&gt; display-value |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |           |                                     |
 |-----|-----------|-------------------------------------|
 | .   | ../common | CCRCodedDataObjectType =&gt; common |
@@ -1323,7 +1323,7 @@ $FEV6 = ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description/Tex
 
 ### ResultType : exercise
 
- 
+ 
 | CCR                                               | HealthVault                                     | Conversion                                                                            |
 |---------------------------------------------------|-------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">ResultType</span> | <span style="FONT-WEIGHT: bold">exercise</span> | <span style="FONT-WEIGHT: bold">type-id = 85a21ddb-db20-4c65-8d30-33c899ccf612</span> |
@@ -1334,7 +1334,7 @@ $Duration = ./Test\[<span style="FONT-WEIGHT: bold">IsConcep</span>t(./Descripti
 $Details = ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description/Text, <span style="FONT-STYLE: italic">"exercise-details"</span>)\]
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime and ($Distance or $Duration or $Details) and ./Description)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                      |                                                                       |                                          |
 |----------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|------------------------------------------|
 | $DateTime                                                                                                            | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./when</span>     | DateTimeType =&gt; approx-date-time      |
@@ -1345,14 +1345,14 @@ $Details = ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description/
 
 <span style="FONT-WEIGHT: bold">ForEach</span>($Details)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                         |                                                                           |                                           |
 |-------------------------|---------------------------------------------------------------------------|-------------------------------------------|
 | ./Description/Code\[1\] | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./detail/name</span>  | CodeType =&gt; coded-value                |
 | ./TestResult            | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./detail/value</span> | MeasureGroup =&gt; structured-measurement |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |           |                                     |
 |-----|-----------|-------------------------------------|
 | .   | ../common | CCRCodedDataObjectType =&gt; common |
@@ -1361,7 +1361,7 @@ $Details = ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description/
 
 ### ResultType : discharge-summary
 
- 
+ 
 | CCR                                               | HealthVault                                              | Conversion                                                                            |
 |---------------------------------------------------|----------------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">ResultType</span> | <span style="FONT-WEIGHT: bold">discharge-summary</span> | <span style="FONT-WEIGHT: bold">type-id = 02ef57a2-a620-425a-8e92-a301542cca54</span> |
@@ -1369,7 +1369,7 @@ $Details = ./Test\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Description/
 $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.,<span style="FONT-STYLE: italic">"discharge-summary-create-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |                                                                   |                                          |
 |---------------|-------------------------------------------------------------------|------------------------------------------|
 | $DateTime     | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./when</span> | DateTimeType =&gt; date-time             |
@@ -1377,7 +1377,7 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.,<span style="FON
 
 <span style="FONT-WEIGHT: bold">Remarks:</span> For discharge summaries that are sent as Results, HealthVault will use the value of first associated comment that matches the <span style="FONT-STYLE: italic">discharge-summary-comment</span> concept as the content of the discharge summary.
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                     |                                  |                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|-------------------------------------|
 | [ResolveComment](ccr-input-functions.md#ResolveComment)(<span style="FONT-STYLE: italic">"discharge-summary-comment"</span>)                                      | ./text                           |                                     |
@@ -1393,7 +1393,7 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.,<span style="FON
 
 ### TestType : height
 
- 
+ 
 | CCR                                             | HealthVault                                   | Conversion                                                                            |
 |-------------------------------------------------|-----------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">TestType</span> | <span style="FONT-WEIGHT: bold">height</span> | <span style="FONT-WEIGHT: bold">type-id = 40750a6a-89b2-455c-bd8d-b420a4cb500b</span> |
@@ -1401,7 +1401,7 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.,<span style="FON
 $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime))
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                     |                                                                      |                                     |
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|-------------------------------------|
 | $DateTime                                                                                           | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./when</span>    | DateTimeType =&gt; date-time        |
@@ -1413,7 +1413,7 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="F
 
 ### TestType : weight
 
- 
+ 
 | CCR                                             | HealthVault                                   | Conversion                                                                            |
 |-------------------------------------------------|-----------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">TestType</span> | <span style="FONT-WEIGHT: bold">weight</span> | <span style="FONT-WEIGHT: bold">type-id = 3d34d87e-7fc1-4153-800f-f56592cb0d17</span> |
@@ -1421,7 +1421,7 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="F
 $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                        |                                                                       |                                     |
 |--------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|-------------------------------------|
 | $DateTime                                                                                              | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./when</span>     | DateTimeType =&gt; date-time        |
@@ -1433,7 +1433,7 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="F
 
 ### TestType : blood-glucose
 
- 
+ 
 | CCR                                             | HealthVault                                          | Conversion                                                                            |
 |-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">TestType</span> | <span style="FONT-WEIGHT: bold">blood-glucose</span> | <span style="FONT-WEIGHT: bold">type-id = 879e7c04-4e8a-4707-9ad3-b054df467ce4</span> |
@@ -1441,7 +1441,7 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="F
 $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                 |                                                                             |                                          |
 |-----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|------------------------------------------|
 | $DateTime                                                                                                       | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./when</span>           | DateTimeType =&gt; date-time             |
@@ -1454,7 +1454,7 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="F
 
 ### TestType : radiology-lab-results
 
- 
+ 
 | CCR                                             | HealthVault                                                  | Conversion                                                                            |
 |-------------------------------------------------|--------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">TestType</span> | <span style="FONT-WEIGHT: bold">radiology-lab-results</span> | <span style="FONT-WEIGHT: bold">type-id = e4911bd3-61bf-4e10-ae78-9c574b888b8f</span> |
@@ -1462,7 +1462,7 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="F
 $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                    |                                                                   |                              |
 |--------------------|-------------------------------------------------------------------|------------------------------|
 | $DateTime          | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./when</span> | DateTimeType =&gt; date-time |
@@ -1470,7 +1470,7 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="F
 
 $Value = <span style="FONT-WEIGHT: bold">Concat(</span>./TestResult/Value, ./TestResult/Units/Unit, <span style="FONT-STYLE: italic">" "</span><span style="FONT-WEIGHT: bold">)</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                    |               |                                     |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|-------------------------------------|
 | <span style="FONT-WEIGHT: bold">Concat(</span>$Value, ./TestResult/Description/Text, <span style="FONT-STYLE: italic">"&\#xA;&\#xA"</span><span style="FONT-WEIGHT: bold">)</span> | ./result-text |                                     |
@@ -1480,7 +1480,7 @@ $Value = <span style="FONT-WEIGHT: bold">Concat(</span>./TestResult/Value, ./Tes
 
 ### TestType : blood-oxygen-saturation
 
- 
+ 
 | CCR                                             | HealthVault                                                    | Conversion                                                                            |
 |-------------------------------------------------|----------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">TestType</span> | <span style="FONT-WEIGHT: bold">blood-oxygen-saturation</span> | <span style="FONT-WEIGHT: bold">type-id = 3a54f95f-03d8-4f62-815f-f691fc94a500</span> |
@@ -1488,20 +1488,20 @@ $Value = <span style="FONT-WEIGHT: bold">Concat(</span>./TestResult/Value, ./Tes
 $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="FONT-STYLE: italic">"result-collection-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |           |                                                                   |                              |
 |-----------|-------------------------------------------------------------------|------------------------------|
 | $DateTime | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./when</span> | DateTimeType =&gt; date-time |
 
 <span style="FONT-WEIGHT: bold">If IsPercentage</span>(./TestResult/Value)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                    |                                                                    |     |
 |--------------------|--------------------------------------------------------------------|-----|
 | ./TestResult/Value | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./value</span> |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |             |                      |                                          |
 |-------------|----------------------|------------------------------------------|
 | ./Method    | ./measurement-method | CodedDescriptionType =&gt; codable-value |
@@ -1512,46 +1512,46 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="F
 
 ### ResultType : lab-test-results
 
- 
+ 
 | CCR                                               | HealthVault                                             | Conversion                                                                            |
 |---------------------------------------------------|---------------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">ResultType</span> | <span style="FONT-WEIGHT: bold">lab-test-results</span> | <span style="FONT-WEIGHT: bold">type-id = 5800eab5-a8c2-482a-a4d6-f1db25ae08c3</span> |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                  |        |                                     |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|-------------------------------------|
 | [GetDateTime](ccr-input-functions.md#GetDateTime)(./, <span style="FONT-STYLE: italic">"result-collection-date"</span><span style="FONT-WEIGHT: bold">)</span> | ./when | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">If Exists</span>(./Description)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |                                                                                   |                                          |
 |---------------|-----------------------------------------------------------------------------------|------------------------------------------|
 | ./Description | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./lab-group/group-name</span> | CodedDescriptionType =&gt; codable-value |
 
 <span style="FONT-WEIGHT: bold">Else If Exists</span>(./Type)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |        |                                                                                   |                                          |
 |--------|-----------------------------------------------------------------------------------|------------------------------------------|
 | ./Type | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./lab-group/group-name</span> | CodedDescriptionType =&gt; codable-value |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |          |                    |                                          |
 |----------|--------------------|------------------------------------------|
 | ./Status | ./lab-group/status | CodedDescriptionType =&gt; codable-value |
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Test)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                     |                                     |
 |-----|---------------------|-------------------------------------|
 | .   | ./lab-group/results | TestType =&gt; lab-test-result-type |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                               |              |                                     |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|-------------------------------------|
 | [FindActorInSource](ccr-input-functions.md#FindActorInSource)(./Source, <span style="FONT-STYLE: italic">"result-ordering-provider"</span>) | ./ordered-by | Actor =&gt; Organization            |
@@ -1561,13 +1561,13 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="F
 
 ### TestType : lab-test-result-type
 
- 
+ 
 | CCR                                             | HealthVault                                                 | Conversion |
 |-------------------------------------------------|-------------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">TestType</span> | <span style="FONT-WEIGHT: bold">lab-test-result-type</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                     |                                                                    |                                           |
 |---------------------|--------------------------------------------------------------------|-------------------------------------------|
 | ./DateTime\[1\]     | ./when                                                             | DateTimeType =&gt; approx-date-time       |
@@ -1582,13 +1582,13 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="F
 
 ### TestType : lab-test-result-value-type
 
- 
+ 
 | CCR                                             | HealthVault                                                       | Conversion |
 |-------------------------------------------------|-------------------------------------------------------------------|------------|
 | <span style="FONT-WEIGHT: bold">TestType</span> | <span style="FONT-WEIGHT: bold">lab-test-result-value-type</span> |            |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |              |                                                                          |                                          |
 |--------------|--------------------------------------------------------------------------|------------------------------------------|
 | ./TestResult | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./measurement</span> | TestResultType =&gt; general-measurement |
@@ -1597,27 +1597,27 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="F
 <span style="FONT-WEIGHT: bold">If Exists</span>(./Value)
 <span style="FONT-WEIGHT: bold">If Exists</span>(./Units)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |                                                                          |                                  |
 |-----|--------------------------------------------------------------------------|----------------------------------|
 | .   | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./ranges/type</span> | MeasureGroup =&gt; codable-value |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |                                                                               |     |
 |---------------------------------------------------|-------------------------------------------------------------------------------|-----|
 | <span style="FONT-STYLE: italic">"Unknown"</span> | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./ranges/type/text</span> |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |         |                                                                          |                     |
 |---------|--------------------------------------------------------------------------|---------------------|
 | ./Value | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./ranges/text</span> | number =&gt; string |
 
 <span style="FONT-WEIGHT: bold">If IsNumber</span>(./Value)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |         |                              |     |
 |---------|------------------------------|-----|
 | ./Value | ./ranges/value/minimum-range |     |
@@ -1625,7 +1625,7 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="F
 
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Flag)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |        |                                          |
 |-----|--------|------------------------------------------|
 | .   | ./flag | CodedDescriptionType =&gt; codable-value |
@@ -1634,27 +1634,27 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="F
 
 ### Procedure : procedure
 
- 
+ 
 | CCR                                              | HealthVault                                      | Conversion                                                                            |
 |--------------------------------------------------|--------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">Procedure</span> | <span style="FONT-WEIGHT: bold">procedure</span> | <span style="FONT-WEIGHT: bold">type-id = df4db479-a1ba-42a2-8714-2b083b88150f</span> |
 
 <span style="FONT-WEIGHT: bold">If</span>(count(./DateTime) = 1) and <span style="FONT-WEIGHT: bold">If Exists</span>(./DateTime/DateTimeRange)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                     |        |                                     |
 |-------------------------------------|--------|-------------------------------------|
 | ./DateTime/DateTimeRange/BeginRange | ./when | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                            |        |                                     |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|-------------------------------------|
 | ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Text, "<span style="FONT-STYLE: italic">procedure-date"</span>)\]\[1\] | ./when | DateTimeType =&gt; approx-date-time |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                                                                         |                                                                   |                                          |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|------------------------------------------|
 | ./Description                                                                                                                                                                           | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./name</span> | CodedDescriptionType =&gt; codable-value |
@@ -1667,13 +1667,13 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="F
 
 ### Encounter : encounter
 
- 
+ 
 | CCR                                              | HealthVault                                      | Conversion                                                                            |
 |--------------------------------------------------|--------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">Encounter</span> | <span style="FONT-WEIGHT: bold">encounter</span> | <span style="FONT-WEIGHT: bold">type-id = 464083cc-13de-4f3e-a189-da8e47d5651b</span> |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                                                                                                  |                       |                                          |
 |----------------------------------------------------------------------------------------------------------------------------------|-----------------------|------------------------------------------|
 | [GetDateTime](ccr-input-functions.md#GetDateTime)(., "<span style="FONT-STYLE: italic">encounter-date"</span>) | ./when                | DateTimeType =&gt; date-time             |
@@ -1686,14 +1686,14 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.., <span style="F
 <span style="FONT-WEIGHT: bold">ForEach</span>(./Practitioners/Practitioner)
 $Practitioners = [Concat](ccr-input-functions.md#Concat)($Practitioners, ., <span style="FONT-STYLE: italic">"\\n\\n"</span>)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |     |           |                                     |
 |-----|-----------|-------------------------------------|
 | .   | ../common | CCRCodedDataObjectType =&gt; common |
 
 <span style="FONT-WEIGHT: bold">Remarks:</span> Practioners are appended to the content that is already in the note field.
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                |                |     |
 |----------------|----------------|-----|
 | $Practitioners | ../common/note |     |
@@ -1702,7 +1702,7 @@ $Practitioners = [Concat](ccr-input-functions.md#Concat)($Practitioners, ., <spa
 
 ### Encounter : appointment
 
- 
+ 
 | CCR                                              | HealthVault                                        | Conversion                                                                            |
 |--------------------------------------------------|----------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">Encounter</span> | <span style="FONT-WEIGHT: bold">appointment</span> | <span style="FONT-WEIGHT: bold">type-id = 4b18aeb6-5f01-444c-8c70-dbf13a2f510b</span> |
@@ -1710,7 +1710,7 @@ $Practitioners = [Concat](ccr-input-functions.md#Concat)($Practitioners, ., <spa
 $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.,<span style="FONT-STYLE: italic">"appointment-date"</span>)
 <span style="FONT-WEIGHT: bold">If Exists</span>($DateTime/ExactDateTime)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |                                                                   |                                          |
 |---------------------------------------------------|-------------------------------------------------------------------|------------------------------------------|
 | $DateTime                                         | <span style="FONT-WEIGHT: bold; FONT-STYLE: italic">./when</span> | DateTimeType =&gt; date-time             |
@@ -1721,14 +1721,14 @@ $DateTime = [GetDateTime](ccr-input-functions.md#GetDateTime)(.,<span style="FON
 $Practitioner = [ResolveActor](ccr-input-functions.md#ResolveActor)(./Practitioners/Practitioner\[1\]/ActorID)
 <span style="FONT-WEIGHT: bold">If Exists</span>($Practitioner/Person)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |               |          |                    |
 |---------------|----------|--------------------|
 | $Practitioner | ./clinic | Actor =&gt; Person |
 
 <span style="FONT-WEIGHT: bold">Else</span>
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                                                   |                    |     |
 |---------------------------------------------------|--------------------|-----|
 | <span style="FONT-STYLE: italic">"Unknown"</span> | ./clinic/name/full |     |
@@ -1736,13 +1736,13 @@ $Practitioner = [ResolveActor](ccr-input-functions.md#ResolveActor)(./Practition
 $Location = [ResolveActor](ccr-input-functions.md#ResolveActor)(./Locations/Location\[1\]/Actor/ActorID)
 <span style="FONT-WEIGHT: bold">If Exists</span>($Location)
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |                             |                       |     |
 |-----------------------------|-----------------------|-----|
 | $Location/Organization/Name | ./clinic/organization |     |
 
 <span style="FONT-WEIGHT: bold">Map values:</span>
- 
+ 
 |          |              |                                          |
 |----------|--------------|------------------------------------------|
 | ./Status | ./status     |                                          |

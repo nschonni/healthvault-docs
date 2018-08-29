@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" 
+    xmlns:this="urn:com.microsoft.wc.thing.defibrillator-episode" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com.microsoft.wc.thing.defibrillator-episode">
+    <import namespace="urn:com.microsoft.wc.thing.types" schemaLocation="base.xsd"/>
+    <import namespace="urn:com.microsoft.wc.dates" schemaLocation="dates.xsd"/>
+    <annotation>
+        <documentation>
+            <type-id>a3d38add-b7b2-4ccd-856b-9b14bbc4e075</type-id>
+            <type-name>Defibrillator episode</type-name>
+            <summary>
+                The data from an implantable defibrillator after an episode.
+            </summary>
+            <remarks>
+                Defibrillator episode data is usually transfered off defibrillator devices.
+            </remarks>
+            <seealso-thing-type-version-id>adaf49ad-8e10-49f8-9783-174819e97051</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>EF9CF8D5-6C0B-4292-997F-4047240BC7BE</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>b81eb4a6-6eac-4292-ae93-3872d6870994</seealso-thing-type-version-id>
+        </documentation>
+    </annotation>
+    <complexType name="defibrillatorEpisodeField">
+        <annotation>
+            <documentation>
+                <summary> 
+                    Name / Value pair of defibrillator episode properties.
+                </summary>
+            </documentation>
+        </annotation>    
+        <sequence>
+            <element name="field-name" type="t:codable-value">
+                <annotation>
+                    <documentation>
+                        <summary> 
+                            Name of the defibrillator episode property.
+                        </summary>
+                        <preferred-vocabulary>defibrillator-episode-fields</preferred-vocabulary>
+                    </documentation>
+                </annotation>            
+            </element>
+            <element name="field-value" type="t:codable-value">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Value of the defibrillator episode property.
+                        </summary>
+                    </documentation>
+                </annotation>            
+            </element>            
+        </sequence>
+    </complexType>
+    <complexType name="defibrillatorEpisodeFields">
+        <annotation>
+            <documentation>
+                <summary> 
+                    Collection of Name / Value pair storing additional defibrillator episode properties.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="episode-field" type="this:defibrillatorEpisodeField" minOccurs="0" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Episode field stores an episode property as a name/value pair.
+                        </summary>
+                    </documentation>
+                </annotation>                
+            </element>
+        </sequence>
+    </complexType>
+    <element name="defibrillator-episode">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Defines implantable defibrillator episode data.
+                    </summary>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="when" type="d:date-time">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The date and time of the episode.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>            
+                <element name="episode-type-group" type="t:codable-value" minOccurs="0">
+                    <annotation>         
+                        <documentation>
+                            <summary>
+                                Specifies the high-level grouping of the defibrillator episode. For example
+                                VT/VF represent episode type group for Ventricular Tachycardia / Ventricular Fibrillation.
+                            </summary>
+                            <preferred-vocabulary>defibrillator-episode-type-groups</preferred-vocabulary>
+                        </documentation>
+                    </annotation>                        
+                </element>
+                <element name="episode-type" type="t:codable-value" minOccurs="0">
+                    <annotation>         
+                        <documentation>
+                            <summary>
+                                Specifies the specific type of defibrillator episode. For example VT represents
+                                the episode type for Ventricular Tachycardia.
+                            </summary>
+                            <preferred-vocabulary>defibrillator-episode-types</preferred-vocabulary>
+                        </documentation>
+                    </annotation>                        
+                </element>
+                <element name="data-source" type="t:codable-value" minOccurs="0">
+                    <annotation>         
+                        <documentation>
+                            <summary>
+                                Data source of the defibrillator episode.
+                            </summary>
+                            <remarks>
+                                Data can come from different sources, for example Paceart device.
+                            </remarks>
+                            <preferred-vocabulary>defibrillator-data-sources</preferred-vocabulary>
+                        </documentation>
+                    </annotation>                        
+                </element>
+                <element name="duration-in-seconds" type="t:nonNegativeInt" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The duration of the episode in seconds.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="episode-fields" type="this:defibrillatorEpisodeFields" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Name / value pairs for storing additional episode properties.
+                            </summary>                            
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>    

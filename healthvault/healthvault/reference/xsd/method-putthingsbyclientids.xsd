@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.PutThingsByClientIds"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-thing="urn:com.microsoft.wc.thing"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-PUTTHINGSBYCLIENTIDS.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for PutThingsByClientIds method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.thing"
+        schemaLocation="thing.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Creates or updates one or more things based on the thing client ID.
+            </summary>
+
+            <method-visibility>Private</method-visibility>
+            <version>1</version>
+        </documentation>
+    </annotation>
+
+    <!-- PutThingsByClientIds - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="thing" type="wc-thing:Thing2"
+                    minOccurs="1" maxOccurs="unbounded" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The thing to be created or updated. If the thing-id
+                                exists, then the previous thing is updated. If thing-id
+                                is not provided, then a new thing is created.
+                            </summary>
+
+                            <remarks>
+                                If the request updates an existing thing but does not include
+                                any non-empty data elements, the request will return successfully
+                                but the thing will not be changed.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

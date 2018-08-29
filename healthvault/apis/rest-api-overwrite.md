@@ -2,7 +2,7 @@
 uid: data.ppe.microsofthealth.net/HealthVault REST API/v1.0-preview
 ---
 
-#HealthVault REST API
+# HealthVault REST API
 
 HealthVault offers a REST API for a select set of scenarios. If your scenario is not covered in the documentation below, you may need to use the [HealthVault XML API](/healthvault/concepts/xml-api/) and an appropriate SDK. 
 
@@ -26,7 +26,7 @@ x-ms-version: 1.0-preview
 uid: data.ppe.microsofthealth.net/HealthVault REST API/2.0-preview
 ---
 
-#HealthVault REST API
+# HealthVault REST API
 
 HealthVault offers a REST API for a select set of scenarios. If your scenario is not covered in the documentation below, you may need to use the [HealthVault XML API](/healthvault/concepts/xml-api/) and an appropriate SDK. 
 
@@ -53,7 +53,7 @@ x-ms-version: 1.0-preview
 uid: data.ppe.microsofthealth.net/HealthVault REST API/1.0-rc
 ---
 
-#HealthVault REST API
+# HealthVault REST API
 
 HealthVault offers a REST API for a select set of scenarios. If your scenario is not covered in the documentation below, you may need to use the [HealthVault XML API](/healthvault/concepts/xml-api/) and an appropriate SDK. 
 

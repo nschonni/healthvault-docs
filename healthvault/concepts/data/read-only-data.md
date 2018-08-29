@@ -27,30 +27,30 @@ Creating data in HealthVault is done via a **PutThings** request. To specify tha
 
 ```xml
 <info>
-  <thing>
-    <type-id>7ea7a1f9-880b-4bd4-b593-f5660f20eda8</type-id>
-    <flags>16</flags>
-    <data-xml>
-      <condition>
-         <name>
-           <text>Pneumonia</text>
-           <code>
-             <value>233604007</value>
-             <type>snomed-ct</type>
-           </code>
-         </name>
-         <onset-date>
-           <structured>
-             <date>
-               <y>1999</y>
-               <m>3</m>
-               <d>1</d>
-             </date>
-           </structured>
-         </onset-date>
-       </condition>
-     </data-xml>
-   </thing>
+  <thing>
+    <type-id>7ea7a1f9-880b-4bd4-b593-f5660f20eda8</type-id>
+    <flags>16</flags>
+    <data-xml>
+      <condition>
+         <name>
+           <text>Pneumonia</text>
+           <code>
+             <value>233604007</value>
+             <type>snomed-ct</type>
+           </code>
+         </name>
+         <onset-date>
+           <structured>
+             <date>
+               <y>1999</y>
+               <m>3</m>
+               <d>1</d>
+             </date>
+           </structured>
+         </onset-date>
+       </condition>
+     </data-xml>
+   </thing>
  </info>
  ```
 A thing can be marked read-only when it is created in HealthVault for the first time. An existing item that is not read-only cannot be updated to be read-only. Attempting to do this will result in a **CannotSetReadOnlyFlag** (161) error. For more information about error codes, see [status codes](/healthvault/concepts/xml-api/status-codes).
@@ -103,18 +103,18 @@ The following example shows a **GetThings** request that includes the **Core** s
 
 ```xml
 <request>
-  <!-- ... -->
-  <info>
-    <group name="height things">
-      <filter>
-        <type-id>40750a6a-89b2-455c-bd8d-b420a4cb500b</type-id>
-      </filter>
-      <format>
-        <section>core</section>
-        <xml/>
-      </format>
-    </group>
-  </info>
+  <!-- ... -->
+  <info>
+    <group name="height things">
+      <filter>
+        <type-id>40750a6a-89b2-455c-bd8d-b420a4cb500b</type-id>
+      </filter>
+      <format>
+        <section>core</section>
+        <xml/>
+      </format>
+    </group>
+  </info>
 </request> 
 ```
 It is not possible to use a filter to query for things that are read-only.
@@ -211,11 +211,11 @@ The following example edits the **Updated End Date** field on a read-only thing.
 // indicates the user considers the medication inactive as of the current time. 
 void EditUpdatedEndDate(){    
     // In this example, "9b3ef8ad-dd4a-484c-aa05-66f967470e0f" is the thing id
-    // for an existing Medication instance that is read-only.
-    HealthRecordItem med =
-        PersonInfo.SelectedRecord.GetItem(new Guid("9b3ef8ad-dd4a-484c-aa05-66f967470e0f"));
-    med.UpdatedEndDate = DateTime.Now;
-    PersonInfo.SelectedRecord.UpdateItem(med);
+    // for an existing Medication instance that is read-only.
+    HealthRecordItem med =
+        PersonInfo.SelectedRecord.GetItem(new Guid("9b3ef8ad-dd4a-484c-aa05-66f967470e0f"));
+    med.UpdatedEndDate = DateTime.Now;
+    PersonInfo.SelectedRecord.UpdateItem(med);
 } 
 ```
 
@@ -224,11 +224,11 @@ The following example specifies that items from a CCD should be reconciled as re
 ```c#
 // Specifies that a CCD document's items should be reconciled as read-only 
 void CreateCCDWithReadOnlyItems(){
-    XmlDocument ccdDocument = new XmlDocument();
+    XmlDocument ccdDocument = new XmlDocument();
 
-    ccdDocument.Load(MapPath("ExampleCCD.xml"));
-    HealthRecordItem ccd = new HealthRecordItem(CCD.TypeId, ccdDocument);
-    ccd.IsReadOnly = true;
-    PersonInfo.SelectedRecord.NewItem(ccd);
+    ccdDocument.Load(MapPath("ExampleCCD.xml"));
+    HealthRecordItem ccd = new HealthRecordItem(CCD.TypeId, ccdDocument);
+    ccd.IsReadOnly = true;
+    PersonInfo.SelectedRecord.NewItem(ccd);
 } 
 ```

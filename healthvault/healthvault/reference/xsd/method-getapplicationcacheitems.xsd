@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetApplicationCacheItems"
+    xmlns:this="urn:com.microsoft.wc.methods.GetApplicationCacheItems"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-GETAPPLICATIONCACHEITEMS.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetApplicationCacheItems method
+
+    -->
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Retrieves specified items from the application cache.
+            </summary>
+            <remarks>
+                For each unique cache item key specified in the request the matching
+                cache item key and associated cache data is returned in the response.
+
+                If a cache item with a matching key is not found, no error is returned,
+                but no cache item will be included in the response for that key.
+            </remarks>
+            <errors>
+                <error id="APPLICATION_CACHE_REQUEST_DUPLICATE_KEY">
+                    A cache item key was specified more than once in the request
+                </error>
+            </errors>
+            <method-visibility>Private</method-visibility>
+            <version>1</version>
+        </documentation>
+    </annotation>
+
+    <!-- GetApplicationCacheItems - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="item-key" type="wc-types:stringnz256" minOccurs="1" maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+</schema>

@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.SetPersonContactInfo"
+    xmlns:this="urn:com.microsoft.wc.methods.SetPersonContactInfo"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-SETPERSONCONTACTINFO.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for SetPersonContactInfo method
+
+    -->
+
+    <import
+          namespace="urn:com.microsoft.wc.types"
+          schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- SetPersonContactInfo - - - - - - - - - - - - - - - - - - - - -  - -->
+
+    <complexType name="ContactInfo">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="name" type="wc-types:string255">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="contact-email" type="wc-types:EmailAddress">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="contact-info"
+                         type="this:ContactInfo">
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

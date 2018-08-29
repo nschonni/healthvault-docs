@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns:this="urn:com.microsoft.wc.thing.status" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com.microsoft.wc.thing.status">
+    <import namespace="urn:com.microsoft.wc.thing.types" schemaLocation="base.xsd"/>
+    <import namespace="urn:com.microsoft.wc.dates" schemaLocation="dates.xsd"/>
+    <annotation>
+        <documentation>
+            <type-id>d33a32b2-00de-43b8-9f2a-c4c7e9f580ec</type-id>
+            <type-name>Status</type-name>
+            <summary>
+                The status of an item in the health record.
+            </summary>
+            <remarks>
+                Each status is related to one or more health record items which are stored
+                as related items.
+                
+                For example, the HealthVault shell creates a status item to indicate that a CCR or CCD document has 
+                been reconciled, and that document is linked using a related item. 
+            </remarks>
+        </documentation>
+    </annotation>
+    <element name="status">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Stores status information about a specific health record item.
+                    </summary>
+                    <remarks>
+                        Each status is related to one or more health record items which are stored
+                        as related items.
+                
+                        For example, the HealthVault Shell creates a status item to indicate that a CCR or CCD document has 
+                        been reconciled, and that document is linked using a related item. 
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="status-type" type="t:codable-value">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The specific type of status.
+                            </summary>
+                            <preferred-vocabulary>status-types</preferred-vocabulary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="text" type="t:stringnznw" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Additional information about the status.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

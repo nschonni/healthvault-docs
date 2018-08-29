@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<schema xmlns:sjam="urn:com.microsoft.wc.thing.sjam" xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com.microsoft.wc.thing.sjam">
+    <import namespace="urn:com.microsoft.wc.thing.types" schemaLocation="base.xsd"/>
+    <import namespace="urn:com.microsoft.wc.dates" schemaLocation="dates.xsd"/>
+    <annotation>
+        <documentation>
+            <type-id>11C52484-7F1A-11DB-AEAC-87D355D89593</type-id>
+            <type-name>Sleep session</type-name>
+            <effective-date-element>when</effective-date-element>
+            <wrapper-class-name>SleepJournalAM</wrapper-class-name>
+            <wrapper-class-fwlink>136233</wrapper-class-fwlink>
+            <sample-xml-fwlink />
+            <data-type-guide-fwlink />
+            <summary>
+                A sleep journal entry made in the morning to reflect on the prior night.
+            </summary>
+            <remarks>
+                A morning sleep journal reflects back on the previous nights
+                sleep. The data items were adapted from the NIH publication #06-5271,
+                November 2005, "Your Guide to Healthy Sleep", ISBN 1-933236-05-1.
+            </remarks>
+            <seealso-thing-type-version-id>9085CAD9-E866-4564-8A91-7AD8685D204D</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>031F5706-7F1A-11DB-AD56-7BD355D89593</seealso-thing-type-version-id>
+        </documentation>
+    </annotation>
+    <complexType name="Awakening">
+        <annotation>
+            <documentation>
+                <summary>
+                    A time and duration of an awakening during a period of 
+                    sleep.
+                </summary>
+                <remarks>
+                    An awakening covers those times during a sleep session
+                    in which the person awoke and then went back to sleep.
+                    For example, if a person wakes up during a night's 
+                    sleep to use the restroom and then returns to sleep. It
+                    does not include awakenings that result in the person 
+                    remaining awake for active periods.
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="when" type="d:time">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The time when the person awoke.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="minutes" type="t:nonNegativeInt">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The duration the person stayed awake in minutes.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="SleepPhaseSummaryGroup">
+      <annotation>
+        <documentation>
+          <summary>
+            A group of sleep phase minutes for this sleep event.
+          </summary>
+        </documentation>
+      </annotation>
+      <sequence>
+        <element name="sleep-phase-summary" maxOccurs="unbounded" type="sjam:SleepPhaseSummary" >
+          <annotation>
+            <documentation>
+              <summary>
+                The sleep phase minutes definitions for this sleep event.
+              </summary>
+            </documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+    <complexType name="SleepPhaseSummary">
+	  <annotation>
+		  <documentation>
+			  <summary>
+				  A summary of the amount of time the person slept in each 
+				  phase during this sleep event.  Each element should represent 
+				  the total amount of time the person spent in that phase during 
+				  this sleep event.
+			  </summary>
+			  <remarks>
+				A sleep phase minutes summary is meant to cover the total 
+				sleep time that the user spent in each phase of sleep.  
+				For example, the amount of time they spent in deep, light, 
+				or rem sleep.
+			  </remarks>
+		  </documentation>
+	  </annotation>
+	  <sequence>
+		  <element name="phase" type="t:codable-value">
+			  <annotation>
+				  <documentation>
+					  <summary>
+						  The phase of sleep represented by this object.  
+						  Example values could be light, deep, or REM sleep.
+					  </summary>
+				  </documentation>
+			  </annotation>
+		  </element>
+		  <element name="minutes" type="t:nonNegativeInt">
+			  <annotation>
+				  <documentation>
+					  <summary>
+						  The amount of time that the person spent in this phase during 
+						  this sleep event.
+					  </summary>
+				  </documentation>
+			  </annotation>
+		  </element>
+	  </sequence>
+  </complexType>
+	<element name="sleep-am">
+		<complexType>
+			<annotation>
+				<documentation>
+					<summary>
+						Schema for a morning sleep journal.
+					</summary>
+					<remarks>
+						A morning sleep journal reflects back on the previous nights
+						sleep. The data items were adapted from the NIH publication #06-5271,
+						November 2005, "Your Guide to Healthy Sleep", ISBN 1-933236-05-1.
+					</remarks>
+				</documentation>
+			</annotation>
+			<sequence>
+				<element name="when" type="d:date-time">
+					<annotation>
+						<documentation>
+							<summary>
+								The date and time that the journal entry refers to.
+							</summary>
+						</documentation>
+					</annotation>
+				</element>
+				<element name="bed-time" type="d:time">
+					<annotation>
+						<documentation>
+							<summary>
+								The time the person went to bed.
+							</summary>
+						</documentation>
+					</annotation>
+				</element>
+				<element name="wake-time" type="d:time">
+					<annotation>
+						<documentation>
+							<summary>
+								The time the person woke up for a period of 
+								activity.
+							</summary>
+						</documentation>
+					</annotation>
+				</element>
+				<element name="sleep-minutes" type="t:nonNegativeInt">
+					<annotation>
+						<documentation>
+							<summary>
+								The number of minutes slept.
+							</summary>
+						</documentation>
+					</annotation>
+				</element>
+				<element name="settling-minutes" type="t:nonNegativeInt" >
+					<annotation>
+						<documentation>
+							<summary>
+								The number of minutes it took to fall asleep.
+							</summary>
+						</documentation>
+					</annotation>
+				</element>
+				<element name="awakening" type="sjam:Awakening" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>
+							<summary>
+								The time and duration of each the person awoke 
+								during the night.
+							</summary>
+						</documentation>
+					</annotation>
+				</element>
+				<element name="medications" type="t:codable-value" minOccurs="0">
+					<annotation>
+						<documentation>
+							<summary>
+								A description of the medications taken before
+								going to bed.
+							</summary>
+						</documentation>
+					</annotation>
+				</element>
+				<element name="wake-state">
+					<simpleType>
+						<annotation>
+							<documentation>
+								<summary>
+									An evaluation of how the person felt when 
+									they got up in the morning.
+								</summary>
+								<remarks>
+									1 = Wide awake,
+									2 = Awake but a little tired,
+									3 = Sleepy
+								</remarks>
+							</documentation>
+						</annotation>
+						<restriction base="int">
+							<minInclusive value="1"/>
+							<maxInclusive value="3"/>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="times-woken-up" type="t:nonNegativeInt" minOccurs="0">
+					<annotation>
+						<documentation>
+							  <summary>
+								  The number of times the person woke up at night.
+							  </summary>
+						</documentation>
+					</annotation>
+				</element>
+				<element name="average-resting-hr" type="t:nonNegativeInt" minOccurs="0">
+				  <annotation>
+					<documentation>
+					  <summary>
+						The average resting heart rate of the person.
+					  </summary>
+					</documentation>
+				  </annotation>
+				</element>
+				<element name="calories-burned" type="t:nonNegativeInt" minOccurs="0" >
+				  <annotation>
+					<documentation>
+					  <summary>
+						The number of calories burned while sleeping.
+					  </summary>
+					</documentation>
+				  </annotation>
+				</element>
+				<element name="awake-minutes" type="t:nonNegativeInt" minOccurs="0">
+				  <annotation>
+					<documentation>
+					  <summary>
+						The number of minutes that the person was awake during 
+						their sleep session.
+					  </summary>
+					</documentation>
+				  </annotation>
+				</element>
+				<element name="sleep-phase-summary-group" type="sjam:SleepPhaseSummaryGroup" minOccurs="0">
+					<annotation>
+						<documentation>
+							<summary>
+							  A summary of the total amount of time the person spent in each sleep phase.  For example, minutes spent in Light, Deep, or REM sleep.
+							</summary>
+						</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

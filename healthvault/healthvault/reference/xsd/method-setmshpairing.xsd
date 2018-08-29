@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.SetMshPairing"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-auth="urn:com.microsoft.wc.auth"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-SETMSHPAIRING.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for the SetMshPairing method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+    <import
+        namespace="urn:com.microsoft.wc.auth"
+        schemaLocation="auth.xsd"  />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Sets the Microsoft Health (MSH) pairing information for an account.
+            </summary>
+
+            <errors>
+                <error id="ACCOUNT_PAIRED">
+                    If the account is already paired with a MSH account.
+                </error>
+                <error id="RECORD_REQUIREMENTS_NOT_MET">
+                    If the record does not meet the pairing requirements (e.g. not a custodial record).
+                </error>
+                <error id="MSH_USER_ID_PAIRED">
+                    If the MSH user ID is already paired to another HV account.
+                </error>
+            </errors>
+        </documentation>
+    </annotation>
+
+    <element name="info">
+        <complexType>
+            <sequence>
+                <element name="msh-user-id" type="wc-types:stringnwz64">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The Microsoft Health user ID to be used for pairing.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="msh-credential" type="wc-auth:MshAssociatedCredential">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The Microsoft Health credential (e.g. MSA) to be used for pairing.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>
+

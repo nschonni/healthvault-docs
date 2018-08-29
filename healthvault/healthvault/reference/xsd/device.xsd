@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:device="urn:com.microsoft.wc.thing.equipment" xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com.microsoft.wc.thing.equipment">
+
+    <import
+        namespace="urn:com.microsoft.wc.thing.types"
+        schemaLocation="base.xsd" />
+    
+    <import namespace="urn:com.microsoft.wc.dates" 
+            schemaLocation="dates.xsd"/>
+    
+    <annotation>
+        <documentation>
+            <type-id>EF9CF8D5-6C0B-4292-997F-4047240BC7BE</type-id>
+            <type-name>Medical device</type-name>
+            <wrapper-class-name>Device</wrapper-class-name>
+            <wrapper-class-fwlink>136095</wrapper-class-fwlink>
+            <sample-xml-fwlink />
+            <data-type-guide-fwlink />
+            <summary>
+                A piece of medical equipment such as a blood pressure reader or pedometer.
+            </summary>
+            <remarks>
+                This thing type describes medical equipment a person has.
+            </remarks>
+            <seealso-thing-type-version-id>ff9ce191-2096-47d8-9300-5469a9883746</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>03efe378-976a-42f8-ae1e-507c497a8c6d</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>879e7c04-4e8a-4707-9ad3-b054df467ce4</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>a3d38add-b7b2-4ccd-856b-9b14bbc4e075</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>3B3C053B-B1FE-4E11-9E22-D4B480DE74E8</seealso-thing-type-version-id>
+            <effective-date-element>when</effective-date-element>
+            <related-links>
+                <related-link>
+                    <text>
+                        Emergency Preparedness
+                    </text>
+                    <link>
+                        http://go.microsoft.com/fwlink/?LinkId=513260
+                    </link>
+                </related-link>
+            </related-links>
+        </documentation>
+    </annotation>
+    <element name="device">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Information related to medical equipment.
+                    </summary>
+                    <remarks>
+                        This thing type describes medical equipment a person has.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="when" type="d:date-time">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The date and time the report.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="device-name" type="string" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The name of the medical equipment.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="vendor" type="t:person" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The vendor of the medical equipment.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="model" type="string" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Free form model name of the medical equipment.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="serial-number" type="string" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Free form serial number of the medical equipment.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="anatomic-site" type="string" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The location on the body where the device 
+                                takes readings.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="description" type="string" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A free form description of the of the medical equipment.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

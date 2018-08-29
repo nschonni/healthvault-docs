@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetApplicationPrivileged"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetApplicationPrivileged" 
+    xmlns:wc-app="urn:com.microsoft.wc.application"
+    xmlns:wc-types="urn:com.microsoft.wc.types" 
+    xmlns:wc-app-config="urn:com.microsoft.wc.app-config" 
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        RESPONSE-GETAPPLICATIONPRIVILEGED.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetApplicationPrivileged response
+
+    -->
+
+    <import
+      namespace="urn:com.microsoft.wc.application"
+      schemaLocation="application-configuration.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <import
+        namespace="urn:com.microsoft.wc.app-config"
+        schemaLocation="app-config.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Gets all the configuration information for an application.
+            </summary>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    
+    <!-- info - - - - - -  - - - - - - - - - - - - - - -->
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Gets all the configuration information for an application.
+                    </summary>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="application" minOccurs="0" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Configuration and installation values for
+                                the applications requested.
+                            </summary>
+
+                            <remarks>
+                                This element contains information about the
+                                installation and configuration of the application
+                                including logos, authorization rules, and descriptions.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                    <complexType>
+                        <complexContent>
+                            <extension base="wc-app-config:AppConfig">
+                                <attribute name="app-state" type="wc-app:ApplicationState" >
+                                    <annotation>
+                                        <documentation>
+                                            <summary>
+                                                The state of the application.
+                                            </summary>
+
+                                            <remarks>
+                                                Application may be suspended if there is suspicion 
+                                                of fraud. In most cases the state will be Active.
+                                            </remarks>
+                                        </documentation>
+                                    </annotation>
+                                </attribute>
+                            </extension>
+                        </complexContent>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

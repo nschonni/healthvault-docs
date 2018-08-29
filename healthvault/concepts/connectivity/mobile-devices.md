@@ -89,31 +89,31 @@ Call HealthVault web service with **NewApplicationCreationInfo** with master app
 ### Request
 ```xml
 <wc-request:request xmlns:wc-request="urn:com.microsoft.wc.request">
-  <header>
-    <method>NewApplicationCreationInfo</method>
-    <method-version>1</method-version>
-    <app-id>6556d00c-cb8d-4004-90d6-8be528420ff7</app-id>
-    <language>en</language>
-    <country>US</country>
-    <msg-time>2012-04-28T19:10:41.3940000Z</msg-time>
-    <msg-ttl>1800</msg-ttl>
-    <version>foo v1.0</version>
-  </header>
-  <info />
+  <header>
+    <method>NewApplicationCreationInfo</method>
+    <method-version>1</method-version>
+    <app-id>6556d00c-cb8d-4004-90d6-8be528420ff7</app-id>
+    <language>en</language>
+    <country>US</country>
+    <msg-time>2012-04-28T19:10:41.3940000Z</msg-time>
+    <msg-ttl>1800</msg-ttl>
+    <version>foo v1.0</version>
+  </header>
+  <info />
 </wc-request:request>
 ```
 ### Response
 ```xml
 <response>
-  <status>
-    <code>0</code>
-  </status>
-  <wc:info xmlns:wc=
-      "urn:com.microsoft.wc.methods.response.NewApplicationCreationInfo">
-    <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>
-    <shared-secret>RaFzI5JVbg0...Bk/iU0pg=</shared-secret>
-    <app-token>ASAAAJMipARM...5OBFdAISE</app-token>
-  </wc:info>
+  <status>
+    <code>0</code>
+  </status>
+  <wc:info xmlns:wc=
+      "urn:com.microsoft.wc.methods.response.NewApplicationCreationInfo">
+    <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>
+    <shared-secret>RaFzI5JVbg0...Bk/iU0pg=</shared-secret>
+    <app-token>ASAAAJMipARM...5OBFdAISE</app-token>
+  </wc:info>
 </response> 
 ```
 
@@ -133,44 +133,44 @@ ShellURL/application/complete?appid=39a952bb-aac4-4a3d-8fba-f53e5605eca5&target=
 
 ```xml
 <wc-request:request xmlns:wc-request="urn:com.microsoft.wc.request">
-  <header>    <method>CreateAuthenticatedSessionToken</method>
-    <method-version>2</method-version>
-    <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>
-    <language>en</language>
-    <country>US</country>
-    <msg-time>2012-04-28T19:11:42.0720000Z</msg-time>
-    <msg-ttl>1800</msg-ttl>
-    <version>foo v1.0</version>
-  </header>
-  <info>
-    <auth-info>
-      <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>
-      <credential>
-        <appserver2>
-          <hmacSig algName="HMACSHA256">BSMSUpf...n1k/To3A=</hmacSig>
-          <content>
-            <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>
-            <hmac>HMACSHA256</hmac>
-            <signing-time>2012-04-28T19:11:42.0580000Z</signing-time>
-          </content>
-        </appserver2>
-      </credential>
-    </auth-info>
-  </info>
+  <header>    <method>CreateAuthenticatedSessionToken</method>
+    <method-version>2</method-version>
+    <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>
+    <language>en</language>
+    <country>US</country>
+    <msg-time>2012-04-28T19:11:42.0720000Z</msg-time>
+    <msg-ttl>1800</msg-ttl>
+    <version>foo v1.0</version>
+  </header>
+  <info>
+    <auth-info>
+      <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>
+      <credential>
+        <appserver2>
+          <hmacSig algName="HMACSHA256">BSMSUpf...n1k/To3A=</hmacSig>
+          <content>
+            <app-id>39a952bb-aac4-4a3d-8fba-f53e5605eca5</app-id>
+            <hmac>HMACSHA256</hmac>
+            <signing-time>2012-04-28T19:11:42.0580000Z</signing-time>
+          </content>
+        </appserver2>
+      </credential>
+    </auth-info>
+  </info>
 </wc-request:request>
 ```
 ### Response
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-  <status>
-    <code>0</code>
-  </status>
-  <wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.CreateAuthenticatedSessionToken2">
-    <token app-id="39a952bb-aac4-4a3d-8fba-f53e5605eca5" 
-       app-record-auth-action="NoActionRequired">ASAAAPmoT...PwuWA==</token>
-     <shared-secret>zecX0M6EfF0... +BUXnBg==</shared-secret>
-   </wc:info>
+  <status>
+    <code>0</code>
+  </status>
+  <wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.CreateAuthenticatedSessionToken2">
+    <token app-id="39a952bb-aac4-4a3d-8fba-f53e5605eca5" 
+       app-record-auth-action="NoActionRequired">ASAAAPmoT...PwuWA==</token>
+     <shared-secret>zecX0M6EfF0... +BUXnBg==</shared-secret>
+   </wc:info>
  </response> 
 ```
 
@@ -180,64 +180,64 @@ For example, to get a list of all accounts currently authorized with this instan
 
 ```xml
 <wc-request:request xmlns:wc-request="urn:com.microsoft.wc.request">
-  <auth>
-    <hmac-data algName="HMACSHA256">0tOW1...nCSQA</hmac-data>
-  </auth>
-  <header>
-    <method>GetAuthorizedPeople</method>
-    <method-version>1</method-version>
-    <auth-session>
-      <auth-token>ASAAAPmoT...PwuWA==</auth-token>
-    </auth-session>
-    <language>en</language>
-    <country>US</country>
-     <msg-time>2012-04-28T19:11:42.4870000Z</msg-time>
-    <msg-ttl>1800</msg-ttl>
-    <version>foo v1.0</version>
-    <info-hash>
-      <hash-data algName="SHA256">NqMlA...yc4=</hash-data>
-    </info-hash>
-  </header>
-  <info>
-    <parameters />
-  </info>
+  <auth>
+    <hmac-data algName="HMACSHA256">0tOW1...nCSQA</hmac-data>
+  </auth>
+  <header>
+    <method>GetAuthorizedPeople</method>
+    <method-version>1</method-version>
+    <auth-session>
+      <auth-token>ASAAAPmoT...PwuWA==</auth-token>
+    </auth-session>
+    <language>en</language>
+    <country>US</country>
+     <msg-time>2012-04-28T19:11:42.4870000Z</msg-time>
+    <msg-ttl>1800</msg-ttl>
+    <version>foo v1.0</version>
+    <info-hash>
+      <hash-data algName="SHA256">NqMlA...yc4=</hash-data>
+    </info-hash>
+  </header>
+  <info>
+    <parameters />
+  </info>
 </wc-request:request> 
 ```
 
 And your app would receive this repsonse. 
 ```xml
 <response>
-  <status>
-    <code>0</code>
-  </status>
-  <wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.GetAuthorizedPeople">
-    <response-results>
-      <person-info>
-        <person-id>f0199615-0979-4dcd-a7ca-b9530d2b787d</person-id>
-        <name>Michel Cordani</name>
-        <record id="6f8a2949-b5de-431b-a2ba-cc03277f65e9"
-            record-custodian="true"
-            rel-type="2"
-            rel-name="Other"
-            auth-expires="9999-12-31T23:59:59.999Z"
-            display-name="Michel"
-            state="Active"
-            date-created="2008-01-22T22:12:07.91Z"
-            max-size-bytes="4294967296"
-            size-bytes="101555"
-            app-record-auth-action="NoActionRequired"
-            app-specific-record-id="1587152">Michel</record>
-        <preferred-culture>
-          <language>en</language>
-          <country>US</country>
-        </preferred-culture>
-        <preferred-uiculture>
-          <language>en</language>
-          <country>US</country>
-        </preferred-uiculture>
-      </person-info>
-      <more-results>false</more-results>
-    </response-results>
-  </wc:info>
+  <status>
+    <code>0</code>
+  </status>
+  <wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.GetAuthorizedPeople">
+    <response-results>
+      <person-info>
+        <person-id>f0199615-0979-4dcd-a7ca-b9530d2b787d</person-id>
+        <name>Michel Cordani</name>
+        <record id="6f8a2949-b5de-431b-a2ba-cc03277f65e9"
+            record-custodian="true"
+            rel-type="2"
+            rel-name="Other"
+            auth-expires="9999-12-31T23:59:59.999Z"
+            display-name="Michel"
+            state="Active"
+            date-created="2008-01-22T22:12:07.91Z"
+            max-size-bytes="4294967296"
+            size-bytes="101555"
+            app-record-auth-action="NoActionRequired"
+            app-specific-record-id="1587152">Michel</record>
+        <preferred-culture>
+          <language>en</language>
+          <country>US</country>
+        </preferred-culture>
+        <preferred-uiculture>
+          <language>en</language>
+          <country>US</country>
+        </preferred-uiculture>
+      </person-info>
+      <more-results>false</more-results>
+    </response-results>
+  </wc:info>
 </response> 
 ```

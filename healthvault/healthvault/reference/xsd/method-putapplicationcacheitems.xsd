@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.PutApplicationCacheItems"
+    xmlns:this="urn:com.microsoft.wc.methods.PutApplicationCacheItems"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-PUTAPPLICATIONCACHEITEMS.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for PutApplicationCacheItems method
+
+    -->
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Inserts or updates items into the application cache.
+            </summary>
+            <remarks>
+                A matching cache item key and data version identifier will
+                be returned in the response for each item that was successfully
+                inserted or updated.  See the documentation for the
+                cache item for specifics of success and failure cases.
+            </remarks>
+            <errors>
+                <error id="APPLICATION_CACHE_REQUEST_DUPLICATE_KEY">
+                    A cache item key was specified more than once in the request.
+                </error>
+                <error id="APPLICATION_CACHE_REQUEST_INVALID_ITEM">
+                    A cache item with overwrite set to true also specified an old-version-id.
+                </error>
+                <error id="APPLICATION_CACHE_REQUEST_TOO_LARGE">
+                    The cache items in the request are larger than the total capacity of the cache.
+                </error>
+            </errors>
+            <method-visibility>Private</method-visibility>
+            <version>1</version>
+        </documentation>
+    </annotation>
+
+    <!-- PutApplicationCacheItems - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="item" type="this:CacheItem" minOccurs="1" maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="CacheItem">
+        <annotation>
+            <documentation>
+                <summary>
+                    A cache item to be inserted or updated.
+                </summary>
+                <remarks>
+                    When overwrite is false, and old data version identifier is not
+                    specified, it will be inserted if an item with the same key does
+                    not exist.  If an item with the same key already exists, the
+                    new cache item is ignored and the response will not include the
+                    key for it.
+
+                    When overwrite is true, the item will be inserted if new, or an
+                    existing item will be updated.  The response will include the
+                    cache item key in both cases.
+
+                    An old data version identifier may be specified, which allows
+                    for optimistic concurrency control. The cache item will only
+                    update an existing cache item with a matching key and only
+                    if the specified old data version identifier matches the version
+                    identifier for data currently cached.  Otherwise, if the version
+                    identifiers do not match, or if the item does not exist, the
+                    optimistic concurrency condition is considered not met, and the
+                    operation is considered unsuccessful.
+
+                    If overwrite is true, the old data version identifier must not
+                    be specified.
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="time-to-live" type="this:CacheItemTtl" />
+            <element name="data" type="this:CacheItemData" />
+        </sequence>
+        <attribute name="key" type="wc-types:stringnz256" use="required" />
+    </complexType>
+
+    <complexType name="CacheItemTtl">
+        <annotation>
+            <documentation>
+                <summary>
+                    The time period after which the item expires.
+                </summary>
+                <remarks>
+                    When the type attribute is set to sliding, the item's expiration is
+                    calculated using this time-to-live period from the time it was last
+                    accessed.
+
+                    When the type attribute is set to absolute (or when not set), the
+                    item's expiration is calculated using this time-to-live period from
+                    when it is last set.
+                </remarks>
+            </documentation>
+        </annotation>
+        <simpleContent>
+            <extension base="duration">
+                <attribute name="type" default="absolute">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="absolute" />
+                            <enumeration value="sliding" />
+                        </restriction>
+                    </simpleType>
+                </attribute>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <complexType name="CacheItemData">
+        <annotation>
+            <documentation>
+                <summary>
+                    The cache value to be updated, encoded in Base64.
+                </summary>
+                <remarks>
+                    When overwrite is false, and old data version identifier is not
+                    specified, the cache item will be inserted if an item with the
+                    same key does not exist.  If an item with the same key exists, the
+                    new cache item will not replace it, the operation is considered
+                    unsuccessful, and the response will therefore not include the
+                    cache item's key.
+
+                    When overwrite is true, the item will be inserted regardless of
+                    whether an item with the same key already exists.  If an item already
+                    exists, the new one will replace it.
+
+                    An old data version identifier may be specified, which allows
+                    for optimistic concurrency control. The cache item will only
+                    update an existing cache item with a matching key and only
+                    if the specified old data version identifier matches the version
+                    identifier of the data currently cached.  If the version
+                    identifiers do not match, or if the item does not exist, the
+                    optimistic concurrency condition is not met, and the operation
+                    is considered unsucessful.
+
+                    If overwrite is true, an old data version identifier may not
+                    be specified.
+                </remarks>
+            </documentation>
+        </annotation>
+        <simpleContent>
+            <extension base="base64Binary">
+                <attribute name="overwrite" use="optional" type="boolean" default="false" />
+                <attribute name="old-version-id" use="optional" type="wc-types:stringnz256" />
+            </extension>
+        </simpleContent>
+    </complexType>
+</schema>

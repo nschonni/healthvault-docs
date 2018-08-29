@@ -36,28 +36,28 @@ The following code fetches all the schemas and stores them in separate files:
 ```c#
 protected void Page_Load(object sender, EventArgs e)
 {
-    HealthRecordItemTypeDefinition baseTypes =
-        ItemTypeManager.GetBaseHealthRecordItemTypeDefinition(ApplicationConnection);
-    SaveTypeXSD(baseTypes, "base");
-    Vocabulary thingTypes = ApplicationConnection.GetVocabulary("thing-types");
-    foreach (KeyValuePair<string, VocabularyItem> item in thingTypes)
-    {
-            Guid thingType = new Guid(item.Key);
-            HealthRecordItemTypeDefinition definition =
-                ItemTypeManager.GetHealthRecordItemTypeDefinition(thingType, ApplicationConnection);
-            SaveTypeXSD(definition, definition.Name);
-    }
+    HealthRecordItemTypeDefinition baseTypes =
+        ItemTypeManager.GetBaseHealthRecordItemTypeDefinition(ApplicationConnection);
+    SaveTypeXSD(baseTypes, "base");
+    Vocabulary thingTypes = ApplicationConnection.GetVocabulary("thing-types");
+    foreach (KeyValuePair<string, VocabularyItem> item in thingTypes)
+    {
+            Guid thingType = new Guid(item.Key);
+            HealthRecordItemTypeDefinition definition =
+                ItemTypeManager.GetHealthRecordItemTypeDefinition(thingType, ApplicationConnection);
+            SaveTypeXSD(definition, definition.Name);
+    }
 }
 void SaveTypeXSD(HealthRecordItemTypeDefinition definition, string name)
 {
-    string directoryName = MapPath("platform");
-    Directory.CreateDirectory(directoryName).CreateSubdirectory("web").CreateSubdirectory("xsd");
-    string filename = MapPath(@"platform\web\xsd\" + name + ".xsd");
-    using (StreamWriter writer = System.IO.File.CreateText(filename))
-    {
-        string schema = definition.XmlSchemaDefinition;
-        writer.Write(schema);
-    }
+    string directoryName = MapPath("platform");
+    Directory.CreateDirectory(directoryName).CreateSubdirectory("web").CreateSubdirectory("xsd");
+    string filename = MapPath(@"platform\web\xsd\" + name + ".xsd");
+    using (StreamWriter writer = System.IO.File.CreateText(filename))
+    {
+        string schema = definition.XmlSchemaDefinition;
+        writer.Write(schema);
+    }
 } 
 ```
 

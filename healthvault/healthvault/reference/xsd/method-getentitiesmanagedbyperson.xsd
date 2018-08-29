@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetEntitiesManagedByPerson"
+    xmlns:this="urn:com.microsoft.wc.methods.GetEntitiesManagedByPerson"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+  <!--
+
+        METHOD-GETENTITIESMANAGEDBYPERSON.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetEntitiesManagedByPerson method
+
+    -->
+
+  <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd" />
+
+  <annotation>
+    <documentation>
+      <summary>
+        Gets all the entities a person (manager) can manage by entity type.
+      </summary>
+      <remarks>
+        This method is intended for administration purposes only and should not be granted
+        to partner applications.
+      </remarks>
+      <method-visibility>Private</method-visibility>
+    </documentation>
+  </annotation>
+
+  <!-- GetEntitiesManagedByPerson - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <element name="info">
+    <complexType>
+      <annotation>
+        <documentation>
+          <summary>
+            The element of the request that contains the method
+            specific parameters.
+          </summary>
+          <remarks>
+            All requests contain the info element to pass parameters
+            that are specific to each method. If the method does not
+            define an info element, the method does not take any
+            parameters.
+          </remarks>
+        </documentation>
+      </annotation>
+      <sequence>
+        <choice minOccurs="0" maxOccurs="1">
+        <element name="person-id" type="wc-types:guid" minOccurs="0" maxOccurs="1">
+          <annotation>
+            <documentation>
+              <summary>
+                The pseudo person id for which to retrieve the list of applications the person can manage.
+              </summary>
+              <remarks>
+                The application Id(s) will be returned.  If person id is not specified, we default 
+                to the current context caller's person id.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="email-address" type="wc-types:EmailAddress">
+          <annotation>
+            <documentation>
+              <summary>
+                E-mail address to send invite to.
+              </summary>
+            </documentation>
+          </annotation>
+        </element>
+        </choice>
+        <element name="entity-type" type="int" minOccurs="1">
+          <annotation>
+            <documentation>
+              <summary>
+                The entity type this request is suppose to be for.
+              </summary>
+            </documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

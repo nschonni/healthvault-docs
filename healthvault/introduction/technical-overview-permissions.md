@@ -28,7 +28,7 @@ An *authorization rule *is a collection of permissions for creating, reading, u
 Online and offline rules
 ------------------------
 
-<span style="FONT-SIZE: 12px">An authorization rule can be defined as </span> *online * <span style="FONT-SIZE: 12px">or </span> *offline* <span style="FONT-SIZE: 12px">. An online rule specifies permissions when the user has actively signed into the application (e.g., signed into a website). An offline rule specifies permissions when the application accesses the health record at other times (e.g., during nightly processing).</span>
+<span style="FONT-SIZE: 12px">An authorization rule can be defined as </span> <em>online * <span style="FONT-SIZE: 12px">or </span> *offline</em> <span style="FONT-SIZE: 12px">. An online rule specifies permissions when the user has actively signed into the application (e.g., signed into a website). An offline rule specifies permissions when the application accesses the health record at other times (e.g., during nightly processing).</span>
 
 See <a href="/healthvault/concepts/authorization/offline-access" id="Introduction_14105_18">offline access</a> 
 

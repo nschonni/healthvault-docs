@@ -27,7 +27,7 @@ HealthVault provides a number of integration options for connecting applications
 <tr class="odd">
 <td><p>Record authorization-based</p></td>
 <td><ul>
-<li><p>Allows both reading and writing data from HealthVault users' records.</p></li>
+<li><p>Allows both reading and writing data from HealthVault users&#39; records.</p></li>
 <li><p>Applications can access HealthVault records on an on-going basis even if the user is not online.</p></li>
 </ul></td>
 </tr>
@@ -111,7 +111,7 @@ The following describes the end-to-end workflow.
 The following summarizes the Patient Connect workflow.
 
 <img src="https://i-msdn.sec.s-msft.com/dynimg/IC698760.png" title="Patient Connect Summary" alt="Patient Connect Summary" id="Patient Connect Summary" />
-See [Establishing authorization with a user using Patient Connect](/healthvault/concepts/connectivity/patient-connect) for more information and code samples.
+See <a href="/healthvault/concepts/connectivity/patient-connect" data-raw-source="[Establishing authorization with a user using Patient Connect](/healthvault/concepts/connectivity/patient-connect)">Establishing authorization with a user using Patient Connect</a> for more information and code samples.
 
 ### Software on Device Authentication (SODA)
 

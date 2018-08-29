@@ -81,7 +81,7 @@ HealthVault returns the authorization status in response to **GetPersonInfo** an
 </tr>
 <tr class="odd">
 <td><p>ReauthorizationNotPossible</p></td>
-<td><p>The application updated its rules to add new types in a required rule and the user won't be able to authorize them because the user has insufficient rights to the application to grant the entire request. Or the user has lost sufficient access to the record.</p></td>
+<td><p>The application updated its rules to add new types in a required rule and the user won&#39;t be able to authorize them because the user has insufficient rights to the application to grant the entire request. Or the user has lost sufficient access to the record.</p></td>
 </tr>
 </tbody>
 </table>

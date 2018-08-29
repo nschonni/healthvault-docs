@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.AddSodaApplication"
+    xmlns:this="urn:com.microsoft.wc.methods.AddSodaApplication"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-auth="urn:com.microsoft.wc.auth" 
+    xmlns:wc-app="urn:com.microsoft.wc.application"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-ADDSODAAPPLICATION.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for AddSodaApplication method
+
+    -->
+
+    <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd" />
+    <import namespace="urn:com.microsoft.wc.auth" schemaLocation="auth.xsd" />
+    <import namespace="urn:com.microsoft.wc.application" schemaLocation="application-configuration.xsd" />
+    
+    <annotation>
+        <documentation>
+            <summary>
+                Adds a SODA application.
+            </summary>
+            <remarks>
+            </remarks>
+            <method-visibility>Private</method-visibility>
+            <errors>
+                <error id="INVALID_APP">
+                    If the parent application specified cannot be found, is
+                    not a soda master, or the instance id is a duplicate.
+                </error>
+                <error id="APPLICATION_LIMIT_EXCEEDED">
+                    If the user has exceeded the allowable limit of soda applicaitons.
+                </error>
+            </errors>
+        </documentation>
+    </annotation>
+
+    <complexType name="SodaAppConfigWithToken">
+        <annotation>
+            <documentation>
+                <summary>
+                    SodaAppConfigWithToken encapsulates the attributes required
+                    to create a Soda application.
+                </summary>
+                <remarks>
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="app-creation-token" type="wc-types:stringnz1024"/>
+            <element name="name" type="wc-types:string255"/>
+        </sequence>
+    </complexType>
+
+    <!-- AddApplication - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <choice>
+                    <element name="soda-app-config-with-token" 
+                        type="this:SodaAppConfigWithToken">
+                        <annotation>
+                            <documentation>
+                                <summary>
+                                    The soda application configuration.
+                                </summary>
+                                <remarks>
+                                </remarks>
+                            </documentation>
+                        </annotation>
+                    </element>
+                    <element name="soda-app-config" type="wc-app:SodaAppConfig">
+                        <annotation>
+                            <documentation>
+                                <summary>
+                                    The soda application configuration.
+                                </summary>
+                                <remarks>
+                                </remarks>
+                            </documentation>
+                        </annotation>
+                    </element>
+                </choice> 
+            </sequence>
+        </complexType>
+    </element>
+</schema>

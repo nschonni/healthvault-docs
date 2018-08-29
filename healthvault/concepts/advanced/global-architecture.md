@@ -156,9 +156,9 @@ The .NET SDK has rich support for building multi-instance applications. A few of
 
     ```xml
     <configuration>
-      <appSettings>
-        <add key="MultiInstanceAware" value="true" />
-      </appSettings>
+      <appSettings>
+        <add key="MultiInstanceAware" value="true" />
+      </appSettings>
     </configuration> 
     ```
     > [!NOTE]
@@ -175,10 +175,10 @@ The .NET SDK has rich support for building multi-instance applications. A few of
     <appName>iOS SDKFeatures</appName>
     <isMultiInstanceAware>true</isMultiInstanceAware>
     <environment>
-      <name>US PPE</name>
-      <friendlyName>PPE - US Residents</friendlyName>
-      <serviceUrl>https://platform.healthvault-ppe.com/platform/wildcat.ashx</serviceUrl>
-      <shellUrl>https://account.healthvault-ppe.com</shellUrl>
+      <name>US PPE</name>
+      <friendlyName>PPE - US Residents</friendlyName>
+      <serviceUrl>https://platform.healthvault-ppe.com/platform/wildcat.ashx</serviceUrl>
+      <shellUrl>https://account.healthvault-ppe.com</shellUrl>
     </environment> 
     ```
 -   The iOS [SDKFeatures sample app](https://github.com/microsoft/HVMobile_VNext/tree/master/Samples) is multi-instance aware and the code demonstrates how to build an iOS SODA app that is multi-instance aware using the iOS SDK.

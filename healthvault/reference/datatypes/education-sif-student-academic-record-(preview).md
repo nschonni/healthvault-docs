@@ -419,14 +419,14 @@ effective date XPath|No effective date XPath
 ### Root element: StudentSpecialEducationRecord
  Type: sif:StudentSpecialEducationRecordType
 
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='TimeElementType'></a>
->
+> 
 > ### TimeElementType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Type|normalizedString|1|1||
@@ -437,7 +437,7 @@ effective date XPath|No effective date XPath
 > EndDateTime|dateTime|0|1||
 > SpanGaps|[SpanGaps](#SpanGaps)|0|1||
 > IsCurrent|boolean|1|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='SpanGaps'></a>
@@ -470,23 +470,23 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='LifeCycleType'></a>
->
+> 
 > ### LifeCycleType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Created|[Created](#Created)|0|1||
 > ModificationHistory|[ModificationHistory](#ModificationHistory)|0|1||
 > TimeElements|[TimeElements](#TimeElements)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Created'></a>
@@ -530,7 +530,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='ModificationHistory'></a>
@@ -560,7 +560,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='TimeElements'></a>
@@ -574,24 +574,24 @@ effective date XPath|No effective date XPath
 > > xs:element||0|unbounded||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='RightsElementType'></a>
->
+> 
 > ### RightsElementType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Cost|boolean|0|1||
 > FeesForUse|[FeesForUse](#FeesForUse)|0|1||
 > CopyrightStatement|string|0|1||
 > TermsOfUse|string|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='FeesForUse'></a>
@@ -622,17 +622,17 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='EducationFilterType'></a>
->
+> 
 > ### EducationFilterType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > MediaTypes|[MediaTypes](#MediaTypes)|0|1||
@@ -647,7 +647,7 @@ effective date XPath|No effective date XPath
 > Summary|string|0|1||
 > LearningObjectives|[LearningObjectives](#LearningObjectives)|0|1||
 > ResourceTypes|[ResourceTypes](#ResourceTypes)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='MediaTypes'></a>
@@ -661,7 +661,7 @@ effective date XPath|No effective date XPath
 > > MediaType|token|1|unbounded||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='SubjectAreas'></a>
@@ -675,7 +675,7 @@ effective date XPath|No effective date XPath
 > > xs:element||1|unbounded||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='InterestLevels'></a>
@@ -689,7 +689,7 @@ effective date XPath|No effective date XPath
 > > InterestLevel|[GradeLevelType](#GradeLevelType)|1|unbounded||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='LearningStandardItems'></a>
@@ -703,7 +703,7 @@ effective date XPath|No effective date XPath
 > > LearningStandardItemRefId|[IdRefType](#IdRefType)|1|unbounded||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='BloomsTaxonomyLevels'></a>
@@ -740,7 +740,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='MultipleIntelligences'></a>
@@ -779,7 +779,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='InstructionalStrategies'></a>
@@ -820,7 +820,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='LearningObjectives'></a>
@@ -834,7 +834,7 @@ effective date XPath|No effective date XPath
 > > LearningObjective|string|1|unbounded||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='ResourceTypes'></a>
@@ -870,36 +870,36 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='EnglishProficiencyType'></a>
->
+> 
 > ### EnglishProficiencyType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Code|[NCES0585EnglishProficiencyType](#NCES0585EnglishProficiencyType)|1|1||
 > OtherCodeList|[OtherCodeListType](#OtherCodeListType)|0|1||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='LanguageListType'></a>
->
+> 
 > ### LanguageListType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Language|[Language](#Language)|1|unbounded||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Language'></a>
@@ -916,21 +916,21 @@ effective date XPath|No effective date XPath
 > > Dialect|normalizedString|0|1||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='OtherNamesType'></a>
->
+> 
 > ### OtherNamesType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Name|[Name](#Name)|1|unbounded||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Name'></a>
@@ -948,39 +948,39 @@ effective date XPath|No effective date XPath
 > > SIF_Action||optional|||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='PlannedAssessmentParticipationType'></a>
->
+> 
 > ### PlannedAssessmentParticipationType
->
+> 
 > ### Extension
->
+> 
 > Base type: token
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Codeset||required|||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ExceptionalityCategoriesType'></a>
->
+> 
 > ### ExceptionalityCategoriesType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > ExceptionalityCategory|[ExceptionalityCategory](#ExceptionalityCategory)|1|unbounded||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='ExceptionalityCategory'></a>
@@ -1025,22 +1025,22 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ProgramStatusType'></a>
->
+> 
 > ### ProgramStatusType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Code|[Code](#Code)|1|1||
 > OtherCodeList|[OtherCodeListType](#OtherCodeListType)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Code'></a>
@@ -1064,22 +1064,22 @@ effective date XPath|No effective date XPath
 > > enumeration|9999||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ProgramTypeType'></a>
->
+> 
 > ### ProgramTypeType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Code|[Code](#Code)|1|1||
 > OtherCodeList|[OtherCodeListType](#OtherCodeListType)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Code'></a>
@@ -1087,50 +1087,50 @@ effective date XPath|No effective date XPath
 > > ### Code
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='SubjectAreaListType'></a>
->
+> 
 > ### SubjectAreaListType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > xs:element||1|unbounded||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='TermSpanType'></a>
->
+> 
 > ### TermSpanType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Code|[NCES0266SessionTypeType](#NCES0266SessionTypeType)|1|1||
 > OtherCodeList|[OtherCodeListType](#OtherCodeListType)|0|1||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='SchoolContactListType'></a>
->
+> 
 > ### SchoolContactListType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > SchoolContact|[SchoolContact](#SchoolContact)|1|unbounded||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='SchoolContact'></a>
@@ -1145,86 +1145,86 @@ effective date XPath|No effective date XPath
 > > xs:element||1|1||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='IdentificationInfoListType'></a>
->
+> 
 > ### IdentificationInfoListType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > xs:element||1|unbounded||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='IdentificationInfoType'></a>
->
+> 
 > ### IdentificationInfoType
->
+> 
 > ### Extension
->
+> 
 > Base type: normalizedString
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Code||required|||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='CourseCreditsType'></a>
->
+> 
 > ### CourseCreditsType
->
+> 
 > ### Extension
->
+> 
 > Base type: decimal
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Type|[NCES0108CreditTypeEarnedType](#NCES0108CreditTypeEarnedType)|required|||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='InstructionalLevelType'></a>
->
+> 
 > ### InstructionalLevelType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Code|[NCES0437InstructionalLevelType](#NCES0437InstructionalLevelType)|1|1||
 > OtherCodeList|[OtherCodeListType](#OtherCodeListType)|0|1||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='AddressListType'></a>
->
+> 
 > ### AddressListType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Address|[Address](#Address)|1|unbounded||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Address'></a>
@@ -1242,23 +1242,23 @@ effective date XPath|No effective date XPath
 > > SIF_Action||optional|||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='AddressType'></a>
->
+> 
 > ### AddressType
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Type|[NCES0025AddressTypeType](#NCES0025AddressTypeType)|required|||
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Street|[Street](#Street)|1|1||
@@ -1268,7 +1268,7 @@ effective date XPath|No effective date XPath
 > xs:element||1|1||
 > PostalCode|normalizedString|1|1||
 > GridLocation|[GridLocationType](#GridLocationType)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Street'></a>
@@ -1294,17 +1294,17 @@ effective date XPath|No effective date XPath
 > > ApartmentNumberSuffix|normalizedString|0|1||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ContactInfoType'></a>
->
+> 
 > ### ContactInfoType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Name|[Name](#Name)|1|1||
@@ -1313,7 +1313,7 @@ effective date XPath|No effective date XPath
 > Address|[AddressType](#AddressType)|0|1||
 > EmailList|[EmailListType](#EmailListType)|0|1||
 > PhoneNumberList|[PhoneNumberListType](#PhoneNumberListType)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Name'></a>
@@ -1340,28 +1340,28 @@ effective date XPath|No effective date XPath
 > > FullName|normalizedString|0|1||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='LocationType'></a>
->
+> 
 > ### LocationType
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Type||optional|||
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > LocationName|token|0|1||
 > LocationRefId|[LocationRefId](#LocationRefId)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='LocationRefId'></a>
@@ -1379,21 +1379,21 @@ effective date XPath|No effective date XPath
 > > SIF_RefObject||required|||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='RaceListType'></a>
->
+> 
 > ### RaceListType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Race|[Race](#Race)|1|unbounded||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Race'></a>
@@ -1417,17 +1417,17 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='DemographicsType'></a>
->
+> 
 > ### DemographicsType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > RaceList|[RaceListType](#RaceListType)|0|1||
@@ -1447,7 +1447,7 @@ effective date XPath|No effective date XPath
 > LanguageList|[LanguageListType](#LanguageListType)|0|1||
 > DwellingArrangement|[DwellingArrangement](#DwellingArrangement)|0|1||
 > MaritalStatus|[NCES0330MaritalStatusType](#NCES0330MaritalStatusType)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='CountriesOfCitizenship'></a>
@@ -1461,7 +1461,7 @@ effective date XPath|No effective date XPath
 > > CountryOfCitizenship|[CountryType](#CountryType)|1|unbounded||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='CountriesOfResidency'></a>
@@ -1475,7 +1475,7 @@ effective date XPath|No effective date XPath
 > > CountryOfResidency|[CountryType](#CountryType)|1|unbounded||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='DwellingArrangement'></a>
@@ -1490,53 +1490,53 @@ effective date XPath|No effective date XPath
 > > OtherCodeList|[OtherCodeListType](#OtherCodeListType)|0|1||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ElectronicIdListType'></a>
->
+> 
 > ### ElectronicIdListType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > xs:element||1|unbounded||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ElectronicIdType'></a>
->
+> 
 > ### ElectronicIdType
->
+> 
 > ### Extension
->
+> 
 > Base type: normalizedString
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Type||required|||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='EmailListType'></a>
->
+> 
 > ### EmailListType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Email|[Email](#Email)|1|unbounded||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Email'></a>
@@ -1554,40 +1554,40 @@ effective date XPath|No effective date XPath
 > > SIF_Action||optional|||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='EmailType'></a>
->
+> 
 > ### EmailType
->
+> 
 > ### Extension
->
+> 
 > Base type: normalizedString
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Type||required|||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='GradeLevelType'></a>
->
+> 
 > ### GradeLevelType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Code|[Code](#Code)|1|1||
 > OtherCodeList|[OtherCodeListType](#OtherCodeListType)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Code'></a>
@@ -1622,36 +1622,36 @@ effective date XPath|No effective date XPath
 > > enumeration|Unknown||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='GradeLevelsType'></a>
->
+> 
 > ### GradeLevelsType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > xs:element||1|unbounded||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='GridLocationType'></a>
->
+> 
 > ### GridLocationType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Latitude|[Latitude](#Latitude)|1|1||
 > Longitude|[Longitude](#Longitude)|1|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Latitude'></a>
@@ -1670,7 +1670,7 @@ effective date XPath|No effective date XPath
 > > maxInclusive|90||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Longitude'></a>
@@ -1689,72 +1689,72 @@ effective date XPath|No effective date XPath
 > > maxInclusive|180||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='MeetingTimeType'></a>
->
+> 
 > ### MeetingTimeType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > TimetableDay|normalizedString|0|1||
 > TimetablePeriod|normalizedString|0|1||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NameType'></a>
->
+> 
 > ### NameType
->
+> 
 > ### Extension
->
+> 
 > Base type: [BaseNameType](xref:HV_c3353437-7a5e-46be-8e1a-f93dac872a68#BaseNameType)
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Type||required|||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='OtherIdType'></a>
->
+> 
 > ### OtherIdType
->
+> 
 > ### Extension
->
+> 
 > Base type: normalizedString
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Type|[NCES0147IdentificationSystemType](#NCES0147IdentificationSystemType)|required|||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='PhoneNumberListType'></a>
->
+> 
 > ### PhoneNumberListType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > PhoneNumber|[PhoneNumber](#PhoneNumber)|1|unbounded||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='PhoneNumber'></a>
@@ -1772,29 +1772,29 @@ effective date XPath|No effective date XPath
 > > SIF_Action||optional|||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='PhoneNumberType'></a>
->
+> 
 > ### PhoneNumberType
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Type|[NCES0280TelephoneNumberTypeType](#NCES0280TelephoneNumberTypeType)|required|||
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Number|normalizedString|1|1||
 > Extension|normalizedString|0|1||
 > ListedStatus|[ListedStatus](#ListedStatus)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='ListedStatus'></a>
@@ -1814,50 +1814,50 @@ effective date XPath|No effective date XPath
 > > enumeration|Unknown||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ProgramType'></a>
->
+> 
 > ### ProgramType
->
+> 
 > ### Extension
->
+> 
 > Base type: normalizedString
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Type||required|||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='RelationshipType'></a>
->
+> 
 > ### RelationshipType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Code|[NCES0609RelationshipToStudentType](#NCES0609RelationshipToStudentType)|1|1||
 > OtherCodeList|[OtherCodeListType](#OtherCodeListType)|0|1||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='SCEDCodeType'></a>
->
+> 
 > ### SCEDCodeType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > CourseDescription|[SCEDCourseTitlesType](#SCEDCourseTitlesType)|1|1||
@@ -1865,7 +1865,7 @@ effective date XPath|No effective date XPath
 > AvailableCredit|[AvailableCredit](#AvailableCredit)|1|1||
 > SequenceNumber|[SequenceNumber](#SequenceNumber)|1|1||
 > SequenceLimit|[SequenceLimit](#SequenceLimit)|1|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='CourseLevel'></a>
@@ -1886,7 +1886,7 @@ effective date XPath|No effective date XPath
 > > enumeration|H||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='AvailableCredit'></a>
@@ -1905,7 +1905,7 @@ effective date XPath|No effective date XPath
 > > fractionDigits|2||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='SequenceNumber'></a>
@@ -1924,7 +1924,7 @@ effective date XPath|No effective date XPath
 > > maxInclusive|9||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='SequenceLimit'></a>
@@ -1943,22 +1943,22 @@ effective date XPath|No effective date XPath
 > > maxInclusive|9||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='SubjectAreaType'></a>
->
+> 
 > ### SubjectAreaType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Code|[Code](#Code)|1|1||
 > OtherCodeList|[OtherCodeListType](#OtherCodeListType)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Code'></a>
@@ -1966,21 +1966,21 @@ effective date XPath|No effective date XPath
 > > ### Code
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='OtherCodeListType'></a>
->
+> 
 > ### OtherCodeListType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > OtherCode|[OtherCode](#OtherCode)|1|unbounded||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='OtherCode'></a>
@@ -1998,74 +1998,74 @@ effective date XPath|No effective date XPath
 > > Codeset||required|||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='MealStatusType'></a>
->
+> 
 > ### MealStatusType
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Type||required|||
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > StartDate|date|0|1||
 > EndDate|date|0|1||
 > SchoolYear|[SchoolYearType](#SchoolYearType)|0|1||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='EarnedStatusType'></a>
->
+> 
 > ### EarnedStatusType
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Type||required|||
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > StartDate|date|0|1||
 > EndDate|date|0|1||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='OtherIdListType'></a>
->
+> 
 > ### OtherIdListType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > xs:element||1|unbounded||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='PersonInfoType'></a>
->
+> 
 > ### PersonInfoType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > LocalId|[LocalIdType](#LocalIdType)|0|1||
@@ -2076,35 +2076,35 @@ effective date XPath|No effective date XPath
 > AddressList|[AddressListType](#AddressListType)|0|1||
 > PhoneNumberList|[PhoneNumberListType](#PhoneNumberListType)|0|1||
 > EmailList|[EmailListType](#EmailListType)|0|1||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='TechnicalRequirementsType'></a>
->
+> 
 > ### TechnicalRequirementsType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > TechnicalRequirement|string|1|unbounded||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='SoftwareRequirementListType'></a>
->
+> 
 > ### SoftwareRequirementListType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > SoftwareRequirement|[SoftwareRequirement](#SoftwareRequirement)|0|unbounded||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='SoftwareRequirement'></a>
@@ -2121,21 +2121,21 @@ effective date XPath|No effective date XPath
 > > OS|string|0|1||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ExtendedParametersType'></a>
->
+> 
 > ### ExtendedParametersType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > ExtendedParameter|[ExtendedParameter](#ExtendedParameter)|0|unbounded||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='ExtendedParameter'></a>
@@ -2150,21 +2150,21 @@ effective date XPath|No effective date XPath
 > > SIF_Value|normalizedString|1|1||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='StudentRecordExchangeDataListType'></a>
->
+> 
 > ### StudentRecordExchangeDataListType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > StudentRecordExchangeData|[StudentRecordExchangeData](#StudentRecordExchangeData)|1|unbounded||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='StudentRecordExchangeData'></a>
@@ -2182,24 +2182,24 @@ effective date XPath|No effective date XPath
 > > StudentRecordPackage|[StudentRecordPackageType](#StudentRecordPackageType)|0|1||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='SIF_MetadataType'></a>
->
+> 
 > ### SIF_MetadataType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > TimeElements|[TimeElements](#TimeElements)|0|1||
 > LifeCycle|[LifeCycleType](#LifeCycleType)|0|1||
 > RightsElements|[RightsElements](#RightsElements)|0|1||
 > EducationFilter|[EducationFilterType](#EducationFilterType)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='TimeElements'></a>
@@ -2213,7 +2213,7 @@ effective date XPath|No effective date XPath
 > > xs:element||0|unbounded||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='RightsElements'></a>
@@ -2227,35 +2227,35 @@ effective date XPath|No effective date XPath
 > > xs:element||0|unbounded||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='OtherNameType'></a>
->
+> 
 > ### OtherNameType
->
+> 
 > ### Extension
->
+> 
 > Base type: [BaseNameType](xref:HV_c3353437-7a5e-46be-8e1a-f93dac872a68#BaseNameType)
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Type||required|||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='BaseNameType'></a>
->
+> 
 > ### BaseNameType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Prefix|normalizedString|0|1||
@@ -2266,90 +2266,90 @@ effective date XPath|No effective date XPath
 > PreferredName|normalizedString|0|1||
 > SortName|normalizedString|0|1||
 > FullName|normalizedString|0|1||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NameOfRecordType'></a>
->
+> 
 > ### NameOfRecordType
->
+> 
 > ### Extension
->
+> 
 > Base type: [BaseNameType](xref:HV_c3353437-7a5e-46be-8e1a-f93dac872a68#BaseNameType)
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Type||required|||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='FSAmountType'></a>
->
+> 
 > ### FSAmountType
->
+> 
 > ### Extension
->
+> 
 > Base type: [MonetaryAmountType](xref:HV_c3353437-7a5e-46be-8e1a-f93dac872a68#MonetaryAmountType)
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Type||required|||
 > Credits|decimal|required|||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='FSCountType'></a>
->
+> 
 > ### FSCountType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > MealType|[MealTypeType](#MealTypeType)|0|1||
 > Amount|[FSAmountType](#FSAmountType)|0|1||
 > Tax|[MonetaryAmountType](#MonetaryAmountType)|0|1||
 > Value|decimal|1|1||
->
+> 
 > ### Choice
->
+> 
 > Min occurs: 0
->
+> 
 > Max occurs: 1
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > MealStatus|[MealStatusType](#MealStatusType)|0|1||
 > EarnedStatus|[EarnedStatusType](#EarnedStatusType)|0|1||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='OrganizationRelationshipType'></a>
->
+> 
 > ### OrganizationRelationshipType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > ResidencyStatus|[ResidencyStatus](#ResidencyStatus)|1|1||
 > ProvidingInstruction|boolean|1|1||
 > ProvidingServices|boolean|1|1||
 > FinanciallyResponsible|boolean|1|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='ResidencyStatus'></a>
@@ -2364,17 +2364,17 @@ effective date XPath|No effective date XPath
 > > OtherCodeList|[OtherCodeListType](#OtherCodeListType)|0|1||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='StudentParametersType'></a>
->
+> 
 > ### StudentParametersType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > StateProvinceId|[StateProvinceIdType](#StateProvinceIdType)|0|1||
@@ -2394,7 +2394,7 @@ effective date XPath|No effective date XPath
 > SchoolAttendedLocation|normalizedString|0|1||
 > OtherIdList|[OtherIdListType](#OtherIdListType)|0|1||
 > TimeElement|[TimeElementType](#TimeElementType)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Names'></a>
@@ -2408,7 +2408,7 @@ effective date XPath|No effective date XPath
 > > xs:element||0|unbounded||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Addresses'></a>
@@ -2422,7 +2422,7 @@ effective date XPath|No effective date XPath
 > > xs:element||0|unbounded||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Contacts'></a>
@@ -2467,17 +2467,17 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='StaffParametersType'></a>
->
+> 
 > ### StaffParametersType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > StateProvinceId|[StateProvinceIdType](#StateProvinceIdType)|0|1||
@@ -2493,7 +2493,7 @@ effective date XPath|No effective date XPath
 > EndDate|date|0|1||
 > OtherIdList|[OtherIdListType](#OtherIdListType)|0|1||
 > TimeElement|[TimeElementType](#TimeElementType)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Names'></a>
@@ -2507,7 +2507,7 @@ effective date XPath|No effective date XPath
 > > xs:element||0|unbounded||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Addresses'></a>
@@ -2521,7 +2521,7 @@ effective date XPath|No effective date XPath
 > > xs:element||0|unbounded||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Contacts'></a>
@@ -2566,52 +2566,53 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ReportPackageType'></a>
->
+> 
 > ### ReportPackageType
->
+> 
 > ### Extension
->
+> 
 > Base type: [AbstractContentPackageType](xref:HV_c3353437-7a5e-46be-8e1a-f93dac872a68#AbstractContentPackageType)
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='AbstractContentPackageType'></a>
->
+> 
 > ### AbstractContentPackageType
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > RefId|[RefIdType](#RefIdType)|required|||
->
+> 
 > ### Element sequence
->
-> Name|Type|Min occurs|Max occurs|Summary|Remarks
-> ---|---|---|---|---|---
->
+> 
+> | Name | Type | Min occurs | Max occurs | Summary | Remarks |
+> |------|------|------------|------------|---------|---------|
+> |      |      |            |            |         |         |
+> 
 > ### Choice
->
+> 
 > Min occurs: 1
->
+> 
 > Max occurs: 1
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > XMLData|[XMLData](#XMLData)|1|1||
 > TextData|[TextData](#TextData)|1|1||
 > BinaryData|[BinaryData](#BinaryData)|1|1||
 > Reference|[Reference](#Reference)|1|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='XMLData'></a>
@@ -2631,7 +2632,7 @@ effective date XPath|No effective date XPath
 > > Any||1|1||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='TextData'></a>
@@ -2651,7 +2652,7 @@ effective date XPath|No effective date XPath
 > > Description|token|optional|||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='BinaryData'></a>
@@ -2671,7 +2672,7 @@ effective date XPath|No effective date XPath
 > > Description|token|optional|||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Reference'></a>
@@ -2692,34 +2693,35 @@ effective date XPath|No effective date XPath
 > > URL|anyURI|1|1||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='AbstractContentElementType'></a>
->
+> 
 > ### AbstractContentElementType
->
+> 
 > ### Element sequence
->
-> Name|Type|Min occurs|Max occurs|Summary|Remarks
-> ---|---|---|---|---|---
->
+> 
+> | Name | Type | Min occurs | Max occurs | Summary | Remarks |
+> |------|------|------------|------------|---------|---------|
+> |      |      |            |            |         |         |
+> 
 > ### Choice
->
+> 
 > Min occurs: 1
->
+> 
 > Max occurs: 1
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > XMLData|[XMLData](#XMLData)|1|1||
 > TextData|[TextData](#TextData)|1|1||
 > BinaryData|[BinaryData](#BinaryData)|1|1||
 > Reference|[Reference](#Reference)|1|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='XMLData'></a>
@@ -2739,7 +2741,7 @@ effective date XPath|No effective date XPath
 > > Any||1|1||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='TextData'></a>
@@ -2759,7 +2761,7 @@ effective date XPath|No effective date XPath
 > > Description|token|optional|||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='BinaryData'></a>
@@ -2779,7 +2781,7 @@ effective date XPath|No effective date XPath
 > > Description|token|optional|||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Reference'></a>
@@ -2800,95 +2802,95 @@ effective date XPath|No effective date XPath
 > > URL|anyURI|1|1||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='MonetaryAmountType'></a>
->
+> 
 > ### MonetaryAmountType
->
+> 
 > ### Extension
->
+> 
 > Base type: decimal
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > Currency|[ISO4217CurrencyNamesAndCodeElementsType](#ISO4217CurrencyNamesAndCodeElementsType)|optional|||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ObjectType'></a>
->
+> 
 > ### ObjectType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Any||1|unbounded||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ReportDataObjectType'></a>
->
+> 
 > ### ReportDataObjectType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > Any||0|unbounded||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ExtendedContentType'></a>
->
+> 
 > ### ExtendedContentType
->
+> 
 > ### Restriction
->
+> 
 > Base type: anyType
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='SelectedContentType'></a>
->
+> 
 > ### SelectedContentType
->
+> 
 > ### Restriction
->
+> 
 > Base type: anyType
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='StudentAcademicRecordType'></a>
->
+> 
 > ### StudentAcademicRecordType
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > RefId|[RefIdType](#RefIdType)|required|||
 > SIF_RefId|[RefIdType](#RefIdType)|required|||
 > SIF_RefObject||required|||
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > ReportingDate|date|1|1||
@@ -2905,7 +2907,7 @@ effective date XPath|No effective date XPath
 > ActivityAwardHistory|[ActivityAwardHistory](#ActivityAwardHistory)|0|1||
 > SIF_Metadata|[SIF_MetadataType](#SIF_MetadataType)|0|1||
 > SIF_ExtendedElements|[SIF_ExtendedElementsType](#SIF_ExtendedElementsType)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='StudentSchoolEnrollmentData'></a>
@@ -2992,7 +2994,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='SchoolAttendanceHistory'></a>
@@ -3186,7 +3188,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='EnrollmentHistory'></a>
@@ -3361,7 +3363,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='CurrentCourseActivity'></a>
@@ -3524,7 +3526,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='CourseHistory'></a>
@@ -3751,7 +3753,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='AcademicPerformanceHistory'></a>
@@ -3811,7 +3813,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='AcademicPerformanceSummary'></a>
@@ -3898,7 +3900,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='AssessmentPerformanceHistory'></a>
@@ -3934,7 +3936,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='AdditionalGraduationRequirementPerformanceHistory'></a>
@@ -3985,7 +3987,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='ActivityAwardHistory'></a>
@@ -4022,25 +4024,25 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='StudentDemographicRecordType'></a>
->
+> 
 > ### StudentDemographicRecordType
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > RefId|[RefIdType](#RefIdType)|required|||
 > SIF_RefId|[RefIdType](#RefIdType)|required|||
 > SIF_RefObject||required|||
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > ReportingDate|date|1|1||
@@ -4048,7 +4050,7 @@ effective date XPath|No effective date XPath
 > StudentContactsSummary|[StudentContactsSummary](#StudentContactsSummary)|0|1||
 > SIF_Metadata|[SIF_MetadataType](#SIF_MetadataType)|0|1||
 > SIF_ExtendedElements|[SIF_ExtendedElementsType](#SIF_ExtendedElementsType)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='StudentPersonalData'></a>
@@ -4149,7 +4151,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='StudentContactsSummary'></a>
@@ -4196,25 +4198,25 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='StudentPlacementType'></a>
->
+> 
 > ### StudentPlacementType
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > RefId|[RefIdType](#RefIdType)|required|||
 > StudentParticipationRefId|[IdRefType](#IdRefType)|required|||
 > StudentPersonalRefId|[IdRefType](#IdRefType)|required|||
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > StudentPlacementAsOfDate|date|1|1||
@@ -4242,7 +4244,7 @@ effective date XPath|No effective date XPath
 > EntryPerson|normalizedString|0|1||
 > SIF_Metadata|[SIF_MetadataType](#SIF_MetadataType)|0|1||
 > SIF_ExtendedElements|[SIF_ExtendedElementsType](#SIF_ExtendedElementsType)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Service'></a>
@@ -4265,7 +4267,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='ServiceCategory'></a>
@@ -4287,7 +4289,7 @@ effective date XPath|No effective date XPath
 > > enumeration|S999||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='ServiceFundingSources'></a>
@@ -4324,7 +4326,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='ServicingPublicAgency'></a>
@@ -4342,7 +4344,7 @@ effective date XPath|No effective date XPath
 > > SIF_RefObject||required|||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='ServicingSchool'></a>
@@ -4360,7 +4362,7 @@ effective date XPath|No effective date XPath
 > > SIF_RefObject||required|||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='SchoolWhereServiceDelivered'></a>
@@ -4378,7 +4380,7 @@ effective date XPath|No effective date XPath
 > > SIF_RefObject||required|||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='ServiceProviderType'></a>
@@ -4393,7 +4395,7 @@ effective date XPath|No effective date XPath
 > > OtherCodeList|[OtherCodeListType](#OtherCodeListType)|0|1||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='ServiceSetting'></a>
@@ -4416,7 +4418,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='WhenServiceProvided'></a>
@@ -4431,7 +4433,7 @@ effective date XPath|No effective date XPath
 > > OtherCodeList|[OtherCodeListType](#OtherCodeListType)|0|1||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='FrequencyTime'></a>
@@ -4472,7 +4474,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='DirectTime'></a>
@@ -4490,7 +4492,7 @@ effective date XPath|No effective date XPath
 > > UnitOfMeasure||required|||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='IndirectTime'></a>
@@ -4508,7 +4510,7 @@ effective date XPath|No effective date XPath
 > > UnitOfMeasure||required|||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='TotalServiceDuration'></a>
@@ -4526,23 +4528,23 @@ effective date XPath|No effective date XPath
 > > UnitOfMeasure||required|||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='StudentRecordExchangeType'></a>
->
+> 
 > ### StudentRecordExchangeType
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > RefId|[RefIdType](#RefIdType)|required|||
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > StateProvinceId|[StateProvinceIdType](#StateProvinceIdType)|0|1||
@@ -4551,7 +4553,7 @@ effective date XPath|No effective date XPath
 > Records|[Records](#Records)|1|1||
 > SIF_Metadata|[SIF_MetadataType](#SIF_MetadataType)|0|1||
 > SIF_ExtendedElements|[SIF_ExtendedElementsType](#SIF_ExtendedElementsType)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='Records'></a>
@@ -4582,44 +4584,44 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='StudentRecordPackageType'></a>
->
+> 
 > ### StudentRecordPackageType
->
+> 
 > ### Extension
->
+> 
 > Base type: [AbstractContentPackageType](xref:HV_c3353437-7a5e-46be-8e1a-f93dac872a68#AbstractContentPackageType)
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > SIF_RefId|[RefIdType](#RefIdType)|required|||
 > SIF_RefObject||required|||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='StudentSpecialEducationRecordType'></a>
->
+> 
 > ### StudentSpecialEducationRecordType
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > RefId|[RefIdType](#RefIdType)|required|||
 > SIF_RefId|[RefIdType](#RefIdType)|required|||
 > SIF_RefObject||required|||
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > ReportingDate|date|1|1||
@@ -4630,7 +4632,7 @@ effective date XPath|No effective date XPath
 > StudentPlacementList|[StudentPlacementList](#StudentPlacementList)|0|1||
 > SIF_Metadata|[SIF_MetadataType](#SIF_MetadataType)|0|1||
 > SIF_ExtendedElements|[SIF_ExtendedElementsType](#SIF_ExtendedElementsType)|0|1||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='LEAInfoData'></a>
@@ -4647,7 +4649,7 @@ effective date XPath|No effective date XPath
 > > xs:element||1|1||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='SchoolInfoData'></a>
@@ -4664,7 +4666,7 @@ effective date XPath|No effective date XPath
 > > xs:element||1|1||
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='StudentParticipationData'></a>
@@ -4747,7 +4749,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='StudentParticipationList'></a>
@@ -4894,7 +4896,7 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='StudentPlacementList'></a>
@@ -5130,21 +5132,21 @@ effective date XPath|No effective date XPath
 > > >
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='SIF_ExtendedElementsType'></a>
->
+> 
 > ### SIF_ExtendedElementsType
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > SIF_ExtendedElement|[SIF_ExtendedElement](#SIF_ExtendedElement)|0|unbounded||
->
+> 
 > >[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
 > >
 > > <a name='SIF_ExtendedElement'></a>
@@ -5163,21 +5165,21 @@ effective date XPath|No effective date XPath
 > > SIF_Action||optional|||
 > >
 > >
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='CanadaPostProvincesAndTerritoriesType'></a>
->
+> 
 > ### CanadaPostProvincesAndTerritoriesType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|AB||
@@ -5193,645 +5195,645 @@ effective date XPath|No effective date XPath
 > enumeration|QC||
 > enumeration|SK||
 > enumeration|YT||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='PrimaryAssignmentType'></a>
->
+> 
 > ### PrimaryAssignmentType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|Yes||
 > enumeration|No||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='GraduationRequirementType'></a>
->
+> 
 > ### GraduationRequirementType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|Yes||
 > enumeration|No||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='SchoolURLType'></a>
->
+> 
 > ### SchoolURLType
->
+> 
 > ### Restriction
->
+> 
 > Base type: anyURI
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='LEANameType'></a>
->
+> 
 > ### LEANameType
->
+> 
 > ### Restriction
->
+> 
 > Base type: normalizedString
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='LastNameType'></a>
->
+> 
 > ### LastNameType
->
+> 
 > ### Restriction
->
+> 
 > Base type: normalizedString
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='FirstNameType'></a>
->
+> 
 > ### FirstNameType
->
+> 
 > ### Restriction
->
+> 
 > Base type: normalizedString
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='MiddleNameType'></a>
->
+> 
 > ### MiddleNameType
->
+> 
 > ### Restriction
->
+> 
 > Base type: normalizedString
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='SSNType'></a>
->
+> 
 > ### SSNType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='IDEAType'></a>
->
+> 
 > ### IDEAType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|Yes||
 > enumeration|No||
 > enumeration|Unknown||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='MigrantType'></a>
->
+> 
 > ### MigrantType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|Yes||
 > enumeration|No||
 > enumeration|Unknown||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='Title1Type'></a>
->
+> 
 > ### Title1Type
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|Yes||
 > enumeration|No||
 > enumeration|Unknown||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='GiftedTalentedType'></a>
->
+> 
 > ### GiftedTalentedType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|Yes||
 > enumeration|No||
 > enumeration|Unknown||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='EconomicDisadvantageType'></a>
->
+> 
 > ### EconomicDisadvantageType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|Yes||
 > enumeration|No||
 > enumeration|Unknown||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ELLType'></a>
->
+> 
 > ### ELLType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|Yes||
 > enumeration|No||
 > enumeration|Unknown||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='HomelessType'></a>
->
+> 
 > ### HomelessType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|Yes||
 > enumeration|No||
 > enumeration|Unknown||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='Section504Type'></a>
->
+> 
 > ### Section504Type
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|Yes||
 > enumeration|No||
 > enumeration|Unknown||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='VocationalConcentratorType'></a>
->
+> 
 > ### VocationalConcentratorType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|Yes||
 > enumeration|No||
 > enumeration|Unknown||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ImmigrantType'></a>
->
+> 
 > ### ImmigrantType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|Yes||
 > enumeration|No||
 > enumeration|Unknown||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NeglectedDelinquentType'></a>
->
+> 
 > ### NeglectedDelinquentType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|Yes||
 > enumeration|No||
 > enumeration|Unknown||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='CourseCodeType'></a>
->
+> 
 > ### CourseCodeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: normalizedString
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='StateCourseCodeType'></a>
->
+> 
 > ### StateCourseCodeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: normalizedString
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='DistrictCourseCodeType'></a>
->
+> 
 > ### DistrictCourseCodeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: normalizedString
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='CourseTitleType'></a>
->
+> 
 > ### CourseTitleType
->
+> 
 > ### Restriction
->
+> 
 > Base type: normalizedString
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='StateProvinceType'></a>
->
+> 
 > ### StateProvinceType
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='CountryType'></a>
->
+> 
 > ### CountryType
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='CongressionalDistrictType'></a>
->
+> 
 > ### CongressionalDistrictType
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='HispanicLatinoType'></a>
->
+> 
 > ### HispanicLatinoType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|Yes||
 > enumeration|No||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='GenderType'></a>
->
+> 
 > ### GenderType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|M||
 > enumeration|F||
 > enumeration|U||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='BirthDateType'></a>
->
+> 
 > ### BirthDateType
->
+> 
 > ### Restriction
->
+> 
 > Base type: date
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='EducationalLevelType'></a>
->
+> 
 > ### EducationalLevelType
->
+> 
 > ### Restriction
->
+> 
 > Base type: [NCES0332HighestLevelOfEducationCompletedType](xref:HV_c3353437-7a5e-46be-8e1a-f93dac872a68#NCES0332HighestLevelOfEducationCompletedType)
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='EntryDateType'></a>
->
+> 
 > ### EntryDateType
->
+> 
 > ### Restriction
->
+> 
 > Base type: date
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ExitDateType'></a>
->
+> 
 > ### ExitDateType
->
+> 
 > ### Restriction
->
+> 
 > Base type: date
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='GraduationDateType'></a>
->
+> 
 > ### GraduationDateType
->
+> 
 > ### Restriction
->
+> 
 > Base type: [PartialDateType](xref:HV_c3353437-7a5e-46be-8e1a-f93dac872a68#PartialDateType)
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ProjectedGraduationYearType'></a>
->
+> 
 > ### ProjectedGraduationYearType
->
+> 
 > ### Restriction
->
+> 
 > Base type: gYear
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='OnTimeGraduationYearType'></a>
->
+> 
 > ### OnTimeGraduationYearType
->
+> 
 > ### Restriction
->
+> 
 > Base type: gYear
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='HomeroomNumberType'></a>
->
+> 
 > ### HomeroomNumberType
->
+> 
 > ### Restriction
->
+> 
 > Base type: normalizedString
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='LocalIdType'></a>
->
+> 
 > ### LocalIdType
->
+> 
 > ### Restriction
->
+> 
 > Base type: normalizedString
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCESIdType'></a>
->
+> 
 > ### NCESIdType
->
+> 
 > ### Restriction
->
+> 
 > Base type: normalizedString
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='OperationalStatusType'></a>
->
+> 
 > ### OperationalStatusType
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='PublishInDirectoryType'></a>
->
+> 
 > ### PublishInDirectoryType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|Yes||
 > enumeration|No||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='SchoolNameType'></a>
->
+> 
 > ### SchoolNameType
->
+> 
 > ### Restriction
->
+> 
 > Base type: normalizedString
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='SchoolYearType'></a>
->
+> 
 > ### SchoolYearType
->
+> 
 > ### Restriction
->
+> 
 > Base type: gYear
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='StateProvinceIdType'></a>
->
+> 
 > ### StateProvinceIdType
->
+> 
 > ### Restriction
->
+> 
 > Base type: normalizedString
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='MealTypeType'></a>
->
+> 
 > ### MealTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|FirstMeal||
@@ -5839,144 +5841,144 @@ effective date XPath|No effective date XPath
 > enumeration|StaffMeal||
 > enumeration|AdultMeal||
 > enumeration|AlaCarte||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='PartialDateType'></a>
->
+> 
 > ### PartialDateType
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ObjectNameType'></a>
->
+> 
 > ### ObjectNameType
->
+> 
 > ### Restriction
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ServiceNameType'></a>
->
+> 
 > ### ServiceNameType
->
+> 
 > ### Restriction
->
+> 
 > Base type: NCName
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='URIOrBinaryType'></a>
->
+> 
 > ### URIOrBinaryType
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='GUIDType'></a>
->
+> 
 > ### GUIDType
->
+> 
 > ### Restriction
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='MsgIdType'></a>
->
+> 
 > ### MsgIdType
->
+> 
 > ### Restriction
->
+> 
 > Base type: [GUIDType](xref:HV_c3353437-7a5e-46be-8e1a-f93dac872a68#GUIDType)
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='RefIdType'></a>
->
+> 
 > ### RefIdType
->
+> 
 > ### Restriction
->
+> 
 > Base type: [GUIDType](xref:HV_c3353437-7a5e-46be-8e1a-f93dac872a68#GUIDType)
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='IdRefType'></a>
->
+> 
 > ### IdRefType
->
+> 
 > ### Restriction
->
+> 
 > Base type: [RefIdType](xref:HV_c3353437-7a5e-46be-8e1a-f93dac872a68#RefIdType)
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='VersionType'></a>
->
+> 
 > ### VersionType
->
+> 
 > ### Restriction
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='VersionWithWildcardsType'></a>
->
+> 
 > ### VersionWithWildcardsType
->
+> 
 > ### Restriction
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='DefinedProtocolsType'></a>
->
+> 
 > ### DefinedProtocolsType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|HTTPS||
 > enumeration|HTTP||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='EDENHomelessEducationalSupportServicesAndActivitiesTypeOfServicesReceivedType'></a>
->
+> 
 > ### EDENHomelessEducationalSupportServicesAndActivitiesTypeOfServicesReceivedType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|TUT||
@@ -6000,21 +6002,21 @@ effective date XPath|No effective date XPath
 > enumeration|MISSING||
 > enumeration|NOTCOLLECT||
 > enumeration|NOTAPPLIC||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='EDENLEPProgramTypeOfServicesReceivedType'></a>
->
+> 
 > ### EDENLEPProgramTypeOfServicesReceivedType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|BILING||
@@ -6031,21 +6033,21 @@ effective date XPath|No effective date XPath
 > enumeration|OTHER||
 > enumeration|MISSING||
 > enumeration|NOTCOLLECT||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='EDENMigrantStudentsServedMigrantServiceTypeType'></a>
->
+> 
 > ### EDENMigrantStudentsServedMigrantServiceTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|COS||
@@ -6058,21 +6060,21 @@ effective date XPath|No effective date XPath
 > enumeration|ARS||
 > enumeration|MISSING||
 > enumeration|NOTCOLLECT||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='EDENStudentsInNeglectedOrDelinquentProgramsNeglectedOrDelinquentServicesReceivedType'></a>
->
+> 
 > ### EDENStudentsInNeglectedOrDelinquentProgramsNeglectedOrDelinquentServicesReceivedType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|TS||
@@ -6082,21 +6084,21 @@ effective date XPath|No effective date XPath
 > enumeration|JT||
 > enumeration|MISSING||
 > enumeration|NOTCOLLECT||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ISO31663CodeForFormerlyUsedNamesOfCountriesType'></a>
->
+> 
 > ### ISO31663CodeForFormerlyUsedNamesOfCountriesType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|AIDJ||
@@ -6127,21 +6129,21 @@ effective date XPath|No effective date XPath
 > enumeration|YDYE||
 > enumeration|YUCS||
 > enumeration|ZRCD||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ISO31661EnglishCountryNamesAndCodeElementsType'></a>
->
+> 
 > ### ISO31661EnglishCountryNamesAndCodeElementsType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|AF||
@@ -6387,21 +6389,21 @@ effective date XPath|No effective date XPath
 > enumeration|YE||
 > enumeration|ZM||
 > enumeration|ZW||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='ISO4217CurrencyNamesAndCodeElementsType'></a>
->
+> 
 > ### ISO4217CurrencyNamesAndCodeElementsType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|AED||
@@ -6589,40 +6591,40 @@ effective date XPath|No effective date XPath
 > enumeration|ZAR||
 > enumeration|ZMK||
 > enumeration|ZWN||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0024ActivityTypeType'></a>
->
+> 
 > ### NCES0024ActivityTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0750||
 > enumeration|0751||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0672PromotionTypeType'></a>
->
+> 
 > ### NCES0672PromotionTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1974||
@@ -6632,21 +6634,21 @@ effective date XPath|No effective date XPath
 > enumeration|1973||
 > enumeration|1977||
 > enumeration|1978||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0673NonpromotionReasonType'></a>
->
+> 
 > ### NCES0673NonpromotionReasonType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1979||
@@ -6656,21 +6658,21 @@ effective date XPath|No effective date XPath
 > enumeration|1983||
 > enumeration|9999||
 > enumeration|1984||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0373PostsecondarySubjectMatterAreaType'></a>
->
+> 
 > ### NCES0373PostsecondarySubjectMatterAreaType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1146||
@@ -6722,21 +6724,21 @@ effective date XPath|No effective date XPath
 > enumeration|1188||
 > enumeration|1189||
 > enumeration|1159||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0719TransportationStatusType'></a>
->
+> 
 > ### NCES0719TransportationStatusType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|2064||
@@ -6745,42 +6747,42 @@ effective date XPath|No effective date XPath
 > enumeration|2060||
 > enumeration|2061||
 > enumeration|2062||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0720StateTransportationAidQualificationType'></a>
->
+> 
 > ### NCES0720StateTransportationAidQualificationType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|2067||
 > enumeration|9999||
 > enumeration|2065||
 > enumeration|2066||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0721TransportationAtPublicExpenseEligibilityType'></a>
->
+> 
 > ### NCES0721TransportationAtPublicExpenseEligibilityType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|2069||
@@ -6791,21 +6793,21 @@ effective date XPath|No effective date XPath
 > enumeration|2073||
 > enumeration|2074||
 > enumeration|9999||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0684DiplomaCredentialLevelAndHonorsType'></a>
->
+> 
 > ### NCES0684DiplomaCredentialLevelAndHonorsType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|2004||
@@ -6825,21 +6827,21 @@ effective date XPath|No effective date XPath
 > enumeration|2001||
 > enumeration|2007||
 > enumeration|1997||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0674HonorsTypeType'></a>
->
+> 
 > ### NCES0674HonorsTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0737||
@@ -6861,21 +6863,21 @@ effective date XPath|No effective date XPath
 > enumeration|0748||
 > enumeration|1990||
 > enumeration|1991||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0792IdentificationProcedureType'></a>
->
+> 
 > ### NCES0792IdentificationProcedureType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|2147||
@@ -6885,42 +6887,42 @@ effective date XPath|No effective date XPath
 > enumeration|2151||
 > enumeration|2152||
 > enumeration|2153||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0806IndividualizedProgramTypeType'></a>
->
+> 
 > ### NCES0806IndividualizedProgramTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|2196||
 > enumeration|2198||
 > enumeration|2197||
 > enumeration|9999||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0798EarlyChildhoodProgramSettingType'></a>
->
+> 
 > ### NCES0798EarlyChildhoodProgramSettingType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|2170||
@@ -6941,21 +6943,21 @@ effective date XPath|No effective date XPath
 > enumeration|3496||
 > enumeration|2184||
 > enumeration|2172||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0804EarlyChildhoodSpecialEducationSettingType'></a>
->
+> 
 > ### NCES0804EarlyChildhoodSpecialEducationSettingType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|2170||
@@ -6976,21 +6978,21 @@ effective date XPath|No effective date XPath
 > enumeration|3496||
 > enumeration|2184||
 > enumeration|2172||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0211ProgramAvailabilityType'></a>
->
+> 
 > ### NCES0211ProgramAvailabilityType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0236||
@@ -7001,21 +7003,21 @@ effective date XPath|No effective date XPath
 > enumeration|9999||
 > enumeration|0237||
 > enumeration|0234||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0289TransitionalSupportServiceTypeType'></a>
->
+> 
 > ### NCES0289TransitionalSupportServiceTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0878||
@@ -7029,21 +7031,21 @@ effective date XPath|No effective date XPath
 > enumeration|0887||
 > enumeration|0888||
 > enumeration|0889||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0106CourseInstructionalLevelType'></a>
->
+> 
 > ### NCES0106CourseInstructionalLevelType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0579||
@@ -7059,21 +7061,21 @@ effective date XPath|No effective date XPath
 > enumeration|0568||
 > enumeration|0569||
 > enumeration|0577||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0679ActivityInvolvementCodeType'></a>
->
+> 
 > ### NCES0679ActivityInvolvementCodeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0721||
@@ -7174,21 +7176,21 @@ effective date XPath|No effective date XPath
 > enumeration|0662||
 > enumeration|0663||
 > enumeration|0692||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0327LanguageTypeType'></a>
->
+> 
 > ### NCES0327LanguageTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1035||
@@ -7197,21 +7199,21 @@ effective date XPath|No effective date XPath
 > enumeration|1038||
 > enumeration|9999||
 > enumeration|1039||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0644ExitWithdrawalTypeType'></a>
->
+> 
 > ### NCES0644ExitWithdrawalTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|3501||
@@ -7247,21 +7249,21 @@ effective date XPath|No effective date XPath
 > enumeration|1918||
 > enumeration|1924||
 > enumeration|3504||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0108CreditTypeEarnedType'></a>
->
+> 
 > ### NCES0108CreditTypeEarnedType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0598||
@@ -7281,40 +7283,40 @@ effective date XPath|No effective date XPath
 > enumeration|0587||
 > enumeration|0596||
 > enumeration|0597||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0643ExitWithdrawalStatusType'></a>
->
+> 
 > ### NCES0643ExitWithdrawalStatusType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1905||
 > enumeration|1906||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0619EntryTypeType'></a>
->
+> 
 > ### NCES0619EntryTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1838||
@@ -7337,21 +7339,21 @@ effective date XPath|No effective date XPath
 > enumeration|1830||
 > enumeration|1831||
 > enumeration|1833||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0614EmployerTypeType'></a>
->
+> 
 > ### NCES0614EmployerTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1808||
@@ -7361,21 +7363,21 @@ effective date XPath|No effective date XPath
 > enumeration|9999||
 > enumeration|1805||
 > enumeration|1806||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0031SchoolLevelType'></a>
->
+> 
 > ### NCES0031SchoolLevelType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0013||
@@ -7390,21 +7392,21 @@ effective date XPath|No effective date XPath
 > enumeration|1981||
 > enumeration|2397||
 > enumeration|2403||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0084CalendarEventType'></a>
->
+> 
 > ### NCES0084CalendarEventType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0849||
@@ -7413,21 +7415,21 @@ effective date XPath|No effective date XPath
 > enumeration|3421||
 > enumeration|0848||
 > enumeration|0845||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0171ReceivingLocationOfInstructionServiceType'></a>
->
+> 
 > ### NCES0171ReceivingLocationOfInstructionServiceType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0997||
@@ -7440,21 +7442,21 @@ effective date XPath|No effective date XPath
 > enumeration|9999||
 > enumeration|0341||
 > enumeration|0342||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0209MediumOfInstructionType'></a>
->
+> 
 > ### NCES0209MediumOfInstructionType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0609||
@@ -7465,21 +7467,21 @@ effective date XPath|No effective date XPath
 > enumeration|9999||
 > enumeration|0603||
 > enumeration|0608||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0266SessionTypeType'></a>
->
+> 
 > ### NCES0266SessionTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0827||
@@ -7493,41 +7495,41 @@ effective date XPath|No effective date XPath
 > enumeration|0833||
 > enumeration|0829||
 > enumeration|0837||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0330MaritalStatusType'></a>
->
+> 
 > ### NCES0330MaritalStatusType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1040||
 > enumeration|1041||
 > enumeration|1042||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0600DwellingArrangementType'></a>
->
+> 
 > ### NCES0600DwellingArrangementType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1669||
@@ -7545,21 +7547,21 @@ effective date XPath|No effective date XPath
 > enumeration|1673||
 > enumeration|1678||
 > enumeration|1679||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0585EnglishProficiencyType'></a>
->
+> 
 > ### NCES0585EnglishProficiencyType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1634||
@@ -7568,21 +7570,21 @@ effective date XPath|No effective date XPath
 > enumeration|1635||
 > enumeration|1636||
 > enumeration|9997||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0322CitizenshipStatusType'></a>
->
+> 
 > ### NCES0322CitizenshipStatusType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1014||
@@ -7590,21 +7592,21 @@ effective date XPath|No effective date XPath
 > enumeration|9999||
 > enumeration|1016||
 > enumeration|1017||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0315BirthdateVerificationType'></a>
->
+> 
 > ### NCES0315BirthdateVerificationType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1003||
@@ -7622,21 +7624,21 @@ effective date XPath|No effective date XPath
 > enumeration|1009||
 > enumeration|1010||
 > enumeration|1011||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES1040IncidentLocationType'></a>
->
+> 
 > ### NCES1040IncidentLocationType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|3012||
@@ -7662,21 +7664,21 @@ effective date XPath|No effective date XPath
 > enumeration|3023||
 > enumeration|9997||
 > enumeration|3029||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES1043ReporterDescriptionType'></a>
->
+> 
 > ### NCES1043ReporterDescriptionType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|3168||
@@ -7689,21 +7691,21 @@ effective date XPath|No effective date XPath
 > enumeration|3422||
 > enumeration|0126||
 > enumeration|9997||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES1045WeaponTypeType'></a>
->
+> 
 > ### NCES1045WeaponTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0010||
@@ -7720,21 +7722,21 @@ effective date XPath|No effective date XPath
 > enumeration|0097||
 > enumeration|0098||
 > enumeration|0099||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES1048SecondaryIncidentBehaviorType'></a>
->
+> 
 > ### NCES1048SecondaryIncidentBehaviorType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|3066||
@@ -7743,21 +7745,21 @@ effective date XPath|No effective date XPath
 > enumeration|3069||
 > enumeration|3070||
 > enumeration|04645||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES1049IncidentCodeType'></a>
->
+> 
 > ### NCES1049IncidentCodeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1000||
@@ -7850,21 +7852,21 @@ effective date XPath|No effective date XPath
 > enumeration|3600||
 > enumeration|3700||
 > enumeration|9000||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES1050PerpetratorDescriptionType'></a>
->
+> 
 > ### NCES1050PerpetratorDescriptionType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|3168||
@@ -7877,21 +7879,21 @@ effective date XPath|No effective date XPath
 > enumeration|3422||
 > enumeration|0126||
 > enumeration|9997||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES1052VictimDescriptionType'></a>
->
+> 
 > ### NCES1052VictimDescriptionType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|3168||
@@ -7904,42 +7906,42 @@ effective date XPath|No effective date XPath
 > enumeration|3422||
 > enumeration|0126||
 > enumeration|9997||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES1046IncidentInjuryType'></a>
->
+> 
 > ### NCES1046IncidentInjuryType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|3064||
 > enumeration|3063||
 > enumeration|3065||
 > enumeration|3579||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES1054DisciplinaryActionType'></a>
->
+> 
 > ### NCES1054DisciplinaryActionType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|3071||
@@ -7985,21 +7987,21 @@ effective date XPath|No effective date XPath
 > enumeration|9997||
 > enumeration|3103||
 > enumeration|3104||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0025AddressTypeType'></a>
->
+> 
 > ### NCES0025AddressTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1074||
@@ -8009,21 +8011,21 @@ effective date XPath|No effective date XPath
 > enumeration|2382||
 > enumeration|0765||
 > enumeration|0124||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0032AgencyStatusType'></a>
->
+> 
 > ### NCES0032AgencyStatusType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0107||
@@ -8032,21 +8034,21 @@ effective date XPath|No effective date XPath
 > enumeration|0111||
 > enumeration|0110||
 > enumeration|0108||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0056AssessmentReportingMethodType'></a>
->
+> 
 > ### NCES0056AssessmentReportingMethodType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0512||
@@ -8078,21 +8080,21 @@ effective date XPath|No effective date XPath
 > enumeration|0510||
 > enumeration|3480||
 > enumeration|0511||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0067AssessmentTypeType'></a>
->
+> 
 > ### NCES0067AssessmentTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0075||
@@ -8115,21 +8117,21 @@ effective date XPath|No effective date XPath
 > enumeration|0093||
 > enumeration|0094||
 > enumeration|0095||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0147IdentificationSystemType'></a>
->
+> 
 > ### NCES0147IdentificationSystemType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0254||
@@ -8163,21 +8165,21 @@ effective date XPath|No effective date XPath
 > enumeration|0936||
 > enumeration|0307||
 > enumeration|0113||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0222ProgramFundingSourceType'></a>
->
+> 
 > ### NCES0222ProgramFundingSourceType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0997||
@@ -8198,21 +8200,21 @@ effective date XPath|No effective date XPath
 > enumeration|0709||
 > enumeration|0617||
 > enumeration|0772||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0229ProgramTypeType'></a>
->
+> 
 > ### NCES0229ProgramTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0100||
@@ -8298,21 +8300,21 @@ effective date XPath|No effective date XPath
 > enumeration|3200||
 > enumeration|3300||
 > enumeration|9999||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0256SchoolStatusType'></a>
->
+> 
 > ### NCES0256SchoolStatusType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|2383||
@@ -8322,21 +8324,21 @@ effective date XPath|No effective date XPath
 > enumeration|0821||
 > enumeration|0822||
 > enumeration|0820||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0273StudentSupportServiceTypeType'></a>
->
+> 
 > ### NCES0273StudentSupportServiceTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0290||
@@ -8383,21 +8385,21 @@ effective date XPath|No effective date XPath
 > enumeration|0327||
 > enumeration|0329||
 > enumeration|0330||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0274StudentFamilyProgramTypeType'></a>
->
+> 
 > ### NCES0274StudentFamilyProgramTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0279||
@@ -8448,21 +8450,21 @@ effective date XPath|No effective date XPath
 > enumeration|0342||
 > enumeration|0277||
 > enumeration|0278||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0280TelephoneNumberTypeType'></a>
->
+> 
 > ### NCES0280TelephoneNumberTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0350||
@@ -8476,21 +8478,21 @@ effective date XPath|No effective date XPath
 > enumeration|0437||
 > enumeration|0426||
 > enumeration|0448||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0307ServiceSettingType'></a>
->
+> 
 > ### NCES0307ServiceSettingType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0127||
@@ -8510,21 +8512,21 @@ effective date XPath|No effective date XPath
 > enumeration|0143||
 > enumeration|0137||
 > enumeration|0364||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0332HighestLevelOfEducationCompletedType'></a>
->
+> 
 > ### NCES0332HighestLevelOfEducationCompletedType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1809||
@@ -8559,21 +8561,21 @@ effective date XPath|No effective date XPath
 > enumeration|0800||
 > enumeration|0792||
 > enumeration|0819||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0394TeachingCredentialTypeType'></a>
->
+> 
 > ### NCES0394TeachingCredentialTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1222||
@@ -8590,21 +8592,21 @@ effective date XPath|No effective date XPath
 > enumeration|1233||
 > enumeration|1234||
 > enumeration|9999||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0395TeachingCredentialBasisType'></a>
->
+> 
 > ### NCES0395TeachingCredentialBasisType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1235||
@@ -8615,21 +8617,21 @@ effective date XPath|No effective date XPath
 > enumeration|1239||
 > enumeration|1241||
 > enumeration|1240||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0401BackgroundCheckTypeType'></a>
->
+> 
 > ### NCES0401BackgroundCheckTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1420||
@@ -8637,21 +8639,21 @@ effective date XPath|No effective date XPath
 > enumeration|1422||
 > enumeration|1423||
 > enumeration|9999||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0421TeachingFieldOrAreaAuthorizedType'></a>
->
+> 
 > ### NCES0421TeachingFieldOrAreaAuthorizedType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1296||
@@ -8735,21 +8737,21 @@ effective date XPath|No effective date XPath
 > enumeration|1370||
 > enumeration|1371||
 > enumeration|9999||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0434EmploymentSeparationReasonType'></a>
->
+> 
 > ### NCES0434EmploymentSeparationReasonType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1391||
@@ -8775,21 +8777,21 @@ effective date XPath|No effective date XPath
 > enumeration|1405||
 > enumeration|1389||
 > enumeration|9997||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0436TeachingAssignmentType'></a>
->
+> 
 > ### NCES0436TeachingAssignmentType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1296||
@@ -8873,21 +8875,21 @@ effective date XPath|No effective date XPath
 > enumeration|1370||
 > enumeration|1371||
 > enumeration|9999||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0437InstructionalLevelType'></a>
->
+> 
 > ### NCES0437InstructionalLevelType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0568||
@@ -8903,21 +8905,21 @@ effective date XPath|No effective date XPath
 > enumeration|0578||
 > enumeration|0579||
 > enumeration|9999||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0468ContractualTermType'></a>
->
+> 
 > ### NCES0468ContractualTermType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1439||
@@ -8926,40 +8928,40 @@ effective date XPath|No effective date XPath
 > enumeration|1441||
 > enumeration|1442||
 > enumeration|9999||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0476FullTimeStatusType'></a>
->
+> 
 > ### NCES0476FullTimeStatusType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0843||
 > enumeration|0844||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0557JobClassificationType'></a>
->
+> 
 > ### NCES0557JobClassificationType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0100||
@@ -9144,21 +9146,21 @@ effective date XPath|No effective date XPath
 > enumeration|1011||
 > enumeration|1012||
 > enumeration|9999||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0568FunctionTypeType'></a>
->
+> 
 > ### NCES0568FunctionTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1000||
@@ -9224,21 +9226,21 @@ effective date XPath|No effective date XPath
 > enumeration|4700||
 > enumeration|4900||
 > enumeration|9999||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0598PublicSchoolResidenceStatusType'></a>
->
+> 
 > ### NCES0598PublicSchoolResidenceStatusType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1652||
@@ -9246,21 +9248,21 @@ effective date XPath|No effective date XPath
 > enumeration|1655||
 > enumeration|1656||
 > enumeration|1654||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0599NonResidentAttendanceRationaleType'></a>
->
+> 
 > ### NCES0599NonResidentAttendanceRationaleType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1661||
@@ -9275,21 +9277,21 @@ effective date XPath|No effective date XPath
 > enumeration|1665||
 > enumeration|1666||
 > enumeration|1667||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0609RelationshipToStudentType'></a>
->
+> 
 > ### NCES0609RelationshipToStudentType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|5006||
@@ -9356,21 +9358,21 @@ effective date XPath|No effective date XPath
 > enumeration|1744||
 > enumeration|1745||
 > enumeration|1746||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0613EmploymentStatusType'></a>
->
+> 
 > ### NCES0613EmploymentStatusType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|1384||
@@ -9382,21 +9384,21 @@ effective date XPath|No effective date XPath
 > enumeration|1380||
 > enumeration|1381||
 > enumeration|1382||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0768PrimaryDisabilityTypeType'></a>
->
+> 
 > ### NCES0768PrimaryDisabilityTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|2121||
@@ -9414,21 +9416,21 @@ effective date XPath|No effective date XPath
 > enumeration|2129||
 > enumeration|2130||
 > enumeration|2131||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0815ProgramExitReasonType'></a>
->
+> 
 > ### NCES0815ProgramExitReasonType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|2226||
@@ -9454,21 +9456,21 @@ effective date XPath|No effective date XPath
 > enumeration|2219||
 > enumeration|2233||
 > enumeration|2232||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES0849RaceType'></a>
->
+> 
 > ### NCES0849RaceType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|0998||
@@ -9476,21 +9478,21 @@ effective date XPath|No effective date XPath
 > enumeration|1000||
 > enumeration|1001||
 > enumeration|1002||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NCES1151AgencyTypeType'></a>
->
+> 
 > ### NCES1151AgencyTypeType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|3491||
@@ -9500,21 +9502,21 @@ effective date XPath|No effective date XPath
 > enumeration|3487||
 > enumeration|3490||
 > enumeration|3488||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='NISOZ3953LanguageCodesType'></a>
->
+> 
 > ### NISOZ3953LanguageCodesType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|aar||
@@ -10003,21 +10005,21 @@ effective date XPath|No effective date XPath
 > enumeration|znd||
 > enumeration|zul||
 > enumeration|zun||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='SCEDCourseTitlesType'></a>
->
+> 
 > ### SCEDCourseTitlesType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|01001||
@@ -11398,21 +11400,21 @@ effective date XPath|No effective date XPath
 > enumeration|22997||
 > enumeration|22998||
 > enumeration|22999||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='SCEDSecondaryCoursesType'></a>
->
+> 
 > ### SCEDSecondaryCoursesType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|01||
@@ -11437,21 +11439,21 @@ effective date XPath|No effective date XPath
 > enumeration|20||
 > enumeration|21||
 > enumeration|22||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='SCEDNonSecondaryCoursesType'></a>
->
+> 
 > ### SCEDNonSecondaryCoursesType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|51||
@@ -11476,40 +11478,40 @@ effective date XPath|No effective date XPath
 > enumeration|70||
 > enumeration|71||
 > enumeration|72||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='StudentPlacementOtherTypesOfTransportationType'></a>
->
+> 
 > ### StudentPlacementOtherTypesOfTransportationType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|S101||
 > enumeration|S102||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='StudentPlacementTitleIServicesType'></a>
->
+> 
 > ### StudentPlacementTitleIServicesType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|S001||
@@ -11529,39 +11531,39 @@ effective date XPath|No effective date XPath
 > enumeration|S015||
 > enumeration|S016||
 > enumeration|S017||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='StudentPlacementOtherServicesType'></a>
->
+> 
 > ### StudentPlacementOtherServicesType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|S200||
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='USPSAbbreviationsType'></a>
->
+> 
 > ### USPSAbbreviationsType
->
+> 
 > ### Restriction
->
+> 
 > Base type: token
->
+> 
 > #### Restriction facets
->
+> 
 > Restriction type|Value|Summary|Remarks
 > ---|---|---|---
 > enumeration|AL||
@@ -11626,8 +11628,6 @@ effective date XPath|No effective date XPath
 > enumeration|AE||
 > enumeration|AA||
 > enumeration|AP||
->
->
 
 ## XSD schema
 [![Download](/healthvault/images/download.png)Download](../xsd/sif-student-academic-record.xsd)

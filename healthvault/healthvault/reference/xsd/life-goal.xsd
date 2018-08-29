@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<schema
+    targetNamespace="urn:com.microsoft.wc.thing.life-goal"
+    xmlns:lg="urn:com.microsoft.wc.thing.life-goal"
+    xmlns:t="urn:com.microsoft.wc.thing.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <import
+        namespace="urn:com.microsoft.wc.thing.types"
+        schemaLocation="base.xsd" />
+
+    <annotation>
+        <documentation>
+            <type-id>609319bf-35cc-40a4-b9d7-1b329679baaa</type-id>
+            <type-name>Life goal</type-name>
+            <wrapper-class-name>LifeGoal</wrapper-class-name>
+            <wrapper-class-fwlink>136179</wrapper-class-fwlink>
+            <sample-xml-fwlink />
+            <data-type-guide-fwlink />
+
+            <summary>
+                A general life goal such as to travel or quit smoking.
+            </summary>
+
+            <remarks>
+                The effective-date implies the date on which this goal
+                was initiated.
+            </remarks>
+            <seealso-thing-type-version-id>415c95e0-0533-4d9c-ac73-91dc5031186c</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>dad8bb47-9ad0-4f09-a020-0ff051d1d0f7</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>b7925180-d69e-48fa-ae1d-cb3748ca170e</seealso-thing-type-version-id>
+        </documentation>
+    </annotation>
+    
+    <element name="life-goal">
+        <complexType>
+
+            <annotation>
+                <documentation>
+                    <summary>
+                        An unmeasurable "checklist" goal of the type you might
+                        stick up on the fridge as a New Year's resolution.
+                    </summary>
+                    
+                    <remarks>
+                        The effective-date implies the date on which this goal
+                        was initiated.
+                    </remarks>
+                </documentation>
+            </annotation>
+
+            <sequence>
+
+                <element name="description" minOccurs="1" maxOccurs="1"
+                    type="string">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Free-form description of the goal.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="goal-info" minOccurs="0" maxOccurs="1"
+                    type="t:goal">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                General information about the goal such as
+                                the start date, completion date, and current
+                                status.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>
+

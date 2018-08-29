@@ -27,12 +27,12 @@ To insert a CCR, use the following:
 ```c#
 void AddCCR() 
 { 
-   XmlDocument ccrDocument = new XmlDocument(); 
-   ccrDocument.Load(MapPath("ExampleCCR.xml")); 
-   HealthRecordItem ccr =  
-        newHealthRecordItem(CCR_THING_GUID, ccrDocument); 
- 
-   PersonInfo.SelectedRecord.NewItem(ccr); 
+   XmlDocument ccrDocument = new XmlDocument(); 
+   ccrDocument.Load(MapPath("ExampleCCR.xml")); 
+   HealthRecordItem ccr =  
+        newHealthRecordItem(CCR_THING_GUID, ccrDocument); 
+ 
+   PersonInfo.SelectedRecord.NewItem(ccr); 
 }
 ```
 
@@ -44,11 +44,11 @@ To retrieve the types is also fairly simple. To look at all the CCDs stored in a
 
 ```c#
       List<HealthRecordItem> ccdItems =  
-     GetValues<HealthRecordItem>(CCD_THING_GUID); 
- 
+     GetValues<HealthRecordItem>(CCD_THING_GUID); 
+ 
 foreach (HealthRecordItem ccd in ccdItems) 
 { 
-   // ccd xml data is in ccd.TypeSpecificData 
+   // ccd xml data is in ccd.TypeSpecificData 
 }  
 //where GetValues() is from the HelloWorld sample.
     

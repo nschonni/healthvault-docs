@@ -26,9 +26,9 @@ To fetch a vocabulary describing the different kinds of aerobic activities:
 ```c#
 Vocabulary vocabulary = ApplicationConnection.GetVocabulary("aerobic-activites");
 foreach (KeyValuePair<string,VocabularyItem> item in vocabulary){
-    string key = item.Key;
-    string displayText = item.Value.DisplayText;
-    string abbreviation = item.Value.AbbreviationText;
+    string key = item.Key;
+    string displayText = item.Value.DisplayText;
+    string abbreviation = item.Value.AbbreviationText;
 }
 ```
 If you look closely at the <span class="code">foreach</span> part, you notice that item's **Value** property returns a [VocabularyItem](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.vocabularyitem) object, and that's where the [DisplayText](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.vocabularyitem.displaytext) and [AbbreviationText](https://docs.microsoft.com/en-us/dotnet/api/microsoft.health.vocabularyitem.abbreviationtext) properties are defined.

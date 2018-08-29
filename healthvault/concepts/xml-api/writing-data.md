@@ -27,24 +27,24 @@ The following request XML illustrates a **PutThings** call that creates a new we
 
 ```xml
 <info>
-  <thing>
-    <type-id>3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>
-    <data-xml>
-      <weight>
-        <when>
-          <date>
-            <y>2012</y>
-            <m>5</m>
-            <d>23</d>
-          </date>
-        </when>
-        <value>
-          <kg>90.718474</kg>
-          <display units="lbs" units-code="lb" text="200 lbs">200</display>
-        </value>
-      </weight>
-    </data-xml>
-  </thing>
+  <thing>
+    <type-id>3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>
+    <data-xml>
+      <weight>
+        <when>
+          <date>
+            <y>2012</y>
+            <m>5</m>
+            <d>23</d>
+          </date>
+        </when>
+        <value>
+          <kg>90.718474</kg>
+          <display units="lbs" units-code="lb" text="200 lbs">200</display>
+        </value>
+      </weight>
+    </data-xml>
+  </thing>
 </info>
 ```
 ### The request
@@ -96,29 +96,29 @@ The following request XML illustrates a **PutThings** call that updates an exist
 
 ```xml
 <info>
-  <thing>
-    <thing-id version-stamp="cd5fe8ef-fb1e-4b35-a927-182f016b649e">cd5fe8ef-fb1e-4b35-a927-182f016b649e</thing-id>
-    <type-id>3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>
-    <data-xml>
-      <weight>
-        <when>
-          <date>
-            <y>2012</y>
-            <m>5</m>
-            <d>23</d>
-          </date>
-          <time>
-            <h>7</h>
-            <m>30</m>
-          </time>
-        </when>
-        <value>
-          <kg>90.718474</kg>
-          <display units="lbs" units-code="lb" text="200 lbs">200</display>
-        </value>
-      </weight>
-    </data-xml>
-  </thing>
+  <thing>
+    <thing-id version-stamp="cd5fe8ef-fb1e-4b35-a927-182f016b649e">cd5fe8ef-fb1e-4b35-a927-182f016b649e</thing-id>
+    <type-id>3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>
+    <data-xml>
+      <weight>
+        <when>
+          <date>
+            <y>2012</y>
+            <m>5</m>
+            <d>23</d>
+          </date>
+          <time>
+            <h>7</h>
+            <m>30</m>
+          </time>
+        </when>
+        <value>
+          <kg>90.718474</kg>
+          <display units="lbs" units-code="lb" text="200 lbs">200</display>
+        </value>
+      </weight>
+    </data-xml>
+  </thing>
 </info>
 ```
 Deleting data

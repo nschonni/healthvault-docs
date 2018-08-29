@@ -125,17 +125,17 @@ The following status and error codes may be returned by the HealthVault platform
 <tr class="even">
 <td><p>INVALID_THING_TYPE</p></td>
 <td><p>19</p></td>
-<td><p>Thing type doesn't exist.</p></td>
+<td><p>Thing type doesn&#39;t exist.</p></td>
 </tr>
 <tr class="odd">
 <td><p>THING_TYPE_IMMUTABLE</p></td>
 <td><p>20</p></td>
-<td><p>Can't update things of this type.</p></td>
+<td><p>Can&#39;t update things of this type.</p></td>
 </tr>
 <tr class="even">
 <td><p>THING_TYPE_UNCREATABLE</p></td>
 <td><p>21</p></td>
-<td><p>Can't create things of this type.</p></td>
+<td><p>Can&#39;t create things of this type.</p></td>
 </tr>
 <tr class="odd">
 <td><p>DUPLICATE_CREDENTIAL_FOUND</p></td>
@@ -225,7 +225,7 @@ The following status and error codes may be returned by the HealthVault platform
 <tr class="even">
 <td><p>EMAIL_NOT_VALIDATED</p></td>
 <td><p>41</p></td>
-<td><p>Person email must be validated but it's not.</p></td>
+<td><p>Person email must be validated but it&#39;s not.</p></td>
 </tr>
 <tr class="odd">
 <td><p>MAIL_ADDRESS_MALFORMED</p></td>
@@ -300,7 +300,7 @@ The following status and error codes may be returned by the HealthVault platform
 <tr class="odd">
 <td><p>THING_TYPE_UNDELETABLE</p></td>
 <td><p>59</p></td>
-<td><p>Can't delete things of this type.</p></td>
+<td><p>Can&#39;t delete things of this type.</p></td>
 </tr>
 <tr class="even">
 <td><p>VERSION_STAMP_MISSING</p></td>
@@ -325,7 +325,7 @@ The following status and error codes may be returned by the HealthVault platform
 <tr class="even">
 <td><p>DOMAIN_NAME_NOT_SET</p></td>
 <td><p>64</p></td>
-<td><p>The application's domain name hasn't been set.</p></td>
+<td><p>The application&#39;s domain name hasn&#39;t been set.</p></td>
 </tr>
 <tr class="odd">
 <td><p>AUTHENTICATED_SESSION_TOKEN_EXPIRED</p></td>
@@ -540,12 +540,12 @@ The following status and error codes may be returned by the HealthVault platform
 <tr class="odd">
 <td><p>BLOB_HASH_ALGORITHM_MISMATCH</p></td>
 <td><p>108</p></td>
-<td><p>The specified blob hash algorithm does not match the blob's hash algorithm.</p></td>
+<td><p>The specified blob hash algorithm does not match the blob&#39;s hash algorithm.</p></td>
 </tr>
 <tr class="even">
 <td><p>BLOB_HASH_BLOCK_SIZE_MISMATCH</p></td>
 <td><p>109</p></td>
-<td><p>The specified blob hash block size does not match the blob's hash block size.</p></td>
+<td><p>The specified blob hash block size does not match the blob&#39;s hash block size.</p></td>
 </tr>
 <tr class="odd">
 <td><p>UNSUPPORTED_SIGNATURE_METHOD</p></td>

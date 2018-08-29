@@ -52,22 +52,22 @@ Before your app can access user data, it will need offline access to specific [H
 
 Your application will request permission to access these data types when users join the program. In our example, Fabrikam has requested users joining their program to give consent for the following data types:
 
--   Action Plan (deprecated)
--   Appointment
--   Basic demographic information
--   Body composition
--   Concern
--   Condition
--   Family history
--   Health goal
--   Height
--   Medication
--   Plan
--   Task
--   Task tracking entry
--   Weight
+- Action Plan (deprecated)
+- Appointment
+- Basic demographic information
+- Body composition
+- Concern
+- Condition
+- Family history
+- Health goal
+- Height
+- Medication
+- Plan
+- Task
+- Task tracking entry
+- Weight
 
- <img src="/healthvault/images/IC867995.png" title="Selecting data types" alt="Selecting data types" id="HVActionPlans_fig05" /> 
+  <img src="/healthvault/images/IC867995.png" title="Selecting data types" alt="Selecting data types" id="HVActionPlans_fig05" /> 
 
 When you have completed the steps above, learn more about how to [update your app's configuration to connect to HealthVault](/healthvault/getting-started/update-app-configurations). 
 

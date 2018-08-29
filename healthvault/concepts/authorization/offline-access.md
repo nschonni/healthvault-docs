@@ -24,9 +24,9 @@ When you know that your application requests offline access, here is some sample
 
 ```cs
 OfflineWebApplicationConnectionofflineConn =
-    new OfflineWebApplicationConnection(offlineUser);
+    new OfflineWebApplicationConnection(offlineUser);
 offlineConn.Authenticate();HealthRecordAccessor accessor = 
-   new HealthRecordAccessor(offlineConn, <RECORD_GUID>);
+   new HealthRecordAccessor(offlineConn, <RECORD_GUID>);
 ```
 You can then use the Accessor to build a Searcher and pull the desired HealthRecordItems.
 

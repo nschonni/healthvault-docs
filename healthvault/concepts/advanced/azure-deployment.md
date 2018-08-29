@@ -16,7 +16,6 @@ You can configure the following property in your web.config file in order to upd
 
 ```xml
 <add key="HV_AppCertStore" value="1" />
-
 ``` 
 
 > [!NOTE] 

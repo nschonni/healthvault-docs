@@ -195,12 +195,12 @@ An example request URL:
 <tr class="odd">
 <td><p>target</p></td>
 <td><p>Parameter value</p></td>
-<td><p>This is used as the value of the <em>target</em> parameter when the user's browser is redirected to the destination application's ActionURL.</p></td>
+<td><p>This is used as the value of the <em>target</em> parameter when the user&#39;s browser is redirected to the destination application&#39;s ActionURL.</p></td>
 </tr>
 <tr class="even">
 <td><p>targetqs</p></td>
 <td><p>Parameter value</p></td>
-<td><p>This is used as the value of the <em>targetqs</em> parameter when the user's browser is redirected to the destination application's ActionURL.</p></td>
+<td><p>This is used as the value of the <em>targetqs</em> parameter when the user&#39;s browser is redirected to the destination application&#39;s ActionURL.</p></td>
 </tr>
 </tbody>
 </table>
@@ -875,7 +875,7 @@ The application should validate the user information before sending it to the Sh
 <td><p>Requested action</p></td>
 <td><p>CreateRecord</p></td>
 <td><p>True or False. Set to True if you are using with CreateRecord target.</p>
-<p>If CreateRecord=True, don't post account data, as it won't be used even if the user needs to create an account.</p></td>
+<p>If CreateRecord=True, don&#39;t post account data, as it won&#39;t be used even if the user needs to create an account.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Account first name</p></td>
@@ -906,7 +906,7 @@ The application should validate the user information before sending it to the Sh
 <td><p>Account.Email</p></td>
 <td><p>Required when CreateAccountAndRecord=True.</p>
 <p>Regular expression is defined by HealthVault Platform:</p>
-<p>^([\w-+\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,48}|[0-9]{1,3})(\]?)$</p></td>
+<p>^([\w-+.]+)@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.)|(([\w-]+.)+))([a-zA-Z]{2,48}|[0-9]{1,3})(]?)$</p></td>
 </tr>
 <tr class="even">
 <td><p>Account country/region</p></td>
@@ -1003,7 +1003,7 @@ The application should validate the user information before sending it to the Sh
 <td><p>Record.Email</p></td>
 <td><p>Optional.</p>
 <p>Regular expression is defined by HealthVault Platform.</p>
-<p>^([\w-+\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,48}|[0-9]{1,3})(\]?)$</p></td>
+<p>^([\w-+.]+)@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.)|(([\w-]+.)+))([a-zA-Z]{2,48}|[0-9]{1,3})(]?)$</p></td>
 </tr>
 <tr class="odd">
 <td><p>Record phone number</p></td>

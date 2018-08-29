@@ -29,34 +29,34 @@ The response is a collection of datasets, each containing the results for the gr
 
 The following example request-response XML illustrates how a named group in the request matches a named group in the response:
 
-###Request
+### Request
 ```xml
 <request>
-  <!-- ... -->
-  <info>
-    <group name="height things">
-      <filter>
-        <type-id>40750a6a-89b2-455c-bd8d-b420a4cb500b</type-id>
-      </filter>
-      <format>
-        <section>core</section>
-        <xml/>
-      </format>
-    </group>
-  </info>
+  <!-- ... -->
+  <info>
+    <group name="height things">
+      <filter>
+        <type-id>40750a6a-89b2-455c-bd8d-b420a4cb500b</type-id>
+      </filter>
+      <format>
+        <section>core</section>
+        <xml/>
+      </format>
+    </group>
+  </info>
 </request>
 ```
-###Response
+### Response
 ```xml
 <response>
-  <!-- ... -->
-  <info>
-    <group name="height things">
-      <thing>
-        <!-- ... -->
-      </thing>
-    </group>
-  </info>
+  <!-- ... -->
+  <info>
+    <group name="height things">
+      <thing>
+        <!-- ... -->
+      </thing>
+    </group>
+  </info>
 </response>
 ```
 Groups
@@ -70,24 +70,24 @@ To query for the most recent instance of height and weight data, with each in a 
 
 ```xml
 <info>
-  <group name="height" max="1">
-    <filter>
-      <type-id>40750a6a-89b2-455c-bd8d-b420a4cb500b</type-id>
-    </filter>
-    <format>
-      <section>core</section>
-      <xml/>
-    </format>
-  </group>
-  <group name="weight" max="1">
-    <filter>
-      <type-id>3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>
-    </filter>
-    <format>
-      <section>core</section>
-      <xml/>
-    </format>
-  </group>
+  <group name="height" max="1">
+    <filter>
+      <type-id>40750a6a-89b2-455c-bd8d-b420a4cb500b</type-id>
+    </filter>
+    <format>
+      <section>core</section>
+      <xml/>
+    </format>
+  </group>
+  <group name="weight" max="1">
+    <filter>
+      <type-id>3d34d87e-7fc1-4153-800f-f56592cb0d17</type-id>
+    </filter>
+    <format>
+      <section>core</section>
+      <xml/>
+    </format>
+  </group>
 </info>
 ```
 Query format
@@ -133,11 +133,11 @@ Optional header sections are:
 </tr>
 <tr class="odd">
 <td><p>Effective permissions</p></td>
-<td><p>Information about what access rights the calling application has on the thing instance (Create, Read, Update, or Delete). This information is useful when you want to enable or disable controls for editing or deleting things, based on your application's permissions.</p></td>
+<td><p>Information about what access rights the calling application has on the thing instance (Create, Read, Update, or Delete). This information is useful when you want to enable or disable controls for editing or deleting things, based on your application&#39;s permissions.</p></td>
 </tr>
 <tr class="even">
 <td><p>Digital signatures</p></td>
-<td><p>Digital signature information including the key and cryptographic hash, which can be used to verify that the contents of the thing haven't been changed since the data was signed. Retrieve this section only if you want to validate the cryptographic hash or the signature. For more information, see [digital signatures](/healthvault/concepts/data/digital-signatures).</p></td>
+<td><p>Digital signature information including the key and cryptographic hash, which can be used to verify that the contents of the thing haven&#39;t been changed since the data was signed. Retrieve this section only if you want to validate the cryptographic hash or the signature. For more information, see <a href="/healthvault/concepts/data/digital-signatures" data-raw-source="[digital signatures](/healthvault/concepts/data/digital-signatures)">digital signatures</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Tags</p></td>
@@ -195,7 +195,7 @@ The blob format determines how those blobs are returned. Options include:
 <td><p>Streamed</p></td>
 <td><p>This is the preferred method for retrieving blobs. The streaming mechanism doesn’t have the same size limitations that retrieving blobs inline does.</p>
 <p>Metadata sufficient for retrieving the blob via an <span class="code">HTTP GET</span> is returned. The metadata includes a URL directly to the blob, as well as the content encoding of that blob (if any).</p>
-<p>For more information on retrieving blobs through streaming, see the [blobs section](/healthvault/concepts/data/thing-types) section of the thing type page.</p></td>
+<p>For more information on retrieving blobs through streaming, see the <a href="/healthvault/concepts/data/thing-types" data-raw-source="[blobs section](/healthvault/concepts/data/thing-types)">blobs section</a> section of the thing type page.</p></td>
 </tr>
 </tbody>
 </table>

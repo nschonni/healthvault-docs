@@ -63,7 +63,7 @@ A typical Patient Connect connection is made in the following way.
 <tr class="even">
 <td><p>Friendly name</p></td>
 <td><p>A friendly name that can be presented to the user after the user successfully answers the challenge question. The friendly name should be something that is recognizable and distinguishes one connect request from another so that the user may choose the expected record during application authorization.</p>
-<p>For example, a mother of 2 children may want to name her connect requests after each child so she can distinguish one child's connect request from the other's.</p></td>
+<p>For example, a mother of 2 children may want to name her connect requests after each child so she can distinguish one child&#39;s connect request from the other&#39;s.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Secret question</p></td>
@@ -157,24 +157,24 @@ The following example creates a connect request
 
 ```cs
 private void CreateConnectRequest(
-    string friendlyName,
-    string secretQuestion,
-    string secretAnswer,
-    string patientId)
+    string friendlyName,
+    string secretQuestion,
+    string secretAnswer,
+    string patientId)
 {
-    // Create an offline connection
-    OfflineWebApplicationConnection connection = new OfflineWebApplicationConnection(
-            ApplicationId,
-            HealthServiceUrl,
-            Guid.Empty /* offlinePersonId */);
-    // Create the connect request
-    string code = PatientConnection.Create(
-            connection,
-            friendlyName,
-            secretQuestion,
-            secretAnswer,
-            null/* callbackUrl -- not implemented */,
-            patientId);    
+    // Create an offline connection
+    OfflineWebApplicationConnection connection = new OfflineWebApplicationConnection(
+            ApplicationId,
+            HealthServiceUrl,
+            Guid.Empty /* offlinePersonId */);
+    // Create the connect request
+    string code = PatientConnection.Create(
+            connection,
+            friendlyName,
+            secretQuestion,
+            secretAnswer,
+            null/* callbackUrl -- not implemented */,
+            patientId);    
     
     // Email the URL and code to the user    
     SendConnectRequestMail(patientId, code);
@@ -187,20 +187,20 @@ private void GetAuthorizedRequests(DateTime validatedSince)
 {    
     // Create an offline connection    
     OfflineWebApplicationConnection connection = new OfflineWebApplicationConnection(
-        ApplicationId,
-        HealthServiceUrl,
-        Guid.Empty /* offlinePersonId */);
+        ApplicationId,
+        HealthServiceUrl,
+        Guid.Empty /* offlinePersonId */);
 
-    // Retrieve connections validated since validatedSince
-    Collection<ValidatedPatientConnection> validatedConnections =
-        PatientConnection.GetValidatedConnections(connection, validatedSince);    
+    // Retrieve connections validated since validatedSince
+    Collection<ValidatedPatientConnection> validatedConnections =
+        PatientConnection.GetValidatedConnections(connection, validatedSince);    
     // Update local store with HealthVault IDs    
     foreach (ValidatedPatientConnection validatedConnection in validatedConnections)    
     {        
         UpdateHealthVaultIds(
             validatedConnection.ApplicationPatientId,
-            validatedConnection.PersonId,
-            validatedConnection.RecordId);
-     }
+            validatedConnection.PersonId,
+            validatedConnection.RecordId);
+     }
 } 
 ```

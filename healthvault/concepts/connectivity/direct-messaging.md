@@ -52,7 +52,7 @@ When the sender knows the recipient’s Direct address, it can send messages to 
 Sending to the newuser Direct address
 -------------------------------------
 
-If the sender doesn’t know the user’s HealthVault Direct address, or does not want to maintain users’ HealthVault Direct addresses, the sender can send a Direct message to *newuser@direct.healthvault-ppe.com* (or *newuser@direct.healthvault.com* in production) and in the subject line specify the user’s normal e-mail address along with an optional secret question and answer, and a real subject for the message. The subject line format is as follows:
+If the sender doesn’t know the user’s HealthVault Direct address, or does not want to maintain users’ HealthVault Direct addresses, the sender can send a Direct message to <em>newuser@direct.healthvault-ppe.com</em> (or <em>newuser@direct.healthvault.com</em> in production) and in the subject line specify the user’s normal e-mail address along with an optional secret question and answer, and a real subject for the message. The subject line format is as follows:
 
 -   Email\[;Question;Answer\]\[;RealSubject\]
 
@@ -60,7 +60,7 @@ The e-mail parameter is required, but the question, answer, and subject are opti
 
 For example:
 
--   user@direct.healthvault.com;What is your mother’s maiden name;McKinney;You have a new message
+- user@direct.healthvault.com;What is your mother’s maiden name;McKinney;You have a new message
 
 When HealthVault receives a Direct message at the newuser address, it looks for the contact e-mail address in the subject line, stores the message in a temporary holding area, and notifies the patient at the contact e-mail address that new data is waiting to be picked up in HealthVault.
 
@@ -77,11 +77,11 @@ When attaching clinical documents to Direct messages, the sender can use the fol
 
 **Application/ccd-xml**: The attachment is extracted as a CCD or CCDA item
 
-**Application/cda+xml:**The attachment is extracted as a CDA item.
+<strong>Application/cda+xml:</strong>The attachment is extracted as a CDA item.
 
-**Application/ccr+xml:**The attachment is extracted as a CCR item.
+<strong>Application/ccr+xml:</strong>The attachment is extracted as a CCR item.
 
-**Text/xml:**HealthVault determines if the attachment represents a CCR or CCD document and if so, extracts the attachment into its equivalent item
+<strong>Text/xml:</strong>HealthVault determines if the attachment represents a CCR or CCD document and if so, extracts the attachment into its equivalent item
 
 See also
 --------

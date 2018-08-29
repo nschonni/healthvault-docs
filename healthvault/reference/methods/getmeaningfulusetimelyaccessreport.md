@@ -57,134 +57,133 @@ Name|Type|Min occurs|Max occurs|Summary|Remarks
 sources|[Sources](#Sources)|1|1|A list of qualified Meaningful Use document receipts associated with specified sources.|
 cursor|[stringnz](xref:HV_File_types#stringnz)|0|1|If paging has occurred, this will be returned as a key for the next retrieval item.|
 
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='Document'></a>
->
+> 
 > ### Document
->
+> 
 > A Meaningful Use document receipt.
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > patient-id|[stringnz](xref:HV_File_types#stringnz)|required|||
 > organization-id|[stringnz](xref:HV_File_types#stringnz)|optional|||
 > event-date|dateTime|required|||
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > available-date|dateTime|1|1|Specifies the available date of the document to the user.|
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='DopuDocument'></a>
->
+> 
 > ### DopuDocument
->
+> 
 > A Meaningful Use DOPU document activity.
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > package-id|[stringnz](xref:HV_File_types#stringnz)|required|||
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > available-date|dateTime|1|1|Specifies the available date of the document to the user.|
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='Documents'></a>
->
+> 
 > ### Documents
->
+> 
 > A list of qualified Meaningful Use document receipts associated with specified source.
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > document-receipt|[Document](#Document)|1|unbounded|A Meaningful Use document receipt.|
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='DopuDocuments'></a>
->
+> 
 > ### DopuDocuments
->
+> 
 > A list of qualified Meaningful Use DOPU package receipts associated with specified source.
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > dopu-document-receipt|[DopuDocument](#DopuDocument)|1|unbounded|A Meaningful Use DOPU document receipt.|
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='DocumentSource'></a>
->
+> 
 > ### DocumentSource
->
+> 
 > A Meaningful Use source.
->
+> 
 > Source is either the id of the application that contributed to the data or the email domain of the Direct sender.
->
+> 
 > ### Attributes
->
+> 
 > Name|Type|Use|Default value|Summary|Remarks
 > ---|---|---|---|---|---
 > id|[stringnz](xref:HV_File_types#stringnz)|required|||
->
+> 
 > ### Element sequence
->
-> Name|Type|Min occurs|Max occurs|Summary|Remarks
-> ---|---|---|---|---|---
->
+> 
+> | Name | Type | Min occurs | Max occurs | Summary | Remarks |
+> |------|------|------------|------------|---------|---------|
+> |      |      |            |            |         |         |
+> 
 > ### Choice
->
+> 
 > Min occurs: 1
->
+> 
 > Max occurs: 1
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > document-receipts|[Documents](#Documents)|1|1|A list of qualified Meaningful Use document receipts associated with specified source.|
 > dopu-document-receipts|[DopuDocuments](#DopuDocuments)|1|1|A list of qualified Meaningful Use DOPU document receipts associated with specified source.|
->
->
-
->[!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
->
+> 
+> 
+> 
+> [!div style="margin-left: 4px; border-left: 1px solid; padding-left: 5px;"]
+> 
 > <a name='Sources'></a>
->
+> 
 > ### Sources
->
+> 
 > A list of sources.
->
+> 
 > ### Element sequence
->
+> 
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > source|[DocumentSource](#DocumentSource)|0|unbounded|A list of qualified Meaningful Use document receipts associated with specified source.|
->
->
 
 ## Request XSD schema
 [![Download](/healthvault/images/download.png)Download](../xsd/method-getmeaningfulusetimelyaccessreport.xsd)

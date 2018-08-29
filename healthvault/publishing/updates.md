@@ -15,9 +15,9 @@ This guide describes the process of updating an application that has already bee
 
 ### Update steps
 
-1.  Finalize your configuration in the [Application Configuration Center (ACC)](https://config.healthvault-ppe.com).
-2.  Update your [application walkthrough document](http://download.microsoft.com/download/7/4/E/74EA8944-199C-4F56-B3BB-8105869425BC/HealthVault%20Application%20Walkthrough%20document.docx) to reflect changes to your signup workflow.
-3.  Contact the HealthVault go-live team at  [hvgolive@microsoft.com](mailto:HvGoLive@microsoft.com) to request a review of your changes.
+1. Finalize your configuration in the [Application Configuration Center (ACC)](https://config.healthvault-ppe.com).
+2. Update your [application walkthrough document](http://download.microsoft.com/download/7/4/E/74EA8944-199C-4F56-B3BB-8105869425BC/HealthVault%20Application%20Walkthrough%20document.docx) to reflect changes to your signup workflow.
+3. Contact the HealthVault go-live team at  [hvgolive@microsoft.com](mailto:HvGoLive@microsoft.com) to request a review of your changes.
 
 ### Timetable to expect
 

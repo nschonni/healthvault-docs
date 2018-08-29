@@ -40,7 +40,7 @@ HealthRecordItemExtension extension =    
 height.CommonData.Extensions.Add(extension);
 XPathNavigator navigator = extension.ExtensionData.CreateNavigator();
 navigator.InnerXml = @"<extension source=""" + 
-    extensionSourceName + @"""><SpineState>Compressed</SpineState></extension>"; 
+    extensionSourceName + @"""><SpineState>Compressed</SpineState></extension>"; 
 ```
 
 The first line defines the source string. This is the "unique identifier" that differentiates your data from all the other data, so it's a good place to put a company name or some other unique string.
@@ -60,12 +60,12 @@ foreach (HealthRecordItemExtension extension in height.CommonData.Extensions)
     {        
         XPathNavigator navigator =         
             extension.ExtensionData.CreateNavigator();
-        XPathNavigator spineStateNavigator =         
+        XPathNavigator spineStateNavigator =         
             navigator.SelectSingleNode("extension/SpineState");
-        if (spineStateNavigator != null)        
+        if (spineStateNavigator != null)        
         {            
             string spineState = spineStateNavigator.Value;
-        }   
+        }   
     }
 }
 ```

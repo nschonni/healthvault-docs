@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetMeaningfulUseAudit"
+    xmlns:this="urn:com.microsoft.wc.methods.GetMeaningfulUseAudit"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+  <!--
+
+        METHOD-GETMEANINGFULUSEAUDIT.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetMeaningfulUseAudit method
+
+    -->
+
+  <import
+      namespace="urn:com.microsoft.wc.types"
+      schemaLocation="types.xsd" />
+
+  <annotation>
+    <documentation>
+      <summary>
+        Retrieves Meaningful Use audits for a patient.
+      </summary>
+
+      <remarks>
+      </remarks>
+      <method-visibility>Private</method-visibility>
+    </documentation>
+  </annotation>
+
+  <!-- AddMeaningfulUseAudit - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  
+  <complexType name="MeaningfulUseAuditDateFilter">
+    <annotation>
+      <documentation>
+        <summary>
+          Specifies date filters for the audits to be returned.
+        </summary>
+        <remarks>
+        </remarks>
+      </documentation>
+    </annotation>
+    <sequence>
+      <element name="min-date" type="dateTime" >
+          <annotation>
+            <documentation>
+              <summary>
+                The minimum date the action occurred.
+              </summary>
+            </documentation>
+          </annotation>
+        </element>
+      <element name="max-date" type="dateTime" >
+          <annotation>
+            <documentation>
+              <summary>
+                The maximum date the action occurred.
+              </summary>
+            </documentation>
+          </annotation>
+        </element>
+    </sequence>
+  </complexType>
+  
+  <complexType name="MeaningfulUseAuditFilters">
+    <annotation>
+      <documentation>
+        <summary>
+          Specifies filters for the audits to be returned.
+        </summary>
+        <remarks>
+        </remarks>
+      </documentation>
+    </annotation>
+    <sequence>
+      <element name="date" type="this:MeaningfulUseAuditDateFilter" >
+          <annotation>
+            <documentation>
+              <summary>
+                Specifies the date range in which the action occurred.
+              </summary>
+            </documentation>
+          </annotation>
+        </element>
+    </sequence>
+  </complexType>
+  
+  <element name="info">
+    <complexType>
+      <annotation>
+        <documentation>
+          <summary>
+            The element of the request that contains the method
+            specific parameters.
+          </summary>
+
+          <remarks>
+            All requests contain the info element to pass parameters
+            that are specific to each method. If the method does not
+            define an info element, the method does not take any
+            parameters.
+          </remarks>
+        </documentation>
+      </annotation>
+      <sequence>
+        <element name="filters"
+                 type="this:MeaningfulUseAuditFilters" minOccurs="0" >
+          <annotation>
+            <documentation>
+              <summary>
+                Specifies filters for the audits to be returned.
+              </summary>
+              <remarks>
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="max-items-per-page" type="positiveInteger" minOccurs="0" >
+          <annotation>
+            <documentation>
+              <summary>
+                The maximum number of items to return on a given page.
+              </summary>
+              <remarks>
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="cursor" type="wc-types:stringnz" minOccurs="0" >
+          <annotation>
+            <documentation>
+              <summary>
+                If paging has occurred, this will be passed back in from the original request response
+                as a key for next retrieval page of items.
+              </summary>
+              <remarks>
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

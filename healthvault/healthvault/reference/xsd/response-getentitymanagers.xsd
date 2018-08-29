@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetEntityManagers"    
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetEntityManagers"     
+    xmlns:wc-types="urn:com.microsoft.wc.types"     
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+  <!--
+
+        RESPONSE-GETENTITYMANAGERS.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetEntityManagers method response
+
+    -->
+
+  <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd" />
+
+  <annotation>
+    <documentation>
+      <summary>
+        Gets all the managers who can manage the entity.
+      </summary>
+      <method-visibility>Private</method-visibility>
+    </documentation>
+  </annotation>
+
+  <!-- GetEntityManagers response types - - - - - - - - - - - - - - - - - -  - -->
+
+  <complexType name="EntityManagers">
+    <sequence>
+      <element name="entity-manager" type="this:EntityManagerInfo" 
+               minOccurs="1" maxOccurs="unbounded">
+        <annotation>
+          <documentation>
+            <summary>
+              List of managers.
+            </summary>
+          </documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  
+  <complexType name="EntityManagerInfo">
+    <annotation>
+      <documentation>
+        <summary>
+          Contains information needed to identify an entity manager.
+        </summary>
+      </documentation>
+    </annotation>
+    <sequence>
+      <element name="person-id" type="wc-types:guid">
+        <annotation>
+          <documentation>
+            <summary>
+              Real person id of the manager.
+            </summary>
+          </documentation>
+        </annotation>
+      </element>
+      <element name="pseudo-person-id" type="wc-types:guid">
+        <annotation>
+          <documentation>
+            <summary>
+              Pseudo person id of the manager.
+            </summary>
+          </documentation>
+        </annotation>
+      </element>
+      <element name="name" type="wc-types:string255nw">
+        <annotation>
+          <documentation>
+            <summary>
+              Name of the manager.
+            </summary>
+          </documentation>
+        </annotation>
+      </element>
+      <element name="email-address" type="wc-types:EmailAddress">
+        <annotation>
+          <documentation>
+            <summary>
+              Contact email of the manager.
+            </summary>
+          </documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  
+  <!-- GetApplicationManagers Response - - - - - - - - - - - - - - - - - -  - -->
+
+  <element name="info">
+    <complexType>
+      <annotation>
+        <documentation>
+          <summary>
+            The element of the response that contains the method
+            specific return value(s).
+          </summary>
+          <remarks>
+            All response schemas contain the info element which
+            contain the return value of the method. If the method
+            does not define an info element, the method has no
+            return value.
+          </remarks>
+        </documentation>
+      </annotation>
+      <sequence>
+        <element name="managers" type="this:EntityManagers"
+                 minOccurs="0" maxOccurs="1">
+          <annotation>
+            <documentation>
+              <summary>
+                Entity manager information.
+              </summary>
+            </documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+
+</schema>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2008 (http://www.altova.com) by Eric Gunnerson (MICROSOFT CORPORATION) -->
+<schema xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns:this="urn:com.microsoft.wc.thing.health-event" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com.microsoft.wc.thing.health-event">
+  <import namespace="urn:com.microsoft.wc.thing.types" schemaLocation="base.xsd"/>
+  <import namespace="urn:com.microsoft.wc.dates" schemaLocation="dates.xsd"/>
+  <annotation>
+    <documentation>
+      <type-id>1572af76-1653-4c39-9683-9f9ca6584ba3</type-id>
+      <type-name>Health event</type-name>
+      <summary>
+        A general health event such as the first time a baby crawls.
+      </summary>
+      <remarks>
+        A health event is a health-related occurence for the owner of the record.	
+        For children, it might be used to record the date that the child first crawls or talks.
+        For adults, it might be used to record the date of an accident or progress through a rehabilitation.
+      </remarks>
+      <seealso-thing-type-version-id>4B18AEB6-5F01-444C-8C70-DBF13A2F510B</seealso-thing-type-version-id>
+      <seealso-thing-type-version-id>21d75546-8717-4deb-8b17-a57f48917790</seealso-thing-type-version-id>
+      <effective-date-element>when</effective-date-element>
+    </documentation>
+  </annotation>
+  <element name="health-event">
+    <complexType>
+      <annotation>
+        <documentation>
+          <summary>
+            Represents a health event.
+          </summary>
+          <remarks>
+            A health event is a health-related occurence for the owner of the record.
+						
+            For children, it might be used to record the date that the child first crawls or talks.
+						
+            For adults, it might be used to record the date of an accident or progress through a rehabilitation.
+          </remarks>
+        </documentation>
+      </annotation>
+      <sequence>
+        <element name="when" type="d:approx-date-time">
+          <annotation>
+            <documentation>
+              <summary>
+                The date and time the event occurred.
+              </summary>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="event" type="t:codable-value">
+          <annotation>
+            <documentation>
+              <summary>
+                The name of the health event.
+              </summary>
+              <remarks>
+                The name should be a description that can be understood by the user.
+
+                If possible, the health event name should be coded using one of the preferred vocabularies.
+              </remarks>
+              <preferred-vocabulary>event-pediatric-developmental-movement</preferred-vocabulary>
+              <preferred-vocabulary>event-pediatric-developmental-motorskills</preferred-vocabulary>
+              <preferred-vocabulary>event-pediatric-developmental-speech</preferred-vocabulary>
+              <preferred-vocabulary>event-pediatric-developmental-observations</preferred-vocabulary>
+              <preferred-vocabulary>event-pediatric-developmental-dental</preferred-vocabulary>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="category" type="t:codable-value" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                The category of the health event. 
+              </summary>
+              <remarks>
+                The category can be used to group related events together. For example, 'pediatric'.
+              </remarks>
+              <preferred-vocabulary>event-categories</preferred-vocabulary>
+            </documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

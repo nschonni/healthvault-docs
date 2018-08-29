@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns:this="urn:com.microsoft.wc.thing.explanation-of-benefits" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com.microsoft.wc.thing.explanation-of-benefits">
+    <import namespace="urn:com.microsoft.wc.thing.types" schemaLocation="base.xsd"/>
+    <import namespace="urn:com.microsoft.wc.dates" schemaLocation="dates.xsd"/>
+    <annotation>
+        <documentation>
+            <type-id>356fbba9-e0c9-4f4f-b0d9-4594f2490d2f</type-id>
+            <type-name>Explanation of benefits (EOB)</type-name>
+            <wrapper-class-name>ExplanationOfBenefits</wrapper-class-name>
+            <wrapper-class-fwlink>183393</wrapper-class-fwlink>
+            <sample-xml-fwlink />
+            <data-type-guide-fwlink />
+            <summary>
+                An explanation of benefits received from an insurance plan. 
+            </summary>
+            <seealso-thing-type-version-id>02EF57A2-A620-425A-8E92-A301542CCA54</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>9366440c-ec81-4b89-b231-308a4c4d70ed</seealso-thing-type-version-id>
+            <effective-date-element>date-submitted</effective-date-element>
+        </documentation>
+    </annotation>
+    <complexType name="ClaimAmounts">
+        <annotation>
+            <documentation>
+                <summary>
+                    The financial information related to this claim.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="charged-amount" type="decimal">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The amount charged.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="negotiated-amount" type="decimal">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The amount negotiated between the provider and the payer.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="copay" type="decimal">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The copayment amount.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="deductible" type="decimal">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The deductible amount.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="amount-not-covered" type="decimal">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Amount for services not covered by the plan.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="eligible-for-benefits" type="decimal">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The amount that is eligible for benefits.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="percentage-covered" type="t:percentage" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The percentage of the eligable amount that is covered by the payer. 
+                        </summary>
+                        <remarks>
+                            This should be set for services, but not for totals. 
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="coinsurance" type="decimal">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The amount paid by the person.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="miscellaneous-adjustments" type="decimal">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Adjustments that may affect the amount paid on the claim.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="benefits-paid" type="decimal">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The amount paid by the payer.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="patient-responsibility" type="decimal">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The total amount paid by the patient.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="Service">
+        <annotation>
+            <documentation>
+                <summary>
+                    Information about a specific service..
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="service-type" type="t:codable-value">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The type of the service.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="diagnosis" type="t:codable-value" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The diagnosis.
+                        </summary>
+                        <preferred-vocabulary>idc9cm</preferred-vocabulary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="billing-code" type="t:codable-value" minOccurs="0">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The billing code.
+                        </summary>
+                        <preferred-vocabulary>idc9cm</preferred-vocabulary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="service-dates" type="t:duration-value">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The dates for this service.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="claim-amounts" type="this:ClaimAmounts">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The financial information for this service.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="notes" type="t:stringnznw" minOccurs="0" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            Additional information about this service.
+                        </summary>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <element name="explanation-of-benefits">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        An Explanation of Benefits (EOB) that contains information about an insurance claim.
+                    </summary>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="date-submitted" type="d:date-time">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The date when the claim was submitted.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="patient" type="t:person">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The name of the patient.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="relationship-to-member" type="t:codable-value" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The relationship of the patient to the primary plan member.
+                            </summary>
+                            <preferred-vocabulary>relationship-types</preferred-vocabulary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="plan" type="t:Organization">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The plan covering this claim.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="group-id" type="t:stringnznw" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The group id for the member's plan.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="member-id" type="t:stringnznw">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The member id of the plan member.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="claim-type" type="t:codable-value">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The type of the claim (medical, dental, etc.)
+                            </summary>
+                            <preferred-vocabulary>explanation-of-benefits-claim-type</preferred-vocabulary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="claim-id" type="t:stringnznw">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The claim id.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="submitted-by" type="t:Organization">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The organization that submitted this claim.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="provider" type="t:Organization">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The provider that performed the services.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="currency" type="t:codable-value">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The currency used.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="claim-totals" type="this:ClaimAmounts">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                A summary of the financial information about this claim.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="services" type="this:Service" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The service included in this claim.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

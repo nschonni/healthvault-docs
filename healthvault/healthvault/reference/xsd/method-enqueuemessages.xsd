@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.EnqueueMessages"
+    xmlns:this="urn:com.microsoft.wc.methods.EnqueueMessages"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-messages="urn:com.microsoft.wc.messages"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+  <!--
+
+        METHOD-EnqueueMessages.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for EnqueueMessages method
+
+    -->
+
+    <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd" />
+    <import namespace="urn:com.microsoft.wc.messages" schemaLocation="messages.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+                Schema for the EnqueueMessages method request.
+            </summary>
+            <remarks>
+                The EnqueueMessages method accepts messages to place on an
+                asynchronous work queue.
+            </remarks>
+            <method-visibility>Private</method-visibility>
+            <errors>
+                <error id="ACCESS_DENIED">
+                    If the calling application doesn't have permission to submit
+                    messages to a work queue.
+                </error>
+                <error id="TOO_MANY_MESSAGES">
+                    If the request contains more messages than allowed.
+                </error>
+                <error id="COULD_NOT_ENQUEUE">
+                    If there was an error when attempting to add the messages to the queue.
+                </error>
+            </errors>
+        </documentation>
+    </annotation>
+
+    <!-- - - - - - - - - - - EnqueueMessages - - - - - - - - - - - -->
+    
+    <simpleType name="Queue">
+        <annotation>
+            <documentation>
+                <summary>
+                    A set of allowed queue names.
+                </summary>
+
+                <remarks>
+                </remarks>
+            </documentation>
+        </annotation>
+        <restriction base="wc-types:string512">
+            <enumeration value="HVHealthStatements::Processing" />
+        </restriction>
+    </simpleType>
+
+    <complexType name="Messages">
+        <annotation>
+            <documentation>
+                <summary>
+                    A set of messages to be placed on the same queue.
+                </summary>
+
+                <remarks>
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="message" 
+                     type="this:Message" minOccurs="1" maxOccurs="200">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The messages to be queued.
+                        </summary>
+
+                        <remarks>
+                            The maxOccurs value reflects the absolute maximum
+                            number of messages that can be added to a queue
+                            in a single batch. In practice, a lower maximum
+                            may be enforced by a configuration setting.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="Message">
+        <annotation>
+            <documentation>
+                <summary>
+                    A single message to be queued.
+                </summary>
+
+                <remarks>
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="priority"
+                type="unsignedByte" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The message's priority in the queue.
+                        </summary>
+
+                        <remarks>
+                            The priority can be from 0 to 255. If no priority
+                            is specified, the message will be given the
+                            default priority of 128.
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            
+            <element name="payload" type="wc-messages:MessagePayload">
+                <annotation>
+                    <documentation>
+                        <summary>
+                            The message contents.
+                        </summary>
+
+                        <remarks>
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+            
+        </sequence>
+    </complexType>
+
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="queue" type="this:Queue">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The name of the queue to which the messages should be added.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+                <element name="messages" type="this:Messages">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The messages to be enqueued.
+                            </summary>
+                            <remarks>
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

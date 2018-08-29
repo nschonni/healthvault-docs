@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.AddApplicationPrivileged"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:wc-auth="urn:com.microsoft.wc.auth" 
+    xmlns:wc-app="urn:com.microsoft.wc.application"
+    xmlns:wc-app-config="urn:com.microsoft.wc.app-config" 
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+        METHOD-ADDAPPLICATIONPRIVILEGED.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for AddApplicationPrivileged method
+
+    -->
+
+    <import namespace="urn:com.microsoft.wc.types" schemaLocation="types.xsd" />
+    <import namespace="urn:com.microsoft.wc.auth" schemaLocation="auth.xsd" />
+    <import namespace="urn:com.microsoft.wc.application" schemaLocation="application-configuration.xsd" />
+    <import namespace="urn:com.microsoft.wc.app-config" schemaLocation="app-config.xsd" />
+    
+    <annotation>
+        <documentation>
+            <summary>
+                Adds an application configuration.
+            </summary>
+
+            <remarks>
+                Before an application can call HealthVault, two things must happen:
+                    1. The application configuration must be added to HealthVault.
+                    2. A user must allow the application to access his/her health data.
+
+                The application configuration specifies how the application will interact with
+                HealthVault (i.e. which methods it will call, which data types it needs access
+                to, etc.). It also provides information specificially for the user (i.e. a 
+                description about what the application does, the application logo, etc.). This
+                information will be shown to the user during application authorization.
+            </remarks>
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+
+    <!-- AddApplicationPrivileged - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        The element of the request that contains the method
+                        specific parameters.
+                    </summary>
+
+                    <remarks>
+                        All requests contain the info element to pass parameters
+                        that are specific to each method. If the method does not
+                        define an info element, the method does not take any
+                        parameters.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="app-info" type="wc-app-config:AppConfig">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The application configuration information.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

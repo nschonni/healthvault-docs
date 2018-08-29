@@ -21,8 +21,9 @@ All requests contain the info element to pass parameters that are specific to ea
 
 ### Element sequence
 
-Name|Type|Min occurs|Max occurs|Summary|Remarks
----|---|---|---|---|---
+| Name | Type | Min occurs | Max occurs | Summary | Remarks |
+|------|------|------------|------------|---------|---------|
+|      |      |            |            |         |         |
 
 ### Choice
 

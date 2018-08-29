@@ -30,7 +30,7 @@ public class PeakFlowZone : HealthRecordItem
     
     public PeakFlowZone() : base(new Guid("a5033c9d-08cf-4204-9bd3-cb412ce39fc0")){
 
-    }
+    }
 }
 ```
 
@@ -94,7 +94,7 @@ protected override void ParseXml(IXPathNavigable typeSpecificXml)
 public override void WriteXml(XmlWriter writer)
 {    
     writer.WriteStartElement("app-specific");
-    {        
+    {        
         writer.WriteStartElement("format-appid");        
         writer.WriteValue("MyAppName");        
         writer.WriteEndElement();        
@@ -217,7 +217,7 @@ public override void WriteXml(XmlWriter writer)
     if (writer == null)    
     {        
         throw new ArgumentNullException("null writer");
-    }    
+    }    
     writer.WriteStartElement("app-specific");
     {       
         writer.WriteStartElement("format-appid");        
@@ -253,34 +253,34 @@ That's essentially unchanged except for two changes. First, if there's a wrapped
 ```c#
 protected override void ParseXml(IXPathNavigable typeSpecificXml)
 {
-    XPathNavigator navigator = typeSpecificXml.CreateNavigator();
-    navigator = navigator.SelectSingleNode("app-specific");
-    if (navigator == null)
-    {
-        throw new ArgumentNullException("null navigator");
-    }
-    XPathNavigator when = navigator.SelectSingleNode("when");
-    m_when = new HealthServiceDateTime();
-    m_when.ParseXml(when);
-    XPathNavigator formatAppid = navigator.SelectSingleNode("format-appid");
-    string appid = formatAppid.Value;
-    XPathNavigator formatTag = navigator.SelectSingleNode("format-tag");
-    string wrappedTypeName = formatTag.Value;
-    if (wrappedTypeName != NullObjectTypeName)
-    {
-            m_wrappedObject = (HealthRecordItemCustomBase)
-            CreateObjectByName(wrappedTypeName);
-            if (m_wrappedObject != null)
-            {
-                    m_wrappedObject.Wrapper = this;
-                    XPathNavigator customType =
-                        navigator.SelectSingleNode("CustomType");
-                        if (customType != null)
-                        {
-                                m_wrappedObject.ParseXml(customType);
-                     }
-            }
-    }
+    XPathNavigator navigator = typeSpecificXml.CreateNavigator();
+    navigator = navigator.SelectSingleNode("app-specific");
+    if (navigator == null)
+    {
+        throw new ArgumentNullException("null navigator");
+    }
+    XPathNavigator when = navigator.SelectSingleNode("when");
+    m_when = new HealthServiceDateTime();
+    m_when.ParseXml(when);
+    XPathNavigator formatAppid = navigator.SelectSingleNode("format-appid");
+    string appid = formatAppid.Value;
+    XPathNavigator formatTag = navigator.SelectSingleNode("format-tag");
+    string wrappedTypeName = formatTag.Value;
+    if (wrappedTypeName != NullObjectTypeName)
+    {
+            m_wrappedObject = (HealthRecordItemCustomBase)
+            CreateObjectByName(wrappedTypeName);
+            if (m_wrappedObject != null)
+            {
+                    m_wrappedObject.Wrapper = this;
+                    XPathNavigator customType =
+                        navigator.SelectSingleNode("CustomType");
+                        if (customType != null)
+                        {
+                                m_wrappedObject.ParseXml(customType);
+                     }
+            }
+    }
 }
 ```
 This is also not very different. The big change is that if there is a type name stored in format-tag, you create an instance of that type, find the custom data for it, and then call ParseXml() on that object. Note that it's possible that that format-tag isn't a type that you know about, so you have to deal with those cases.
@@ -289,16 +289,16 @@ The object instances are created by CreateObjectByName():
 
 ```c#
 public object CreateObjectByName(string typeName){
-    Type type = Type.GetType(typeName);
-    object o = null;
-    if (type != null)
-    {        
+    Type type = Type.GetType(typeName);
+    object o = null;
+    if (type != null)
+    {        
         if (type.BaseType != typeof(HealthRecordItemCustomBase))
-        {
-            throw new ApplicationException("Custom type not derived from HealthRecordItemCustomBase");
-        }
-        o = Activator.CreateInstance(type);
-    }    
+        {
+            throw new ApplicationException("Custom type not derived from HealthRecordItemCustomBase");
+        }
+        o = Activator.CreateInstance(type);
+    }    
 return o;
 }
 ```
@@ -311,9 +311,9 @@ That's the basic scheme. You also provide a helper method to register the custom
 public const string ApplicationCustomTypeID = "a5033c9d-08cf-4204-9bd3-cb412ce39fc0";
 public static void RegisterCustomDataType()
 {
-        ItemTypeManager.RegisterTypeHandler(
-                new Guid(ApplicationCustomTypeID),
-                typeof(CustomHealthTypeWrapper), true);
+        ItemTypeManager.RegisterTypeHandler(
+                new Guid(ApplicationCustomTypeID),
+                typeof(CustomHealthTypeWrapper), true);
 }
 ```
 You'll need to make sure this method is called before saving or loading any custom types.
@@ -333,12 +333,12 @@ When you're querying, there is an extra step. You get back a HealthRecordItemCol
 ```c#
 List<MyCustomObject> customItems = new List<MyCustomObject>();
 foreach (HealthRecordItem item in items){
-    CustomHealthWrapper wrapper = (CustomHealthTypeWrapper)item;
-    MyCustomObject custom = wrapper.WrappedObject as BPZone;
-    if (custom != null)
-    {
-            customItems.Add(custom);
-    }
+    CustomHealthWrapper wrapper = (CustomHealthTypeWrapper)item;
+    MyCustomObject custom = wrapper.WrappedObject as BPZone;
+    if (custom != null)
+    {
+            customItems.Add(custom);
+    }
 }
 ```
 Then you end up with an array that has only the types you care about.

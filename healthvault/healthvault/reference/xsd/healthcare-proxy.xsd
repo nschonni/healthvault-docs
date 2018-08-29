@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:hcp="urn:com.microsoft.wc.thing.healthcare-proxy" xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com.microsoft.wc.thing.healthcare-proxy">
+    
+    <import
+        namespace="urn:com.microsoft.wc.thing.types"
+        schemaLocation="base.xsd" />    
+    
+    <import 
+        namespace="urn:com.microsoft.wc.dates" 
+        schemaLocation="dates.xsd"/>
+    
+    <annotation>
+        <documentation>
+            <type-id>7EA47715-CBA4-47F0-99D2-EB0A9FB4A85C</type-id>
+            <type-name>Healthcare proxy</type-name>
+            <wrapper-class-name>HealthcareProxy</wrapper-class-name>
+            <wrapper-class-fwlink>136152</wrapper-class-fwlink>
+            <sample-xml-fwlink />
+            <data-type-guide-fwlink />
+            <summary>
+                A healthcare proxy that appoints an agent to make medical decisions.
+            </summary>
+            <remarks>
+                This thing type describes the healthcare proxy of a person.
+            </remarks>
+            <seealso-thing-type-version-id>822a5e5a-14f1-4d06-b92f-8f3f1b05218f</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>25c94a9f-9d3d-4576-96dc-6791178a8143</seealso-thing-type-version-id>
+            <effective-date-element>when</effective-date-element>
+        </documentation>
+    </annotation>
+    <element name="healthcare-proxy">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Information related to a healthcare proxy.
+                    </summary>
+                    <remarks>
+                        This thing type describes the healthcare proxy of a person.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="when" type="d:date-time">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The date and time of the proxy.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="proxy" type="t:person" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Primary contact for healthcare proxy.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="alternate" type="t:person" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Alternative contact for healthcare proxy.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="primary-witness" type="t:person" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Primary witness of healthcare proxy.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="secondary-witness" type="t:person" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Secondary witness of healthcare proxy.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="content" type="string" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Free form content of healthcare proxy.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

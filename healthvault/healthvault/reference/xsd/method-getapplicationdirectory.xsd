@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.GetApplicationDirectory"
+    xmlns:this="urn:com.microsoft.wc.methods.GetApplicationDirectory"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns:directory="urn:com.microsoft.wc.directory"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+  <!--
+
+        METHOD-GETAPPLICATIONDIRECTORY.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetApplicationDirectory method
+
+    -->
+
+  <import
+      namespace="urn:com.microsoft.wc.types"
+      schemaLocation="types.xsd" />
+  
+  <import
+    namespace="urn:com.microsoft.wc.directory"
+    schemaLocation="directory.xsd" />
+
+  <annotation>
+    <documentation>
+      <summary>
+        Gets information for HealthVault application directory
+      </summary>
+
+      <remarks>
+      </remarks>
+      <method-visibility>Public</method-visibility>
+    </documentation>
+  </annotation>
+
+  <!-- GetApplicationDirectory - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  
+  <element name="info">
+    <complexType>
+      <annotation>
+        <documentation>
+          <summary>
+            The element of the request that contains the method
+            specific parameters.
+          </summary>
+
+          <remarks>
+            All requests contain the info element to pass parameters
+            that are specific to each method. If the method does not
+            define an info element, the method does not take any
+            parameters.
+          </remarks>
+        </documentation>
+      </annotation>
+      <sequence>
+        <element name="application-directory-filter" type="directory:DirectoryFilterSpec"
+                 minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                Search filter used to retrieve qualified application directory entries.
+              </summary>
+
+              <remarks>
+                If filter is not provided, all application directory entries will be returned.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="application-directory-id-cursor" type="wc-types:stringnz" 
+                 minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                If paging has occurred, this will be passed back in from the original request response
+                as a key for next retrieval page of items.
+              </summary>
+              <remarks>
+                The guid of the item passed back in will not be returned since it should be the last 
+                item of the previous page.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+        <element name="include-item-details" type="boolean" minOccurs="0">
+          <annotation>
+            <documentation>
+              <summary>
+                Indicates whether to return the full details of directory items instead of just the metadata.
+              </summary>
+              <remarks>
+                If true, all values for the items will be returned.
+                If false, only metadata will be returned.
+                The default is false.
+              </remarks>
+            </documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

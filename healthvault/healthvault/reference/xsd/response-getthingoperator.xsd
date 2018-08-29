@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetThingOperator"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetThingOperator"
+    xmlns:wc-types="urn:com.microsoft.wc.types"
+    xmlns="http://www.w3.org/2001/XMLSchema" >
+
+    <!--
+
+    METHOD-GETTHINGOPERATOR.XSD
+    Microsoft HealthVault
+
+    Platform API: Info schema for GetThingOperator method
+
+    -->
+
+    <import
+        namespace="urn:com.microsoft.wc.types"
+        schemaLocation="types.xsd" />
+
+    <annotation>
+        <documentation>
+            <summary>
+
+            </summary>
+
+            <remarks>
+
+            </remarks>
+        </documentation>
+    </annotation>
+
+    <!-- info - - - - - -  - - - - - - - - - - - - - - -->
+    
+    <complexType name="Permissions">
+        <sequence>
+            <element name="permission" type="wc-types:Permission"
+                 minOccurs="0" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    
+    <complexType name="OperatorInfo">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="id" type="wc-types:guid" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+            <element name="name" type="wc-types:string255" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+
+            <element name="online-access-permissions" 
+                     type="this:Permissions">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+            <element name="offline-access-permissions" 
+                     type="this:Permissions" 
+                minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+
+        </sequence>
+    </complexType>
+
+    <complexType name="ApplicationOperatorInfo">
+        <complexContent>
+            <extension base="this:OperatorInfo">
+                <sequence>
+                    <element name="action-url" type ="string" 
+                             minOccurs="0" maxOccurs="1" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    <complexType name="PersonOperatorInfo">
+        <complexContent>
+            <extension base="this:OperatorInfo">
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    <complexType name="PersonOperatorInfos">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="person-operator-info"
+                     type="this:PersonOperatorInfo"
+                     minOccurs="0" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    
+    <complexType name="ApplicationOperatorInfos">
+        <annotation>
+            <documentation>
+                <summary>
+
+                </summary>
+
+                <remarks>
+
+                </remarks>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="application-operator-info"
+                     type="this:ApplicationOperatorInfo"
+                     minOccurs="0" maxOccurs="unbounded" >
+                <annotation>
+                    <documentation>
+                        <summary>
+
+                        </summary>
+
+                        <remarks>
+
+                        </remarks>
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+
+                    </summary>
+
+                    <remarks>
+
+                    </remarks>
+                </documentation>
+            </annotation>
+            
+            <sequence>
+                
+                <element name="person-operator-infos"
+                         type="this:PersonOperatorInfos"
+                         minOccurs="0" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                
+                <element name="application-operator-infos"
+                         type="this:ApplicationOperatorInfos"
+                         minOccurs="0" maxOccurs="1" >
+                    <annotation>
+                        <documentation>
+                            <summary>
+
+                            </summary>
+
+                            <remarks>
+
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                
+            </sequence>
+            
+        </complexType>
+    </element>
+
+</schema>

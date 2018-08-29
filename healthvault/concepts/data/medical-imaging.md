@@ -51,71 +51,71 @@ Prior to the introduction of streamed blobs, the base type allowed for unstructu
 
 ```xml
 <thing>
-  <thing-id />
-  <type-id/>
-  <data-xml>
-    <!-- Contains XML that adheres to the schema for a
-         specific data type, as indicated by type-id. -->
-  </data-xml>
-  <data-other>
-    <!-- Contains unstructured string data, possibly encoded
-         This is informally referred to as an "inline blob". -->
-  </data-other>
-  <Signature>
-    <!-- Digital dignature of the Thing instance
-         References http://www.w3.org/2000/09/xmldsig#namespace. -->
-  </Signature>
+  <thing-id />
+  <type-id/>
+  <data-xml>
+    <!-- Contains XML that adheres to the schema for a
+         specific data type, as indicated by type-id. -->
+  </data-xml>
+  <data-other>
+    <!-- Contains unstructured string data, possibly encoded
+         This is informally referred to as an "inline blob". -->
+  </data-other>
+  <Signature>
+    <!-- Digital dignature of the Thing instance
+         References http://www.w3.org/2000/09/xmldsig#namespace. -->
+  </Signature>
 </thing>
 ```
 #### Thing (new version)
 
 ```xml
 <thing>
-  <thing-id />
-  <type-id/>
-  <data-xml>
-    <!-- Contains XML that adheres to the schema for a
-         specific data type, as indicated by type-id. -->
-  </data-xml>
-  <blob-payload>
-    <!-- The blob payload contains references to one or more
-         named blobs that were previously and independently
-         streamed into HealthVault. -->
-    <blob>
-      <blob-info>
-        <name/>
-        <content-type/>
-        <hash-info>
-          <!-- Hash info for the blob used for digital signatures (optional). -->
-        </hash-info>
-      </blob-info>
-      <content-length />
-      <!-- Blob is either "inline" or streamed" -->
-      <base64data>
-        <!-- The base64 encoded bytes of an inline blob -->
-      </base64data>
-      <blob-ref-url>
-        <!-- The URL referencing a streamed blob -->
-      </blob-ref-url>
-    </blob>
-  </blob-payload>
-  <signature-info>
-    <sig-data>
-      <hv-signature-method />
-      <blob-signature-info>
-        <!-- One item per blob -->
-        <item>
-          <blob-info>
-            <!-- Matches the blob-info element for one of the blobs above. -->
-          </blob-info>
-        </item>
-      </blob-signature-info>
-    </sig-data>
-    <Signature>
-      <!-- Digital dignature of the Thing instance, including blobs.
-           References the http://www.w3.org/2000/09/xmldsig#namespace. -->
-    </Signature>
-  </signature-info>
+  <thing-id />
+  <type-id/>
+  <data-xml>
+    <!-- Contains XML that adheres to the schema for a
+         specific data type, as indicated by type-id. -->
+  </data-xml>
+  <blob-payload>
+    <!-- The blob payload contains references to one or more
+         named blobs that were previously and independently
+         streamed into HealthVault. -->
+    <blob>
+      <blob-info>
+        <name/>
+        <content-type/>
+        <hash-info>
+          <!-- Hash info for the blob used for digital signatures (optional). -->
+        </hash-info>
+      </blob-info>
+      <content-length />
+      <!-- Blob is either "inline" or streamed" -->
+      <base64data>
+        <!-- The base64 encoded bytes of an inline blob -->
+      </base64data>
+      <blob-ref-url>
+        <!-- The URL referencing a streamed blob -->
+      </blob-ref-url>
+    </blob>
+  </blob-payload>
+  <signature-info>
+    <sig-data>
+      <hv-signature-method />
+      <blob-signature-info>
+        <!-- One item per blob -->
+        <item>
+          <blob-info>
+            <!-- Matches the blob-info element for one of the blobs above. -->
+          </blob-info>
+        </item>
+      </blob-signature-info>
+    </sig-data>
+    <Signature>
+      <!-- Digital dignature of the Thing instance, including blobs.
+           References the http://www.w3.org/2000/09/xmldsig#namespace. -->
+    </Signature>
+  </signature-info>
 </thing>
 ```
 
@@ -212,7 +212,7 @@ public static void StreamBlobToRecord(       
         while ((bytesRead = sourceStream.Read(buffer, 0, buffer.Length)) > 0)        
         {
             blobStream.Write(buffer, 0, bytesRead);
-        }        
+        }        
     
     blobStream.Flush();        
     blobStream.Close();    
@@ -420,26 +420,26 @@ Response
 
 ```xml
 <response>
-  <status>
-    <code>0</code>
-  </status>
-  <wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.BeginPutBlob">
-    <blob-ref-url>
-      <!-- The URL and embedded authentication token to be used when sending chunks. Example:           https://www.healthvault-ppe.com/streaming/wildcatblob.ashx?blob-ref-token={token} -->
-    </blob-ref-url>
-    <blob-chunk-size>
-      <!-- The chunk size in bytes to send. -->
-    </blob-chunk-size>
-    <max-blob-size>
-      <!-- The maximum size in bytes that the blob can grow to. -->
-    </max-blob-size>
-    <blob-hash-algorithm>SHA256Block</blob-hash-algorithm>
-    <blob-hash-parameters>
-      <block-size>
-        <!-- hash block size; will match chunk size -->
-      </block-size>
-    </blob-hash-parameters>
-  </wc:info>
+  <status>
+    <code>0</code>
+  </status>
+  <wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.BeginPutBlob">
+    <blob-ref-url>
+      <!-- The URL and embedded authentication token to be used when sending chunks. Example:           https://www.healthvault-ppe.com/streaming/wildcatblob.ashx?blob-ref-token={token} -->
+    </blob-ref-url>
+    <blob-chunk-size>
+      <!-- The chunk size in bytes to send. -->
+    </blob-chunk-size>
+    <max-blob-size>
+      <!-- The maximum size in bytes that the blob can grow to. -->
+    </max-blob-size>
+    <blob-hash-algorithm>SHA256Block</blob-hash-algorithm>
+    <blob-hash-parameters>
+      <block-size>
+        <!-- hash block size; will match chunk size -->
+      </block-size>
+    </blob-hash-parameters>
+  </wc:info>
 </response>
 ```
 
@@ -474,29 +474,29 @@ The following is a request to put a thing of type medical image study (refer to 
 
 ```xml
 <wc-request:request xmlns:wc-request="urn:com.microsoft.wc.request">
-  <auth>
-    <!-- wc-types:HashFinalized (required)-->
-  </auth>
-  <header>
-    <method>PutThings</method>
-    <method-version>2</method-version>
-    <record-id>
-      <!-- wc-types:guid (required) -->    
+  <auth>
+    <!-- wc-types:HashFinalized (required)-->
+  </auth>
+  <header>
+    <method>PutThings</method>
+    <method-version>2</method-version>
+    <record-id>
+      <!-- wc-types:guid (required) -->    
     </record-id>
-    <auth-session>
-      <!-- wc-types:AuthenticatedSessionInfo (required)-->
-    </auth-session>
-    <!-- additional header field omitted -->
-  </header>
-  <info>
-    <thing>
-      <type-id>c75651c8-548e-449f-8942-9e6379b0b88a</type-id>
-      <thing-state>Active</thing-state>
-      <data-xml>
-        <medical-image-study>
-          <!-- refer to the schema for Medical Image Study -->
-        </medical-image-study>
-        <common />      
+    <auth-session>
+      <!-- wc-types:AuthenticatedSessionInfo (required)-->
+    </auth-session>
+    <!-- additional header field omitted -->
+  </header>
+  <info>
+    <thing>
+      <type-id>c75651c8-548e-449f-8942-9e6379b0b88a</type-id>
+      <thing-state>Active</thing-state>
+      <data-xml>
+        <medical-image-study>
+          <!-- refer to the schema for Medical Image Study -->
+        </medical-image-study>
+        <common />      
       </data-xml>
       <blob-payload>        
         <!-- refer to the schema for thing2-->      
@@ -523,35 +523,35 @@ The **GetThings** request (V3) is used to return things from a HealthVault recor
 
 ```xml
 <wc-request:request xmlns:wc-request="urn:com.microsoft.wc.request">
-  <auth>
-    <!-- wc-types:HashFinalized (required)-->
-  </auth>
-  <header>
-    <method>GetThings</method>
-    <method-version>3</method-version>
-    <record-id>      
+  <auth>
+    <!-- wc-types:HashFinalized (required)-->
+  </auth>
+  <header>
+    <method>GetThings</method>
+    <method-version>3</method-version>
+    <record-id>      
       <!-- wc-types:guid (required) -->
-    </record-id>
-    <auth-session>
-      <!-- wc-types:AuthenticatedSessionInfo (required)-->
-    </auth-session>
-    <!-- additional header field omitted -->
-  </header>
-  <info>
-    <group>
-      <filter>
-        <!-- active things of type Medical Image Study -->
-        <type-id>c75651c8-548e-449f-8942-9e6379b0b88a</type-id>
-        <thing-state>Active</thing-state>
-      </filter>
-      <format>
-        <section>core</section>
-        <section>blobpayload</section>
-        <section>digitalsignatures</section>
-        <xml />
-      </format>
-    </group>
-  </info>
+    </record-id>
+    <auth-session>
+      <!-- wc-types:AuthenticatedSessionInfo (required)-->
+    </auth-session>
+    <!-- additional header field omitted -->
+  </header>
+  <info>
+    <group>
+      <filter>
+        <!-- active things of type Medical Image Study -->
+        <type-id>c75651c8-548e-449f-8942-9e6379b0b88a</type-id>
+        <thing-state>Active</thing-state>
+      </filter>
+      <format>
+        <section>core</section>
+        <section>blobpayload</section>
+        <section>digitalsignatures</section>
+        <xml />
+      </format>
+    </group>
+  </info>
 </wc-request:request>
 ```
 
@@ -559,33 +559,33 @@ For each thing returned, the blobs-payload will include URLs for any streamed bl
 
 ```xml
 <response>
-  <status>
-    <code>0</code>
-  </status>
-  <wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.GetThings3">
-    <group>
-      <!-- zero, one or more things will be returned -->
-      <thing>
-        <thing-id version-stamp="[wc-types:guid]">
-          <!-- wc-types:guid -->
-        </thing-id>
-        <type-id name="Medical Image Study">c75651c8-548e-449f-8942-9e6379b0b88a</type-id>
-        <thing-state>Active</thing-state>
-        <eff-date>
-          <!-- wc-types:date-time -->
-        </eff-date>
-        <data-xml>
-          <medical-image-study>
-            <!-- refer to the schema for Medical Image Study -->
-          </medical-image-study>
-          <common />
-        </data-xml>
-        <blob-payload>
-          <!-- refer to the schema for thing2-->
-        </blob-payload>
-      </thing>
-    </group>
-  </wc:info>
+  <status>
+    <code>0</code>
+  </status>
+  <wc:info xmlns:wc="urn:com.microsoft.wc.methods.response.GetThings3">
+    <group>
+      <!-- zero, one or more things will be returned -->
+      <thing>
+        <thing-id version-stamp="[wc-types:guid]">
+          <!-- wc-types:guid -->
+        </thing-id>
+        <type-id name="Medical Image Study">c75651c8-548e-449f-8942-9e6379b0b88a</type-id>
+        <thing-state>Active</thing-state>
+        <eff-date>
+          <!-- wc-types:date-time -->
+        </eff-date>
+        <data-xml>
+          <medical-image-study>
+            <!-- refer to the schema for Medical Image Study -->
+          </medical-image-study>
+          <common />
+        </data-xml>
+        <blob-payload>
+          <!-- refer to the schema for thing2-->
+        </blob-payload>
+      </thing>
+    </group>
+  </wc:info>
 </response>
 ```
 **HTTP GET to retrieve a blob**

@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<schema 
+    targetNamespace="urn:com.microsoft.wc.methods.response.GetThingsBulk"
+    xmlns:this="urn:com.microsoft.wc.methods.response.GetThingsBulk" 
+    xmlns:wc-types="urn:com.microsoft.wc.types" 
+    xmlns:wc-thing="urn:com.microsoft.wc.thing" 
+    xmlns="http://www.w3.org/2001/XMLSchema">
+    
+    <!--
+
+        RESPONSE-GETTHINGSBULK.XSD
+        Microsoft HealthVault
+
+        Platform API: Info schema for GetThingsBulk method response
+
+    -->
+    <import 
+        namespace="urn:com.microsoft.wc.types" 
+        schemaLocation="types.xsd"/>
+        
+    <import 
+        namespace="urn:com.microsoft.wc.thing" 
+        schemaLocation="thing.xsd"/>
+        
+    <annotation>
+        <documentation>
+            <summary>
+                Specifies the schema for the GetThingsBulk method response.
+            </summary>            
+            <method-visibility>Private</method-visibility>
+        </documentation>
+    </annotation>
+    
+    <complexType name="ThingInfoResponse">
+        <annotation>
+            <documentation>
+                <summary>
+                    Contains Thing response - Thing xml, Record Id, Version Stamp and Type Id.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="record-id" type="wc-types:guid"  minOccurs="1" maxOccurs="1" />
+            <element name="version-stamp" type="wc-types:guid"  minOccurs="1" maxOccurs="1" />
+            <element name="thing-type-id" type="wc-types:guid"  minOccurs="1" maxOccurs="1" />
+            <choice>
+                <element name="thing" type="wc-thing:Thing2" minOccurs="1" maxOccurs="1"/>
+                <element name="not-available-reason" type="string" minOccurs="1" maxOccurs="1"/>
+            </choice>
+        </sequence>     
+    </complexType>
+    
+    <complexType name="ThingResponses">
+        <annotation>
+            <documentation>
+                <summary>
+                    Collection of Things response.
+                </summary>
+            </documentation>
+        </annotation>
+        <sequence>
+		    <element name="thing-response" type="this:ThingInfoResponse" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+    </complexType>
+    
+    <element name="info">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Contains the response of the GetThingsBulk method request.
+                    </summary>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="requesting-app-id" type="wc-types:guid"  minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Unique Id of the application which is requesting the Things.
+                            </summary>
+                            <remarks>
+                                It has to be a valid HealthVault Application. The application itself cannot 
+                                directly call this method. Data will be fetched by an internal app and published to the 
+                                application's data store.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="things-response" type="this:ThingResponses" minOccurs="1" maxOccurs="1">                 
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Contains all the responses for each Thing requested.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+          </sequence>
+        </complexType>
+    </element>
+</schema>

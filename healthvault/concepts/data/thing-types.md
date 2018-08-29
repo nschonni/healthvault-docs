@@ -22,37 +22,37 @@ The following blood pressure thing XML is used as an example in the other sectio
 
 ```xml
 <thing>
-  <thing-id version-stamp="4d5fb486-0459-45a4-ba97-8b4c75c30f3f">31713110-026c-4d24-8549-cec9effe9b0d</thing-id>
-  <type-id>ca3c57f4-f4c1-4e15-be67-0a3caf5414ed</type-id>
-  <eff-date>2008-12-10 03:47:35.550</eff-date>
-  <created>
-    <timestamp>2008-12-2 10:31:16.345</timestamp>
-    <app-id>4d5fb486-0459-45a4-ba97-8b4c75c30f3f</app-id>
-    <person-id>b6f890a1-8755-4c87-98ce-3e8678bd4bae</person-id>
-  </created>
-  <updated>
-    <timestamp>2008-12-10 03:47:35.550</timestamp>
-    <app-id>4d5fb486-0459-45a4-ba97-8b4c75c30f3f</app-id>
-    <person-id>b6f890a1-8755-4c87-98ce-3e8678bd4bae</person-id>
-  </updated>
-  <data-xml>
-    <blood-pressure>
-      <when>
-        <date>
-          <y>2006</y>
-          <m>12</m>
-          <d>22</d>
-        </date>
-      </when>
-      <systolic>123</systolic>
-      <diastolic>68</diastolic>
-    </blood-pressure>
-    <common>
-      <source>MicroLife BP</source>
-      <note>Reading was taken while seated</note>
-      <client-thing-id>19823452</client-thing-id>
-    </common>
-  </data-xml>
+  <thing-id version-stamp="4d5fb486-0459-45a4-ba97-8b4c75c30f3f">31713110-026c-4d24-8549-cec9effe9b0d</thing-id>
+  <type-id>ca3c57f4-f4c1-4e15-be67-0a3caf5414ed</type-id>
+  <eff-date>2008-12-10 03:47:35.550</eff-date>
+  <created>
+    <timestamp>2008-12-2 10:31:16.345</timestamp>
+    <app-id>4d5fb486-0459-45a4-ba97-8b4c75c30f3f</app-id>
+    <person-id>b6f890a1-8755-4c87-98ce-3e8678bd4bae</person-id>
+  </created>
+  <updated>
+    <timestamp>2008-12-10 03:47:35.550</timestamp>
+    <app-id>4d5fb486-0459-45a4-ba97-8b4c75c30f3f</app-id>
+    <person-id>b6f890a1-8755-4c87-98ce-3e8678bd4bae</person-id>
+  </updated>
+  <data-xml>
+    <blood-pressure>
+      <when>
+        <date>
+          <y>2006</y>
+          <m>12</m>
+          <d>22</d>
+        </date>
+      </when>
+      <systolic>123</systolic>
+      <diastolic>68</diastolic>
+    </blood-pressure>
+    <common>
+      <source>MicroLife BP</source>
+      <note>Reading was taken while seated</note>
+      <client-thing-id>19823452</client-thing-id>
+    </common>
+  </data-xml>
 </thing>
 ```
 
@@ -86,7 +86,7 @@ Each thing instance is identified using two GUIDs and an optional string identif
 </tr>
 <tr class="odd">
 <td><p><strong>client-thing-id</strong> element</p></td>
-<td><p>An optional, application-defined identifier for the thing instance. It can be used to relate the thing to data in the application's own data store, or to predefine an identifier for the thing before it is created, to simplify relating things together.</p>
+<td><p>An optional, application-defined identifier for the thing instance. It can be used to relate the thing to data in the application&#39;s own data store, or to predefine an identifier for the thing before it is created, to simplify relating things together.</p>
 <p>There can be only one <strong>client-thing-id</strong> element per thing instance. When updating a thing, an application that is not the application that created the thing should not change the <strong>client-thing-id</strong> value.</p></td>
 </tr>
 </tbody>
@@ -139,7 +139,7 @@ The **flags** element contains a bit field. The bits represent characteristics o
 <tr class="even">
 <td><p>HiddenFromEPrep</p></td>
 <td><p>0x8</p></td>
-<td><p>Indicates that the thing is excluded from the user's emergency profile.</p></td>
+<td><p>Indicates that the thing is excluded from the user&#39;s emergency profile.</p></td>
 </tr>
 <tr class="odd">
 <td><p>ReadOnly</p></td>
@@ -316,12 +316,12 @@ Immediately following the **data-xml** section is the **blob-payload** section:
 
 ```xml
 <blob-payload>
-  <blob>
-    <blob-info>
-      <name>MyBlob</name>
-      <content-type>application/octet-stream</content-type>
-    </blob-info>
-    …  </blob>
+  <blob>
+    <blob-info>
+      <name>MyBlob</name>
+      <content-type>application/octet-stream</content-type>
+    </blob-info>
+    …  </blob>
 </blob-payload>
 ```
 
@@ -333,13 +333,13 @@ Inline blobs have their entire binary content base64-encoded within the thing da
 
 ```xml
 <blob-payload>
-  <blob>
-    <blob-info>
-      <name>MyBlob</name>
-      <content-type>application/octet-stream</content-type>
-    </blob-info>
-    <base64data>CgoKCgoKCgoKCg==</base64data>
-  </blob>
+  <blob>
+    <blob-info>
+      <name>MyBlob</name>
+      <content-type>application/octet-stream</content-type>
+    </blob-info>
+    <base64data>CgoKCgoKCgoKCg==</base64data>
+  </blob>
 </blob-payload>
 ```
 
@@ -359,13 +359,13 @@ Blobs are written to a URL obtained from the **BeginPutBlob** request. The same 
 
 ```xml
 <blob-payload>
-  <blob>
-    <blob-info>
-      <name>MyBlob</name>
-      <content-type>application/octet-stream</content-type>
-    </blob-info>
-    <blob-ref-url>https://platform.healthvault.com/streaming/wildcatblob.ashx?blob-ref-token=ASAAANQgT2YQJwRHpC...</blob-ref-url>
-  </blob>
+  <blob>
+    <blob-info>
+      <name>MyBlob</name>
+      <content-type>application/octet-stream</content-type>
+    </blob-info>
+    <blob-ref-url>https://platform.healthvault.com/streaming/wildcatblob.ashx?blob-ref-token=ASAAANQgT2YQJwRHpC...</blob-ref-url>
+  </blob>
 </blob-payload>
 ```
 
@@ -397,47 +397,47 @@ The digital signature applies to the data-xml element and to all blobs attached 
 
 ```xml
 <signature-info>
-   <sig-data>
-      <hv-signature-method>HVSignatureMethod2</hv-signature-method>
-       <blob-signature-info>
-          <item>
-             <blob-info>
-                <name>A</name>
-                 <content-type>application/octet-stream</content-type>
-                  <hash-info>
-                    <algorithm>SHA256Block</algorithm>
-                    <params>
-                      <block-size>2097152</block-size>
-                    </params>
-                    <hash>7iY6hyYpcAM1cs23dxsUT0Dhvm9f3GUKWarxhdMGXAc=</hash>
-                  </hash-info>
-                </blob-info>
+   <sig-data>
+      <hv-signature-method>HVSignatureMethod2</hv-signature-method>
+       <blob-signature-info>
+          <item>
+             <blob-info>
+                <name>A</name>
+                 <content-type>application/octet-stream</content-type>
+                  <hash-info>
+                    <algorithm>SHA256Block</algorithm>
+                    <params>
+                      <block-size>2097152</block-size>
+                    </params>
+                    <hash>7iY6hyYpcAM1cs23dxsUT0Dhvm9f3GUKWarxhdMGXAc=</hash>
+                  </hash-info>
+                </blob-info>
             </item>
         </blob-signature-info>
         <algorithm-tag>rsa-sha1</algorithm-tag>
       </sig-data>
       <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
         <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
-             <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
-              <Reference URI="">
-                 <Transforms>
-                    <Transform Algorithm="http://www.w3.org/TR/1999/REC-xslt-19991116">
-                       <xs:stylesheet xmlns:xs="http://www.w3.org/1999/XSL/Transform" version="1.0">
-                         <xs:template match="thing">
-                           <hv:signed-thing-data xmlns:hv="urn:com.microsoft.wc.thing.signing.2.xsl">
-                             <xs:copy-of select="data-xml" />
-                             <xs:copy-of select="signature-info/sig-data" />
-                           </hv:signed-thing-data>
-                         </xs:template>
-                       </xs:stylesheet>
-                    </Transform>
-                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
-                  </Transforms>
-                  <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-                  <DigestValue>ssSRETq36vU7ZDCHw92HyK9BckI=</DigestValue>
-              </Reference>
-         </SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+             <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+              <Reference URI="">
+                 <Transforms>
+                    <Transform Algorithm="http://www.w3.org/TR/1999/REC-xslt-19991116">
+                       <xs:stylesheet xmlns:xs="http://www.w3.org/1999/XSL/Transform" version="1.0">
+                         <xs:template match="thing">
+                           <hv:signed-thing-data xmlns:hv="urn:com.microsoft.wc.thing.signing.2.xsl">
+                             <xs:copy-of select="data-xml" />
+                             <xs:copy-of select="signature-info/sig-data" />
+                           </hv:signed-thing-data>
+                         </xs:template>
+                       </xs:stylesheet>
+                    </Transform>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+                  </Transforms>
+                  <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+                  <DigestValue>ssSRETq36vU7ZDCHw92HyK9BckI=</DigestValue>
+              </Reference>
+         </SignedInfo>
         <SignatureValue>BPgZoIu7l3G4r...</SignatureValue>
           <KeyInfo>
             <X509Data>

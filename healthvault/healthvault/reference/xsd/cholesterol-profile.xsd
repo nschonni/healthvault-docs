@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<schema xmlns:a="urn:com.microsoft.wc.thing.cholesterol-profile" xmlns:t="urn:com.microsoft.wc.thing.types" xmlns:d="urn:com.microsoft.wc.dates" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com.microsoft.wc.thing.cholesterol-profile">
+    <import namespace="urn:com.microsoft.wc.thing.types" schemaLocation="base.xsd"/>
+    <import namespace="urn:com.microsoft.wc.dates" schemaLocation="dates.xsd"/>
+    <annotation>
+        <documentation>
+            <type-id>796C186F-B874-471c-8468-3EEFF73BF66E</type-id>
+            <type-name>Cholesterol</type-name>
+            <effective-date-element>when</effective-date-element>
+            <wrapper-class-name>CholesterolProfile</wrapper-class-name>
+            <wrapper-class-fwlink>517494</wrapper-class-fwlink>
+            <sample-xml-fwlink />
+            <data-type-guide-fwlink />
+            <summary>
+                Cholesterol test results. Also referred to as lipid profile. 
+            </summary>
+            <remarks>
+                Covers primary cholesterol/lipid profile test readings. 
+            </remarks>
+            <seealso-thing-type-version-id>9c48a2b8-952c-4f5a-935d-f3292326bf54</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>1e1ccbfc-a55d-4d91-8940-fa2fbf73c195</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>9c29c6b9-f40e-44ff-b24e-fba6f3074638</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>5800eab5-a8c2-482a-a4d6-f1db25ae08c3</seealso-thing-type-version-id>
+            <seealso-thing-type-version-id>73822612-C15F-4B49-9E65-6AF369E55C65</seealso-thing-type-version-id>
+        </documentation>
+    </annotation>
+    <element name="cholesterol-profile">
+        <complexType>
+            <annotation>
+                <documentation>
+                    <summary>
+                        Cholesterol test results. Also referred to as lipid profile. 
+                    </summary>
+                    <remarks>
+                        Cholesterol profile is typically comprised of LDL (low-density 
+                        lipoprotein) cholesterol, HDL (high density lipoprotein) cholesterol and total cholesterol.
+                        This data type also in corporates currently-requested secondary tests
+                        that may be applicable for cholesterol.
+                    </remarks>
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="when" type="d:date">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                The date when the samples that led to this test result were taken.
+                            </summary>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="ldl" type="t:positiveInt" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Low density lipoprotein cholesterol.
+                            </summary>
+                            <remarks>
+                                The LDL test measures how much low-density lipoprotein 
+                                (LDL) cholesterol in the blood. Increased levels of
+                                LDL cholesterol is associated with atherosclerosis. 
+                                LDL cholesterol is measured in mg/dL.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="hdl" type="t:positiveInt" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                High density lipoprotein cholesterol.
+                            </summary>
+                            <remarks>
+                                HDL stands for high density lipoprotein cholesterol, 
+                                a form of "good" cholesterol. Proteins in the blood 
+                                that move cholesterol, triglycerides, and other 
+                                lipids to various tissues are lipoproteins. HDL cholesterol is measured in mg/dL.
+                             </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="total-cholesterol" type="t:positiveInt" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                 Total cholesterol.
+                             </summary>
+                            <remarks>
+                                 A total cholesterol test is a rough measure of all the cholesterol
+                                 and triglycerides in your blood. Total cholesterol is measured in mg/dL.
+                             </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="triglyceride" type="t:positiveInt" minOccurs="0">
+                    <annotation>
+                        <documentation>
+                            <summary>
+                                Triglyceride level.
+                            </summary>
+                            <remarks>
+                                Triglycerides are a type of fat. Your body makes some
+                                triglycerides. Triglycerides also come from the food you eat.
+                                Triglycerides are measured in mg/dL.
+                            </remarks>
+                        </documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
