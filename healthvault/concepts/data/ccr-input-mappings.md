@@ -847,7 +847,7 @@ $DateTime = ./DateTime\[ [IsConcept](ccr-input-functions.md#IsConcept)(./Type/Te
 |-------------------------------------------------------------|-------------------------------------------------------|---------------------------------------------------------------------------------------|
 | <span style="FONT-WEIGHT: bold">FamilyProblemHistory</span> | <span style="FONT-WEIGHT: bold">family-history</span> | <span style="FONT-WEIGHT: bold">type-id = 4a04fcc8-19c1-4d59-a8c7-2031a03f21de</span> |
 
-<span style="FONT-WEIGHT: bold">Remarks:</span> If there are multiple family members, then HealthVault will create a seperate family-history object for each of them containing all of the associated conditions. If there are only problems, then HealthVault will create a single family-history object containing all of the problems.
+<span style="FONT-WEIGHT: bold">Remarks:</span> If there are multiple family members, then HealthVault will create a separate family-history object for each of them containing all of the associated conditions. If there are only problems, then HealthVault will create a single family-history object containing all of the problems.
 <span style="FONT-WEIGHT: bold">If Exists</span>(./FamilyMember)
 <span style="FONT-WEIGHT: bold">ForEach</span>(./FamilyMember)
 $Actor = [ResolveActor](ccr-input-functions.md#ResolveActor)(./ActorID)
