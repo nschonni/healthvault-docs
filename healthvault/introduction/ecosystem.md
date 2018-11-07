@@ -2,7 +2,7 @@
 title: Ecosystem
 author: jhutchings1
 ms.author: justhu
-ms.date: 04/12/2017
+ms.date: 11/10/2018
 ms.topic: article
 ms.prod: healthvault
 description: Learn more about the ecosystem of apps and devices on HealthVault
@@ -55,7 +55,6 @@ Learn how solution providers are using the Microsoft HealthVault platform to off
 Additional resources
 --------------------
 -   [Microsoft HealthVault Overview Brochure](http://download.microsoft.com/download/5/3/F/53F61716-24A3-4EA4-936E-38F865D546DE/HealthVaultFactSheet.pdf)
--   [Microsoft HealthVault Message Center Fact Sheet](https://messagecenter.healthvault.com/MessageCenterBrochure.pdf)
 -   [HealthVault.com](http://www.healthvault.com/)
 -   [HealthVault Apps and Devices Directory](https://account.healthvault.com/us/en-US/Directory)
 

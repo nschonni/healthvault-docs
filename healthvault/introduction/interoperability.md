@@ -2,7 +2,7 @@
 title: Interoperability
 author: jhutchings1
 ms.author: justhu
-ms.date: 04/12/2017
+ms.date: 11/10/2018
 ms.topic: article
 ms.prod: healthvault
 description: Learn about how HealthVault offers interoperability with other services
@@ -21,7 +21,6 @@ Developers and solution providers are making strategic choices to deliver innova
 
 Learn more about HealthVault's interoperability with industry standards here: 
 * [Continuity of Care Records](/healthvault/concepts/data/ccr-data)
-* [Direct Messaging](/healthvault/concepts/connectivity/direct-messaging)
 
 ### HealthVault XML interfaces and the Microsoft Community Promise
 

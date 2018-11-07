@@ -2,7 +2,7 @@
 title: Become a HealthVault solution provider
 author: jhutchings1
 ms.author: justhu
-ms.date: 04/12/2017
+ms.date: 11/10/2018
 ms.topic: article
 ms.prod: healthvault
 description: Learn about the process for becoming a HealthVault solution provider. 
@@ -53,7 +53,6 @@ When you create an application that works with HealthVault, you can deliver rich
 **HealthVault offers two business relationship options:**
 
 1.  **Reseller Agreement** – This agreement applies to companies who will connect an application to HealthVault and resell the combined solution to non-end-user customers.
-2.  **Direct Agreement** – Applies to companies whom connect an application to HealthVault and offer it directly to end users (individual HealthVault account-holders).
 
 [This form](https://www.healthvault.com/inquiry/business) will put you in contact with our business development team, who can help you understand the business agreements and fees associated with connecting to HealthVault. Before getting in touch here, we encourage your team to explore the introductory documents and sample code here. Doing so will put us in a much better position to quickly have a productive discussion.
 
@@ -97,7 +96,6 @@ HealthVault can help healthcare providers:
 
 -   **Improve patient satisfaction** through easier communication
 -   **Manage practice overhead** by exchanging information (including medical images) with patients electronically
--   **Implement Meaningful Use** patient engagement objectives of the HITECH Act (applies to US only)
 
 HealthVault can help you **share**, **collaborate**, and **engage** with your patients in new ways.
 
@@ -124,7 +122,7 @@ You should have:
 3.  Created and tested a version of your HealthVault-compatible application in a pre-production environment.
 4.  Reviewed the HealthVault operating and security standards.
 
-You should be ready to review the option of Reseller vs. Direct partnership and sign the required contract and order form.
+You should be ready to review the option of a Reseller partnership and sign the required contract and order form.
 
 If you are ready to discuss your HealthVault-enabled application, [please contact](https://www.healthvault.com/inquiry/business) a member of our HealthVault Business Development team.
 

@@ -2,7 +2,7 @@
 title: Connectivity
 author: jhutchings1
 ms.author: justhu
-ms.date: 04/12/2017
+ms.date: 11/10/2018
 ms.topic: article
 ms.prod: healthvault
 description: Overview of available connectivity options for HealthVault
@@ -30,21 +30,6 @@ HealthVault provides a number of integration options for connecting applications
 <li><p>Allows both reading and writing data from HealthVault users' records.</p></li>
 <li><p>Applications can access HealthVault records on an on-going basis even if the user is not online.</p></li>
 </ul></td>
-</tr>
-<tr class="even">
-<td><p>Drop-off/Pick-up (DOPU)</p></td>
-<td><ul>
-<li><p>Provides a simple method for sending data to HealthVault users.</p></li>
-<li><p>Typically requires an in-person encounter.</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p>Direct Messaging</p></td>
-<td><ul>
-<li><p>For systems that support the Direct Messaging protocols, this connection option allows sending messages and health information attachments to HealthVault users.</p></li>
-<li><p>Also allows users to send messages with health information attachments to their providers.</p></li>
-</ul></td>
-</tr>
 </tbody>
 </table>
 
@@ -118,29 +103,3 @@ See [Establishing authorization with a user using Patient Connect](/healthvault/
 The SODA model allows native applications that run on mobile and other client devices to establish authorization with HealthVault records.
 
 See [HealthVault on mobile devices](/healthvault/concepts/connectivity/mobile-devices) for more information and code samples.
-
-Drop-off/Pick-up
-----
-
-Drop-off Pick-up (DOPU) provides a simple method for applications to send data to HealthVault records without the need to first establish a record authorization. With DOPU, applications send a data package to HealthVault whenever new data is available. The user has to explicitly pick up the data in order to integrate it with his HealthVault record. DOPU is simpler to implement than the record authorization approaches in that establishing and maintaining a record authorization is not required.
-
-However, DOPU does not provide the ability to read data from records. If there will be frequent and ongoing data pushes, consider an authorization-based approach that uses offline access, which will not require the user to pick-up new data in order to integrate it into the HealthVault record.
-
-The following describes the end-to-end workflow.
-
-1. During an in-person exchange, someone within the data source organization asks the user to choose a secret question and asks the user for an answer. The user will later use this question and answer pair to pickup the information. Optionally, the user also provides an e-mail address. Some examples of in-person exchanges include the pre-registration process and the end of an encounter for an office visit. Another is while the user is visiting a pharmacy to fulfill a prescription.
-
-2. The application generates a DOPU Package with the question and the answer provided by the user and includes the data in the package. It then calls HealthVault to store the DOPU Package. This generates a pickup code, which the user will use with HealthVault to pickup the information. As examples, the pickup code can be sent to the user in an e-mail with a link to HealthVault, or given to the user on a print-out with the HealthVault URL to visit.
-
-3. Upon clicking the link and visiting HealthVault, the user either creates a HealthVault account or signs-in to an existing account. Once this is complete, the user is asked the secret question, and upon successfully providing the answer, the data is added to the user’s health record.
-
-The following summarizes the DOPU workflow.
-
-<img src="https://i-msdn.sec.s-msft.com/dynimg/IC698761.png" title="DOPUSummary" alt="DOPUSummary" id="DOPU Summary" />
-
-See [drop-off and pick-up (DOPU)](/healthvault/concepts/connectivity/drop-off-pick-up) for more information and code samples.
-
-Direct Messaging
-----------------
-
-HealthVault provides Direct Messaging addresses for every HealthVault user. Organizations that support Direct Messaging protocols can use this capability to exchange messages with HealthVault users. This includes the ability to send clinical document attachments that are integrated into the user’s record. For more information see [Direct Messaging](/healthvault/concepts/connectivity/direct-messaging).

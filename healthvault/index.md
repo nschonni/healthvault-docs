@@ -97,24 +97,6 @@ ms.topic: hub-page
                     <li>
                         <a href="#scenarios">Scenarios</a>
                         <ul id="scenarios" class="cardsC">
-                             <li>
-                                <a href="/healthvault/scenarios/meaningful-use"><div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img src="/media/hubs/healthvault/healthvault-scenarios-meaningful-use.svg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Meaningful Use 2 (MU2)</h3>
-                                                    <p>How to use HealthVault to satisfy MU2 requirements?</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
                             <li>
                                 <a href="/healthvault/scenarios/emergency-preparedness">
                                     <div class="cardSize">
@@ -307,7 +289,6 @@ ms.topic: hub-page
                                             <div class="cardText">
                                                 <h3><a href="https://github.com/Microsoft/healthvault-ios-sdk">Get the iOS SDK</a></h3>
 						<p><a href="https://cocoapods.org/pods/HealthVault">View in CocoaPods</a></p>
-                                                <p><a href="https://github.com/Microsoft/healthvault-samples/tree/master/iOS">Get samples</a></p>
                                             </div>
                                         </div>
                                     </div>
