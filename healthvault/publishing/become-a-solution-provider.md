@@ -10,12 +10,13 @@ description: Learn about the process for becoming a HealthVault solution provide
 
 # Process for becoming a HealthVault solution provider
 
+>## We are not currently accepting any new requests fr onboarding providers.  We are alive and well.
 There are four phases to becoming a HealthVault Solution Provider:
 
 1.  [Learn – Learn about HealthVault (FAQs)](#learn---frequently-asked-questions)
 2.  [Develop – Design and build a HealthVault-compatible application, device or mobile connection](#develop)
 3.  [Contract – Sign a Solution Provider Agreement and Order Sheet](#contract)
-4.  [Go-Live – Get your application up and running and deploy to your market](#Go-live-with-HealthVault)
+4.  [Go-Live – Get your application up and running and deploy to your market](#go-live-with-healthVault)
 
 ## What is HealthVault?
 
@@ -50,7 +51,7 @@ When you create an application that works with HealthVault, you can deliver rich
 
 ### What is a solution provider agreement?
 
-**HealthVault offers two business relationship options:**
+**HealthVault offers the following business relationship option:**
 
 1.  **Reseller Agreement** – This agreement applies to companies who will connect an application to HealthVault and resell the combined solution to non-end-user customers.
 

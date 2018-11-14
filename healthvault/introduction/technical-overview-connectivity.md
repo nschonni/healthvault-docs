@@ -39,18 +39,6 @@ This model provides a way to perform offline authorizations. The application cre
 
 See  <a href="/healthvault/concepts/connectivity/patient-connect" id="PageContent_13983_7">Patient Connect</a>.
 
-Drop-Off Pick-Up (DOPU)
------------------------
-
-This model allows an application to send data without establishing a long-term authorization to a record.  For example, a clinic can use DOPU to send discharge information to the patient.  DOPU is very similar to Patient Connect (see above) except that the data is imported without establishing any authorization or relationship with the provider.
-
-1.  The provider asks the user for an answer to a secret question.
-2.  The application creates a DOPU package and generates a pickup code.
-3.  The user visits the HealthVault website.
-4.  The user enters the secret answer and pickup code.
-
-See  <a href="/healthvault/concepts/connectivity/drop-off-pick-up" id="PageContent_13983_8">Drop-Off and pick-Up (DOPU)</a>
-
 Mobile
 ------
 
