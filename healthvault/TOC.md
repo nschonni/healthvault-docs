@@ -13,7 +13,6 @@
 # [Getting Started](/healthvault/getting-started/)
 ## [Configure in ACC](/healthvault/getting-started/configuring-new-app-acc)
 ## [Update app configuration](/healthvault/getting-started/update-app-configurations)
-## [Invite Patients](/healthvault/getting-started/invite-patients)
 
 # Scenarios
 ## [Emergency Preparedness](/healthvault/scenarios/emergency-preparedness)

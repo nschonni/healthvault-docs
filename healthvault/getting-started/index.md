@@ -30,6 +30,5 @@ For more information
 
 -   [HealthVault Overview](https://www.healthvault.com/us/en)
 -   [HealthVault technical overview](https://go.microsoft.com/fwlink/?linkid=839408)
--   [HealthVault REST API Reference](https://go.microsoft.com/fwlink/?linkid=839407)
 -   [HealthVault SDKs](https://go.microsoft.com/fwlink/?linkid=839410)
 
