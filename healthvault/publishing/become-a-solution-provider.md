@@ -10,7 +10,9 @@ description: Learn about the process for becoming a HealthVault solution provide
 
 # Process for becoming a HealthVault solution provider
 
->## We are not currently accepting any new requests fr onboarding providers.  We are alive and well.
+>## Thank you for your interest in HealthVault. Microsoft is making significant investments in healthcare technology to bring even greater value and benefits to our partners and customers.
+>## In the near term, we are continuing to support our current Solutions Partners but are not onboarding new HealthVault Solutions Providers.
+
 There are four phases to becoming a HealthVault Solution Provider:
 
 1.  [Learn – Learn about HealthVault (FAQs)](#learn---frequently-asked-questions)
