@@ -642,7 +642,7 @@ packageID = ConnectPackage.Create(   
     connectPackageCreationParameters,    
     packageContent);
 
-///<summary>Streams a blob to to a HealthVault Connect Package and associates blob
+///<summary>Streams a blob to a HealthVault Connect Package and associates blob
 /// information with the specified thing.</summary>
 ///<remarks>Streaming is independent of any particular thing type.</remarks>
 public static void StreamBlobToConnectPackage(
