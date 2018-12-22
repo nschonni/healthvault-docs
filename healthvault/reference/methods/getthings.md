@@ -131,7 +131,7 @@ group|[ThingRequestGroup](#ThingRequestGroup)|1|unbounded|Specifies the thing/th
 > enumeration|core|Specifies the core parts of the thing.|The core includes thing-id, version-stamp, type-id, eff-date, thing-state, flags.
 > enumeration|audits|Specifies the auditing section of the thing.|The audit section includes the updated element.
 > enumeration|otherdata|Specifies the other data section of the thing.|The other data section includes the data-other xml. Other data is an additional data element that is not subject to schema validation on the server.
-> enumeration|effectivepermissions|Specifies the effection permissions the caller has on the thing.|The effective permissions section includes the eff-permissions xml.
+> enumeration|effectivepermissions|Specifies the effective permissions the caller has on the thing.|The effective permissions section includes the eff-permissions xml.
 > enumeration|digitalsignatures|Specifies the digital signautures on the thing.|The digital signatures section includes the signature xml, which contains any digital signatures on the returned thing. That digital signature includes a key and a cryptographic hash which can be used to verify that the contents of the thing have not changed since the time it was signed.
 > enumeration|tags|Specifies the tags on the thing.|The tags section includes the tags xml which is a string element that contains comma separated list of tags.
 >
