@@ -75,7 +75,7 @@ auth-info|[AuthTokenInfo](#AuthTokenInfo)|1|1|Parameters for creating an authent
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
 > sig|[Sig](xref:HV_File_types#Sig)|1|1|The signature of the content section.|This signature is generated using the application's private key. The corresponding public key is associated with the application id by Microsoft HealthVault.
-> hmacSig|[HmacSig](#HmacSig)|1|1|An Hmac signature of the content section.|The signature is generated using the the application's shared key. The key was previously generated via the NewApplicationCreationInfo call.
+> hmacSig|[HmacSig](#HmacSig)|1|1|An Hmac signature of the content section.|The signature is generated using the application's shared key. The key was previously generated via the NewApplicationCreationInfo call.
 >
 >
 

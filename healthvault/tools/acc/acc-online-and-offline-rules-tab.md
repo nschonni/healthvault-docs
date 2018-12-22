@@ -10,7 +10,7 @@ ms.prod: healthvault
 # Managing data type rules for online or offline access
 HealthVault controls access to data types for online and offline access separately. Online access means that the user is always logged in and present when their data is being accessed, whereas offline access means that your app gets delegated access to her data until access is revoked. 
 
-This experience allows you to manage both data types and the the permissions your application needs for each of these. 
+This experience allows you to manage both data types and the permissions your application needs for each of these. 
 
 By default, your application is configured with online access to the Application-Specific Information data type. You can edit this rule to include the set of data types and level of access your application requires. You may also add new rules if you require different levels of access to different data types. Each access rule will be shown to the user during  the application authorization approval process. Your rules must not require access to more permissions than your application requires.
 

@@ -43,7 +43,7 @@ All response schemas contain the info element which contain the return value of 
 
 Name|Type|Min occurs|Max occurs|Summary|Remarks
 ---|---|---|---|---|---
-selected-instance|[Instance](xref:HV_File_types#Instance)|0|1|The unique identifier for the instance that handles the the specified location that was passed in.|There are a set of countries that HealthVault does not support. If one of those countries are passed in, the result will not contain a selected-instance-id element.
+selected-instance|[Instance](xref:HV_File_types#Instance)|0|1|The unique identifier for the instance that handles the specified location that was passed in.|There are a set of countries that HealthVault does not support. If one of those countries are passed in, the result will not contain a selected-instance-id element.
 
 ## Request XSD schema
 [![Download](/healthvault/images/download.png)Download](../xsd/method-selectinstance.xsd)
