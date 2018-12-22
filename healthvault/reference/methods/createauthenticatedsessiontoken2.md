@@ -44,7 +44,7 @@ auth-info|[AuthTokenInfo](#AuthTokenInfo)|1|1|Parameters for creating an authent
 >
 > Name|Type|Min occurs|Max occurs|Summary|Remarks
 > ---|---|---|---|---|---
-> appserver2|[AppServerCred](#AppServerCred)|1|1|Web application server credential.|The credential is a signed request showing proof-of-posession of the application-specific private key. This credential may be used to establish two modes of authentication. First, it may be used to create an trusted anonymous session in the context of the application. Secondly, it may be used to create a trusted session in the context of a specified user.
+> appserver2|[AppServerCred](#AppServerCred)|1|1|Web application server credential.|The credential is a signed request showing proof-of-possession of the application-specific private key. This credential may be used to establish two modes of authentication. First, it may be used to create an trusted anonymous session in the context of the application. Secondly, it may be used to create a trusted session in the context of a specified user.
 > userpassauthsession|[UserPassAuthSessionCred](xref:HV_File_auth#UserPassAuthSessionCred)|1|1|A credential consisting of username and password.|This is for test purposes only. Both the username and password are in plaintext.
 >
 >
