@@ -283,7 +283,7 @@ protected override void ParseXml(IXPathNavigable typeSpecificXml)
     }
 }
 ```
-This is also not very different. The big change is that if there is a type name stored in format-tag, you create an instance of that type, find the custom data for it, and then call ParseXml() on that object. Note that it's possible that that format-tag isn't a type that you know about, so you have to deal with those cases.
+This is also not very different. The big change is that if there is a type name stored in format-tag, you create an instance of that type, find the custom data for it, and then call ParseXml() on that object. Note that it's possible that the format-tag isn't a type that you know about, so you have to deal with those cases.
 
 The object instances are created by CreateObjectByName():
 
