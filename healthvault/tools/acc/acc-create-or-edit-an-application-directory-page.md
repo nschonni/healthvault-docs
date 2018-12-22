@@ -15,7 +15,7 @@ This tab allows you to add your app to the [HealthVault Application Directory](h
 * **Directory name** Required. The directory name which is displayed in the directory listing for your application.
 * **Company name** Required. Name of your company. 
 * **Company URL** Required. Link to the homepage of your company
-* **Company logo** Required. Logo for your company. This image may not be be greater than 150×150 pixels.
+* **Company logo** Required. Logo for your company. This image may not be greater than 150×150 pixels.
 * **Company logo alternate text** Required. Alternate text to be displayed on mouseover for your logo image. 
 * **Short description** Required. User friendly description of the app and its features. Cannot exceed 1024 characters.
 * **Long description** Optional. User friendly description of the app and its features. Cannot exceed 4096 characters.
