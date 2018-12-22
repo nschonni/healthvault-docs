@@ -23,7 +23,7 @@ All requests contain the info element to pass parameters that are specific to ea
 
 Name|Type|Min occurs|Max occurs|Summary|Remarks
 ---|---|---|---|---|---
-authorized-connect-requests-since|dateTime|0|1|Specifies the UTC datetime from which all found authorized connect requests are to be returned.|If no datetime is supplied, DateTime.Min is assumed, and all connect requests found for the application are returned. If an invalid datetime is supplied, an InvalidDateTime error is retuned. Validated connect requests are removed by HealthVault after 90 days. It is advised that applications call GetAuthorizedConnectRequests daily or weekly to ensure that all validated connect requests are retrieved.
+authorized-connect-requests-since|dateTime|0|1|Specifies the UTC datetime from which all found authorized connect requests are to be returned.|If no datetime is supplied, DateTime.Min is assumed, and all connect requests found for the application are returned. If an invalid datetime is supplied, an InvalidDateTime error is returned. Validated connect requests are removed by HealthVault after 90 days. It is advised that applications call GetAuthorizedConnectRequests daily or weekly to ensure that all validated connect requests are retrieved.
 
 ## Response Overview
 
