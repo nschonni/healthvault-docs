@@ -11,4 +11,4 @@ ms.prod: healthvault
 
 The Organization tab in the Application Configuration Center allows an application administrator to add basic organization information.
 
-HealthVault requires that each app has at least least one application manager. An administrator can remove the authorization as well.
+HealthVault requires that each app has at least one application manager. An administrator can remove the authorization as well.
