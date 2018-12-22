@@ -232,7 +232,7 @@ effective date XPath|
 >
 > ### RcptPerson
 >
-> Represents a message recipient who is identified by a a unique Microsoft Health account identifier.
+> Represents a message recipient who is identified by a unique Microsoft Health account identifier.
 >
 > The validated attribute determines whether the email address must first be validated by the account owner. If the validated attribute is true and the email address hasn't been validated then an error will be returned.
 >
